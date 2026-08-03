@@ -38,6 +38,14 @@ details.dia>summary::-webkit-details-marker{display:none}
 .media{display:flex;gap:8px;overflow-x:auto;padding:8px 12px;scroll-snap-type:x mandatory}
 .media img,.media video{height:290px;border-radius:10px;scroll-snap-align:start;flex:0 0 auto;background:#000}
 .media .num{position:relative}
+.slidebox{display:flex;flex-direction:column;gap:4px;flex:0 0 auto;scroll-snap-align:start}
+.svotes{display:flex;gap:4px;justify-content:center}
+.svotes button{flex:1;padding:6px 0;font-size:13px;font-weight:800;border-radius:8px;border:1px solid #2a2c36;background:#1c1d25;color:#8b8d98}
+.svotes .si.on{background:#3ecf8e;color:#0d0e12;border-color:#3ecf8e}
+.svotes .no.on{background:#ff5d5d;color:#0d0e12;border-color:#ff5d5d}
+.sdots{display:flex;gap:3px;justify-content:center;min-height:10px}
+.sdots i{width:8px;height:8px;border-radius:99px;background:#2a2c36}
+.sdots i.si{background:#3ecf8e}.sdots i.no{background:#ff5d5d}
 .media .num::after{content:attr(data-n);position:absolute;top:6px;left:6px;background:#000c;color:#fff;font-size:12px;font-weight:800;padding:2px 7px;border-radius:6px}
 .cap{padding:2px 14px 8px;color:#a7a9b4;font-size:13px}
 /* votos */
@@ -142,9 +150,19 @@ function card(p){
   const chips=PERSONAS.map(per=>{const x=vs[per];
     return `<span class="vchip ${x?x.v:''}">${per}${x?(x.v==="si"?" ✓":x.v==="no"?" ✗":" ?"):""}${x&&x.nota?" 💬":""}</span>`;}).join("");
   const notas=Object.entries(vs).filter(([,x])=>x.nota).map(([per,x])=>`<div class="cap">💬 <b>${per}</b>: ${x.nota}</div>`).join("");
+  const multi=p.archivos.length>1;
   const media=p.archivos.map((a,i)=>{
-    if(a.video)return `<video class="num" data-n="${i+1}" src="${a.video}" poster="${a.poster||''}" controls preload="none"></video>`;
-    return `<span class="num" data-n="${i+1}"><img loading="lazy" src="${a.poster||''}" onclick="ampliar('${a.poster||''}')"></span>`;}).join("");
+    const sk=p.id+"#"+(i+1), sv=V.votos[sk]||{}, mioS=sv[YO]&&sv[YO].v;
+    const dots=PERSONAS.map(per=>{const x=sv[per];return `<i class="${x?x.v:''}" title="${per}"></i>`;}).join("");
+    const inner=a.video?`<video class="num" data-n="${i+1}" src="${a.video}" poster="${a.poster||''}" controls preload="none"></video>`
+                       :`<span class="num" data-n="${i+1}"><img loading="lazy" src="${a.poster||''}" onclick="ampliar('${a.poster||''}')"></span>`;
+    if(!multi)return inner;
+    return `<div class="slidebox">${inner}
+      <div class="sdots">${dots}</div>
+      <div class="svotes">
+        <button class="si ${mioS==='si'?'on':''}" onclick="votar('${sk}','si')">✓</button>
+        <button class="no ${mioS==='no'?'on':''}" onclick="votar('${sk}','no')">✗</button>
+      </div></div>`;}).join("");
   const mio=vs[YO]&&vs[YO].v;
   return `<div class="card ${est}">
     <div class="chead"><span class="tag t${p.cuenta}">${p.cuenta}</span>
@@ -174,7 +192,7 @@ function pinta(){
   cont.innerHTML=html||'<div class="sub">Nada con este filtro.</div>';
   const tot=PIEZAS.length, mias=PIEZAS.filter(p=>V.votos[p.id]&&V.votos[p.id][YO]).length;
   document.getElementById("prog").textContent=`${YO}: ${mias}/${tot} revisadas`;
-  document.getElementById("cab").textContent=`${tot} piezas · votos compartidos del equipo en vivo`;}
+  document.getElementById("cab").textContent=`${tot} piezas · votos del equipo en vivo · en carruseles e historias puedes votar CADA slide (✓/✗ debajo)`;}
 function copiar(){let out="REVISIÓN SEMANA 3-9 AGO\n";
   PIEZAS.forEach(p=>{const vs=V.votos[p.id]||{};if(!Object.keys(vs).length)return;
     out+=`\n${p.dia} · ${p.id}\n`;
