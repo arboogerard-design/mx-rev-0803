@@ -596,6 +596,22 @@
    "origen": "PARA_REVISAR/_WIP/REEL_JORDI_HOOK_TESTIMONIOS_25JUL"
   },
   {
+   "id": "REEL_JORDI_PROVEEDOR_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "vie 7",
+   "caption": "Tu proveedor no es tu enemigo: es tu aliado. Y elegirlo bien marca la diferencia.\n\n#ecommerce #dropshipping #mentoria\n\nZYRO nuevo 2: hook Jordi al volante «DEJA DE PELEARTE CON TU PROVEEDOR» + Yeat + karaoke amarillo + 2 insertos POV. Tu proveedor es tu aliado.",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_PROVEEDOR.mp4",
+     "poster": "media/REEL_JORDI_PROVEEDOR_4AGO__00.jpg",
+     "video": "media/REEL_JORDI_PROVEEDOR_4AGO__00.mp4",
+     "peso_mb": 2.33
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
    "id": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
    "cuenta": "JAVI",
    "tipo": "carrusel",
