@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-04 manana",
+ "generado": "2026-08-04 mediodia",
  "semana": "3-9 agosto 2026",
  "dias": [
   "lun 3",
@@ -378,6 +378,28 @@
     }
    ],
    "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_3_miercoles__LM"
+  },
+  {
+   "id": "STORIES_JAVI_MIERCOLES_A5_5AGO",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "mié 5",
+   "caption": "A5 miércoles: dolor-ads → win 8.446 MXN +92% (ORGANICO 22-jul, la única libre para Javi) → CTA «RECURSOS» con el recurso Video Ads borroso. 3 stories. Ojo: el fondo 'logo-pantalla' se descartó porque el gate de identidad detectó a JORDI (0.98).",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mxn.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__01.jpg"
+    },
+    {
+     "archivo": "s03_cta_recursos.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__02.jpg"
+    }
+   ],
+   "origen": "produccion 4-ago mediodia (gate TODO PASS)"
   },
   {
    "id": "CARRUSEL_JORDI_RECURSOS_29JUL",
