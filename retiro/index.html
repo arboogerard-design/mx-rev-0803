@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Retiro CIEM · Fin de semana de Inteligencia Emocional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Paleta sacada del dossier real de CIEM: oliva profundo + crema + salvia */
+:root{
+  --oliva:#31351d; --oliva2:#3d422a; --crema:#ece7db; --crema2:#f4f1e8;
+  --salvia:#93a289; --salvia2:#b9c3ae; --tinta:#2b2e22; --acento:#c9b98a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--tinta);background:var(--crema);
+     font-weight:300;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
+img{max-width:100%;display:block}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;
+      justify-content:center;text-align:center;color:var(--crema);
+      background:var(--oliva);isolation:isolate;padding:90px 20px}
+.hero::before{content:"";position:absolute;inset:0;background:url("img/p1_01.jpg") center 30%/cover;
+      opacity:.42;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(180deg,rgba(49,53,29,.55),rgba(49,53,29,.82) 70%,var(--oliva))}
+.hero .kick{letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;
+      color:var(--salvia2);margin-bottom:22px;font-weight:400}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.04;letter-spacing:.01em}
+.hero h1 em{font-style:italic;color:var(--acento)}
+.hero .sub{max-width:34rem;margin:26px auto 0;font-size:1.08rem;color:#ded9ca}
+.fecha-pill{display:inline-block;margin-top:30px;padding:10px 26px;border:1px solid var(--salvia);
+      border-radius:100px;letter-spacing:.14em;font-size:.82rem;color:var(--salvia2);
+      text-transform:uppercase}
+.cta{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:17px 42px;
+     background:var(--crema);color:var(--oliva);border-radius:100px;border:0;cursor:pointer;
+     font-family:'Jost';font-size:1rem;font-weight:500;letter-spacing:.06em;
+     transition:transform .25s ease, box-shadow .25s ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.cta .dot{width:9px;height:9px;border-radius:50%;background:var(--oliva);
+     animation:pulso 1.6s infinite}
+@keyframes pulso{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.5}}
+.hero .mini{margin-top:16px;font-size:.82rem;color:#b6b19e;letter-spacing:.04em}
+
+/* ---------- SECCIONES ---------- */
+section{padding:96px 22px}
+.wrap{max-width:1060px;margin:0 auto}
+.eyebrow{letter-spacing:.3em;text-transform:uppercase;font-size:.74rem;color:var(--salvia);
+     font-weight:500;margin-bottom:14px}
+h2{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.1;color:var(--oliva);margin-bottom:22px}
+h2 em{font-style:italic;color:var(--salvia)}
+.lead{max-width:38rem;font-size:1.06rem;color:#4c503c}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+
+/* que es + foto */
+.dos{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.dos .foto{border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(43,46,34,.18)}
+.dos .foto img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.dos .foto:hover img{transform:scale(1.04)}
+
+/* tarjetas */
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.card{background:var(--crema2);border:1px solid #ddd6c4;border-radius:16px;padding:34px 28px}
+.card h3{font-size:1.45rem;color:var(--oliva);margin-bottom:14px}
+.card ul{list-style:none}
+.card li{padding:7px 0 7px 26px;position:relative;font-size:.98rem;color:#4c503c}
+.card li::before{content:"";position:absolute;left:0;top:15px;width:12px;height:2px;
+      background:var(--salvia)}
+
+/* programa */
+.programa{background:var(--oliva);color:var(--crema)}
+.programa h2{color:var(--crema)}
+.programa h2 em{color:var(--acento)}
+.dias{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+.dia{border:1px solid #4a4f33;border-radius:16px;padding:32px 28px;background:rgba(255,255,255,.03)}
+.dia .n{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--acento);
+     font-style:italic;margin-bottom:4px}
+.dia .d{letter-spacing:.22em;text-transform:uppercase;font-size:.74rem;color:var(--salvia2);
+     margin-bottom:18px}
+.dia li{list-style:none;padding:8px 0;border-bottom:1px solid #454a2f;font-size:.95rem;
+     color:#d8d3c2}
+.dia li:last-child{border:0}
+.dia li b{color:var(--crema);font-weight:500}
+
+/* testimonios */
+.testis{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.testi{background:#fff;border-radius:16px;padding:30px 30px 26px;border:1px solid #e3ddcd;
+      box-shadow:0 18px 44px rgba(43,46,34,.07);display:flex;flex-direction:column;gap:16px}
+.testi .q{font-family:'Cormorant Garamond',serif;font-size:1.28rem;line-height:1.45;
+      color:var(--oliva);font-style:italic}
+.testi .who{display:flex;align-items:center;gap:14px}
+.testi .who img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.testi .who .n{font-weight:500;font-size:.95rem;color:var(--tinta)}
+.testi .who .r{font-size:.8rem;color:#8a8672;letter-spacing:.04em}
+.stars{color:#c9a53f;font-size:.85rem;letter-spacing:.18em}
+
+/* inversion */
+.inversion .caja{background:var(--crema2);border:1px solid #ddd6c4;border-radius:22px;
+      display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;margin-top:44px}
+.inv-txt{padding:52px 48px}
+.precio{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--oliva);line-height:1}
+.precio small{font-size:1.15rem;color:#77745f;font-family:'Jost';font-weight:300}
+.inv-txt .det{margin:20px 0 26px;color:#4c503c;font-size:.98rem}
+.inv-txt .det li{list-style:none;padding:6px 0 6px 26px;position:relative}
+.inv-txt .det li::before{content:"✓";position:absolute;left:0;color:var(--salvia);font-weight:600}
+.inv-foto{background:url("img/p4_10.jpg") center/cover;min-height:380px}
+.cta.oliva{background:var(--oliva);color:var(--crema)}
+.nota-reserva{margin-top:14px;font-size:.86rem;color:#77745f}
+
+/* footer */
+footer{background:var(--oliva);color:#c9c4b2;padding:60px 22px;text-align:center;font-size:.9rem}
+footer .logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--crema);
+      letter-spacing:.14em;margin-bottom:16px}
+footer a{color:var(--salvia2);text-decoration:none}
+footer .dir{margin-top:8px;font-size:.82rem;color:#8e8a77}
+
+/* ---------- MODAL VIDEO GATE ---------- */
+.velo-modal{position:fixed;inset:0;background:rgba(28,30,18,.78);backdrop-filter:blur(6px);
+      display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+.velo-modal.on{display:flex}
+.modal{background:var(--crema2);border-radius:20px;max-width:420px;width:100%;
+      padding:40px 36px;position:relative;animation:sube .35s ease}
+@keyframes sube{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+.modal h3{font-size:1.7rem;color:var(--oliva);margin-bottom:8px}
+.modal p{font-size:.92rem;color:#5c5947;margin-bottom:22px}
+.modal input{width:100%;padding:14px 16px;margin-bottom:12px;border:1px solid #cfc8b4;
+      border-radius:10px;background:#fff;font-family:'Jost';font-size:.95rem}
+.modal input:focus{outline:2px solid var(--salvia)}
+.modal .cta{width:100%;justify-content:center;margin-top:8px}
+.modal .x{position:absolute;top:14px;right:18px;background:none;border:0;font-size:1.4rem;
+      color:#8a8672;cursor:pointer}
+.modal .fino{font-size:.75rem;color:#8a8672;margin-top:14px;text-align:center}
+
+/* video area tras el gate */
+#video-zona{max-width:880px;margin:40px auto 0;display:none}
+#video-zona.on{display:block;animation:sube .5s ease}
+.video-caja{position:relative;border-radius:18px;overflow:hidden;background:#000;
+      aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.video-caja img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.video-caja .msg{position:relative;color:var(--crema);text-align:center;padding:20px}
+.video-caja .msg .serif{font-size:1.6rem;font-style:italic}
+
+@media(max-width:840px){
+  .dos,.tres,.dias,.testis,.inversion .caja{grid-template-columns:1fr}
+  .inv-foto{min-height:240px}
+  section{padding:64px 18px}
+  .dos .foto{order:-1}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <div class="kick">Centro CIEM · Inteligencia Emocional · Mataró</div>
+    <h1>Un fin de semana para<br><em>volver a ti</em></h1>
+    <p class="sub">Retiro vivencial de Inteligencia Emocional. Del viernes por la tarde al
+    domingo por la tarde: suelta cargas, gestiona tus miedos y descubre qué te impide avanzar.</p>
+    <div class="fecha-pill">Próxima edición · [FECHA POR CONFIRMAR]</div><br>
+    <button class="cta" onclick="abrirGate()"><span class="dot"></span> Ver el vídeo del retiro</button>
+    <div class="mini">Acceso inmediato dejando tu email y teléfono</div>
+    <div id="video-zona">
+      <div class="video-caja">
+        <img src="img/p1_01.jpg" alt="">
+        <div class="msg">
+          <div class="serif">Gracias. Tu plaza en la lista está guardada.</div>
+          <div style="margin-top:8px;font-size:.9rem">[AQUÍ VA EL VÍDEO — pendiente de recibir el fichero]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="que-es">
+  <div class="wrap dos">
+    <div class="rv">
+      <div class="eyebrow">¿Qué es?</div>
+      <h2>Un antes y un después<br>en tu <em>bienestar</em></h2>
+      <p class="lead">Un fin de semana diseñado para desconectar del ruido externo y conectar
+      contigo. A través de dinámicas vivenciales aprenderás a gestionar tus miedos, soltar
+      bloqueos y fortalecer tu persona.</p>
+      <p class="lead" style="margin-top:14px">Muchas veces cargamos con emociones, creencias y
+      patrones que ya no nos sirven. Aquí aprenderás a identificarlos y transformarlos en
+      energía para tu crecimiento.</p>
+      <p class="lead serif" style="margin-top:18px;font-style:italic;font-size:1.25rem">
+      ¿Listo/a para regalarte este momento?</p>
+    </div>
+    <div class="foto rv"><img src="img/p2_06.jpg" alt="Participantes del retiro en la montaña"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="tres">
+      <div class="card rv">
+        <h3>Lo que vivirás</h3>
+        <ul>
+          <li>Ejercicios prácticos para soltar cargas emocionales</li>
+          <li>Dinámicas para descubrir tus juegos internos</li>
+          <li>Espacios de reflexión y conexión contigo</li>
+          <li>Liberación, paz y bienestar al finalizar</li>
+        </ul>
+      </div>
+      <div class="card rv" style="transition-delay:.12s">
+        <h3>Qué incluye</h3>
+        <ul>
+          <li>2 noches de alojamiento</li>
+          <li>Desayuno, comida, merienda y cena</li>
+          <li>Materiales y herramientas</li>
+          <li>Acompañamiento emocional de expertos</li>
+        </ul>
+      </div>
+      <div class="card rv" style="transition-delay:.24s">
+        <h3>Beneficios</h3>
+        <ul>
+          <li>Mayor claridad emocional y mental</li>
+          <li>Conexión contigo y con quienes comparten tu camino</li>
+          <li>Un espacio seguro para expresarte, sanar y crecer</li>
+          <li>Liberación emocional</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programa">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--acento)">El proceso</div>
+    <h2>Tres días, <em>un camino</em></h2>
+    <div class="dias">
+      <div class="dia rv">
+        <div class="n">I</div><div class="d">Viernes · desde las 18:00</div>
+        <ul>
+          <li><b>Presentación</b></li>
+          <li>Práctica de la Inteligencia Emocional</li>
+          <li>Cena</li>
+          <li>Actividades nocturnas</li>
+        </ul>
+      </div>
+      <div class="dia rv" style="transition-delay:.12s">
+        <div class="n">II</div><div class="d">Sábado</div>
+        <ul>
+          <li>Desayuno</li>
+          <li><b>Juegos emocionales</b></li>
+          <li>Comida</li>
+          <li><b>Prácticas vivenciales</b></li>
+          <li>Cena y actividades nocturnas</li>
+        </ul>
+      </div>
+      <div class="dia rv" style="transition-delay:.24s">
+        <div class="n">III</div><div class="d">Domingo</div>
+        <ul>
+          <li>Desayuno</li>
+          <li><b>Renacimiento del Yo</b></li>
+          <li>Resumen y cierre</li>
+          <li>Comida y vuelta a casa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Participantes del retiro 2025</div>
+    <h2>Lo que se llevaron <em>ellos</em></h2>
+    <div class="testis">
+      <div class="testi rv">
+        <div class="stars">★★★★★</div>
+        <div class="q">“Una experiencia increíble, acompañado por el equipo de CIEM, que es
+        todavía más increíble. Recomiendo 100% el retiro: es sorprendente, mágico lo que hemos
+        vivido. Gracias, gracias y gracias.”</div>
+        <div class="who"><img src="img/p2_04.jpg" alt="">
+          <div><div class="n">Adrián</div><div class="r">Participante del retiro 2025</div></div>
+        </div>
+      </div>
+      <div class="testi rv" style="transition-delay:.1s">
+        <div class="stars">★★★★★</div>
+        <div class="q">“Lo recomiendo a todos los seres que quieran soltar cargas y sentirse
+        mejor consigo mismos. Para mí esta experiencia quedará grabada en mi mente y en mi
+        corazón de por vida. Mil gracias.”</div>
+        <div class="who"><img src="img/p2_05.jpg" alt="">
+          <div><div class="n">Valeria</div><div class="r">Participante del retiro 2025</div></div>
+        </div>
+      </div>
+      <div class="testi rv" style="transition-delay:.2s">
+        <div class="stars">★★★★★</div>
+        <div class="q">“Quería daros las gracias no solo por el retiro, sino por ayudarme a
+        cerrar el libro entero. Por fin solté la carga emocional que llevaba. Ha sido la luz al
+        final del túnel. Nos vemos en el retiro nivel II.”</div>
+        <div class="who"><img src="img/p2_07.jpg" alt="">
+          <div><div class="n">Cristina</div><div class="r">Participante del retiro 2025</div></div>
+        </div>
+      </div>
+      <div class="testi rv" style="transition-delay:.3s">
+        <div class="stars">★★★★★</div>
+        <div class="q">“Me siento diferente y tengo la seguridad de que este es el principio del
+        proceso que conlleva recuperar mi mejor versión. Os admiro por el trabajo que hacéis:
+        ayudar a personas a sanar su mente y soltar cargas.”</div>
+        <div class="who"><img src="img/p3_09.jpg" alt="">
+          <div><div class="n">Yanet</div><div class="r">Participante del retiro 2025</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inversion" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow">Tu plaza</div>
+    <h2>Invierte <em>en ti</em></h2>
+    <p class="lead">Porque priorizarte no es un gasto: es un regalo para el resto de tu vida.</p>
+    <div class="caja rv">
+      <div class="inv-txt">
+        <div class="precio">450€ <small>IVA incluido</small></div>
+        <ul class="det">
+          <li>2 noches de alojamiento con todas las comidas</li>
+          <li>Dinámicas, materiales y herramientas</li>
+          <li>Acompañamiento de expertos todo el fin de semana</li>
+        </ul>
+        <button class="cta oliva" onclick="abrirGate()"><span class="dot" style="background:var(--crema)"></span>
+        Reservar mi plaza</button>
+        <div class="nota-reserva">Reserva de plaza: 200€ · resto 10 días antes del retiro</div>
+      </div>
+      <div class="inv-foto"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">CENTRO CIEM</div>
+  <div>WhatsApp <a href="https://wa.me/34689887745">689 887 745</a> ·
+       <a href="mailto:info@centrociem.es">info@centrociem.es</a></div>
+  <div class="dir">Via Europa 181, Local 4 · 08303 Mataró, Barcelona · centrociem.es</div>
+</footer>
+
+<!-- MODAL: el gate del video (email + telefono, como pidio Jordi) -->
+<div class="velo-modal" id="gate">
+  <div class="modal">
+    <button class="x" onclick="cerrarGate()">×</button>
+    <h3>Ve el vídeo del retiro</h3>
+    <p>Déjanos tus datos y accede al vídeo al instante. Te avisaremos de la próxima edición.</p>
+    <input id="g-nombre" type="text" placeholder="Tu nombre" autocomplete="name">
+    <input id="g-email" type="email" placeholder="Tu email" autocomplete="email">
+    <input id="g-tel" type="tel" placeholder="Tu teléfono" autocomplete="tel">
+    <button class="cta oliva" style="width:100%;justify-content:center" onclick="enviarGate()">
+      Acceder al vídeo</button>
+    <div class="fino">Tus datos solo se usan para informarte del retiro.
+    <!-- [PENDIENTE: conectar HubSpot de la organizadora — falta portal/form ID] --></div>
+  </div>
+</div>
+
+<script>
+function abrirGate(){document.getElementById('gate').classList.add('on')}
+function cerrarGate(){document.getElementById('gate').classList.remove('on')}
+function enviarGate(){
+  const n=document.getElementById('g-nombre').value.trim(),
+        e=document.getElementById('g-email').value.trim(),
+        t=document.getElementById('g-tel').value.trim();
+  if(!n||!e.includes('@')||t.length<9){alert('Revisa tu nombre, email y teléfono');return}
+  // PREVIEW: lead en localStorage. En produccion: POST al form de HubSpot de la organizadora.
+  const leads=JSON.parse(localStorage.getItem('ciem_leads')||'[]');
+  leads.push({n,e,t,cuando:new Date().toISOString()});
+  localStorage.setItem('ciem_leads',JSON.stringify(leads));
+  cerrarGate();
+  const z=document.getElementById('video-zona');
+  z.classList.add('on');
+  z.scrollIntoView({behavior:'smooth',block:'center'});
+}
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),
+  {threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
