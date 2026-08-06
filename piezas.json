@@ -1,7 +1,7 @@
 {
  "generado": "2026-08-06",
  "dia": "jueves 6 ago",
- "estrategia": "Santi · 50% TOFU / 30% MOFU / 20% BOFU · jueves = iPad-pantalla dividida + formato que no te requiera + talking head",
+ "estrategia": "Santi 50/30/20 -> en 6 piezas: 3 TOFU / 2 MOFU / 1 BOFU · jueves = iPad + formato que no requiere + talking head · V2: musica viral con drop en las 6 (2 iban MUDAS)",
  "piezas": [
   {
    "id": "javi_p1",
@@ -12,7 +12,7 @@
    "titular": "Las herramientas con las que miramos una tienda",
    "dur": 48,
    "fuente": "Pantalla: grabacion OBS de Javi (30-jul, su tienda + nuestro panel de calculadoras). Cara y voz: RAW 4K del podcast, camara C2404.",
-   "nota": "Sin subs quemados heredados: la cara sale del RAW, no de un reel ya montado."
+   "nota": "V2: + Metro Boomin ducked bajo la voz."
   },
   {
    "id": "javi_p2",
@@ -23,7 +23,7 @@
    "titular": "El orden en que se arregla una tienda",
    "dur": 20,
    "fuente": "Motion graphics de marca (broll_motion.py). Cero cara, cero creditos de IA.",
-   "nota": "Hitos: mercado, producto, margen, ventas, recurrencia. Es el orden que dio Javi en su lista del 5-ago."
+   "nota": "V2: iba MUDA - ahora HOME resonance con drop en el hook."
   },
   {
    "id": "javi_p3",
@@ -34,29 +34,29 @@
    "titular": "Facturas un millon... y cuanto queda de verdad",
    "dur": 54,
    "fuente": "RAW 4K del podcast (C2404) + audio ya sincronizado. Reels #3+#4 del MAPA_QA_26_REELS encadenados.",
-   "nota": "54 s = dentro de los 45-60 que pide Santi. Identidad verificada a ojo en 3 frames."
+   "nota": "V2: + Kanye Runaway instrumental ducked."
   },
   {
    "id": "jordi_p1",
    "cuenta": "JORDI",
    "post": 1,
    "formato": "iPad / pantalla dividida",
-   "bucket": "MOFU",
+   "bucket": "TOFU",
    "titular": "Aprender gratis vs pagar por el atajo",
    "dur": 46,
    "fuente": "Pantalla: dashboard real de alumno. Cara y voz: RAW 4K camara C2410.",
-   "nota": "CERO cifras de facturacion de Jordi. El dashboard es de un alumno, no suyo."
+   "nota": "V2: + After Hours instrumental ducked."
   },
   {
    "id": "jordi_p2",
    "cuenta": "JORDI",
    "post": 2,
    "formato": "Formato que no te requiera",
-   "bucket": "MOFU",
-   "titular": "Lo que marca la diferencia",
+   "bucket": "TOFU",
+   "titular": "Trabajas mas. Facturas lo mismo.",
    "dur": 18,
    "fuente": "Motion graphics de marca. Cero cara.",
-   "nota": "Hitos: actitud, aprender, disfrutar el proceso."
+   "nota": "REHECHA: era mentalidad-BOFU duplicada; ahora sintoma TOFU + Ice Spice. Sin cifras."
   },
   {
    "id": "jordi_p3",
@@ -67,7 +67,7 @@
    "titular": "La actitud es lo que marca si te va bien",
    "dur": 54,
    "fuente": "RAW 4K camara C2410, tramo 283.9-338.1 del MAPA_JUNTOS (speaker ya confirmado).",
-   "nota": "BOFU mentalidad. Cero cifras suyas. 54 s."
+   "nota": "V2: + Empire of the Sun instrumental ducked."
   }
  ],
  "pendiente_hoy": [
