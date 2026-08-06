@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Mentorium · Panel del equipo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0b0d0c;--card:#141816;--card2:#1b211e;--bd:#2a322e;--tx:#f2f5f3;--dim:#93a29b;
+      --javi:#3ECF8E;--jordi:#5B9DFF;--am:#FFE400;--ok:#2fbf71;--no:#e0504f;--duda:#e8a33d}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);
+     color:var(--tx);font-size:15px;line-height:1.45;padding-bottom:86px}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+/* ---------- LOGIN ---------- */
+#login{position:fixed;inset:0;background:var(--bg);z-index:99;display:flex;align-items:center;
+       justify-content:center;padding:22px}
+#login .box{max-width:400px;width:100%;text-align:center}
+#login h1{font-size:23px;font-weight:800;margin-bottom:6px}
+#login p{color:var(--dim);font-size:14px;margin-bottom:22px}
+#login input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--bd);
+             background:var(--card);color:var(--tx);text-align:center;font-size:16px;margin-bottom:16px}
+.quien{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.quien button{padding:15px 10px;border-radius:12px;background:var(--card);border:1px solid var(--bd);
+              font-weight:700;font-size:15px}
+.quien button:active{background:var(--card2)}
+.err{color:var(--no);font-size:13.5px;min-height:19px;margin-top:10px}
+/* ---------- BARRA SUPERIOR ---------- */
+header{position:sticky;top:0;z-index:20;background:#0b0d0cf2;backdrop-filter:blur(9px);
+       border-bottom:1px solid var(--bd)}
+.hrow{display:flex;align-items:center;gap:10px;padding:11px 14px;max-width:900px;margin:0 auto}
+.hrow .tit{font-weight:800;font-size:15.5px;flex:1;min-width:0;overflow:hidden;
+           text-overflow:ellipsis;white-space:nowrap}
+.yo{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--bd);
+    border-radius:99px;padding:5px 7px 5px 12px;font-size:13px;font-weight:700;flex:none}
+.yo small{color:var(--dim);font-weight:500}
+.yo .out{background:var(--card2);border-radius:99px;width:25px;height:25px;font-size:14px;
+         display:grid;place-items:center;color:var(--dim)}
+/* ---------- PESTAÑAS ---------- */
+nav.tabs{position:fixed;bottom:0;left:0;right:0;z-index:30;background:#0b0d0cf7;
+         backdrop-filter:blur(9px);border-top:1px solid var(--bd);
+         padding:7px 6px calc(7px + env(safe-area-inset-bottom))}
+nav.tabs .in{display:flex;max-width:900px;margin:0 auto;gap:2px}
+nav.tabs button{flex:1;padding:8px 2px;border-radius:11px;color:var(--dim);font-size:10.5px;
+                font-weight:700;display:flex;flex-direction:column;align-items:center;gap:3px}
+nav.tabs button b{font-size:17px;font-weight:400;line-height:1}
+nav.tabs button.on{color:var(--tx);background:var(--card2)}
+nav.tabs .badge{position:absolute;transform:translate(15px,-4px);background:var(--no);
+                border-radius:99px;font-size:9px;padding:1px 5px;font-weight:800;color:#fff}
+/* ---------- FILTROS ---------- */
+.filtros{display:flex;gap:7px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+.filtros::-webkit-scrollbar{display:none}
+.filtros button{padding:7px 15px;border-radius:99px;background:var(--card);
+                border:1px solid var(--bd);font-size:13px;font-weight:600;white-space:nowrap;flex:none}
+.filtros button.on{background:var(--tx);color:#0b0d0c;border-color:var(--tx)}
+/* ---------- DIA / PIEZA ---------- */
+.dia{margin:16px 0 0;border:1px solid var(--bd);border-radius:15px;overflow:hidden;background:var(--card)}
+.dia>summary{padding:14px 16px;font-weight:800;font-size:15px;display:flex;justify-content:space-between;
+             align-items:center;cursor:pointer;list-style:none}
+.dia>summary::-webkit-details-marker{display:none}
+.dia>summary i{font-style:normal;color:var(--dim);font-size:12.5px;font-weight:600}
+.dia .cuerpo{padding:0 12px 12px}
+.pieza{background:var(--card2);border:1px solid var(--bd);border-radius:13px;padding:13px;margin-bottom:11px}
+.meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.4px}
+.tag.JAVI{background:var(--javi);color:#04150d}.tag.JORDI{background:var(--jordi);color:#03142c}
+.tag.tipo{background:#2b332f;color:var(--dim)}
+.pieza .nom{font-weight:700;font-size:13.5px;flex:1;min-width:120px}
+.tira{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.tira::-webkit-scrollbar{display:none}
+.slot{flex:none;width:132px}
+.slot video,.slot img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:9px;
+                      background:#000;display:block}
+.slot .sv{display:flex;gap:4px;margin-top:4px}
+.slot .sv button{flex:1;padding:4px;border-radius:7px;background:#242c28;font-size:12px;
+                 border:1px solid transparent}
+.slot .sv button.on.ok{background:var(--ok);color:#04150d;font-weight:800}
+.slot .sv button.on.no{background:var(--no);color:#fff;font-weight:800}
+.cap{color:var(--dim);font-size:12.5px;margin:9px 0;white-space:pre-wrap;max-height:78px;overflow:hidden}
+.cap.abierto{max-height:none}
+.mas{color:var(--javi);font-size:12px;font-weight:700}
+.votos{display:flex;gap:7px;margin-top:10px}
+.votos button{flex:1;padding:11px;border-radius:10px;background:#242c28;font-weight:800;font-size:13.5px}
+.votos button.on.si{background:var(--ok);color:#04150d}
+.votos button.on.duda{background:var(--duda);color:#231703}
+.votos button.on.no{background:var(--no);color:#fff}
+.quienes{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.quienes span{font-size:10.5px;padding:2px 7px;border-radius:99px;background:#242c28;color:var(--dim)}
+.quienes span.si{background:#123d29;color:#7ee2ab}.quienes span.no{background:#42191b;color:#ffb1b0}
+.quienes span.duda{background:#3d2f11;color:#f2cf8a}
+.nota{width:100%;margin-top:9px;padding:9px 11px;border-radius:9px;background:#0f1412;
+      border:1px solid var(--bd);color:var(--tx);font-size:13px;resize:vertical;min-height:38px}
+/* ---------- CALENDARIO ---------- */
+.calgrid{display:grid;gap:9px;margin-top:14px}
+.calfila{background:var(--card);border:1px solid var(--bd);border-radius:13px;padding:12px}
+.calfila h4{font-size:13px;margin-bottom:9px;display:flex;gap:8px;align-items:center}
+.calslot{font-size:12.5px;color:var(--dim);padding:6px 0;border-top:1px solid var(--bd);
+         display:flex;gap:8px}
+.calslot b{color:var(--tx);font-weight:700;flex:none;width:58px;font-size:11px}
+.estado{font-size:10px;font-weight:800;padding:1px 6px;border-radius:5px;flex:none;height:16px}
+.estado.P{background:#123d29;color:#7ee2ab}.estado.A{background:#42311b;color:#ffcf8a}
+.estado.S{background:#2b2b42;color:#b9b9ff}.estado.G{background:#3d2f11;color:#f2cf8a}
+.estado.B{background:#42191b;color:#ffb1b0}
+/* ---------- TAREAS ---------- */
+.nuevo{display:flex;gap:8px;margin:14px 0}
+.nuevo input{flex:1;padding:12px;border-radius:11px;background:var(--card);
+             border:1px solid var(--bd);color:var(--tx);font-size:14px}
+.nuevo button{padding:12px 18px;border-radius:11px;background:var(--javi);color:#04150d;font-weight:800}
+.tarea{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px;
+       margin-bottom:9px;display:flex;gap:11px;align-items:flex-start}
+.tarea .chk{width:24px;height:24px;border-radius:7px;border:2px solid var(--bd);flex:none;
+            display:grid;place-items:center;font-size:14px;color:transparent}
+.tarea.hecha .chk{background:var(--ok);border-color:var(--ok);color:#04150d}
+.tarea.hecha .txt{text-decoration:line-through;color:var(--dim)}
+.tarea .txt{flex:1;font-size:14px}
+.tarea .quien2{font-size:11px;color:var(--dim);margin-top:3px}
+.tarea .del{color:var(--dim);font-size:18px;padding:0 4px}
+/* ---------- ARCHIVOS / CRITERIO ---------- */
+.item{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:13px;margin-bottom:9px}
+.item a{color:var(--javi);text-decoration:none;font-weight:700;font-size:14px;word-break:break-all}
+.item .sub{color:var(--dim);font-size:12px;margin-top:4px}
+.crit{border-left:3px solid var(--am)}
+.crit b{display:block;font-size:14px;margin-bottom:4px}
+.crit .de{font-size:11px;color:var(--am);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.buscador{width:100%;padding:12px;border-radius:11px;background:var(--card);border:1px solid var(--bd);
+          color:var(--tx);font-size:14px;margin:14px 0}
+/* ---------- COMUNES ---------- */
+h2.sec{font-size:19px;font-weight:800;margin:18px 0 2px}
+p.secsub{color:var(--dim);font-size:13px;margin-bottom:4px}
+.vacio{color:var(--dim);font-size:13.5px;text-align:center;padding:34px 18px;line-height:1.6}
+.sync{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;z-index:40;background:#1b211e;
+      border:1px solid var(--bd);border-radius:99px;padding:7px 16px;font-size:12px;color:var(--dim);
+      opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
+.sync.ver{opacity:1}.sync.mal{border-color:var(--no);color:#ffb1b0}
+.oculto{display:none!important}
+</style></head><body>
+
+<div id="login"><div class="box">
+  <h1>Panel del equipo</h1>
+  <p>Semana <span id="lsem"></span> · di quién eres para que tus votos vayan a tu nombre</p>
+  <input id="lclave" type="password" placeholder="clave" autocomplete="off" inputmode="text">
+  <div class="quien" id="lquien"></div>
+  <div class="err" id="lerr"></div>
+</div></div>
+
+<header><div class="hrow">
+  <span class="tit" id="htit">Contenido</span>
+  <div class="yo"><span id="hyo"></span><small id="hcnt"></small>
+    <button class="out" id="hout" title="Cambiar de usuario">⎋</button></div>
+</div></header>
+
+<main class="wrap">
+  <section id="t-contenido"></section>
+  <section id="t-calendario" class="oculto"></section>
+  <section id="t-tareas" class="oculto"></section>
+  <section id="t-archivos" class="oculto"></section>
+  <section id="t-criterio" class="oculto"></section>
+</main>
+
+<div class="sync" id="sync"></div>
+
+<nav class="tabs"><div class="in" id="tabs"></div></nav>
+
+<script>
+const DATOS={"generado": "2026-08-04 mediodia", "semana": "3-9 agosto 2026", "dias": ["lun 3", "mar 4", "mié 5", "jue 6", "vie 7", "sáb 8", "dom 9"], "piezas": [{"id": "REEL_JAVI_CERO_2AGO", "cuenta": "JAVI", "tipo": "reel", "dia": "lun 3", "caption": "No venimos de ser programadores. Ni de haber sido informáticos.\n\nYo era entrenador personal. Jordi tenía su trabajo. Ocho horas al día, profesiones\nnormales y corrientes, cambiando nuestro tiempo por ", "archivos": [{"archivo": "REEL_JAVI_CERO.mp4", "poster": "media/REEL_JAVI_CERO_2AGO__00.jpg", "video": "media/REEL_JAVI_CERO_2AGO__00.mp4", "peso_mb": 1.58}], "origen": "PARA_REVISAR/REEL_JAVI_CERO_2AGO"}, {"id": "dia_1_lunes__softCTA", "cuenta": "JAVI", "tipo": "story", "dia": "lun 3", "caption": "Palabra clave del día: DOC\n(solo se pide en la S5 — el doc de entregables. Sin consecuencia: es soft, la urgencia se guarda para el 24-31)", "archivos": [{"archivo": "s03.jpg", "poster": "media/dia_1_lunes__softCTA__00.jpg"}, {"archivo": "s04.jpg", "poster": "media/dia_1_lunes__softCTA__01.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_1_lunes__softCTA"}, {"id": "REEL_JORDI_FILTRO_2AGO", "cuenta": "JORDI", "tipo": "reel", "dia": "lun 3", "caption": "La mayoría prueba productos. Muy poca gente construye un filtro.\n\nCoges cuatro o cinco, los lanzas… y ahí es donde casi todo el mundo se equivoca: sigue\nlanzando sin pararse a mirar qué pasó con los a", "archivos": [{"archivo": "REEL_JORDI_FILTRO.mp4", "poster": "media/REEL_JORDI_FILTRO_2AGO__00.jpg", "video": "media/REEL_JORDI_FILTRO_2AGO__00.mp4", "peso_mb": 1.71}], "origen": "PARA_REVISAR/REEL_JORDI_FILTRO_2AGO"}, {"id": "REEL_JORDI_FILTRO_V2_HOOK", "cuenta": "JORDI", "tipo": "reel", "dia": "lun 3", "caption": "SUBIDO HOY 22:08 (Javi: 'Listo. Dale.'). Hook lambo + OPR drop + podcast, subs 2-3 palabras. Referencia del formato nuevo de reels.", "archivos": [{"archivo": "REEL_JORDI_FILTRO_V2_HOOK.mp4", "poster": "media/REEL_JORDI_FILTRO_V2_HOOK__00.jpg", "video": "media/REEL_JORDI_FILTRO_V2_HOOK__00.mp4", "peso_mb": 1.86}], "origen": "produccion 3-ago noche"}, {"id": "dia_1_lunes__LM", "cuenta": "JORDI", "tipo": "story", "dia": "lun 3", "caption": "FUNNEL", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_1_lunes__LM__00.jpg"}, {"archivo": "s04.jpg", "poster": "media/dia_1_lunes__LM__01.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_1_lunes__LM"}, {"id": "STORIES_JORDI_LUNES_FINAL", "cuenta": "JORDI", "tipo": "story", "dia": "lun 3", "caption": "Secuencia dictada por Javi 21:04: dolor -> alumno Mexico -> alumno 10k -> PDF validar creativos (Responde RECURSOS). SUBIDA la de Santi hoy; esta es la nuestra aprobada de formato.", "archivos": [{"archivo": "s02.jpg", "poster": null}, {"archivo": "s03.jpg", "poster": null}, {"archivo": "s04.jpg", "poster": null}, {"archivo": "s05.jpg", "poster": null}], "origen": "produccion 3-ago noche"}, {"id": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO", "cuenta": "JAVI", "tipo": "meme", "dia": "mar 4", "caption": "", "archivos": [{"archivo": "M1_empleo_vs_negocio.mp4", "poster": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.jpg", "video": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.mp4", "peso_mb": 0.22}], "origen": "PARA_REVISAR/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO"}, {"id": "REEL_JAVI_LO_PEOR_1AGO", "cuenta": "JAVI", "tipo": "reel", "dia": "mar 4", "caption": "", "archivos": [{"archivo": "REEL_JAVI_LO_PEOR.mp4", "poster": "media/REEL_JAVI_LO_PEOR_1AGO__00.jpg", "video": "media/REEL_JAVI_LO_PEOR_1AGO__00.mp4", "peso_mb": 0.76}], "origen": "PARA_REVISAR/REEL_JAVI_LO_PEOR_1AGO"}, {"id": "REEL_JAVI_QA21_V2", "cuenta": "JAVI", "tipo": "reel", "dia": "mar 4", "caption": "\"No venimos de ser programadores\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «SIN SER PROGRAMADORES» + karaoke verde + 2 insertos b-roll.", "archivos": [{"archivo": "REEL_JAVI_QA21_V2.mp4", "poster": "media/REEL_JAVI_QA21_V2__00.jpg", "video": "media/REEL_JAVI_QA21_V2__00.mp4", "peso_mb": 1.76}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "dia_2_martes__cajita", "cuenta": "JAVI", "tipo": "story", "dia": "mar 4", "caption": "(cajita — sin palabra clave)\nEl accionable de hoy es el sticker de preguntas; no se pide responder ninguna palabra.", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_2_martes__cajita__00.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_2_martes__cajita"}, {"id": "STORIES_JAVI_LUNES_FINAL", "cuenta": "JAVI", "tipo": "story", "dia": "mar 4", "caption": "Javi 22:25: 'subelas manana, pasaselas a Santi y listo'. Win Sergi 66k -> vehiculo 1a1 -> DOC de la mentoria (Responde DOC).", "archivos": [{"archivo": "s03.jpg", "poster": null}, {"archivo": "s05_vehiculo.jpg", "poster": null}, {"archivo": "s06_cta_doc.jpg", "poster": null}], "origen": "produccion 3-ago noche"}, {"id": "MEMES_JORDI_TANDA_1AGO", "cuenta": "JORDI", "tipo": "meme", "dia": "mar 4", "caption": "", "archivos": [{"archivo": "M1_dropshipping_muerto.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__00.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__00.mp4", "peso_mb": 0.22}, {"archivo": "M2_logo_tres_meses.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__01.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__01.mp4", "peso_mb": 0.2}, {"archivo": "M3_sexta_creatividad.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__02.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__02.mp4", "peso_mb": 0.18}, {"archivo": "M4_margen_despues.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__03.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__03.mp4", "peso_mb": 0.19}, {"archivo": "M5_mes_record_sin_caja.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__04.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__04.mp4", "peso_mb": 0.21}, {"archivo": "M6_checkout_codigo_postal.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__05.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__05.mp4", "peso_mb": 0.17}, {"archivo": "M7_empezar_de_cero.mp4", "poster": "media/MEMES_JORDI_TANDA_1AGO__06.jpg", "video": "media/MEMES_JORDI_TANDA_1AGO__06.mp4", "peso_mb": 0.21}], "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_1AGO"}, {"id": "STORIES_JORDI_MARTES_A7_4AGO", "cuenta": "JORDI", "tipo": "story", "dia": "mar 4", "caption": "Secuencia dolor-ads del martes: dolor (creativos) → win México 200k (ORGANICO 10-jul, producto y profit difuminados) → win 20k€ + contrata editor (ORGANICO 23-jul) → CTA «RECURSOS» con la calculadora de ROAS borrosa. Formato lunes aprobado; capturas NUEVAS (las del lunes quedaron quemadas). Incluye KIT_MANUAL por si Jordi las monta en la app.", "archivos": [{"archivo": "s01_dolor.jpg", "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__00.jpg"}, {"archivo": "s02_win_mexico.jpg", "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__01.jpg"}, {"archivo": "s03_win_editor.jpg", "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__02.jpg"}, {"archivo": "s04_cta_recursos.jpg", "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__03.jpg"}], "origen": "produccion 4-ago manana (gate TODO PASS)"}, {"id": "CARRUSEL_CLON_JAVI_OFERTA_2AGO", "cuenta": "JAVI", "tipo": "carrusel", "dia": "mié 5", "caption": "Te entran visitas y no te compran. Y lo primero que hace todo el mundo es cambiar de producto.\n\nCasi nunca es el producto. Es la oferta. Y la oferta son tres cosas.\n\n1. Precio. No se copia del de al l", "archivos": [{"archivo": "slide_01.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.mp4", "peso_mb": 0.16}, {"archivo": "slide_02.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.mp4", "peso_mb": 0.09}, {"archivo": "slide_03.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.mp4", "peso_mb": 0.08}, {"archivo": "slide_04.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.mp4", "peso_mb": 0.08}, {"archivo": "slide_05.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.mp4", "peso_mb": 0.09}, {"archivo": "slide_06.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.mp4", "peso_mb": 0.09}, {"archivo": "slide_07.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.mp4", "peso_mb": 0.11}, {"archivo": "zz_PREVIEW_CARRUSEL_COMPLETO.mp4", "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.jpg", "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.mp4", "peso_mb": 0.71}], "origen": "PARA_REVISAR/CARRUSEL_CLON_JAVI_OFERTA_2AGO"}, {"id": "REEL_JAVI_QA11_V2", "cuenta": "JAVI", "tipo": "reel", "dia": "mié 5", "caption": "Mi padre me dijo: \"¿Estás loco?\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «¿ESTÁS LOCO?» — MI PADRE» + karaoke + insertos.", "archivos": [{"archivo": "REEL_JAVI_QA11_V2.mp4", "poster": "media/REEL_JAVI_QA11_V2__00.jpg", "video": "media/REEL_JAVI_QA11_V2__00.mp4", "peso_mb": 1.58}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "dia_3_miercoles__LM", "cuenta": "JAVI", "tipo": "story", "dia": "mié 5", "caption": "Palabra clave del día: PROVEEDOR\n(solo en la s04 — la clase de proveedores de la mentoría. Gratis; entrega coordinada antes de subir)", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_3_miercoles__LM__00.jpg"}, {"archivo": "s03.jpg", "poster": "media/dia_3_miercoles__LM__01.jpg"}, {"archivo": "s04.jpg", "poster": "media/dia_3_miercoles__LM__02.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_3_miercoles__LM"}, {"id": "STORIES_JAVI_MIERCOLES_A5_5AGO", "cuenta": "JAVI", "tipo": "story", "dia": "mié 5", "caption": "A5 miércoles: dolor-ads → win 8.446 MXN +92% (ORGANICO 22-jul, la única libre para Javi) → CTA «RECURSOS» con el recurso Video Ads borroso. 3 stories. Ojo: el fondo 'logo-pantalla' se descartó porque el gate de identidad detectó a JORDI (0.98).", "archivos": [{"archivo": "s01_dolor.jpg", "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__00.jpg"}, {"archivo": "s02_win_mxn.jpg", "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__01.jpg"}, {"archivo": "s03_cta_recursos.jpg", "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__02.jpg"}], "origen": "produccion 4-ago mediodia (gate TODO PASS)"}, {"id": "CARRUSEL_JORDI_RECURSOS_29JUL", "cuenta": "JORDI", "tipo": "carrusel", "dia": "mié 5", "caption": "", "archivos": [{"archivo": "00_PREVIEW_con_musica.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__00.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__00.mp4", "peso_mb": 0.88}, {"archivo": "slide_01.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__01.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__01.mp4", "peso_mb": 0.17}, {"archivo": "slide_02.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__02.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__02.mp4", "peso_mb": 0.14}, {"archivo": "slide_03.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__03.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__03.mp4", "peso_mb": 0.08}, {"archivo": "slide_04.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__04.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__04.mp4", "peso_mb": 0.08}, {"archivo": "slide_05.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__05.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__05.mp4", "peso_mb": 0.08}, {"archivo": "slide_06.mp4", "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__06.jpg", "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__06.mp4", "peso_mb": 0.32}], "origen": "PARA_REVISAR/_WIP/CARRUSEL_JORDI_RECURSOS_29JUL"}, {"id": "REEL_JORDI_EMPEZAR_4AGO", "cuenta": "JORDI", "tipo": "reel", "dia": "mié 5", "caption": "¿Cuánto necesitas de verdad para empezar? La respuesta sin humo.\n\n#ecommerce #emprender #mentoria\n\nZYRO nuevo: hook lambo arrancando «¿CUÁNTO NECESITAS PARA EMPEZAR?» + drop Cochise + karaoke amarillo + 2 insertos POV. Esqueleto FILTRO V2.", "archivos": [{"archivo": "REEL_JORDI_EMPEZAR.mp4", "poster": "media/REEL_JORDI_EMPEZAR_4AGO__00.jpg", "video": "media/REEL_JORDI_EMPEZAR_4AGO__00.mp4", "peso_mb": 2.72}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "dia_3_miercoles__softCTA", "cuenta": "JORDI", "tipo": "story", "dia": "mié 5", "caption": "PLAN", "archivos": [{"archivo": "s03.jpg", "poster": "media/dia_3_miercoles__softCTA__00.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_3_miercoles__softCTA"}, {"id": "MEME_JAVI_M2_CLASE_17MIN_1AGO", "cuenta": "JAVI", "tipo": "meme", "dia": "jue 6", "caption": "", "archivos": [{"archivo": "M2_clase_17_minutos.mp4", "poster": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.jpg", "video": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.mp4", "peso_mb": 0.19}], "origen": "PARA_REVISAR/MEME_JAVI_M2_CLASE_17MIN_1AGO"}, {"id": "REEL_JAVI_PANEL_MODULO_1AGO", "cuenta": "JAVI", "tipo": "reel", "dia": "jue 6", "caption": "", "archivos": [{"archivo": "R3_panel_modulo_tienda.mp4", "poster": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.jpg", "video": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.mp4", "peso_mb": 1.22}], "origen": "PARA_REVISAR/REEL_JAVI_PANEL_MODULO_1AGO"}, {"id": "REEL_JAVI_QA16_V2", "cuenta": "JAVI", "tipo": "reel", "dia": "jue 6", "caption": "El verdadero millonario no es el que tú crees\n\n#ecommerce #mentoria #emprender\n\nHook evento «MILLONARIO = TIEMPO LIBRE» + karaoke + insertos.", "archivos": [{"archivo": "REEL_JAVI_QA16_V2.mp4", "poster": "media/REEL_JAVI_QA16_V2__00.jpg", "video": "media/REEL_JAVI_QA16_V2__00.mp4", "peso_mb": 1.82}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "C1_MEME_JORDI_SE_NOTA", "cuenta": "JORDI", "tipo": "meme", "dia": "jue 6", "caption": "", "archivos": [{"archivo": "C1_01_soporte_meta.mp4", "poster": "media/C1_MEME_JORDI_SE_NOTA__00.jpg", "video": "media/C1_MEME_JORDI_SE_NOTA__00.mp4", "peso_mb": 0.19}, {"archivo": "C1_02_cuenta_desactivada.mp4", "poster": "media/C1_MEME_JORDI_SE_NOTA__01.jpg", "video": "media/C1_MEME_JORDI_SE_NOTA__01.mp4", "peso_mb": 0.19}, {"archivo": "C1_03_meta_ads_familia.mp4", "poster": "media/C1_MEME_JORDI_SE_NOTA__02.jpg", "video": "media/C1_MEME_JORDI_SE_NOTA__02.mp4", "peso_mb": 0.19}, {"archivo": "C1_PORTADA_gridsafe.png", "poster": "media/C1_MEME_JORDI_SE_NOTA__03.jpg"}], "origen": "PARA_REVISAR/FASE1_MEMES_18JUL/C1_MEME_JORDI_SE_NOTA"}, {"id": "dia_4_jueves__cajita", "cuenta": "JORDI", "tipo": "story", "dia": "jue 6", "caption": "(cajita — sin palabra clave)\nEl accionable de hoy es el sticker de preguntas; no se pide responder ninguna palabra.", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_4_jueves__cajita__00.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_4_jueves__cajita"}, {"id": "REEL_JAVI_PERSEVERANCIA_2AGO", "cuenta": "JAVI", "tipo": "reel", "dia": "vie 7", "caption": "Me pidieron una palabra. Una sola.\n\nNo dije talento. No dije suerte. No dije timing.\n\nDije perseverancia.\n\nY no es la frase bonita de turno: es lo único que separa al que sigue cuando el negocio deja\n", "archivos": [{"archivo": "REEL_JAVI_PERSEVERANCIA.mp4", "poster": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.jpg", "video": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.mp4", "peso_mb": 0.8}], "origen": "PARA_REVISAR/REEL_JAVI_PERSEVERANCIA_2AGO"}, {"id": "REEL_JAVI_QA19_V2", "cuenta": "JAVI", "tipo": "reel", "dia": "vie 7", "caption": "\"Soy Javier Sánchez, 45 años, padre de familia, exfutbolista\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «45 AÑOS Y EMPECÉ DE CERO» + karaoke + insertos.", "archivos": [{"archivo": "REEL_JAVI_QA19_V2.mp4", "poster": "media/REEL_JAVI_QA19_V2__00.jpg", "video": "media/REEL_JAVI_QA19_V2__00.mp4", "peso_mb": 1.34}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "dia_5_viernes__LM", "cuenta": "JAVI", "tipo": "story", "dia": "vie 7", "caption": "ROAS", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_5_viernes__LM__00.jpg"}, {"archivo": "s04.jpg", "poster": "media/dia_5_viernes__LM__01.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_5_viernes__LM"}, {"id": "REEL_JORDI_HOOK_TESTIMONIOS_25JUL", "cuenta": "JORDI", "tipo": "reel", "dia": "vie 7", "caption": "Los resultados son lo bonito. El proceso es lo difícil.\n\nEn redes solo se enseña la parte bonita. Nadie cuenta los días malos, las noches sin dormir ni las decisiones que tomas a ciegas cuando no tien", "archivos": [{"archivo": "REEL_JORDI_HOOK_TESTIMONIOS.mp4", "poster": "media/REEL_JORDI_HOOK_TESTIMONIOS_25JUL__00.jpg", "video": "media/REEL_JORDI_HOOK_TESTIMONIOS_25JUL__00.mp4", "peso_mb": 1.55}], "origen": "PARA_REVISAR/_WIP/REEL_JORDI_HOOK_TESTIMONIOS_25JUL"}, {"id": "REEL_JORDI_PROVEEDOR_4AGO", "cuenta": "JORDI", "tipo": "reel", "dia": "vie 7", "caption": "Tu proveedor no es tu enemigo: es tu aliado. Y elegirlo bien marca la diferencia.\n\n#ecommerce #dropshipping #mentoria\n\nZYRO nuevo 2: hook Jordi al volante «DEJA DE PELEARTE CON TU PROVEEDOR» + Yeat + karaoke amarillo + 2 insertos POV. Tu proveedor es tu aliado.", "archivos": [{"archivo": "REEL_JORDI_PROVEEDOR.mp4", "poster": "media/REEL_JORDI_PROVEEDOR_4AGO__00.jpg", "video": "media/REEL_JORDI_PROVEEDOR_4AGO__00.mp4", "peso_mb": 2.33}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO", "cuenta": "JAVI", "tipo": "carrusel", "dia": "sáb 8", "caption": "Antes de tocar el presupuesto de anuncios miro cinco cosas. Y las miro en este orden.\n\n5. Margen real por pedido. Lo que queda después de producto, envío, pasarela y devolución. Si eso\nestá en rojo, e", "archivos": [{"archivo": "RANKING_JAVI_ANTES_DE_ESCALAR.mp4", "poster": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.jpg", "video": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.mp4", "peso_mb": 1.15}], "origen": "PARA_REVISAR/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO"}, {"id": "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO", "cuenta": "JAVI", "tipo": "meme", "dia": "sáb 8", "caption": "", "archivos": [{"archivo": "M3_64_herramientas.mp4", "poster": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.jpg", "video": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.mp4", "peso_mb": 0.19}], "origen": "PARA_REVISAR/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO"}, {"id": "MEME_LB_JAVI_28JUL", "cuenta": "JAVI", "tipo": "meme", "dia": "sáb 8", "caption": "Según los comentarios, nuestros alumnos no existen. Vinieron todos al evento igualmente.\n#ecommerce #mentorium", "archivos": [{"archivo": "MEME_LB_JAVI_ABRAZOS.mp4", "poster": "media/MEME_LB_JAVI_28JUL__00.jpg", "video": "media/MEME_LB_JAVI_28JUL__00.mp4", "peso_mb": 0.32}, {"archivo": "MEME_LB_JAVI_ABRAZOS_PORTADA.png", "poster": "media/MEME_LB_JAVI_28JUL__01.jpg"}], "origen": "PARA_REVISAR/_WIP/MEME_LB_JAVI_28JUL"}, {"id": "REEL_JAVI_QA12_V2", "cuenta": "JAVI", "tipo": "reel", "dia": "sáb 8", "caption": "\"Vende humos\" — la respuesta de Javi\n\n#ecommerce #mentoria #emprender\n\nHook evento «\"VENDE HUMOS\" — MI RESPUESTA» + karaoke + insertos.", "archivos": [{"archivo": "REEL_JAVI_QA12_V2.mp4", "poster": "media/REEL_JAVI_QA12_V2__00.jpg", "video": "media/REEL_JAVI_QA12_V2__00.mp4", "peso_mb": 2.24}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "CARRUSEL_JORDI_FILTRO_2AGO", "cuenta": "JORDI", "tipo": "carrusel", "dia": "sáb 8", "caption": "CUENTA: @jordigarcia89\nFORMATO: carrusel de 6 slides 4:5. Slide 1 = CLIP DE VÍDEO (1080x1350, 7 s, con música);\nslides 2-6 = PNG 2160x2700.\nSPEC: la MISMA clonada de @gala_lc que usa CARRUSEL_CLON_GALA_JORDI_31JUL (foto real a sangre,\ntitular serif Playfair + cuerpo Montserrat, UN solo acento, arco objeción -> remate -> antes\ncrudo -> verdad -> prueba real -> reencuadre + CTA). Cambia el QUÉ, nunca el CÓMO.\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard, pieza a pieza.\n\nCAPTION (pegar tal cual):\n\"He probado cinco productos y ninguno ha tirado.\"\n\nMe lo dicen cada semana. Y casi siempre el fallo no está en el producto: está en que se lanza el\nsexto sin haber mirado qué pasó con los cinco anteriores.\n\nPara. Y mira hacia atrás. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió\nde verdad, sin tener que regalarlo?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto. Y de\nese patrón sale tu filtro. El tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\nComenta RECURSOS y te paso el panel entero. Gratis.\n\n#ecommerce #dropshipping #producto\n\nNOTAS PARA GERARD:\n- Cero cifras de facturación de Jordi (Hacienda). Su autoridad va sin número: \"alguien que ha\n  tirado más productos de los que recuerda\".\n- Las dos capturas son de herramientas REALES y publicadas: validador-producto.html y\n  calculadora-rentabilidad-sku.html (06_HERRAMIENTAS_HTML/_deploy/). Se muestran en su estado\n  inicial, sin rellenar: no hay ni un dato inventado ni un resultado de alumno.\n- Portada = CLIP DE VÍDEO, no foto (Gerard 24-jul). Es también lo que la distingue de la portada\n  del carrusel de Javi (gate C6: tipo de portada distinto).\n- El copy sale del guion ya aprobado por gate de REEL_JORDI_FILTRO_2AGO. Ese reel y este carrusel\n  cuentan lo mismo: NO se publican el mismo día. Escalonar 2-3 días (regla C6).\n- Cuerpo de texto subido de 48 a 62 px respecto al clon del 31-jul: en móvil el tamaño original\n  se leía a 9 px. Responde a la petición de Jordi del 1-ago (20:49): que el texto se vea más grande.\n\nAUDITORÍA 2-ago (segunda pasada, slides miradas una a una):\n- ARREGLADO · slide 5. El pantallazo de la calculadora estaba cortado POR LA MITAD de la fila de\n  inputs: la fila quedaba a ras del borde, sin margen, y el panel \"TUS PRODUCTOS\" salía rebanado.\n  Parecía un pantallazo a medio cargar, y al lado de la slide 4 (que cierra limpia y redondeada)\n  cantaba. Re-cortado del mismo `rentabilidad.png`: ahora entra la tarjeta ENTERA — cabecera, las\n  3 filas, \"+ Añadir producto\" y el botón \"Analizar rentabilidad\". Además queda en formato retrato\n  como la captura de la slide 4, así que las dos slides de prueba pesan visualmente igual.\n- AÑADIDO · `_gate/_CLON_CHECK.png` — el lado a lado referente/pieza que exige replica-100.md\n  punto 5 y que faltaba. Cuatro columnas: portada, texto, pruebas y cierre. Va dentro de `_gate/`\n  a propósito: en la raíz de la pieza, el gate lo audita como si fuera una slide más y lo tumba\n  por apaisado (2200x1536), que es justo lo que tiene que ser un lado a lado.\n- DESVIACIÓN QUE DECIDE GERARD (está marcada en el _CLON_CHECK): en la portada, el referente\n  centra el remate en MAYÚSCULAS sobre un plano de objeto (el lambo). Aquí el remate va a la\n  IZQUIERDA y en caja baja, porque la portada es un CLIP de Jordi hablando y su cara ocupa la\n  mitad derecha: centrarlo se lo comería. Es la única desviación del CÓMO en toda la pieza.\n- OJO A LA FOTO DE LA SLIDE 2 (criterio, no fallo): es un rincón de hotel — butaca, planta y un\n  enchufe con el cable colgando en medio del encuadre. De Jordi solo se le ve el brazo. Encaja con\n  la spec (el referente también mete un plano ambiente sin cara), pero es el asset más flojo de la\n  pieza. Si quieres otra, se cambia y se vuelve a pasar el gate.\n- Verificado hoy, con mis ojos: identidad de la portada (Facenet512, dist_jordi 0,115 vs\n  dist_javi 0,576, exit 0) · cara de la portada a 89,8/255 de luminancia y la del cierre a 85,6\n  (mínimo 70) · las 6 slides caben en el 1:1 que recorta la cuadrícula de IG · las dos capturas\n  son pantallazos Playwright de los HTML reales y TODO lo que se ve en ellas (45, 12, 4, 80, \"Ej:\n  Masajeador\", el 60%, el rango 25-80€) son atributos `placeholder=` del propio HTML: cero dato\n  tecleado, cero dato inventado.\n\n[ARREGLADO 4-ago] La slide 6 usaba un pantallazo del grupo de alumnos (fuente prohibida): sustituida por win real de ORGANICO (panel 12 mil +49% + mensaje del alumno). Gate TODO PASS.", "archivos": [{"archivo": "s01_portada.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.mp4", "peso_mb": 0.21}, {"archivo": "s02_texto.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.mp4", "peso_mb": 0.09}, {"archivo": "s03_texto.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.mp4", "peso_mb": 0.1}, {"archivo": "s04_pruebas.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.mp4", "peso_mb": 0.09}, {"archivo": "s05_pruebas.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.mp4", "peso_mb": 0.09}, {"archivo": "s06_testimonio.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.mp4", "peso_mb": 0.09}, {"archivo": "s07_cierre.mp4", "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.jpg", "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.mp4", "peso_mb": 0.09}], "origen": "arreglo 4-ago manana (gate TODO PASS)"}, {"id": "MEME_LB_JORDI_28JUL", "cuenta": "JORDI", "tipo": "meme", "dia": "sáb 8", "caption": "Si el método fuera tan bueno, no necesitaría vendértelo. Piénsalo.\n#ecommerce", "archivos": [{"archivo": "MEME_LB_JORDI_CURSO.mp4", "poster": "media/MEME_LB_JORDI_28JUL__00.jpg", "video": "media/MEME_LB_JORDI_28JUL__00.mp4", "peso_mb": 0.19}, {"archivo": "MEME_LB_JORDI_CURSO_PORTADA.png", "poster": "media/MEME_LB_JORDI_28JUL__01.jpg"}], "origen": "PARA_REVISAR/_WIP/MEME_LB_JORDI_28JUL"}, {"id": "MEME_JAVI_M4_PRECIO_ANTES_1AGO", "cuenta": "JAVI", "tipo": "meme", "dia": "dom 9", "caption": "", "archivos": [{"archivo": "M4_precio_antes_de_empezar.mp4", "poster": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.jpg", "video": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.mp4", "peso_mb": 0.22}], "origen": "PARA_REVISAR/MEME_JAVI_M4_PRECIO_ANTES_1AGO"}, {"id": "REEL_JAVI_HOOK_TESTIMONIOS_25JUL", "cuenta": "JAVI", "tipo": "reel", "dia": "dom 9", "caption": "En el 90% de las formaciones, el que da la cara no está en el día a día.\n\nLo digo yo, pero no hace falta que me creas: puse una cámara en el último evento y pregunté a la gente que vino qué se llevaba", "archivos": [{"archivo": "REEL_JAVI_HOOK_TESTIMONIOS.mp4", "poster": "media/REEL_JAVI_HOOK_TESTIMONIOS_25JUL__00.jpg", "video": "media/REEL_JAVI_HOOK_TESTIMONIOS_25JUL__00.mp4", "peso_mb": 1.73}], "origen": "PARA_REVISAR/_WIP/REEL_JAVI_HOOK_TESTIMONIOS_25JUL"}, {"id": "REEL_JAVI_QA24_V2", "cuenta": "JAVI", "tipo": "reel", "dia": "dom 9", "caption": "\"Yo no puedo abrir el ordenador por ti\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «YO NO ABRO EL PC POR TI» + karaoke + insertos.", "archivos": [{"archivo": "REEL_JAVI_QA24_V2.mp4", "poster": "media/REEL_JAVI_QA24_V2__00.jpg", "video": "media/REEL_JAVI_QA24_V2__00.mp4", "peso_mb": 1.31}], "origen": "produccion 4-ago madrugada (gate PASS)"}, {"id": "dia_7_domingo__resultados", "cuenta": "JAVI", "tipo": "story", "dia": "dom 9", "caption": "(resultados - sin palabra)", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_7_domingo__resultados__00.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_7_domingo__resultados"}, {"id": "dia_7_domingo__LM", "cuenta": "JORDI", "tipo": "story", "dia": "dom 9", "caption": "ESCALA", "archivos": [{"archivo": "s02.jpg", "poster": "media/dia_7_domingo__LM__00.jpg"}, {"archivo": "s04.jpg", "poster": "media/dia_7_domingo__LM__01.jpg"}], "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_7_domingo__LM"}, {"id": "01_MEME_SENOTA_F2_CUENTA_DESACTIVADA", "cuenta": "?", "tipo": "meme", "dia": "sin día", "caption": "", "archivos": [{"archivo": "F2_cuenta_desactivada_VAR_A.mp4", "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__00.jpg", "video": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__00.mp4", "peso_mb": 0.17}, {"archivo": "F2_cuenta_desactivada_VAR_B.mp4", "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__01.jpg", "video": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__01.mp4", "peso_mb": 0.2}, {"archivo": "PORTADA_VAR_A.png", "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__02.jpg"}, {"archivo": "PORTADA_VAR_B.png", "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__03.jpg"}], "origen": "PARA_REVISAR/VARIANTES_WINNERS_18JUL/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA"}, {"id": "02_MEME_SENOTA_F3_META_VS_FAMILIA", "cuenta": "?", "tipo": "meme", "dia": "sin día", "caption": "", "archivos": [{"archivo": "F3_meta_ads_familia_VAR_A.mp4", "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__00.jpg", "video": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__00.mp4", "peso_mb": 0.22}, {"archivo": "F3_meta_ads_familia_VAR_B.mp4", "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__01.jpg", "video": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__01.mp4", "peso_mb": 0.17}, {"archivo": "PORTADA_VAR_A.png", "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__02.jpg"}, {"archivo": "PORTADA_VAR_B.png", "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__03.jpg"}], "origen": "PARA_REVISAR/VARIANTES_WINNERS_18JUL/02_MEME_SENOTA_F3_META_VS_FAMILIA"}, {"id": "REEL_J02_AUTODIDACTA_28JUL", "cuenta": "?", "tipo": "reel", "dia": "sin día", "caption": "Aprender solo no es malo. Es lento.\n\nY lo lento en esto se paga con dinero que se va en pruebas que ya sabía alguien que no funcionaban.\n\nEn el evento uno contó que empezó medio autodidacta y estuvo m", "archivos": [{"archivo": "REEL_J02_AUTODIDACTA.mp4", "poster": "media/REEL_J02_AUTODIDACTA_28JUL__00.jpg", "video": "media/REEL_J02_AUTODIDACTA_28JUL__00.mp4", "peso_mb": 2.03}], "origen": "PARA_REVISAR/_WIP/REEL_J02_AUTODIDACTA_28JUL"}, {"id": "05_JAVI_CASO_SARA_183", "cuenta": "JAVI", "tipo": "otro", "dia": "reserva", "caption": "", "archivos": [{"archivo": "CASO_SARA_183_VAR_A.mp4", "poster": "media/05_JAVI_CASO_SARA_183__00.jpg", "video": "media/05_JAVI_CASO_SARA_183__00.mp4", "peso_mb": 0.68}, {"archivo": "CASO_SARA_183_VAR_B.mp4", "poster": "media/05_JAVI_CASO_SARA_183__01.jpg", "video": "media/05_JAVI_CASO_SARA_183__01.mp4", "peso_mb": 0.68}, {"archivo": "PORTADA_VAR_A.png", "poster": "media/05_JAVI_CASO_SARA_183__02.jpg"}, {"archivo": "PORTADA_VAR_B.png", "poster": "media/05_JAVI_CASO_SARA_183__03.jpg"}], "origen": "PARA_REVISAR/VARIANTES_WINNERS_18JUL/05_JAVI_CASO_SARA_183"}, {"id": "STORIES_JAVI_FREESTYLE_2AGO", "cuenta": "JAVI", "tipo": "story", "dia": "reserva", "caption": "(stories — sin caption; el CTA va en J4: «Responde ORDEN» → Auditor de Tienda y Checkout, gratis)\nOrden de publicación: J1 (sábado 8:33) → J2 (la flecha) → J3 (el grupo) → J4 (recurso).\nMisma palabra ", "archivos": [{"archivo": "J1_sabado_833.jpg", "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__00.jpg"}, {"archivo": "J2_flecha.jpg", "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__01.jpg"}, {"archivo": "J3_grupo.jpg", "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__02.jpg"}, {"archivo": "J4_recurso.jpg", "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__03.jpg"}], "origen": "PARA_REVISAR/STORIES_JAVI_FREESTYLE_2AGO"}, {"id": "STORIES_JORDI_FREESTYLE_2AGO", "cuenta": "JORDI", "tipo": "story", "dia": "reserva", "caption": "(stories — no llevan caption; el CTA va en la S4: «Responde MARGEN y te la mando entera, gratis»)\nOrden de publicación: S1 → S2 → S3 → S4. Las tres primeras son prueba, la cuarta captura.", "archivos": [{"archivo": "S1_gracias.jpg", "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__00.jpg"}, {"archivo": "S2_curva.jpg", "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__01.jpg"}, {"archivo": "S3_julio.jpg", "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__02.jpg"}, {"archivo": "S4_recurso.jpg", "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__03.jpg"}], "origen": "PARA_REVISAR/STORIES_JORDI_FREESTYLE_2AGO"}, {"id": "STORIES_JORDI_TESTIMONIOS_1AGO", "cuenta": "JORDI", "tipo": "story", "dia": "reserva", "caption": "", "archivos": [{"archivo": "T1_primera_venta.jpg", "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__00.jpg"}, {"archivo": "T1_primera_venta.png", "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__01.jpg"}, {"archivo": "T2_dsers_cayo.jpg", "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__02.jpg"}, {"archivo": "T2_dsers_cayo.png", "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__03.jpg"}, {"archivo": "T3_clase.jpg", "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__04.jpg"}, {"archivo": "T3_clase.png", "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__05.jpg"}], "origen": "PARA_REVISAR/STORIES_JORDI_TESTIMONIOS_1AGO"}, {"id": "STORIES_JORDI_WINS_1AGO", "cuenta": "JORDI", "tipo": "story", "dia": "reserva", "caption": "", "archivos": [{"archivo": "W1_margen_25.jpg", "poster": "media/STORIES_JORDI_WINS_1AGO__00.jpg"}, {"archivo": "W1_margen_25.png", "poster": "media/STORIES_JORDI_WINS_1AGO__01.jpg"}, {"archivo": "W2_pedido_1003.jpg", "poster": "media/STORIES_JORDI_WINS_1AGO__02.jpg"}, {"archivo": "W2_pedido_1003.png", "poster": "media/STORIES_JORDI_WINS_1AGO__03.jpg"}, {"archivo": "W3_mes_anterior.jpg", "poster": "media/STORIES_JORDI_WINS_1AGO__04.jpg"}, {"archivo": "W3_mes_anterior.png", "poster": "media/STORIES_JORDI_WINS_1AGO__05.jpg"}], "origen": "PARA_REVISAR/STORIES_JORDI_WINS_1AGO"}]};
+const CAL={"aviso": "", "filas": [{"cuenta": "JAVI", "dia": "mar 4", "p1": "[P] REEL_JAVI_CERO_2AGO (TOFU dolor)", "p2": "[G] REEL_JAVI_QA21_V2 «SIN SER PROGRAMADORES» (TOFU)", "p3": "[P] CARRUSEL_CLON_JAVI_OFERTA (MOFU)", "stories": "[P] STORIES_JAVI_LUNES_FINAL — **pasar a Santi ANTES**"}, {"cuenta": "JAVI", "dia": "mié 5", "p1": "[G] REEL_JAVI_QA11_V2 «¿ESTÁS LOCO? — MI PADRE» (TOFU)", "p2": "[P] RANKING_JAVI_ANTES_DE_ESCALAR (MOFU)", "p3": "[G] CARRUSEL_CLON_JAVI_ORDEN (MOFU)", "stories": "[A5] secuencia dolor-ads → win ORGANICO → PDF creativos"}, {"cuenta": "JAVI", "dia": "jue 6", "p1": "[P] REEL_JAVI_LO_PEOR_1AGO (TOFU)", "p2": "[G] REEL_JAVI_QA16_V2 «MILLONARIO = TIEMPO LIBRE» (MOFU)", "p3": "[S] CARRUSEL_CASO_JAVI_NAOUFAL (el que elija Santi)", "stories": "[P] dia_3_miercoles__LM (rotado)"}, {"cuenta": "JAVI", "dia": "vie 7", "p1": "[G] REEL_JAVI_QA19_V2 «45 AÑOS Y EMPECÉ DE CERO» (TOFU)", "p2": "[P] REEL_JAVI_PERSEVERANCIA (MOFU)", "p3": "[A3] carrusel caso 2 (si Javi pasa material)", "stories": "[P] dia_5_viernes__LM"}, {"cuenta": "JAVI", "dia": "sáb 8", "p1": "[P] REEL_JAVI_PANEL_MODULO (BOFU)", "p2": "[G] REEL_JAVI_QA12_V2 «VENDE HUMOS — MI RESPUESTA» (TOFU)", "p3": "[P] 05_JAVI_CASO_SARA_183 (BOFU carrusel)", "stories": "[A6] secuencia nueva"}, {"cuenta": "JAVI", "dia": "dom 9", "p1": "[P] REEL_JAVI_HOOK_TESTIMONIOS (BOFU)", "p2": "[G] REEL_JAVI_QA24_V2 «YO NO ABRO EL PC POR TI» (MOFU)", "p3": "[A4] carrusel valor (de la lista IDEAS #2 ROAS)", "stories": "[P] dia_7_domingo__resultados"}, {"cuenta": "JORDI", "dia": "mar 4", "p1": "[P] REEL_JORDI_CEREBRO_CORAZON_2AGO (TOFU)", "p2": "[P] CARRUSEL_JORDI_RECURSOS (MOFU)", "p3": "[P] FACTO_VIDEO_JORDI_V2 (TOFU)", "stories": "[A7] dolor-ads → México/10k (formato lunes, capturas nuevas)"}, {"cuenta": "JORDI", "dia": "mié 5", "p1": "[A8] REEL ZYRO nuevo 1 con hook-clip lambo (TOFU)", "p2": "[P] REEL_JORDI_MIEDO_QUEDIRAN (TOFU)", "p3": "[A9] carrusel 3-fotos historia alumno (idea Jordi 21:13)", "stories": "[P] dia_3_miercoles__softCTA"}, {"cuenta": "JORDI", "dia": "jue 6", "p1": "[P] REEL_JORDI_NO_CAMBIO_NADA (TOFU)", "p2": "[A11] carrusel Netflix-reframe «29€/mes» (idea Jordi, versión feed)", "p3": "[S] CARRUSEL_CASO_JORDI_MARGEN (A o B)", "stories": "[P] dia_4_jueves__cajita"}, {"cuenta": "JORDI", "dia": "vie 7", "p1": "[P] REEL_JORDI_HOOK_TESTIMONIOS (BOFU)", "p2": "[A10] REEL ZYRO nuevo 2 (MOFU)", "p3": "[S] carrusel caso B", "stories": "[A11b] secuencia Netflix-reflexión stories"}, {"cuenta": "JORDI", "dia": "sáb 8", "p1": "[B→arreglar] CARRUSEL_JORDI_FILTRO — ⛔ slide 6 usa captura del GRUPO DE ALUMNOS (fuente prohibida 3-ago): cambiar por win ORGANICO validada y re-gate", "p2": "[A13] REEL ZYRO nuevo 3 (necesita cosecha de hooks: los 12 ganchos en cooldown)", "p3": "[A9b] carrusel storytelling 2 (si llegan fotos)", "stories": "[P] rotación wins"}, {"cuenta": "JORDI", "dia": "dom 9", "p1": "[A12] reel libre (mejor idea de la semana)", "p2": "[P] REELS de reserva o repesca gate", "p3": "[A14] carrusel cierre semana (aprendizajes)", "stories": "[P] cierre semana"}]};
+const CRITERIO=[{"de": "Santi · 2-ago 21:27", "regla": "Cifras negativas NUNCA en prueba social", "porque": "«-24% de ventas, lo remarcas encima, wtf». Solo resultados positivos."}, {"de": "Santi · 14-abr (chat privado)", "regla": "Cero texto remarcado encima de una win", "porque": "«no agregaría texto en las wins». Una línea corta y factual; la captura manda."}, {"de": "Santi · 2-ago", "regla": "El CTA va al final de una secuencia, con recurso a la vista", "porque": "«No se entiende el CTA... lo tiramos de la nada sin contexto»."}, {"de": "Santi · 2-ago", "regla": "Humanizar o no sale", "porque": "«Se nota que es IA, chat gpt y datos sin contexto»."}, {"de": "Santi · 31-mar", "regla": "Cajita: etiqueta corta dentro, la promesa fuera", "porque": "«nono / mal / nadie va a comentar nada ahí»."}, {"de": "Santi · 14-abr", "regla": "Fondos: capturas del iPhone, nunca Pinterest", "porque": "«saca con iphone todo, los textos tmb hazlos de ahí» + fuente Strong."}, {"de": "Javi · 2-ago", "regla": "Siempre resultados POSITIVOS a la vista", "porque": "«Siempre que vean cosas positivas»."}, {"de": "Jordi · 3-ago 22:23", "regla": "Reel: clip de hook en silencio y luego entra el podcast", "porque": "«no no, el clip silencio y luego pom saltas lo otro». Frontera medida a 2,66 s."}, {"de": "Jordi · 11-jul", "regla": "Montaje de clips: rápido, ~0,88 cortes/s", "porque": "«mete cuatro clips más y que duren menos». Lo que aprobó mide 0,880/s."}, {"de": "Jordi · 22-jul", "regla": "Sus subtítulos en AMARILLO y en el centro", "porque": "«Alomejor meterlo en amarillo» / «Que haga contraste con el coche»."}, {"de": "Jordi · INTOCABLE", "regla": "Cero cifras de facturación SUYAS", "porque": "Inspección de Hacienda. Wins de alumnos sí; sus números no."}, {"de": "Gerard · 4-ago", "regla": "Testimonios solo de ORGANICO o del evento", "porque": "Del grupo de alumnos NADA. Ya se presumió de una tienda que no vendía."}, {"de": "Gerard · 3-ago", "regla": "Una pieza = UNA cifra", "porque": "Facturación y beneficio juntos confunden. Y hay que recortar la captura, no solo el texto."}, {"de": "Gerard · 4-ago", "regla": "Si un alumno no quiere salir, se retira su imagen", "porque": "La placa de 230K sale de la landing. Permiso antes que material."}, {"de": "Javi · post-baneo jul", "regla": "Cero promesas de dinero en bio/landing/CTA", "porque": "Viene de un baneo de Meta. Máximo 3 hashtags."}, {"de": "Jordi · 16-jul", "regla": "Replicar es CLONAR, no interpretar", "porque": "Solo aprueba lo copiado de un winner: misma duración, cortes, tipografía y música."}];
+const CLAVE="mentorium2026";
+const BLOB="https://jsonblob.com/api/jsonBlob/019fc97b-6f60-7c6b-8983-0a922843051e";
+const PERSONAS=["Gerard", "Javi", "Jordi", "Santi", "Cristina", "Marco"];
+
+/* ===== estado ===== */
+let YO=null;                              // nunca se asume: se elige en cada arranque de sesion
+let E={votos:{},slides:{},tareas:[],archivos:[],criterio:[]};
+let TAB="contenido", filtro="todo", buscaCrit="";
+let guardando=false, pendiente=false;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const hoyISO=()=>new Date().toISOString().slice(0,16).replace("T"," ");
+
+function aviso(t,mal){const s=$("#sync");s.textContent=t;s.className="sync ver"+(mal?" mal":"");
+  clearTimeout(s._t);s._t=setTimeout(()=>s.className="sync",mal?4200:1700);}
+
+/* ===== LOGIN (con salida real) ===== */
+function pintaLogin(){
+  $("#lsem").textContent=DATOS.semana||"";
+  const c=$("#lquien");c.innerHTML="";
+  PERSONAS.forEach(p=>{const b=document.createElement("button");b.textContent=p;
+    b.onclick=()=>entrar(p);c.appendChild(b);});
+  // la clave se recuerda, la IDENTIDAD no: cada sesion dice quien es (bug del v2)
+  const ck=localStorage.getItem("mx_clave");if(ck)$("#lclave").value=ck;
+}
+function entrar(p){
+  const v=$("#lclave").value.trim();
+  if(v!==CLAVE){$("#lerr").textContent="Clave incorrecta";return;}
+  localStorage.setItem("mx_clave",v);
+  sessionStorage.setItem("mx_yo",p);          // sessionStorage: al cerrar pestaña se olvida
+  YO=p;$("#login").style.display="none";arranca();
+}
+function salir(){
+  sessionStorage.removeItem("mx_yo");YO=null;
+  $("#login").style.display="flex";$("#lerr").textContent="";
+}
+
+/* ===== PERSISTENCIA con merge (no se pisan entre personas) ===== */
+async function leerBlob(){
+  const r=await fetch(BLOB,{cache:"no-store"});
+  if(!r.ok)throw new Error("GET "+r.status);
+  const j=await r.json();
+  return {votos:j.votos||{},slides:j.slides||{},tareas:j.tareas||[],
+          archivos:j.archivos||[],criterio:j.criterio||[]};
+}
+/* aplica MIS cambios sobre lo ultimo que hay en el servidor, en vez de sobrescribirlo todo */
+async function guardar(aplicarMisCambios){
+  if(guardando){pendiente=aplicarMisCambios;return;}
+  guardando=true;
+  for(let intento=0;intento<3;intento++){
+    try{
+      const srv=await leerBlob();
+      aplicarMisCambios(srv);
+      const r=await fetch(BLOB,{method:"PUT",headers:{"Content-Type":"application/json"},
+                               body:JSON.stringify(srv)});
+      if(!r.ok)throw new Error("PUT "+r.status);
+      E=srv;aviso("Guardado online");guardando=false;
+      const p=pendiente;pendiente=false;if(p)guardar(p);else render();
+      return;
+    }catch(err){
+      if(intento===2){guardando=false;aviso("No se pudo guardar: "+err.message,true);return;}
+      await new Promise(r=>setTimeout(r,600*(intento+1)));
+    }
+  }
+}
+
+/* ===== VOTOS ===== */
+function votar(id,v){
+  if(!YO)return;
+  const prev=(E.votos[id]||{})[YO];
+  const nuevo=(prev&&prev.v===v)?null:v;                 // volver a pulsar = quitar el voto
+  guardar(srv=>{srv.votos[id]=srv.votos[id]||{};
+    if(nuevo)srv.votos[id][YO]={v:nuevo,nota:(prev&&prev.nota)||"",cuando:hoyISO()};
+    else delete srv.votos[id][YO];});
+}
+function nota(id,txt){
+  if(!YO)return;
+  guardar(srv=>{srv.votos[id]=srv.votos[id]||{};
+    const a=srv.votos[id][YO]||{v:"",cuando:hoyISO()};a.nota=txt;srv.votos[id][YO]=a;});
+}
+function votarSlide(id,n,v){
+  if(!YO)return;
+  const k=id+"#"+n, prev=(E.slides[k]||{})[YO];
+  const nuevo=(prev===v)?null:v;
+  guardar(srv=>{srv.slides[k]=srv.slides[k]||{};
+    if(nuevo)srv.slides[k][YO]=nuevo;else delete srv.slides[k][YO];});
+}
+
+/* ===== TAREAS ===== */
+function nuevaTarea(){
+  const i=$("#tinput");const t=i.value.trim();if(!t||!YO)return;
+  const item={id:"t"+Date.now(),texto:t,por:YO,para:"",hecha:false,cuando:hoyISO()};
+  i.value="";
+  guardar(srv=>{srv.tareas.unshift(item);});
+}
+function toggleTarea(id){
+  guardar(srv=>{const t=srv.tareas.find(x=>x.id===id);if(t){t.hecha=!t.hecha;
+    t.porQuien=t.hecha?YO:"";}});
+}
+function borraTarea(id){
+  guardar(srv=>{srv.tareas=srv.tareas.filter(x=>x.id!==id);});
+}
+
+/* ===== ARCHIVOS (enlaces: el panel no aloja ficheros, los apunta) ===== */
+function nuevoArchivo(){
+  const u=$("#ainput").value.trim();if(!u||!YO)return;
+  const tit=$("#atit").value.trim()||u.replace(/^https?:\/\//,"").slice(0,60);
+  $("#ainput").value="";$("#atit").value="";
+  guardar(srv=>{srv.archivos.unshift({id:"a"+Date.now(),titulo:tit,url:u,por:YO,cuando:hoyISO()});});
+}
+function borraArchivo(id){guardar(srv=>{srv.archivos=srv.archivos.filter(x=>x.id!==id);});}
+
+/* ===== RENDER ===== */
+function mias(p){return p.cuenta==="JAVI"||p.cuenta==="JORDI";}
+function pizVis(){
+  return (DATOS.piezas||[]).filter(p=>{
+    if(filtro==="todo")return true;
+    if(filtro==="faltan")return !((E.votos[p.id]||{})[YO]);
+    if(filtro==="javi")return p.cuenta==="JAVI";
+    if(filtro==="jordi")return p.cuenta==="JORDI";
+    if(filtro==="story")return p.tipo==="story";
+    if(filtro==="feed")return p.tipo!=="story";
+    return true;});
+}
+function render(){
+  // cabecera
+  $("#hyo").textContent=YO||"";
+  const tot=(DATOS.piezas||[]).length;
+  const rev=(DATOS.piezas||[]).filter(p=>(E.votos[p.id]||{})[YO]).length;
+  $("#hcnt").textContent=rev+"/"+tot;
+  $("#htit").textContent={contenido:"Contenido",calendario:"Calendario",tareas:"Tareas",
+                          archivos:"Archivos",criterio:"Criterio del equipo"}[TAB];
+  ["contenido","calendario","tareas","archivos","criterio"].forEach(t=>
+    $("#t-"+t).classList.toggle("oculto",t!==TAB));
+  pintaTabs();
+  if(TAB==="contenido")renderContenido();
+  if(TAB==="calendario")renderCalendario();
+  if(TAB==="tareas")renderTareas();
+  if(TAB==="archivos")renderArchivos();
+  if(TAB==="criterio")renderCriterio();
+}
+function pintaTabs(){
+  const abiertas=(E.tareas||[]).filter(t=>!t.hecha).length;
+  const defs=[["contenido","▤","Contenido"],["calendario","▦","Semana"],
+              ["tareas","✓","Tareas"],["archivos","⇪","Archivos"],["criterio","★","Criterio"]];
+  $("#tabs").innerHTML=defs.map(([k,ic,tx])=>
+    `<button data-tab="${k}" class="${TAB===k?"on":""}"><b>${ic}</b>${tx}`+
+    (k==="tareas"&&abiertas?`<span class="badge">${abiertas}</span>`:"")+`</button>`).join("");
+  $("#tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{TAB=b.dataset.tab;render();
+    window.scrollTo({top:0});});
+}
+function renderContenido(){
+  const c=$("#t-contenido");
+  const fs=[["todo","Todo"],["faltan","Me faltan"],["javi","Javi"],["jordi","Jordi"],
+            ["story","Historias"],["feed","Feed"]];
+  let h=`<div class="filtros">`+fs.map(([k,t])=>
+    `<button data-f="${k}" class="${filtro===k?"on":""}">${t}</button>`).join("")+`</div>`;
+  const vis=pizVis();
+  (DATOS.dias||[]).forEach(dia=>{
+    const dp=vis.filter(p=>p.dia===dia);if(!dp.length)return;
+    const rev=dp.filter(p=>(E.votos[p.id]||{})[YO]).length;
+    h+=`<details class="dia"${dia===(DATOS.dias||[])[1]?" open":""}>
+      <summary><span>${esc(dia.toUpperCase())}</span><i>${rev}/${dp.length} tuyas</i></summary>
+      <div class="cuerpo">`+dp.map(pieza).join("")+`</div></details>`;
+  });
+  if(!vis.length)h+=`<p class="vacio">No hay piezas con este filtro.</p>`;
+  c.innerHTML=h;
+  c.querySelectorAll(".filtros button").forEach(b=>b.onclick=()=>{filtro=b.dataset.f;render();});
+  engancha(c);
+}
+function pieza(p){
+  const mv=(E.votos[p.id]||{})[YO]||{};
+  const arch=(p.archivos||[]).slice(0,10).map((a,i)=>{
+    const k=p.id+"#"+i, sv=(E.slides[k]||{})[YO];
+    const m=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" muted playsinline
+              preload="none" controls></video>`
+            :`<img src="${esc(a.poster||a.archivo)}" alt="" loading="lazy">`;
+    return `<div class="slot">${m}<div class="sv">
+      <button class="ok ${sv==="ok"?"on":""}" data-sl="${esc(p.id)}" data-n="${i}" data-v="ok">✓</button>
+      <button class="no ${sv==="no"?"on":""}" data-sl="${esc(p.id)}" data-n="${i}" data-v="no">✗</button>
+    </div></div>`;}).join("");
+  const chips=PERSONAS.filter(x=>x!==YO).map(per=>{const x=(E.votos[p.id]||{})[per];
+    return `<span class="${x?x.v:""}">${per}${x?" "+({si:"✓",no:"✗",duda:"?"}[x.v]||""):""}</span>`;}).join("");
+  return `<div class="pieza">
+    <div class="meta"><span class="tag ${esc(p.cuenta)}">${esc(p.cuenta)}</span>
+      <span class="tag tipo">${esc(p.tipo)}</span>
+      <span class="nom">${esc((p.id||"").replace(/_/g," "))}</span></div>
+    ${arch?`<div class="tira">${arch}</div>`:""}
+    <div class="cap" data-cap>${esc(p.caption||"")}</div>
+    <button class="mas" data-mas>ver todo el texto</button>
+    <div class="votos">
+      <button class="si ${mv.v==="si"?"on":""}"   data-vt="${esc(p.id)}" data-v="si">Sí ✓</button>
+      <button class="duda ${mv.v==="duda"?"on":""}" data-vt="${esc(p.id)}" data-v="duda">Duda</button>
+      <button class="no ${mv.v==="no"?"on":""}"   data-vt="${esc(p.id)}" data-v="no">No ✗</button>
+    </div>
+    <div class="quienes">${chips}</div>
+    <textarea class="nota" data-nt="${esc(p.id)}"
+      placeholder="Qué cambiarías (lo lee todo el equipo)">${esc(mv.nota||"")}</textarea>
+  </div>`;
+}
+function engancha(c){
+  c.querySelectorAll("[data-vt]").forEach(b=>b.onclick=()=>votar(b.dataset.vt,b.dataset.v));
+  c.querySelectorAll("[data-sl]").forEach(b=>b.onclick=()=>votarSlide(b.dataset.sl,+b.dataset.n,b.dataset.v));
+  c.querySelectorAll("[data-nt]").forEach(t=>{let x=null;
+    t.oninput=()=>{clearTimeout(x);x=setTimeout(()=>nota(t.dataset.nt,t.value),900);};});
+  c.querySelectorAll("[data-mas]").forEach(b=>b.onclick=()=>{
+    const cap=b.previousElementSibling;cap.classList.toggle("abierto");
+    b.textContent=cap.classList.contains("abierto")?"ocultar":"ver todo el texto";});
+}
+function renderCalendario(){
+  const f=(CAL.filas||[]);
+  let h=`<h2 class="sec">Parrilla de la semana</h2>
+    <p class="secsub">3 publicaciones al día por cuenta. Verde = lista y con gate PASS · naranja = falta producirla · morado = espera a Santi.</p>`;
+  if(CAL.aviso)h+=`<p class="vacio">${esc(CAL.aviso)}</p>`;
+  ["JAVI","JORDI"].forEach(cta=>{
+    const fs=f.filter(x=>x.cuenta===cta);if(!fs.length)return;
+    h+=`<h2 class="sec">${cta}</h2><div class="calgrid">`+fs.map(x=>
+      `<div class="calfila"><h4><span class="tag ${cta}">${cta}</span>${esc(x.dia)}</h4>`+
+      [["1º",x.p1],["2º",x.p2],["3º",x.p3],["Hist.",x.stories]].map(([et,v])=>{
+        const m=/^\[([A-Z]\d*|B→arreglar)\]/.exec(v.trim());
+        const cl=m?m[1][0]:"";
+        return `<div class="calslot"><b>${et}</b>`+
+          (cl?`<span class="estado ${cl}">${esc(m[1])}</span>`:"")+
+          `<span>${esc(v.replace(/^\[[^\]]+\]\s*/,"")||"—")}</span></div>`;}).join("")+
+      `</div>`).join("")+`</div>`;
+  });
+  $("#t-calendario").innerHTML=h;
+}
+function renderTareas(){
+  const ts=E.tareas||[];
+  let h=`<h2 class="sec">Tareas del equipo</h2>
+    <p class="secsub">Lo que apuntes aquí lo ve todo el equipo al instante.</p>
+    <div class="nuevo"><input id="tinput" placeholder="Nueva tarea…" autocomplete="off">
+      <button id="tadd">Añadir</button></div>`;
+  if(!ts.length)h+=`<p class="vacio">Ninguna tarea todavía.<br>Escribe arriba lo primero que haya que hacer.</p>`;
+  h+=ts.map(t=>`<div class="tarea ${t.hecha?"hecha":""}">
+      <button class="chk" data-tg="${esc(t.id)}">✓</button>
+      <div class="txt">${esc(t.texto)}
+        <div class="quien2">${esc(t.por||"")} · ${esc(t.cuando||"")}${t.hecha&&t.porQuien?" · hecha por "+esc(t.porQuien):""}</div>
+      </div><button class="del" data-dl="${esc(t.id)}">×</button></div>`).join("");
+  const c=$("#t-tareas");c.innerHTML=h;
+  $("#tadd").onclick=nuevaTarea;
+  $("#tinput").onkeydown=e=>{if(e.key==="Enter")nuevaTarea();};
+  c.querySelectorAll("[data-tg]").forEach(b=>b.onclick=()=>toggleTarea(b.dataset.tg));
+  c.querySelectorAll("[data-dl]").forEach(b=>b.onclick=()=>borraTarea(b.dataset.dl));
+}
+function renderArchivos(){
+  const as=E.archivos||[];
+  let h=`<h2 class="sec">Archivos y enlaces</h2>
+    <p class="secsub">Pega aquí el enlace de Drive, del vídeo o del documento. El panel guarda el
+      enlace y quién lo puso — los ficheros siguen viviendo en su sitio (Drive/WhatsApp).</p>
+    <div class="nuevo"><input id="atit" placeholder="Nombre (opcional)" autocomplete="off"></div>
+    <div class="nuevo"><input id="ainput" placeholder="https://…" autocomplete="off" inputmode="url">
+      <button id="aadd">Guardar</button></div>`;
+  if(!as.length)h+=`<p class="vacio">Todavía no hay enlaces guardados.</p>`;
+  h+=as.map(a=>`<div class="item"><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.titulo)}</a>
+      <div class="sub">${esc(a.por||"")} · ${esc(a.cuando||"")}
+      <button class="del" data-da="${esc(a.id)}" style="float:right">×</button></div></div>`).join("");
+  const c=$("#t-archivos");c.innerHTML=h;
+  $("#aadd").onclick=nuevoArchivo;
+  c.querySelectorAll("[data-da]").forEach(b=>b.onclick=()=>borraArchivo(b.dataset.da));
+}
+function renderCriterio(){
+  const base=(CRITERIO||[]).concat(E.criterio||[]);
+  const q=buscaCrit.toLowerCase();
+  const fs=q?base.filter(x=>(x.regla+" "+x.de+" "+(x.porque||"")).toLowerCase().includes(q)):base;
+  let h=`<h2 class="sec">Criterio del equipo</h2>
+    <p class="secsub">Lo que cada uno ha pedido, con su frase. Antes de corregir una pieza: buscar aquí.</p>
+    <input class="buscador" id="cbusca" placeholder="Buscar: música, texto, placa, hook…" value="${esc(buscaCrit)}">`;
+  if(!fs.length)h+=`<p class="vacio">Nada que coincida con «${esc(buscaCrit)}».</p>`;
+  h+=fs.map(x=>`<div class="item crit"><span class="de">${esc(x.de)}</span>
+      <b>${esc(x.regla)}</b>${x.porque?`<div class="sub">${esc(x.porque)}</div>`:""}</div>`).join("");
+  const c=$("#t-criterio");c.innerHTML=h;
+  const i=$("#cbusca");i.oninput=()=>{buscaCrit=i.value;const p=i.selectionStart;render();
+    const j=$("#cbusca");if(j){j.focus();j.setSelectionRange(p,p);}};
+}
+
+/* ===== ARRANQUE ===== */
+async function arranca(){
+  render();
+  try{E=await leerBlob();aviso("Sincronizado");}
+  catch(err){aviso("Sin conexión con el guardado online",true);}
+  render();
+  clearInterval(window._sy);
+  window._sy=setInterval(async()=>{                     // refresco suave: ver votos de los demas
+    if(guardando||document.hidden)return;
+    try{E=await leerBlob();render();}catch(_){}
+  },25000);
+}
+$("#hout").onclick=salir;
+$("#lclave").onkeydown=e=>{if(e.key==="Enter")$("#lquien").firstChild&&$("#lquien").firstChild.click();};
+pintaLogin();
+const ses=sessionStorage.getItem("mx_yo");
+if(ses&&PERSONAS.includes(ses)&&localStorage.getItem("mx_clave")===CLAVE){
+  YO=ses;$("#login").style.display="none";arranca();
+}
+</script>
+</body></html>

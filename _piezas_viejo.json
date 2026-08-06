@@ -1,0 +1,1109 @@
+{
+ "generado": "2026-08-04 mediodia",
+ "semana": "3-9 agosto 2026",
+ "dias": [
+  "lun 3",
+  "mar 4",
+  "mié 5",
+  "jue 6",
+  "vie 7",
+  "sáb 8",
+  "dom 9"
+ ],
+ "piezas": [
+  {
+   "id": "REEL_JAVI_CERO_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "lun 3",
+   "caption": "No venimos de ser programadores. Ni de haber sido informáticos.\n\nYo era entrenador personal. Jordi tenía su trabajo. Ocho horas al día, profesiones\nnormales y corrientes, cambiando nuestro tiempo por ",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_CERO.mp4",
+     "poster": "media/REEL_JAVI_CERO_2AGO__00.jpg",
+     "video": "media/REEL_JAVI_CERO_2AGO__00.mp4",
+     "peso_mb": 1.58
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_CERO_2AGO"
+  },
+  {
+   "id": "dia_1_lunes__softCTA",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "lun 3",
+   "caption": "Palabra clave del día: DOC\n(solo se pide en la S5 — el doc de entregables. Sin consecuencia: es soft, la urgencia se guarda para el 24-31)",
+   "archivos": [
+    {
+     "archivo": "s03.jpg",
+     "poster": "media/dia_1_lunes__softCTA__00.jpg"
+    },
+    {
+     "archivo": "s04.jpg",
+     "poster": "media/dia_1_lunes__softCTA__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_1_lunes__softCTA"
+  },
+  {
+   "id": "REEL_JORDI_FILTRO_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "lun 3",
+   "caption": "La mayoría prueba productos. Muy poca gente construye un filtro.\n\nCoges cuatro o cinco, los lanzas… y ahí es donde casi todo el mundo se equivoca: sigue\nlanzando sin pararse a mirar qué pasó con los a",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_FILTRO.mp4",
+     "poster": "media/REEL_JORDI_FILTRO_2AGO__00.jpg",
+     "video": "media/REEL_JORDI_FILTRO_2AGO__00.mp4",
+     "peso_mb": 1.71
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_FILTRO_2AGO"
+  },
+  {
+   "id": "REEL_JORDI_FILTRO_V2_HOOK",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "lun 3",
+   "caption": "SUBIDO HOY 22:08 (Javi: 'Listo. Dale.'). Hook lambo + OPR drop + podcast, subs 2-3 palabras. Referencia del formato nuevo de reels.",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_FILTRO_V2_HOOK.mp4",
+     "poster": "media/REEL_JORDI_FILTRO_V2_HOOK__00.jpg",
+     "video": "media/REEL_JORDI_FILTRO_V2_HOOK__00.mp4",
+     "peso_mb": 1.86
+    }
+   ],
+   "origen": "produccion 3-ago noche"
+  },
+  {
+   "id": "dia_1_lunes__LM",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "lun 3",
+   "caption": "FUNNEL",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_1_lunes__LM__00.jpg"
+    },
+    {
+     "archivo": "s04.jpg",
+     "poster": "media/dia_1_lunes__LM__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_1_lunes__LM"
+  },
+  {
+   "id": "STORIES_JORDI_LUNES_FINAL",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "lun 3",
+   "caption": "Secuencia dictada por Javi 21:04: dolor -> alumno Mexico -> alumno 10k -> PDF validar creativos (Responde RECURSOS). SUBIDA la de Santi hoy; esta es la nuestra aprobada de formato.",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": null
+    },
+    {
+     "archivo": "s03.jpg",
+     "poster": null
+    },
+    {
+     "archivo": "s04.jpg",
+     "poster": null
+    },
+    {
+     "archivo": "s05.jpg",
+     "poster": null
+    }
+   ],
+   "origen": "produccion 3-ago noche"
+  },
+  {
+   "id": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "mar 4",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "M1_empleo_vs_negocio.mp4",
+     "poster": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.mp4",
+     "peso_mb": 0.22
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_LO_PEOR_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mar 4",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_LO_PEOR.mp4",
+     "poster": "media/REEL_JAVI_LO_PEOR_1AGO__00.jpg",
+     "video": "media/REEL_JAVI_LO_PEOR_1AGO__00.mp4",
+     "peso_mb": 0.76
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_LO_PEOR_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_QA21_V2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mar 4",
+   "caption": "\"No venimos de ser programadores\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «SIN SER PROGRAMADORES» + karaoke verde + 2 insertos b-roll.",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_QA21_V2.mp4",
+     "poster": "media/REEL_JAVI_QA21_V2__00.jpg",
+     "video": "media/REEL_JAVI_QA21_V2__00.mp4",
+     "peso_mb": 1.76
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "dia_2_martes__cajita",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "mar 4",
+   "caption": "(cajita — sin palabra clave)\nEl accionable de hoy es el sticker de preguntas; no se pide responder ninguna palabra.",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_2_martes__cajita__00.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_2_martes__cajita"
+  },
+  {
+   "id": "STORIES_JAVI_LUNES_FINAL",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "mar 4",
+   "caption": "Javi 22:25: 'subelas manana, pasaselas a Santi y listo'. Win Sergi 66k -> vehiculo 1a1 -> DOC de la mentoria (Responde DOC).",
+   "archivos": [
+    {
+     "archivo": "s03.jpg",
+     "poster": null
+    },
+    {
+     "archivo": "s05_vehiculo.jpg",
+     "poster": null
+    },
+    {
+     "archivo": "s06_cta_doc.jpg",
+     "poster": null
+    }
+   ],
+   "origen": "produccion 3-ago noche"
+  },
+  {
+   "id": "MEMES_JORDI_TANDA_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "mar 4",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "M1_dropshipping_muerto.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__00.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__00.mp4",
+     "peso_mb": 0.22
+    },
+    {
+     "archivo": "M2_logo_tres_meses.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__01.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__01.mp4",
+     "peso_mb": 0.2
+    },
+    {
+     "archivo": "M3_sexta_creatividad.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__02.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "M4_margen_despues.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__03.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__03.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "M5_mes_record_sin_caja.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__04.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__04.mp4",
+     "peso_mb": 0.21
+    },
+    {
+     "archivo": "M6_checkout_codigo_postal.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__05.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__05.mp4",
+     "peso_mb": 0.17
+    },
+    {
+     "archivo": "M7_empezar_de_cero.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__06.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__06.mp4",
+     "peso_mb": 0.21
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_1AGO"
+  },
+  {
+   "id": "STORIES_JORDI_MARTES_A7_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "mar 4",
+   "caption": "Secuencia dolor-ads del martes: dolor (creativos) → win México 200k (ORGANICO 10-jul, producto y profit difuminados) → win 20k€ + contrata editor (ORGANICO 23-jul) → CTA «RECURSOS» con la calculadora de ROAS borrosa. Formato lunes aprobado; capturas NUEVAS (las del lunes quedaron quemadas). Incluye KIT_MANUAL por si Jordi las monta en la app.",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mexico.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__01.jpg"
+    },
+    {
+     "archivo": "s03_win_editor.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__02.jpg"
+    },
+    {
+     "archivo": "s04_cta_recursos.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__03.jpg"
+    }
+   ],
+   "origen": "produccion 4-ago manana (gate TODO PASS)"
+  },
+  {
+   "id": "CARRUSEL_CLON_JAVI_OFERTA_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "mié 5",
+   "caption": "Te entran visitas y no te compran. Y lo primero que hace todo el mundo es cambiar de producto.\n\nCasi nunca es el producto. Es la oferta. Y la oferta son tres cosas.\n\n1. Precio. No se copia del de al l",
+   "archivos": [
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.mp4",
+     "peso_mb": 0.16
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "zz_PREVIEW_CARRUSEL_COMPLETO.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.mp4",
+     "peso_mb": 0.71
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_CLON_JAVI_OFERTA_2AGO"
+  },
+  {
+   "id": "REEL_JAVI_QA11_V2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mié 5",
+   "caption": "Mi padre me dijo: \"¿Estás loco?\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «¿ESTÁS LOCO?» — MI PADRE» + karaoke + insertos.",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_QA11_V2.mp4",
+     "poster": "media/REEL_JAVI_QA11_V2__00.jpg",
+     "video": "media/REEL_JAVI_QA11_V2__00.mp4",
+     "peso_mb": 1.58
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "dia_3_miercoles__LM",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "mié 5",
+   "caption": "Palabra clave del día: PROVEEDOR\n(solo en la s04 — la clase de proveedores de la mentoría. Gratis; entrega coordinada antes de subir)",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_3_miercoles__LM__00.jpg"
+    },
+    {
+     "archivo": "s03.jpg",
+     "poster": "media/dia_3_miercoles__LM__01.jpg"
+    },
+    {
+     "archivo": "s04.jpg",
+     "poster": "media/dia_3_miercoles__LM__02.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_3_miercoles__LM"
+  },
+  {
+   "id": "STORIES_JAVI_MIERCOLES_A5_5AGO",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "mié 5",
+   "caption": "A5 miércoles: dolor-ads → win 8.446 MXN +92% (ORGANICO 22-jul, la única libre para Javi) → CTA «RECURSOS» con el recurso Video Ads borroso. 3 stories. Ojo: el fondo 'logo-pantalla' se descartó porque el gate de identidad detectó a JORDI (0.98).",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mxn.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__01.jpg"
+    },
+    {
+     "archivo": "s03_cta_recursos.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__02.jpg"
+    }
+   ],
+   "origen": "produccion 4-ago mediodia (gate TODO PASS)"
+  },
+  {
+   "id": "CARRUSEL_JORDI_RECURSOS_29JUL",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "mié 5",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "00_PREVIEW_con_musica.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__00.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__00.mp4",
+     "peso_mb": 0.88
+    },
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__01.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__01.mp4",
+     "peso_mb": 0.17
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__02.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__02.mp4",
+     "peso_mb": 0.14
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__03.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__03.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__04.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__04.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__05.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__05.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JORDI_RECURSOS_29JUL__06.jpg",
+     "video": "media/CARRUSEL_JORDI_RECURSOS_29JUL__06.mp4",
+     "peso_mb": 0.32
+    }
+   ],
+   "origen": "PARA_REVISAR/_WIP/CARRUSEL_JORDI_RECURSOS_29JUL"
+  },
+  {
+   "id": "REEL_JORDI_EMPEZAR_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "mié 5",
+   "caption": "¿Cuánto necesitas de verdad para empezar? La respuesta sin humo.\n\n#ecommerce #emprender #mentoria\n\nZYRO nuevo: hook lambo arrancando «¿CUÁNTO NECESITAS PARA EMPEZAR?» + drop Cochise + karaoke amarillo + 2 insertos POV. Esqueleto FILTRO V2.",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_EMPEZAR.mp4",
+     "poster": "media/REEL_JORDI_EMPEZAR_4AGO__00.jpg",
+     "video": "media/REEL_JORDI_EMPEZAR_4AGO__00.mp4",
+     "peso_mb": 2.72
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "dia_3_miercoles__softCTA",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "mié 5",
+   "caption": "PLAN",
+   "archivos": [
+    {
+     "archivo": "s03.jpg",
+     "poster": "media/dia_3_miercoles__softCTA__00.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_3_miercoles__softCTA"
+  },
+  {
+   "id": "MEME_JAVI_M2_CLASE_17MIN_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "jue 6",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "M2_clase_17_minutos.mp4",
+     "poster": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.mp4",
+     "peso_mb": 0.19
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M2_CLASE_17MIN_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_PANEL_MODULO_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "jue 6",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "R3_panel_modulo_tienda.mp4",
+     "poster": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.jpg",
+     "video": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.mp4",
+     "peso_mb": 1.22
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_PANEL_MODULO_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_QA16_V2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "jue 6",
+   "caption": "El verdadero millonario no es el que tú crees\n\n#ecommerce #mentoria #emprender\n\nHook evento «MILLONARIO = TIEMPO LIBRE» + karaoke + insertos.",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_QA16_V2.mp4",
+     "poster": "media/REEL_JAVI_QA16_V2__00.jpg",
+     "video": "media/REEL_JAVI_QA16_V2__00.mp4",
+     "peso_mb": 1.82
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "C1_MEME_JORDI_SE_NOTA",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "jue 6",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "C1_01_soporte_meta.mp4",
+     "poster": "media/C1_MEME_JORDI_SE_NOTA__00.jpg",
+     "video": "media/C1_MEME_JORDI_SE_NOTA__00.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "C1_02_cuenta_desactivada.mp4",
+     "poster": "media/C1_MEME_JORDI_SE_NOTA__01.jpg",
+     "video": "media/C1_MEME_JORDI_SE_NOTA__01.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "C1_03_meta_ads_familia.mp4",
+     "poster": "media/C1_MEME_JORDI_SE_NOTA__02.jpg",
+     "video": "media/C1_MEME_JORDI_SE_NOTA__02.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "C1_PORTADA_gridsafe.png",
+     "poster": "media/C1_MEME_JORDI_SE_NOTA__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/FASE1_MEMES_18JUL/C1_MEME_JORDI_SE_NOTA"
+  },
+  {
+   "id": "dia_4_jueves__cajita",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "jue 6",
+   "caption": "(cajita — sin palabra clave)\nEl accionable de hoy es el sticker de preguntas; no se pide responder ninguna palabra.",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_4_jueves__cajita__00.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_4_jueves__cajita"
+  },
+  {
+   "id": "REEL_JAVI_PERSEVERANCIA_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "vie 7",
+   "caption": "Me pidieron una palabra. Una sola.\n\nNo dije talento. No dije suerte. No dije timing.\n\nDije perseverancia.\n\nY no es la frase bonita de turno: es lo único que separa al que sigue cuando el negocio deja\n",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_PERSEVERANCIA.mp4",
+     "poster": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.jpg",
+     "video": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.mp4",
+     "peso_mb": 0.8
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_PERSEVERANCIA_2AGO"
+  },
+  {
+   "id": "REEL_JAVI_QA19_V2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "vie 7",
+   "caption": "\"Soy Javier Sánchez, 45 años, padre de familia, exfutbolista\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «45 AÑOS Y EMPECÉ DE CERO» + karaoke + insertos.",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_QA19_V2.mp4",
+     "poster": "media/REEL_JAVI_QA19_V2__00.jpg",
+     "video": "media/REEL_JAVI_QA19_V2__00.mp4",
+     "peso_mb": 1.34
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "dia_5_viernes__LM",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "vie 7",
+   "caption": "ROAS",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_5_viernes__LM__00.jpg"
+    },
+    {
+     "archivo": "s04.jpg",
+     "poster": "media/dia_5_viernes__LM__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_5_viernes__LM"
+  },
+  {
+   "id": "REEL_JORDI_HOOK_TESTIMONIOS_25JUL",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "vie 7",
+   "caption": "Los resultados son lo bonito. El proceso es lo difícil.\n\nEn redes solo se enseña la parte bonita. Nadie cuenta los días malos, las noches sin dormir ni las decisiones que tomas a ciegas cuando no tien",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_HOOK_TESTIMONIOS.mp4",
+     "poster": "media/REEL_JORDI_HOOK_TESTIMONIOS_25JUL__00.jpg",
+     "video": "media/REEL_JORDI_HOOK_TESTIMONIOS_25JUL__00.mp4",
+     "peso_mb": 1.55
+    }
+   ],
+   "origen": "PARA_REVISAR/_WIP/REEL_JORDI_HOOK_TESTIMONIOS_25JUL"
+  },
+  {
+   "id": "REEL_JORDI_PROVEEDOR_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "vie 7",
+   "caption": "Tu proveedor no es tu enemigo: es tu aliado. Y elegirlo bien marca la diferencia.\n\n#ecommerce #dropshipping #mentoria\n\nZYRO nuevo 2: hook Jordi al volante «DEJA DE PELEARTE CON TU PROVEEDOR» + Yeat + karaoke amarillo + 2 insertos POV. Tu proveedor es tu aliado.",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_PROVEEDOR.mp4",
+     "poster": "media/REEL_JORDI_PROVEEDOR_4AGO__00.jpg",
+     "video": "media/REEL_JORDI_PROVEEDOR_4AGO__00.mp4",
+     "peso_mb": 2.33
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sáb 8",
+   "caption": "Antes de tocar el presupuesto de anuncios miro cinco cosas. Y las miro en este orden.\n\n5. Margen real por pedido. Lo que queda después de producto, envío, pasarela y devolución. Si eso\nestá en rojo, e",
+   "archivos": [
+    {
+     "archivo": "RANKING_JAVI_ANTES_DE_ESCALAR.mp4",
+     "poster": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.jpg",
+     "video": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.mp4",
+     "peso_mb": 1.15
+    }
+   ],
+   "origen": "PARA_REVISAR/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO"
+  },
+  {
+   "id": "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "sáb 8",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "M3_64_herramientas.mp4",
+     "poster": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.mp4",
+     "peso_mb": 0.19
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO"
+  },
+  {
+   "id": "MEME_LB_JAVI_28JUL",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "sáb 8",
+   "caption": "Según los comentarios, nuestros alumnos no existen. Vinieron todos al evento igualmente.\n#ecommerce #mentorium",
+   "archivos": [
+    {
+     "archivo": "MEME_LB_JAVI_ABRAZOS.mp4",
+     "poster": "media/MEME_LB_JAVI_28JUL__00.jpg",
+     "video": "media/MEME_LB_JAVI_28JUL__00.mp4",
+     "peso_mb": 0.32
+    },
+    {
+     "archivo": "MEME_LB_JAVI_ABRAZOS_PORTADA.png",
+     "poster": "media/MEME_LB_JAVI_28JUL__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/_WIP/MEME_LB_JAVI_28JUL"
+  },
+  {
+   "id": "REEL_JAVI_QA12_V2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sáb 8",
+   "caption": "\"Vende humos\" — la respuesta de Javi\n\n#ecommerce #mentoria #emprender\n\nHook evento «\"VENDE HUMOS\" — MI RESPUESTA» + karaoke + insertos.",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_QA12_V2.mp4",
+     "poster": "media/REEL_JAVI_QA12_V2__00.jpg",
+     "video": "media/REEL_JAVI_QA12_V2__00.mp4",
+     "peso_mb": 2.24
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "CARRUSEL_JORDI_FILTRO_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "sáb 8",
+   "caption": "CUENTA: @jordigarcia89\nFORMATO: carrusel de 6 slides 4:5. Slide 1 = CLIP DE VÍDEO (1080x1350, 7 s, con música);\nslides 2-6 = PNG 2160x2700.\nSPEC: la MISMA clonada de @gala_lc que usa CARRUSEL_CLON_GALA_JORDI_31JUL (foto real a sangre,\ntitular serif Playfair + cuerpo Montserrat, UN solo acento, arco objeción -> remate -> antes\ncrudo -> verdad -> prueba real -> reencuadre + CTA). Cambia el QUÉ, nunca el CÓMO.\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard, pieza a pieza.\n\nCAPTION (pegar tal cual):\n\"He probado cinco productos y ninguno ha tirado.\"\n\nMe lo dicen cada semana. Y casi siempre el fallo no está en el producto: está en que se lanza el\nsexto sin haber mirado qué pasó con los cinco anteriores.\n\nPara. Y mira hacia atrás. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió\nde verdad, sin tener que regalarlo?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto. Y de\nese patrón sale tu filtro. El tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\nComenta RECURSOS y te paso el panel entero. Gratis.\n\n#ecommerce #dropshipping #producto\n\nNOTAS PARA GERARD:\n- Cero cifras de facturación de Jordi (Hacienda). Su autoridad va sin número: \"alguien que ha\n  tirado más productos de los que recuerda\".\n- Las dos capturas son de herramientas REALES y publicadas: validador-producto.html y\n  calculadora-rentabilidad-sku.html (06_HERRAMIENTAS_HTML/_deploy/). Se muestran en su estado\n  inicial, sin rellenar: no hay ni un dato inventado ni un resultado de alumno.\n- Portada = CLIP DE VÍDEO, no foto (Gerard 24-jul). Es también lo que la distingue de la portada\n  del carrusel de Javi (gate C6: tipo de portada distinto).\n- El copy sale del guion ya aprobado por gate de REEL_JORDI_FILTRO_2AGO. Ese reel y este carrusel\n  cuentan lo mismo: NO se publican el mismo día. Escalonar 2-3 días (regla C6).\n- Cuerpo de texto subido de 48 a 62 px respecto al clon del 31-jul: en móvil el tamaño original\n  se leía a 9 px. Responde a la petición de Jordi del 1-ago (20:49): que el texto se vea más grande.\n\nAUDITORÍA 2-ago (segunda pasada, slides miradas una a una):\n- ARREGLADO · slide 5. El pantallazo de la calculadora estaba cortado POR LA MITAD de la fila de\n  inputs: la fila quedaba a ras del borde, sin margen, y el panel \"TUS PRODUCTOS\" salía rebanado.\n  Parecía un pantallazo a medio cargar, y al lado de la slide 4 (que cierra limpia y redondeada)\n  cantaba. Re-cortado del mismo `rentabilidad.png`: ahora entra la tarjeta ENTERA — cabecera, las\n  3 filas, \"+ Añadir producto\" y el botón \"Analizar rentabilidad\". Además queda en formato retrato\n  como la captura de la slide 4, así que las dos slides de prueba pesan visualmente igual.\n- AÑADIDO · `_gate/_CLON_CHECK.png` — el lado a lado referente/pieza que exige replica-100.md\n  punto 5 y que faltaba. Cuatro columnas: portada, texto, pruebas y cierre. Va dentro de `_gate/`\n  a propósito: en la raíz de la pieza, el gate lo audita como si fuera una slide más y lo tumba\n  por apaisado (2200x1536), que es justo lo que tiene que ser un lado a lado.\n- DESVIACIÓN QUE DECIDE GERARD (está marcada en el _CLON_CHECK): en la portada, el referente\n  centra el remate en MAYÚSCULAS sobre un plano de objeto (el lambo). Aquí el remate va a la\n  IZQUIERDA y en caja baja, porque la portada es un CLIP de Jordi hablando y su cara ocupa la\n  mitad derecha: centrarlo se lo comería. Es la única desviación del CÓMO en toda la pieza.\n- OJO A LA FOTO DE LA SLIDE 2 (criterio, no fallo): es un rincón de hotel — butaca, planta y un\n  enchufe con el cable colgando en medio del encuadre. De Jordi solo se le ve el brazo. Encaja con\n  la spec (el referente también mete un plano ambiente sin cara), pero es el asset más flojo de la\n  pieza. Si quieres otra, se cambia y se vuelve a pasar el gate.\n- Verificado hoy, con mis ojos: identidad de la portada (Facenet512, dist_jordi 0,115 vs\n  dist_javi 0,576, exit 0) · cara de la portada a 89,8/255 de luminancia y la del cierre a 85,6\n  (mínimo 70) · las 6 slides caben en el 1:1 que recorta la cuadrícula de IG · las dos capturas\n  son pantallazos Playwright de los HTML reales y TODO lo que se ve en ellas (45, 12, 4, 80, \"Ej:\n  Masajeador\", el 60%, el rango 25-80€) son atributos `placeholder=` del propio HTML: cero dato\n  tecleado, cero dato inventado.\n\n[ARREGLADO 4-ago] La slide 6 usaba un pantallazo del grupo de alumnos (fuente prohibida): sustituida por win real de ORGANICO (panel 12 mil +49% + mensaje del alumno). Gate TODO PASS.",
+   "archivos": [
+    {
+     "archivo": "s01_portada.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.mp4",
+     "peso_mb": 0.21
+    },
+    {
+     "archivo": "s02_texto.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s03_texto.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.mp4",
+     "peso_mb": 0.1
+    },
+    {
+     "archivo": "s04_pruebas.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s05_pruebas.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s06_testimonio.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s07_cierre.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.mp4",
+     "peso_mb": 0.09
+    }
+   ],
+   "origen": "arreglo 4-ago manana (gate TODO PASS)"
+  },
+  {
+   "id": "MEME_LB_JORDI_28JUL",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "sáb 8",
+   "caption": "Si el método fuera tan bueno, no necesitaría vendértelo. Piénsalo.\n#ecommerce",
+   "archivos": [
+    {
+     "archivo": "MEME_LB_JORDI_CURSO.mp4",
+     "poster": "media/MEME_LB_JORDI_28JUL__00.jpg",
+     "video": "media/MEME_LB_JORDI_28JUL__00.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "MEME_LB_JORDI_CURSO_PORTADA.png",
+     "poster": "media/MEME_LB_JORDI_28JUL__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/_WIP/MEME_LB_JORDI_28JUL"
+  },
+  {
+   "id": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "dom 9",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "M4_precio_antes_de_empezar.mp4",
+     "poster": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.mp4",
+     "peso_mb": 0.22
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M4_PRECIO_ANTES_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_HOOK_TESTIMONIOS_25JUL",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "dom 9",
+   "caption": "En el 90% de las formaciones, el que da la cara no está en el día a día.\n\nLo digo yo, pero no hace falta que me creas: puse una cámara en el último evento y pregunté a la gente que vino qué se llevaba",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_HOOK_TESTIMONIOS.mp4",
+     "poster": "media/REEL_JAVI_HOOK_TESTIMONIOS_25JUL__00.jpg",
+     "video": "media/REEL_JAVI_HOOK_TESTIMONIOS_25JUL__00.mp4",
+     "peso_mb": 1.73
+    }
+   ],
+   "origen": "PARA_REVISAR/_WIP/REEL_JAVI_HOOK_TESTIMONIOS_25JUL"
+  },
+  {
+   "id": "REEL_JAVI_QA24_V2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "dom 9",
+   "caption": "\"Yo no puedo abrir el ordenador por ti\"\n\n#ecommerce #mentoria #emprender\n\nHook evento «YO NO ABRO EL PC POR TI» + karaoke + insertos.",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_QA24_V2.mp4",
+     "poster": "media/REEL_JAVI_QA24_V2__00.jpg",
+     "video": "media/REEL_JAVI_QA24_V2__00.mp4",
+     "peso_mb": 1.31
+    }
+   ],
+   "origen": "produccion 4-ago madrugada (gate PASS)"
+  },
+  {
+   "id": "dia_7_domingo__resultados",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "dom 9",
+   "caption": "(resultados - sin palabra)",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_7_domingo__resultados__00.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JAVI/dia_7_domingo__resultados"
+  },
+  {
+   "id": "dia_7_domingo__LM",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "dom 9",
+   "caption": "ESCALA",
+   "archivos": [
+    {
+     "archivo": "s02.jpg",
+     "poster": "media/dia_7_domingo__LM__00.jpg"
+    },
+    {
+     "archivo": "s04.jpg",
+     "poster": "media/dia_7_domingo__LM__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/SEMANA_STORIES_3AGO/JORDI/dia_7_domingo__LM"
+  },
+  {
+   "id": "01_MEME_SENOTA_F2_CUENTA_DESACTIVADA",
+   "cuenta": "?",
+   "tipo": "meme",
+   "dia": "sin día",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "F2_cuenta_desactivada_VAR_A.mp4",
+     "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__00.jpg",
+     "video": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__00.mp4",
+     "peso_mb": 0.17
+    },
+    {
+     "archivo": "F2_cuenta_desactivada_VAR_B.mp4",
+     "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__01.jpg",
+     "video": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__01.mp4",
+     "peso_mb": 0.2
+    },
+    {
+     "archivo": "PORTADA_VAR_A.png",
+     "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__02.jpg"
+    },
+    {
+     "archivo": "PORTADA_VAR_B.png",
+     "poster": "media/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/VARIANTES_WINNERS_18JUL/01_MEME_SENOTA_F2_CUENTA_DESACTIVADA"
+  },
+  {
+   "id": "02_MEME_SENOTA_F3_META_VS_FAMILIA",
+   "cuenta": "?",
+   "tipo": "meme",
+   "dia": "sin día",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "F3_meta_ads_familia_VAR_A.mp4",
+     "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__00.jpg",
+     "video": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__00.mp4",
+     "peso_mb": 0.22
+    },
+    {
+     "archivo": "F3_meta_ads_familia_VAR_B.mp4",
+     "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__01.jpg",
+     "video": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__01.mp4",
+     "peso_mb": 0.17
+    },
+    {
+     "archivo": "PORTADA_VAR_A.png",
+     "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__02.jpg"
+    },
+    {
+     "archivo": "PORTADA_VAR_B.png",
+     "poster": "media/02_MEME_SENOTA_F3_META_VS_FAMILIA__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/VARIANTES_WINNERS_18JUL/02_MEME_SENOTA_F3_META_VS_FAMILIA"
+  },
+  {
+   "id": "REEL_J02_AUTODIDACTA_28JUL",
+   "cuenta": "?",
+   "tipo": "reel",
+   "dia": "sin día",
+   "caption": "Aprender solo no es malo. Es lento.\n\nY lo lento en esto se paga con dinero que se va en pruebas que ya sabía alguien que no funcionaban.\n\nEn el evento uno contó que empezó medio autodidacta y estuvo m",
+   "archivos": [
+    {
+     "archivo": "REEL_J02_AUTODIDACTA.mp4",
+     "poster": "media/REEL_J02_AUTODIDACTA_28JUL__00.jpg",
+     "video": "media/REEL_J02_AUTODIDACTA_28JUL__00.mp4",
+     "peso_mb": 2.03
+    }
+   ],
+   "origen": "PARA_REVISAR/_WIP/REEL_J02_AUTODIDACTA_28JUL"
+  },
+  {
+   "id": "05_JAVI_CASO_SARA_183",
+   "cuenta": "JAVI",
+   "tipo": "otro",
+   "dia": "reserva",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "CASO_SARA_183_VAR_A.mp4",
+     "poster": "media/05_JAVI_CASO_SARA_183__00.jpg",
+     "video": "media/05_JAVI_CASO_SARA_183__00.mp4",
+     "peso_mb": 0.68
+    },
+    {
+     "archivo": "CASO_SARA_183_VAR_B.mp4",
+     "poster": "media/05_JAVI_CASO_SARA_183__01.jpg",
+     "video": "media/05_JAVI_CASO_SARA_183__01.mp4",
+     "peso_mb": 0.68
+    },
+    {
+     "archivo": "PORTADA_VAR_A.png",
+     "poster": "media/05_JAVI_CASO_SARA_183__02.jpg"
+    },
+    {
+     "archivo": "PORTADA_VAR_B.png",
+     "poster": "media/05_JAVI_CASO_SARA_183__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/VARIANTES_WINNERS_18JUL/05_JAVI_CASO_SARA_183"
+  },
+  {
+   "id": "STORIES_JAVI_FREESTYLE_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "reserva",
+   "caption": "(stories — sin caption; el CTA va en J4: «Responde ORDEN» → Auditor de Tienda y Checkout, gratis)\nOrden de publicación: J1 (sábado 8:33) → J2 (la flecha) → J3 (el grupo) → J4 (recurso).\nMisma palabra ",
+   "archivos": [
+    {
+     "archivo": "J1_sabado_833.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__00.jpg"
+    },
+    {
+     "archivo": "J2_flecha.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__01.jpg"
+    },
+    {
+     "archivo": "J3_grupo.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__02.jpg"
+    },
+    {
+     "archivo": "J4_recurso.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JAVI_FREESTYLE_2AGO"
+  },
+  {
+   "id": "STORIES_JORDI_FREESTYLE_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "reserva",
+   "caption": "(stories — no llevan caption; el CTA va en la S4: «Responde MARGEN y te la mando entera, gratis»)\nOrden de publicación: S1 → S2 → S3 → S4. Las tres primeras son prueba, la cuarta captura.",
+   "archivos": [
+    {
+     "archivo": "S1_gracias.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__00.jpg"
+    },
+    {
+     "archivo": "S2_curva.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__01.jpg"
+    },
+    {
+     "archivo": "S3_julio.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__02.jpg"
+    },
+    {
+     "archivo": "S4_recurso.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_FREESTYLE_2AGO"
+  },
+  {
+   "id": "STORIES_JORDI_TESTIMONIOS_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "reserva",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "T1_primera_venta.jpg",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__00.jpg"
+    },
+    {
+     "archivo": "T1_primera_venta.png",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__01.jpg"
+    },
+    {
+     "archivo": "T2_dsers_cayo.jpg",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__02.jpg"
+    },
+    {
+     "archivo": "T2_dsers_cayo.png",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__03.jpg"
+    },
+    {
+     "archivo": "T3_clase.jpg",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__04.jpg"
+    },
+    {
+     "archivo": "T3_clase.png",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_TESTIMONIOS_1AGO"
+  },
+  {
+   "id": "STORIES_JORDI_WINS_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "reserva",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "W1_margen_25.jpg",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__00.jpg"
+    },
+    {
+     "archivo": "W1_margen_25.png",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__01.jpg"
+    },
+    {
+     "archivo": "W2_pedido_1003.jpg",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__02.jpg"
+    },
+    {
+     "archivo": "W2_pedido_1003.png",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__03.jpg"
+    },
+    {
+     "archivo": "W3_mes_anterior.jpg",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__04.jpg"
+    },
+    {
+     "archivo": "W3_mes_anterior.png",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_WINS_1AGO"
+  }
+ ]
+}
