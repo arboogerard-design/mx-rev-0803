@@ -1,7 +1,7 @@
 {
  "generado": "2026-08-07",
  "dia": "viernes 8 ago",
- "estrategia": "Calendario Santi: Selfie · Formato que no te requiera · Talking head. Reparto del día: 3 TOFU / 2 MOFU / 1 BOFU (la semana entera cuadra 50/30/20).",
+ "estrategia": "Calendario Santi: Selfie · Formato que no te requiera · Talking head. Reparto del día: 3 TOFU / 2 MOFU / 1 BOFU (la semana entera cuadra 50/30/20). Las 6 con gate TODO PASS.",
  "piezas": [
   {
    "id": "javi_p1",
@@ -12,17 +12,17 @@
    "titular": "El COD no era gratis. Solo te cobraba después.",
    "dur": 11,
    "fuente": "Foto deadpan canónica verificada (coche, gafas). Frase original estilo co1e0, cero claims.",
-   "nota": "Si Javi graba el selfie del brief ('el COD es una mierda', 15s), sube ese; si no, este suplente cubre el hueco. Brief en _WIP/VIERNES_8AGO/BRIEFS_SELFIE_VIERNES.md"
+   "nota": "Si Javi graba el selfie del brief ('el COD es una mierda', 15s), sube ese; si no, este suplente cubre el hueco. Brief en PARA_REVISAR (BRIEFS_SELFIE_VIERNES.md)."
   },
   {
    "id": "javi_p2",
    "cuenta": "JAVI",
    "post": 2,
-   "formato": "Montaje de clips (familia B, 0,86 cortes/s)",
+   "formato": "Montaje de clips (familia B, 0,85 cortes/s, ancla en bucle)",
    "bucket": "MOFU",
    "titular": "LAS 7 FUGAS DEL CHECKOUT",
-   "dur": 30,
-   "fuente": "Spine: Javi VERIFICADO en el estudio/clase MENTORIUM (IMG_1989, fuente del frame verified) + alumnos con placas del evento + las 7 fugas REALES del lead magnet Auditoría Cash Real.",
+   "dur": 31,
+   "fuente": "Spine: Javi VERIFICADO en el estudio/clase MENTORIUM (IMG_1989, fuente de su frame verified, zoom x2,16) + alumnos con placas del evento + las 7 fugas REALES del lead magnet Auditoría Cash Real.",
    "nota": "CTA caption: comenta CASH → auditoría. Música Tom Odell instrumental con drop al fin del hook."
   },
   {
@@ -33,7 +33,7 @@
    "bucket": "TOFU",
    "titular": "Gasté 3.000€ y vendí CERO",
    "dur": 48,
-   "fuente": "C2404 (video) + audio bueno C2410 muxeado con offset medido +1,240s. 3 bloques limpios, remate completo dentro ('es parte del juego'). Insertos de placas mientras la voz sigue.",
+   "fuente": "C2404 (video) + audio bueno C2410 muxeado con offset medido +1,240s. 3 bloques limpios esquivando los tramos mal transcritos, remate completo dentro ('es parte del juego'). Insertos de placas mientras la voz sigue. LUFS −14,0 / TP −2,4.",
    "nota": "El baneo está levantado: la cifra hablada/en subs vale. CTA caption: comenta CERO."
   },
   {
@@ -55,8 +55,8 @@
    "bucket": "MOFU",
    "titular": "LOS 5 NÚMEROS QUE MANDAN",
    "dur": 31,
-   "fuente": "Sus ganchos de lambo verificados (spine: volante, patrón de la V5 que aprobó) + 1 clip alumno-placa (prueba social, sin Javi). Métricas reales de la Planilla KPI. Cero cifras suyas.",
-   "nota": "CTA caption: comenta DATA → planilla KPI."
+   "fuente": "Sus ganchos de lambo LIBRES de cooldown (spine: volante gancho_04, patrón de la V5 que aprobó) + 1 clip alumno-placa (prueba social, sin Javi). Métricas reales de la Planilla KPI. Cero cifras suyas.",
+   "nota": "CTA caption: comenta DATA → planilla KPI. OJO: su pool lifestyle está casi agotado (7 de 12 ganchos en cooldown hasta el 14-18) — esta semana toca cortar clips nuevos."
   },
   {
    "id": "jordi_p3",
@@ -66,14 +66,14 @@
    "bucket": "BOFU",
    "titular": "Por eso abandonas tus metas",
    "dur": 56,
-   "fuente": "sb06 4K (identidad verificada) + AUDIO BUENO P2 correlacionado (cross-check −3,152 ✓). Karaoke amarillo palabra a palabra (su pedido del 22-jul). Arranca en su 'Claro, yo hablo con mucha gente' (pregunta del host recortada). 2 insertos POV volante.",
+   "fuente": "sb06 4K (identidad verificada) + AUDIO BUENO P2 correlacionado (cross-check −3,152 ✓). Karaoke amarillo palabra a palabra (su pedido del 22-jul). Arranca en su 'Claro, yo hablo con mucha gente' (pregunta del host recortada). 1 inserto POV volante. Audio normalizado a −14.",
    "nota": "Mentalidad/creencias = BOFU de Santi. La cifra que suena ('quiero ganar 15.000') es de terceros, no suya."
   }
  ],
  "pendiente_hoy": [
-  "ADS: los 8 definitivos (AD01-08_V12) están en el escritorio, carpeta _ADS_JAVI_7AGO — 4 ganchos distintos de Mati, alumnos variados, voz igualada. Pásalos a Javi cuando des el OK.",
+  "ADS: los 8 definitivos (AD01-08_V12) están en el escritorio, carpeta _ADS_JAVI_7AGO con su LEEME — 4 ganchos distintos de Mati, alumnos variados, voz igualada. Pásalos a Javi cuando des el OK.",
   "Selfies: si Javi/Jordi graban los briefs de 15s, sustituyen a los memes suplentes del post 1.",
   "Carruseles del 6-ago: siguen esperando el pase a Santi (Desktop/_CARRUSELES_HOY).",
-  "PACK VACACIONES: 4 textos listos para enviar en Desktop/_PACK_VACACIONES/LEEME_Y_ENVIA.md"
+  "PACK VACACIONES: 5 textos listos para enviar en Desktop/_PACK_VACACIONES/LEEME_Y_ENVIA.md (el 5º: pedirle al del Loom su doc de formatos, gratis)."
  ]
 }
