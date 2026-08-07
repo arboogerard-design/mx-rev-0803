@@ -1,73 +1,73 @@
 {
  "generado": "2026-08-07",
  "dia": "viernes 7 ago (HOY)",
- "estrategia": "Viernes (Santi): clip/selfie + formato que no requiere + talking head. SIN memes. 6/6 gate TODO PASS + decode completo + frames mirados.",
+ "estrategia": "Lote nocturno 7-ago: TODO desde referentes/formatos VALIDADOS (ads aprobados por Javi + clon del carrusel de Ramiro Cubria que paso Javi + carruseles elite). 5/5 gate TODO PASS, frames mirados. Los carruseles pasan por Santi antes de publicar.",
  "piezas": [
   {
    "id": "javi_p1",
    "cuenta": "JAVI",
    "post": 1,
-   "formato": "Voz real de clase sobre sus fotos (cortes secos)",
+   "formato": "Video: hook Javi + AD validado",
    "bucket": "BOFU",
-   "titular": "La gente negativa conmigo no va",
-   "dur": 21,
-   "fuente": "Su voz REAL del aula (verificada) sobre 5 fotos suyas verificadas (escenario, gym, selfie NY, Paris, callback escenario).",
-   "nota": "Mentalidad pura. CTA caption: comenta EQUIPO."
+   "titular": "Facturar no es ganar. Ellos ya lo saben.",
+   "dur": 29,
+   "fuente": "Hook de Javi en el estudio + AD01 entero (el formato de ads que Javi dio por bueno).",
+   "nota": "CTA: comenta CASH."
   },
   {
    "id": "javi_p2",
    "cuenta": "JAVI",
    "post": 2,
-   "formato": "Montaje de clips (familia B, 0,85 cortes/s, ancla en bucle)",
+   "formato": "Carrusel elite (6 slides, preview con musica)",
    "bucket": "MOFU",
-   "titular": "LAS 7 FUGAS DEL CHECKOUT",
-   "dur": 31,
-   "fuente": "Spine: Javi VERIFICADO en el estudio/clase MENTORIUM (IMG_1989, fuente de su frame verified, zoom x2,16) + alumnos con placas del evento + las 7 fugas REALES del lead magnet Auditoría Cash Real.",
-   "nota": "Montaje con arco + decode completo verificado. CTA: comenta CASH."
+   "titular": "Lo que usan mis alumnos para no quemar dinero",
+   "dur": 29,
+   "fuente": "Herramientas reales de las auditorias + pruebas. Slides en el paquete del escritorio.",
+   "nota": "CTA: comenta RECURSOS. Pasa por Santi antes de publicar."
   },
   {
    "id": "javi_p3",
    "cuenta": "JAVI",
    "post": 3,
-   "formato": "Talking head (podcast 3CAM, reel #1 del mapa)",
-   "bucket": "TOFU",
-   "titular": "Gasté 3.000€ y vendí CERO",
-   "dur": 48,
-   "fuente": "C2404 (video) + audio bueno C2410 muxeado con offset medido +1,240s. 3 bloques limpios esquivando los tramos mal transcritos, remate completo dentro ('es parte del juego'). Insertos de placas mientras la voz sigue. LUFS −14,0 / TP −2,4.",
-   "nota": "Timeline limpio verificado (el fallo de la musica esta muerto). CTA: comenta CERO."
+   "formato": "Carrusel CLON del referente de Ramiro Cubria (3 slides)",
+   "bucket": "BOFU",
+   "titular": "La placa que nadie te regala",
+   "dur": 8,
+   "fuente": "Estructura clonada del caso Fernando (lo paso Javi 3-ago): portada dorada + win real de ORGANICO + fotos reales de entregas de placas del evento.",
+   "nota": "La historia entera va en el caption (7 beats). CTA: comenta PLACA. Pasa por Santi."
   },
   {
    "id": "jordi_p1",
    "cuenta": "JORDI",
    "post": 1,
-   "formato": "Foto-historia narrada (su voz + sus fotos)",
-   "bucket": "TOFU",
-   "titular": "Mi meta eran 300 euros al mes",
-   "dur": 44,
-   "fuente": "Su voz REAL del podcast ZYRO (audio bueno P2) sobre 6 fotos verificadas, de menos a mas con climax conduciendo. Cero cifras de facturacion.",
-   "nota": "Storytelling amplio (TOFU viral, no nicho)."
+   "formato": "Video: hook Jordi + AD validado (tu idea de esta noche)",
+   "bucket": "BOFU",
+   "titular": "Esto no es otro curso de ecommerce.",
+   "dur": 32,
+   "fuente": "Hook de Jordi en el podcast (mudo + texto, pom) + AD12 entero — el ad donde Jordi sale en el escenario.",
+   "nota": "CTA: comenta ATAJO."
   },
   {
    "id": "jordi_p2",
    "cuenta": "JORDI",
    "post": 2,
-   "formato": "Montaje de clips (ancla POV volante, como el referente aprobado)",
+   "formato": "Carrusel elite (6 slides, preview con musica)",
    "bucket": "MOFU",
-   "titular": "LOS 5 NÚMEROS QUE MANDAN",
-   "dur": 31,
-   "fuente": "Sus ganchos de lambo LIBRES de cooldown (spine: volante gancho_04, patrón de la V5 que aprobó) + 1 clip alumno-placa (prueba social, sin Javi). Métricas reales de la Planilla KPI. Cero cifras suyas.",
-   "nota": "Re-anclado al POV del volante. CTA: comenta DATA."
+   "titular": "Empezo de cero en marzo. Mira como va.",
+   "dur": 29,
+   "fuente": "Caso real con wins enteras sin retocar. Slides en el paquete del escritorio.",
+   "nota": "CTA: comenta ATAJO. Pasa por Santi antes de publicar."
   },
   {
    "id": "jordi_p3",
    "cuenta": "JORDI",
    "post": 3,
-   "formato": "Talking head (ZYRO sb06)",
-   "bucket": "BOFU",
-   "titular": "Por eso abandonas tus metas",
-   "dur": 56,
-   "fuente": "sb06 4K (identidad verificada) + AUDIO BUENO P2 correlacionado (cross-check −3,152 ✓). Karaoke amarillo palabra a palabra (su pedido del 22-jul). Arranca en su 'Claro, yo hablo con mucha gente' (pregunta del host recortada). 1 inserto POV volante. Audio normalizado a −14.",
-   "nota": "Mentalidad/creencias = BOFU de Santi. La cifra que suena ('quiero ganar 15.000') es de terceros, no suya."
+   "formato": "Montaje POV lambo (a la espera de su voz clonada)",
+   "bucket": "MOFU",
+   "titular": "Los 5 numeros que mandan",
+   "dur": 31,
+   "fuente": "El montaje que le gusto a Jordi. En cuanto Gerard active ElevenLabs, entra su voz clonada narrando (guion listo).",
+   "nota": "Version actual: musica + tarjetas. CTA: comenta DATA."
   }
  ],
  "stories": {
