@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Retiro CIEM · Un fin de semana para volver a ti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--oliva:#3d4431;--oliva2:#2b2e22;--crema:#f6f2e7;--crema2:#efe9d8;--tinta:#26281f;
+--acento:#c9a53f;--blanco:#fffdf7}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--tinta);background:var(--crema);overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
+h2{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.08;color:var(--oliva)}
+h2 em{font-style:italic;color:var(--acento)}
+section{padding:96px 22px}
+.wrap{max-width:1080px;margin:0 auto}
+.kicker{letter-spacing:.34em;font-size:.72rem;text-transform:uppercase;color:var(--acento);
+font-weight:600;margin-bottom:18px}
+.btn{display:inline-block;background:var(--oliva);color:var(--crema);padding:17px 38px;
+border-radius:999px;text-decoration:none;font-weight:500;letter-spacing:.06em;font-size:.95rem;
+transition:transform .25s,box-shadow .25s;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(43,46,34,.28)}
+.btn.oro{background:var(--acento);color:var(--oliva2)}
+.btn.linea{background:transparent;border:1px solid var(--crema);color:var(--crema)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+/* ---------- HERO CINEMATOGRÁFICO ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0;color:var(--crema)}
+.hero .bg{position:absolute;inset:0;overflow:hidden}
+.hero .bg img{width:100%;height:100%;object-fit:cover;animation:kb 22s ease-out forwards}
+@keyframes kb{from{transform:scale(1.14) translateY(-2%)}to{transform:scale(1.0)}}
+.hero .velo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,30,21,.25) 0%,rgba(28,30,21,.16) 45%,rgba(28,30,21,.86) 100%)}
+.hero .cont{position:relative;width:100%;max-width:1080px;margin:0 auto;padding:0 22px 9svh}
+.hero h1{font-size:clamp(2.7rem,7.4vw,5.2rem);line-height:1.02;margin:14px 0 18px}
+.hero h1 em{font-style:italic;color:var(--acento)}
+.hero p{max-width:560px;font-weight:300;font-size:1.08rem;line-height:1.6;opacity:.95}
+.hero .ctas{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .scroll{position:absolute;right:26px;bottom:26px;font-size:.68rem;letter-spacing:.3em;
+text-transform:uppercase;opacity:.7;writing-mode:vertical-rl}
+/* barra sticky */
+.stick{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(43,46,34,.92);
+backdrop-filter:blur(8px);color:var(--crema);display:flex;align-items:center;gap:18px;
+justify-content:space-between;padding:10px 20px;transform:translateY(-110%);transition:transform .35s}
+.stick.on{transform:none}
+.stick .t{font-family:'Cormorant Garamond',serif;font-size:1.05rem}
+.stick .btn{padding:9px 22px;font-size:.82rem;background:var(--acento);color:var(--oliva2)}
+/* ---------- VIDEO GATE ---------- */
+.intro{background:var(--blanco);text-align:center}
+.metricas{display:flex;gap:38px;justify-content:center;flex-wrap:wrap;margin:34px 0 8px}
+.metricas div{text-align:center}
+.metricas b{display:block;font-family:'Cormorant Garamond',serif;font-size:2.1rem;color:var(--oliva)}
+.metricas span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#8a8672}
+.vgate{position:relative;max-width:760px;margin:44px auto 0;border-radius:22px;overflow:hidden;
+box-shadow:0 30px 70px rgba(43,46,34,.25);cursor:pointer}
+.vgate img{filter:saturate(.9)}
+.vgate .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+background:rgba(28,30,21,.34);transition:background .3s}
+.vgate:hover .play{background:rgba(28,30,21,.22)}
+.vgate .play span{width:92px;height:92px;border-radius:50%;background:var(--crema);display:flex;
+align-items:center;justify-content:center;font-size:1.7rem;color:var(--oliva);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+/* ---------- RECORRIDO ---------- */
+.recorrido{background:var(--oliva);color:var(--crema)}
+.recorrido h2{color:var(--crema)}
+.dias{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.dia{background:rgba(246,242,231,.06);border:1px solid rgba(246,242,231,.16);border-radius:18px;
+padding:32px 28px;position:relative;transition:transform .3s,background .3s}
+.dia:hover{transform:translateY(-6px);background:rgba(246,242,231,.1)}
+.dia .num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;color:var(--acento);line-height:1}
+.dia h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;margin:10px 0 4px}
+.dia .sub{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;opacity:.65;margin-bottom:16px}
+.dia ul{list-style:none;display:grid;gap:9px;font-weight:300;font-size:.95rem}
+.dia li::before{content:"—";color:var(--acento);margin-right:9px}
+/* ---------- PILARES ---------- */
+.pilares{background:var(--crema)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.pil{background:var(--blanco);border:1px solid #e6dfcd;border-radius:18px;padding:30px 24px;
+transition:transform .3s,box-shadow .3s}
+.pil:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(43,46,34,.12)}
+.pil .ic{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--acento)}
+.pil h3{font-size:1.02rem;margin:12px 0 8px;color:var(--oliva)}
+.pil p{font-weight:300;font-size:.88rem;line-height:1.55;color:#5c5c4e}
+/* ---------- PROBLEMA (banda parallax) ---------- */
+.problema{position:relative;color:var(--crema);text-align:center;padding:130px 22px}
+.problema .bg{position:absolute;inset:0}
+.problema .bg img{width:100%;height:100%;object-fit:cover}
+.problema .velo{position:absolute;inset:0;background:rgba(28,30,21,.72)}
+.problema .wrap{position:relative}
+.problema h2{color:var(--crema)}
+.dolores{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:720px;margin:44px auto 0}
+.dolor{border:1px solid rgba(246,242,231,.3);border-radius:14px;padding:20px 22px;font-weight:300;
+font-size:1rem;background:rgba(28,30,21,.35)}
+/* ---------- TESTIMONIOS ---------- */
+.testimonios{background:var(--blanco)}
+.testis{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.testi{background:var(--crema);border-radius:18px;padding:32px 30px;border:1px solid #e3ddcd}
+.testi .q{font-family:'Cormorant Garamond',serif;font-size:1.26rem;line-height:1.45;
+color:var(--oliva);font-style:italic}
+.testi .who{margin-top:16px;font-size:.85rem;color:#8a8672;letter-spacing:.05em}
+.stars{color:var(--acento);letter-spacing:.2em;font-size:.8rem;margin-bottom:10px}
+.fotos-tira{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
+.fotos-tira img{border-radius:14px;aspect-ratio:1/1.15;object-fit:cover;transition:transform .35s}
+.fotos-tira img:hover{transform:scale(1.04)}
+/* ---------- INVERSIÓN ---------- */
+.inversion{background:var(--crema2)}
+.caja{background:var(--blanco);border:1px solid #ddd6c4;border-radius:24px;overflow:hidden;
+display:grid;grid-template-columns:1.05fr .95fr;margin-top:46px;box-shadow:0 30px 70px rgba(43,46,34,.12)}
+.inv-txt{padding:54px 48px}
+.inv-txt ul{list-style:none;display:grid;gap:12px;margin:22px 0 30px;font-weight:300}
+.inv-txt li::before{content:"✦";color:var(--acento);margin-right:10px}
+.precio{font-family:'Cormorant Garamond',serif;font-size:4.2rem;color:var(--oliva);line-height:1}
+.precio small{font-size:1rem;font-family:'Jost';font-weight:300;color:#8a8672}
+.nota-reserva{font-size:.9rem;color:#6b6a58;margin:8px 0 26px}
+.inv-img{min-height:420px}
+.inv-img img{width:100%;height:100%;object-fit:cover}
+.ayuda{margin-top:16px;font-size:.9rem}
+.ayuda a{color:var(--oliva);font-weight:500}
+/* ---------- FAQ ---------- */
+.faq{background:var(--blanco)}
+.faq details{border-bottom:1px solid #e3ddcd;padding:20px 4px}
+.faq summary{cursor:pointer;font-weight:500;font-size:1.04rem;color:var(--oliva);list-style:none;
+display:flex;justify-content:space-between;align-items:center}
+.faq summary::after{content:"+";font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--acento)}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:14px 4px 6px;font-weight:300;line-height:1.6;color:#55543f}
+/* footer */
+footer{background:var(--oliva2);color:var(--crema);text-align:center;padding:56px 22px}
+footer .serif{font-size:1.5rem;margin-bottom:10px}
+footer a{color:var(--acento);text-decoration:none}
+footer .cp{opacity:.5;font-size:.78rem;margin-top:18px}
+/* gate modal */
+.gate{position:fixed;inset:0;background:rgba(28,30,21,.78);display:none;align-items:center;
+justify-content:center;z-index:90;padding:20px}
+.gate.on{display:flex}
+.gcard{background:var(--blanco);border-radius:22px;max-width:430px;width:100%;padding:40px 34px}
+.gcard h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--oliva);margin-bottom:8px}
+.gcard p{font-weight:300;font-size:.92rem;color:#6b6a58;margin-bottom:20px}
+.gcard input{width:100%;padding:13px 16px;margin-bottom:12px;border:1px solid #d8d2c0;
+border-radius:10px;font-family:'Jost';font-size:.95rem;background:var(--crema)}
+.gcard .btn{width:100%;text-align:center}
+.gcard .x{float:right;cursor:pointer;color:#8a8672;font-size:1.2rem}
+.video-zona{display:none;max-width:760px;margin:30px auto 0}
+.video-zona.on{display:block}
+.video-zona .marco{border-radius:20px;overflow:hidden;box-shadow:0 26px 60px rgba(43,46,34,.25);
+background:var(--oliva2);color:var(--crema);padding:60px 30px;text-align:center}
+@media(max-width:900px){
+  .dias,.pgrid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .testis,.dolores{grid-template-columns:1fr}
+  .caja{grid-template-columns:1fr}
+  .inv-img{min-height:280px}
+  .fotos-tira{grid-template-columns:repeat(2,1fr)}
+  section{padding:72px 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="stick" id="stick">
+  <div class="t">Retiro CIEM · <em style="color:var(--acento)">plazas por reserva</em></div>
+  <a class="btn" href="#inversion">Reservar mi plaza</a>
+</div>
+
+<!-- 1 · HERO -->
+<header class="hero">
+  <div class="bg"><img src="../img/p1_01.jpg" alt="Retiro CIEM"></div>
+  <div class="velo"></div>
+  <div class="cont">
+    <div class="kicker">Retiro vivencial de inteligencia emocional · 2ª edición</div>
+    <h1>Un fin de semana<br>para <em>volver a ti</em></h1>
+    <p>Del viernes por la tarde al domingo por la tarde: suelta cargas, gestiona tus miedos
+    y descubre qué te impide avanzar. En plena naturaleza, acompañado por el equipo CIEM.</p>
+    <div class="ctas">
+      <a class="btn oro" href="#inversion">Quiero mi plaza</a>
+      <a class="btn linea" href="#recorrido">Ver el recorrido</a>
+    </div>
+  </div>
+  <div class="scroll">desliza</div>
+</header>
+
+<!-- 2 · INTRO + VIDEO GATE -->
+<section class="intro">
+  <div class="wrap rv">
+    <div class="kicker">Si esto resuena contigo, es para ti</div>
+    <h2>Un antes y un después<br>en tu <em>bienestar</em></h2>
+    <div class="metricas">
+      <div><b>3</b><span>días vivenciales</span></div>
+      <div><b>2025</b><span>1ª edición completada</span></div>
+      <div><b>100%</b><span>experiencia guiada</span></div>
+    </div>
+    <div class="vgate" onclick="abrirGate()">
+      <img src="../img/p1_02.jpg" alt="Vídeo del retiro">
+      <div class="play"><span>▶</span></div>
+    </div>
+    <p style="margin-top:16px;font-size:.85rem;color:#8a8672">Pulsa para ver el vídeo del retiro</p>
+    <div class="video-zona" id="video-zona">
+      <div class="marco">
+        <p class="serif" style="font-size:1.5rem">Gracias. Te escribimos por WhatsApp con el vídeo
+        y toda la información del retiro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · RECORRIDO -->
+<section class="recorrido" id="recorrido">
+  <div class="wrap">
+    <div class="kicker rv">Tu recorrido de transformación</div>
+    <h2 class="rv">Tres días, <em>un camino</em></h2>
+    <div class="dias">
+      <div class="dia rv"><div class="num">I</div><h3>Llegar y soltar</h3>
+        <div class="sub">Viernes · desde las 18:00</div>
+        <ul><li>Presentación</li><li>Práctica de la Inteligencia Emocional</li>
+        <li>Cena</li><li>Actividades nocturnas</li></ul></div>
+      <div class="dia rv"><div class="num">II</div><h3>Abrir y sentir</h3>
+        <div class="sub">Sábado · día completo</div>
+        <ul><li>Desayuno</li><li>Juegos emocionales</li><li>Comida</li>
+        <li>Prácticas vivenciales</li><li>Cena y actividades nocturnas</li></ul></div>
+      <div class="dia rv"><div class="num">III</div><h3>Renacer</h3>
+        <div class="sub">Domingo · hasta la tarde</div>
+        <ul><li>Desayuno</li><li>Renacimiento del Yo</li><li>Resumen y cierre</li>
+        <li>Comida y vuelta a casa</li></ul></div>
+    </div>
+    <p class="rv" style="margin-top:34px;text-align:center;font-weight:300;opacity:.8">
+    ¿Quieres el programa detallado? <a href="https://wa.me/34689887745?text=Hola%2C%20quiero%20el%20dossier%20del%20retiro%20CIEM"
+    style="color:var(--acento)">Pídenos el dossier por WhatsApp</a>.</p>
+  </div>
+</section>
+
+<!-- 4 · PILARES -->
+<section class="pilares">
+  <div class="wrap">
+    <div class="kicker rv">Un proceso guiado para volver a ti</div>
+    <h2 class="rv">No es teoría: <em>se vive</em></h2>
+    <div class="pgrid">
+      <div class="pil rv"><div class="ic">✦</div><h3>Inteligencia emocional práctica</h3>
+        <p>Herramientas que se entrenan en el momento, no apuntes para casa.</p></div>
+      <div class="pil rv"><div class="ic">✦</div><h3>Trabajo vivencial en grupo</h3>
+        <p>Juegos y dinámicas que abren lo que la mente lleva años guardando.</p></div>
+      <div class="pil rv"><div class="ic">✦</div><h3>Naturaleza y desconexión</h3>
+        <p>Un entorno pensado para bajar el ruido y escucharte de verdad.</p></div>
+      <div class="pil rv"><div class="ic">✦</div><h3>Acompañamiento CIEM</h3>
+        <p>El equipo que guió la edición 2025, contigo durante los tres días.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · PROBLEMA -->
+<section class="problema">
+  <div class="bg"><img src="../img/p3_08.jpg" alt=""></div>
+  <div class="velo"></div>
+  <div class="wrap rv">
+    <div class="kicker">Lo que pesa sin que se vea</div>
+    <h2>Lo que te está <em>frenando</em></h2>
+    <div class="dolores">
+      <div class="dolor">Cargas que llevas años arrastrando sin nombrarlas</div>
+      <div class="dolor">Miedos que deciden por ti más de lo que crees</div>
+      <div class="dolor">Una mente que no para ni cuando descansas</div>
+      <div class="dolor">La sensación de avanzar por fuera y estar parado por dentro</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · TESTIMONIOS -->
+<section class="testimonios">
+  <div class="wrap">
+    <div class="kicker rv">Edición 2025</div>
+    <h2 class="rv">Lo que se llevaron <em>ellos</em></h2>
+    <div class="testis">
+      <div class="testi rv"><div class="stars">★★★★★</div>
+        <div class="q">“Una experiencia increíble, acompañado por el equipo de CIEM, que es
+        todavía más increíble. Recomiendo 100% el retiro: es sorprendente, mágico lo que hemos
+        vivido. Gracias, gracias y gracias.”</div>
+        <div class="who">Participante del retiro 2025</div></div>
+      <div class="testi rv"><div class="stars">★★★★★</div>
+        <div class="q">“Lo recomiendo a todos los seres que quieran soltar cargas y sentirse
+        mejor consigo mismos. Esta experiencia quedará grabada en mi mente y en mi corazón
+        de por vida. Mil gracias.”</div>
+        <div class="who">Participante del retiro 2025</div></div>
+      <div class="testi rv"><div class="stars">★★★★★</div>
+        <div class="q">“Quería daros las gracias no solo por el retiro, sino por ayudarme a
+        cerrar el libro entero. Por fin solté la carga emocional que llevaba. Ha sido la luz
+        al final del túnel.”</div>
+        <div class="who">Participante del retiro 2025</div></div>
+      <div class="testi rv"><div class="stars">★★★★★</div>
+        <div class="q">“Me siento diferente y tengo la seguridad de que este es el principio
+        del proceso que conlleva recuperar mi mejor versión. Os admiro por el trabajo que
+        hacéis: ayudar a personas a sanar.”</div>
+        <div class="who">Adrián · Participante del retiro 2025</div></div>
+    </div>
+    <div class="fotos-tira rv">
+      <img src="../img/p2_04.jpg" alt="Retiro 2025">
+      <img src="../img/p2_05.jpg" alt="Retiro 2025">
+      <img src="../img/p2_06.jpg" alt="Retiro 2025">
+      <img src="../img/p2_07.jpg" alt="Retiro 2025">
+    </div>
+  </div>
+</section>
+
+<!-- 7 · INVERSIÓN -->
+<section class="inversion" id="inversion">
+  <div class="wrap">
+    <div class="kicker rv">Invierte en ti</div>
+    <h2 class="rv">Estás a un paso de <em>vivirlo</em></h2>
+    <div class="caja rv">
+      <div class="inv-txt">
+        <ul>
+          <li>Retiro vivencial completo de 3 días</li>
+          <li>Todas las prácticas y dinámicas guiadas</li>
+          <li>Acompañamiento del equipo CIEM</li>
+          <li>Grupo reducido, atención real</li>
+        </ul>
+        <div class="precio">450€ <small>IVA incluido</small></div>
+        <div class="nota-reserva">Reserva de plaza: 200€ · resto 10 días antes del retiro<br>
+        Fecha: <b>[FECHA POR CONFIRMAR]</b></div>
+        <a class="btn oro" href="https://wa.me/34689887745?text=Hola%2C%20quiero%20reservar%20mi%20plaza%20en%20el%20retiro%20CIEM"
+        target="_blank">Reservar mi plaza ahora</a>
+        <div class="ayuda">¿Dudas? <a href="https://wa.me/34689887745?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20retiro"
+        target="_blank">Escríbenos por WhatsApp</a></div>
+      </div>
+      <div class="inv-img"><img src="../img/p4_10.jpg" alt="El espacio del retiro"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · FAQ -->
+<section class="faq">
+  <div class="wrap" style="max-width:760px">
+    <div class="kicker rv">¿Tienes dudas?</div>
+    <h2 class="rv">Preguntas <em>frecuentes</em></h2>
+    <div style="margin-top:36px" class="rv">
+      <details><summary>¿Necesito experiencia previa?</summary>
+        <p>No. Es un proceso vivencial guiado paso a paso por el equipo CIEM: llegas como
+        estás y el retiro hace el resto.</p></details>
+      <details><summary>¿Puedo venir solo/a?</summary>
+        <p>Sí — la mayoría de participantes de 2025 llegaron sin conocer a nadie y se fueron
+        con un grupo que hoy sigue en contacto.</p></details>
+      <details><summary>¿Cómo reservo mi plaza?</summary>
+        <p>Con 200€ aseguras tu plaza; el resto se abona 10 días antes del retiro. Escríbenos
+        por WhatsApp y te lo dejamos todo cerrado en cinco minutos.</p></details>
+      <details><summary>¿Cuándo y dónde es?</summary>
+        <p>La fecha de la 2ª edición está por confirmar. El lugar: un espacio en plena
+        naturaleza — pide el dossier por WhatsApp y te enviamos todos los detalles.</p></details>
+      <details><summary>¿Qué pasa si no puedo asistir tras reservar?</summary>
+        <p>Cuéntanoslo por WhatsApp y buscamos la mejor solución contigo.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="serif">CIEM · Retiro vivencial</div>
+  <div><a href="https://wa.me/34689887745">WhatsApp 689 887 745</a></div>
+  <div class="cp">© 2026 CIEM · Todos los derechos reservados</div>
+</footer>
+
+<!-- GATE -->
+<div class="gate" id="gate">
+  <div class="gcard">
+    <span class="x" onclick="cerrarGate()">✕</span>
+    <h3>Ver el vídeo del retiro</h3>
+    <p>Déjanos tus datos y te lo enviamos junto con el dossier completo.</p>
+    <input id="g-nombre" placeholder="Tu nombre">
+    <input id="g-email" placeholder="Tu email" type="email">
+    <input id="g-tel" placeholder="Tu teléfono" type="tel">
+    <button class="btn" onclick="enviarGate()">Quiero verlo</button>
+  </div>
+</div>
+
+<script>
+function abrirGate(){document.getElementById('gate').classList.add('on')}
+function cerrarGate(){document.getElementById('gate').classList.remove('on')}
+function enviarGate(){
+  const n=document.getElementById('g-nombre').value.trim(),
+        e=document.getElementById('g-email').value.trim(),
+        t=document.getElementById('g-tel').value.trim();
+  if(!n||!e.includes('@')||t.length<9){alert('Revisa tu nombre, email y teléfono');return}
+  const leads=JSON.parse(localStorage.getItem('ciem_leads')||'[]');
+  leads.push({n,e,t,v:'v2',cuando:new Date().toISOString()});
+  localStorage.setItem('ciem_leads',JSON.stringify(leads));
+  const msg=encodeURIComponent('Hola, soy '+n+'. Quiero ver el vídeo y el dossier del retiro CIEM.\n'
+    +'Email: '+e+'\nTeléfono: '+t);
+  window.open('https://wa.me/34689887745?text='+msg,'_blank');
+  cerrarGate();
+  const z=document.getElementById('video-zona');
+  z.classList.add('on');
+  z.scrollIntoView({behavior:'smooth',block:'center'});
+}
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')}),
+  {threshold:.14});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const stick=document.getElementById('stick');
+addEventListener('scroll',()=>{stick.classList.toggle('on',scrollY>innerHeight*0.85)});
+</script>
+</body>
+</html>

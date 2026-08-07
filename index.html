@@ -87,6 +87,7 @@ h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
 <div class="sub" id="fecha"></div>
 <div class="est" id="est"></div>
 <div class="cols" id="cols"></div>
+<div class="est" id="stories" style="display:none"></div>
 <div class="pend" id="pend"></div>
 <div id="estado">cargando…</div>
 
@@ -112,8 +113,23 @@ async function cargar(){
   DATOS=await (await fetch("piezas.json?v="+Date.now())).json();
   document.getElementById("fecha").textContent=DATOS.dia+" · "+DATOS.piezas.length+" piezas";
   document.getElementById("est").innerHTML="<b>Estrategia:</b> "+DATOS.estrategia;
-  document.getElementById("pend").innerHTML="<b>Pendiente de hoy:</b><br>· "+
-    (DATOS.pendiente_hoy||[]).join("<br>· ");
+  const pend=document.getElementById("pend");
+  if(DATOS.pendiente_hoy&&DATOS.pendiente_hoy.length){
+    pend.innerHTML="<b>Pendiente de hoy:</b><br>· "+DATOS.pendiente_hoy.join("<br>· ");
+  }else{pend.style.display="none";}
+  const st=DATOS.stories;
+  const stDiv=document.getElementById("stories");
+  if(st&&stDiv){
+    stDiv.style.display="block";
+    stDiv.innerHTML="<h3 style='margin:18px 0 6px'>📱 "+st.titulo+"</h3>"+
+      ["JAVI","JORDI"].map(c=>"<div style='margin:8px 0 2px;font-weight:700'>"+c+"</div>"+
+        "<div style='display:flex;gap:8px;overflow-x:auto;padding-bottom:6px'>"+
+        (st[c]||[]).map((u,i)=>"<a href='"+u+"' target='_blank' style='flex:0 0 auto'>"+
+          "<img src='"+u+"' style='height:280px;border-radius:10px;display:block'>"+
+          "<div style='text-align:center;font-size:12px;opacity:.7'>"+(i+1)+"</div></a>").join("")+
+        "</div>").join("")+
+      "<div style='font-size:13px;opacity:.75;margin-top:4px'>"+(st.nota||"")+"</div>";
+  }
   try{
     const r=await fetch(BLOB+"?v="+Date.now());
     if(r.ok){const j=await r.json(); VOTOS=(j&&j.votos)||{};}
