@@ -366,10 +366,13 @@ function enviarGate(){
         e=document.getElementById('g-email').value.trim(),
         t=document.getElementById('g-tel').value.trim();
   if(!n||!e.includes('@')||t.length<9){alert('Revisa tu nombre, email y teléfono');return}
-  // PREVIEW: lead en localStorage. En produccion: POST al form de HubSpot de la organizadora.
+  // copia local (respaldo) + el lead REAL llega por WhatsApp con mensaje prellenado
   const leads=JSON.parse(localStorage.getItem('ciem_leads')||'[]');
   leads.push({n,e,t,cuando:new Date().toISOString()});
   localStorage.setItem('ciem_leads',JSON.stringify(leads));
+  const msg=encodeURIComponent('Hola, soy '+n+'. Quiero información del retiro CIEM.\n'
+    +'Email: '+e+'\nTeléfono: '+t);
+  window.open('https://wa.me/34689887745?text='+msg,'_blank');
   cerrarGate();
   const z=document.getElementById('video-zona');
   z.classList.add('on');
