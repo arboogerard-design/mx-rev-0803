@@ -1,77 +1,79 @@
 {
- "generado": "2026-08-06",
- "dia": "jueves 6 ago",
- "estrategia": "Santi 50/30/20 -> en 6 piezas: 3 TOFU / 2 MOFU / 1 BOFU · jueves = iPad + formato que no requiere + talking head · V2: musica viral con drop en las 6 (2 iban MUDAS)",
+ "generado": "2026-08-07",
+ "dia": "viernes 8 ago",
+ "estrategia": "Calendario Santi: Selfie · Formato que no te requiera · Talking head. Reparto del día: 3 TOFU / 2 MOFU / 1 BOFU (la semana entera cuadra 50/30/20).",
  "piezas": [
   {
    "id": "javi_p1",
    "cuenta": "JAVI",
    "post": 1,
-   "formato": "iPad / pantalla dividida",
-   "bucket": "MOFU",
-   "titular": "Las herramientas con las que miramos una tienda",
-   "dur": 48,
-   "fuente": "Pantalla: grabacion OBS de Javi (30-jul, su tienda + nuestro panel de calculadoras). Cara y voz: RAW 4K del podcast, camara C2404.",
-   "nota": "V2: + Metro Boomin ducked bajo la voz."
+   "formato": "Selfie (brief para grabar) · suplente: meme co1e0 banda negra",
+   "bucket": "TOFU",
+   "titular": "El COD no era gratis. Solo te cobraba después.",
+   "dur": 11,
+   "fuente": "Foto deadpan canónica verificada (coche, gafas). Frase original estilo co1e0, cero claims.",
+   "nota": "Si Javi graba el selfie del brief ('el COD es una mierda', 15s), sube ese; si no, este suplente cubre el hueco. Brief en _WIP/VIERNES_8AGO/BRIEFS_SELFIE_VIERNES.md"
   },
   {
    "id": "javi_p2",
    "cuenta": "JAVI",
    "post": 2,
-   "formato": "Formato que no te requiera",
+   "formato": "Montaje de clips (familia B, 0,86 cortes/s)",
    "bucket": "MOFU",
-   "titular": "El orden en que se arregla una tienda",
-   "dur": 20,
-   "fuente": "Motion graphics de marca (broll_motion.py). Cero cara, cero creditos de IA.",
-   "nota": "V2: iba MUDA - ahora HOME resonance con drop en el hook."
+   "titular": "LAS 7 FUGAS DEL CHECKOUT",
+   "dur": 30,
+   "fuente": "Spine: Javi VERIFICADO en el estudio/clase MENTORIUM (IMG_1989, fuente del frame verified) + alumnos con placas del evento + las 7 fugas REALES del lead magnet Auditoría Cash Real.",
+   "nota": "CTA caption: comenta CASH → auditoría. Música Tom Odell instrumental con drop al fin del hook."
   },
   {
    "id": "javi_p3",
    "cuenta": "JAVI",
    "post": 3,
-   "formato": "Talking head",
+   "formato": "Talking head (podcast 3CAM, reel #1 del mapa)",
    "bucket": "TOFU",
-   "titular": "Facturas un millon... y cuanto queda de verdad",
-   "dur": 54,
-   "fuente": "RAW 4K del podcast (C2404) + audio ya sincronizado. Reels #3+#4 del MAPA_QA_26_REELS encadenados.",
-   "nota": "V2: + Kanye Runaway instrumental ducked."
+   "titular": "Gasté 3.000€ y vendí CERO",
+   "dur": 48,
+   "fuente": "C2404 (video) + audio bueno C2410 muxeado con offset medido +1,240s. 3 bloques limpios, remate completo dentro ('es parte del juego'). Insertos de placas mientras la voz sigue.",
+   "nota": "El baneo está levantado: la cifra hablada/en subs vale. CTA caption: comenta CERO."
   },
   {
    "id": "jordi_p1",
    "cuenta": "JORDI",
    "post": 1,
-   "formato": "iPad / pantalla dividida",
+   "formato": "Selfie (brief para grabar) · suplente: meme co1e0 banda blanca",
    "bucket": "TOFU",
-   "titular": "Aprender gratis vs pagar por el atajo",
-   "dur": 46,
-   "fuente": "Pantalla: dashboard real de alumno. Cara y voz: RAW 4K camara C2410.",
-   "nota": "V2: + After Hours instrumental ducked."
+   "titular": "El CEO que te vende libertad no puede irse ni un finde",
+   "dur": 7,
+   "fuente": "Foto deadpan canónica verificada (café, móvil). Tema amplio (su queja del 5-ago: TOFU más viral, menos nicho).",
+   "nota": "Brief selfie amplio en BRIEFS_SELFIE_VIERNES.md. Cero cifras."
   },
   {
    "id": "jordi_p2",
    "cuenta": "JORDI",
    "post": 2,
-   "formato": "Formato que no te requiera",
-   "bucket": "TOFU",
-   "titular": "Trabajas mas. Facturas lo mismo.",
-   "dur": 18,
-   "fuente": "Motion graphics de marca. Cero cara.",
-   "nota": "REHECHA: era mentalidad-BOFU duplicada; ahora sintoma TOFU + Ice Spice. Sin cifras."
+   "formato": "Montaje de clips (familia B, 0,85 cortes/s)",
+   "bucket": "MOFU",
+   "titular": "LOS 5 NÚMEROS QUE MANDAN",
+   "dur": 31,
+   "fuente": "Sus ganchos de lambo verificados (spine: volante, patrón de la V5 que aprobó) + 1 clip alumno-placa (prueba social, sin Javi). Métricas reales de la Planilla KPI. Cero cifras suyas.",
+   "nota": "CTA caption: comenta DATA → planilla KPI."
   },
   {
    "id": "jordi_p3",
    "cuenta": "JORDI",
    "post": 3,
-   "formato": "Talking head",
+   "formato": "Talking head (ZYRO sb06)",
    "bucket": "BOFU",
-   "titular": "La actitud es lo que marca si te va bien",
-   "dur": 54,
-   "fuente": "RAW 4K camara C2410, tramo 283.9-338.1 del MAPA_JUNTOS (speaker ya confirmado).",
-   "nota": "V2: + Empire of the Sun instrumental ducked."
+   "titular": "Por eso abandonas tus metas",
+   "dur": 56,
+   "fuente": "sb06 4K (identidad verificada) + AUDIO BUENO P2 correlacionado (cross-check −3,152 ✓). Karaoke amarillo palabra a palabra (su pedido del 22-jul). Arranca en su 'Claro, yo hablo con mucha gente' (pregunta del host recortada). 2 insertos POV volante.",
+   "nota": "Mentalidad/creencias = BOFU de Santi. La cifra que suena ('quiero ganar 15.000') es de terceros, no suya."
   }
  ],
  "pendiente_hoy": [
-  "Stories de Santi (su criterio manda: 22 fondos suyos, cuerpo 112px, lienzo 1440 PNG)",
-  "Los ads de Mati los pasa Gerard directamente a Javi, no van por el panel"
+  "ADS: los 8 definitivos (AD01-08_V12) están en el escritorio, carpeta _ADS_JAVI_7AGO — 4 ganchos distintos de Mati, alumnos variados, voz igualada. Pásalos a Javi cuando des el OK.",
+  "Selfies: si Javi/Jordi graban los briefs de 15s, sustituyen a los memes suplentes del post 1.",
+  "Carruseles del 6-ago: siguen esperando el pase a Santi (Desktop/_CARRUSELES_HOY).",
+  "PACK VACACIONES: 4 textos listos para enviar en Desktop/_PACK_VACACIONES/LEEME_Y_ENVIA.md"
  ]
 }
