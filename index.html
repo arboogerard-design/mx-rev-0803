@@ -37,6 +37,9 @@ header{position:sticky;top:0;z-index:20;background:#0b0d0cf2;backdrop-filter:blu
 .yo .out{background:var(--card2);border-radius:99px;width:25px;height:25px;font-size:14px;
          display:grid;place-items:center;color:var(--dim)}
 /* ---------- PESTAÑAS ---------- */
+.refbox{border:1px dashed #e8a500;border-radius:12px;padding:8px;margin:8px 0}
+.refbox .reflbl{color:#e8a500;font-size:10.5px;font-weight:700;letter-spacing:1px;margin-bottom:6px}
+.refbox video{width:46%;border-radius:8px;display:block}
 nav.tabs{position:fixed;bottom:0;left:0;right:0;z-index:30;background:#0b0d0cf7;
          backdrop-filter:blur(9px);border-top:1px solid var(--bd);
          padding:7px 6px calc(7px + env(safe-area-inset-bottom))}
@@ -156,6 +159,7 @@ p.secsub{color:var(--dim);font-size:13px;margin-bottom:4px}
   <section id="t-archivos" class="oculto"></section>
   <section id="t-criterio" class="oculto"></section>
   <section id="t-aportes" class="oculto"></section>
+  <section id="t-virales" class="oculto"></section>
 </main>
 
 <div class="sync" id="sync"></div>
@@ -170,6 +174,7 @@ const CRITERIO=[{"de": "Santi · 2-ago 21:27", "regla": "Cifras negativas NUNCA 
 const CLAVE="mentorium2026";
 const BLOB="https://jsonblob.com/api/jsonBlob/019fc97b-6f60-7c6b-8983-0a922843051e";
 const PERSONAS=["Gerard", "Javi", "Jordi", "Santi"];
+const VIRALES=[{"id": "co1e0_DXSVIsLkrz4", "origen": "co1e0", "pais": "ES", "video": "media/virales/co1e0_DXSVIsLkrz4.mp4", "poster": "media/virales/co1e0_DXSVIsLkrz4.jpg", "ficha": "7.8s · 0.0 cortes/s · meme"}, {"id": "co1e0_DXhks-iAqE5", "origen": "co1e0", "pais": "ES", "video": "media/virales/co1e0_DXhks-iAqE5.mp4", "poster": "media/virales/co1e0_DXhks-iAqE5.jpg", "ficha": "7.6s · 0.0 cortes/s · meme"}, {"id": "co1e0_DY1CC9OiU-0", "origen": "co1e0", "pais": "ES", "video": "media/virales/co1e0_DY1CC9OiU-0.mp4", "poster": "media/virales/co1e0_DY1CC9OiU-0.jpg", "ficha": "7.0s · 0.0 cortes/s · meme · gancho: ¡Vamos a ver!"}];
 
 /* ===== estado ===== */
 let YO=null;                              // nunca se asume: se elige en cada arranque de sesion
@@ -300,8 +305,8 @@ function render(){
   $("#hcnt").textContent=rev+"/"+tot;
   $("#htit").textContent={contenido:"Contenido",calendario:"Calendario",tareas:"Tareas",
                           archivos:"Archivos",criterio:"Criterio del equipo",
-                          aportes:"Aportes del equipo"}[TAB];
-  ["contenido","calendario","tareas","archivos","criterio","aportes"].forEach(t=>
+                          aportes:"Aportes del equipo",virales:"Virales para replicar"}[TAB];
+  ["contenido","calendario","tareas","archivos","criterio","aportes","virales"].forEach(t=>
     $("#t-"+t).classList.toggle("oculto",t!==TAB));
   pintaTabs();
   if(TAB==="contenido")renderContenido();
@@ -310,12 +315,14 @@ function render(){
   if(TAB==="archivos")renderArchivos();
   if(TAB==="criterio")renderCriterio();
   if(TAB==="aportes")renderAportes();
+  if(TAB==="virales")renderVirales();
 }
 function pintaTabs(){
   const abiertas=(E.tareas||[]).filter(t=>!t.hecha).length;
   const defs=[["contenido","▤","Contenido"],["calendario","▦","Semana"],
               ["tareas","✓","Tareas"],["archivos","⇪","Archivos"],["criterio","★","Criterio"],
-              ["aportes","✉","Aportes"]];
+              ["aportes","✉","Aportes"],
+              ["virales","🔥","Virales"]];
   const recientes=((APORTES&&APORTES.aportes)||[]).filter(a=>{
     const d=new Date(a.fecha.replace(" ","T"));return (Date.now()-d)/864e5<=3;}).length;
   $("#tabs").innerHTML=defs.map(([k,ic,tx])=>
@@ -361,6 +368,7 @@ function pieza(p){
     <div class="meta"><span class="tag ${esc(p.cuenta)}">${esc(p.cuenta)}</span>
       <span class="tag tipo">${esc(p.tipo)}</span>
       <span class="nom">${esc((p.id||"").replace(/_/g," "))}</span></div>
+    ${p.referente?`<div class="refbox"><div class="reflbl">🎯 REFERENTE QUE REPLICAMOS · ${esc(p.referente.handle||"")}</div><video src="${esc(p.referente.video)}" poster="${esc(p.referente.poster||"")}" muted playsinline preload="none" controls></video></div>`:""}
     ${arch?`<div class="tira">${arch}</div>`:""}
     <div class="cap" data-cap>${esc(p.caption||"")}</div>
     <button class="mas" data-mas>ver todo el texto</button>
@@ -382,6 +390,30 @@ function engancha(c){
   c.querySelectorAll("[data-mas]").forEach(b=>b.onclick=()=>{
     const cap=b.previousElementSibling;cap.classList.toggle("abierto");
     b.textContent=cap.classList.contains("abierto")?"ocultar":"ver todo el texto";});
+}
+function renderVirales(){
+  const c=$("#t-virales");
+  let h=`<p class="secsub">Virales de referentes y de ecom fuera (USA y mas). Vota REPLICAR y lo clonamos con Javi/Jordi; DENEGAR y fuera. Tu voto lo ve todo el equipo.</p>`;
+  if(!VIRALES.length){c.innerHTML=h+`<p class="vacio">Cargando candidatos — la fabrica esta bajando feeds ahora mismo.</p>`;return;}
+  h+=VIRALES.map(v=>{
+    const vid="VIRAL_"+v.id, mv=(E.votos[vid]||{})[YO]||{};
+    const chips=PERSONAS.filter(x=>x!==YO).map(per=>{const x=(E.votos[vid]||{})[per];
+      return `<span class="${x?x.v:""}">${per}${x?" "+({si:"✓",no:"✗",duda:"?"}[x.v]||""):""}</span>`;}).join("");
+    return `<div class="pieza">
+      <div class="meta"><span class="tag tipo">${esc(v.origen||"?")}</span>
+        <span class="tag">${esc(v.pais||"")}</span>
+        <span class="nom">${esc(v.id)}</span></div>
+      <div class="tira"><div class="slot"><video src="${esc(v.video)}" poster="${esc(v.poster||"")}" muted playsinline preload="none" controls></video></div></div>
+      <div class="cap">${esc(v.ficha||"")}</div>
+      <div class="votos">
+        <button class="si ${mv.v==="si"?"on":""}" data-vt="${esc(vid)}" data-v="si">REPLICAR ✓</button>
+        <button class="duda ${mv.v==="duda"?"on":""}" data-vt="${esc(vid)}" data-v="duda">Duda</button>
+        <button class="no ${mv.v==="no"?"on":""}" data-vt="${esc(vid)}" data-v="no">DENEGAR ✗</button>
+      </div>
+      <div class="quienes">${chips}</div>
+      <textarea class="nota" data-nt="${esc(vid)}" placeholder="Para quien lo replicamos y con que giro">${esc(mv.nota||"")}</textarea>
+    </div>`;}).join("");
+  c.innerHTML=h;engancha(c);
 }
 function renderCalendario(){
   const f=(CAL.filas||[]);
