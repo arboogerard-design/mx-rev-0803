@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-10",
+ "generado": "2026-08-11",
  "semana": "11-17 agosto",
  "dias": [
   "lun 11",
@@ -8,7 +8,8 @@
   "jue 14",
   "vie 15",
   "sáb 16",
-  "dom 17"
+  "dom 17",
+  "reserva"
  ],
  "piezas": [
   {
@@ -22,9 +23,12 @@
      "archivo": "W_JAVI_FRACASO.mp4",
      "poster": "media/W_JAVI_FRACASO_8AGO__00.jpg",
      "video": "media/W_JAVI_FRACASO_8AGO__00.mp4",
-     "peso_mb": 14.9
+     "peso_mb": 14.9,
+     "dur_s": 35.7
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 35.7
   },
   {
    "id": "V_JAVI_HOOKAD_SINMATI_8AGO",
@@ -37,9 +41,12 @@
      "archivo": "V_JAVI_HOOKAD_SINMATI.mp4",
      "poster": "media/V_JAVI_HOOKAD_SINMATI_8AGO__00.jpg",
      "video": "media/V_JAVI_HOOKAD_SINMATI_8AGO__00.mp4",
-     "peso_mb": 21.18
+     "peso_mb": 21.18,
+     "dur_s": 23.6
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 23.6
   },
   {
    "id": "CARR_JAVI_PANEL_8AGO",
@@ -60,7 +67,8 @@
      "archivo": "s03.png",
      "poster": "media/CARR_JAVI_PANEL_8AGO__i02.png"
     }
-   ]
+   ],
+   "etiqueta": "BOFU"
   },
   {
    "id": "STORIES_JAVI_FREESTYLE_2AGO",
@@ -98,24 +106,30 @@
      "archivo": "W_JAVI_CRITICAS.mp4",
      "poster": "media/W_JAVI_CRITICAS_8AGO__00.jpg",
      "video": "media/W_JAVI_CRITICAS_8AGO__00.mp4",
-     "peso_mb": 8.91
+     "peso_mb": 8.91,
+     "dur_s": 24.6
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 24.6
   },
   {
    "id": "REEL_JAVI_QA21_V2",
    "cuenta": "JAVI",
    "tipo": "reel",
-   "dia": "mar 12",
+   "dia": "reserva",
    "caption": "\"No venimos de ser programadores\"\n\n#ecommerce #mentoria #emprender\n",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA21_V2.mp4",
      "poster": "media/REEL_JAVI_QA21_V2__00.jpg",
      "video": "media/REEL_JAVI_QA21_V2__00.mp4",
-     "peso_mb": 48.22
+     "peso_mb": 48.22,
+     "dur_s": 38.3
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 38.3
   },
   {
    "id": "CARRUSEL_CLON_JAVI_OFERTA_2AGO",
@@ -128,51 +142,61 @@
      "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.mp4",
-     "peso_mb": 2.2
+     "peso_mb": 2.2,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.mp4",
-     "peso_mb": 0.25
+     "peso_mb": 0.25,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.mp4",
-     "peso_mb": 0.25
+     "peso_mb": 0.25,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.mp4",
-     "peso_mb": 0.26
+     "peso_mb": 0.26,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.mp4",
-     "peso_mb": 0.26
+     "peso_mb": 0.26,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.mp4",
-     "peso_mb": 0.27
+     "peso_mb": 0.27,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.mp4",
-     "peso_mb": 0.3
+     "peso_mb": 0.3,
+     "dur_s": 7.4
     },
     {
      "archivo": "zz_PREVIEW_CARRUSEL_COMPLETO.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.mp4",
-     "peso_mb": 3.84
+     "peso_mb": 3.84,
+     "dur_s": 37.4
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 5.0
   },
   {
    "id": "STORIES_JAVI_MIERCOLES_A5_V3",
@@ -206,24 +230,30 @@
      "archivo": "W_JAVI_LIBERTAD.mp4",
      "poster": "media/W_JAVI_LIBERTAD_8AGO__00.jpg",
      "video": "media/W_JAVI_LIBERTAD_8AGO__00.mp4",
-     "peso_mb": 14.44
+     "peso_mb": 14.44,
+     "dur_s": 36.7
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 36.7
   },
   {
    "id": "V_JAVI_2_QUEDA0_8AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
-   "dia": "mié 13",
+   "dia": "reserva",
    "caption": "Facturar mucho no es ganar mucho. Ellos lo aprendieron a tiempo — y por eso sus tiendas aguantan.\n\nDel último evento: alumnos reales.\n\nComenta CASH y te paso la auditoría que usamos.\n\n#ecommerce #negocios #emprender\n",
    "archivos": [
     {
      "archivo": "V_JAVI_2_QUEDA0.mp4",
      "poster": "media/V_JAVI_2_QUEDA0_8AGO__00.jpg",
      "video": "media/V_JAVI_2_QUEDA0_8AGO__00.mp4",
-     "peso_mb": 20.45
+     "peso_mb": 20.45,
+     "dur_s": 24.1
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 24.1
   },
   {
    "id": "CARRUSEL_CLON_JAVI_ORDEN_2AGO",
@@ -236,51 +266,61 @@
      "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__00.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__00.mp4",
-     "peso_mb": 1.62
+     "peso_mb": 1.62,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__01.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__01.mp4",
-     "peso_mb": 0.29
+     "peso_mb": 0.29,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__02.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__02.mp4",
-     "peso_mb": 0.27
+     "peso_mb": 0.27,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__03.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__03.mp4",
-     "peso_mb": 0.31
+     "peso_mb": 0.31,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__04.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__04.mp4",
-     "peso_mb": 0.31
+     "peso_mb": 0.31,
+     "dur_s": 5.1
     },
     {
      "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__05.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__05.mp4",
-     "peso_mb": 0.26
+     "peso_mb": 0.26,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__06.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__06.mp4",
-     "peso_mb": 0.37
+     "peso_mb": 0.37,
+     "dur_s": 5.0
     },
     {
      "archivo": "slide_08.mp4",
      "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__07.jpg",
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__07.mp4",
-     "peso_mb": 0.29
+     "peso_mb": 0.29,
+     "dur_s": 7.4
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 5.0
   },
   {
    "id": "W_JAVI_APARENTAR_8AGO",
@@ -293,9 +333,12 @@
      "archivo": "W_JAVI_APARENTAR.mp4",
      "poster": "media/W_JAVI_APARENTAR_8AGO__00.jpg",
      "video": "media/W_JAVI_APARENTAR_8AGO__00.mp4",
-     "peso_mb": 14.88
+     "peso_mb": 14.88,
+     "dur_s": 39.2
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 39.2
   },
   {
    "id": "REEL_JAVI_QA16_V2",
@@ -308,9 +351,12 @@
      "archivo": "REEL_JAVI_QA16_V2.mp4",
      "poster": "media/REEL_JAVI_QA16_V2__00.jpg",
      "video": "media/REEL_JAVI_QA16_V2__00.mp4",
-     "peso_mb": 46.8
+     "peso_mb": 46.8,
+     "dur_s": 38.6
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 38.6
   },
   {
    "id": "CARR_JAVI_PLACA_CLON_7AGO",
@@ -331,7 +377,8 @@
      "archivo": "s03.png",
      "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__i02.png"
     }
-   ]
+   ],
+   "etiqueta": "BOFU"
   },
   {
    "id": "W_JAVI_REALIDAD_8AGO",
@@ -344,24 +391,30 @@
      "archivo": "W_JAVI_REALIDAD.mp4",
      "poster": "media/W_JAVI_REALIDAD_8AGO__00.jpg",
      "video": "media/W_JAVI_REALIDAD_8AGO__00.mp4",
-     "peso_mb": 9.66
+     "peso_mb": 9.66,
+     "dur_s": 26.3
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 26.3
   },
   {
    "id": "V_JAVI_3_ALUMNOSREALES_8AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
-   "dia": "vie 15",
+   "dia": "reserva",
    "caption": "Sin guion y sin filtro: lo que dicen los que ya están dentro.\n\nDel último evento de Mentorium.\n\nComenta CASH y te paso la auditoría que usamos con ellos.\n\n#ecommerce #negocios #emprender\n",
    "archivos": [
     {
      "archivo": "V_JAVI_3_ALUMNOSREALES.mp4",
      "poster": "media/V_JAVI_3_ALUMNOSREALES_8AGO__00.jpg",
      "video": "media/V_JAVI_3_ALUMNOSREALES_8AGO__00.mp4",
-     "peso_mb": 28.63
+     "peso_mb": 28.63,
+     "dur_s": 22.1
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 22.1
   },
   {
    "id": "JAVI_SELFIE_EXITO_8AGO",
@@ -374,9 +427,12 @@
      "archivo": "JAVI_SELFIE_EXITO_8AGO.mp4",
      "poster": "media/JAVI_SELFIE_EXITO_8AGO__00.jpg",
      "video": "media/JAVI_SELFIE_EXITO_8AGO__00.mp4",
-     "peso_mb": 52.07
+     "peso_mb": 52.07,
+     "dur_s": 117.7
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 117.7
   },
   {
    "id": "W_JAVI_EMPEZAR_8AGO",
@@ -389,9 +445,12 @@
      "archivo": "W_JAVI_EMPEZAR.mp4",
      "poster": "media/W_JAVI_EMPEZAR_8AGO__00.jpg",
      "video": "media/W_JAVI_EMPEZAR_8AGO__00.mp4",
-     "peso_mb": 11.38
+     "peso_mb": 11.38,
+     "dur_s": 30.0
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 30.0
   },
   {
    "id": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
@@ -404,9 +463,12 @@
      "archivo": "RANKING_JAVI_ANTES_DE_ESCALAR.mp4",
      "poster": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.jpg",
      "video": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.mp4",
-     "peso_mb": 34.25
+     "peso_mb": 34.25,
+     "dur_s": 22.1
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 22.1
   },
   {
    "id": "CARR_JAVI_RECURSOS",
@@ -419,9 +481,12 @@
      "archivo": "_PREVIEW_CARR_JAVI_RECURSOS.mp4",
      "poster": "media/CARR_JAVI_RECURSOS__00.jpg",
      "video": "media/CARR_JAVI_RECURSOS__00.mp4",
-     "peso_mb": 1.36
+     "peso_mb": 1.36,
+     "dur_s": 28.8
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 28.8
   },
   {
    "id": "W_JAVI_CREENCIAS_8AGO",
@@ -434,9 +499,12 @@
      "archivo": "W_JAVI_CREENCIAS.mp4",
      "poster": "media/W_JAVI_CREENCIAS_8AGO__00.jpg",
      "video": "media/W_JAVI_CREENCIAS_8AGO__00.mp4",
-     "peso_mb": 13.26
+     "peso_mb": 13.26,
+     "dur_s": 34.7
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 34.7
   },
   {
    "id": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO",
@@ -449,24 +517,30 @@
      "archivo": "M1_empleo_vs_negocio.mp4",
      "poster": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.jpg",
      "video": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.mp4",
-     "peso_mb": 1.03
+     "peso_mb": 1.03,
+     "dur_s": 11.0
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 11.0
   },
   {
    "id": "REEL_JAVI_QA12_V2",
    "cuenta": "JAVI",
    "tipo": "reel",
-   "dia": "dom 17",
+   "dia": "reserva",
    "caption": "\"Vende humos\" — la respuesta de Javi\n\n#ecommerce #mentoria #emprender\n",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA12_V2.mp4",
      "poster": "media/REEL_JAVI_QA12_V2__00.jpg",
      "video": "media/REEL_JAVI_QA12_V2__00.mp4",
-     "peso_mb": 62.24
+     "peso_mb": 62.24,
+     "dur_s": 52.5
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 52.5
   },
   {
    "id": "REEL_JORDI_CC_V5_CENTRO_8AGO",
@@ -479,60 +553,72 @@
      "archivo": "REEL_JORDI_CC_V5_CENTRO.mp4",
      "poster": "media/REEL_JORDI_CC_V5_CENTRO_8AGO__00.jpg",
      "video": "media/REEL_JORDI_CC_V5_CENTRO_8AGO__00.mp4",
-     "peso_mb": 11.12
+     "peso_mb": 11.12,
+     "dur_s": 14.7
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 14.7
   },
   {
    "id": "CARRUSEL_JORDI_FILTRO_2AGO",
    "cuenta": "JORDI",
    "tipo": "carrusel",
-   "dia": "lun 11",
+   "dia": "sáb 16",
    "caption": "CUENTA: @jordigarcia89\nFORMATO: carrusel de 6 slides 4:5. Slide 1 = CLIP DE VÍDEO (1080x1350, 7 s, con música);\nslides 2-6 = PNG 2160x2700.\nSPEC: la MISMA clonada de @gala_lc que usa CARRUSEL_CLON_GALA_JORDI_31JUL (foto real a sangre,\ntitular serif Playfair + cuerpo Montserrat, UN solo acento, arco objeción -> remate -> antes\ncrudo -> verdad -> prueba real -> reencuadre + CTA). Cambia el QUÉ, nunca el CÓMO.\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard, pieza a pieza.\n\nCAPTION (pegar tal cual):\n\"He probado cinco productos y ninguno ha tirado.\"\n\nMe lo dicen cada semana. Y casi siempre el fallo no está en el producto: está en que se lanza el\nsexto sin haber mirado qué pasó con los cinco anteriores.\n\nPara. Y mira hacia atrás. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió\nde verdad, sin tener que regalarlo?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto. Y de\nese patrón sale tu filtro. El tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\nComenta RECURSOS y te paso el panel entero. Gratis.\n\n#ecommerce #dropshipping #producto\n\nNOTAS PARA GERARD:\n- Cero cifras de facturación de Jor",
    "archivos": [
     {
      "archivo": "s01_portada.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.mp4",
-     "peso_mb": 4.24
+     "peso_mb": 4.24,
+     "dur_s": 7.0
     },
     {
      "archivo": "s02_texto.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.mp4",
-     "peso_mb": 0.34
+     "peso_mb": 0.34,
+     "dur_s": 5.0
     },
     {
      "archivo": "s03_texto.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.mp4",
-     "peso_mb": 0.44
+     "peso_mb": 0.44,
+     "dur_s": 5.0
     },
     {
      "archivo": "s04_pruebas.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.mp4",
-     "peso_mb": 0.26
+     "peso_mb": 0.26,
+     "dur_s": 5.0
     },
     {
      "archivo": "s05_pruebas.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.mp4",
-     "peso_mb": 0.25
+     "peso_mb": 0.25,
+     "dur_s": 5.0
     },
     {
      "archivo": "s06_testimonio.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.mp4",
-     "peso_mb": 0.22
+     "peso_mb": 0.22,
+     "dur_s": 5.0
     },
     {
      "archivo": "s07_cierre.mp4",
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.jpg",
      "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.mp4",
-     "peso_mb": 0.31
+     "peso_mb": 0.31,
+     "dur_s": 5.0
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 7.0
   },
   {
    "id": "STORIES_JORDI_WINS_1AGO",
@@ -578,45 +664,54 @@
      "archivo": "M1_dropshipping_muerto.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__00.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__00.mp4",
-     "peso_mb": 1.27
+     "peso_mb": 1.27,
+     "dur_s": 7.0
     },
     {
      "archivo": "M2_logo_tres_meses.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__01.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__01.mp4",
-     "peso_mb": 1.01
+     "peso_mb": 1.01,
+     "dur_s": 7.0
     },
     {
      "archivo": "M3_sexta_creatividad.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__02.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__02.mp4",
-     "peso_mb": 0.96
+     "peso_mb": 0.96,
+     "dur_s": 7.0
     },
     {
      "archivo": "M4_margen_despues.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__03.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__03.mp4",
-     "peso_mb": 0.97
+     "peso_mb": 0.97,
+     "dur_s": 7.0
     },
     {
      "archivo": "M5_mes_record_sin_caja.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__04.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__04.mp4",
-     "peso_mb": 1.15
+     "peso_mb": 1.15,
+     "dur_s": 7.0
     },
     {
      "archivo": "M6_checkout_codigo_postal.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__05.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__05.mp4",
-     "peso_mb": 0.91
+     "peso_mb": 0.91,
+     "dur_s": 7.0
     },
     {
      "archivo": "M7_empezar_de_cero.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO__06.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO__06.mp4",
-     "peso_mb": 1.17
+     "peso_mb": 1.17,
+     "dur_s": 7.0
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 7.0
   },
   {
    "id": "REEL_JORDI_MIEDO_QUEDIRAN",
@@ -629,9 +724,12 @@
      "archivo": "REEL_JORDI_MIEDO_QUEDIRAN.mp4",
      "poster": "media/REEL_JORDI_MIEDO_QUEDIRAN__00.jpg",
      "video": "media/REEL_JORDI_MIEDO_QUEDIRAN__00.mp4",
-     "peso_mb": 12.02
+     "peso_mb": 12.02,
+     "dur_s": 25.8
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 25.8
   },
   {
    "id": "CARRUSEL_JORDI_7BARES_4AGO",
@@ -668,7 +766,8 @@
      "archivo": "slide_07.png",
      "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__i06.png"
     }
-   ]
+   ],
+   "etiqueta": "TOFU"
   },
   {
    "id": "STORIES_JORDI_TESTIMONIOS_1AGO",
@@ -714,9 +813,12 @@
      "archivo": "REEL_JORDI_NO_CAMBIO_NADA.mp4",
      "poster": "media/REEL_JORDI_NO_CAMBIO_NADA__00.jpg",
      "video": "media/REEL_JORDI_NO_CAMBIO_NADA__00.mp4",
-     "peso_mb": 13.13
+     "peso_mb": 13.13,
+     "dur_s": 25.6
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 25.6
   },
   {
    "id": "CARRUSEL_JORDI_ALQUILADO_4AGO",
@@ -753,7 +855,8 @@
      "archivo": "slide_07.png",
      "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__i06.png"
     }
-   ]
+   ],
+   "etiqueta": "TOFU"
   },
   {
    "id": "FACTO_VIDEO_JORDI_V2",
@@ -766,51 +869,61 @@
      "archivo": "00_PREVIEW.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__00.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__00.mp4",
-     "peso_mb": 10.43
+     "peso_mb": 10.43,
+     "dur_s": 43.1
     },
     {
      "archivo": "slide_01.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__01.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__01.mp4",
-     "peso_mb": 2.58
+     "peso_mb": 2.58,
+     "dur_s": 5.6
     },
     {
      "archivo": "slide_02.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__02.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__02.mp4",
-     "peso_mb": 0.91
+     "peso_mb": 0.91,
+     "dur_s": 3.7
     },
     {
      "archivo": "slide_03.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__03.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__03.mp4",
-     "peso_mb": 0.83
+     "peso_mb": 0.83,
+     "dur_s": 6.9
     },
     {
      "archivo": "slide_04.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__04.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__04.mp4",
-     "peso_mb": 2.24
+     "peso_mb": 2.24,
+     "dur_s": 5.7
     },
     {
      "archivo": "slide_05.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__05.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__05.mp4",
-     "peso_mb": 0.81
+     "peso_mb": 0.81,
+     "dur_s": 7.5
     },
     {
      "archivo": "slide_06.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__06.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__06.mp4",
-     "peso_mb": 0.78
+     "peso_mb": 0.78,
+     "dur_s": 7.5
     },
     {
      "archivo": "slide_07.mp4",
      "poster": "media/FACTO_VIDEO_JORDI_V2__07.jpg",
      "video": "media/FACTO_VIDEO_JORDI_V2__07.mp4",
-     "peso_mb": 1.25
+     "peso_mb": 1.25,
+     "dur_s": 6.3
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 43.1
   },
   {
    "id": "REEL_JORDI_EMPEZAR_4AGO",
@@ -823,9 +936,12 @@
      "archivo": "REEL_JORDI_EMPEZAR.mp4",
      "poster": "media/REEL_JORDI_EMPEZAR_4AGO__00.jpg",
      "video": "media/REEL_JORDI_EMPEZAR_4AGO__00.mp4",
-     "peso_mb": 54.26
+     "peso_mb": 54.26,
+     "dur_s": 55.3
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 55.3
   },
   {
    "id": "CARRUSEL_JORDI_CIRCULO_QUEJA_4AGO",
@@ -862,7 +978,8 @@
      "archivo": "slide_07.png",
      "poster": "media/CARRUSEL_JORDI_CIRCULO_QUEJA_4AGO__i06.png"
     }
-   ]
+   ],
+   "etiqueta": "MOFU"
   },
   {
    "id": "V_JORDI_HOOKAD12_7AGO",
@@ -875,9 +992,12 @@
      "archivo": "V_JORDI_HOOKAD12.mp4",
      "poster": "media/V_JORDI_HOOKAD12_7AGO__00.jpg",
      "video": "media/V_JORDI_HOOKAD12_7AGO__00.mp4",
-     "peso_mb": 23.26
+     "peso_mb": 23.26,
+     "dur_s": 32.3
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 32.3
   },
   {
    "id": "REEL_JORDI_FILTRO_2AGO",
@@ -890,9 +1010,12 @@
      "archivo": "REEL_JORDI_FILTRO.mp4",
      "poster": "media/REEL_JORDI_FILTRO_2AGO__00.jpg",
      "video": "media/REEL_JORDI_FILTRO_2AGO__00.mp4",
-     "peso_mb": 40.7
+     "peso_mb": 40.7,
+     "dur_s": 39.9
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 39.9
   },
   {
    "id": "CARR_JORDI_ATAJO",
@@ -905,9 +1028,12 @@
      "archivo": "_PREVIEW_CARR_JORDI_ATAJO.mp4",
      "poster": "media/CARR_JORDI_ATAJO__00.jpg",
      "video": "media/CARR_JORDI_ATAJO__00.mp4",
-     "peso_mb": 1.56
+     "peso_mb": 1.56,
+     "dur_s": 28.8
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 28.8
   },
   {
    "id": "MEME_REPLICA_JORDI_RESENAS",
@@ -920,9 +1046,12 @@
      "archivo": "MEME_REPLICA_JORDI_RESENAS.mp4",
      "poster": "media/MEME_REPLICA_JORDI_RESENAS__00.jpg",
      "video": "media/MEME_REPLICA_JORDI_RESENAS__00.mp4",
-     "peso_mb": 5.33
+     "peso_mb": 5.33,
+     "dur_s": 7.9
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 7.9
   },
   {
    "id": "REEL_JORDI_PROVEEDOR_4AGO",
@@ -935,9 +1064,12 @@
      "archivo": "REEL_JORDI_PROVEEDOR.mp4",
      "poster": "media/REEL_JORDI_PROVEEDOR_4AGO__00.jpg",
      "video": "media/REEL_JORDI_PROVEEDOR_4AGO__00.mp4",
-     "peso_mb": 45.41
+     "peso_mb": 45.41,
+     "dur_s": 47.1
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 47.1
   },
   {
    "id": "MEMES_JORDI_TANDA_1AGO_b",
@@ -950,45 +1082,54 @@
      "archivo": "M1_dropshipping_muerto.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__00.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__00.mp4",
-     "peso_mb": 1.27
+     "peso_mb": 1.27,
+     "dur_s": 7.0
     },
     {
      "archivo": "M2_logo_tres_meses.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__01.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__01.mp4",
-     "peso_mb": 1.01
+     "peso_mb": 1.01,
+     "dur_s": 7.0
     },
     {
      "archivo": "M3_sexta_creatividad.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__02.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__02.mp4",
-     "peso_mb": 0.96
+     "peso_mb": 0.96,
+     "dur_s": 7.0
     },
     {
      "archivo": "M4_margen_despues.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__03.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__03.mp4",
-     "peso_mb": 0.97
+     "peso_mb": 0.97,
+     "dur_s": 7.0
     },
     {
      "archivo": "M5_mes_record_sin_caja.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__04.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__04.mp4",
-     "peso_mb": 1.15
+     "peso_mb": 1.15,
+     "dur_s": 7.0
     },
     {
      "archivo": "M6_checkout_codigo_postal.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__05.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__05.mp4",
-     "peso_mb": 0.91
+     "peso_mb": 0.91,
+     "dur_s": 7.0
     },
     {
      "archivo": "M7_empezar_de_cero.mp4",
      "poster": "media/MEMES_JORDI_TANDA_1AGO_b__06.jpg",
      "video": "media/MEMES_JORDI_TANDA_1AGO_b__06.mp4",
-     "peso_mb": 1.17
+     "peso_mb": 1.17,
+     "dur_s": 7.0
     }
-   ]
+   ],
+   "etiqueta": "TOFU",
+   "dur_s": 7.0
   },
   {
    "id": "CARR_JORDI_VALIDAR_10AGO",
@@ -1001,39 +1142,47 @@
      "archivo": "slide_01.mp4",
      "poster": "media/CARR_JORDI_VALIDAR_10AGO__00.jpg",
      "video": "media/CARR_JORDI_VALIDAR_10AGO__00.mp4",
-     "peso_mb": 1.1
+     "peso_mb": 1.1,
+     "dur_s": 7.2
     },
     {
      "archivo": "slide_02.mp4",
      "poster": "media/CARR_JORDI_VALIDAR_10AGO__01.jpg",
      "video": "media/CARR_JORDI_VALIDAR_10AGO__01.mp4",
-     "peso_mb": 0.9
+     "peso_mb": 0.9,
+     "dur_s": 7.9
     },
     {
      "archivo": "slide_03.mp4",
      "poster": "media/CARR_JORDI_VALIDAR_10AGO__02.jpg",
      "video": "media/CARR_JORDI_VALIDAR_10AGO__02.mp4",
-     "peso_mb": 1.2
+     "peso_mb": 1.2,
+     "dur_s": 10.3
     },
     {
      "archivo": "slide_04.mp4",
      "poster": "media/CARR_JORDI_VALIDAR_10AGO__03.jpg",
      "video": "media/CARR_JORDI_VALIDAR_10AGO__03.mp4",
-     "peso_mb": 0.7
+     "peso_mb": 0.7,
+     "dur_s": 8.9
     },
     {
      "archivo": "slide_05.mp4",
      "poster": "media/CARR_JORDI_VALIDAR_10AGO__04.jpg",
      "video": "media/CARR_JORDI_VALIDAR_10AGO__04.mp4",
-     "peso_mb": 1.5
+     "peso_mb": 1.5,
+     "dur_s": 8.4
     },
     {
      "archivo": "slide_06.mp4",
      "poster": "media/CARR_JORDI_VALIDAR_10AGO__05.jpg",
      "video": "media/CARR_JORDI_VALIDAR_10AGO__05.mp4",
-     "peso_mb": 1.0
+     "peso_mb": 1.0,
+     "dur_s": 7.0
     }
-   ]
+   ],
+   "etiqueta": "MOFU",
+   "dur_s": 7.2
   },
   {
    "id": "TH_JORDI_PERDIDAS_V2C_10AGO",
@@ -1046,24 +1195,30 @@
      "archivo": "REEL_JORDI_PERDIDAS_V2_correcciones.mp4",
      "poster": "media/TH_JORDI_PERDIDAS_V2C_10AGO__00.jpg",
      "video": "media/TH_JORDI_PERDIDAS_V2C_10AGO__00.mp4",
-     "peso_mb": 20.6
+     "peso_mb": 20.6,
+     "dur_s": 47.1
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 47.1
   },
   {
    "id": "V_JAVI_3C_HOOKJAVI_10AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
-   "dia": "mar 12",
+   "dia": "vie 15",
    "caption": "Lo dicen ellos, sin guion y sin filtro. Del último evento de Mentorium.\n\nComenta CASH y te paso la auditoría que usamos con ellos.\n\n#ecommerce #negocios #emprender\n\n[V3C: hook Javi evento + musica en hook, pedido por Javi 9-ago]",
    "archivos": [
     {
      "archivo": "V_JAVI_3C_HOOKJAVI.mp4",
      "poster": "media/V_JAVI_3C_HOOKJAVI_10AGO__00.jpg",
      "video": "media/V_JAVI_3C_HOOKJAVI_10AGO__00.mp4",
-     "peso_mb": 17.4
+     "peso_mb": 17.4,
+     "dur_s": 21.9
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 21.9
   },
   {
    "id": "REEL_JAVI_25K_JUEGO_10AGO",
@@ -1076,9 +1231,48 @@
      "archivo": "REEL_JAVI_25K_JUEGO_10AGO.mp4",
      "poster": "media/REEL_JAVI_25K_JUEGO_10AGO__00.jpg",
      "video": "media/REEL_JAVI_25K_JUEGO_10AGO__00.mp4",
-     "peso_mb": 13.0
+     "peso_mb": 13.0,
+     "dur_s": 21.8
     }
-   ]
+   ],
+   "etiqueta": "BOFU",
+   "dur_s": 21.8
+  },
+  {
+   "id": "REEL_JAVI_PADRE_LOCO_10AGO_v2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mié 13",
+   "etiqueta": "BOFU",
+   "caption": "Mi padre me dijo que estaba loco por dejar un trabajo que iba bien. Hoy me pregunta si me va bien.\n\nSi tu entorno no lo entiende, no es señal de parar: es lo normal al principio. Comenta PADRE si te ha pasado.\n\n#emprender #ecommerce #mentalidad\n",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_PADRE_LOCO_10AGO_v2.mp4",
+     "poster": "media/REEL_JAVI_PADRE_LOCO_10AGO_v2__00.jpg",
+     "video": "media/REEL_JAVI_PADRE_LOCO_10AGO_v2__00.mp4",
+     "dur_s": 26.9,
+     "peso_mb": 16.69
+    }
+   ],
+   "dur_s": 26.9
+  },
+  {
+   "id": "REEL_JAVI_VENDEHUMOS_10AGO_v2",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "dom 17",
+   "etiqueta": "BOFU",
+   "caption": "Ocho años en esto, un equipo de más de veinte personas y un almacén. Detrás de una pantalla es muy fácil decirlo: el trabajo que hay detrás no se ve.\n\nComenta HUMO y te enseño lo que no se ve.\n\n#ecommerce #antihumo #negocios\n",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_VENDEHUMOS_10AGO_v2.mp4",
+     "poster": "media/REEL_JAVI_VENDEHUMOS_10AGO_v2__00.jpg",
+     "video": "media/REEL_JAVI_VENDEHUMOS_10AGO_v2__00.mp4",
+     "dur_s": 41.2,
+     "peso_mb": 25.11
+    }
+   ],
+   "dur_s": 41.2
   }
  ]
 }
