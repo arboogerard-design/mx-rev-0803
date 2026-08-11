@@ -1274,5 +1274,23 @@
    ],
    "dur_s": 41.2
   }
- ]
+ ],
+ "REEL_JAVI_TOFU_LUNES_SABADO_11AGO": {
+  "id": "REEL_JAVI_TOFU_LUNES_SABADO_11AGO",
+  "cuenta": "JAVI",
+  "dia": "lun 11",
+  "tipo": "reel",
+  "etiqueta": "TOFU",
+  "dur_s": 57.3,
+  "caption": "De lunes a sábado buscando clientes de casa en casa. Sin tiempo, sin vida social.\n\nTomé acción una vez y mi vida cambió radicalmente. No fue suerte: fue decisión.\n\nComenta CAMBIO y te digo el primer paso.\n\n#emprender #ecommerce #mentalidad\n",
+  "archivos": [
+   {
+    "archivo": "REEL_JAVI_TOFU_LUNES_SABADO_11AGO.mp4",
+    "dur_s": 57.3,
+    "peso_mb": 34.2,
+    "poster": "media/REEL_JAVI_TOFU_LUNES_SABADO__00.jpg",
+    "video": "media/REEL_JAVI_TOFU_LUNES_SABADO__00.mp4"
+   }
+  ]
+ }
 }
