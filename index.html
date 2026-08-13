@@ -165,9 +165,10 @@ const f1motivo=p=>{const v=(E.f1||{})[p.id];return v?(v.motivo||""):(p.f1_motivo
 const HAY_F1=()=>DATOS.piezas.some(p=>f1de(p)==="aprobado");
 const paso_f1=p=>!HAY_F1()||f1de(p)==="aprobado";
 function pendientes(){
+  /* 13-ago, orden de Gerard: SIN filtro previo. Todos (Gerard incluido) ven la MISMA
+     cola y votan de golpe; una pieza sale de la cola en cuanto alguien decide. */
   return DATOS.piezas.filter(p=>{
     if(FCUENTA!=="todo"&&p.cuenta!==FCUENTA)return false;
-    if(YO==="Gerard")return f1de(p)==="pendiente";   /* su cola = lo que aun no ha filtrado */
     const d=dec(p.id);
     return paso_f1(p) && f1de(p)!=="denegado" && (!d||d.estado==="corregir");});
 }
@@ -202,15 +203,9 @@ function filtrosHTML(){
 
 function vistaRevisar(){
   const ps=pendientes();
-  let h=(YO==="Gerard"
-       ? '<div class="nota"><b>Este es TU filtro.</b> Lo que apruebes lo ven Javi, Jordi y Santi '
-        +'al momento. <b>Corregir</b>: escribe qué está mal y lo arreglo yo. '
-        +'<b>Denegar</b>: la retiro y limpio el PC.</div>'
-       : '<div class="nota"><b>Aprobar</b> saca la pieza de aquí y la coloca sola en el calendario. '
-        +'<b>Corregir</b> obliga a escribir qué está mal: eso es lo que se arregla, no lo corriges tú. '
-        +'<b>Denegar</b> la retira.</div>')
-       +(HAY_F1()||YO==="Gerard"?"":'<div class="alerta">⚠ Gerard todavía no ha pasado su filtro: esto es el '
-                   +'catálogo entero, no una selección suya.</div>')
+  let h='<div class="nota"><b>Aprobar</b> la coloca sola en el calendario. '
+       +'<b>Corregir</b>: escribe qué está mal y se arregla (no lo corriges tú). '
+       +'<b>Denegar</b>: se retira y se limpia del PC. Vale un voto por pieza: el primero que decide, decide.</div>'
        +filtrosHTML();
   if(!ps.length)return h+'<div class="vacio">No queda nada por revisar. 👌</div>';
   h+='<div class="grid">';
@@ -327,12 +322,8 @@ function cablear(){
         aviso("Escribe qué hay que corregir",true); ta.focus(); return;
       }
       guardar(srv=>{ const sello=new Date().toISOString().slice(0,16).replace("T"," ");
-        if(YO==="Gerard"){ /* filtro 1 en vivo: esto es lo que abre/cierra la puerta al equipo */
-          srv.f1=srv.f1||{}; srv.f1[id]={estado:est,motivo:motivo,cuando:sello};
-        }else{
-          srv.decisiones=srv.decisiones||{};
-          srv.decisiones[id]={estado:est,motivo:motivo,por:YO,cuando:sello};
-        }
+        srv.decisiones=srv.decisiones||{};
+        srv.decisiones[id]={estado:est,motivo:motivo,por:YO,cuando:sello};
       });
     });
   });
