@@ -27,7 +27,19 @@ display:flex;flex-direction:column}
 .TOFU{background:#123d29;color:#7ee2ab}.MOFU{background:#2b2b42;color:#b9b9ff}
 .BOFU{background:#42311b;color:#ffcf8a}.SIN{background:#3a2020;color:#ff9c9c}
 .cuenta{background:#1e1e28;color:#a9a9bb}.tipo{background:#191922;color:#8f8fa3}
-.cap{font-size:11.5px;color:#9a9aab;white-space:pre-wrap;max-height:58px;overflow:auto}
+.cap{font-size:11.5px;color:#9a9aab;white-space:pre-wrap;max-height:58px;overflow:hidden;cursor:pointer}
+.cap.abierta{max-height:none}
+.cap:not(.abierta):not(:empty)::after{content:" … (toca para leer)";color:#6c6c80}
+.med{position:relative}
+.med .nav{position:absolute;top:50%;transform:translateY(-50%);background:#000000aa;border:0;color:#fff;
+font-size:22px;font-weight:900;width:36px;height:48px;cursor:pointer;border-radius:9px;line-height:1}
+.med .nav.izq{left:6px}.med .nav.der{right:6px}
+.med .cnt{position:absolute;top:8px;right:8px;background:#000000bb;color:#fff;font-size:11px;
+font-weight:800;padding:3px 9px;border-radius:999px}
+.sec{margin:20px 0 10px;display:flex;align-items:center;gap:9px}
+.sec h2{font-size:13px;margin:0;letter-spacing:.4px}
+.sec .lin{flex:1;height:1px;background:#242430}
+.sec .n{font-size:11px;color:#8b8b9c;font-weight:800}
 .acc{display:flex;gap:5px;margin-top:auto}
 .acc button{flex:1;border:0;border-radius:8px;padding:8px 4px;font-weight:800;font-size:12px;cursor:pointer}
 .ok{background:#1d5c39;color:#c6ffe2}.fix{background:#6b5316;color:#ffe6ad}.no{background:#5e2226;color:#ffc9c9}
@@ -102,7 +114,7 @@ const CLAVE="mentorium2026";
 const BLOB="https://api.npoint.io/76533e2a465a894fc6f4";
 const PERSONAS=["Gerard","Javi","Jordi","Santi"];
 
-let YO=null, TAB="revisar", FCUENTA="todo";
+let YO=null, TAB="revisar", FCUENTA="todo", FETAPA="todo";
 let E={decisiones:{}, referentes:[], calendario:{}, f1:{}};
 let guardando=false, pendiente=null;
 
@@ -198,28 +210,33 @@ function render(){
 function filtrosHTML(){
   return '<div class="filtros">'+["todo","JAVI","JORDI"].map(c=>
     `<button data-f="${c}" class="${FCUENTA===c?"on":""}">${c==="todo"?"Las dos cuentas":c}</button>`
+  ).join("")
+  +'<span style="width:14px"></span>'
+  +["todo","TOFU","MOFU","BOFU"].map(e=>
+    `<button data-e="${e}" class="${FETAPA===e?"on":""}">${e==="todo"?"Todas las etapas":e}</button>`
   ).join("")+'</div>';
 }
 
-function vistaRevisar(){
-  const ps=pendientes();
-  let h='<div class="nota"><b>Aprobar</b> la coloca sola en el calendario. '
-       +'<b>Corregir</b>: escribe qué está mal y se arregla (no lo corriges tú). '
-       +'<b>Denegar</b>: se retira y se limpia del PC. Vale un voto por pieza: el primero que decide, decide.</div>'
-       +filtrosHTML();
-  if(!ps.length)return h+'<div class="vacio">No queda nada por revisar. 👌</div>';
-  h+='<div class="grid">';
-  for(const p of ps){
-    const a=(p.archivos&&p.archivos[0])||{};
-    const d=dec(p.id);
-    const med=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls preload="none"></video>`
-             :(a.poster?`<img src="${esc(a.poster)}">`:'<div style="aspect-ratio:9/16;background:#000"></div>');
-    h+=`<div class="card" data-id="${esc(p.id)}">${med}<div class="b">
+/* galeria: TODAS las slides/archivos de la pieza, con flechas (pedido Gerard 13-ago:
+   "si hay un carrusel no puedo ver todas las slides") */
+function mediaHTML(p,i){
+  const arr=p.archivos||[], n=arr.length, a=arr[i]||{};
+  const inner=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls preload="none"></video>`
+       :(a.poster?`<img src="${esc(a.poster)}" loading="lazy">`:'<div style="aspect-ratio:9/16;background:#000"></div>');
+  const nav=n>1?`<button class="nav izq" data-n="-1">‹</button><button class="nav der" data-n="1">›</button>`
+               +`<span class="cnt">${i+1}/${n}</span>`:"";
+  return `<div class="med" data-i="${i}">${inner}${nav}</div>`;
+}
+
+function cardHTML(p){
+  const d=dec(p.id);
+  return `<div class="card" data-id="${esc(p.id)}">${mediaHTML(p,0)}<div class="b">
       <div class="tit">${esc(p.id)}</div>
       <div class="meta"><span class="tag cuenta">${esc(p.cuenta||"")}</span>
         <span class="tag tipo">${esc(p.tipo||"")}</span>
         <span class="tag ${etapa(p)}">${etapa(p)}</span>
-        ${p.dur_s?`<span class="tag tipo">${p.dur_s}s</span>`:""}</div>
+        ${p.dur_s?`<span class="tag tipo">${p.dur_s}s</span>`:""}
+        ${(p.archivos||[]).length>1?`<span class="tag tipo">${p.archivos.length} slides</span>`:""}</div>
       <div class="cap">${esc(p.caption||"")}</div>
       <div class="acc">
         <button class="ok ${d&&d.estado==="aprobado"?"sel":""}" data-a="aprobado">Aprobar</button>
@@ -228,8 +245,27 @@ function vistaRevisar(){
       </div>
       <textarea class="motivo" placeholder="¿Qué hay que corregir? (obligatorio para marcar Corregir)">${esc(d&&d.motivo||"")}</textarea>
     </div></div>`;
+}
+
+/* agrupado por etapa (pedido Gerard 13-ago: "organizado por el contenido, que es tofu, mofu…") */
+const SECCIONES=[["TOFU","TOFU · problema / dolor"],["MOFU","MOFU · solución"],
+                 ["BOFU","BOFU · mentalidad / casos"],["SIN","Sin etapa asignada"]];
+function vistaRevisar(){
+  const ps=pendientes().filter(p=>FETAPA==="todo"||etapa(p)===FETAPA);
+  let h='<div class="nota"><b>Aprobar</b> la coloca sola en el calendario. '
+       +'<b>Corregir</b>: escribe qué está mal y se arregla (no lo corriges tú). '
+       +'<b>Denegar</b>: se retira y se limpia del PC. Vale un voto por pieza: el primero que decide, decide. '
+       +'En carruseles y stories: <b>flechas ‹ › para pasar todas las slides</b>.</div>'
+       +filtrosHTML();
+  if(!ps.length)return h+'<div class="vacio">No queda nada por revisar. 👌</div>';
+  for(const [clave,titulo] of SECCIONES){
+    const grupo=ps.filter(p=>etapa(p)===clave);
+    if(!grupo.length)continue;
+    h+=`<div class="sec"><span class="tag ${clave}">${clave}</span><h2>${titulo}</h2>`
+      +`<span class="n">${grupo.length}</span><span class="lin"></span></div>`;
+    h+='<div class="grid">'+grupo.map(cardHTML).join("")+'</div>';
   }
-  return h+'</div>';
+  return h;
 }
 
 function vistaCalendario(){
@@ -313,7 +349,24 @@ function vistaReferentes(){
 
 /* ---------- eventos ---------- */
 function cablear(){
-  document.querySelectorAll(".filtros button").forEach(b=>b.onclick=()=>{FCUENTA=b.dataset.f;render();});
+  document.querySelectorAll(".filtros button").forEach(b=>b.onclick=()=>{
+    if(b.dataset.f)FCUENTA=b.dataset.f; else if(b.dataset.e)FETAPA=b.dataset.e; render();});
+  /* flechas de la galeria + caption expandible (delegado: sobrevive a re-pintados) */
+  const app=$("#app");
+  app.onclick=ev=>{
+    const nav=ev.target.closest(".nav");
+    if(nav){
+      const card=nav.closest(".card"), med=nav.closest(".med");
+      const p=DATOS.piezas.find(x=>x.id===card.dataset.id);
+      if(!p)return;
+      const n=(p.archivos||[]).length;
+      const i=((+med.dataset.i)+(+nav.dataset.n)+n)%n;
+      med.outerHTML=mediaHTML(p,i);
+      return;
+    }
+    const cap=ev.target.closest(".cap");
+    if(cap)cap.classList.toggle("abierta");
+  };
   document.querySelectorAll(".card").forEach(card=>{
     const id=card.dataset.id, ta=card.querySelector(".motivo");
     card.querySelectorAll(".acc button").forEach(b=>b.onclick=()=>{
