@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-13T16:54:11",
+ "generado": "2026-08-13T17:04:53",
  "desde": "2026-08-13",
  "dias": 7,
  "modo_f1": "aprobadas",
@@ -169,24 +169,18 @@
    "stories_fuera": []
   },
   "JORDI": {
-   "lm": 1,
-   "feed": 1,
+   "lm": 0,
+   "feed": 0,
    "techo_lm": 11,
-   "colocadas": [
+   "colocadas": [],
+   "vacios": [
     {
      "fecha": "2026-08-13",
      "dia": "jue",
      "slot": 0,
-     "formato_santi": "iPad / split",
-     "id": "FACTO_VIDEO_JORDI_V2",
-     "etapa": "TOFU",
-     "formato": "reel",
-     "lead_magnet": true,
-     "encaje": "sustituto",
-     "sin_motor": true
-    }
-   ],
-   "vacios": [
+     "formato": "iPad / split",
+     "motivo": "sin candidatas"
+    },
     {
      "fecha": "2026-08-13",
      "dia": "jue",
@@ -329,7 +323,7 @@
     }
    ],
    "reparto": {
-    "TOFU": 1,
+    "TOFU": 0,
     "MOFU": 0,
     "BOFU": 0,
     "SIN": 0
