@@ -1804,6 +1804,64 @@
      "peso_mb": 12.21
     }
    ]
+  },
+  {
+   "id": "CARRUSEL_JAVI_10K_DIA_13AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "mes (por colocar)",
+   "caption": "Diez mil euros en un día. Y lo importante no es la cifra: es saber cuánto queda después de costes.\n\nLa conversación va entera en el carrusel, con el panel delante.\n\nLa herramienta con la que auditamos márgenes está en el LINK DE LA BIO.\n",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__i00.png"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__i01.png"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__i02.png"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__i03.png"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__i04.png"
+    }
+   ]
+  },
+  {
+   "id": "CARRUSEL_JORDI_Q4_13AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "mes (por colocar)",
+   "caption": "Crecer un 79% en beneficio neto en un mes. No es el caso del millón: es el caso REAL.\n\nEl mensaje va entero en el carrusel, tal cual llegó al grupo.\n\nComenta «Q4» y te cuento cómo se prepara el mejor trimestre del año.\n",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JORDI_Q4_13AGO__i00.png"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JORDI_Q4_13AGO__i01.png"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JORDI_Q4_13AGO__i02.png"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JORDI_Q4_13AGO__i03.png"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JORDI_Q4_13AGO__i04.png"
+    }
+   ]
   }
  ],
  "REEL_JAVI_TOFU_LUNES_SABADO_11AGO": {
