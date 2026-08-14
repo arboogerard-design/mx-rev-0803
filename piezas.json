@@ -1899,6 +1899,206 @@
     }
    ],
    "etiqueta": "BOFU"
+  },
+  {
+   "id": "CARRUSEL_JAVI_TIENDA30K_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "etiqueta": "TOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "En España han bajado la persiana miles de tiendas de ropa en veinte años.\n\nNo es que la gente haya dejado de comprar ropa. Es que la compra en otro sitio.\n\nY mientras tanto, el que tiene el local paga alquiler, luz y género ANTES de vender la primera prenda. El coste va siempre por delante: pagas el día 1 y vendes el 20.\n\nOnline el orden se invierte. Primero cobras y después pagas. Mismo producto, cero persiana.\n\nLo que antes te cobraba una agencia —la tienda, los anuncios, la landing— hoy te lo montas tú con IA en una tarde.\n\n¿Tienes tienda o negocio físico? Escríbeme TIENDA por DM y te digo cómo empezaría yo a vender lo tuyo online. Gratis.\n\nGuárdalo para cuando toque. Y mándaselo a quien tenga un local.\n\n#ecommerce #emprender #negocios",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JAVI_TIENDA30K_15AGO.mp4",
+     "poster": "media/CARRUSEL_JAVI_TIENDA30K_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_TIENDA30K_15AGO__00.mp4",
+     "peso_mb": 1.0,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "El ángulo que Javi aprobó en vivo (19:15 «100% hay que hacer eso»): tienda física ahogada por alquiler+luz → vender online. Datos reales con fuente impresa en cada slide. CTA botón TIENDA."
+  },
+  {
+   "id": "CARRUSEL_JAVI_COD_CARD_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "etiqueta": "MOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "Contra reembolso: el panel lleno de pedidos y la caja a cero.\n\nPagas el anuncio hoy. Pagas el producto y el envío hoy. Y cobras si el cliente abre la puerta. Si no la abre, la ida y la vuelta las pagas tú y no hay ningún cobro del que descontarlo (fuente: envios.es).\n\nEncima el transportista se queda en torno a un 3-5% de cada pedido que cobra, y te ingresa el dinero por bloques, cada semana o cada mes, no en el momento de la venta (fuente: blog de Shopify en español sobre envío contrareembolso).\n\nCon esa estructura puedes tener el panel lleno y la cuenta vacía. No tienes un problema de ventas. Tienes un problema de caja.\n\nLa solución no es vender más. Es cobrar antes de enviar. Mismo producto, mismo anuncio, otra estructura de cobro. El dinero entra antes de que salga el paquete y reinviertes hoy, no dentro de un mes.\n\nComenta CARD y te paso nuestro sistema para pasar a pago anticipado, paso a paso. Gratis.\n\nGuárdalo y compártelo con quien venda a contra reembolso.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JAVI_COD_CARD_15AGO.mp4",
+     "poster": "media/CARRUSEL_JAVI_COD_CARD_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_COD_CARD_15AGO__00.mp4",
+     "peso_mb": 1.0,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "El COD como problema de caja (canon de Santi). CTA literal de Javi: sistema pago anticipado + Comenta CARD. Javi ya lo verificó por WhatsApp."
+  },
+  {
+   "id": "CARRUSEL_JAVI_MARGEN_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "etiqueta": "TOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "Bajar el precio es la decisión más cara que puedes tomar en tu tienda.\n\nA corto funciona: entran más pedidos, la facturación sube y parece que vas bien. Haz la cuenta entera y verás lo que pasa de verdad.\n\nEn el retail el margen bruto medio es del 33,18% y el neto del 5,61% (NYU Stern, datos a enero de 2026). Traducido: de cada 100 que vendes, 66,82 es producto, 27,57 es todo lo demás y 5,61 es tuyo.\n\nAhora bajas el precio un 10%. Ingresas 90, el producto te sigue costando 66,82, así que cada venta deja 23,18 en vez de 33,18. Con eso necesitas vender un 19% más de unidades solo para no perder dinero, y un 43% más para acabar el mes igual que antes. Un descuento del 10% no te trae un 43% más de pedidos. Casi nunca.\n\nY mientras tú bajas, el coste de traer al cliente sube. El CPM de Meta subió un 20% en 2025 medido sobre casi 35.000 marcas (Triple Whale). Precio abajo, coste arriba. Te aprietan por los dos lados y no lo ves hasta tres meses después, cuando ya te has comido el colchón.\n\nEl precio es el único terreno donde gana el más grande. Tú ahí no ganas.\n\nCambia de terreno. Mismo producto, otra promesa. Y que cada pedido deje más margen en vez de perseguir más pedidos.\n\nGuarda esto para el día que te tienten con un descuento. Y pásaselo al que está tirando precios en tu sector.\n\nFuentes: pages.stern.nyu.edu (Damodaran, márgenes por sector, ene-2026) y triplewhale.com (benchmarks Meta Ads 2025).",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JAVI_MARGEN_15AGO.mp4",
+     "poster": "media/CARRUSEL_JAVI_MARGEN_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_MARGEN_15AGO__00.mp4",
+     "peso_mb": 0.9,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "Guerra de precios: facturas más y ganas menos. Datos verificados. CTA botón MARGEN."
+  },
+  {
+   "id": "CARRUSEL_JAVI_CARGA_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "etiqueta": "TOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "La mayoría de tiendas que reviso no tienen un problema de producto ni de anuncio. Tienen un problema de espera.\n\nShopify midió sus propias tiendas este año y le puso número: por cada 100 milisegundos que una tienda tarda de más, la conversión baja alrededor de un 3,5%. De 1,5 segundos de carga a 2,5, la caída ronda el 30%. Un segundo de diferencia.\n\nY aquí viene lo que casi nadie se espera. Mucha gente me dice que ya pasó el test de velocidad de Google y que le salió verde, así que tema cerrado. Pues casi el 80% de las tiendas de Shopify aprueba ese examen. Aprobar no te distingue de nadie. Aprobar es el mínimo. Dentro del aprobado se siguen dejando ventas por milisegundos.\n\nLo peor es que esto no se ve en ningún panel. No sale como error ni como mal producto. Sale como tráfico que entra y no compra. Y entonces te pones a cambiar la creatividad, el copy, el público, el precio. Y el problema estaba antes de todo eso.\n\nAntes de tocar nada más: abre tu ficha de producto en el móvil, con datos, como lo hace tu cliente. No en tu ordenador con fibra, que ahí siempre va rápida. Y mira las dos sospechosas de siempre: las fotos sin comprimir y las apps que instalaste y ya no usas.\n\nGuarda esto para cuando te sientes a revisar la tienda. Compártelo con quien tenga tienda. Y si te atascas, escríbeme por DM.\n\nFuente en las slides: datos de Shopify, 2026.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JAVI_CARGA_15AGO.mp4",
+     "poster": "media/CARRUSEL_JAVI_CARGA_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_CARGA_15AGO__00.mp4",
+     "peso_mb": 1.1,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "Tu tienda no vende porque tarda: datos medidos de conversión por segundo de carga. CTA botón CARGA."
+  },
+  {
+   "id": "CARRUSEL_JAVI_VENTAS_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "etiqueta": "BOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "El problema de las cuentas virales es que no convierten.\n\nMe he dado cuenta tarde. Estuve meses mirando el contador de views como si eso fuera un negocio. Y no lo es.\n\nEl tráfico que llega a una web desde redes sociales en orgánico convierte al 0,7%. Es el que peor convierte de todos los canales que publica el informe, medido sobre 99.000 millones de sesiones en más de 6.000 webs. El que llega desde un buscador de pago convierte al 2,8%. Cuatro veces más.\n\nY no es por el formato, ni por la edición, ni por el algoritmo. Es por la intención. A uno le apareces mientras hace scroll en el sofá. El otro te estaba buscando porque tiene el problema hoy.\n\nEl dato que más me dolió: las empresas que apostaron más fuerte por las redes de pago registraron un 10,6% menos de conversiones. Más alcance no es más negocio.\n\nPor eso he cambiado lo que publico. Menos vídeos para gustar a todo el mundo y más contenido que toca el problema concreto del que lo está sufriendo. Menos views. Más conversaciones.\n\nSi haces contenido para todo el mundo, no lo haces para nadie.\n\nSi te ha pasado, dilo en comentarios. Guarda esto y compártelo con quien esté obsesionado con el alcance. Y si vendes online y quieres ordenarlo, escríbeme por DM.\n\nFuente: Contentsquare, Digital Experience Benchmark 2025 y 2026.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JAVI_VENTAS_15AGO.mp4",
+     "poster": "media/CARRUSEL_JAVI_VENTAS_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_VENTAS_15AGO__00.mp4",
+     "peso_mb": 1.0,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "La conclusión LITERAL de Javi (14-ago 18:56): las cuentas virales no convierten. CTA botón VENTAS."
+  },
+  {
+   "id": "CARRUSEL_JORDI_SUELDO_15AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "etiqueta": "TOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "Tu sueldo lleva tres años igual. Tu alquiler no.\n\nTe pagan por tiempo, y el tiempo no escala: corras lo que corras, el día 30 cobras exactamente lo mismo. Y un aumento se pide una vez al año — un negocio propio cobra los 365 días.\n\nLas tiendas de tu calle llevan veinte años cerrando. La venta no ha muerto: se ha ido a otro sitio.\n\nLa salida no es correr más. Es cambiar lo que vendes: deja de vender tu tiempo y vende un producto. Y hoy la tienda, los anuncios y la landing los montas con IA en una tarde, sin agencia.\n\n¿Cuántos años llevas en el mismo número? Escríbeme CERO por DM y te digo por dónde empezaría yo hoy, desde cero. Gratis.\n\nGuárdalo para el día 1.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JORDI_SUELDO_15AGO.mp4",
+     "poster": "media/CARRUSEL_JORDI_SUELDO_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_SUELDO_15AGO__00.mp4",
+     "peso_mb": 1.2,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "Sueldo estancado vs alquiler. Universal, cero cifras de Jordi. CTA botón CERO."
+  },
+  {
+   "id": "CARRUSEL_JORDI_TIEMPO_15AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "etiqueta": "TOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "Llega un día en que te das cuenta de que el problema no es que trabajes poco.\n\nEl problema es que cobras por tu tiempo. Y el tiempo se acaba.\n\nMás de un tercio de los trabajadores del mundo trabaja habitualmente más de 48 horas a la semana (OIT, 2023). Y en los países de ingreso alto, entre 1999 y 2024 la productividad subió un 29% mientras los salarios reales subieron un 15% (OIT, Informe Mundial sobre Salarios 2024-25).\n\nTraducción: produces más y ese hueco no vuelve a ti.\n\nMientras vendas tu tiempo, tu techo lo pone el reloj, no lo que sabes hacer. Una tienda online le vende a quien no te conoce de nada, y lo hace sin ti delante. Ese es el cambio: dejar de ser tú el producto.\n\nSi llevas años cambiando horas por dinero y quieres dejar de hacerlo, escríbeme por privado y lo vemos.\n\nDime en comentarios qué vendes tú ahora mismo: horas o producto.\n\nGuárdalo y pásaselo a quien siempre dice que no tiene tiempo.\n\n#ecommerce #tiendaonline #negociosonline #emprender",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JORDI_TIEMPO_15AGO.mp4",
+     "poster": "media/CARRUSEL_JORDI_TIEMPO_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_TIEMPO_15AGO__00.mp4",
+     "peso_mb": 1.2,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "Vender tiempo no escala: datos OIT. CTA botón TIEMPO."
+  },
+  {
+   "id": "CARRUSEL_JORDI_PROCESO_15AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "etiqueta": "BOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "Todos quieren el resultado. El proceso no lo quiere casi nadie.\n\nVeo el mismo patrón todo el rato: gente que se sabe la teoría de memoria y que no ha hecho nunca el primer movimiento. Se sabe qué producto, qué anuncio, qué margen. Y no tiene tienda. No es falta de información: es que informarse es cómodo y ejecutar no.\n\nLos datos del carrusel no son míos, están citados. En los cursos online de Harvard y el MIT solo acabó el curso el 3,13% de los participantes. Y en su primer año hubo 292.852 matrículas que no llegaron a abrir nunca el material, de 841.687 en total. No se falla al final, se falla el primer día.\n\nLo que sí mueve algo es tan simple que da vergüenza: una sola tarea, hecha mal esta semana, y alguien a quien le das el parte. En el estudio de Gail Matthews, en la Dominican University, los que escribían su meta y daban parte cada semana a un amigo cumplieron bastante más que los que solo la pensaban.\n\nEl temario no te falta. Te falta terminar algo.\n\nComenta aquí la única cosa que vas a hacer esta semana: ya tienes testigo público. Y mándaselo a quien lleva un año diciendo que empieza el lunes.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JORDI_PROCESO_15AGO.mp4",
+     "poster": "media/CARRUSEL_JORDI_PROCESO_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_PROCESO_15AGO__00.mp4",
+     "peso_mb": 1.2,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "Mentalidad: todos quieren el resultado, nadie el proceso. Datos reales de abandono de cursos. CTA botón PROCESO."
+  },
+  {
+   "id": "CARRUSEL_JORDI_ECOM_15AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "etiqueta": "BOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "Cada seis meses alguien entierra el ecommerce.\nY cada seis meses el mercado vuelve a crecer.\n\nEl problema no es que esté saturado. El problema es que la mayoría mira las tiendas de su calle, ve siempre las mismas y decide que el mundo entero está igual. Y no lo está.\n\nQue sea difícil no es lo mismo que esté muerto. Difícil lo ha sido siempre. Muerto no.\n\nTodos los datos del carrusel llevan la fuente impresa en la propia slide. Compruébalos, para eso los pongo.\n\nDime en comentarios si tú también creías que llegabas tarde.\nGuárdalo y mándaselo al típico que te dice que ya no se puede.\nY si vas en serio con montar la tuya, escríbeme por privado.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JORDI_ECOM_15AGO.mp4",
+     "poster": "media/CARRUSEL_JORDI_ECOM_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_ECOM_15AGO__00.mp4",
+     "peso_mb": 1.2,
+     "dur_s": 56.1
+    }
+   ],
+   "dur_s": 56.1,
+   "porque": "Rompe la objeción «saturado» con datos de mercado. CTA botón ECOM."
+  },
+  {
+   "id": "CARRUSEL_JORDI_EMPEZAR_15AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "etiqueta": "BOFU",
+   "lead_magnet": false,
+   "dia": "",
+   "caption": "«Es que no tengo dinero para empezar.»\n\nLa he escuchado mil veces. Y casi nunca es verdad.\n\nEl dinero es la excusa más cómoda que existe, porque es la única que no te obliga a hacer nada. Mientras el problema sea el dinero, tú no has fallado: ha fallado tu cuenta corriente. Puedes repetirlo dos años seguidos y seguir durmiendo tranquilo.\n\nPero mira los datos, no lo que te cuentas a ti mismo.\n\nEn España, el miedo al fracaso sigue siendo un freno para el 55% de la población (Informe GEM España 2025-2026). No la falta de bancos, no la falta de ahorros: el miedo.\n\nY tener dinero tampoco te salva. CB Insights analizó 431 empresas que cerraron teniendo inversores detrás. El 70% se quedó sin capital, pero el propio informe dice que eso es la causa final, no la de raíz. La de raíz aparece en el 43% de los casos: no encajaban con el mercado (CB Insights, marzo 2026).\n\nCompradores hay: el 59,6% de la población de 16 a 74 años compró por internet en los tres últimos meses (INE, Encuesta TIC 2025).\n\nEntonces, ¿qué falta de verdad? Una oferta que alguien quiera pagar y un producto que ya se venda. Eso primero. El capital viene después.\n\nSi llevas dos años esperando a juntar dinero para empezar, ya tienes tu respuesta.\n\nGuárdalo y compártelo con quien lleva dos años diciendo lo mismo. Dime en comentarios qué te frena de verdad y, si vas en serio, escríbeme tú por privado.",
+   "archivos": [
+    {
+     "archivo": "CARRUSEL_JORDI_EMPEZAR_15AGO.mp4",
+     "poster": "media/CARRUSEL_JORDI_EMPEZAR_15AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_EMPEZAR_15AGO__00.mp4",
+     "peso_mb": 1.0,
+     "dur_s": 0.0
+    }
+   ],
+   "dur_s": 0.0,
+   "porque": "Rompe la excusa del capital: primero la oferta. CTA botón EMPEZAR."
   }
  ],
  "REEL_JAVI_TOFU_LUNES_SABADO_11AGO": {
