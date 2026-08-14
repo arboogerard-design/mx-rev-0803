@@ -129,6 +129,20 @@ cursor:pointer;padding:10px 0;text-decoration:underline}
 .porque{background:#101018;border-left:3px solid #D3AF39;border-radius:0 9px 9px 0;
 padding:10px 12px;font-size:14px;line-height:1.55;color:#c2c2d0;white-space:pre-wrap}
 .porque .q{color:#e9e9ee;font-weight:700}
+
+/* CORRECCION POR SLIDE — Gerard 14-ago: «si en un carrusel solo falla UNA slide, ¿qué?».
+   Antes solo habia un motivo para la pieza entera, asi que decir «la 4 esta mal» era imposible
+   sin escribirlo a mano en el motivo general y esperar que yo lo interpretase bien. */
+.visor .vslide{position:relative}
+.visor .snota{width:100%;max-width:min(34vh,320px);background:#12121a;border:1px solid #33333f;
+color:#eee;border-radius:9px;padding:9px 10px;font-size:13.5px;resize:none;min-height:42px}
+.visor .snota:focus{border-color:#D3AF39;outline:none}
+.visor .snota.tiene{border-color:#D3AF39;background:#1a1710}
+.visor .vslide .marca{position:absolute;top:6px;left:6px;background:#D3AF39;color:#151509;
+font-size:12px;font-weight:900;padding:3px 9px;border-radius:999px;display:none}
+.visor .vslide.conmarca .marca{display:block}
+.nslides{background:#3a2f10;color:#ffd97a;font-size:12px;font-weight:800;padding:3px 9px;
+border-radius:6px}
 </style></head><body>
 
 <div id="login"><div class="box">
@@ -292,7 +306,9 @@ function cardHTML(p){
         <span class="tag tipo">${esc(p.tipo||"")}</span>
         <span class="tag ${etapa(p)}">${etapa(p)}</span>
         ${p.dur_s?`<span class="tag tipo">${p.dur_s}s</span>`:""}
-        ${(p.archivos||[]).length>1?`<span class="tag tipo">${p.archivos.length} slides</span>`:""}</div>
+        ${(p.archivos||[]).length>1?`<span class="tag tipo">${p.archivos.length} slides</span>`:""}
+        ${(()=>{const n=Object.keys((d&&d.motivo_slides)||{}).length;
+                return n?`<span class="nslides">${n} slide${n>1?"s":""} con corrección</span>`:"";})()}</div>
       ${p.porque?`<div class="porque">${esc(p.porque).replace(/«([^»]*)»/,'<span class="q">«$1»</span>')}</div>`:""}
       <div class="cap">${esc(p.caption||"")}</div>
       <div class="acc">
@@ -440,8 +456,28 @@ function abreVisor(id){
   $("#vpistas").innerHTML=arr.map((a,k)=>{
     const m=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls playsinline preload="metadata"></video>`
                    :(a.poster?`<img src="${esc(a.poster)}">`:'<div style="height:60vh;width:34vh;background:#111;border-radius:12px"></div>');
-    return `<div class="vslide">${m}<span class="vn">${k+1} / ${arr.length}</span></div>`;
+    const nota=((dec(id)||{}).motivo_slides||{})[k]||"";
+    return `<div class="vslide${nota?" conmarca":""}" data-k="${k}">`
+      +`<span class="marca">corregir</span>${m}`
+      +`<span class="vn">${k+1} / ${arr.length}</span>`
+      +`<textarea class="snota${nota?" tiene":""}" data-id="${esc(id)}" data-k="${k}" `
+      +`placeholder="¿falla algo en ESTA slide? escríbelo">${esc(nota)}</textarea></div>`;
   }).join("");
+  /* se guarda al salir del campo: una slide, una nota */
+  $("#vpistas").querySelectorAll(".snota").forEach(t=>t.onchange=()=>{
+    const k=t.dataset.k, txt=t.value.trim();
+    t.classList.toggle("tiene",!!txt);
+    t.closest(".vslide").classList.toggle("conmarca",!!txt);
+    guardar(srv=>{
+      srv.decisiones=srv.decisiones||{};
+      const d=srv.decisiones[t.dataset.id]||{estado:"corregir",motivo:"",por:YO,cuando:""};
+      d.motivo_slides=d.motivo_slides||{};
+      if(txt) d.motivo_slides[k]=txt; else delete d.motivo_slides[k];
+      if(Object.keys(d.motivo_slides).length && d.estado!=="denegado") d.estado="corregir";
+      d.por=YO; d.cuando=new Date().toISOString().slice(0,16).replace("T"," ");
+      srv.decisiones[t.dataset.id]=d;
+    });
+  });
   $("#vcap").textContent=p.caption||"(sin caption)";
   $("#visor").classList.add("on");
   document.body.style.overflow="hidden";
