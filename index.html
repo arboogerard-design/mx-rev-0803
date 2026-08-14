@@ -3,31 +3,31 @@
 <title>Panel Mentorium · revisar y calendario</title>
 <meta name="robots" content="noindex"><style>
 *{box-sizing:border-box}body{margin:0;background:#0b0b0e;color:#e9e9ee;
-font:14px/1.45 -apple-system,Segoe UI,Roboto,sans-serif}
+font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
 header{position:sticky;top:0;z-index:20;background:#111116;border-bottom:1px solid #26262e;
 padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-h1{font-size:16px;margin:0;letter-spacing:.3px}
+h1{font-size:19px;margin:0;letter-spacing:.3px}
 .tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
-.tabs button{background:#1a1a22;border:1px solid #2c2c36;color:#c9c9d4;padding:7px 13px;
-border-radius:999px;font-weight:700;font-size:13px;cursor:pointer}
+.tabs button{background:#1a1a22;border:1px solid #2c2c36;color:#c9c9d4;padding:10px 17px;
+border-radius:999px;font-weight:700;font-size:15px;cursor:pointer}
 .tabs button.on{background:#D3AF39;border-color:#D3AF39;color:#151509}
 .wrap{padding:14px;max-width:1250px;margin:0 auto}
 .filtros{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.filtros button{background:#15151b;border:1px solid #2a2a34;color:#b9b9c6;padding:5px 11px;
-border-radius:8px;font-size:12px;cursor:pointer}
+.filtros button{background:#15151b;border:1px solid #2a2a34;color:#b9b9c6;padding:9px 15px;
+border-radius:9px;font-size:14px;cursor:pointer}
 .filtros button.on{background:#2b2b38;color:#fff;border-color:#4a4a5c}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 .card{background:#131319;border:1px solid #242430;border-radius:12px;overflow:hidden;
 display:flex;flex-direction:column}
 .card video,.card img{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
-.card .b{padding:9px 10px;display:flex;flex-direction:column;gap:7px;flex:1}
-.tit{font-weight:800;font-size:12.5px;line-height:1.3}
+.card .b{padding:12px 13px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tit{font-weight:800;font-size:17px;line-height:1.3}
 .meta{display:flex;gap:5px;flex-wrap:wrap}
-.tag{font-size:10px;font-weight:800;padding:2px 7px;border-radius:5px}
+.tag{font-size:12px;font-weight:800;padding:2px 7px;border-radius:5px}
 .TOFU{background:#123d29;color:#7ee2ab}.MOFU{background:#2b2b42;color:#b9b9ff}
 .BOFU{background:#42311b;color:#ffcf8a}.SIN{background:#3a2020;color:#ff9c9c}
 .cuenta{background:#1e1e28;color:#a9a9bb}.tipo{background:#191922;color:#8f8fa3}
-.cap{font-size:11.5px;color:#9a9aab;white-space:pre-wrap;max-height:58px;overflow:hidden;cursor:pointer}
+.cap{font-size:14px;color:#b6b6c6;white-space:pre-wrap;max-height:76px;overflow:hidden;cursor:pointer}
 .cap.abierta{max-height:none}
 .cap:not(.abierta):not(:empty)::after{content:" … (toca para leer)";color:#6c6c80}
 .med{position:relative}
@@ -37,15 +37,15 @@ font-size:22px;font-weight:900;width:36px;height:48px;cursor:pointer;border-radi
 .med .cnt{position:absolute;top:8px;right:8px;background:#000000bb;color:#fff;font-size:11px;
 font-weight:800;padding:3px 9px;border-radius:999px}
 .sec{margin:20px 0 10px;display:flex;align-items:center;gap:9px}
-.sec h2{font-size:13px;margin:0;letter-spacing:.4px}
+.sec h2{font-size:16px;margin:0;letter-spacing:.4px}
 .sec .lin{flex:1;height:1px;background:#242430}
-.sec .n{font-size:11px;color:#8b8b9c;font-weight:800}
+.sec .n{font-size:13px;color:#8b8b9c;font-weight:800}
 .acc{display:flex;gap:5px;margin-top:auto}
-.acc button{flex:1;border:0;border-radius:8px;padding:8px 4px;font-weight:800;font-size:12px;cursor:pointer}
+.acc button{flex:1;border:0;border-radius:10px;padding:13px 6px;font-weight:800;font-size:15px;cursor:pointer}
 .ok{background:#1d5c39;color:#c6ffe2}.fix{background:#6b5316;color:#ffe6ad}.no{background:#5e2226;color:#ffc9c9}
 .acc button.sel{outline:2px solid #fff}
 .motivo{width:100%;background:#0d0d12;border:1px solid #33333f;color:#eee;border-radius:8px;
-padding:7px;font-size:12px;resize:vertical;min-height:52px}
+padding:10px;font-size:14px;resize:vertical;min-height:62px}
 .dia{background:#131319;border:1px solid #242430;border-radius:12px;padding:11px;margin-bottom:11px}
 .dia h3{margin:0 0 8px;font-size:13.5px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
 .slots{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
@@ -76,6 +76,55 @@ padding:11px;margin:9px 0 12px;font-size:15px}
 border-radius:9px;font-weight:700;cursor:pointer}
 .err{color:#ff9c9c;font-size:12.5px;min-height:16px}
 .vacio{color:#77778a;padding:26px;text-align:center;font-size:13.5px}
+
+/* VISOR — pedido literal de Gerard 14-ago: «si le doy clic a un carrusel quiero ver TODAS
+   las slides, incluso hasta con la musica». Abre a pantalla completa, se pasan con el dedo
+   y el video suena (no va muteado, que es como se juzga la musica). */
+.visor{position:fixed;inset:0;z-index:60;background:#000000f2;display:none;flex-direction:column}
+.visor.on{display:flex}
+.visor .vtop{display:flex;align-items:center;gap:12px;padding:12px 14px;color:#fff;
+font-size:15px;font-weight:800;border-bottom:1px solid #23232c}
+.visor .vcerrar{margin-left:auto;background:#26262f;border:0;color:#fff;font-size:22px;
+width:46px;height:46px;border-radius:11px;cursor:pointer;line-height:1}
+.visor .vpistas{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;
+padding:14px;align-items:center}
+.visor .vslide{scroll-snap-align:center;flex:0 0 auto;height:100%;display:flex;
+flex-direction:column;gap:8px;align-items:center;justify-content:center}
+.visor .vslide video,.visor .vslide img{height:calc(100% - 34px);max-height:74vh;width:auto;
+border-radius:12px;background:#000;display:block}
+.visor .vn{color:#9a9aab;font-size:13px;font-weight:800}
+.visor .vcap{padding:12px 16px;color:#d8d8e4;font-size:15px;line-height:1.5;white-space:pre-wrap;
+border-top:1px solid #23232c;max-height:26vh;overflow:auto}
+.verver{position:absolute;left:8px;bottom:8px;background:#000000c4;border:1px solid #ffffff30;
+color:#fff;font-size:13px;font-weight:800;padding:8px 12px;border-radius:9px;cursor:pointer}
+
+/* MODO FOCO — Gerard 14-ago: «la organizacion es malisima… mas sencillo, mas util,
+   mejor explicado». 69 tarjetas en una pared no se revisan en un movil. Se revisa
+   de UNA EN UNA, con la pieza grande y tres botones que se puedan pulsar con el pulgar. */
+.foco{max-width:540px;margin:0 auto}
+.foco .card{border-radius:16px}
+.foco .card video,.foco .card img{aspect-ratio:9/16;max-height:58vh;object-fit:contain;background:#000}
+.foco .acc button{padding:17px 6px;font-size:17px;border-radius:12px}
+.foco .tit{font-size:19px}
+.barra{height:8px;background:#1c1c24;border-radius:999px;overflow:hidden;margin:10px 0 4px}
+.barra i{display:block;height:100%;background:#D3AF39}
+.avance{display:flex;align-items:baseline;gap:10px;font-size:15px;color:#c9c9d4;font-weight:800}
+.avance b{font-size:26px;color:#fff}
+.avance .resto{margin-left:auto;font-weight:700;color:#8b8b9c;font-size:14px}
+.pasos{display:flex;gap:10px;margin:14px 0 4px}
+.pasos button{flex:1;background:#17171f;border:1px solid #2c2c36;color:#c9c9d4;
+padding:12px;border-radius:10px;font-size:15px;font-weight:800;cursor:pointer}
+.pasos button:disabled{opacity:.35;cursor:default}
+.comovva{background:#12121a;border:1px solid #23232d;border-radius:12px;padding:13px 15px;
+margin-bottom:14px;font-size:15px;line-height:1.6;color:#c4c4d2}
+.comovva b{color:#fff}
+.comovva div{margin:5px 0}
+.vermodo{background:none;border:0;color:#8fc7ff;font-size:14px;font-weight:700;
+cursor:pointer;padding:10px 0;text-decoration:underline}
+.terminado{text-align:center;padding:50px 20px}
+.terminado .big{font-size:46px}
+.terminado h2{font-size:22px;margin:12px 0 6px}
+.terminado p{color:#9a9aab;font-size:15px;margin:0}
 </style></head><body>
 
 <div id="login"><div class="box">
@@ -176,6 +225,8 @@ const f1de=p=>{const v=(E.f1||{})[p.id];return v?v.estado:(p.f1||"pendiente");};
 const f1motivo=p=>{const v=(E.f1||{})[p.id];return v?(v.motivo||""):(p.f1_motivo||"");};
 const HAY_F1=()=>DATOS.piezas.some(p=>f1de(p)==="aprobado");
 const paso_f1=p=>!HAY_F1()||f1de(p)==="aprobado";
+let MODO=localStorage.getItem("mx_modo")||"foco";   /* foco = una a una (por defecto) */
+let IDX=0;
 function pendientes(){
   /* 13-ago, orden de Gerard: SIN filtro previo. Todos (Gerard incluido) ven la MISMA
      cola y votan de golpe; una pieza sale de la cola en cuanto alguien decide. */
@@ -224,7 +275,8 @@ function mediaHTML(p,i){
   const inner=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls preload="none"></video>`
        :(a.poster?`<img src="${esc(a.poster)}" loading="lazy">`:'<div style="aspect-ratio:9/16;background:#000"></div>');
   const nav=n>1?`<button class="nav izq" data-n="-1">‹</button><button class="nav der" data-n="1">›</button>`
-               +`<span class="cnt">${i+1}/${n}</span>`:"";
+               +`<span class="cnt">${i+1}/${n}</span>`
+               +`<button class="verver" data-ver="1">Ver las ${n} con música</button>`:"";
   return `<div class="med" data-i="${i}">${inner}${nav}</div>`;
 }
 
@@ -252,20 +304,45 @@ const SECCIONES=[["TOFU","TOFU · problema / dolor"],["MOFU","MOFU · solución"
                  ["BOFU","BOFU · mentalidad / casos"],["SIN","Sin etapa asignada"]];
 function vistaRevisar(){
   const ps=pendientes().filter(p=>FETAPA==="todo"||etapa(p)===FETAPA);
-  let h='<div class="nota"><b>Aprobar</b> la coloca sola en el calendario. '
-       +'<b>Corregir</b>: escribe qué está mal y se arregla (no lo corriges tú). '
-       +'<b>Denegar</b>: se retira y se limpia del PC. Vale un voto por pieza: el primero que decide, decide. '
-       +'En carruseles y stories: <b>flechas ‹ › para pasar todas las slides</b>.</div>'
-       +filtrosHTML();
-  if(!ps.length)return h+'<div class="vacio">No queda nada por revisar. 👌</div>';
-  for(const [clave,titulo] of SECCIONES){
-    const grupo=ps.filter(p=>etapa(p)===clave);
-    if(!grupo.length)continue;
-    h+=`<div class="sec"><span class="tag ${clave}">${clave}</span><h2>${titulo}</h2>`
-      +`<span class="n">${grupo.length}</span><span class="lin"></span></div>`;
-    h+='<div class="grid">'+grupo.map(cardHTML).join("")+'</div>';
+  const total=(DATOS.piezas||[]).filter(p=>FCUENTA==="todo"||p.cuenta===FCUENTA).length;
+  const hechas=Math.max(0,total-ps.length);
+  const explica='<div class="comovva">'
+    +'<div><b>Aprobar</b> — vale, y se coloca sola en el calendario.</div>'
+    +'<div><b>Corregir</b> — escribe qué está mal. Lo arreglo yo, tú no tocas nada.</div>'
+    +'<div><b>Denegar</b> — no sirve: se retira y se limpia del ordenador.</div>'
+    +'<div style="color:#8b8b9c;margin-top:8px">Decide el primero que entre. Una pieza, un voto.</div>'
+    +'</div>';
+  if(!ps.length) return filtrosHTML()+'<div class="terminado"><div class="big">👌</div>'
+    +'<h2>No queda nada por revisar</h2><p>Has decidido las '+total+' piezas de esta vista.</p></div>';
+
+  if(MODO==="cuadricula"){
+    let h=explica+filtrosHTML()
+      +'<button class="vermodo" data-modo="foco">Revisar de una en una (más rápido en el móvil)</button>';
+    for(const [clave,titulo] of SECCIONES){
+      const grupo=ps.filter(p=>etapa(p)===clave);
+      if(!grupo.length)continue;
+      h+=`<div class="sec"><span class="tag ${clave}">${clave}</span><h2>${titulo}</h2>`
+        +`<span class="n">${grupo.length}</span><span class="lin"></span></div>`;
+      h+='<div class="grid">'+grupo.map(cardHTML).join("")+'</div>';
+    }
+    return h;
   }
-  return h;
+
+  if(IDX>=ps.length)IDX=ps.length-1;
+  if(IDX<0)IDX=0;
+  const p=ps[IDX];
+  const pct=total?Math.round(hechas*100/total):0;
+  return explica+filtrosHTML()
+    +'<div class="foco">'
+    +`<div class="avance"><b>${hechas}</b> de ${total} decididas`
+    +`<span class="resto">quedan ${ps.length}</span></div>`
+    +`<div class="barra"><i style="width:${pct}%"></i></div>`
+    +cardHTML(p)
+    +`<div class="pasos">`
+    +`<button data-paso="-1" ${IDX===0?"disabled":""}>‹ Anterior</button>`
+    +`<button data-paso="1" ${IDX>=ps.length-1?"disabled":""}>Saltar ›</button></div>`
+    +'<button class="vermodo" data-modo="cuadricula">Ver todas en cuadrícula</button>'
+    +'</div>';
 }
 
 function vistaCalendario(){
@@ -348,7 +425,44 @@ function vistaReferentes(){
 }
 
 /* ---------- eventos ---------- */
+
+/* Abre la pieza entera: todas las slides en fila, con sonido. El video NO va muteado a
+   proposito — Gerard juzga la musica aqui, y una slide muda no se puede juzgar. */
+function abreVisor(id){
+  const p=(DATOS.piezas||[]).find(x=>x.id===id); if(!p)return;
+  const arr=p.archivos||[];
+  $("#vtit").textContent=`${p.id} · ${arr.length} ${arr.length===1?"pieza":"slides"}`;
+  $("#vpistas").innerHTML=arr.map((a,k)=>{
+    const m=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls playsinline preload="metadata"></video>`
+                   :(a.poster?`<img src="${esc(a.poster)}">`:'<div style="height:60vh;width:34vh;background:#111;border-radius:12px"></div>');
+    return `<div class="vslide">${m}<span class="vn">${k+1} / ${arr.length}</span></div>`;
+  }).join("");
+  $("#vcap").textContent=p.caption||"(sin caption)";
+  $("#visor").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function cierraVisor(){
+  $("#visor").classList.remove("on");
+  $("#vpistas").querySelectorAll("video").forEach(v=>{try{v.pause()}catch(e){}});
+  $("#vpistas").innerHTML="";
+  document.body.style.overflow="";
+}
+
 function cablear(){
+  document.querySelectorAll("[data-modo]").forEach(b=>b.onclick=()=>{
+    MODO=b.dataset.modo; localStorage.setItem("mx_modo",MODO); IDX=0; render();
+  });
+  document.querySelectorAll("[data-paso]").forEach(b=>b.onclick=()=>{
+    IDX+=(+b.dataset.paso); render();
+  });
+
+  document.querySelectorAll(".verver").forEach(b=>b.onclick=e=>{
+    e.stopPropagation();
+    const card=b.closest(".card"); if(card) abreVisor(card.dataset.id);
+  });
+  const vc=$("#vcerrar"); if(vc) vc.onclick=cierraVisor;
+  const vv=$("#visor"); if(vv) vv.onclick=e=>{ if(e.target===vv) cierraVisor(); };
+
   document.querySelectorAll(".filtros button").forEach(b=>b.onclick=()=>{
     if(b.dataset.f)FCUENTA=b.dataset.f; else if(b.dataset.e)FETAPA=b.dataset.e; render();});
   /* flechas de la galeria + caption expandible (delegado: sobrevive a re-pintados) */
@@ -414,4 +528,9 @@ const ses=sessionStorage.getItem("mx_yo");
 if(ses&&PERSONAS.includes(ses)&&localStorage.getItem("mx_clave")===CLAVE){
   YO=ses; $("#login").style.display="none"; arranca();
 }
-</script></body></html>
+</script><div class="visor" id="visor">
+  <div class="vtop"><span id="vtit"></span><button class="vcerrar" id="vcerrar">✕</button></div>
+  <div class="vpistas" id="vpistas"></div>
+  <div class="vcap" id="vcap"></div>
+</div>
+</body></html>
