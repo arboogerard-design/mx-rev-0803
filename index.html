@@ -126,9 +126,43 @@ cursor:pointer;padding:10px 0;text-decoration:underline}
 .terminado h2{font-size:22px;margin:12px 0 6px}
 .terminado p{color:#9a9aab;font-size:15px;margin:0}
 
-.porque{background:#101018;border-left:3px solid #D3AF39;border-radius:0 9px 9px 0;
-padding:10px 12px;font-size:14px;line-height:1.55;color:#c2c2d0;white-space:pre-wrap}
-.porque .q{color:#e9e9ee;font-weight:700}
+/* BURBUJA del porqué — Gerard 14-ago: «la línea amarilla parece que se mezcle con el caption,
+   ponlo en burbuja y dale más animación». Burbuja cerrada con su etiqueta, nada de borde suelto. */
+.porque{position:relative;background:linear-gradient(180deg,#191505,#14120a);
+border:1px solid #3d3312;border-radius:14px;padding:22px 14px 11px;margin:2px 0;
+font-size:13.8px;line-height:1.55;color:#d8d2b8;white-space:pre-wrap;
+box-shadow:0 2px 10px rgba(211,175,57,.07)}
+.porque::before{content:"POR QUÉ EXISTE ESTA PIEZA";position:absolute;top:-9px;left:12px;
+background:#D3AF39;color:#151509;font-size:10px;font-weight:900;letter-spacing:.09em;
+padding:2.5px 9px;border-radius:999px}
+.porque .q{color:#ffe89a;font-weight:700}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.wrap>*{animation:fadeUp .28s ease both}
+.card{animation:fadeUp .3s ease both}
+.card:hover{transform:translateY(-2px);transition:transform .18s ease}
+/* HOOKS */
+.hk{background:#101016;border:1px solid #26262f;border-radius:13px;padding:13px 14px;
+margin-bottom:11px;animation:fadeUp .3s ease both}
+.hk .htxt{font-size:16.5px;font-weight:700;color:#eee;line-height:1.4}
+.hk .hmeta{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 4px}
+.hk textarea{width:100%;background:#12121a;border:1px solid #33333f;color:#eee;border-radius:9px;
+padding:9px 10px;font-size:14.5px;resize:vertical;min-height:44px;display:none;margin-top:8px}
+.hk.editando textarea{display:block}
+.hk .hfuente{font-size:11.5px;color:#77778a;margin-top:5px}
+.hk.ap{border-color:#1d4030;background:#0d1510}
+.hk.dn{opacity:.45}
+.hk .acc{margin-top:9px}
+/* IG */
+.igbig{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:11px;margin-bottom:14px}
+.igcard{background:#101016;border:1px solid #26262f;border-radius:13px;padding:14px;text-align:center}
+.igcard .n{font-size:27px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.igcard .l{font-size:11.5px;color:#8b8b9c;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+.igtab{width:100%;border-collapse:collapse;font-size:13.5px}
+.igtab th{color:#8b8b9c;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.07em;
+padding:7px 8px;border-bottom:1px solid #26262f}
+.igtab td{padding:8px;border-bottom:1px solid #1a1a22;color:#ccc}
+.igtab tr.nos td{color:#ffe89a;font-weight:700}
+.igtab .r{text-align:right;font-variant-numeric:tabular-nums}
 
 /* CORRECCION POR SLIDE — Gerard 14-ago: «si en un carrusel solo falla UNA slide, ¿qué?».
    Antes solo habia un motivo para la pieza entera, asi que decir «la 4 esta mal» era imposible
@@ -160,7 +194,9 @@ border-radius:6px}
   <div class="tabs">
     <button data-t="revisar" class="on">Por revisar <span id="nrev"></span></button>
     <button data-t="calendario">Calendario</button>
+    <button data-t="hooks">Hooks <span id="nhk"></span></button>
     <button data-t="referentes">Referentes <span id="nref"></span></button>
+    <button data-t="ig">IG</button>
     <button data-t="salir" style="background:#2a1a1a;border-color:#3d2020">Salir</button>
   </div>
 </header>
@@ -176,6 +212,46 @@ const REFS_INI=[{"url": "https://www.instagram.com/reel/DaqvZzYO_Iv/", "quien": 
    criterios vivos, que es el fallo que 00-JERARQUIA.md prohibe dejar suelto. */
 /*__CAL_AUTO__*/const CAL_AUTO={"generado": "2026-08-14T00:28:46", "desde": "2026-08-14", "dias": 7, "modo_f1": "aprobadas", "cuentas": {"JAVI": {"lm": 19, "feed": 45, "techo_lm": 11, "colocadas": [{"fecha": "2026-08-14", "dia": "vie", "slot": 0, "formato_santi": "Selfie", "id": "V_JAVI_2_QUEDA0_8AGO", "etapa": "TOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": true}, {"fecha": "2026-08-14", "dia": "vie", "slot": 1, "formato_santi": "Formato que no te requiere", "id": "CARR_JAVI_CASH_VIDEO_9AGO", "etapa": "MOFU", "formato": "carrusel", "lead_magnet": false, "encaje": "exacto", "sin_motor": true}, {"fecha": "2026-08-14", "dia": "vie", "slot": 2, "formato_santi": "Talking Head", "id": "JAVI_SELFIE_COD_8AGO", "etapa": "MOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-15", "dia": "sáb", "slot": 1, "formato_santi": "iPad / split", "id": "REEL_JAVI_QA21_V2", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-15", "dia": "sáb", "slot": 2, "formato_santi": "Talking Head", "id": "V_JAVI_HOOKAD_SINMATI_8AGO", "etapa": "MOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-16", "dia": "dom", "slot": 0, "formato_santi": "Meme", "id": "MEME_REPLICA_JAVI_DEV1K", "etapa": "MOFU", "formato": "meme", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-16", "dia": "dom", "slot": 1, "formato_santi": "Talking Head", "id": "V_JAVI_3C_HOOKJAVI_10AGO", "etapa": "BOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-17", "dia": "lun", "slot": 0, "formato_santi": "Talking Head", "id": "REEL_JAVI_QA12_V2", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-17", "dia": "lun", "slot": 1, "formato_santi": "Carrusel", "id": "CARR_JAVI_RECURSOS", "etapa": "BOFU", "formato": "carrusel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-17", "dia": "lun", "slot": 2, "formato_santi": "iPad caso de éxito", "id": "REEL_JAVI_QA16_V2", "etapa": "MOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-18", "dia": "mar", "slot": 0, "formato_santi": "Meme", "id": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO", "etapa": "TOFU", "formato": "meme", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-18", "dia": "mar", "slot": 1, "formato_santi": "Talking Head", "id": "REEL_JAVI_CERO_V2", "etapa": "BOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-18", "dia": "mar", "slot": 2, "formato_santi": "Carrusel", "id": "CARRUSEL_CLON_JAVI_ORDEN_2AGO", "etapa": "MOFU", "formato": "carrusel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-19", "dia": "mié", "slot": 0, "formato_santi": "Respuesta TikTok", "id": "REEL_JAVI_QA11_V2", "etapa": "BOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": true}, {"fecha": "2026-08-19", "dia": "mié", "slot": 1, "formato_santi": "Talking Head", "id": "REEL_JAVI_PERDIMOS30K_7AGO", "etapa": "MOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-20", "dia": "jue", "slot": 0, "formato_santi": "iPad / split", "id": "REEL_JAVI_QA19_V2", "etapa": "BOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-20", "dia": "jue", "slot": 1, "formato_santi": "Formato que no te requiere", "id": "CARRUSEL_CLON_JAVI_OFERTA_2AGO", "etapa": "MOFU", "formato": "carrusel", "lead_magnet": true, "encaje": "exacto", "sin_motor": true}, {"fecha": "2026-08-20", "dia": "jue", "slot": 2, "formato_santi": "Talking Head", "id": "W_JAVI_MIEDO_8AGO", "etapa": "BOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}], "vacios": [{"fecha": "2026-08-15", "dia": "sáb", "slot": 0, "formato": "Carrusel", "motivo": "solo quedaban Lead Magnets y la anterior ya lo era"}, {"fecha": "2026-08-16", "dia": "dom", "slot": 2, "formato": "Carrusel", "motivo": "solo quedaban Lead Magnets y la anterior ya lo era"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 2, "formato": "Carrusel", "motivo": "solo quedaban Lead Magnets y la anterior ya lo era"}], "reparto": {"TOFU": 4, "MOFU": 8, "BOFU": 6, "SIN": 0}, "sin_colocar": ["W_JAVI_FRACASO_8AGO", "W_JAVI_CRITICAS_8AGO", "W_JAVI_LIBERTAD_8AGO", "W_JAVI_APARENTAR_8AGO", "W_JAVI_REALIDAD_8AGO", "V_JAVI_3_ALUMNOSREALES_8AGO", "JAVI_SELFIE_EXITO_8AGO", "W_JAVI_EMPEZAR_8AGO", "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO", "W_JAVI_CREENCIAS_8AGO", "REEL_JAVI_25K_JUEGO_10AGO", "REEL_JAVI_PADRE_LOCO_10AGO_v2", "REEL_JAVI_VENDEHUMOS_10AGO_v2", "JAVI_CLASE_BORROSA_9AGO", "MEME_JAVI_M2_CLASE_17MIN_1AGO", "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO", "MEME_JAVI_M4_PRECIO_ANTES_1AGO", "REEL_JAVI_CERO_2AGO", "REEL_JAVI_FILIPINAS_13AGO", "REEL_JAVI_LO_PEOR_1AGO", "REEL_JAVI_PANEL_MODULO_1AGO", "REEL_JAVI_PERSEVERANCIA_2AGO", "SPECA_JAVI_VENDEHUMOS_12AGO", "W_JAVI_COMPROMISO_8AGO", "W_JAVI_DECISION_8AGO", "W_JAVI_HISTORIA_8AGO", "W_JAVI_PACIENCIA_8AGO"], "violaciones": [], "stories_fuera": ["STORIES_JAVI_FREESTYLE_2AGO", "STORIES_JAVI_MIERCOLES_A5_V3"]}, "JORDI": {"lm": 6, "feed": 21, "techo_lm": 11, "colocadas": [{"fecha": "2026-08-14", "dia": "vie", "slot": 0, "formato_santi": "Selfie", "id": "V_JORDI_HOOKAD12_7AGO", "etapa": "MOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": true}, {"fecha": "2026-08-14", "dia": "vie", "slot": 1, "formato_santi": "Formato que no te requiere", "id": "MEMES_JORDI_TANDA_1AGO", "etapa": "TOFU", "formato": "meme", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-14", "dia": "vie", "slot": 2, "formato_santi": "Talking Head", "id": "TH_JORDI_VALIDAR_SPLIT_8AGO", "etapa": "MOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-15", "dia": "sáb", "slot": 1, "formato_santi": "iPad / split", "id": "REEL_JORDI_FILTRO_2AGO", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-15", "dia": "sáb", "slot": 2, "formato_santi": "Talking Head", "id": "REEL_JORDI_CASO_EXITO_13AGO", "etapa": "BOFU", "formato": "reel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-16", "dia": "dom", "slot": 0, "formato_santi": "Meme", "id": "MEMES_JORDI_TANDA_1AGO_b", "etapa": "TOFU", "formato": "meme", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-16", "dia": "dom", "slot": 1, "formato_santi": "Talking Head", "id": "REEL_JORDI_META300_1AGO", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-16", "dia": "dom", "slot": 2, "formato_santi": "Carrusel", "id": "CARR_JORDI_ATAJO", "etapa": "MOFU", "formato": "carrusel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-17", "dia": "lun", "slot": 0, "formato_santi": "Talking Head", "id": "REEL_JORDI_MIEDO_QUEDIRAN", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-17", "dia": "lun", "slot": 1, "formato_santi": "Carrusel", "id": "CARR_JORDI_VALIDAR_10AGO", "etapa": "MOFU", "formato": "carrusel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-17", "dia": "lun", "slot": 2, "formato_santi": "iPad caso de éxito", "id": "REEL_JORDI_NO_CAMBIO_NADA", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-18", "dia": "mar", "slot": 0, "formato_santi": "Meme", "id": "MEME_REPLICA_JORDI_RESENAS", "etapa": "TOFU", "formato": "meme", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-18", "dia": "mar", "slot": 1, "formato_santi": "Talking Head", "id": "REEL_JORDI_OBJETIVOS_13AGO", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-18", "dia": "mar", "slot": 2, "formato_santi": "Carrusel", "id": "CARRUSEL_JORDI_FILTRO_2AGO", "etapa": "MOFU", "formato": "carrusel", "lead_magnet": true, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-19", "dia": "mié", "slot": 0, "formato_santi": "Respuesta TikTok", "id": "TH_JORDI_PROCESO_9AGO", "etapa": "BOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": true}, {"fecha": "2026-08-19", "dia": "mié", "slot": 1, "formato_santi": "Talking Head", "id": "REEL_JORDI_CC_V5_CENTRO_8AGO", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}, {"fecha": "2026-08-20", "dia": "jue", "slot": 0, "formato_santi": "iPad / split", "id": "TH_JORDI_PERDIDAS_9AGO", "etapa": "BOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-20", "dia": "jue", "slot": 1, "formato_santi": "Formato que no te requiere", "id": "REEL_JORDI_CEREBRO_CORAZON_2AGO", "etapa": "TOFU", "formato": "reel", "lead_magnet": false, "encaje": "sustituto", "sin_motor": true}, {"fecha": "2026-08-20", "dia": "jue", "slot": 2, "formato_santi": "Talking Head", "id": "REEL_JORDI_EMPEZAR_4AGO", "etapa": "MOFU", "formato": "reel", "lead_magnet": false, "encaje": "exacto", "sin_motor": false}], "vacios": [{"fecha": "2026-08-15", "dia": "sáb", "slot": 0, "formato": "Carrusel", "motivo": "solo quedaban Lead Magnets y la anterior ya lo era"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}], "reparto": {"TOFU": 10, "MOFU": 6, "BOFU": 3, "SIN": 0}, "sin_colocar": ["REEL_JORDI_PROVEEDOR_4AGO", "TH_JORDI_PERDIDAS_V2C_10AGO"], "violaciones": [], "stories_fuera": ["STORIES_JORDI_WINS_1AGO", "STORIES_JORDI_TESTIMONIOS_1AGO"]}}};
 const CLAVE="mentorium2026";
+/* ── HOOKS: banco para aprobar/editar ANTES de editar video (Jordi 14-ago: «No subas mas
+   reels hasta revisar bien los hooks» · Javi 18:38 OK a la pestaña). El texto es editable:
+   lo que quede escrito aqui es EL hook que se usa. ── */
+const HOOKS_INI=[
+ {id:"HK_JAVI_01",cuenta:"JAVI",tipo:"hablado",texto:"En España han cerrado 30.000 tiendas de ropa. La tuya puede ser la siguiente.",angulo:"tienda física → online",fuente:"dato real: comercio textil ES 2006-2025 (73.160→43.452). Ángulo aprobado por Javi hoy 19:15"},
+ {id:"HK_JAVI_02",cuenta:"JAVI",tipo:"hablado",texto:"Pagas 423 euros de autónomo antes de vender ni una prenda.",angulo:"tienda física → online",fuente:"dato real: tramo 10 cotización 2026 (423,30 €)"},
+ {id:"HK_JAVI_03",cuenta:"JAVI",tipo:"hablado",texto:"Tu problema no es tu producto. Es tu calle.",angulo:"tienda física → online",fuente:"derivado del ángulo aprobado (techo = la gente que pasa)"},
+ {id:"HK_JAVI_04",cuenta:"JAVI",tipo:"hablado",texto:"El contra reembolso no es una forma de cobrar. Es una forma de perder dinero.",angulo:"COD = problema de caja",fuente:"canon de Santi en la estrategia («COD es una mierda…»)"},
+ {id:"HK_JAVI_05",cuenta:"JAVI",tipo:"hablado",texto:"Tu tienda no vende porque tarda. Se van antes de ver el producto.",angulo:"velocidad de carga",fuente:"pieza en producción con datos verificados de conversión"},
+ {id:"HK_JAVI_06",cuenta:"JAVI",tipo:"hablado",texto:"Facturar 10.000 y ganar cero. Eso es competir en precio.",angulo:"guerra de precios",fuente:"cifra ILUSTRATIVA de la tesis, no un caso — si molesta se cambia"},
+ {id:"HK_JAVI_07",cuenta:"JAVI",tipo:"hablado",texto:"Las cuentas virales no convierten. Lo he comprobado.",angulo:"views ≠ leads",fuente:"palabras LITERALES de Javi hoy 18:56 — es su propia conclusión"},
+ {id:"HK_JAVI_08",cuenta:"JAVI",tipo:"hablado",texto:"Deja de contar views. Empieza a contar ventas.",angulo:"views ≠ leads",fuente:"variante del anterior"},
+ {id:"HK_JORDI_01",cuenta:"JORDI",tipo:"leido",texto:"Tu sueldo lleva tres años igual. Tu alquiler no.",angulo:"vender tiempo vs producto",fuente:"universal, cero cifras suyas"},
+ {id:"HK_JORDI_02",cuenta:"JORDI",tipo:"leido",texto:"Vender tu tiempo es el único negocio que no puede escalar.",angulo:"vender tiempo vs producto",fuente:"universal"},
+ {id:"HK_JORDI_03",cuenta:"JORDI",tipo:"leido",texto:"Todos quieren el resultado. Nadie quiere los dos años de proceso.",angulo:"mentalidad / proceso",fuente:"universal, BOFU mentalidad (su territorio)"},
+ {id:"HK_JORDI_04",cuenta:"JORDI",tipo:"leido",texto:"El ecommerce no está muerto. Está matando al comercio de tu calle.",angulo:"romper objeción «saturado»",fuente:"detrás va el dato textil real (30.000 cierres)"},
+ {id:"HK_JORDI_05",cuenta:"JORDI",tipo:"leido",texto:"«No tengo dinero para empezar» es la excusa más cara que existe.",angulo:"romper objeción capital",fuente:"universal"},
+ {id:"HK_JORDI_06",cuenta:"JORDI",tipo:"leido",texto:"Nadie te va a pagar más por ser leal a tu empresa.",angulo:"mentalidad empleo",fuente:"universal"},
+ {id:"HK_JORDI_07",cuenta:"JORDI",tipo:"leido",texto:"Un negocio online cobra los 365 días. Tú cobras el día 30.",angulo:"vender tiempo vs producto",fuente:"universal"},
+ {id:"HK_JORDI_08",cuenta:"JORDI",tipo:"leido",texto:"Nueve años de universidad. Dos meses y medio de ecommerce. Ya sabes qué le cambió la vida.",angulo:"caso real",fuente:"caso VALIDADO Nil (_casos_exito): 9 años de estudios, +200K en 2,5 meses — la cifra NO se dice, va en la captura"}];
+
+/* ── IG medido HOY con el tracker propio (sin login, HTML público). No es «en tiempo real»:
+   es la última medición, y se re-mide cada día. Los handles INVENTADOS de la tabla que vio
+   Javi (victorheras / marcverdu_) están FUERA — esto es lo real. ── */
+const IG_MEDIDO={fecha:"14-ago 19:58",cuentas:[
+ {h:"javier.sanchezecom",n:"Javi",seg:22000,posts:325,nuestra:true},
+ {h:"jordigarcia89",n:"Jordi",seg:17000,posts:98,nuestra:true},
+ {h:"ramiro.cubria",n:"Ramiro Cubría",seg:486000,posts:3708},
+ {h:"victorherasemprendedor",n:"Víctor Heras (2ª cuenta)",seg:482000,posts:22},
+ {h:"herasmedia",n:"Víctor Heras (media)",seg:237000,posts:207},
+ {h:"arz.urus",n:"ARZ Urus (principal — red en análisis)",seg:309000,posts:56},
+ {h:"jaimehigueraes",n:"Jaime Higuera",seg:2000000,posts:1242},
+ {h:"jaimehigueramomentos",n:"Higuera (momentos)",seg:952000,posts:2778},
+ {h:"pedrobuerbaum",n:"Pedro Buerbaum",seg:992000,posts:156},
+ {h:"codiesanchez",n:"Codie Sánchez",seg:3000000,posts:2468},
+ {h:"jesusorozcomo",n:"Jesús Orozco",seg:101000,posts:1174},
+ {h:"jesusorozcoecom",n:"Orozco (ecom)",seg:57000,posts:1918},
+ {h:"gala_lc",n:"Gala",seg:51000,posts:272},
+ {h:"co1e0",n:"co1e0 (molde memes)",seg:21000,posts:1}]};
+
 /* jsonblob murio (404 el 13-ago, cerraron la creacion anonima): ahora npoint.io.
    GET = leer estado · POST = sobrescribir (npoint no acepta PUT). */
 const BLOB="https://api.npoint.io/76533e2a465a894fc6f4";
@@ -268,10 +344,14 @@ function render(){
   document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===TAB));
   $("#nrev").textContent="("+pendientes().length+")";
   $("#nref").textContent="("+(E.referentes||[]).length+")";
+  const hks=(E.hooks&&E.hooks.length?E.hooks:HOOKS_INI);
+  $("#nhk").textContent="("+hks.filter(h=>!h.estado).length+")";
   $("#quien").textContent=YO?("· "+YO):"";
   const app=$("#app");
   if(TAB==="revisar")app.innerHTML=vistaRevisar();
   else if(TAB==="calendario")app.innerHTML=vistaCalendario();
+  else if(TAB==="hooks")app.innerHTML=vistaHooks();
+  else if(TAB==="ig")app.innerHTML=vistaIG();
   else app.innerHTML=vistaReferentes();
   cablear();
 }
@@ -425,6 +505,63 @@ function vistaCalendario(){
   return h;
 }
 
+/* ── HOOKS: se aprueban ANTES de gastar horas de edición. Editable: si Jordi quiere otro
+   gancho, lo escribe encima y ESE queda como el bueno (pidió exactamente esto hoy 18:38). ── */
+function vistaHooks(){
+  const hks=(E.hooks&&E.hooks.length?E.hooks:HOOKS_INI);
+  let h='<div class="nota"><b>Estos son los ganchos ANTES de editar ningún vídeo.</b> '
+   +'Aprueba los que quieras que produzca, corrige el texto si lo quieres distinto '
+   +'(lo que escribas es EXACTAMENTE el hook que se usa) y deniega los que no. '
+   +'Así ninguna pieza se edita con un hook que no os gusta.</div>'+filtrosHTML();
+  const fil=hks.filter(k=>FCUENTA==="todo"||k.cuenta===FCUENTA);
+  if(!fil.length)return h+'<div class="vacio">No hay hooks de esta cuenta.</div>';
+  for(const k of fil){
+    const est=k.estado||"";
+    h+=`<div class="hk ${est==="aprobado"?"ap":est==="denegado"?"dn":""}" data-hid="${esc(k.id)}">
+      <div class="htxt">${esc(k.texto)}</div>
+      <div class="hmeta"><span class="tag cuenta">${esc(k.cuenta)}</span>
+        <span class="tag tipo">hook ${esc(k.tipo)}</span>
+        <span class="tag tipo">${esc(k.angulo)}</span>
+        ${est?`<span class="tag ${est==="aprobado"?"TOFU":"tipo"}">${esc(est)}${k.por?" · "+esc(k.por):""}</span>`:""}</div>
+      <div class="hfuente">${esc(k.fuente||"")}</div>
+      <textarea class="hedit">${esc(k.texto)}</textarea>
+      <div class="acc">
+        <button class="ok" data-h="aprobado">Aprobar</button>
+        <button class="fix" data-h="editar">Cambiar texto</button>
+        <button class="no" data-h="denegado">Denegar</button>
+      </div></div>`;
+  }
+  return h;
+}
+
+/* ── IG: última medición REAL (tracker propio, sin login). Se re-mide a diario. ── */
+function vistaIG(){
+  const nos=IG_MEDIDO.cuentas.filter(c=>c.nuestra);
+  const refs=IG_MEDIDO.cuentas.filter(c=>!c.nuestra)
+    .map(c=>({...c,spp:c.posts?Math.round(c.seg/c.posts):0}))
+    .sort((a,b)=>b.spp-a.spp);
+  let h='<div class="nota">Medido el <b>'+esc(IG_MEDIDO.fecha)+'</b> con nuestro tracker (público, sin login). '
+   +'Se re-mide cada día y aquí siempre está la última foto. '
+   +'<b>seg/post</b> = seguidores que le ha dado de media cada publicación: mide si gana por VOLUMEN o por PIEZA.</div>';
+  h+='<div class="igbig">';
+  for(const c of nos)
+    h+=`<div class="igcard"><div class="n">${c.seg.toLocaleString("es")}</div>
+        <div class="l">@${esc(c.h)}</div>
+        <div style="font-size:12px;color:#8b8b9c;margin-top:5px">${c.posts} posts · ${Math.round(c.seg/c.posts)} seg/post</div></div>`;
+  h+='</div>';
+  h+='<div class="nota" style="border-color:#3d3312"><b>La lectura importante:</b> Heras tiene 482K con SOLO 22 posts '
+   +'(21.900 seg/post) y Urus 309K con 56 en su cuenta principal. No ganan por publicar más: ganan porque cada pieza '
+   +'está pensada para pegar. Ramiro sí es volumen (3.708 posts, 131 seg/post). Son dos estrategias distintas — '
+   +'y varios llevan VARIAS cuentas (Heras 2, Higuera 2, Buerbaum 3, Orozco 2; la red de Urus está en análisis ahora mismo).</div>';
+  h+='<table class="igtab"><tr><th>Referente</th><th class="r">Seguidores</th><th class="r">Posts</th><th class="r">seg/post</th></tr>';
+  for(const c of refs)
+    h+=`<tr><td>${esc(c.n)}<div style="font-size:11px;color:#666">@${esc(c.h)}</div></td>
+        <td class="r">${c.seg.toLocaleString("es")}</td><td class="r">${c.posts.toLocaleString("es")}</td>
+        <td class="r"><b>${c.spp.toLocaleString("es")}</b></td></tr>`;
+  h+='</table>';
+  return h;
+}
+
 function vistaReferentes(){
   let h='<div class="nota">Pega aquí links de vídeos o carruseles que te gusten para replicar. '
        +'<b>No hace falta que digas de qué tipo es</b>: eso lo analizo yo y lo relleno.</div>'
@@ -535,6 +672,24 @@ function cablear(){
       });
     });
   });
+  /* hooks: aprobar / cambiar texto / denegar — todo queda en el blob con quién y cuándo */
+  document.querySelectorAll(".hk").forEach(hk=>{
+    const hid=hk.dataset.hid;
+    hk.querySelectorAll(".acc button").forEach(b=>b.onclick=()=>{
+      const a=b.dataset.h;
+      if(a==="editar"){ hk.classList.toggle("editando"); const t=hk.querySelector(".hedit"); if(hk.classList.contains("editando")){t.focus();t.setSelectionRange(t.value.length,t.value.length);} return; }
+      const nuevo=hk.querySelector(".hedit").value.trim();
+      guardar(srv=>{
+        srv.hooks=(srv.hooks&&srv.hooks.length?srv.hooks:JSON.parse(JSON.stringify(HOOKS_INI)));
+        const k=srv.hooks.find(x=>x.id===hid); if(!k)return;
+        const sello=new Date().toISOString().slice(0,16).replace("T"," ");
+        if(nuevo&&nuevo!==k.texto){ k.texto=nuevo; k.editado=sello+" por "+YO; }
+        k.estado=a; k.por=YO; k.cuando=sello;
+      }).then(render);
+    });
+    const t=hk.querySelector(".hedit");
+    if(t) t.onkeydown=e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); hk.querySelector('[data-h="aprobado"]').click(); } };
+  });
   const add=$("#raddr");
   if(add)add.onclick=()=>{
     const u=($("#rurl").value||"").trim();
@@ -562,6 +717,10 @@ async function arranca(){
   if(vivo && !(E.referentes||[]).length && REFS_INI.length){
     /* primera vez: precarga los referentes que ya nos pasaron por WhatsApp */
     guardar(srv=>{ srv.referentes=REFS_INI.slice(); });
+  }
+  if(vivo && !(E.hooks||[]).length){
+    /* primera vez: siembra el banco de hooks para que el equipo ya tenga cola que aprobar */
+    guardar(srv=>{ srv.hooks=JSON.parse(JSON.stringify(HOOKS_INI)); });
   }
 }
 pintaLogin();
