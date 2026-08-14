@@ -140,6 +140,17 @@ padding:2.5px 9px;border-radius:999px}
 .wrap>*{animation:fadeUp .28s ease both}
 .card{animation:fadeUp .3s ease both}
 .card:hover{transform:translateY(-2px);transition:transform .18s ease}
+/* ESPÍA */
+.espgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:13px;margin-top:12px}
+.espcard{background:#101016;border:1px solid #26262f;border-radius:14px;overflow:hidden;
+animation:fadeUp .3s ease both;transition:transform .18s ease,border-color .18s ease}
+.espcard:hover{transform:translateY(-3px);border-color:#3a3a48}
+.espcard iframe{width:100%;height:420px;background:#000;display:block}
+.espmeta{display:flex;gap:5px;flex-wrap:wrap;align-items:center;padding:9px 10px}
+.repl{margin-left:auto;background:#BAFC68;color:#10140b;font-weight:900;font-size:12px;
+border:none;border-radius:999px;padding:6px 14px;cursor:pointer;transition:transform .15s}
+.repl:hover{transform:scale(1.06)}
+.repl.hecho{background:#2a3a2e;color:#9fe0b8}
 /* HOOKS */
 .hk{background:#101016;border:1px solid #26262f;border-radius:13px;padding:13px 14px;
 margin-bottom:11px;animation:fadeUp .3s ease both}
@@ -254,7 +265,16 @@ const IG_MEDIDO={fecha:"14-ago 19:58",cuentas:[
 
 /* jsonblob murio (404 el 13-ago, cerraron la creacion anonima): ahora npoint.io.
    GET = leer estado · POST = sobrescribir (npoint no acepta PUT). */
-const BLOB="https://api.npoint.io/76533e2a465a894fc6f4";
+const BLOB="https://api.npoint.io/76533e2a465a894fc6f4";   /* legado: piezas/f1/semilla */
+/* V2 15-ago: UN ALMACÉN POR PERSONA (npoint, creados por API). Cada uno escribe SOLO el suyo:
+   se acabó el que Javi y Jordi se borren las decisiones al revisar a la vez. */
+const BINS={
+  "Gerard":"https://api.npoint.io/68aa90c4c40af52e94ac",
+  "Javi":  "https://api.npoint.io/88c82cab5478b18404f1",
+  "Jordi": "https://api.npoint.io/8d25623222020a3f41ec",
+  "Santi": "https://api.npoint.io/6a1e5a7506cc4248da2b"
+};
+let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};   /* el estado de MI bin */
 const PERSONAS=["Gerard","Javi","Jordi","Santi"];
 
 let YO=null, TAB="revisar", FCUENTA="todo", FETAPA="todo";
@@ -268,11 +288,50 @@ function aviso(t,mal){const s=$("#sync");s.textContent=t;s.className="sync ver"+
 
 /* ---------- persistencia: merge, nunca pisar lo del otro ---------- */
 async function leerBlob(){
+  /* lee el legado + los 4 bins personales y FUSIONA. La decisión efectiva de una pieza es la
+     más reciente de cualquiera; las de los demás se conservan como notas visibles. */
   const r=await fetch(BLOB,{cache:"no-store"});
   if(!r.ok)throw new Error("GET "+r.status);
   const j=await r.json();
-  return Object.assign({}, j, {decisiones:j.decisiones||{}, referentes:j.referentes||[],
-                                 calendario:j.calendario||{}, f1:j.f1||{}});
+  const base=Object.assign({}, j, {decisiones:j.decisiones||{}, referentes:j.referentes||[],
+                                    calendario:j.calendario||{}, f1:j.f1||{}, notas:{}, hooks:j.hooks||[]});
+  const bins=await Promise.all(Object.entries(BINS).map(async([quien,url])=>{
+    try{ const rr=await fetch(url,{cache:"no-store"}); return [quien, rr.ok? await rr.json():null]; }
+    catch(e){ return [quien,null]; }
+  }));
+  for(const [quien,b] of bins){
+    if(!b) continue;
+    if(quien===YO) MIO=Object.assign({decisiones:{},hooks:{},ordenes:[],publicados:[]}, b);
+    for(const [pid,d] of Object.entries(b.decisiones||{})){
+      (base.notas[pid]=base.notas[pid]||[]).push(Object.assign({por:quien},d));
+      const prev=base.decisiones[pid];
+      if(!prev || (d.cuando||"")>(prev.cuando||"")) base.decisiones[pid]=Object.assign({por:quien},d);
+    }
+    for(const [hid,h] of Object.entries(b.hooks||{})){
+      const k=base.hooks.find(x=>x.id===hid); if(!k) continue;
+      if(!k.cuando || (h.cuando||"")>(k.cuando||"")) Object.assign(k,h,{por:quien});
+    }
+  }
+  return base;
+}
+
+async function guardarMio(aplicar){
+  /* escribe SOLO en mi bin, con reintento. Nadie puede pisar lo de nadie. */
+  const url=BINS[YO]; if(!url){aviso("Tu usuario no tiene almacén",true);return;}
+  for(let i=0;i<3;i++){
+    try{
+      const rr=await fetch(url,{cache:"no-store"});
+      const mio=rr.ok? await rr.json() : {decisiones:{},hooks:{},ordenes:[],publicados:[]};
+      mio.decisiones=mio.decisiones||{}; mio.hooks=mio.hooks||{};
+      mio.ordenes=mio.ordenes||[]; mio.publicados=mio.publicados||[];
+      aplicar(mio);
+      const w=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},
+                               body:JSON.stringify(mio)});
+      if(!w.ok)throw new Error("POST "+w.status);
+      MIO=mio; E=await leerBlob(); aviso("Guardado"); return;
+    }catch(e){ if(i===2){aviso("No se pudo guardar",true);return;}
+      await new Promise(r=>setTimeout(r,500*(i+1))); }
+  }
 }
 async function guardar(aplicar){
   if(guardando){pendiente=aplicar;return;}
@@ -352,7 +411,7 @@ function render(){
   else if(TAB==="calendario")app.innerHTML=vistaCalendario();
   else if(TAB==="hooks")app.innerHTML=vistaHooks();
   else if(TAB==="ig")app.innerHTML=vistaIG();
-  else app.innerHTML=vistaReferentes();
+  else app.innerHTML=vistaEspia();
   cablear();
 }
 
@@ -502,6 +561,38 @@ function vistaCalendario(){
       h+=`<div class="nota" style="font-size:11.5px">Sin hueco esta semana (${d.sin_colocar.length}): `
         +`${esc(d.sin_colocar.join(", "))}</div>`;
   }
+  return h;
+}
+
+/* ── ESPÍA: los referentes CON SU CONTENIDO dentro (embed oficial de IG, funciona sin login)
+   + números medidos + botón REPLICAR que llega directo a Claude como orden de producción. ── */
+const REFS_MEDIDOS=[{"etapa": "TOFU", "sc": "DbPXWbuz3rB", "likes": 144, "coms": 87, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "Dat6ISIz2o2", "likes": 1050, "coms": 137, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "DaRljBWT-6v", "likes": 214, "coms": 77, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbV_iq7zwVP", "likes": 420, "coms": 110, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbD6TNeTOoj", "likes": 387, "coms": 112, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "Da3DHH_lMDR", "likes": 1247, "coms": 377, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DUN7gu6DT1p", "likes": 24, "coms": 5, "autor": "64639108237"}, {"etapa": "BOFU", "sc": "Da1FtiugJhd", "likes": 262, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbY_gjPTpaW", "likes": 168, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbQqHCxz4Pm", "likes": 572, "coms": 31, "autor": "ramiro.cubria"}];
+function scDe(url){const m=(url||"").match(/instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);return m?m[1]:null;}
+function vistaEspia(){
+  let h='<div class="nota"><b>Esto es el espía:</b> el contenido REAL de los referentes, reproducible aquí '
+   +'dentro, con sus likes y comentarios medidos. Toca <b>REPLICAR</b> en el que quieras y me llega al '
+   +'momento como orden: lo clono para Javi o Jordi y aparece en Por revisar. '
+   +'Pega abajo cualquier link nuevo de reel/carrusel y entra a la parrilla.</div>'
+   +'<div class="addref"><input id="rurl" placeholder="https://instagram.com/reel/..."><button id="raddr">Añadir al espía</button></div>'
+   +'<div class="espgrid">';
+  const vistos=new Set();
+  const todos=[];
+  for(const m of REFS_MEDIDOS){ if(!vistos.has(m.sc)){vistos.add(m.sc);
+    todos.push({sc:m.sc,autor:m.autor,likes:m.likes,coms:m.coms,etapa:m.etapa});}}
+  for(const r of (E.referentes||[])){ const sc=scDe(r.url);
+    if(sc&&!vistos.has(sc)){vistos.add(sc); todos.push({sc:sc,autor:r.quien||"",etapa:r.etapa||"",nota:r.nota||""});}}
+  for(const t of todos){
+    h+=`<div class="espcard">
+      <iframe src="https://www.instagram.com/p/${t.sc}/embed/captioned/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+      <div class="espmeta">
+        <span class="tag ${(t.etapa||"SIN").toUpperCase()}">${esc(t.etapa||"ref")}</span>
+        ${t.autor?`<span class="tag tipo">@${esc(t.autor)}</span>`:""}
+        ${t.likes!=null?`<span class="tag tipo">♥ ${t.likes.toLocaleString("es")}</span>`:""}
+        ${t.coms!=null?`<span class="tag tipo">💬 ${t.coms}</span>`:""}
+        <button class="repl" data-sc="${esc(t.sc)}">REPLICAR</button>
+      </div></div>`;
+  }
+  h+='</div>';
   return h;
 }
 
@@ -689,6 +780,14 @@ function cablear(){
     });
     const t=hk.querySelector(".hedit");
     if(t) t.onkeydown=e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); hk.querySelector('[data-h="aprobado"]').click(); } };
+  });
+  document.querySelectorAll(".repl").forEach(b=>b.onclick=()=>{
+    const sc=b.dataset.sc;
+    guardarMio(mio=>{ mio.ordenes.push({tipo:"replicar",
+      url:"https://www.instagram.com/reel/"+sc+"/", por:YO,
+      cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
+    b.textContent="PEDIDO ✓"; b.classList.add("hecho"); b.disabled=true;
+    aviso("Orden enviada a Claude: replicar "+sc);
   });
   const add=$("#raddr");
   if(add)add.onclick=()=>{
