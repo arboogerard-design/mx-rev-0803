@@ -188,7 +188,27 @@ font-size:12px;font-weight:900;padding:3px 9px;border-radius:999px;display:none}
 .visor .vslide.conmarca .marca{display:block}
 .nslides{background:#3a2f10;color:#ffd97a;font-size:12px;font-weight:800;padding:3px 9px;
 border-radius:6px}
+
+/* === SKIN MENTORIUM V4 (15-ago noche) — capa override, no toca la logica === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap');
+:root{--mx-oro:#C9A961;--mx-negro:#0A0A0A;--mx-panel:#121212;--mx-borde:#242424;--mx-ok:#3ECF8E;--mx-no:#E5484D;}
+body{background:var(--mx-negro)!important;font-family:'Montserrat',system-ui,sans-serif!important;color:#EDEDED!important;}
+h1,h2,h3,.titulo{font-family:'Montserrat',sans-serif!important;font-weight:800!important;letter-spacing:.02em;}
+button,.btn,.tab{font-family:'Montserrat',sans-serif!important;font-weight:700!important;border-radius:10px!important;}
+.card,.pieza,.tarjeta{background:var(--mx-panel)!important;border:1px solid var(--mx-borde)!important;border-radius:14px!important;box-shadow:0 8px 28px rgba(0,0,0,.45)!important;transition:transform .15s,border-color .15s;}
+.card:hover,.pieza:hover,.tarjeta:hover{transform:translateY(-3px);border-color:var(--mx-oro)!important;}
+.card img,.pieza img{border-radius:10px 10px 0 0!important;aspect-ratio:9/16;object-fit:cover;width:100%!important;}
+.mx-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;padding:14px 20px;background:linear-gradient(180deg,#0d0d0d 70%,rgba(13,13,13,.92));border-bottom:1px solid var(--mx-borde);backdrop-filter:blur(8px);}
+.mx-logo{font-weight:900;font-size:19px;letter-spacing:.14em;color:var(--mx-oro);}
+.mx-sub{font-size:11px;letter-spacing:.22em;color:#8a8a8a;text-transform:uppercase;}
+.mx-pill{margin-left:auto;background:#1b1b1b;border:1px solid var(--mx-borde);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;color:var(--mx-oro);}
+.tab.activa,.tab.active,.tab[aria-selected=true]{background:var(--mx-oro)!important;color:#111!important;}
+::selection{background:var(--mx-oro);color:#111}
+
 </style></head><body>
+<div class="mx-header"><div><div class="mx-logo">M&nbsp;MENTORIUM</div><div class="mx-sub">panel de contenido · en vivo</div></div><div class="mx-pill" id="mxCuenta">cargando…</div></div>
+<script>window.addEventListener('load',()=>{try{try{const t=DATOS.piezas.length;const n=(typeof pendientes==='function')?pendientes().length:DATOS.piezas.filter(p=>p.f1==='pendiente').length;document.getElementById('mxCuenta').textContent=n+' por revisar · '+t+' piezas';}catch(e){document.getElementById('mxCuenta').style.display='none';}}catch(e){}});</script>
+
 
 <div id="login"><div class="box">
   <h1 style="margin-bottom:4px">Panel Mentorium</h1>
