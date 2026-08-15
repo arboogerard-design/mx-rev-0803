@@ -207,9 +207,7 @@ border-radius:6px}
     <button data-t="calendario">Calendario</button>
     <button data-t="hooks">Hooks <span id="nhk"></span></button>
     <button data-t="referentes">Referentes <span id="nref"></span></button>
-    <button data-t="ig">IG</button>
     <button data-t="guiones">Guiones <span id="ngui"></span></button>
-    <button data-t="tablon">Tablón</button>
     <button data-t="salir" style="background:#2a1a1a;border-color:#3d2020">Salir</button>
   </div>
 </header>
@@ -415,9 +413,7 @@ function render(){
   if(TAB==="revisar")app.innerHTML=vistaRevisar();
   else if(TAB==="calendario")app.innerHTML=vistaCalendario();
   else if(TAB==="hooks")app.innerHTML=vistaHooks();
-  else if(TAB==="ig")app.innerHTML=vistaIG();
   else if(TAB==="guiones")app.innerHTML=vistaGuiones();
-  else if(TAB==="tablon")app.innerHTML=vistaTablon();
   else app.innerHTML=vistaEspia();
   cablear();
 }
@@ -584,10 +580,12 @@ function vistaEspia(){
    +'<div class="espgrid">';
   const vistos=new Set();
   const todos=[];
-  for(const m of REFS_MEDIDOS){ if(!vistos.has(m.sc)){vistos.add(m.sc);
+  /* Gerard 15-ago: aqui SOLO competencia — ni Santi ni nuestras cuentas */
+  const FUERA=new Set(["santiagovilatta","64639108237","duartesanti_","duartesanti","jordigarcia89","javier.sanchezecom"]);
+  for(const m of REFS_MEDIDOS){ if(!vistos.has(m.sc) && !FUERA.has((m.autor||"").toLowerCase())){vistos.add(m.sc);
     todos.push({sc:m.sc,autor:m.autor,likes:m.likes,coms:m.coms,etapa:m.etapa});}}
   for(const r of (E.referentes||[])){ const sc=scDe(r.url);
-    if(sc&&!vistos.has(sc)){vistos.add(sc); todos.push({sc:sc,autor:r.quien||"",etapa:r.etapa||"",nota:r.nota||""});}}
+    if(sc&&!vistos.has(sc) && !FUERA.has((r.quien||"").toLowerCase())){vistos.add(sc); todos.push({sc:sc,autor:r.quien||"",etapa:r.etapa||"",nota:r.nota||""});}}
   for(const t of todos){
     h+=`<div class="espcard">
       <iframe src="https://www.instagram.com/p/${t.sc}/embed/captioned/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
