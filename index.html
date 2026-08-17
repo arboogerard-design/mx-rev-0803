@@ -660,7 +660,6 @@ function vistaCalendario(){
 const ESPIA_FUERA=new Set(["santiagovilatta","64639108237","duartesanti_","duartesanti","jordigarcia89","javier.sanchezecom"]);
 function nRefsEspia(){const s=new Set();
   for(const m of REFS_MEDIDOS){if(!ESPIA_FUERA.has((m.autor||"").toLowerCase()))s.add(m.sc);}
-  for(const r of (E.referentes||[])){const sc=scDe(r.url);if(sc&&!ESPIA_FUERA.has((r.quien||"").toLowerCase()))s.add(sc);}
   return s.size;}
 const REFS_MEDIDOS=[{"etapa": "TOFU", "sc": "DbPXWbuz3rB", "likes": 144, "coms": 87, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "Dat6ISIz2o2", "likes": 1050, "coms": 137, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "DaRljBWT-6v", "likes": 214, "coms": 77, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbV_iq7zwVP", "likes": 420, "coms": 110, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbD6TNeTOoj", "likes": 387, "coms": 112, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "Da3DHH_lMDR", "likes": 1247, "coms": 377, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DUN7gu6DT1p", "likes": 24, "coms": 5, "autor": "64639108237"}, {"etapa": "BOFU", "sc": "Da1FtiugJhd", "likes": 262, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbY_gjPTpaW", "likes": 168, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbQqHCxz4Pm", "likes": 572, "coms": 31, "autor": "ramiro.cubria"}];
 function scDe(url){const m=(url||"").match(/instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);return m?m[1]:null;}
@@ -699,10 +698,9 @@ function vistaEspia(){
   }
   const sueltos=medidos.filter(m=>!["TOFU","MOFU","BOFU"].includes(m.etapa));
   if(sueltos.length){ h+=cab(`otros medidos (${sueltos.length})`); for(const t of sueltos) h+=card(t); }
-  if(equipo.length){
-    h+=cab(`pasados por el equipo — sin medir aún (${equipo.length}) · los mido y suben con números`);
-    for(const t of equipo) h+=card(t);
-  }
+  /* Gerard 17-ago 13:02: «Javi y Jordi NO tienen que aparecer en referentes» — los links
+     pasados por el equipo NO se pintan aquí (van a la fábrica y entran cuando estén MEDIDOS
+     y sean de competencia). El espía es SOLO competencia medida. */
   h+='</div>';
   return h;
 }
