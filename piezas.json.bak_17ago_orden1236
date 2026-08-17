@@ -1,0 +1,689 @@
+{
+ "generado": "2026-08-17",
+ "semana": "17-23 agosto 2026",
+ "dias": [
+  "lun 17",
+  "mar 18",
+  "mié 19",
+  "jue 20",
+  "vie 21",
+  "sáb 22",
+  "dom 23"
+ ],
+ "piezas": [
+  {
+   "id": "CARRUSEL_JAVI_POV_INBOX_16AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "lun 17",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "El día después de abrir la tienda nadie te avisa de esto.\nSi ya te ha pasado, comenta INBOX y te leo.\n#ecommerce #emprender #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "_PREVIEW.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__00.mp4",
+     "peso_mb": 1.02
+    },
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__01.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__01.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__02.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__02.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__03.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__03.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__04.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__04.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__05.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__05.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__06.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__06.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__07.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__07.mp4",
+     "peso_mb": 0.16
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__08.jpg",
+     "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__08.mp4",
+     "peso_mb": 0.12
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JAVI_POV_INBOX_16AGO"
+  },
+  {
+   "id": "TH_VENDEHUMOS_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "lun 17",
+   "hora": "19:30",
+   "etiqueta": "BOFU",
+   "caption": "Nos llaman vende humos y lo entiendo.\n\nDesde fuera solo se ve el resultado. No se ve al entrenador personal que dejó su trabajo, ni los años que van desde ahí hasta aquí.\n\nLo que sí se puede mirar es lo de verdad: si detrás hay un equipo, si hay gente cobrando una nómina, si hay un almacén. Eso no se improvisa para un vídeo.\n\nAsí que cuando alguien te lo diga a ti, no discutas. Enseña el trabajo.\n\n¿Te lo han dicho alguna vez? Cuéntamelo en comentarios.\n\n#ecommerce #emprender",
+   "archivos": [
+    {
+     "archivo": "TH_VENDEHUMOS_17AGO.mp4",
+     "poster": "media/TH_VENDEHUMOS_17AGO__00.jpg",
+     "video": "media/TH_VENDEHUMOS_17AGO__00.mp4",
+     "peso_mb": 2.44
+    }
+   ],
+   "origen": "PARA_REVISAR/TH_VENDEHUMOS_17AGO"
+  },
+  {
+   "id": "CARRUSEL_JORDI_IA_TIENDA_16AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "lun 17",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "La parte que la IA te quita es la aburrida. La que decide sigue siendo tuya.\n¿Por dónde empezarías tú? Comenta TIENDA y te leo.\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "_PREVIEW.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__00.mp4",
+     "peso_mb": 1.0
+    },
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__01.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__01.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__02.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__02.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__03.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__03.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__04.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__04.mp4",
+     "peso_mb": 0.17
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__05.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__05.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__06.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__06.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__07.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__07.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__08.mp4",
+     "peso_mb": 0.13
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JORDI_IA_TIENDA_16AGO"
+  },
+  {
+   "id": "CARRUSEL_JAVI_TRES_COSAS_V2_16AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "mar 18",
+   "hora": "19:30",
+   "etiqueta": "MOFU",
+   "caption": "Antes de tocar los anuncios miro tres cosas: mercado, producto y avatar. Siempre en ese orden.\nSi falla la primera, las otras dos dan igual. Comenta TRES y te digo cuál tienes sin resolver.\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "_PREVIEW.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__00.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__00.mp4",
+     "peso_mb": 0.96
+    },
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__01.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__01.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__02.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__02.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__03.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__03.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__04.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__04.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__05.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__05.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__06.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__06.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__07.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__07.mp4",
+     "peso_mb": 0.15
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__08.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__08.mp4",
+     "peso_mb": 0.12
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO"
+  },
+  {
+   "id": "MEMES_JAVI_TANDA_16AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "mar 18",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JAVI_01_mejor_mes.mp4",
+     "poster": "media/MEMES_JAVI_TANDA_16AGO__00.jpg",
+     "video": "media/MEMES_JAVI_TANDA_16AGO__00.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_02_producto_nuevo.mp4",
+     "poster": "media/MEMES_JAVI_TANDA_16AGO__01.jpg",
+     "video": "media/MEMES_JAVI_TANDA_16AGO__01.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_03_curso_sin_abrir.mp4",
+     "poster": "media/MEMES_JAVI_TANDA_16AGO__02.jpg",
+     "video": "media/MEMES_JAVI_TANDA_16AGO__02.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_04_anuncios_primero.mp4",
+     "poster": "media/MEMES_JAVI_TANDA_16AGO__03.jpg",
+     "video": "media/MEMES_JAVI_TANDA_16AGO__03.mp4",
+     "peso_mb": 0.13
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JAVI_TANDA_16AGO"
+  },
+  {
+   "id": "TH_PADRE_LOCO_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mar 18",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "Mi padre me dijo que estaba loco.\n\nDejaba un trabajo que iba bien para meterme en algo que él no entendía. Y yo se lo explicaba y le explotaba la cabeza.\n\nHoy me pregunta cómo va lo de las tiendas online.\n\nNo hace falta convencer a nadie al principio. Hace falta aguantar el tiempo suficiente para que la pregunta cambie sola.\n\nSi te está pasando ahora, comenta y te leo.\n\n#emprender #ecommerce",
+   "archivos": [
+    {
+     "archivo": "TH_PADRE_LOCO_17AGO.mp4",
+     "poster": "media/TH_PADRE_LOCO_17AGO__00.jpg",
+     "video": "media/TH_PADRE_LOCO_17AGO__00.mp4",
+     "peso_mb": 1.15
+    }
+   ],
+   "origen": "PARA_REVISAR/TH_PADRE_LOCO_17AGO"
+  },
+  {
+   "id": "MEMES_JORDI_SEMANA_17AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "mar 18",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_primera_devolucion.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__00.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__00.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_02_producto_de_madrugada.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__01.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__01.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_03_ya_esta_inventado.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__02.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_04_mensajes_de_noche.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__03.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__03.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_05_primer_pedido_enviar.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__04.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__04.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_06_cambiar_de_nicho.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__05.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__05.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_07_foto_en_el_sofa.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__06.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__06.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_08_carrito_abandonado.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__07.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_17AGO__07.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "_CLON_CHECK.png",
+     "poster": "media/MEMES_JORDI_SEMANA_17AGO__08.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_17AGO"
+  },
+  {
+   "id": "TH_MILLONARIO_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mié 19",
+   "hora": "19:30",
+   "etiqueta": "BOFU",
+   "caption": "Para mí el millonario de verdad no es el que más tiene.\n\nEs el que decide en qué gasta su día. El que no depende de estar en un sitio a una hora porque alguien se lo dice.\n\nSe puede tener mucho y no tener eso. Y se puede tener bastante menos y tenerlo entero.\n\nEse es el objetivo, y por eso monté lo que monté.\n\n¿Tú qué buscas de verdad? Dímelo abajo.\n\n#emprender #mentalidad",
+   "archivos": [
+    {
+     "archivo": "TH_MILLONARIO_17AGO.mp4",
+     "poster": "media/TH_MILLONARIO_17AGO__00.jpg",
+     "video": "media/TH_MILLONARIO_17AGO__00.mp4",
+     "peso_mb": 1.91
+    }
+   ],
+   "origen": "PARA_REVISAR/TH_MILLONARIO_17AGO"
+  },
+  {
+   "id": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "mié 19",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "El nombre de la tienda no ha vendido nunca nada. Lo que decide es qué vendes y a quién.\n¿En qué parte estás atascado? Comenta EMPIEZO y te leo.\n#ecommerce #emprender #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "_PREVIEW.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__00.mp4",
+     "peso_mb": 1.29
+    },
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__01.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__01.mp4",
+     "peso_mb": 0.22
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__02.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__02.mp4",
+     "peso_mb": 0.14
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__03.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__03.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__04.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__04.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__05.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__05.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__06.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__06.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__07.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__07.mp4",
+     "peso_mb": 0.15
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__08.mp4",
+     "peso_mb": 0.14
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO"
+  },
+  {
+   "id": "REEL_JAVI_PAPEL_AUDITOR_16AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "jue 20",
+   "hora": "19:30",
+   "etiqueta": "MOFU",
+   "caption": "Facturas mucho y ganas poco: el agujero casi siempre está en el mismo sitio, y no es el producto.\nLos tres auditores están en la bio, gratis. Comenta AUDITOR y te leo.\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_PAPEL_AUDITOR.mp4",
+     "poster": "media/REEL_JAVI_PAPEL_AUDITOR_16AGO__00.jpg",
+     "video": "media/REEL_JAVI_PAPEL_AUDITOR_16AGO__00.mp4",
+     "peso_mb": 0.96
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_PAPEL_AUDITOR_16AGO"
+  },
+  {
+   "id": "MEMES_JAVI_SEMANA_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "dom 23",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JAVI_S01_visitas.mp4",
+     "poster": "media/MEMES_JAVI_SEMANA_17AGO__00.jpg",
+     "video": "media/MEMES_JAVI_SEMANA_17AGO__00.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_S02_doscientos_productos.mp4",
+     "poster": "media/MEMES_JAVI_SEMANA_17AGO__01.jpg",
+     "video": "media/MEMES_JAVI_SEMANA_17AGO__01.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_S03_bajar_precio.mp4",
+     "poster": "media/MEMES_JAVI_SEMANA_17AGO__02.jpg",
+     "video": "media/MEMES_JAVI_SEMANA_17AGO__02.mp4",
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "MEME_JAVI_S04_culpa_algoritmo.mp4",
+     "poster": "media/MEMES_JAVI_SEMANA_17AGO__03.jpg",
+     "video": "media/MEMES_JAVI_SEMANA_17AGO__03.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_S05_nunca_ha_cobrado.mp4",
+     "poster": "media/MEMES_JAVI_SEMANA_17AGO__04.jpg",
+     "video": "media/MEMES_JAVI_SEMANA_17AGO__04.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "MEME_JAVI_S06_curso_siguiente.mp4",
+     "poster": "media/MEMES_JAVI_SEMANA_17AGO__05.jpg",
+     "video": "media/MEMES_JAVI_SEMANA_17AGO__05.mp4",
+     "peso_mb": 0.13
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JAVI_SEMANA_17AGO"
+  },
+  {
+   "id": "MEMES_JORDI_TANDA_16AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "dom 23",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_refrescar_pedidos.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_16AGO__00.jpg",
+     "video": "media/MEMES_JORDI_TANDA_16AGO__00.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_02_explicar_en_casa.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_16AGO__01.jpg",
+     "video": "media/MEMES_JORDI_TANDA_16AGO__01.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_03_el_logo_perfecto.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_16AGO__02.jpg",
+     "video": "media/MEMES_JORDI_TANDA_16AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_04_envios_a_canarias.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_16AGO__03.jpg",
+     "video": "media/MEMES_JORDI_TANDA_16AGO__03.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_05_copiar_una_tienda.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_16AGO__04.jpg",
+     "video": "media/MEMES_JORDI_TANDA_16AGO__04.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "_CLON_CHECK.png",
+     "poster": "media/MEMES_JORDI_TANDA_16AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_16AGO"
+  },
+  {
+   "id": "HOOKAD_A_QUEDA0_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "ad",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Nuestros alumnos lo cuentan mejor que nosotros. Gente real, a la cara.\nSi tienes tienda (o vas en serio con montarla), agenda tu sesion de claridad — boton de abajo.",
+   "archivos": [
+    {
+     "archivo": "HOOKAD_A_QUEDA0.mp4",
+     "poster": "media/HOOKAD_A_QUEDA0_15AGO__00.jpg",
+     "video": "media/HOOKAD_A_QUEDA0_15AGO__00.mp4",
+     "peso_mb": 2.3
+    }
+   ],
+   "origen": "PARA_REVISAR/HOOKAD_A_QUEDA0_15AGO"
+  },
+  {
+   "id": "HOOKAD_B_HUMO_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "ad",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Nuestros alumnos lo cuentan mejor que nosotros. Gente real, a la cara.\nSi tienes tienda (o vas en serio con montarla), agenda tu sesion de claridad — boton de abajo.",
+   "archivos": [
+    {
+     "archivo": "HOOKAD_B_HUMO.mp4",
+     "poster": "media/HOOKAD_B_HUMO_15AGO__00.jpg",
+     "video": "media/HOOKAD_B_HUMO_15AGO__00.mp4",
+     "peso_mb": 2.21
+    }
+   ],
+   "origen": "PARA_REVISAR/HOOKAD_B_HUMO_15AGO"
+  },
+  {
+   "id": "HOOKAD_C_2ANOS_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "ad",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Nuestros alumnos lo cuentan mejor que nosotros. Gente real, a la cara.\nSi tienes tienda (o vas en serio con montarla), agenda tu sesion de claridad — boton de abajo.",
+   "archivos": [
+    {
+     "archivo": "HOOKAD_C_2ANOS.mp4",
+     "poster": "media/HOOKAD_C_2ANOS_15AGO__00.jpg",
+     "video": "media/HOOKAD_C_2ANOS_15AGO__00.mp4",
+     "peso_mb": 2.2
+    }
+   ],
+   "origen": "PARA_REVISAR/HOOKAD_C_2ANOS_15AGO"
+  },
+  {
+   "id": "MEME_JAVI_LIQUIDEZ_15AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "al menos tengo un negocio, hay que verle el lado positivo",
+   "archivos": [
+    {
+     "archivo": "MEME_JAVI_LIQUIDEZ.mp4",
+     "poster": "media/MEME_JAVI_LIQUIDEZ_15AGO__00.jpg",
+     "video": "media/MEME_JAVI_LIQUIDEZ_15AGO__00.mp4",
+     "peso_mb": 0.15
+    },
+    {
+     "archivo": "frame_liquidez.png",
+     "poster": "media/MEME_JAVI_LIQUIDEZ_15AGO__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_LIQUIDEZ_15AGO"
+  },
+  {
+   "id": "MEMES_JORDI_MES_14AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_proveedor_que_falla.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__00.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__00.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_02_editar_no_es_vender.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__01.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__01.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_03_explicar_mi_trabajo.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__02.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_04_viernes_por_la_tarde.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__03.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__03.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_05_comentario_de_siempre.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__04.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__04.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_06_alumno_que_ya_entrega.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__05.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__05.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_07_producto_ganador.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__06.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__06.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_08_la_ia_lo_escribe.mp4",
+     "poster": "media/MEMES_JORDI_MES_14AGO__07.jpg",
+     "video": "media/MEMES_JORDI_MES_14AGO__07.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "_CLON_CHECK.png",
+     "poster": "media/MEMES_JORDI_MES_14AGO__08.jpg"
+    },
+    {
+     "archivo": "_MOS_8MEMES.jpg",
+     "poster": "media/MEMES_JORDI_MES_14AGO__09.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_MES_14AGO"
+  }
+ ]
+}

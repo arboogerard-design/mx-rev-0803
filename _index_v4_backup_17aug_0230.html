@@ -1,0 +1,911 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel Mentorium · revisar y calendario</title>
+<meta name="robots" content="noindex"><style>
+*{box-sizing:border-box}body{margin:0;background:#0b0b0e;color:#e9e9ee;
+font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+header{position:sticky;top:0;z-index:20;background:#111116;border-bottom:1px solid #26262e;
+padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+h1{font-size:19px;margin:0;letter-spacing:.3px}
+.tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.tabs button{background:#1a1a22;border:1px solid #2c2c36;color:#c9c9d4;padding:10px 17px;
+border-radius:999px;font-weight:700;font-size:15px;cursor:pointer}
+.tabs button.on{background:#D3AF39;border-color:#D3AF39;color:#151509}
+.wrap{padding:14px;max-width:1250px;margin:0 auto}
+.filtros{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.filtros button{background:#15151b;border:1px solid #2a2a34;color:#b9b9c6;padding:9px 15px;
+border-radius:9px;font-size:14px;cursor:pointer}
+.filtros button.on{background:#2b2b38;color:#fff;border-color:#4a4a5c}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:#131319;border:1px solid #242430;border-radius:12px;overflow:hidden;
+display:flex;flex-direction:column}
+.card video,.card img{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
+.card .b{padding:12px 13px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tit{font-weight:800;font-size:17px;line-height:1.3}
+.meta{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:800;padding:2px 7px;border-radius:5px}
+.TOFU{background:#123d29;color:#7ee2ab}.MOFU{background:#2b2b42;color:#b9b9ff}
+.BOFU{background:#42311b;color:#ffcf8a}.SIN{background:#3a2020;color:#ff9c9c}
+.cuenta{background:#1e1e28;color:#a9a9bb}.tipo{background:#191922;color:#8f8fa3}
+.cap{font-size:14px;color:#b6b6c6;white-space:pre-wrap;max-height:76px;overflow:hidden;cursor:pointer}
+.cap.abierta{max-height:none}
+.cap:not(.abierta):not(:empty)::after{content:" … (toca para leer)";color:#6c6c80}
+.med{position:relative}
+.med .nav{position:absolute;top:50%;transform:translateY(-50%);background:#000000aa;border:0;color:#fff;
+font-size:22px;font-weight:900;width:36px;height:48px;cursor:pointer;border-radius:9px;line-height:1}
+.med .nav.izq{left:6px}.med .nav.der{right:6px}
+.med .cnt{position:absolute;top:8px;right:8px;background:#000000bb;color:#fff;font-size:11px;
+font-weight:800;padding:3px 9px;border-radius:999px}
+.sec{margin:20px 0 10px;display:flex;align-items:center;gap:9px}
+.sec h2{font-size:16px;margin:0;letter-spacing:.4px}
+.sec .lin{flex:1;height:1px;background:#242430}
+.sec .n{font-size:13px;color:#8b8b9c;font-weight:800}
+.acc{display:flex;gap:5px;margin-top:auto}
+.acc button{flex:1;border:0;border-radius:10px;padding:13px 6px;font-weight:800;font-size:15px;cursor:pointer}
+.ok{background:#1d5c39;color:#c6ffe2}.fix{background:#6b5316;color:#ffe6ad}.no{background:#5e2226;color:#ffc9c9}
+.acc button.sel{outline:2px solid #fff}
+.motivo{width:100%;background:#0d0d12;border:1px solid #33333f;color:#eee;border-radius:8px;
+padding:10px;font-size:14px;resize:vertical;min-height:62px}
+.dia{background:#131319;border:1px solid #242430;border-radius:12px;padding:11px;margin-bottom:11px}
+.dia h3{margin:0 0 8px;font-size:13.5px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.slots{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.slot{background:#0f0f15;border:1px dashed #2e2e3a;border-radius:9px;padding:8px;min-height:64px;font-size:12px}
+.slot.lleno{border-style:solid;border-color:#3a3a48}
+.slot .fmt{font-size:10px;color:#7d7d90;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.alerta{background:#4a1d1f;color:#ffc9c9;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:800}
+.okdia{background:#123d29;color:#7ee2ab;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:800}
+.ref{background:#131319;border:1px solid #242430;border-radius:10px;padding:10px;margin-bottom:9px;
+display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.ref a{color:#8fc7ff;font-size:12.5px;word-break:break-all}
+.addref{display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap}
+.addref input{flex:1;min-width:230px;background:#0d0d12;border:1px solid #33333f;color:#eee;
+border-radius:9px;padding:10px;font-size:13px}
+.addref button{background:#D3AF39;border:0;color:#151509;font-weight:800;padding:10px 17px;
+border-radius:9px;cursor:pointer}
+.nota{background:#15151d;border-left:3px solid #D3AF39;padding:9px 12px;border-radius:0 8px 8px 0;
+font-size:12.5px;color:#b6b6c6;margin-bottom:13px}
+.sync{position:fixed;right:12px;bottom:12px;background:#1d5c39;color:#d9ffe9;padding:8px 14px;
+border-radius:9px;font-size:12.5px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
+.sync.ver{opacity:1}.sync.mal{background:#6b2226;color:#ffd6d6}
+#login{position:fixed;inset:0;background:#0b0b0e;display:flex;align-items:center;justify-content:center;z-index:80}
+#login .box{background:#131319;border:1px solid #242430;border-radius:14px;padding:22px;width:min(340px,92vw)}
+#login input{width:100%;background:#0d0d12;border:1px solid #33333f;color:#eee;border-radius:9px;
+padding:11px;margin:9px 0 12px;font-size:15px}
+#login .q{display:flex;gap:7px;flex-wrap:wrap}
+#login .q button{flex:1;background:#1e1e28;border:1px solid #2e2e3a;color:#ddd;padding:11px;
+border-radius:9px;font-weight:700;cursor:pointer}
+.err{color:#ff9c9c;font-size:12.5px;min-height:16px}
+.vacio{color:#77778a;padding:26px;text-align:center;font-size:13.5px}
+
+/* VISOR — pedido literal de Gerard 14-ago: «si le doy clic a un carrusel quiero ver TODAS
+   las slides, incluso hasta con la musica». Abre a pantalla completa, se pasan con el dedo
+   y el video suena (no va muteado, que es como se juzga la musica). */
+.visor{position:fixed;inset:0;z-index:60;background:#000000f2;display:none;flex-direction:column}
+.visor.on{display:flex}
+.visor .vtop{display:flex;align-items:center;gap:12px;padding:12px 14px;color:#fff;
+font-size:15px;font-weight:800;border-bottom:1px solid #23232c}
+.visor .vcerrar{margin-left:auto;background:#26262f;border:0;color:#fff;font-size:22px;
+width:46px;height:46px;border-radius:11px;cursor:pointer;line-height:1}
+.visor .vpistas{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;
+padding:14px;align-items:center}
+.visor .vslide{scroll-snap-align:center;flex:0 0 auto;height:100%;display:flex;
+flex-direction:column;gap:8px;align-items:center;justify-content:center}
+.visor .vslide video,.visor .vslide img{height:calc(100% - 34px);max-height:74vh;width:auto;
+border-radius:12px;background:#000;display:block}
+.visor .vn{color:#9a9aab;font-size:13px;font-weight:800}
+.visor .vcap{padding:12px 16px;color:#d8d8e4;font-size:15px;line-height:1.5;white-space:pre-wrap;
+border-top:1px solid #23232c;max-height:26vh;overflow:auto}
+.verver{position:absolute;left:8px;bottom:8px;background:#000000c4;border:1px solid #ffffff30;
+color:#fff;font-size:13px;font-weight:800;padding:8px 12px;border-radius:9px;cursor:pointer}
+
+/* MODO FOCO — Gerard 14-ago: «la organizacion es malisima… mas sencillo, mas util,
+   mejor explicado». 69 tarjetas en una pared no se revisan en un movil. Se revisa
+   de UNA EN UNA, con la pieza grande y tres botones que se puedan pulsar con el pulgar. */
+.foco{max-width:540px;margin:0 auto}
+.foco .card{border-radius:16px}
+.foco .card video,.foco .card img{aspect-ratio:9/16;max-height:58vh;object-fit:contain;background:#000}
+.foco .acc button{padding:17px 6px;font-size:17px;border-radius:12px}
+.foco .tit{font-size:19px}
+.barra{height:8px;background:#1c1c24;border-radius:999px;overflow:hidden;margin:10px 0 4px}
+.barra i{display:block;height:100%;background:#D3AF39}
+.avance{display:flex;align-items:baseline;gap:10px;font-size:15px;color:#c9c9d4;font-weight:800}
+.avance b{font-size:26px;color:#fff}
+.avance .resto{margin-left:auto;font-weight:700;color:#8b8b9c;font-size:14px}
+.pasos{display:flex;gap:10px;margin:14px 0 4px}
+.pasos button{flex:1;background:#17171f;border:1px solid #2c2c36;color:#c9c9d4;
+padding:12px;border-radius:10px;font-size:15px;font-weight:800;cursor:pointer}
+.pasos button:disabled{opacity:.35;cursor:default}
+.comovva{background:#12121a;border:1px solid #23232d;border-radius:12px;padding:13px 15px;
+margin-bottom:14px;font-size:15px;line-height:1.6;color:#c4c4d2}
+.comovva b{color:#fff}
+.comovva div{margin:5px 0}
+.vermodo{background:none;border:0;color:#8fc7ff;font-size:14px;font-weight:700;
+cursor:pointer;padding:10px 0;text-decoration:underline}
+.terminado{text-align:center;padding:50px 20px}
+.terminado .big{font-size:46px}
+.terminado h2{font-size:22px;margin:12px 0 6px}
+.terminado p{color:#9a9aab;font-size:15px;margin:0}
+
+/* BURBUJA del porqué — Gerard 14-ago: «la línea amarilla parece que se mezcle con el caption,
+   ponlo en burbuja y dale más animación». Burbuja cerrada con su etiqueta, nada de borde suelto. */
+.porque{position:relative;background:linear-gradient(180deg,#191505,#14120a);
+border:1px solid #3d3312;border-radius:14px;padding:22px 14px 11px;margin:2px 0;
+font-size:13.8px;line-height:1.55;color:#d8d2b8;white-space:pre-wrap;
+box-shadow:0 2px 10px rgba(211,175,57,.07)}
+.porque::before{content:"POR QUÉ EXISTE ESTA PIEZA";position:absolute;top:-9px;left:12px;
+background:#D3AF39;color:#151509;font-size:10px;font-weight:900;letter-spacing:.09em;
+padding:2.5px 9px;border-radius:999px}
+.porque .q{color:#ffe89a;font-weight:700}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.wrap>*{animation:fadeUp .28s ease both}
+.card{animation:fadeUp .3s ease both}
+.card:hover{transform:translateY(-2px);transition:transform .18s ease}
+/* ESPÍA */
+.espgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:13px;margin-top:12px}
+.espcard{background:#101016;border:1px solid #26262f;border-radius:14px;overflow:hidden;
+animation:fadeUp .3s ease both;transition:transform .18s ease,border-color .18s ease}
+.espcard:hover{transform:translateY(-3px);border-color:#3a3a48}
+.espcard iframe{width:100%;height:420px;background:#000;display:block}
+.espmeta{display:flex;gap:5px;flex-wrap:wrap;align-items:center;padding:9px 10px}
+.repl{margin-left:auto;background:#BAFC68;color:#10140b;font-weight:900;font-size:12px;
+border:none;border-radius:999px;padding:6px 14px;cursor:pointer;transition:transform .15s}
+.repl:hover{transform:scale(1.06)}
+.repl.hecho{background:#2a3a2e;color:#9fe0b8}
+/* HOOKS */
+.hk{background:#101016;border:1px solid #26262f;border-radius:13px;padding:13px 14px;
+margin-bottom:11px;animation:fadeUp .3s ease both}
+.hk .htxt{font-size:16.5px;font-weight:700;color:#eee;line-height:1.4}
+.hk .hmeta{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 4px}
+.hk textarea{width:100%;background:#12121a;border:1px solid #33333f;color:#eee;border-radius:9px;
+padding:9px 10px;font-size:14.5px;resize:vertical;min-height:44px;display:none;margin-top:8px}
+.hk.editando textarea{display:block}
+.hk .hfuente{font-size:11.5px;color:#77778a;margin-top:5px}
+.hk.ap{border-color:#1d4030;background:#0d1510}
+.hk.dn{opacity:.45}
+.hk .acc{margin-top:9px}
+/* IG */
+.igbig{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:11px;margin-bottom:14px}
+.igcard{background:#101016;border:1px solid #26262f;border-radius:13px;padding:14px;text-align:center}
+.igcard .n{font-size:27px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.igcard .l{font-size:11.5px;color:#8b8b9c;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+.igtab{width:100%;border-collapse:collapse;font-size:13.5px}
+.igtab th{color:#8b8b9c;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.07em;
+padding:7px 8px;border-bottom:1px solid #26262f}
+.igtab td{padding:8px;border-bottom:1px solid #1a1a22;color:#ccc}
+.igtab tr.nos td{color:#ffe89a;font-weight:700}
+.igtab .r{text-align:right;font-variant-numeric:tabular-nums}
+
+/* CORRECCION POR SLIDE — Gerard 14-ago: «si en un carrusel solo falla UNA slide, ¿qué?».
+   Antes solo habia un motivo para la pieza entera, asi que decir «la 4 esta mal» era imposible
+   sin escribirlo a mano en el motivo general y esperar que yo lo interpretase bien. */
+.visor .vslide{position:relative}
+.visor .snota{width:100%;max-width:min(34vh,320px);background:#12121a;border:1px solid #33333f;
+color:#eee;border-radius:9px;padding:9px 10px;font-size:13.5px;resize:none;min-height:42px}
+.visor .snota:focus{border-color:#D3AF39;outline:none}
+.visor .snota.tiene{border-color:#D3AF39;background:#1a1710}
+.visor .vslide .marca{position:absolute;top:6px;left:6px;background:#D3AF39;color:#151509;
+font-size:12px;font-weight:900;padding:3px 9px;border-radius:999px;display:none}
+.visor .vslide.conmarca .marca{display:block}
+.nslides{background:#3a2f10;color:#ffd97a;font-size:12px;font-weight:800;padding:3px 9px;
+border-radius:6px}
+
+/* === SKIN MENTORIUM V4 (15-ago noche) — capa override, no toca la logica === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap');
+:root{--mx-oro:#C9A961;--mx-negro:#0A0A0A;--mx-panel:#121212;--mx-borde:#242424;--mx-ok:#3ECF8E;--mx-no:#E5484D;}
+body{background:var(--mx-negro)!important;font-family:'Montserrat',system-ui,sans-serif!important;color:#EDEDED!important;}
+h1,h2,h3,.titulo{font-family:'Montserrat',sans-serif!important;font-weight:800!important;letter-spacing:.02em;}
+button,.btn,.tab{font-family:'Montserrat',sans-serif!important;font-weight:700!important;border-radius:10px!important;}
+.card,.pieza,.tarjeta{background:var(--mx-panel)!important;border:1px solid var(--mx-borde)!important;border-radius:14px!important;box-shadow:0 8px 28px rgba(0,0,0,.45)!important;transition:transform .15s,border-color .15s;}
+.card:hover,.pieza:hover,.tarjeta:hover{transform:translateY(-3px);border-color:var(--mx-oro)!important;}
+.card img,.pieza img{border-radius:10px 10px 0 0!important;aspect-ratio:9/16;object-fit:cover;width:100%!important;}
+.mx-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;padding:14px 20px;background:linear-gradient(180deg,#0d0d0d 70%,rgba(13,13,13,.92));border-bottom:1px solid var(--mx-borde);backdrop-filter:blur(8px);}
+.mx-logo{font-weight:900;font-size:19px;letter-spacing:.14em;color:var(--mx-oro);}
+.mx-sub{font-size:11px;letter-spacing:.22em;color:#8a8a8a;text-transform:uppercase;}
+.mx-pill{margin-left:auto;background:#1b1b1b;border:1px solid var(--mx-borde);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;color:var(--mx-oro);}
+.tab.activa,.tab.active,.tab[aria-selected=true]{background:var(--mx-oro)!important;color:#111!important;}
+::selection{background:var(--mx-oro);color:#111}
+
+
+.espana{margin-top:8px;background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:8px 10px;font-size:12px;}
+.espana summary{cursor:pointer;font-weight:800;color:#C9A961;letter-spacing:.04em;}
+.esparec{margin:8px 0;color:#cfcfcf;line-height:1.5;}
+.espcol ul{margin:4px 0 8px 16px;padding:0;color:#bdbdbd;line-height:1.55;}
+
+</style></head><body>
+<div class="mx-header"><div><div class="mx-logo">M&nbsp;MENTORIUM</div><div class="mx-sub">panel de contenido · en vivo</div></div><div class="mx-pill" id="mxCuenta">cargando…</div></div>
+<script>window.addEventListener('load',()=>{try{try{const t=DATOS.piezas.length;const n=(typeof pendientes==='function')?pendientes().length:DATOS.piezas.filter(p=>p.f1==='pendiente').length;document.getElementById('mxCuenta').textContent=n+' por revisar · '+t+' piezas';}catch(e){document.getElementById('mxCuenta').style.display='none';}}catch(e){}});</script>
+
+
+<div id="login"><div class="box">
+  <h1 style="margin-bottom:4px">Panel Mentorium</h1>
+  <div style="color:#8b8b9c;font-size:12.5px" id="lsem"></div>
+  <input id="lclave" type="password" placeholder="Clave" autocomplete="off">
+  <div class="err" id="lerr"></div>
+  <div style="font-size:12px;color:#8b8b9c;margin-bottom:7px">¿Quién eres?</div>
+  <div class="q" id="lquien"></div>
+</div></div>
+
+<header>
+  <h1>Panel Mentorium</h1>
+  <span style="font-size:12px;color:#8b8b9c" id="quien"></span>
+  <div class="tabs">
+    <button data-t="revisar" class="on">Por revisar <span id="nrev"></span></button>
+    <button data-t="calendario">Calendario</button>
+    <button data-t="hooks">Hooks <span id="nhk"></span></button>
+    <button data-t="referentes">Referentes <span id="nref"></span></button>
+    <button data-t="guiones">Guiones <span id="ngui"></span></button>
+    <button data-t="salir" style="background:#2a1a1a;border-color:#3d2020">Salir</button>
+  </div>
+</header>
+
+<div class="wrap" id="app"></div>
+<div class="sync" id="sync"></div>
+
+<script>
+const DATOS={"generado": "2026-08-17", "semana": "17-23 agosto 2026", "piezas": [{"id": "CARRUSEL_JAVI_POV_INBOX_16AGO", "cuenta": "JAVI", "tipo": "carrusel", "etiqueta": "TOFU", "lead_magnet": true, "dia": "lun 17", "hora": "19:30", "caption": "El día después de abrir la tienda nadie te avisa de esto.\nSi ya te ha pasado, comenta INBOX y te leo.\n#ecommerce #emprender #tiendaonline", "archivos": [{"archivo": "_PREVIEW.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__00.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__00.mp4", "peso_mb": 1.02}, {"archivo": "slide_01.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__01.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__01.mp4", "peso_mb": 0.12}, {"archivo": "slide_02.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__02.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__02.mp4", "peso_mb": 0.13}, {"archivo": "slide_03.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__03.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__03.mp4", "peso_mb": 0.11}, {"archivo": "slide_04.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__04.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__04.mp4", "peso_mb": 0.11}, {"archivo": "slide_05.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__05.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__05.mp4", "peso_mb": 0.13}, {"archivo": "slide_06.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__06.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__06.mp4", "peso_mb": 0.13}, {"archivo": "slide_07.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__07.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__07.mp4", "peso_mb": 0.16}, {"archivo": "slide_08.mp4", "poster": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__08.jpg", "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__08.mp4", "peso_mb": 0.12}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque de Gerard era del BACKLOG anterior; estas no las habia visto.", "porque": ""}, {"id": "CARRUSEL_JORDI_IA_TIENDA_16AGO", "cuenta": "JORDI", "tipo": "carrusel", "etiqueta": "TOFU", "lead_magnet": true, "dia": "lun 17", "hora": "19:30", "caption": "La parte que la IA te quita es la aburrida. La que decide sigue siendo tuya.\n¿Por dónde empezarías tú? Comenta TIENDA y te leo.\n#ecommerce #tiendaonline #emprender", "archivos": [{"archivo": "_PREVIEW.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__00.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__00.mp4", "peso_mb": 1.0}, {"archivo": "slide_01.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__01.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__01.mp4", "peso_mb": 0.12}, {"archivo": "slide_02.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__02.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__02.mp4", "peso_mb": 0.12}, {"archivo": "slide_03.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__03.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__03.mp4", "peso_mb": 0.11}, {"archivo": "slide_04.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__04.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__04.mp4", "peso_mb": 0.17}, {"archivo": "slide_05.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__05.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__05.mp4", "peso_mb": 0.12}, {"archivo": "slide_06.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__06.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__06.mp4", "peso_mb": 0.13}, {"archivo": "slide_07.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__07.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__07.mp4", "peso_mb": 0.12}, {"archivo": "slide_08.mp4", "poster": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__08.jpg", "video": "media/CARRUSEL_JORDI_IA_TIENDA_16AGO__08.mp4", "peso_mb": 0.13}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque de Gerard era del BACKLOG anterior; estas no las habia visto.", "porque": ""}, {"id": "CARRUSEL_JAVI_TRES_COSAS_V2_16AGO", "cuenta": "JAVI", "tipo": "carrusel", "etiqueta": "MOFU", "lead_magnet": true, "dia": "mar 18", "hora": "19:30", "caption": "Antes de tocar los anuncios miro tres cosas: mercado, producto y avatar. Siempre en ese orden.\nSi falla la primera, las otras dos dan igual. Comenta TRES y te digo cuál tienes sin resolver.\n#ecommerce #tiendaonline #emprender", "archivos": [{"archivo": "_PREVIEW.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__00.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__00.mp4", "peso_mb": 0.96}, {"archivo": "slide_01.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__01.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__01.mp4", "peso_mb": 0.12}, {"archivo": "slide_02.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__02.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__02.mp4", "peso_mb": 0.11}, {"archivo": "slide_03.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__03.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__03.mp4", "peso_mb": 0.11}, {"archivo": "slide_04.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__04.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__04.mp4", "peso_mb": 0.12}, {"archivo": "slide_05.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__05.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__05.mp4", "peso_mb": 0.11}, {"archivo": "slide_06.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__06.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__06.mp4", "peso_mb": 0.13}, {"archivo": "slide_07.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__07.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__07.mp4", "peso_mb": 0.15}, {"archivo": "slide_08.mp4", "poster": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__08.jpg", "video": "media/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__08.mp4", "peso_mb": 0.12}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque era del backlog anterior.", "porque": ""}, {"id": "MEMES_JAVI_TANDA_16AGO", "cuenta": "JAVI", "tipo": "meme", "etiqueta": "TOFU", "lead_magnet": false, "dia": "mar 18", "hora": "19:30", "caption": "", "archivos": [{"archivo": "MEME_JAVI_01_mejor_mes.mp4", "poster": "media/MEMES_JAVI_TANDA_16AGO__00.jpg", "video": "media/MEMES_JAVI_TANDA_16AGO__00.mp4", "peso_mb": 0.13}, {"archivo": "MEME_JAVI_02_producto_nuevo.mp4", "poster": "media/MEMES_JAVI_TANDA_16AGO__01.jpg", "video": "media/MEMES_JAVI_TANDA_16AGO__01.mp4", "peso_mb": 0.13}, {"archivo": "MEME_JAVI_03_curso_sin_abrir.mp4", "poster": "media/MEMES_JAVI_TANDA_16AGO__02.jpg", "video": "media/MEMES_JAVI_TANDA_16AGO__02.mp4", "peso_mb": 0.13}, {"archivo": "MEME_JAVI_04_anuncios_primero.mp4", "poster": "media/MEMES_JAVI_TANDA_16AGO__03.jpg", "video": "media/MEMES_JAVI_TANDA_16AGO__03.mp4", "peso_mb": 0.13}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque era del backlog anterior.", "porque": ""}, {"id": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO", "cuenta": "JORDI", "tipo": "carrusel", "etiqueta": "TOFU", "lead_magnet": true, "dia": "mié 19", "hora": "19:30", "caption": "El nombre de la tienda no ha vendido nunca nada. Lo que decide es qué vendes y a quién.\n¿En qué parte estás atascado? Comenta EMPIEZO y te leo.\n#ecommerce #emprender #tiendaonline", "archivos": [{"archivo": "_PREVIEW.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__00.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__00.mp4", "peso_mb": 1.29}, {"archivo": "slide_01.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__01.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__01.mp4", "peso_mb": 0.22}, {"archivo": "slide_02.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__02.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__02.mp4", "peso_mb": 0.14}, {"archivo": "slide_03.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__03.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__03.mp4", "peso_mb": 0.13}, {"archivo": "slide_04.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__04.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__04.mp4", "peso_mb": 0.19}, {"archivo": "slide_05.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__05.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__05.mp4", "peso_mb": 0.18}, {"archivo": "slide_06.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__06.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__06.mp4", "peso_mb": 0.12}, {"archivo": "slide_07.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__07.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__07.mp4", "peso_mb": 0.15}, {"archivo": "slide_08.mp4", "poster": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__08.jpg", "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__08.mp4", "peso_mb": 0.14}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque de Gerard era del BACKLOG anterior; estas no las habia visto.", "porque": ""}, {"id": "REEL_JAVI_PAPEL_AUDITOR_16AGO", "cuenta": "JAVI", "tipo": "reel", "etiqueta": "MOFU", "lead_magnet": true, "dia": "jue 20", "hora": "19:30", "caption": "Facturas mucho y ganas poco: el agujero casi siempre está en el mismo sitio, y no es el producto.\nLos tres auditores están en la bio, gratis. Comenta AUDITOR y te leo.\n#ecommerce #tiendaonline #emprender", "archivos": [{"archivo": "REEL_JAVI_PAPEL_AUDITOR.mp4", "poster": "media/REEL_JAVI_PAPEL_AUDITOR_16AGO__00.jpg", "video": "media/REEL_JAVI_PAPEL_AUDITOR_16AGO__00.mp4", "peso_mb": 0.96}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque de Gerard era del BACKLOG anterior; estas no las habia visto.", "porque": ""}, {"id": "MEMES_JORDI_TANDA_16AGO", "cuenta": "JORDI", "tipo": "meme", "etiqueta": "TOFU", "lead_magnet": false, "dia": "dom 23", "hora": "19:30", "caption": "", "archivos": [{"archivo": "MEME_JORDI_01_refrescar_pedidos.mp4", "poster": "media/MEMES_JORDI_TANDA_16AGO__00.jpg", "video": "media/MEMES_JORDI_TANDA_16AGO__00.mp4", "peso_mb": 0.18}, {"archivo": "MEME_JORDI_02_explicar_en_casa.mp4", "poster": "media/MEMES_JORDI_TANDA_16AGO__01.jpg", "video": "media/MEMES_JORDI_TANDA_16AGO__01.mp4", "peso_mb": 0.18}, {"archivo": "MEME_JORDI_03_el_logo_perfecto.mp4", "poster": "media/MEMES_JORDI_TANDA_16AGO__02.jpg", "video": "media/MEMES_JORDI_TANDA_16AGO__02.mp4", "peso_mb": 0.18}, {"archivo": "MEME_JORDI_04_envios_a_canarias.mp4", "poster": "media/MEMES_JORDI_TANDA_16AGO__03.jpg", "video": "media/MEMES_JORDI_TANDA_16AGO__03.mp4", "peso_mb": 0.18}, {"archivo": "MEME_JORDI_05_copiar_una_tienda.mp4", "poster": "media/MEMES_JORDI_TANDA_16AGO__04.jpg", "video": "media/MEMES_JORDI_TANDA_16AGO__04.mp4", "peso_mb": 0.18}, {"archivo": "_CLON_CHECK.png", "poster": "media/MEMES_JORDI_TANDA_16AGO__05.jpg"}], "dur_s": 0, "f1": "pendiente", "f1_motivo": "Producida el 16-ago con el criterio del equipo ya minado. La denegacion en bloque era del backlog anterior.", "porque": ""}]};
+const REFS_INI=[{"url": "https://www.instagram.com/reel/DaqvZzYO_Iv/", "quien": "Jordi", "fecha": "2026-08-08 13:48", "nota": "https://www.instagram.com/reel/DaqvZzYO_Iv/?igsh=MTloNzNidzFyeGsxaQ==", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DbTnQUesFoM/", "quien": "Jordi", "fecha": "2026-08-08 11:36", "nota": "https://www.instagram.com/reel/DbTnQUesFoM/?igsh=ZzRpODFsMmY3bmM3", "etapa": "", "estado": "sin analizar"}, {"url": "https://vm.tiktok.com/ZN8R2emMF/", "quien": "Javi", "fecha": "2026-08-07 22:52", "nota": "https://vm.tiktok.com/ZN8R2emMF/", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DZVg160Av8T/", "quien": "Jordi", "fecha": "2026-08-05 19:34", "nota": "https://www.instagram.com/reel/DZVg160Av8T/?igsh=bnN3NWd3NHdpYzFr", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DboRmIVmE_T/", "quien": "Jordi", "fecha": "2026-08-05 18:57", "nota": "https://www.instagram.com/reel/DboRmIVmE_T/?igsh=eHBvaHRhN3FrNnpt", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DboGwoJpEkN/", "quien": "Javi", "fecha": "2026-08-04 22:30", "nota": "https://www.instagram.com/reel/DboGwoJpEkN/?igsh=anZ5NnFicTF0anp0", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/p/DbluprHjJci/", "quien": "Javi", "fecha": "2026-08-03 22:30", "nota": "https://www.instagram.com/p/DbluprHjJci/?img_index=3&igsh=MWZnamszdGIyOG05cA==", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/p/DbCMsQZs-CY/", "quien": "Javi", "fecha": "2026-07-30 17:21", "nota": "https://www.instagram.com/p/DbCMsQZs-CY/?igsh=eXgzc3hra2Fxcms=", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DU9CyYnic7e/", "quien": "Jordi", "fecha": "2026-07-29 21:38", "nota": "https://www.instagram.com/reel/DU9CyYnic7e/?igsh=MW5ybnBiMDVwNWVqMQ==", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DbTmnMfpbIE/", "quien": "Jordi", "fecha": "2026-07-29 21:35", "nota": "https://www.instagram.com/reel/DbTmnMfpbIE/?igsh=MTNvN3p6bWp0MXdoNg==", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/reel/DbT72A9MVHH/", "quien": "Jordi", "fecha": "2026-07-28 19:39", "nota": "https://www.instagram.com/reel/DbT72A9MVHH/?igsh=MXJ3M2hiOHo2dTlyeg==", "etapa": "", "estado": "sin analizar"}, {"url": "https://www.instagram.com/p/Da0Ul55ANXx/", "quien": "Javi", "fecha": "2026-07-26 22:55", "nota": "https://www.instagram.com/p/Da0Ul55ANXx/?igsh=MXMyZTF1amd6MXQ4Mw==", "etapa": "", "estado": "sin analizar"}];
+/* la tabla de formatos de Santi y los dias YA NO viven aqui: llegan dentro de
+   CAL_AUTO desde _SCRIPTS/calendario_auto.py. Dos copias de la misma tabla = dos
+   criterios vivos, que es el fallo que 00-JERARQUIA.md prohibe dejar suelto. */
+/*__CAL_AUTO__*/const CAL_AUTO={"generado": "2026-08-17T00:53:47", "desde": "2026-08-17", "dias": 7, "modo_f1": "aprobadas", "cuentas": {"JAVI": {"lm": 0, "feed": 0, "techo_lm": 11, "colocadas": [], "vacios": [{"fecha": "2026-08-17", "dia": "lun", "slot": 0, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-17", "dia": "lun", "slot": 1, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-17", "dia": "lun", "slot": 2, "formato": "iPad caso de éxito", "motivo": "sin candidatas"}, {"fecha": "2026-08-18", "dia": "mar", "slot": 0, "formato": "Meme", "motivo": "sin candidatas"}, {"fecha": "2026-08-18", "dia": "mar", "slot": 1, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-18", "dia": "mar", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 0, "formato": "Respuesta TikTok", "motivo": "sin candidatas"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 1, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-20", "dia": "jue", "slot": 0, "formato": "iPad / split", "motivo": "sin candidatas"}, {"fecha": "2026-08-20", "dia": "jue", "slot": 1, "formato": "Formato que no te requiere", "motivo": "sin candidatas"}, {"fecha": "2026-08-20", "dia": "jue", "slot": 2, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-21", "dia": "vie", "slot": 0, "formato": "Selfie", "motivo": "sin candidatas"}, {"fecha": "2026-08-21", "dia": "vie", "slot": 1, "formato": "Formato que no te requiere", "motivo": "sin candidatas"}, {"fecha": "2026-08-21", "dia": "vie", "slot": 2, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-22", "dia": "sáb", "slot": 0, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-22", "dia": "sáb", "slot": 1, "formato": "iPad / split", "motivo": "sin candidatas"}, {"fecha": "2026-08-22", "dia": "sáb", "slot": 2, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-23", "dia": "dom", "slot": 0, "formato": "Meme", "motivo": "sin candidatas"}, {"fecha": "2026-08-23", "dia": "dom", "slot": 1, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-23", "dia": "dom", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}], "reparto": {"TOFU": 0, "MOFU": 0, "BOFU": 0, "SIN": 0}, "sin_colocar": [], "violaciones": [], "stories_fuera": []}, "JORDI": {"lm": 0, "feed": 0, "techo_lm": 11, "colocadas": [], "vacios": [{"fecha": "2026-08-17", "dia": "lun", "slot": 0, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-17", "dia": "lun", "slot": 1, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-17", "dia": "lun", "slot": 2, "formato": "iPad caso de éxito", "motivo": "sin candidatas"}, {"fecha": "2026-08-18", "dia": "mar", "slot": 0, "formato": "Meme", "motivo": "sin candidatas"}, {"fecha": "2026-08-18", "dia": "mar", "slot": 1, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-18", "dia": "mar", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 0, "formato": "Respuesta TikTok", "motivo": "sin candidatas"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 1, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-19", "dia": "mié", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-20", "dia": "jue", "slot": 0, "formato": "iPad / split", "motivo": "sin candidatas"}, {"fecha": "2026-08-20", "dia": "jue", "slot": 1, "formato": "Formato que no te requiere", "motivo": "sin candidatas"}, {"fecha": "2026-08-20", "dia": "jue", "slot": 2, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-21", "dia": "vie", "slot": 0, "formato": "Selfie", "motivo": "sin candidatas"}, {"fecha": "2026-08-21", "dia": "vie", "slot": 1, "formato": "Formato que no te requiere", "motivo": "sin candidatas"}, {"fecha": "2026-08-21", "dia": "vie", "slot": 2, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-22", "dia": "sáb", "slot": 0, "formato": "Carrusel", "motivo": "sin candidatas"}, {"fecha": "2026-08-22", "dia": "sáb", "slot": 1, "formato": "iPad / split", "motivo": "sin candidatas"}, {"fecha": "2026-08-22", "dia": "sáb", "slot": 2, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-23", "dia": "dom", "slot": 0, "formato": "Meme", "motivo": "sin candidatas"}, {"fecha": "2026-08-23", "dia": "dom", "slot": 1, "formato": "Talking Head", "motivo": "sin candidatas"}, {"fecha": "2026-08-23", "dia": "dom", "slot": 2, "formato": "Carrusel", "motivo": "sin candidatas"}], "reparto": {"TOFU": 0, "MOFU": 0, "BOFU": 0, "SIN": 0}, "sin_colocar": [], "violaciones": [], "stories_fuera": []}}};
+const CLAVE="mentorium2026";
+/* ── HOOKS: banco para aprobar/editar ANTES de editar video (Jordi 14-ago: «No subas mas
+   reels hasta revisar bien los hooks» · Javi 18:38 OK a la pestaña). El texto es editable:
+   lo que quede escrito aqui es EL hook que se usa. ── */
+const GUIONES=[{"id": "QA03", "hook": "Tenemos alumnos que han facturado más del millón al mes con sus tiendas online", "dur": 20.1, "t1": 1662.9, "t2": 1683.0, "etapa": "BOFU", "estructura": "pregunta (\"hablemos de números: vuestros casos de éxito ¿cuánto facturan?\" 1662.9-1665.8) → Javi (1666.6-1683.0: +1M/mes, gente entre 300 y 500 mil €/mes)", "porque": ""}, {"id": "QA04", "hook": "Los dos alumnos que están facturando más de un millón al mes tenían un margen de beneficio de un 18%", "dur": 32.6, "t1": 1684.3, "t2": 1716.9, "etapa": "BOFU", "estructura": "pregunta (\"¿es realmente facturación o hay beneficio?\" 1684.3-1689.7) → respuesta (1690.4-1712.5: cuanto más facturas, el margen baja; 1M al 18% \"no está mal\")", "porque": ""}, {"id": "QA08", "hook": "Si quieres realmente conocimiento… el que estás viendo va a tener menos de 1.000 suscriptores\" / cierre: \"posiblemente el contenido va a ser una mierda", "dur": 37.9, "t1": 3411.8, "t2": 3449.7, "etapa": "BOFU", "estructura": "respuesta (YouTube premia visualizaciones, no conocimiento; retos estúpidos de facturación; filtra a quién ves)", "porque": ""}, {"id": "QA14", "hook": "Nuestra vida puede ser bastante aburrida… pasa que eso no vende, ese es el problema", "dur": 40.2, "t1": 3547.5, "t2": 3587.7, "etapa": "BOFU", "estructura": "diálogo (trabajar sábado o domingo no es problema, es vocacional → la gente quiere viajar, lifestyle… lo que se vende no es la realidad)", "porque": ""}, {"id": "QA16", "hook": "Para mí el verdadero millonario es la persona que puede ocupar su tiempo en lo que él quiera", "dur": 36.1, "t1": 3750.6, "t2": 3786.7, "etapa": "BOFU", "estructura": "Javi solo (si mañana quiero tomarme el día libre para estar con mi hijo, me lo tomo… no depender de una oficina para ganar dinero)", "porque": ""}, {"id": "QA17", "hook": "Al poder comprarme el Lamborghini me abrió muchísimas puertas", "dur": 42.6, "t1": 715.3, "t2": 757.9, "etapa": "BOFU", "estructura": "pregunta lujo/Lambo (708-714, overlay) → Jordi (el conocimiento no se puede materializar, lo material sí; la gente materializa el éxito)", "porque": ""}, {"id": "QA18", "hook": "Un compañero del equipo de fútbol me decía: aparte de saber hay que aparentar. Hay mucha gente que aparenta en vez de saber", "dur": 38.8, "t1": 809.4, "t2": 848.2, "etapa": "TOFU", "estructura": "Javi (comprarte un objeto de lujo para transmitir que sabes = no; Jordi lleva años emprendiendo y era SU objetivo — eso es distinto)", "porque": ""}, {"id": "QA19", "hook": "Yo soy Javier Sánchez, tengo 45 años, soy padre de familia, exfutbolista, entrenador personal…", "dur": 31.7, "t1": 109.8, "t2": 141.5, "etapa": "BOFU", "estructura": "pregunta (\"si alguien no os conociera de nada ¿cómo os presentaríais?\" 109.8-114.1) → Javi (9 años en tiendas online, Mentorium, \"referentes en habla hispana… muchos mentores que venden formaciones se han formado con nosotros\")", "porque": ""}, {"id": "QA20", "hook": "Cuando fui padre dije: voy a hacer algo como hobby para generar un ingreso extra… y a los pocos meses ya estaba generando más que mi propio trabajo de 8 horas", "dur": 34.3, "t1": 142.3, "t2": 176.6, "etapa": "MOFU", "estructura": "Jordi solo (soy Jordi García, 8 años en tiendas online, trabajo de 8 horas, boom 2017-2018 en España)", "porque": ""}, {"id": "QA21", "hook": "No venimos de ser programadores ni de haber sido informáticos… yo soy entrenador personal, Jordi tenía su trabajo", "dur": 35.8, "t1": 207.2, "t2": 243.0, "etapa": "TOFU", "estructura": "Javi (venimos totalmente de cero, aprendiendo como cualquier persona normal, trabajando 8 horas)", "porque": ""}, {"id": "QA22", "hook": "Si yo os digo que soy un paleta o soy pintor, que sé cuatro cosas de ordenadores… ¿podría llegar al punto donde estáis vosotros?\" — \"Por supuesto", "dur": 39.8, "t1": 243.5, "t2": 283.3, "etapa": "BOFU", "estructura": "pregunta entrevistador (243.5-253.4) → Javi (253.4-283.3: \"yo iba con mi mochilita a casa de clientes y a gimnasios… hay que tomar acción, formarse… la experiencia te da resultados a largo plazo\")", "porque": ""}, {"id": "QA23", "hook": "Mucha gente quiere ganar dinero online de forma rápida, y el dinero rápido no existe", "dur": 38.4, "t1": 990.6, "t2": 1029.0, "etapa": "TOFU", "estructura": "pregunta (\"¿qué tengo que hacer para tener éxito en e-commerce?\" 990.6-994.8) → Javi (995.6-1029.0: tomar acción + paciencia; \"cuando monté mi primera tienda perdí dinero… hasta que me empecé a formar\")", "porque": ""}, {"id": "QA24", "hook": "Yo te doy el conocimiento, pero yo no puedo abrir el ordenador por ti, no puedo crear la tienda por ti", "dur": 39.1, "t1": 1029.0, "t2": 1068.1, "etapa": "MOFU", "estructura": "Javi solo (mínimo 6 meses le digo a todos los que entran en Mentorium… el que a la segunda semana pone excusas se está engañando a sí mismo… \"vamos de la mano al éxito\")", "porque": ""}, {"id": "QA25", "hook": "Esa gente no nos interesa… es que prefiero que no entre", "dur": 51.3, "t1": 1604.2, "t2": 1655.5, "etapa": "TOFU", "estructura": "Javi (le he dicho a gente por redes: \"tú con esa actitud no vas a entrar aquí\"… \"yo no quiero un alumno que me haga perder tiempo y dinero a mí, a Jordi y a mi equipo\"; queremos gente con actitud que quiera escalar)", "porque": ""}, {"id": "JUNTOS01", "hook": "¿Por qué vender una formación si tenéis tanto éxito con las tiendas?\" — \"Es una vertical dentro de nuestro negocio… no somos tontos", "dur": 49.6, "t1": 1312.7, "t2": 1362.3, "etapa": "MOFU", "estructura": "Zyro pregunta LA pregunta incómoda (1312.7-1316.6) → Javi (1317.1-1362.3: igual que hacemos contra reembolso, dropshipping y marca, hacemos formación; yo cogí mentores cuando empecé; nos ayuda a ganar dinero, \"no somos tontos\"; remate: ayudar a alguien que empieza de cero \"me gratifica mucho porque yo he estado en ese lugar también\")", "porque": ""}, {"id": "JUNTOS02", "hook": "Un día le dije: no vas a entrar en Mentorium… no te quiero aquí con esa actitud", "dur": 51.0, "t1": 3231.3, "t2": 3282.3, "etapa": "BOFU", "estructura": "un solo speaker (3231.3-3282.3: tuve una discusión con uno → le negué la entrada por actitud → al cabo de los meses volvió en frío y dijo \"mira, lo siento\" → le di la entrada → por su actitud ha tenido resultados y hoy me lo agradece; remate: \"esas pequeñas cosas que pasan en la vida te marcan la diferencia\")", "porque": ""}, {"id": "JUNTOS03", "hook": "Cualquier persona que te diga 'deja algo, creo que no es para ti'… posiblemente es una persona que no te quiere", "dur": 40.8, "t1": 2606.8, "t2": 2647.6, "etapa": "BOFU", "estructura": "speaker A (2606.8-2624.7: el que te dice que lo dejes no te quiere o le viene mal tu resultado; si confías en ti, la gente verá que lo puedes lograr) → speaker B (2624.7-2647.6: \"¿y si empiezas de cero? empezamos de cero\"; ¿qué es lo peor que puede pasar? \"nada, me quedaré igual… pues vamos a intentarlo\")", "porque": ""}, {"id": "JUNTOS04", "hook": "Cuando vas ganando no vas aprendiendo nada… todo va bien", "dur": 43.8, "t1": 2465.6, "t2": 2509.4, "etapa": "BOFU", "estructura": "speaker A (2465.6-2482.9: el éxito real llega cuando surgen los problemas — una separación, un amigo, un problema del negocio = aprendizaje brutal) → speaker B (2483.8-2509.4: \"es parte del juego\"; ojalá todos los días fueran verdes, la vida no es así; remate: si aprendes cuando estás abajo, cuando estés arriba vas a disfrutar y tendrás mejor resultado, \"100%\")", "porque": ""}, {"id": "JUNTOS05", "hook": "No cierras por la noche… puedes estar vendiendo productos a las 4 de la mañana", "dur": 36.0, "t1": 2125.9, "t2": 2161.9, "etapa": "MOFU", "estructura": "turnos rápidos Javi-Jordi (2125.9-2146.7: abierto sábado, domingo, no cierras de noche; el bar en pandemia cerró; si te vas de vacaciones el bar necesita personal) → (2151.6-2161.9: vendes a cualquier hora; el bar siempre abierto + personal + 80.000 € de inversión; remate: \"¿qué negocio es más rentable? que alguien me lo diga\")", "porque": ""}, {"id": "JUNTOS06", "hook": "¿Qué riesgo tienes? Perder dinero… ¿qué miedo tienes? ¿3.000, 2.000, 5.000? Ponte a trabajar y lo vas a recuperar", "dur": 37.4, "t1": 2162.5, "t2": 2199.9, "etapa": "TOFU", "estructura": "speaker A (2162.5-2192.7: yo se lo pongo delante a los alumnos, sobre todo jóvenes: el único riesgo es perder dinero; yo monté mi tienda con mis ahorros y dije \"si los pierdo no pasa nada, sigo trabajando y sigo generando\") → remate (2193.6-2199.9: lo que iba a ganar tomando acción era mucho más grande; \"mi tiempo lo que voy a hacer es aprender una habilidad, voy a aprender algo nuevo\")", "porque": ""}, {"id": "JUNTOS07", "hook": "No soy un bicho raro por tenerlo… la gente puede tenerlo; la verdad es que la gente materializa el éxito", "dur": 50.6, "t1": 757.9, "t2": 808.5, "etapa": "TOFU", "estructura": "Jordi (757.9-797.6: la gente puede tenerlo y no lo tiene porque tendrá otras inversiones; el Lambo no era mi objetivo nº1, \"si me canso lo vendo y me compro otro\"; para la gente es lo que da el cambio de chip) → réplica del otro (798.4-808.5: remate \"una cosa es que te compres un Lamborghini porque era tu ilusión desde que empezaste… y otra cosa es que te lo compres para vender a las personas\")", "porque": ""}, {"id": "JUNTOS08", "hook": "¿De qué sirve tener dinero, éxito, lo que quieras… si tu hijo no va a estar a tu lado?", "dur": 46.2, "t1": 3701.2, "t2": 3747.4, "etapa": "TOFU", "estructura": "un speaker (3701.2-3747.4: conozco mucha gente con éxito y mucho dinero que a los hijos apenas los ve; el tiempo pasa y eso no se recupera con dinero; sentir lo que necesita el niño y estar presente, poder acudir al colegio, acompañarlo si está enfermo; remate: compaginar el negocio online con la vida familiar \"es lo más bonito y lo que más te llena\")", "porque": ""}, {"id": "JUNTOS09", "hook": "¿Cómo sería vuestro día a día?\" — \"Yo estoy todo el día en la piscina dando vueltas", "dur": 44.4, "t1": 3450.5, "t2": 3494.9, "etapa": "BOFU", "estructura": "Zyro pregunta el día a día (3450.5-3458.8) → broma (3459.4-3461.3, risa multicam) → respuesta real (3462.4-3494.9: \"somos trabajadores\"; hijo pequeño de dos años, reuniones, la formación, pensar el siguiente paso del negocio; remate: tiempo para entrenar \"y sobre todo estar con la familia\")", "porque": ""}, {"id": "JUNTOS10", "hook": "¿Cómo se hace? ¿Magia? Son 8 horas, 10 horas al día enganchado", "dur": 50.9, "t1": 3496.1, "t2": 3547.0, "etapa": "BOFU", "estructura": "un speaker (3496.1-3523.2: muchas horas en oficina, el tiempo libre a la familia; en redes parece otra vida; cuanto más facturas, más problemas y más horas) → (3523.7-3547.0: desengancharse del trabajo es imposible si quieres facturar; puedes viajar, sí, \"pero algún domingo tendrás que trabajar — esa es la verdadera libertad\")", "porque": ""}, {"id": "JUNTOS11", "hook": "No importa lo que hayas hecho antes ni la experiencia que tengas: yo tenía cero experiencia", "dur": 54.2, "t1": 283.9, "t2": 338.1, "etapa": "BOFU", "estructura": "Jordi solo (283.9-338.1: lo que marca es la actitud; con actitud positiva de aprender y disfrutar el proceso \"te acaba yendo bien, 100%\"; mucha gente me conoce de la ciudad y dice \"me gustaría\"… pero no da el paso — esa gente no va a llegar a dedicarse a esto; remate: la actitud y las ganas marcan si vas a tener éxito)", "porque": ""}, {"id": "JUNTOS12", "hook": "¿Una palabra que haya marcado vuestro éxito?\" — \"Perseverancia… ya puede haber un muro enfrente, que hasta que no lo derribo no paro", "dur": 47.2, "t1": 1087.3, "t2": 1134.5, "etapa": "BOFU", "estructura": "Zyro pide UNA palabra (1087.3-1094.0) → \"Perseverancia\" en seco (1098.7-1099.1, pausa dramática natural) → desarrollo (1101.8-1134.5: mi mujer lo dice, cuando se me mete algo en la cabeza no paro; el deporte me enseñó que el trabajo y el esfuerzo tienen recompensa; remate: \"si tienes perseverancia y objetivos claros, el éxito llega\")", "porque": ""}, {"id": "JUNTOS13", "hook": "Como hobby vine sin nada… y si mañana lo pierdo, vuelvo a trabajar. No tengo miedo", "dur": 32.2, "t1": 1137.1, "t2": 1169.3, "etapa": "MOFU", "estructura": "Jordi solo (1137.1-1169.3: mi palabra es la actitud — en la vida, en los problemas, cuando tienes éxito y cuando no; he tenido problemas y los he sabido resolver; remate: \"si tengo buena actitud seguiré subiendo, y si no, empezamos de cero, no hay problema\")", "porque": ""}, {"id": "JUNTOS14", "hook": "Si no tienes el dinero, tienes tiempo… cuando no tienes tiempo es porque tienes dinero", "dur": 48.2, "t1": 1889.5, "t2": 1937.7, "etapa": "TOFU", "estructura": "Jordi solo, rebote sobre el turno de Javi (1889.5-1913.2: empecé con menos de 3.000 €, un curso de un estadounidense de 300 € en 2018, dedicándole muchas horas; el dilema tiempo/dinero; fórmate gratis en YouTube preguntando) → (1913.2-1937.7: yo aprendí gratis y el conocimiento era muy disperso, tú haces el filtro; remate: \"cuando pagas un ticket por entrar te acortan muchísimo tiempo porque tiene", "porque": ""}, {"id": "JUNTOS17", "hook": "Trabajaba de lunes a sábado, más de 8 horas, buscando clientes de casa en casa, de gimnasio en gimnasio", "dur": 51.5, "t1": 3892.4, "t2": 3943.9, "etapa": "BOFU", "estructura": "pregunta Zyro como overlay (\"¿cómo era vuestra vida antes del e-commerce?\" 3880.0-3882.6) → Javi solo (3892.4-3943.9: llegaba el sábado a comer y me iba a acostarme, sin vida social; si dejaba de entrenar gente, dejaba de ganar; ahora: negocio digital, tiempo, vivo en un chalet al lado de la playa, mi hijo tiene una calidad de vida brutal; remate: \"gracias a que tomé acción en su momento, mi vida ", "porque": ""}, {"id": "JUNTOS18", "hook": "Mi vida antes del e-commerce era lo más plana que hay: 8 horas de trabajo y las horas muertas a hobbies que no aportaban nada", "dur": 30.0, "t1": 3949.3, "t2": 3979.3, "etapa": "TOFU", "estructura": "un speaker (3949.3-3979.3: cambié los hobbies vacíos por hobbies que construyen; remate: \"cuando estoy trabajando, para mí no es un trabajo — me estoy dedicando a mi hobby; ese es el cambio de mi vida de antes a la de ahora\")", "porque": ""}, {"id": "JUNTOS19", "hook": "El 90% de las formaciones: los que son las caras visibles del proyecto no están en el día a día. Y nosotros sí", "dur": 41.0, "t1": 1171.4, "t2": 1212.4, "etapa": "BOFU", "estructura": "Zyro pregunta qué os hace diferentes (1171.4-1177.1) → Javi (1177.9-1212.4: Jordi y yo damos las clases, somos cercanos, estamos en el día a día con los alumnos; no enseñamos una sola modalidad sino a vender online en dropshipping, contra reembolso y marca; remate: \"enseñamos a vender en diferentes mercados, cosa que otros sabemos que no hacen\")", "porque": ""}, {"id": "JUNTOS20", "hook": "Cuando cambia el algoritmo, cambia la plataforma, cambia el mercado… ¿tú qué vas a enseñar? ¿Lo que ha pasado hace 5 años?", "dur": 49.6, "t1": 604.1, "t2": 653.7, "etapa": "BOFU", "estructura": "un turno continuo (604.1-643.7: el mundo online va súper deprisa — algoritmo Andrómeda de Facebook; si no estuviéramos en el día a día no podríamos enseñar lo nuevo; \"no puedes vender algo que en el día a día no estás mamando — para mí eso es vender humo\") → cierre (645.6-653.7: nunca dejaremos de tener tienda online; remate: \"yo quiero enseñar a mis alumnos lo que quiero que me enseñaran a mí\")", "porque": ""}, {"id": "JUNTOS21", "hook": "Para mí un vendehumos es aquella persona que vende algo sin tener experiencia en lo que está vendiendo", "dur": 48.8, "t1": 470.0, "t2": 518.8, "etapa": "BOFU", "estructura": "Zyro pide la definición de vendehumos (470.0-478.0) → respuesta (479.1-518.8: si eres infoproductor con especialistas contratados, perfecto; pero si vendes formación a través de tu lifestyle, tus coches y tu lujo diciendo que salió de tus tiendas online…; remate: \"para mí eso es vender humo y es mentira\")", "porque": ""}, {"id": "JUNTOS22", "hook": "Gente que empieza de cero, que tiene la ilusión de montar una tienda online… pero nunca se ha decidido a dar el paso", "dur": 49.2, "t1": 2878.4, "t2": 2927.6, "etapa": "MOFU", "estructura": "Zyro pregunta el perfil de alumno (2878.4-2881.1) → Javi corto (2882.2-2890.5: \"gente que tenga acción y actitud… con ganas\") → Zyro pica al otro (\"así que vas a responder tú también\", 2897.1-2903.5 — pausa 2890.5→2897.1, recortar en edición) → Jordi (2904.6-2927.6: gente de cero con ilusión que nunca dio el paso, que quiera un cambio de vida, sin presión de resultados al mes; remate: \"que aprenda", "porque": ""}, {"id": "JUNTOS23", "hook": "¿Tú qué prefieres: formarte con gente que ha tocado todos los palos… o con alguien que solamente hace dropshipping?", "dur": 46.3, "t1": 2957.8, "t2": 3004.1, "etapa": "TOFU", "estructura": "un speaker (2957.8-3004.1: imagínate que tienes una tienda y quieres entrar en Mentorium — nosotros hemos hecho contra reembolso, dropshipping de China, marcas, y tenemos una escuela de formación; remate = pregunta retórica autoconclusiva \"tú qué preferirías\", la respuesta es evidente)", "porque": ""}, {"id": "JUNTOS24", "hook": "Mucha gente nos escribía por internet: ¿por qué no sacáis una formación un poquito más profesional?", "dur": 45.2, "t1": 23.9, "t2": 69.1, "etapa": "TOFU", "estructura": "Zyro (23.9-25.6: \"¿por qué Mentorium y cómo surgió la idea?\") → speaker A (26.1-44.9: éramos formadores individuales, la gente nos lo pedía, lo montamos para profesionalizarlo y tener comunidad) → Jordi (45.8-69.1: el contenido de otras formaciones estaba desactualizado a los pocos meses; remate: \"construir algo para enseñar el paso de cero a cien dentro del e-commerce\")", "porque": ""}, {"id": "JUNTOS25", "hook": "Te compras un Lamborghini, y cuando lo consigues dices: ya lo tengo. ¿Ahora qué?", "dur": 41.9, "t1": 870.5, "t2": 912.4, "etapa": "BOFU", "estructura": "Zyro pregunta qué es una persona de éxito (870.5-875.4) → respuesta (877.4-912.4: la que tiene un objetivo y trabaja cada día para conseguirlo; los emprendedores no disfrutamos el camino — consigues el coche y ¿ahora qué?; remate: \"la persona que tiene éxito es la que disfruta el camino buscando un objetivo… para mí el éxito es eso\")", "porque": ""}, {"id": "JUNTOS26", "hook": "Tengo real estate, tengo varios tipos de negocios que no me gustan nada… en cambio, con el e-commerce podría estar 24 horas", "dur": 34.8, "t1": 1394.7, "t2": 1429.5, "etapa": "BOFU", "estructura": "Jordi solo (1394.7-1429.5: los otros negocios a la hora ya me aburren; dame una sala y un ordenador y estoy 24 horas; cuando le digo a Javi \"competir contra nosotros es muy difícil\" es porque nos encanta lo que hacemos; remate: \"no es un sacrificio ponerme al ordenador — eso es lo que nos marca diferentes\")", "porque": ""}, {"id": "JUNTOS27", "hook": "Nunca es el momento perfecto, nunca es el entorno perfecto… esto depende de ti", "dur": 50.9, "t1": 2648.0, "t2": 2698.9, "etapa": "BOFU", "estructura": "arranque (2648.0-2655.0: \"mucha gente nos pregunta: ¿necesitamos un entorno que nos impulse?\") → respuesta (2655.8-2684.4: el que va a estar en el día a día eres tú; somos padres, madres, familia — en tu vida vas a tener problemas siempre) → cierre Javi (2684.9-2698.9: \"olvídate del entorno, da igual lo que te digan\"; a Jordi nunca se lo dijeron, a mí sí y me dio igual; remate: \"yo quiero esto y v", "porque": ""}, {"id": "JUNTOS28", "hook": "Es un negocio muy solitario: estás tú con el ordenador, tú solo y tu mentalidad", "dur": 36.0, "t1": 1508.7, "t2": 1544.7, "etapa": "BOFU", "estructura": "un speaker (1508.7-1544.7: la comunidad entre alumnos es lo mejor; el día que no vendes te vas creando problemas en la cabeza y la actitud cae; remate: tener un entorno con tu mismo negocio y que alguien te diga \"eso ya lo he pasado\" \"es lo que te va a levantar el ánimo\")", "porque": ""}, {"id": "JUNTOS29", "hook": "Yo salía con una carpetita a la calle… y ahí me di cuenta: con una carpeta y la calle podía vender y ganar dinero", "dur": 27.9, "t1": 4070.7, "t2": 4098.6, "etapa": "MOFU", "estructura": "un speaker (4070.7-4098.6: trabajé de comercial a puerta fría; antes iba a la calle, ahora lo hago online — la habilidad es la misma: vender; aunque me quede a cero ya lo he hecho muchas veces; remate: \"perdí el miedo a no tener dinero\")", "porque": ""}, {"id": "JUNTOS30", "hook": "Uno de mis objetivos era ser padre… yo decía: yo quiero ser un padre presente", "dur": 49.3, "t1": 3630.3, "t2": 3679.6, "etapa": "BOFU", "estructura": "Zyro (3630.3-3640.8: \"yo no soy padre… ¿cómo compagináis ser empresarios y padres?\") → Javi (3641.4-3679.6: somos privilegiados; si mañana quiero estar con mi hijo, me lo puedo permitir; no emprendí solo por el coche o viajar; remate: \"un negocio digital te permite compaginar tu vida laboral con tu hijo\")", "porque": ""}];
+const TABLON={"actualizado": "15-ago 03:20", "oro": [{"que": "GHL tracking completo: pipeline + eventos + UTMs de la landing que YA gasta en ads, revision de eventos a Facebook, URL para el chico de Google y audiencias/smart lists. Es UN solo agujero con 6 promesas distintas encima (17-jun, 24-jul, 25-jul, 4-ago, 7-ago) y 58+ dias abierto: Javi esta pagando ads sin atribucion.", "quien_espera": "Javi (+ Chris de Google desde el 16-jul y Cristina)", "accion": "GERARD: sentada de 1h + token GHL de subcuenta (task #9, bloqueada solo por el). CLAUDE: llegar a esa sentada con el checklist cerrado (pipeline, 3 eventos, UTMs, respuesta de URL a Chris, audiencias) y ejecutarlo entero por la sesion CDP en esa misma sentada.", "cita": "«necesito... que lo hagas con Chris de manera urgente, porfa, de manera urgente, tio» (Javi, audio 17-jun 16:40) · «Cuando este avisame / Please / Para lanzar ads / Con el pixel y demas» (Javi 04-ago 19:41)"}, {"que": "Montar los reels que Javi SE GRABO EL MISMO (carpeta dolor del Drive): bruto bajado en D:\\REELS - DOLOR-20260809T193814Z-1-001, reclamado 4 veces, solo 1 de 5 montado. 'Solo cortes y titulo' — es lo mas barato de producir con mas confianza en juego.", "quien_espera": "Javi (lo pidio con la palabra 'urgente' y 'prioridad')", "accion": "CLAUDE esta misma noche: montar los 4 clips restantes (cortes + titulo, receta que el mismo dio), pasarlos por el gate y dejarlos en el panel para el OK de Javi manana.", "cita": "«necesito urgente los ads y los reels que me grabe / Dale un poco de prioridad a eso» (Javi 10-ago 12:16) · «Grabe yo unos te acuerdas ? Esos son solo cortes y titulo» (Javi 07-ago 20:40)"}, {"que": "Responder al FREEZE de Jordi con la revision de hooks: Jordi congelo TODOS los reels el 14-ago y la solucion (pestana HOOKS del panel v5, 16 ganchos, gate endurecido) ya existe pero a Jordi nunca se le presento. Toda la fabrica de reels de Javi Y Jordi cuelga de este mensaje.", "quien_espera": "Jordi (y de rebote Javi, que pregunta por los 3 reels diarios)", "accion": "CLAUDE esta noche: redactar el mensaje a Jordi con el link del panel, la pestana HOOKS y 3 ejemplos de sus proximas piezas con hook nuevo aplicado. GERARD: enviarlo manana por la manana (candado de publicacion).", "cita": "«No subas mas reels hasta revisar bien los hooks y demas... Que las views se van al suelo / De subir mal contenido» (Jordi 14-ago 09:05) → «Vale jordi»"}, {"que": "ENTREGAR los cortes del curso a Marcos/Cristina: los 35 mp4 (7 semana 2 + 28 semanas 1/3/4/5) estan producidos en el Escritorio desde el 13-14 ago pero la entrega pactada (Drive + links en la columna 'edicion final' de la Sheet) nunca se hizo. Marcos ya lo reclamo y la promesa 'esta noche te lo termino' esta rota desde el 13-ago.", "quien_espera": "Cristina y Marcos (chat de Marcos muerto desde el 13-ago 16:13)", "accion": "CLAUDE esta misma noche: subir los 35 mp4 al Drive via Chrome logueado y pegar los links en la Sheet; entregar SIN intro avisando en el mensaje que Javi no contesto lo de la careta (no seguir esperando). Las ~8 lecciones sin mapear se listan aparte, no bloquean la entrega.", "cita": "«cristina te debo esto que me lo a recordado marcos esta manana esta noche te lo termino» (Gerard 13-ago 16:38) · «una vez editado el me lo deje con otro enlace de Drive en el mismo Excel en edicion final» (Cristina 17-jul 12:42)"}, {"que": "Cumplir la promesa del finde ANTES de que venza: meter los guiones al panel (la parte 'corregir panel' ya esta empujada; grep confirma que guiones = 0). Es la promesa mas fresca a Javi y ademas destapa el otro agujero: nadie tiene lista de tomas para grabar.", "quien_espera": "Javi (ventana 15-16 ago, en curso)", "accion": "CLAUDE esta noche y manana: generar los guiones de las 38 piezas del calendario 15-21 + la lista cerrada de tomas para que Javi y Jordi graben, e inyectarlo todo al panel antes del domingo. GERARD: nada, solo no prometer mas hasta que este dentro.", "cita": "«este fin de semana lo corrijo en el panel lo metere todo guiones todo en si.» (Gerard a Javi 14-ago 18:59)"}, {"que": "Cerrar el carrusel 'negocio fisico' de Javi: correcciones aplicadas, CTA en grande regenerado a las 22:59, 8 slides divididas y listas, y el 'Vale' de Javi dado. Es la pieza mas cerca del 100% de todo el inventario — dejarla sin subir seria el patron exacto que quema la confianza.", "quien_espera": "Javi (dio el Vale el 14-ago 21:42)", "accion": "GERARD: subirlo a IG manana (candado de publicacion; los carruseles NO estan bajo el freeze de Jordi, que era de reels). CLAUDE: dejar el paquete final ordenado con orden de slides + caption en _HOY_SUBIR_14AGO\\JAVI y marcarlo en el panel.", "cita": "«Ese mola / Pero pon un cta / Mas en grande» (Javi 14-ago 21:07) → «Al subirlo lo divido yo las slides» (Gerard 21:27) → «Vale» (Javi 21:42)"}, {"que": "Dos toques de 5 minutos en el GHL vivo que llevan semanas muertos: (a) senalar mas la linea de cualificacion de la landing de Recursos que pidio Javi el 11-ago, (b) quitar la foto del alumno Sergiu que pidio no salir — derecho de imagen, 24 dias publicado contra su voluntad.", "quien_espera": "Javi (a) y Cristina/el alumno Sergiu (b)", "accion": "GERARD: un solo OK para tocar el GHL vivo (el mismo que Claude pidio el 11-ago y quedo sin respuesta). CLAUDE: entrar por la receta CDP y hacer los dos cambios en la misma sesion; captura de antes/despues como prueba.", "cita": "«Señala mas Eso / q se vea mas» (Javi 11-ago 01:03) · «Sisi yo lo cambio ahora cristina» (Gerard 21-jul 11:59, sobre Sergiu)"}, {"que": "Sacar el dominio .es PROHIBIDO de circulacion: mentoriumecom.es sigue de alta en GHL y fue el link puesto en la bio de Jordi, 17 dias despues de la prohibicion explicita de Javi. No hace falta comprar academiamentorium.com: mentoriumacademy.com YA esta conectado en el GHL (el backlog lo marca redundante).", "quien_espera": "Javi (prohibicion de compliance) y Jordi (su landing/bio)", "accion": "CLAUDE: recolgar la landing de Jordi bajo mentoriumacademy.com en GHL, dar de baja el .es y preparar el link nuevo. GERARD: mensaje a Jordi con el link para que cambie la bio (o confirmar que lo cambia Claude con el acceso que Jordi ya dio). Esto ademas cierra la pregunta 2 y 3 de LAS 8 PREGUNTAS.", "cita": "«Pero no useis . Es / Q nos pueden joder de Espana / Investigarnos / Siempre . Com u otro / Nunca . Es» (Javi 29-jul 15:08)"}, {"que": "Activar y TESTEAR los 3 flows de email de GHL: montados desde el 20-jul, Javi lo marco 'mega urgente' hace UN MES, Carlos nunca contesto y el propio Gerard ya se dio permiso ('si no me dice nada lo activamos'). Es una lista de leads pagada con ads que lleva 30 dias sin recibir un solo email.", "quien_espera": "Javi (mega urgente del 13-jul)", "accion": "CLAUDE: en la misma sesion GHL de la sentada, activar los 3 flows y disparar un lead de prueba con captura de los emails que llegan. GERARD: solo el OK de 'activa ya' — la condicion que el mismo puso (que Carlos no dijera nada) se cumplio hace semanas.", "cita": "«Es mega urgente / Le voy a escribir pero lo necesito ya» (Javi 13-jul 23:40) · «si veo que no me dice nada lo activamos y testeamos» (Gerard 20-jul 13:42)"}, {"que": "Los 400 EUR de Gerard sin cobrar: refacturar agosto con los +200 EUR que Cristina PIDIO anadir hace 11 dias (la ultima factura, A010 del 3-ago, es anterior a la peticion) y preguntar a Javi por el bono de 200 EUR que el mismo ofrecio.", "quien_espera": "Cristina (espera el PDF) — y el bolsillo de Gerard", "accion": "CLAUDE esta noche: generar A011 con los +200 en PERSONAL\\Facturas_Gerard siguiendo el formato de A010. GERARD: enviarsela a Cristina (1 mensaje) y en el mismo hilo con Javi mencionar el bono.", "cita": "«Gerard reazme la factura porfa que te voy anadir 200€» (Cristina 04-ago 11:34) · «le voy a decir que te de un bono / de 200€ / ok / te lo estas ganando» (Javi 04-ago 11:11)"}], "luego": [{"que": "Numero de WhatsApp nuevo en GHL para Cristina y los setters (hoy escriben desde el personal de Javi) — segundo incumplimiento del mismo hilo ('esta noche te lo termino', 13-ago)", "quien_espera": "Cristina y los setters/closers", "accion": "Meterlo en la MISMA sentada GHL del ORO 1 (es la misma pantalla); no dejar que llegue al tercer incumplimiento con Cristina."}, {"que": "Doble notificacion al agendar (email Cristina + closer): se dio por activada dos veces pero nunca se testeo y ella reporto que 'llega raro'", "quien_espera": "Cristina (lo llamo 'muerte!' si no llegan)", "accion": "En la sentada GHL: una cita de prueba real y captura de los 2 emails llegando. 10 minutos, cierra un hilo de 25 dias."}, {"que": "Calendario nativo GHL sin preguntas para vender las 2 plazas libres de la Mastermind de Ibiza (audio de Cristina 29-jul)", "quien_espera": "Cristina (la promo se hizo; el calendario no)", "accion": "Crearlo en la sentada GHL (clonar el pack GHL_CALENDARIO_PACK_20JUL quitando las preguntas de claridad). Son 2 plazas = dinero directo, pero depende del mismo acceso que ORO 1."}, {"que": "Clases grabadas sin subir a Teachable + assets que piden los alumnos (Miro, quiz, swipe advertorial) — queja n1 del grupo desde abril, ~100 personas pagando", "quien_espera": "Los alumnos (y la retencion/reembolsos de Mentorium)", "accion": "Sentada corta con Cristina para mapear que clases faltan y quien tiene el bruto; Claude ya tiene la via de Teachable documentada (teachable-bajar-clases-metodo). Es dinero de retencion, pero necesita a Cristina, no es ejecutable esta noche."}, {"que": "Volumen: cuenta de IG que compro Javi ('a fuego, Urus y esta banda', 14-ago) + TikTok nuevo con codigo dado el 11-ago y CERO subidas", "quien_espera": "Javi (dos encargos directos)", "accion": "Arrancar la semana que viene CON el sistema de hooks ya descongelado: reciclar las piezas PASS del calendario 15-21 hacia TikTok y la cuenta comprada. Empezar antes de descongelar hooks seria repetir el error que Jordi acaba de frenar."}, {"que": "Landing del retiro (pareja de Jordi): el reclamo _FALTA_DE_JORDI.txt esta redactado y NUNCA enviado; endpoint Apps Script escrito y sin publicar; Jordi debe video, Calendly, WhatsApp y fotos desde el 8-ago", "quien_espera": "Jordi y su pareja", "accion": "Gerard OK al texto y se envia (aprovechando para pedir tambien el Drive de fotos actuales de Jordi, que cierra otro pendiente del 29-jul); Claude publica el Apps Script y pega la URL. Sin los 4 ficheros de Jordi no se puede cerrar: la pelota hay que ponerla en su tejado por escrito."}, {"que": "Los 3 referentes de Jordi sin producir (DaqvZzYO_Iv letra en medio, DbTnQUesFoM varios hooks, Db1IqIop5hM sin clasificar) + trial reels Db_G-IKKBZR + replica recurrente DXjzK con videos Higgsfield", "quien_espera": "Jordi (los pidio todos el)", "accion": "Post-descongelacion y en este orden: DaqvZzYO_Iv (ya bajado y medido), DXjzK con los Higgsfield ya hechos, Db1IqIop5hM bajar+medir. DbTnQUesFoM necesita que GERARD grabe los 8 planos del brief — decirselo claro en vez de dejarlo criar polvo."}, {"que": "Memes de Jordi: los 8 nuevos del 14-ago (gate PASS) esperando OK + las 2 frases que Jordi dejo escritas el 16-jul (cuenta desactivada / Meta Ads vs familia) con el canon ya medido", "quien_espera": "Jordi (aprobo el primero con 'Perfect')", "accion": "Gerard vota los 8 en el panel; Claude monta las 2 frases con el molde MEME_CANON medido (task #43) — es barato ahora que el canon existe."}, {"que": "Deudas de estudio con fecha: veredicto Meta Verified Plus para Jordi (38 dias), los 3 deberes del 2-ago de Javi sin abrir (Doc + 2 carpetas Drive) y el Skool que Javi paga sin usar", "quien_espera": "Jordi (Meta Verified) y Javi (deberes/Skool)", "accion": "Claude: 1 hora de bloque — veredicto Meta Verified en 3 lineas por WhatsApp + leer el Doc y las 2 carpetas y dejar nota en el vault. Son deudas pequenas que Javi/Jordi SI recuerdan."}, {"que": "Linktree/pagina de links para la bio de Javi — tercera vez que sale, existe borrador propio del 17-jul (LINKTREE_BIO_JAVI_17JUL.html) nunca retomado", "quien_espera": "Javi (lo propuso el mismo el 11-ago)", "accion": "Claude retoma el borrador, lo cuelga bajo mentoriumacademy.com/links en GHL (mismo dominio del ORO 8) y Gerard lo ensena a Javi. 1 hora, mata un zombie de 3 rondas."}, {"que": "Seguridad: contrasena de mentoriumecom@gmail.com (acordado con Cristina hace 12 dias), credenciales en texto plano de los chats a un gestor, token Notion en claro en settings.local.json, rotacion P0", "quien_espera": "Cristina + todo el equipo (riesgo, no dinero inmediato)", "accion": "Bloque de 30 min con Cristina para el cambio de contrasena (necesita a los dos) + Claude saca el token Notion del settings y arma el inventario para el gestor. No es de esta noche pero cada semana que pasa es ruleta."}, {"que": "Material que caduca: el Loom que Javi mando con orden explicita 'Guardate eso' (6-ago) sigue sin descargar", "quien_espera": "Javi (orden directa)", "accion": "Claude lo baja en cuanto haya un hueco de 5 min (el link vive solo en la BD); es trivial y la orden fue literal."}, {"que": "La maquina interna que alimenta todo: bajar la media de la ventana de 30 dias (contador SUBIENDO: 1358→1420), transcribir los 5.691 audios (97 encargos ya extraidos, 7 urgentes) y MEDIR los 76 referentes bajados (0 specs)", "quien_espera": "Nadie externo — pero cada item de esta lista nacio de un audio o un referente sin procesar", "accion": "Claude: bajar_media_reciente.py --dias 31 contra los 4 JID esta semana + batch de transcripcion en la torre por la noche + spec por pieza de los 10 referentes mas recientes. Es LUEGO solo porque no hay nadie esperando un mensaje: es la causa raiz del 'te inventas todo'."}, {"que": "Orden viva del grupo ORGANICO: copiar la estructura/estetica de los carruseles de @ramiro.cubria (la receta existente es PRE-orden) + las 12 refs del 5-ago (1 de 12 medida) + los 3 videos ORO de su canal sin nota", "quien_espera": "El equipo/Santi (orden del 2-ago en el grupo)", "accion": "Claude: medir 2 carruseles reales de Ramiro y actualizar la receta ANTES del proximo carrusel entregado; encaja directo en la revision de hooks del ORO 3. El resto de refs, en goteo."}, {"que": "Cosmetica con dueno: emojis rotos en iPhone (biblioteca twemoji/Noto), carrusel Netflix 3-fotos que pidio Jordi (existe como stories, falta versionarlo a feed) y carruseles lifestyle con fotos nuevas", "quien_espera": "Jordi (3 peticiones suyas menores)", "accion": "Claude: twemoji en el pipeline de subtitulos (1h) y reconvertir la secuencia Netflix a carrusel de feed; lifestyle queda bloqueado hasta que Jordi pase fotos (pedidas en el reclamo del retiro)."}, {"que": "Campanas Vexor de clientes nuevos 'desde ECLORA para abajo' — en marcha con entrega parcial y correcciones de Alejandro ya recibidas", "quien_espera": "Alejandro (frente agencia)", "accion": "Claude mantiene el goteo: aplicar las correcciones del 12-ago y cubrir _NUEVOS_AGO26 (ALESSIA_ROMA, INGRID_ANNE_HOLM); no requiere a Gerard."}, {"que": "Decision Andy-setter (Cristina dijo por audio que no encaja ahora; puede costar la relacion con Javi si entra sin avisar)", "quien_espera": "Andy y Javi — pero la decision es 100% de Gerard", "accion": "GERARD decide y lo comunica; Claude solo puede tener el resumen de pros/contras listo (ANDY_MATERIAL_11AGO.md ya lo tiene). No es de esta semana salvo que Andy apriete."}, {"que": "Blindaje interno: hook PreToolUse Write|Edit para proteger voces/_RECHAZOS_GERARD/LEDGER_MAESTRO (nota 98) + corregir la linea notebooklm-mcp del CLAUDE.md global", "quien_espera": "Claude/Gerard (higiene del sistema)", "accion": "Gerard da OK (es configuracion persistente) y Claude lo aplica en 20 min; la linea del CLAUDE.md es 1 edicion que lleva 3 denuncias."}], "olla": [{"que": "Investigar HubSpot como CRM del mini-funnel de la pareja de Jordi", "porque_olla": "Superado por el propio Jordi: dio la via B ('a malas a un Google Sheet') y el Apps Script ya esta escrito. Investigar un CRM de pago para un favor puntual es coste sin retorno; con publicar el endpoint (LUEGO) el funnel queda cubierto."}, {"que": "Video IA estilo CR7 (version joven entrevistando a la actual)", "porque_olla": "25 dias muerto, nadie lo ha reclamado ni una vez, produccion IA cara, y choca con la ley del 7-ago (no replicar virales genericos fuera del nicho). Si Jordi lo repide, se reevalua; mientras, muerto."}, {"que": "Funnel cinematografico de Jordi (faltan videos IA) + video build-in-public de la Coca-Cola", "porque_olla": "5 semanas congelado sin un solo reclamo desde el 1-ago; requiere videos IA caros y la estrategia actual (hooks, referentes medidos, 3/dia) va por otro lado. Enterrarlo FORMALMENTE con un mensaje honesto a Jordi ('lo aparco hasta X') en vez de dejarlo pudrirse en silencio — el silencio es lo que quema confianza, no el entierro."}, {"que": "El meme del 5-ago de 'cambia el numero y listo'", "porque_olla": "Instruccion superada por los hechos: el 14-ago se midio el canon de la pieza publicada de Jordi y hay 8 memes nuevos con gate PASS esperando su OK. Ejecutar la orden de hace 10 dias seria duplicar trabajo con un molde peor; los 8 nuevos la sustituyen."}, {"que": "Clonar la voz de Jordi con ElevenLabs", "porque_olla": "Bloqueado por plan de pago que nadie ha aprobado y el propio Gerard dudaba ('muy robot no se'). El pipeline queda escrito en _SCRIPTS por si algun dia hay OK de gasto; hasta entonces, no quemar dinero ni tiempo."}, {"que": "Seguir estudiando como grabar en vertical con OBS/Zoom", "porque_olla": "Ya se probo el 30-jul y quedo en 'no se ve nitido'. La salida real es la que ya esta en marcha: guiones + lista de tomas para que Javi grabe con el MOVIL en vertical (ORO 5). Cerrar el hilo con un mensaje honesto a Javi ('se probo, no queda nitido, graba con movil y yo edito') y no volver a abrirlo."}, {"que": "Buscar el clip de alumno diciendo 'lo estoy reventando' para cierres de todos los videos", "porque_olla": "Buscar una frase concreta en horas de bruto sin transcribir es un pozo de tiempo (whisper ni siquiera lo ha pasado), y los ads actuales ya tienen receta de cierre validada (V14 'BRUTAL'). Si algun dia se transcribe el bruto del evento (LUEGO interno), el clip aparecera gratis; buscarlo a mano hoy, no."}, {"que": "Las 5 cuentas de email corporativo @mentorium", "porque_olla": "La pelota ya NO esta en el tejado de Gerard: el audio de Cristina del 14-ago dice 'me lo voy a pensar... pillare dos y lo gestiono con Javi que me pase su tarjeta'. Hasta que Cristina mueva, cualquier trabajo aqui es empujar una puerta que abre hacia dentro."}, {"que": "Segunda pasada al grupo de alumnos buscando herramientas para el futuro drop/ecom propio", "porque_olla": "Idea interna del self-chat sin nadie esperando, para una tienda (#28) que no existe aun. Con Javi reclamando reels, Marcos cortes y Cristina el numero de WhatsApp, minar apps para un proyecto futuro es lujo. Se retoma el dia que la tarea #28 arranque de verdad."}], "lectura": "LA deuda mas cara con Javi es el agujero de tracking en GHL: 58 dias, 6 promesas distintas encima del mismo hoyo (agendamientos de junio, eventos a Facebook, URL de Chris, pipeline+UTMs, audiencias), y mientras tanto Javi YA esta pagando ads a una landing sin atribucion — es literalmente dinero quemandose cada dia, y esta bloqueado solo por una sentada de 1h y un token que debe dar Gerard.\nLA deuda mas cara con Jordi es el freeze del 14-ago sin respuesta: congelo TODA la fabrica de reels (la suya y la de Javi, que pregunta por los 3 diarios), la solucion ya existe (pestana HOOKS, 16 ganchos, gate endurecido) pero Jordi no la ha visto — cada dia de silencio confirma su sospecha de que se subia 'mal contenido'.\nEl patron transversal del inventario: el trabajo SE PRODUCE (cortes, carruseles, correcciones, landings) pero muere a un mensaje de la entrega — hecho-en-local-sin-entregar es el 70% de los A_MEDIAS.\nEsta misma noche Claude haria tres cosas que no necesitan a nadie: (1) montar los 4 reels que Javi se grabo (reclamados 4 veces con la palabra 'urgente', bruto ya en disco), (2) subir los 35 cortes del curso a Drive y pegar los links en la Sheet de Cristina/Marcos — promesa rota desde el 13-ago que se cierra en una hora, y (3) meter los guiones al panel para cumplir la promesa del finde antes de que venza, dejando de propina redactados el mensaje de hooks para Jordi y la factura A011 con los +200 EUR, listos para que Gerard solo pulse enviar por la manana."};
+const HOOKS_INI=[
+ {id:"HK_JAVI_01",cuenta:"JAVI",tipo:"hablado",texto:"En España han cerrado 30.000 tiendas de ropa. La tuya puede ser la siguiente.",angulo:"tienda física → online",fuente:"dato real: comercio textil ES 2006-2025 (73.160→43.452). Ángulo aprobado por Javi hoy 19:15"},
+ {id:"HK_JAVI_02",cuenta:"JAVI",tipo:"hablado",texto:"El alquiler y la luz se pagan el día 1. Vendas o no vendas.",angulo:"tienda física → online",fuente:"corregido por Javi 14-ago 20:34: nada de autónomos/impuestos — alquiler y luz"},
+ {id:"HK_JAVI_03",cuenta:"JAVI",tipo:"hablado",texto:"Tu problema no es tu producto. Es tu calle.",angulo:"tienda física → online",fuente:"derivado del ángulo aprobado (techo = la gente que pasa)"},
+ {id:"HK_JAVI_04",cuenta:"JAVI",tipo:"hablado",texto:"El contra reembolso no es una forma de cobrar. Es una forma de perder dinero.",angulo:"COD = problema de caja",fuente:"canon de Santi en la estrategia («COD es una mierda…»)"},
+ {id:"HK_JAVI_05",cuenta:"JAVI",tipo:"hablado",texto:"Tu tienda no vende porque tarda. Se van antes de ver el producto.",angulo:"velocidad de carga",fuente:"pieza en producción con datos verificados de conversión"},
+ {id:"HK_JAVI_06",cuenta:"JAVI",tipo:"hablado",texto:"Facturar 10.000 y ganar cero. Eso es competir en precio.",angulo:"guerra de precios",fuente:"cifra ILUSTRATIVA de la tesis, no un caso — si molesta se cambia"},
+ {id:"HK_JAVI_07",cuenta:"JAVI",tipo:"hablado",texto:"Las cuentas virales no convierten. Lo he comprobado.",angulo:"views ≠ leads",fuente:"palabras LITERALES de Javi hoy 18:56 — es su propia conclusión"},
+ {id:"HK_JAVI_08",cuenta:"JAVI",tipo:"hablado",texto:"Deja de contar views. Empieza a contar ventas.",angulo:"views ≠ leads",fuente:"variante del anterior"},
+ {id:"HK_JORDI_01",cuenta:"JORDI",tipo:"leido",texto:"Tu sueldo lleva tres años igual. Tu alquiler no.",angulo:"vender tiempo vs producto",fuente:"universal, cero cifras suyas"},
+ {id:"HK_JORDI_02",cuenta:"JORDI",tipo:"leido",texto:"Vender tu tiempo es el único negocio que no puede escalar.",angulo:"vender tiempo vs producto",fuente:"universal"},
+ {id:"HK_JORDI_03",cuenta:"JORDI",tipo:"leido",texto:"Todos quieren el resultado. Nadie quiere los dos años de proceso.",angulo:"mentalidad / proceso",fuente:"universal, BOFU mentalidad (su territorio)"},
+ {id:"HK_JORDI_04",cuenta:"JORDI",tipo:"leido",texto:"El ecommerce no está muerto. Está matando al comercio de tu calle.",angulo:"romper objeción «saturado»",fuente:"detrás va el dato textil real (30.000 cierres)"},
+ {id:"HK_JORDI_05",cuenta:"JORDI",tipo:"leido",texto:"«No tengo dinero para empezar» es la excusa más cara que existe.",angulo:"romper objeción capital",fuente:"universal"},
+ {id:"HK_JORDI_06",cuenta:"JORDI",tipo:"leido",texto:"Nadie te va a pagar más por ser leal a tu empresa.",angulo:"mentalidad empleo",fuente:"universal"},
+ {id:"HK_JORDI_07",cuenta:"JORDI",tipo:"leido",texto:"Un negocio online cobra los 365 días. Tú cobras el día 30.",angulo:"vender tiempo vs producto",fuente:"universal"},
+ {id:"HK_JORDI_08",cuenta:"JORDI",tipo:"leido",texto:"Nueve años de universidad. Dos meses y medio de ecommerce. Ya sabes qué le cambió la vida.",angulo:"caso real",fuente:"caso VALIDADO Nil (_casos_exito): 9 años de estudios, +200K en 2,5 meses — la cifra NO se dice, va en la captura"}];
+
+/* ── IG medido HOY con el tracker propio (sin login, HTML público). No es «en tiempo real»:
+   es la última medición, y se re-mide cada día. Los handles INVENTADOS de la tabla que vio
+   Javi (victorheras / marcverdu_) están FUERA — esto es lo real. ── */
+const IG_MEDIDO={fecha:"14-ago 19:58",cuentas:[
+ {h:"javier.sanchezecom",n:"Javi",seg:22000,posts:325,nuestra:true},
+ {h:"jordigarcia89",n:"Jordi",seg:17000,posts:98,nuestra:true},
+ {h:"ramiro.cubria",n:"Ramiro Cubría",seg:486000,posts:3708},
+ {h:"victorherasemprendedor",n:"Víctor Heras (2ª cuenta)",seg:482000,posts:22},
+ {h:"herasmedia",n:"Víctor Heras (media)",seg:237000,posts:207},
+ {h:"arz.urus",n:"ARZ Urus (principal — red en análisis)",seg:309000,posts:56},
+ {h:"jaimehigueraes",n:"Jaime Higuera",seg:2000000,posts:1242},
+ {h:"jaimehigueramomentos",n:"Higuera (momentos)",seg:952000,posts:2778},
+ {h:"pedrobuerbaum",n:"Pedro Buerbaum",seg:992000,posts:156},
+ {h:"codiesanchez",n:"Codie Sánchez",seg:3000000,posts:2468},
+ {h:"jesusorozcomo",n:"Jesús Orozco",seg:101000,posts:1174},
+ {h:"jesusorozcoecom",n:"Orozco (ecom)",seg:57000,posts:1918},
+ {h:"gala_lc",n:"Gala",seg:51000,posts:272},
+ {h:"co1e0",n:"co1e0 (molde memes)",seg:21000,posts:1}]};
+
+/* jsonblob murio (404 el 13-ago, cerraron la creacion anonima): ahora npoint.io.
+   GET = leer estado · POST = sobrescribir (npoint no acepta PUT). */
+const BLOB="https://api.npoint.io/76533e2a465a894fc6f4";   /* legado: piezas/f1/semilla */
+/* V2 15-ago: UN ALMACÉN POR PERSONA (npoint, creados por API). Cada uno escribe SOLO el suyo:
+   se acabó el que Javi y Jordi se borren las decisiones al revisar a la vez. */
+const BINS={
+  "Gerard":"https://api.npoint.io/68aa90c4c40af52e94ac",
+  "Javi":  "https://api.npoint.io/88c82cab5478b18404f1",
+  "Jordi": "https://api.npoint.io/8d25623222020a3f41ec",
+  "Santi": "https://api.npoint.io/6a1e5a7506cc4248da2b"
+};
+let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};   /* el estado de MI bin */
+const PERSONAS=["Gerard","Javi","Jordi","Santi"];
+
+let YO=null, TAB="revisar", FCUENTA="todo", FETAPA="todo";
+let E={decisiones:{}, referentes:[], calendario:{}, f1:{}};
+let guardando=false, pendiente=null;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function aviso(t,mal){const s=$("#sync");s.textContent=t;s.className="sync ver"+(mal?" mal":"");
+  clearTimeout(s._t);s._t=setTimeout(()=>s.className="sync",mal?4200:1700);}
+
+/* ---------- persistencia: merge, nunca pisar lo del otro ---------- */
+async function leerBlob(){
+  /* lee el legado + los 4 bins personales y FUSIONA. La decisión efectiva de una pieza es la
+     más reciente de cualquiera; las de los demás se conservan como notas visibles. */
+  const r=await fetch(BLOB,{cache:"no-store"});
+  if(!r.ok)throw new Error("GET "+r.status);
+  const j=await r.json();
+  const base=Object.assign({}, j, {decisiones:j.decisiones||{}, referentes:j.referentes||[],
+                                    calendario:j.calendario||{}, f1:j.f1||{}, notas:{}, hooks:j.hooks||[]});
+  const bins=await Promise.all(Object.entries(BINS).map(async([quien,url])=>{
+    try{ const rr=await fetch(url,{cache:"no-store"}); return [quien, rr.ok? await rr.json():null]; }
+    catch(e){ return [quien,null]; }
+  }));
+  for(const [quien,b] of bins){
+    if(!b) continue;
+    if(quien===YO) MIO=Object.assign({decisiones:{},hooks:{},ordenes:[],publicados:[]}, b);
+    for(const [pid,d] of Object.entries(b.decisiones||{})){
+      (base.notas[pid]=base.notas[pid]||[]).push(Object.assign({por:quien},d));
+      const prev=base.decisiones[pid];
+      if(!prev || (d.cuando||"")>(prev.cuando||"")) base.decisiones[pid]=Object.assign({por:quien},d);
+    }
+    for(const [hid,h] of Object.entries(b.hooks||{})){
+      const k=base.hooks.find(x=>x.id===hid); if(!k) continue;
+      if(!k.cuando || (h.cuando||"")>(k.cuando||"")) Object.assign(k,h,{por:quien});
+    }
+  }
+  return base;
+}
+
+async function guardarMio(aplicar){
+  /* escribe SOLO en mi bin, con reintento. Nadie puede pisar lo de nadie. */
+  const url=BINS[YO]; if(!url){aviso("Tu usuario no tiene almacén",true);return;}
+  for(let i=0;i<3;i++){
+    try{
+      const rr=await fetch(url,{cache:"no-store"});
+      const mio=rr.ok? await rr.json() : {decisiones:{},hooks:{},ordenes:[],publicados:[]};
+      mio.decisiones=mio.decisiones||{}; mio.hooks=mio.hooks||{};
+      mio.ordenes=mio.ordenes||[]; mio.publicados=mio.publicados||[];
+      aplicar(mio);
+      const w=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},
+                               body:JSON.stringify(mio)});
+      if(!w.ok)throw new Error("POST "+w.status);
+      MIO=mio; E=await leerBlob(); aviso("Guardado"); return;
+    }catch(e){ if(i===2){aviso("No se pudo guardar",true);return;}
+      await new Promise(r=>setTimeout(r,500*(i+1))); }
+  }
+}
+async function guardar(aplicar){
+  if(guardando){pendiente=aplicar;return;}
+  guardando=true;
+  for(let i=0;i<3;i++){
+    try{
+      const srv=await leerBlob(); aplicar(srv);
+      const r=await fetch(BLOB,{method:"POST",headers:{"Content-Type":"application/json"},
+                                body:JSON.stringify(srv)});
+      if(!r.ok)throw new Error("POST "+r.status);
+      E=srv; aviso("Guardado"); guardando=false;
+      const p=pendiente; pendiente=null; if(p)guardar(p); else render();
+      return;
+    }catch(e){ if(i===2){guardando=false;pendiente=null;
+        aviso("No se pudo guardar (almacén caído). El panel sigue en solo-lectura.",true);
+        render();return;}
+      await new Promise(r=>setTimeout(r,600*(i+1))); }
+  }
+}
+
+/* ---------- login ---------- */
+function pintaLogin(){
+  $("#lsem").textContent=DATOS.semana||"";
+  const c=$("#lquien");c.innerHTML="";
+  PERSONAS.forEach(p=>{const b=document.createElement("button");b.textContent=p;
+    b.onclick=()=>entrar(p);c.appendChild(b);});
+  const ck=localStorage.getItem("mx_clave"); if(ck)$("#lclave").value=ck;
+}
+function entrar(p){
+  if($("#lclave").value.trim()!==CLAVE){$("#lerr").textContent="Clave incorrecta";return;}
+  localStorage.setItem("mx_clave",$("#lclave").value.trim());
+  sessionStorage.setItem("mx_yo",p); YO=p; $("#login").style.display="none"; arranca();
+}
+function salir(){ sessionStorage.removeItem("mx_yo"); YO=null;
+  $("#login").style.display="flex"; $("#lerr").textContent=""; }
+
+/* ---------- helpers ---------- */
+const dec=id=>E.decisiones[id]||null;
+const etapa=p=>(p.etiqueta||"").toUpperCase()||"SIN";
+/* FILTRO 1 EN VIVO (13-ago): Gerard vota AQUI mismo (entrando como Gerard) y su voto
+   se guarda en el almacen -> el equipo lo ve al instante, sin esperar ningun push.
+   El f1 horneado en DATOS queda como base; el voto del almacen lo pisa. */
+const f1de=p=>{const v=(E.f1||{})[p.id];return v?v.estado:(p.f1||"pendiente");};
+const f1motivo=p=>{const v=(E.f1||{})[p.id];return v?(v.motivo||""):(p.f1_motivo||"");};
+const HAY_F1=()=>DATOS.piezas.some(p=>f1de(p)==="aprobado");
+const paso_f1=p=>!HAY_F1()||f1de(p)==="aprobado";
+let MODO=localStorage.getItem("mx_modo")||"foco";   /* foco = una a una (por defecto) */
+let IDX=0;
+function pendientes(){
+  /* 13-ago, orden de Gerard: SIN filtro previo. Todos (Gerard incluido) ven la MISMA
+     cola y votan de golpe; una pieza sale de la cola en cuanto alguien decide. */
+  return DATOS.piezas.filter(p=>{
+    if(FCUENTA!=="todo"&&p.cuenta!==FCUENTA)return false;
+    const d=dec(p.id);
+    return paso_f1(p) && f1de(p)!=="denegado" && (!d||d.estado==="corregir");});
+}
+
+/* ---------- el auto-orden que pidio Gerard ----------
+   OJO: aqui YA NO se reparte. El reparto lo hace UN SOLO sitio,
+   `_SCRIPTS/calendario_auto.py`, y llega ya resuelto en CAL_AUTO.
+   Antes habia un repartidor en este JS que (a) ignoraba el formato de Santi aunque el comentario
+   dijera lo contrario, (b) al no encontrar candidata legal metia igual la primera de la cola
+   (`if(idx<0)idx=0`), asi que la regla de «3 de la misma etapa» solo pintaba un aviso rojo
+   DESPUES de haberla roto, y (c) no sabia nada de Lead Magnets ni del 50/30/20.
+   Dos repartidores = dos criterios vivos = el fallo del 18-jul. Se deja uno. */
+
+/* ---------- render ---------- */
+function render(){
+  document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===TAB));
+  $("#nrev").textContent="("+pendientes().length+")";
+  $("#nref").textContent="("+(E.referentes||[]).length+")";
+  const hks=(E.hooks&&E.hooks.length?E.hooks:HOOKS_INI);
+  $("#ngui")&&($("#ngui").textContent="("+GUIONES.length+")");
+  $("#nhk").textContent="("+hks.filter(h=>!h.estado).length+")";
+  $("#quien").textContent=YO?("· "+YO):"";
+  const app=$("#app");
+  if(TAB==="revisar")app.innerHTML=vistaRevisar();
+  else if(TAB==="calendario")app.innerHTML=vistaCalendario();
+  else if(TAB==="hooks")app.innerHTML=vistaHooks();
+  else if(TAB==="guiones")app.innerHTML=vistaGuiones();
+  else app.innerHTML=vistaEspia();
+  cablear();
+}
+
+function filtrosHTML(){
+  return '<div class="filtros">'+["todo","JAVI","JORDI"].map(c=>
+    `<button data-f="${c}" class="${FCUENTA===c?"on":""}">${c==="todo"?"Las dos cuentas":c}</button>`
+  ).join("")
+  +'<span style="width:14px"></span>'
+  +["todo","TOFU","MOFU","BOFU"].map(e=>
+    `<button data-e="${e}" class="${FETAPA===e?"on":""}">${e==="todo"?"Todas las etapas":e}</button>`
+  ).join("")+'</div>';
+}
+
+/* galeria: TODAS las slides/archivos de la pieza, con flechas (pedido Gerard 13-ago:
+   "si hay un carrusel no puedo ver todas las slides") */
+function mediaHTML(p,i){
+  const arr=p.archivos||[], n=arr.length, a=arr[i]||{};
+  const inner=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls preload="none"></video>`
+       :(a.poster?`<img src="${esc(a.poster)}" loading="lazy">`:'<div style="aspect-ratio:9/16;background:#000"></div>');
+  const nav=n>1?`<button class="nav izq" data-n="-1">‹</button><button class="nav der" data-n="1">›</button>`
+               +`<span class="cnt">${i+1}/${n}</span>`
+               +`<button class="verver" data-ver="1">Ver las ${n} con música</button>`:"";
+  return `<div class="med" data-i="${i}">${inner}${nav}</div>`;
+}
+
+function cardHTML(p){
+  const d=dec(p.id);
+  return `<div class="card" data-id="${esc(p.id)}">${mediaHTML(p,0)}<div class="b">
+      <div class="tit">${esc(p.id)}</div>
+      <div class="meta"><span class="tag cuenta">${esc(p.cuenta||"")}</span>
+        <span class="tag tipo">${esc(p.tipo||"")}</span>
+        <span class="tag ${etapa(p)}">${etapa(p)}</span>
+        ${p.dur_s?`<span class="tag tipo">${p.dur_s}s</span>`:""}
+        ${(p.archivos||[]).length>1?`<span class="tag tipo">${p.archivos.length} slides</span>`:""}
+        ${(()=>{const n=Object.keys((d&&d.motivo_slides)||{}).length;
+                return n?`<span class="nslides">${n} slide${n>1?"s":""} con corrección</span>`:"";})()}</div>
+      ${p.porque?`<div class="porque">${esc(p.porque).replace(/«([^»]*)»/,'<span class="q">«$1»</span>')}</div>`:""}
+      <div class="cap">${esc(p.caption||"")}</div>
+      <div class="acc">
+        <button class="ok ${d&&d.estado==="aprobado"?"sel":""}" data-a="aprobado">Aprobar</button>
+        <button class="fix ${d&&d.estado==="corregir"?"sel":""}" data-a="corregir">Corregir</button>
+        <button class="no ${d&&d.estado==="denegado"?"sel":""}" data-a="denegado">Denegar</button>
+      </div>
+      <textarea class="motivo" placeholder="¿Qué está mal? Escríbelo tal cual — esto es lo que leo yo para no repetirlo. Ej: «el hook es muy corto», «la letra pequeña», «esa foto no»">${esc(d&&d.motivo||"")}</textarea>
+    </div></div>`;
+}
+
+/* agrupado por etapa (pedido Gerard 13-ago: "organizado por el contenido, que es tofu, mofu…") */
+const SECCIONES=[["TOFU","TOFU · problema / dolor"],["MOFU","MOFU · solución"],
+                 ["BOFU","BOFU · mentalidad / casos"],["SIN","Sin etapa asignada"]];
+function vistaRevisar(){
+  const ps=pendientes().filter(p=>FETAPA==="todo"||etapa(p)===FETAPA);
+  const total=(DATOS.piezas||[]).filter(p=>FCUENTA==="todo"||p.cuenta===FCUENTA).length;
+  const hechas=Math.max(0,total-ps.length);
+  const explica='<div class="comovva">'
+    +'<div><b>Aprobar</b> — vale, y se coloca sola en el calendario.</div>'
+    +'<div><b>Corregir</b> — escribe qué está mal. Lo arreglo yo, tú no tocas nada.</div>'
+    +'<div><b>Denegar</b> — no sirve: se retira y se limpia del ordenador.</div>'
+    +'<div style="color:#8b8b9c;margin-top:8px">Decide el primero que entre. Una pieza, un voto.</div>'
+    +'</div>';
+  if(!ps.length) return filtrosHTML()+'<div class="terminado"><div class="big">👌</div>'
+    +'<h2>No queda nada por revisar</h2><p>Has decidido las '+total+' piezas de esta vista.</p></div>';
+
+  if(MODO==="cuadricula"){
+    let h=explica+filtrosHTML()
+      +'<button class="vermodo" data-modo="foco">Revisar de una en una (más rápido en el móvil)</button>';
+    for(const [clave,titulo] of SECCIONES){
+      const grupo=ps.filter(p=>etapa(p)===clave);
+      if(!grupo.length)continue;
+      h+=`<div class="sec"><span class="tag ${clave}">${clave}</span><h2>${titulo}</h2>`
+        +`<span class="n">${grupo.length}</span><span class="lin"></span></div>`;
+      h+='<div class="grid">'+grupo.map(cardHTML).join("")+'</div>';
+    }
+    return h;
+  }
+
+  if(IDX>=ps.length)IDX=ps.length-1;
+  if(IDX<0)IDX=0;
+  const p=ps[IDX];
+  const pct=total?Math.round(hechas*100/total):0;
+  return explica+filtrosHTML()
+    +'<div class="foco">'
+    +`<div class="avance"><b>${hechas}</b> de ${total} decididas`
+    +`<span class="resto">quedan ${ps.length}</span></div>`
+    +`<div class="barra"><i style="width:${pct}%"></i></div>`
+    +cardHTML(p)
+    +`<div class="pasos">`
+    +`<button data-paso="-1" ${IDX===0?"disabled":""}>‹ Anterior</button>`
+    +`<button data-paso="1" ${IDX>=ps.length-1?"disabled":""}>Saltar ›</button></div>`
+    +'<button class="vermodo" data-modo="cuadricula">Ver todas en cuadrícula</button>'
+    +'</div>';
+}
+
+function vistaCalendario(){
+  const cs=(CAL_AUTO&&CAL_AUTO.cuentas)||null;
+  let h='<div class="nota">Solo entra aquí lo que <b>Gerard aprobó</b>. Se coloca solo: 3 al día '
+       +'con el formato que toca según Santi, reparto 50/30/20 y <b>nunca 3 piezas de la misma '
+       +'etapa el mismo día ni 2 Lead Magnets seguidos</b>. Lo que votéis aquí no mueve el '
+       +'calendario: confirma o tumba el hueco.</div>'+filtrosHTML();
+  if(!cs)return h+'<div class="vacio">Calendario sin generar. En el PC: '
+                 +'<code>python _SCRIPTS/calendario_auto.py</code></div>';
+  h+=`<div class="nota" style="font-size:11.5px">plan del ${esc(CAL_AUTO.generado||"")} · desde `
+    +`${esc(CAL_AUTO.desde||"")} · ${CAL_AUTO.dias||7} días</div>`;
+  if(CAL_AUTO.modo_f1==="todas")h+='<div class="alerta">⚠ SIMULACIÓN: este reparto usa el '
+    +'catálogo entero porque Gerard todavía no ha pasado su filtro. Cuando lo pase, el plan se '
+    +'rehace solo con lo aprobado.</div>';
+  const cuentas=FCUENTA==="todo"?["JAVI","JORDI"]:[FCUENTA];
+  for(const c of cuentas){
+    const d=cs[c]; if(!d)continue;
+    const r=d.reparto||{}, n=(r.TOFU||0)+(r.MOFU||0)+(r.BOFU||0)+(r.SIN||0)||1;
+    const pc=e=>Math.round(100*(r[e]||0)/n);
+    h+=`<h2 style="font-size:15px;margin:18px 0 7px">${c}`
+      +`<span style="font-weight:400;color:#8b8b9c;font-size:12px"> · ${n} colocadas · `
+      +`TOFU ${pc("TOFU")}% / MOFU ${pc("MOFU")}% / BOFU ${pc("BOFU")}%</span></h2>`;
+    (d.violaciones||[]).forEach(v=>h+=`<div class="alerta">⛔ ${esc(v)}</div>`);
+    if(d.lm>d.techo_lm)h+=`<div class="alerta">⚠ ${d.lm} de ${d.feed} piezas piden un recurso por `
+      +`DM. Sin 2 seguidos caben ${d.techo_lm}: el resto sobra siempre.</div>`;
+    const fechas=[...new Set([...(d.colocadas||[]),...(d.vacios||[])].map(x=>x.fecha))].sort();
+    for(const f of fechas){
+      const dia=((d.colocadas||[]).concat(d.vacios||[]).find(x=>x.fecha===f)||{}).dia||"";
+      h+=`<div class="dia"><h3>${esc(dia)} ${esc(f)}</h3><div class="slots">`;
+      for(let s=0;s<3;s++){
+        const c1=(d.colocadas||[]).find(x=>x.fecha===f&&x.slot===s);
+        const v1=(d.vacios||[]).find(x=>x.fecha===f&&x.slot===s);
+        const fmt=(c1||v1||{}).formato_santi||(v1||{}).formato||"";
+        const sm=(c1||v1||{}).sin_motor?' <span style="color:#e8a500">⚠sin motor</span>':"";
+        if(c1){
+          const dd=dec(c1.id);
+          const est=dd?({aprobado:"✅ visto bueno",denegado:"⛔ tumbada",
+                          corregir:"✏️ a corregir"}[dd.estado]||""):"";
+          h+=`<div class="slot lleno"><div class="fmt">${esc(fmt)}${sm}</div>`
+            +`<b>${esc(c1.id)}</b><br><span class="tag ${esc(c1.etapa)}">${esc(c1.etapa)}</span>`
+            +(c1.lead_magnet?' <span class="tag tipo">LM</span>':"")
+            +(c1.encaje==="exacto"?"":` <span class="tag tipo">${esc(c1.formato)}</span>`)
+            +(est?`<div style="font-size:11px;color:#8b8b9c;margin-top:4px">${est}</div>`:"")
+            +`</div>`;
+        }else{
+          h+=`<div class="slot"><div class="fmt">${esc(fmt)}${sm}</div>`
+            +`<span style="color:#5f5f70">— libre —</span>`
+            +`<div style="font-size:10.5px;color:#8b8b9c;margin-top:3px">`
+            +`${esc((v1||{}).motivo||"")}</div></div>`;
+        }
+      }
+      h+='</div></div>';
+    }
+    if((d.sin_colocar||[]).length)
+      h+=`<div class="nota" style="font-size:11.5px">Sin hueco esta semana (${d.sin_colocar.length}): `
+        +`${esc(d.sin_colocar.join(", "))}</div>`;
+  }
+  return h;
+}
+
+/* ── ESPÍA: los referentes CON SU CONTENIDO dentro (embed oficial de IG, funciona sin login)
+   + números medidos + botón REPLICAR que llega directo a Claude como orden de producción. ── */
+const REFS_MEDIDOS=[{"etapa": "TOFU", "sc": "DbPXWbuz3rB", "likes": 144, "coms": 87, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "Dat6ISIz2o2", "likes": 1050, "coms": 137, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "DaRljBWT-6v", "likes": 214, "coms": 77, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbV_iq7zwVP", "likes": 420, "coms": 110, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbD6TNeTOoj", "likes": 387, "coms": 112, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "Da3DHH_lMDR", "likes": 1247, "coms": 377, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DUN7gu6DT1p", "likes": 24, "coms": 5, "autor": "64639108237"}, {"etapa": "BOFU", "sc": "Da1FtiugJhd", "likes": 262, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbY_gjPTpaW", "likes": 168, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbQqHCxz4Pm", "likes": 572, "coms": 31, "autor": "ramiro.cubria"}];
+function scDe(url){const m=(url||"").match(/instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);return m?m[1]:null;}
+const ESPIA_ANALISIS={"DbPXWbuz3rB": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Dat6ISIz2o2": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DaRljBWT-6v": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbV_iq7zwVP": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbD6TNeTOoj": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Da3DHH_lMDR": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Da1FtiugJhd": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbY_gjPTpaW": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbQqHCxz4Pm": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Db1IqIop5hM": {"receta": "Meme co1e0 8,0 s · plano fijo 0 cortes · banda + texto arriba · foto fija · música fija · fade oscuro→claro 2 s (medido en el clon LIQUIDEZ)", "tocar": ["SOLO el texto de la banda (frase entendible por novato)", "El caption corto tipo remate"], "evitar": ["La foto (fija por persona, exenta de cooldown)", "La música y el efecto de arranque (Jordi: «siempre me pasas todo cambiado»)", "Meter cortes (0 cortes ES el formato)"]}};
+function vistaEspia(){
+  let h='<div class="nota"><b>Esto es el espía:</b> el contenido REAL de los referentes, reproducible aquí '
+   +'dentro, con sus likes y comentarios medidos. Toca <b>REPLICAR</b> en el que quieras y me llega al '
+   +'momento como orden: lo clono para Javi o Jordi y aparece en Por revisar. '
+   +'Pega abajo cualquier link nuevo de reel/carrusel y entra a la parrilla.</div>'
+   +'<div class="addref"><input id="rurl" placeholder="https://instagram.com/reel/..."><button id="raddr">Añadir al espía</button></div>'
+   +'<div class="espgrid">';
+  const vistos=new Set();
+  const todos=[];
+  /* Gerard 15-ago: aqui SOLO competencia — ni Santi ni nuestras cuentas */
+  const FUERA=new Set(["santiagovilatta","64639108237","duartesanti_","duartesanti","jordigarcia89","javier.sanchezecom"]);
+  for(const m of REFS_MEDIDOS){ if(!vistos.has(m.sc) && !FUERA.has((m.autor||"").toLowerCase())){vistos.add(m.sc);
+    todos.push({sc:m.sc,autor:m.autor,likes:m.likes,coms:m.coms,etapa:m.etapa});}}
+  for(const r of (E.referentes||[])){ const sc=scDe(r.url);
+    if(sc&&!vistos.has(sc) && !FUERA.has((r.quien||"").toLowerCase())){vistos.add(sc); todos.push({sc:sc,autor:r.quien||"",etapa:r.etapa||"",nota:r.nota||""});}}
+  for(const t of todos){
+    h+=`<div class="espcard">
+      <iframe src="https://www.instagram.com/p/${t.sc}/embed/captioned/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+      <div class="espmeta">
+        <span class="tag ${(t.etapa||"SIN").toUpperCase()}">${esc(t.etapa||"ref")}</span>
+        ${t.autor?`<span class="tag tipo">@${esc(t.autor)}</span>`:""}
+        ${t.likes!=null?`<span class="tag tipo">♥ ${t.likes.toLocaleString("es")}</span>`:""}
+        ${t.coms!=null?`<span class="tag tipo">💬 ${t.coms}</span>`:""}
+        ${ESPIA_ANALISIS[t.sc]?`<details class="espana"><summary>ANÁLISIS · qué tocar y qué no</summary><div class="esparec">${esc(ESPIA_ANALISIS[t.sc].receta)}</div><div class="espcol"><b style="color:#3ECF8E">TOCAR</b><ul>${ESPIA_ANALISIS[t.sc].tocar.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="espcol"><b style="color:#E5484D">NO TOCAR</b><ul>${ESPIA_ANALISIS[t.sc].evitar.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></details>`:""}
+        <button class="repl" data-sc="${esc(t.sc)}">REPLICAR</button>
+      </div></div>`;
+  }
+  h+='</div>';
+  return h;
+}
+
+/* ── HOOKS: se aprueban ANTES de gastar horas de edición. Editable: si Jordi quiere otro
+   gancho, lo escribe encima y ESE queda como el bueno (pidió exactamente esto hoy 18:38). ── */
+function vistaHooks(){
+  const hks=(E.hooks&&E.hooks.length?E.hooks:HOOKS_INI);
+  let h='<div class="nota"><b>Estos son los ganchos ANTES de editar ningún vídeo.</b> '
+   +'Aprueba los que quieras que produzca, corrige el texto si lo quieres distinto '
+   +'(lo que escribas es EXACTAMENTE el hook que se usa) y deniega los que no. '
+   +'Así ninguna pieza se edita con un hook que no os gusta.</div>'+filtrosHTML();
+  const fil=hks.filter(k=>FCUENTA==="todo"||k.cuenta===FCUENTA);
+  if(!fil.length)return h+'<div class="vacio">No hay hooks de esta cuenta.</div>';
+  for(const k of fil){
+    const est=k.estado||"";
+    h+=`<div class="hk ${est==="aprobado"?"ap":est==="denegado"?"dn":""}" data-hid="${esc(k.id)}">
+      <div class="htxt">${esc(k.texto)}</div>
+      <div class="hmeta"><span class="tag cuenta">${esc(k.cuenta)}</span>
+        <span class="tag tipo">hook ${esc(k.tipo)}</span>
+        <span class="tag tipo">${esc(k.angulo)}</span>
+        ${est?`<span class="tag ${est==="aprobado"?"TOFU":"tipo"}">${esc(est)}${k.por?" · "+esc(k.por):""}</span>`:""}</div>
+      <div class="hfuente">${esc(k.fuente||"")}</div>
+      <textarea class="hedit">${esc(k.texto)}</textarea>
+      <div class="acc">
+        <button class="ok" data-h="aprobado">Aprobar</button>
+        <button class="fix" data-h="editar">Cambiar texto</button>
+        <button class="no" data-h="denegado">Denegar</button>
+      </div></div>`;
+  }
+  return h;
+}
+
+/* ── IG: última medición REAL (tracker propio, sin login). Se re-mide a diario. ── */
+function vistaTablon(){
+  let h='<div class="nota"><b>El tablón de pendientes REAL</b> — auditado contra los chats y el disco '
+   +'('+esc(TABLON.actualizado)+'). ORO = mueve dinero o confianza YA. Cada uno dice quién da el paso.</div>';
+  h+='<div class="lect" style="background:#14120a;border:1px solid #3d3312;border-radius:10px;padding:10px 14px;font-size:12.5px;color:#d8d2b8;line-height:1.55;white-space:pre-wrap;margin-bottom:12px">'+esc(TABLON.lectura)+'</div>';
+  h+='<h3 style="color:#BAFC68;margin:10px 0 6px">🟢 ORO</h3>';
+  for(const o of TABLON.oro)
+    h+=`<div class="hk"><div class="htxt">${esc(o.que)}</div>
+      <div class="hmeta"><span class="tag TOFU">espera: ${esc(o.quien_espera||"")}</span></div>
+      <div class="hfuente"><b>Siguiente paso:</b> ${esc(o.accion||"")}</div>
+      ${o.cita?`<div class="hfuente" style="color:#8a7d5a">«${esc(o.cita)}»</div>`:""}</div>`;
+  h+='<h3 style="color:#d9c86a;margin:14px 0 6px">🟡 LUEGO</h3>';
+  for(const o of TABLON.luego)
+    h+=`<div class="hk" style="opacity:.85"><div style="font-size:13.5px;color:#ccc">${esc(o.que)}</div>
+      <div class="hfuente">${esc(o.accion||"")} · espera: ${esc(o.quien_espera||"")}</div></div>`;
+  h+='<h3 style="color:#8a8a8a;margin:14px 0 6px">🔴 OLLA (dejar morir)</h3>';
+  for(const o of TABLON.olla)
+    h+=`<div class="hk" style="opacity:.55"><div style="font-size:13px">${esc(o.que)}</div>
+      <div class="hfuente">${esc(o.porque_olla||"")}</div></div>`;
+  return h;
+}
+
+function vistaGuiones(){
+  let h='<div class="nota"><b>Guiones reales listos para producir</b>: salen del podcast ya grabado '
+   +'(mapeado frase a frase). Cada uno tiene su hook LITERAL dicho a camara, su minuto exacto y su etapa. '
+   +'Toca <b>PRODUCIR</b> en los que quieras y me llegan como orden: se cortan, se subtitulan y aparecen '
+   +'en Por revisar. Nada se edita sin vuestro OK aqui.</div>'+filtrosHTML();
+  for(const g of GUIONES){
+    h+=`<div class="hk"><div class="htxt">«${esc(g.hook)}»</div>
+      <div class="hmeta"><span class="tag ${g.etapa}">${g.etapa}</span>
+        <span class="tag tipo">${Math.round(g.dur)}s ya grabados</span>
+        <span class="tag tipo">min ${Math.floor(g.t1/60)}:${String(Math.floor(g.t1%60)).padStart(2,"0")}</span>
+        <span class="tag cuenta">JAVI</span></div>
+      <div class="hfuente">${esc(g.estructura||g.porque||"")}</div>
+      <div class="acc"><button class="ok gprod" data-gid="${esc(g.id)}">PRODUCIR</button></div></div>`;
+  }
+  return h;
+}
+
+function vistaIG(){
+  const nos=IG_MEDIDO.cuentas.filter(c=>c.nuestra);
+  const refs=IG_MEDIDO.cuentas.filter(c=>!c.nuestra)
+    .map(c=>({...c,spp:c.posts?Math.round(c.seg/c.posts):0}))
+    .sort((a,b)=>b.spp-a.spp);
+  let h='<div class="nota">Medido el <b>'+esc(IG_MEDIDO.fecha)+'</b> con nuestro tracker (público, sin login). '
+   +'Se re-mide cada día y aquí siempre está la última foto. '
+   +'<b>seg/post</b> = seguidores que le ha dado de media cada publicación: mide si gana por VOLUMEN o por PIEZA.</div>';
+  h+='<div class="igbig">';
+  for(const c of nos)
+    h+=`<div class="igcard"><div class="n">${c.seg.toLocaleString("es")}</div>
+        <div class="l">@${esc(c.h)}</div>
+        <div style="font-size:12px;color:#8b8b9c;margin-top:5px">${c.posts} posts · ${Math.round(c.seg/c.posts)} seg/post</div></div>`;
+  h+='</div>';
+  h+='<div class="nota" style="border-color:#3d3312"><b>La lectura importante:</b> Heras tiene 482K con SOLO 22 posts '
+   +'(21.900 seg/post) y Urus 309K con 56 en su cuenta principal. No ganan por publicar más: ganan porque cada pieza '
+   +'está pensada para pegar. Ramiro sí es volumen (3.708 posts, 131 seg/post). Son dos estrategias distintas — '
+   +'y varios llevan VARIAS cuentas (Heras 2, Higuera 2, Buerbaum 3, Orozco 2; la red de Urus está en análisis ahora mismo).</div>';
+  h+='<table class="igtab"><tr><th>Referente</th><th class="r">Seguidores</th><th class="r">Posts</th><th class="r">seg/post</th></tr>';
+  for(const c of refs)
+    h+=`<tr><td>${esc(c.n)}<div style="font-size:11px;color:#666">@${esc(c.h)}</div></td>
+        <td class="r">${c.seg.toLocaleString("es")}</td><td class="r">${c.posts.toLocaleString("es")}</td>
+        <td class="r"><b>${c.spp.toLocaleString("es")}</b></td></tr>`;
+  h+='</table>';
+  return h;
+}
+
+function vistaReferentes(){
+  let h='<div class="nota">Pega aquí links de vídeos o carruseles que te gusten para replicar. '
+       +'<b>No hace falta que digas de qué tipo es</b>: eso lo analizo yo y lo relleno.</div>'
+       +'<div class="addref"><input id="rurl" placeholder="https://instagram.com/reel/... o TikTok">'
+       +'<input id="rnota" placeholder="¿qué te gusta de él? (opcional)" style="max-width:270px">'
+       +'<button id="raddr">Añadir</button></div>';
+  const rs=E.referentes||[];
+  if(!rs.length)return h+'<div class="vacio">Aún no hay referentes. Pega el primero arriba.</div>';
+  for(let i=rs.length-1;i>=0;i--){
+    const r=rs[i];
+    h+=`<div class="ref"><div style="flex:1;min-width:210px">
+      <a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.url)}</a>
+      <div style="font-size:11.5px;color:#8b8b9c;margin-top:3px">
+        ${esc(r.quien||"")} ${r.fecha?"· "+esc(r.fecha):""} ${r.nota?"· "+esc(r.nota):""}</div></div>
+      <span class="tag ${(r.etapa||"SIN").toUpperCase()}">${esc(r.etapa||"sin analizar")}</span>
+      <span class="tag tipo">${esc(r.estado||"")}</span></div>`;
+  }
+  return h;
+}
+
+/* ---------- eventos ---------- */
+
+/* Abre la pieza entera: todas las slides en fila, con sonido. El video NO va muteado a
+   proposito — Gerard juzga la musica aqui, y una slide muda no se puede juzgar. */
+function abreVisor(id){
+  const p=(DATOS.piezas||[]).find(x=>x.id===id); if(!p)return;
+  const arr=p.archivos||[];
+  $("#vtit").textContent=`${p.id} · ${arr.length} ${arr.length===1?"pieza":"slides"}`;
+  $("#vpistas").innerHTML=arr.map((a,k)=>{
+    const m=a.video?`<video src="${esc(a.video)}" poster="${esc(a.poster||"")}" controls playsinline preload="metadata"></video>`
+                   :(a.poster?`<img src="${esc(a.poster)}">`:'<div style="height:60vh;width:34vh;background:#111;border-radius:12px"></div>');
+    const nota=((dec(id)||{}).motivo_slides||{})[k]||"";
+    return `<div class="vslide${nota?" conmarca":""}" data-k="${k}">`
+      +`<span class="marca">corregir</span>${m}`
+      +`<span class="vn">${k+1} / ${arr.length}</span>`
+      +`<textarea class="snota${nota?" tiene":""}" data-id="${esc(id)}" data-k="${k}" `
+      +`placeholder="¿falla algo en ESTA slide? escríbelo">${esc(nota)}</textarea></div>`;
+  }).join("");
+  /* se guarda al salir del campo: una slide, una nota */
+  $("#vpistas").querySelectorAll(".snota").forEach(t=>t.onchange=()=>{
+    const k=t.dataset.k, txt=t.value.trim();
+    t.classList.toggle("tiene",!!txt);
+    t.closest(".vslide").classList.toggle("conmarca",!!txt);
+    guardar(srv=>{
+      srv.decisiones=srv.decisiones||{};
+      const d=srv.decisiones[t.dataset.id]||{estado:"corregir",motivo:"",por:YO,cuando:""};
+      d.motivo_slides=d.motivo_slides||{};
+      if(txt) d.motivo_slides[k]=txt; else delete d.motivo_slides[k];
+      if(Object.keys(d.motivo_slides).length && d.estado!=="denegado") d.estado="corregir";
+      d.por=YO; d.cuando=new Date().toISOString().slice(0,16).replace("T"," ");
+      srv.decisiones[t.dataset.id]=d;
+    });
+  });
+  $("#vcap").textContent=p.caption||"(sin caption)";
+  $("#visor").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function cierraVisor(){
+  $("#visor").classList.remove("on");
+  $("#vpistas").querySelectorAll("video").forEach(v=>{try{v.pause()}catch(e){}});
+  $("#vpistas").innerHTML="";
+  document.body.style.overflow="";
+}
+
+function cablear(){
+  document.querySelectorAll("[data-modo]").forEach(b=>b.onclick=()=>{
+    MODO=b.dataset.modo; localStorage.setItem("mx_modo",MODO); IDX=0; render();
+  });
+  document.querySelectorAll("[data-paso]").forEach(b=>b.onclick=()=>{
+    IDX+=(+b.dataset.paso); render();
+  });
+
+  document.querySelectorAll(".verver").forEach(b=>b.onclick=e=>{
+    e.stopPropagation();
+    const card=b.closest(".card"); if(card) abreVisor(card.dataset.id);
+  });
+  const vc=$("#vcerrar"); if(vc) vc.onclick=cierraVisor;
+  const vv=$("#visor"); if(vv) vv.onclick=e=>{ if(e.target===vv) cierraVisor(); };
+
+  document.querySelectorAll(".filtros button").forEach(b=>b.onclick=()=>{
+    if(b.dataset.f)FCUENTA=b.dataset.f; else if(b.dataset.e)FETAPA=b.dataset.e; render();});
+  /* flechas de la galeria + caption expandible (delegado: sobrevive a re-pintados) */
+  const app=$("#app");
+  app.onclick=ev=>{
+    const nav=ev.target.closest(".nav");
+    if(nav){
+      const card=nav.closest(".card"), med=nav.closest(".med");
+      const p=DATOS.piezas.find(x=>x.id===card.dataset.id);
+      if(!p)return;
+      const n=(p.archivos||[]).length;
+      const i=((+med.dataset.i)+(+nav.dataset.n)+n)%n;
+      med.outerHTML=mediaHTML(p,i);
+      return;
+    }
+    const cap=ev.target.closest(".cap");
+    if(cap)cap.classList.toggle("abierta");
+  };
+  document.querySelectorAll(".card").forEach(card=>{
+    const id=card.dataset.id, ta=card.querySelector(".motivo");
+    card.querySelectorAll(".acc button").forEach(b=>b.onclick=()=>{
+      const est=b.dataset.a, motivo=(ta.value||"").trim();
+      if(est==="corregir"&&!motivo){
+        aviso("Escribe qué hay que corregir",true); ta.focus(); return;
+      }
+      guardar(srv=>{ const sello=new Date().toISOString().slice(0,16).replace("T"," ");
+        srv.decisiones=srv.decisiones||{};
+        srv.decisiones[id]={estado:est,motivo:motivo,por:YO,cuando:sello};
+      });
+    });
+  });
+  /* hooks: aprobar / cambiar texto / denegar — todo queda en el blob con quién y cuándo */
+  document.querySelectorAll(".hk").forEach(hk=>{
+    const hid=hk.dataset.hid;
+    hk.querySelectorAll(".acc button").forEach(b=>b.onclick=()=>{
+      const a=b.dataset.h;
+      if(a==="editar"){ hk.classList.toggle("editando"); const t=hk.querySelector(".hedit"); if(hk.classList.contains("editando")){t.focus();t.setSelectionRange(t.value.length,t.value.length);} return; }
+      const nuevo=hk.querySelector(".hedit").value.trim();
+      guardar(srv=>{
+        srv.hooks=(srv.hooks&&srv.hooks.length?srv.hooks:JSON.parse(JSON.stringify(HOOKS_INI)));
+        const k=srv.hooks.find(x=>x.id===hid); if(!k)return;
+        const sello=new Date().toISOString().slice(0,16).replace("T"," ");
+        if(nuevo&&nuevo!==k.texto){ k.texto=nuevo; k.editado=sello+" por "+YO; }
+        k.estado=a; k.por=YO; k.cuando=sello;
+      }).then(render);
+    });
+    const t=hk.querySelector(".hedit");
+    if(t) t.onkeydown=e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); hk.querySelector('[data-h="aprobado"]').click(); } };
+  });
+  document.querySelectorAll(".gprod").forEach(b=>b.onclick=()=>{
+    guardarMio(mio=>{ mio.ordenes.push({tipo:"producir_guion", id:b.dataset.gid, por:YO,
+      cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
+    b.textContent="EN COLA ✓"; b.disabled=true; aviso("Orden enviada: producir "+b.dataset.gid);
+  });
+  document.querySelectorAll(".repl").forEach(b=>b.onclick=()=>{
+    const sc=b.dataset.sc;
+    guardarMio(mio=>{ mio.ordenes.push({tipo:"replicar",
+      url:"https://www.instagram.com/reel/"+sc+"/", por:YO,
+      cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
+    b.textContent="PEDIDO ✓"; b.classList.add("hecho"); b.disabled=true;
+    aviso("Orden enviada a Claude: replicar "+sc);
+  });
+  const add=$("#raddr");
+  if(add)add.onclick=()=>{
+    const u=($("#rurl").value||"").trim();
+    if(!/^https?:\/\//.test(u)){aviso("Pega un link válido",true);return;}
+    const nota=($("#rnota").value||"").trim();
+    guardar(srv=>{ srv.referentes=srv.referentes||[];
+      srv.referentes.push({url:u.split("?")[0],quien:YO,nota:nota,
+        fecha:new Date().toISOString().slice(0,16).replace("T"," "),
+        etapa:"",estado:"sin analizar"});
+    });
+    $("#rurl").value="";$("#rnota").value="";
+  };
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
+  if(b.dataset.t==="salir")return salir();
+  TAB=b.dataset.t; render();
+});
+
+async function arranca(){
+  /* pase lo que pase con el almacén, el panel SIEMPRE pinta (13-ago: el blob caído
+     dejaba la página entera en negro porque nunca se llegaba a render()) */
+  let vivo=true;
+  try{ E=await leerBlob(); }catch(e){ vivo=false; aviso("Sin conexión con el guardado",true); }
+  render();
+  if(vivo && !(E.referentes||[]).length && REFS_INI.length){
+    /* primera vez: precarga los referentes que ya nos pasaron por WhatsApp */
+    guardar(srv=>{ srv.referentes=REFS_INI.slice(); });
+  }
+  if(vivo && !(E.hooks||[]).length){
+    /* primera vez: siembra el banco de hooks para que el equipo ya tenga cola que aprobar */
+    guardar(srv=>{ srv.hooks=JSON.parse(JSON.stringify(HOOKS_INI)); });
+  }
+}
+pintaLogin();
+const ses=sessionStorage.getItem("mx_yo");
+if(ses&&PERSONAS.includes(ses)&&localStorage.getItem("mx_clave")===CLAVE){
+  YO=ses; $("#login").style.display="none"; arranca();
+}
+</script><div class="visor" id="visor">
+  <div class="vtop"><span id="vtit"></span><button class="vcerrar" id="vcerrar">✕</button></div>
+  <div class="vpistas" id="vpistas"></div>
+  <div class="vcap" id="vcap"></div>
+</div>
+</body></html>
