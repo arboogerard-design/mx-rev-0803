@@ -595,16 +595,7 @@ function vistaRepasar(){
       <button class="fix ${d&&d.estado==="corregir"?"sel":""}" data-rp="corregir">Corregir</button>
       <button class="no ${d&&d.estado==="denegado"?"sel":""}" data-rp="denegado">Denegar</button>
     </div>
-    ${par?`<details class="dr"><summary>Comparar con el referente</summary><div class="cont">
-      <div class="cmp">
-        <div><p>El referente</p>${par.es_video&&par.ref?`<video src="${esc(par.ref)}" controls preload="metadata" playsinline></video>`
-          :(par.sc?`<iframe src="https://www.instagram.com/p/${esc(par.sc)}/embed/captioned/" scrolling="no"></iframe>`
-          :(par.ref?`<img src="${esc(par.ref)}" alt="">`:'<div style="padding:34px;color:#656B76">sin referente</div>'))}</div>
-        <div><p>Lo nuestro</p>${mediaHTML((p.archivos||[])[0])}</div>
-      </div>
-      <div class="ejes">${["cortes/s","música","portada","color","hook"].map(x=>`<span class="eje">${x}</span>`).join("")}</div>
-      <p style="color:var(--txt-3);font-size:12px;margin-top:9px">Mira lo mismo en los dos: tipografía, tamaño de letra, dónde cae el corte y cuándo entra la música. Si algo no cuadra, escríbelo en Corregir.</p>
-    </div></details>`:""}
+    ${cmpHTML(p,par)}
     <details class="dr"><summary>Qué se publica con esto</summary>
       <div class="cont">${esc(p.caption||"(sin caption)")}</div></details>
     ${p.porque?`<details class="dr"><summary>Por qué esta pieza</summary><div class="cont">${esc(p.porque)}</div></details>`:""}
@@ -616,6 +607,42 @@ function vistaRepasar(){
     <div class="rptecla">1 aprobar · 2 corregir · 3 denegar · ← → moverte</div>
   </div>`;
 }
+/* Comparación referente ↔ lo nuestro.
+   ⚠️ Un referente que NO es imagen ni vídeo (un .md, una nota) NO es un molde: significa que la
+   pieza se produjo SIN clonar nada. El panel lo dice en vez de fingir una comparación — medido
+   el 19-ago: las 4 piezas TH_* declaraban `MAPA_QA_26_REELS_3JUL.md` como "referente". */
+const EXT_IMG=/\.(jpg|jpeg|png|webp|gif)$/i, EXT_VID=/\.(mp4|mov|webm)$/i;
+function cmpHTML(p,par){
+  const mio=mediaHTML((p.archivos||[])[0]);
+  if(!par) return `<details class="dr"><summary>Comparar con el referente</summary><div class="cont">
+    <div style="border-left:2.5px solid var(--warn);padding-left:12px">
+      <b style="color:var(--warn)">Esta pieza no declara referente.</b><br>
+      No se clonó de ningún molde medido: se produjo desde cero. Es justo lo que hay que dejar de hacer.
+    </div></div></details>`;
+  const r=String(par.ref||"");
+  const esVid=par.es_video||EXT_VID.test(r), esImg=EXT_IMG.test(r);
+  if(!esVid && !esImg && !par.sc) return `<details class="dr"><summary>Comparar con el referente</summary><div class="cont">
+    <div style="border-left:2.5px solid var(--warn);padding-left:12px;margin-bottom:11px">
+      <b style="color:var(--warn)">El referente declarado no es un vídeo ni una imagen.</b><br>
+      Es <code>${esc(r.split("/").pop())}</code> — un documento. Sin el fichero original no hay molde
+      que medir, así que esta pieza <b>no está clonada de nada</b>.
+    </div>
+    <div><p style="font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--txt-3);font-weight:700;margin:0 0 6px">Lo nuestro</p>${mio}</div>
+  </div></details>`;
+  const izq = esVid ? `<video src="${esc(r)}" controls preload="metadata" playsinline></video>`
+            : esImg ? `<img src="${esc(r)}" alt="">`
+            : `<iframe src="https://www.instagram.com/p/${esc(par.sc)}/embed/captioned/" scrolling="no"></iframe>`;
+  return `<details class="dr"><summary>Comparar con el referente</summary><div class="cont">
+    <div class="cmp">
+      <div><p>El referente</p>${izq}</div>
+      <div><p>Lo nuestro</p>${mio}</div>
+    </div>
+    <div class="ejes">${["cortes/s","música","portada","color","hook"].map(x=>`<span class="eje">${x}</span>`).join("")}</div>
+    <p style="color:var(--txt-3);font-size:12px;margin-top:9px">Mira lo mismo en los dos: tipografía, tamaño de letra, dónde cae el corte y cuándo entra la música. Si algo no cuadra, escríbelo en Corregir.</p>
+    ${par.como?`<p style="color:var(--txt-3);font-size:11.5px;margin-top:5px">Molde: ${esc(par.como)}</p>`:""}
+  </div></details>`;
+}
+
 /* chips de corrección: cada una es una queja REAL medida del equipo */
 const FIX=["Letra pequeña","Hook flojo","Esa foto no","Música aburrida","Portada sin dueño",
            "Muy lento, corta más","Falta CTA","No es del nicho","El rótulo de arriba sobra"];
