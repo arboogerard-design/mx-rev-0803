@@ -1,6 +1,6 @@
 {
- "generado": "2026-08-17T04:43:10",
- "desde": "2026-08-17",
+ "generado": "2026-08-18T14:19:26",
+ "desde": "2026-08-18",
  "dias": 7,
  "modo_f1": "aprobadas",
  "cuentas": {
@@ -10,27 +10,6 @@
    "techo_lm": 11,
    "colocadas": [],
    "vacios": [
-    {
-     "fecha": "2026-08-17",
-     "dia": "lun",
-     "slot": 0,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-17",
-     "dia": "lun",
-     "slot": 1,
-     "formato": "Carrusel",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-17",
-     "dia": "lun",
-     "slot": 2,
-     "formato": "iPad caso de éxito",
-     "motivo": "sin candidatas"
-    },
     {
      "fecha": "2026-08-18",
      "dia": "mar",
@@ -155,6 +134,27 @@
      "dia": "dom",
      "slot": 2,
      "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-24",
+     "dia": "lun",
+     "slot": 0,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-24",
+     "dia": "lun",
+     "slot": 1,
+     "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-24",
+     "dia": "lun",
+     "slot": 2,
+     "formato": "iPad caso de éxito",
      "motivo": "sin candidatas"
     }
    ],
@@ -175,27 +175,6 @@
    "colocadas": [],
    "vacios": [
     {
-     "fecha": "2026-08-17",
-     "dia": "lun",
-     "slot": 0,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-17",
-     "dia": "lun",
-     "slot": 1,
-     "formato": "Carrusel",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-17",
-     "dia": "lun",
-     "slot": 2,
-     "formato": "iPad caso de éxito",
-     "motivo": "sin candidatas"
-    },
-    {
      "fecha": "2026-08-18",
      "dia": "mar",
      "slot": 0,
@@ -319,6 +298,27 @@
      "dia": "dom",
      "slot": 2,
      "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-24",
+     "dia": "lun",
+     "slot": 0,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-24",
+     "dia": "lun",
+     "slot": 1,
+     "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-24",
+     "dia": "lun",
+     "slot": 2,
+     "formato": "iPad caso de éxito",
      "motivo": "sin candidatas"
     }
    ],
