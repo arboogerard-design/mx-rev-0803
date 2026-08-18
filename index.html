@@ -531,7 +531,7 @@ function render(){
   $("#quien").textContent=YO?("· "+YO):"";
   const app=$("#app");
   if(TAB==="repasar")app.innerHTML=vistaRepasar();
-  if(TAB==="revisar")app.innerHTML=vistaRevisar();
+  else if(TAB==="revisar")app.innerHTML=vistaRevisar();
   else if(TAB==="hoy")app.innerHTML=vistaHoy();
   else if(TAB==="grabar")app.innerHTML=vistaGuionesGrabar();
   else if(TAB==="calendario")app.innerHTML=vistaCalendario();
