@@ -245,6 +245,43 @@ button,.btn,.tab{font-family:'Montserrat',sans-serif!important;font-weight:700!i
 .secacc:hover{background:#1a4527}
 @media(max-width:720px){.secacc{float:none;display:block;width:100%;margin:8px 0 4px}
   .fixr button{padding:8px 12px;font-size:13px}}
+
+/* REPASAR — una pieza, una decision (18-ago) */
+.rp{max-width:560px;margin:0 auto;padding:0 4px}
+.rphead{display:flex;align-items:center;gap:10px;margin:2px 0 10px}
+.rpprog{font-size:13px;color:#8b8b9c}
+.rpbar{flex:1;height:5px;background:#1c1c24;border-radius:99px;overflow:hidden}
+.rpbar i{display:block;height:100%;background:#5B9DFF;border-radius:99px;transition:width .25s}
+.rpmed{background:#000;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.rpmed video,.rpmed img{width:100%;max-height:62vh;object-fit:contain;display:block}
+.rptit{font-size:15px;font-weight:600;margin:10px 0 2px;line-height:1.25}
+.rpsub{font-size:12px;color:#8b8b9c;margin-bottom:10px}
+.rpsub .sig{opacity:.55;font-size:11px}
+.rpacc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0}
+.rpacc button{padding:14px 8px;border-radius:11px;border:1px solid #2e2e3a;background:#16161d;
+  color:#c9c9d6;font-size:14px;font-weight:600;cursor:pointer}
+.rpacc .ok{border-color:#2b6b40;color:#8fe0aa}
+.rpacc .ok:hover,.rpacc .ok.sel{background:#14351f}
+.rpacc .fix{border-color:#6b5a2b;color:#e0cf8f}
+.rpacc .fix:hover,.rpacc .fix.sel{background:#352d14}
+.rpacc .no{border-color:#6b2b2b;color:#e08f8f}
+.rpacc .no:hover,.rpacc .no.sel{background:#351414}
+.rp details{border-top:1px solid #20202a;padding:9px 0}
+.rp details>summary{cursor:pointer;color:#8b8b9c;font-size:13px;list-style:none}
+.rp details>summary::-webkit-details-marker{display:none}
+.rp details>summary:before{content:"› ";color:#5B9DFF}
+.rp details[open]>summary{color:#c9c9d6}
+.rp details .cont{padding:8px 2px 2px;font-size:13px;color:#b6b6c4;line-height:1.5}
+.rpnav{display:flex;justify-content:space-between;gap:10px;margin:14px 0 4px}
+.rpnav button{flex:1;padding:11px;border-radius:10px;border:1px solid #26262f;background:#131319;color:#8b8b9c;cursor:pointer}
+.rptecla{text-align:center;font-size:11px;color:#5a5a68;margin-top:6px}
+.rpfin{text-align:center;padding:50px 20px}
+.rpfin .big{font-size:44px}
+@media(max-width:720px){
+  .rpmed video,.rpmed img{max-height:56vh}
+  .rpacc button{padding:16px 6px;font-size:15px}
+  .rptecla{display:none}
+}
 </style></head><body>
 <div class="mx-header"><div><div class="mx-logo">M&nbsp;MENTORIUM</div><div class="mx-sub">panel de contenido · en vivo</div></div><div class="mx-pill" id="mxCuenta">cargando…</div></div>
 <script>window.addEventListener('load',()=>{try{try{const t=DATOS.piezas.length;const n=(typeof pendientes==='function')?pendientes().length:DATOS.piezas.filter(p=>p.f1==='pendiente').length;document.getElementById('mxCuenta').textContent=n+' por revisar · '+t+' piezas';}catch(e){document.getElementById('mxCuenta').style.display='none';}}catch(e){}});</script>
@@ -263,8 +300,8 @@ button,.btn,.tab{font-family:'Montserrat',sans-serif!important;font-weight:700!i
   <h1>Panel Mentorium</h1>
   <span style="font-size:12px;color:#8b8b9c" id="quien"></span>
   <div class="tabs">
-    <button data-t="revisar" class="on">Por revisar <span id="nrev"></span></button>
-    <button data-t="hoy">Hoy <span id="nhoy"></span></button>
+    <button data-t="repasar" class="on">Repasar <span id="nrev"></span></button>
+    <button data-t="revisar">Ver todo <data-t="hoy">Hoy <span id="nhoy"></span></button>
     <button data-t="grabar">A grabar <span id="ngrab"></span></button>
     <button data-t="calendario">Calendario</button>
     <button data-t="hooks">Hooks <span id="nhk"></span></button>
@@ -342,7 +379,7 @@ const BINS={
 let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};   /* el estado de MI bin */
 const PERSONAS=["Gerard","Javi","Jordi","Santi"];
 
-let YO=null, TAB="revisar", FCUENTA="todo", FETAPA="todo";
+let YO=null, TAB="repasar", FCUENTA="todo", FETAPA="todo";
 let E={decisiones:{}, referentes:[], calendario:{}, f1:{}};
 let guardando=false, pendiente=null;
 
@@ -483,6 +520,7 @@ function render(){
   $("#nhk").textContent="("+hks.filter(h=>!h.estado).length+")";
   $("#quien").textContent=YO?("· "+YO):"";
   const app=$("#app");
+  if(TAB==="repasar")app.innerHTML=vistaRepasar();
   if(TAB==="revisar")app.innerHTML=vistaRevisar();
   else if(TAB==="hoy")app.innerHTML=vistaHoy();
   else if(TAB==="grabar")app.innerHTML=vistaGuionesGrabar();
@@ -558,6 +596,74 @@ const FIX_RAPIDO=[
 function fixrHTML(){
   return '<div class="fixr"><b>corrección rápida</b>'+FIX_RAPIDO.map((f,i)=>
     `<button data-fx="${i}">${f[0]}</button>`).join("")+'</div>';
+}
+
+
+/* ETAPA EN CRISTIANO. El equipo no piensa en TOFU/MOFU/BOFU, y nosotros mismos tenemos una regla
+   que prohibe la jerga en el contenido (regla 11: la pidieron Javi y Jordi). La sigla se queda
+   pequenita al lado para quien la quiera. */
+const ETAPA_HUMANO={TOFU:"Para que te descubran",MOFU:"Para que te consideren",BOFU:"Para que compren"};
+let RP_I=0;
+
+function rpLista(){
+  return (DATOS.piezas||[]).filter(p=>{
+    if(FCUENTA!=="todo" && p.cuenta!==FCUENTA) return false;
+    if(FETAPA!=="todo" && etapa(p)!==FETAPA) return false;
+    const d=dec(p); return !(d&&d.estado);          /* solo lo que falta por decidir */
+  });
+}
+
+function vistaRepasar(){
+  const ps=rpLista();
+  if(!ps.length) return filtrosHTML()+'<div class="rpfin"><div class="big">👌</div>'
+    +'<h2>Nada pendiente</h2><div class="rpsub">Ya has decidido todo lo que hay con estos filtros.</div></div>';
+  if(RP_I>=ps.length) RP_I=ps.length-1;
+  if(RP_I<0) RP_I=0;
+  const p=ps[RP_I], d=dec(p), et=etapa(p);
+  const mio=(p.archivos&&p.archivos[0])||"";
+  const esVid=/\.(mp4|mov|webm)$/i.test(mio);
+  const media = mio
+    ? (esVid?`<video src="${mio}" controls preload="metadata" playsinline></video>`
+            :`<img src="${mio}" alt="">`)
+    : '<div style="padding:60px;color:#666">sin vista previa</div>';
+  const pct=Math.round((RP_I)/ps.length*100);
+
+  return filtrosHTML()+`<div class="rp">
+    <div class="rphead">
+      <span class="rpprog">${RP_I+1} de ${ps.length}</span>
+      <span class="rpbar"><i style="width:${pct}%"></i></span>
+    </div>
+    <div class="rpmed">${media}</div>
+    <div class="rptit">${esc(p.id)}</div>
+    <div class="rpsub">${esc(p.cuenta||"")} · ${esc(p.tipo||"")} · ${ETAPA_HUMANO[et]||et}
+      <span class="sig">(${et})</span>${p.dur_s?" · "+p.dur_s+"s":""}</div>
+
+    <div class="rpacc">
+      <button class="ok ${d&&d.estado==="aprobado"?"sel":""}" data-rp="aprobado">Aprobar</button>
+      <button class="fix ${d&&d.estado==="corregir"?"sel":""}" data-rp="corregir">Corregir</button>
+      <button class="no ${d&&d.estado==="denegado"?"sel":""}" data-rp="denegado">Denegar</button>
+    </div>
+
+    ${(REFS_PAREJA&&REFS_PAREJA[p.id])?`<details><summary>Comparar con el referente</summary>
+      <div class="cont">${refHTML(p).replace(/^<details[^>]*>.*?<\/summary>/,'').replace(/<\/details>$/,'')}</div></details>`:""}
+
+    <details><summary>Qué se publica con esto</summary>
+      <div class="cont">${esc(p.caption||"(sin caption)")}</div></details>
+
+    ${p.porque?`<details><summary>Por qué esta pieza</summary>
+      <div class="cont">${esc(p.porque)}</div></details>`:""}
+
+    <details ${d&&d.estado==="corregir"?"open":""}><summary>Escribir una corrección</summary>
+      <div class="cont">${fixrHTML()}
+        <textarea class="motivo" style="width:100%;margin-top:8px" placeholder="¿Qué está mal? Escríbelo tal cual — esto es lo que leo yo para no repetirlo.">${esc(d&&d.motivo||"")}</textarea>
+      </div></details>
+
+    <div class="rpnav">
+      <button data-rpnav="-1">← Anterior</button>
+      <button data-rpnav="1">Saltar →</button>
+    </div>
+    <div class="rptecla">← → para moverte · 1 aprobar · 2 corregir · 3 denegar</div>
+  </div>`;
 }
 
 function cardHTML(p){
@@ -1182,6 +1288,41 @@ function cablear(){
       cards.forEach(c=>{const ok=c.querySelector('button.ok'); if(ok&&!ok.classList.contains('sel'))ok.click();});
     };
   });
+
+
+  /* REPASAR: decidir avanza sola a la siguiente — lo que agota es perder el sitio, no revisar */
+  document.querySelectorAll('[data-rp]').forEach(b=>{
+    b.onclick=()=>{
+      const ps=rpLista(); const p=ps[RP_I]; if(!p)return;
+      const est=b.dataset.rp;
+      const ta=document.querySelector('.rp .motivo');
+      const motivo=(ta&&ta.value||"").trim();
+      if(est==="corregir" && !motivo){
+        aviso("Escribe qué hay que corregir",true);
+        const det=ta&&ta.closest("details"); if(det)det.open=true; if(ta)ta.focus(); return;
+      }
+      guardar(srv=>{ const sello=new Date().toISOString().slice(0,16).replace("T"," ");
+        srv.decisiones=srv.decisiones||{};
+        srv.decisiones[p.id]={estado:est,motivo:motivo,por:YO,cuando:sello};
+      });
+    };
+  });
+  document.querySelectorAll('[data-rpnav]').forEach(b=>{
+    b.onclick=()=>{ RP_I+=(+b.dataset.rpnav); render(); };
+  });
+  if(TAB==="repasar" && !window._rpTecla){
+    window._rpTecla=true;
+    document.addEventListener('keydown',e=>{
+      if(TAB!=="repasar")return;
+      if(/(input|textarea)/i.test((e.target.tagName||"")))return;
+      if(e.key==="ArrowRight"){RP_I++;render();}
+      else if(e.key==="ArrowLeft"){RP_I--;render();}
+      else if(e.key==="1"||e.key==="2"||e.key==="3"){
+        const m={"1":"aprobado","2":"corregir","3":"denegado"};
+        const b=document.querySelector('[data-rp="'+m[e.key]+'"]'); if(b)b.click();
+      }
+    });
+  }
 
 }
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
