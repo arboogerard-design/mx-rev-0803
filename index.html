@@ -630,11 +630,15 @@ function vistaRepasar(){
   if(RP_I>=ps.length) RP_I=ps.length-1;
   if(RP_I<0) RP_I=0;
   const p=ps[RP_I], d=dec(p), et=etapa(p);
-  const mio=(p.archivos&&p.archivos[0])||"";
-  const esVid=/\.(mp4|mov|webm)$/i.test(mio);
-  const media = mio
-    ? (esVid?`<video src="${mio}" controls preload="metadata" playsinline></video>`
-            :`<img src="${mio}" alt="">`)
+  /* archivos[0] es un OBJETO {archivo,poster,video} (no un string): hay que sacar .video,
+     igual que hace cardHTML. Antes se metia el objeto crudo -> [object Object] -> nada se veia. */
+  const a0=(p.archivos&&p.archivos[0])||null;
+  const src=a0?(typeof a0==="string"?a0:(a0.video||a0.archivo||"")):"";
+  const post=(a0&&typeof a0==="object"&&a0.poster)?a0.poster:"";
+  const esVid=/\.(mp4|mov|webm)$/i.test(src);
+  const media = src
+    ? (esVid?`<video src="${src}" poster="${esc(post)}" controls preload="metadata" playsinline></video>`
+            :`<img src="${src}" alt="">`)
     : '<div style="padding:60px;color:#666">sin vista previa</div>';
   const pct=Math.round((RP_I)/ps.length*100);
 
