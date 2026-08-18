@@ -1,0 +1,194 @@
+{
+ "pares": [
+  {
+   "pieza": "CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO",
+   "ref": "media/_ref/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO",
+   "ref": "media/_ref/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_OLOR_A_VENTA_17AGO",
+   "ref": "media/_ref/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_POV_INBOX_16AGO",
+   "ref": "media/_ref/CARRUSEL_JAVI_POV_INBOX_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "slide_01_mus.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO",
+   "ref": "media/_ref/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_TRES_COSAS_V2_16AGO",
+   "ref": "media/_ref/CARRUSEL_JAVI_TRES_COSAS_V2_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "slide_01_mus.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_50_EUROS_17AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_50_EUROS_17AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_IA_TIENDA_16AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_IA_TIENDA_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "slide_01_mus.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_IA_UNA_TARDE_18AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "slide_01_mus.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_PEOR_WEB_17AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_PEOR_WEB_17AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_TRES_VENTAS_18AGO",
+   "ref": "media/_ref/CARRUSEL_JORDI_TRES_VENTAS_18AGO__ref.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "HOOKAD_A_QUEDA0_15AGO",
+   "ref": "media/_ref/HOOKAD_A_QUEDA0_15AGO__ref.mp4",
+   "es_video": true,
+   "origen": "V_JAVI_HOOKAD_SINMATI.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "HOOKAD_B_HUMO_15AGO",
+   "ref": "media/_ref/HOOKAD_B_HUMO_15AGO__ref.mp4",
+   "es_video": true,
+   "origen": "V_JAVI_HOOKAD_SINMATI.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "HOOKAD_C_2ANOS_15AGO",
+   "ref": "media/_ref/HOOKAD_C_2ANOS_15AGO__ref.mp4",
+   "es_video": true,
+   "origen": "V_JAVI_HOOKAD_SINMATI.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "MEMES_JAVI_SEMANA_17AGO",
+   "ref": "media/_ref/MEMES_JAVI_SEMANA_17AGO__ref.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "MEMES_JAVI_TANDA_16AGO",
+   "ref": "media/_ref/MEMES_JAVI_TANDA_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "MEMES_JORDI_MES_14AGO",
+   "ref": "media/_ref/MEMES_JORDI_MES_14AGO__ref.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "MEMES_JORDI_SEMANA_17AGO",
+   "ref": "media/_ref/MEMES_JORDI_SEMANA_17AGO__ref.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "MEMES_JORDI_TANDA_16AGO",
+   "ref": "media/_ref/MEMES_JORDI_TANDA_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "MEME_JAVI_LIQUIDEZ_15AGO",
+   "ref": "media/_ref/MEME_JAVI_LIQUIDEZ_15AGO__ref.mp4",
+   "es_video": true,
+   "origen": "MEME_JAVI_TIP.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "REEL_JAVI_PAPEL_AUDITOR_16AGO",
+   "ref": "media/_ref/REEL_JAVI_PAPEL_AUDITOR_16AGO__ref.mp4",
+   "es_video": true,
+   "origen": "FMTNOREQ_Dbg6ZDEz3bf.mp4",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "TH_MILLONARIO_17AGO",
+   "ref": "media/_ref/TH_MILLONARIO_17AGO__ref.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "TH_PADRE_LOCO_17AGO",
+   "ref": "media/_ref/TH_PADRE_LOCO_17AGO__ref.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "TH_QUIEN_ES_JAVI_17AGO",
+   "ref": "media/_ref/TH_QUIEN_ES_JAVI_17AGO__ref.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "ruta local verificada"
+  },
+  {
+   "pieza": "TH_VENDEHUMOS_17AGO",
+   "ref": "media/_ref/TH_VENDEHUMOS_17AGO__ref.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "ruta local verificada"
+  }
+ ],
+ "sin_referente": []
+}

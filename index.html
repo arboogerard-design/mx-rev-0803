@@ -211,6 +211,19 @@ button,.btn,.tab{font-family:'Montserrat',sans-serif!important;font-weight:700!i
 .esparec{margin:8px 0;color:#cfcfcf;line-height:1.5;}
 .espcol ul{margin:4px 0 8px 16px;padding:0;color:#bdbdbd;line-height:1.55;}
 
+
+/* comparación referente ↔ réplica (18-ago) */
+.cmp{margin-top:10px;border-top:1px solid #24242e;padding-top:10px}
+.cmp>summary{cursor:pointer;color:#8b8b9c;font-size:13px;list-style:none;user-select:none}
+.cmp>summary::-webkit-details-marker{display:none}
+.cmp>summary:before{content:"⇄ ";color:#5B9DFF}
+.cmp[open]>summary{color:#c9c9d6;margin-bottom:8px}
+.cmpgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cmpgrid figure{margin:0}
+.cmpgrid figcaption{font-size:11px;color:#8b8b9c;margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px}
+.cmpgrid video,.cmpgrid img{width:100%;border-radius:8px;background:#0b0b10;display:block}
+.cmpnota{font-size:11px;color:#6f6f80;margin-top:6px}
+@media(max-width:720px){.cmpgrid{grid-template-columns:1fr}}
 </style></head><body>
 <div class="mx-header"><div><div class="mx-logo">M&nbsp;MENTORIUM</div><div class="mx-sub">panel de contenido · en vivo</div></div><div class="mx-pill" id="mxCuenta">cargando…</div></div>
 <script>window.addEventListener('load',()=>{try{try{const t=DATOS.piezas.length;const n=(typeof pendientes==='function')?pendientes().length:DATOS.piezas.filter(p=>p.f1==='pendiente').length;document.getElementById('mxCuenta').textContent=n+' por revisar · '+t+' piezas';}catch(e){document.getElementById('mxCuenta').style.display='none';}}catch(e){}});</script>
@@ -481,6 +494,36 @@ function mediaHTML(p,i){
   return `<div class="med" data-i="${i}">${inner}${nav}</div>`;
 }
 
+
+/* REFS_PAREJA — referente declarado de cada pieza, para poder comparar al lado.
+   Lo genera _SCRIPTS/panel_referente_al_lado.py resolviendo el _REFERENTE.txt de la pieza con la
+   MISMA funcion que usa el gate, para que no haya dos criterios de "cual es el referente". */
+let REFS_PAREJA={};
+fetch("referentes.json").then(r=>r.ok?r.json():null).then(d=>{
+  if(!d)return;
+  (d.pares||[]).forEach(x=>{REFS_PAREJA[x.pieza]=x;});
+  if(typeof render==="function")render();
+}).catch(()=>{});
+
+function refHTML(p){
+  const r=REFS_PAREJA[p.id]; if(!r) return "";
+  const mio=(p.archivos&&p.archivos[0])?p.archivos[0]:"";
+  const esVid=/\.(mp4|mov|webm)$/i.test(mio);
+  const izq=r.es_video
+    ? `<video src="${r.ref}" controls preload="metadata" playsinline></video>`
+    : `<img src="${r.ref}" loading="lazy" alt="referente">`;
+  const der=mio? (esVid
+    ? `<video src="${mio}" controls preload="metadata" playsinline></video>`
+    : `<img src="${mio}" loading="lazy" alt="nuestra pieza">`) : "";
+  return `<details class="cmp"><summary>Comparar con el referente</summary>
+    <div class="cmpgrid">
+      <figure><figcaption>Referente</figcaption>${izq}</figure>
+      <figure><figcaption>Lo nuestro</figcaption>${der}</figure>
+    </div>
+    <div class="cmpnota">Mira lo mismo en los dos: tipografia, tamano de letra, donde cae el corte y cuando entra la musica. Si algo no cuadra, escribelo en Corregir.</div>
+  </details>`;
+}
+
 function cardHTML(p){
   const d=dec(p.id);
   return `<div class="card" data-id="${esc(p.id)}">${mediaHTML(p,0)}<div class="b">
@@ -494,6 +537,7 @@ function cardHTML(p){
                 return n?`<span class="nslides">${n} slide${n>1?"s":""} con corrección</span>`:"";})()}</div>
       ${p.porque?`<div class="porque">${esc(p.porque).replace(/«([^»]*)»/,'<span class="q">«$1»</span>')}</div>`:""}
       <div class="cap">${esc(p.caption||"")}</div>
+      ${refHTML(p)}
       <div class="acc">
         <button class="ok ${d&&d.estado==="aprobado"?"sel":""}" data-a="aprobado">Aprobar</button>
         <button class="fix ${d&&d.estado==="corregir"?"sel":""}" data-a="corregir">Corregir</button>
