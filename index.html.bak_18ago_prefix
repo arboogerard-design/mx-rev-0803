@@ -461,21 +461,11 @@ function pintaLogin(){
   PERSONAS.forEach(p=>{const b=document.createElement("button");b.textContent=p;
     b.onclick=()=>entrar(p);c.appendChild(b);});
   const ck=localStorage.getItem("mx_clave"); if(ck)$("#lclave").value=ck;
-  /* ENTER entra directo (18-ago): antes SOLO se podia entrar pulsando un boton de persona, asi
-     que Gerard escribia la clave, daba Enter y no pasaba nada. Con Enter se usa la ultima
-     persona guardada; si no hay ninguna, se avisa de que hay que elegir. */
-  $("#lclave").onkeydown=(e)=>{
-    if(e.key!=="Enter")return;
-    e.preventDefault();
-    const ult=localStorage.getItem("mx_yo_ult");
-    if(ult&&PERSONAS.includes(ult)) entrar(ult);
-    else $("#lerr").textContent="Elige quien eres con un boton de abajo";
-  };
 }
 function entrar(p){
   if($("#lclave").value.trim()!==CLAVE){$("#lerr").textContent="Clave incorrecta";return;}
   localStorage.setItem("mx_clave",$("#lclave").value.trim());
-  sessionStorage.setItem("mx_yo",p); localStorage.setItem("mx_yo_ult",p); YO=p; $("#login").style.display="none"; arranca();
+  sessionStorage.setItem("mx_yo",p); YO=p; $("#login").style.display="none"; arranca();
 }
 function salir(){ sessionStorage.removeItem("mx_yo"); YO=null;
   $("#login").style.display="flex"; $("#lerr").textContent=""; }
@@ -722,7 +712,7 @@ function vistaRevisar(){
     for(const [clave,titulo] of SECCIONES){
       const grupo=ps.filter(p=>etapa(p)===clave);
       if(!grupo.length)continue;
-      h+=`<div class="sec"><span class="tag ${clave}">${clave}</span><h2>${titulo}</h2><button class="secacc" data-sec="${clave}">Aprobar toda esta sección</button>`
+      h+=`<div class="sec"><span class="tag ${clave}">${clave}</span><h2>${titulo}</h2><button class="secacc" data-sec="${clave}">Aprobar toda esta sección</button>``
         +`<span class="n">${grupo.length}</span><span class="lin"></span></div>`;
       h+='<div class="grid">'+grupo.map(cardHTML).join("")+'</div>';
     }
