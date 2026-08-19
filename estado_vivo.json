@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-19 02:12",
+ "generado": "2026-08-19 02:25",
  "piezas": {
   "wip": 109,
   "para_revisar": 134,
@@ -7,13 +7,13 @@
   "con_gate_pass": 3
  },
  "moldes": {
-  "referentes": 82,
-  "medidos": 38,
+  "referentes": 135,
+  "medidos": 72,
   "por_carpeta": [
    {
     "carpeta": "REFERENTES_MINA_19AGO",
-    "videos": 32,
-    "medidos": 18
+    "videos": 85,
+    "medidos": 22
    },
    {
     "carpeta": "REFERENTES_CLON_19AGO",
@@ -23,7 +23,7 @@
    {
     "carpeta": "REFERENTES_SYK_17AGO",
     "videos": 45,
-    "medidos": 15
+    "medidos": 45
    }
   ]
  },
@@ -32,7 +32,9 @@
   "ultimas": []
  },
  "torre": {
-  "viva": false
+  "viva": true,
+  "audios_transcritos": 156,
+  "referentes_bajados": 55
  },
  "fotos": {
   "javi": 9,
