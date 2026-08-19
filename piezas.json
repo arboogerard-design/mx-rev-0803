@@ -594,55 +594,61 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "TOFU",
-   "caption": "Solo te asegura empezar otra vez desde cero.\n\nY es la decisión más cómoda que existe, por eso la toma todo el mundo.\n\nEl checklist está en la bio.",
+   "caption": "Solo te asegura empezar otra vez desde cero.\n\nY es la decisión más cómoda que existe, por eso la toma todo el mundo.\n\nEl validador de producto está en la bio.",
    "archivos": [
     {
      "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__00.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__00.mp4",
-     "peso_mb": 0.04
+     "peso_mb": 0.13
     },
     {
      "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__01.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__01.mp4",
-     "peso_mb": 0.01
+     "peso_mb": 0.12
     },
     {
      "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__02.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__02.mp4",
-     "peso_mb": 0.01
+     "peso_mb": 0.12
     },
     {
      "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__03.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__03.mp4",
-     "peso_mb": 0.01
+     "peso_mb": 0.12
     },
     {
      "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__04.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__04.mp4",
-     "peso_mb": 0.01
+     "peso_mb": 0.12
     },
     {
      "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__05.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__05.mp4",
-     "peso_mb": 0.01
+     "peso_mb": 0.12
     },
     {
      "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__06.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__06.mp4",
-     "peso_mb": 0.01
+     "peso_mb": 0.15
     },
     {
      "archivo": "slide_08.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__07.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__07.mp4",
-     "peso_mb": 0.02
+     "peso_mb": 0.12
+    },
+    {
+     "archivo": "slide_09.mp4",
+     "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__08.jpg",
+     "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__08.mp4",
+     "peso_mb": 0.11
     }
    ],
    "origen": "PARA_REVISAR/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO"
