@@ -337,10 +337,6 @@
      "poster": "media/MEMES_JORDI_SEMANA_17AGO__07.jpg",
      "video": "media/MEMES_JORDI_SEMANA_17AGO__07.mp4",
      "peso_mb": 0.18
-    },
-    {
-     "archivo": "_CLON_CHECK.png",
-     "poster": "media/MEMES_JORDI_SEMANA_17AGO__08.jpg"
     }
    ],
    "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_17AGO"
@@ -533,10 +529,6 @@
      "poster": "media/MEMES_JORDI_TANDA_16AGO__04.jpg",
      "video": "media/MEMES_JORDI_TANDA_16AGO__04.mp4",
      "peso_mb": 0.18
-    },
-    {
-     "archivo": "_CLON_CHECK.png",
-     "poster": "media/MEMES_JORDI_TANDA_16AGO__05.jpg"
     }
    ],
    "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_16AGO"
@@ -601,7 +593,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "TOFU",
    "caption": "Solo te asegura empezar otra vez desde cero.\n\nY es la decisión más cómoda que existe, por eso la toma todo el mundo.\n\nEl checklist está en la bio.",
    "archivos": [
     {
@@ -661,7 +653,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "No es una frase bonita: es lo que pasa cuando dejas de tapar un agujero con tráfico.\n\nDentro, qué miré ese mes.\n\nEl auditor de tienda está en la bio.",
    "archivos": [
     {
@@ -721,7 +713,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "TOFU",
    "caption": "El que entra en tu tienda decide en segundo y medio si le estás resolviendo algo o si le estás pidiendo algo.\n\nLas cuatro señales están dentro.\n\nLa guía del checkout está en la bio.",
    "archivos": [
     {
@@ -781,7 +773,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Si falla la primera, ya sé que no vende, y no hace falta abrir la cuenta de anuncios.\n\nLas tres están dentro.\n\nEl auditor de tienda está en la bio.",
    "archivos": [
     {
@@ -931,7 +923,7 @@
    "tipo": "meme",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "TOFU",
    "caption": "al menos tengo un negocio, hay que verle el lado positivo",
    "archivos": [
     {
@@ -971,7 +963,7 @@
    "tipo": "meme",
    "dia": "jue 6",
    "hora": "19:30",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Abrir la cuenta de Shopify es la clase 01 del módulo y dura 1:23. Literal.\n\nLa clase 09 es el theme —lo que ve tu cliente— y dura 17:03. Es la más larga de las doce y es donde se atasca todo el mundo.\n\nNadie se queda fuera por no saber abrir una cuenta. Se queda fuera por el orden de lo que va después.\n\n12 clases. 1 h 06 min. Comenta RECURSOS.\n\n#shopify #ecommerce",
    "archivos": [
     {
@@ -989,7 +981,7 @@
    "tipo": "meme",
    "dia": "sáb 8",
    "hora": "libre",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Dentro del panel hay 64 herramientas repartidas en 10 secciones. Calculadoras, auditores, generadores, simuladores.\n\nNinguna decide qué vendes, ni a quién, ni a qué precio. Eso lo decides tú, y es la única parte que no se puede automatizar.\n\nLas herramientas ahorran horas. No ahorran criterio.\n\nComenta RECURSOS.\n\n#ecommerce #shopify #herramientas",
    "archivos": [
     {
@@ -1007,7 +999,7 @@
    "tipo": "meme",
    "dia": "dom 9",
    "hora": "19:30",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "El primer paso no cuesta dinero, cuesta ponerse.\n\nLa clase 01 del módulo va de abrir tu tienda de Shopify por un euro al mes, y dura 1 minuto y 23 segundos. Está dentro del panel, sin pagar nada.\n\nSi eso no lo has hecho todavía, no preguntes por lo de después. Haz eso primero.\n\nComenta RECURSOS.\n\n#ecommerce #shopify",
    "archivos": [
     {
@@ -1025,7 +1017,7 @@
    "tipo": "meme",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "TOFU",
    "caption": "CUENTA: @javier.sanchezecom\nFORMATO: meme letterbox @co1e0 · banda NEGRA + texto BLANCO · 1 plano fijo · 0 cortes · 7,50 s\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard.\n\nQUÉ VIRAL REPLICA (esto es lo que faltaba en la versión anterior)\n Réplica del post real `DYn3Ujti6Sd` de @co1e0 — 59.714 plays medidos (scrape Apify, 04-jun).\n Original literal:\n   \"How I look at bro after he just paid a dev $1k to build him a Shopify theme and I just\n    took a screenshot and asked Claude to give me the custom liquid\"\n Nuestra versión, traducción casi palabra por palabra:\n   \"Cómo miro a mi colega después de pagarle 1.000 € a un programador para el tema de Shopify,\n    y yo hice una captura y le pedí el código a Claude\"\n   (la captura tardó 4 segundos)\n 4 líneas, igual que el original. El remate entre paréntesis lo llevan solo el nº1 (407K) y el\n nº8 del corpus: es lo que separa un meme de 40K de uno de 400K.\n\n Y lo mejor: es VERDAD. El panel tiene una biblioteca de Liquid de Shopify hecha exactamente\n así (`biblioteca-liquid-shopify.html`, 175 KB, la herramienta más grande del panel).\n\nPLANO: Javi solo, en el evento, mirada de lado con media sonrisa — que es literalmente\n \"cómo miro a mi colega\". Clip verificado como Javi en el banco (`evento_r1c5602_17`, 4K).\n Descartado el plano del salón del evento donde salían los dos: identidad cruzada = pieza tirada.\n Descartada también la placa del alumno que aparece en ese clip: lleva una cifra visible y Javi\n viene de un baneo de Meta (cero cifras como reclamo).\n\nMÚSICA VIRAL: Cochise — Tell Em (Instrumental Remix, slowed + reverb). Trending, sin letra.\n Si puedes, súbela con la canción desde la app nativa de Instagram en vez de con el audio\n incrustado: así el reel entra en la página de esa canción y arrastra alcance.\n\nLUFS: input_i = -14,04 · input_tp = -4,52 (gate 2 PASS)\n\nCAPTION (pegar tal cual):\nEl tema no hay que programarlo desde cero. Hay que saber qué pedirle.\n\nDentro del panel está la biblioteca de códigos de Shopify y el módulo nuevo: 12 clases,\n1 h 06 min, de la cuenta vacía a la tienda publicada.\n\nComenta RECURSOS y te llega el acceso.\n\n#shopify #ecommerce\n\nNOTAS:\n - Post-baneo: cero promesas de dinero, cero cifras como reclamo. 2 hashtags de 3.\n - No nombrar ninguna agencia ni programador concreto, ni en pantalla ni en comentarios.",
    "archivos": [
     {
@@ -1047,7 +1039,7 @@
    "tipo": "reel",
    "dia": "mar 4",
    "hora": "19:30",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "Cuando monté mi primera tienda fui con mis ahorros. Y lo que pensé no fue cuánto podía sacar, fue esto: si los pierdo, no pasa nada, porque sigo trabajando y sigo generando.\n\nAhí es donde la mayoría se equivoca. Miran el techo y no miran el suelo.\n\nLa pregunta buena no es cuánto puedes ganar. Es si puedes perder lo que vas a poner y seguir con tu vida exactamente igual.\n\nSi la respuesta es no, todavía no toca. Y no pasa nada: toca más adelante.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
@@ -1065,7 +1057,7 @@
    "tipo": "reel",
    "dia": "jue 6",
    "hora": "19:30",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Esto es el módulo nuevo por dentro, sin montaje.\n\nDoce clases en el orden en que hay que hacerlas: cuenta, idioma, configuración, políticas, dominio, producto, colecciones, menú, theme, ficha, IA y el bonus de ATLAS.\n\nLa primera dura 1:23. La del theme, 17:03. Ahí es donde se decide si tu tienda parece una tienda.\n\nEstá dentro del panel. Comenta RECURSOS.\n\n#shopify #ecommerce",
    "archivos": [
     {
@@ -1083,7 +1075,7 @@
    "tipo": "reel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "45 años, padre de familia, exfutbolista y entrenador personal.\n\nHace nueve años me metí en las tiendas online sin tener ni idea. Hoy es a lo que me dedico al cien por cien, y con Mentorium formamos a gente que quiere hacer lo mismo.\n\nLo cuento porque mucha gente que me sigue no sabe de dónde vengo. Y de dónde vienes importa: yo no empecé sabiendo.\n\nSi estás pensando en montar algo, cuéntame por dónde vas.\n\n#ecommerce #emprender",
    "archivos": [
     {
@@ -1101,7 +1093,7 @@
    "tipo": "story",
    "dia": "reserva",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "(stories — sin caption; el CTA va en J4: «Responde ORDEN» → Auditor de Tienda y Checkout, gratis)\nOrden de publicación: J1 (sábado 8:33) → J2 (la flecha) → J3 (el grupo) → J4 (recurso).\nMisma palabra ORDEN que el carrusel de hoy: un solo embudo.",
    "archivos": [
     {
@@ -1129,7 +1121,7 @@
    "tipo": "story",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "Secuencia de stories · no lleva caption de feed.\nPalabra clave del CTA: RECURSOS (única cableada en ManyChat).\nRecurso a responder: MENTORIUM_Recurso_Video_Ads (06_HERRAMIENTAS_HTML/MENTORIUM_Recurso_Video_Ads.html).\nOrden: s01 dolor → s02 win 8.446 MXN → s03 CTA. Día: MIÉRCOLES 5-ago, cuenta de JAVI.",
    "archivos": [
     {
@@ -1153,7 +1145,7 @@
    "tipo": "story",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Secuencia de stories · palabra clave: RECURSOS. Miercoles 5-ago, cuenta de JAVI.\nOrden: s01 dolor -> s02 win 8.446 MXN -> s03 CTA con el recurso Video Ads.\nV3 con las correcciones de Santi del 4-ago.",
    "archivos": [
     {
@@ -1172,12 +1164,48 @@
    "origen": "PARA_REVISAR/STORIES_JAVI_MIERCOLES_A5_V3"
   },
   {
+   "id": "FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO",
+   "cuenta": "JORDI",
+   "tipo": "ad",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Romantizamos ir justos a final de mes y lo llamamos humildad.\n\nNo lo es. Es conformismo con buena prensa. El dinero no arregla una vida, pero la falta de dinero decide por ti todos los días: dónde vives, cuánto duermes, con quién pasas el tiempo.\n\n¿Qué estás dejando de hacer este mes por no poder pagarlo?\n\n#ecommerce #emprender #mentalidad",
+   "archivos": [
+    {
+     "archivo": "FRASE_JORDI_ATICO_MEDIOCRIDAD.mp4",
+     "poster": "media/FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO__00.jpg",
+     "video": "media/FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO__00.mp4",
+     "peso_mb": 0.61
+    }
+   ],
+   "origen": "PARA_REVISAR/FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO"
+  },
+  {
+   "id": "FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO",
+   "cuenta": "JORDI",
+   "tipo": "ad",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
+   "archivos": [
+    {
+     "archivo": "FRASE_JORDI_LAMBO_CREDIBILIDAD.mp4",
+     "poster": "media/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO__00.jpg",
+     "video": "media/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO__00.mp4",
+     "peso_mb": 1.01
+    }
+   ],
+   "origen": "PARA_REVISAR/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO"
+  },
+  {
    "id": "CARRUSEL_JORDI_50_EUROS_17AGO",
    "cuenta": "JORDI",
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "Te parece caro probar si el producto interesa, pero llevas cuatro meses gratis eligiendo el nombre.\n\nDentro te digo qué sale más caro.\n\nEl checklist de producto está en la bio.",
    "archivos": [
     {
@@ -1237,7 +1265,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Y tú llevas medio año montándola.\n\nPero ojo, que aquí es donde casi todos se equivocan.\n\nEl checklist está en la bio.",
    "archivos": [
     {
@@ -1297,7 +1325,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Llevas medio año puliendo la tienda y el que te está comiendo tiene una página fea.\n\nPor qué pasa eso, dentro.\n\nEl checklist de producto está en la bio.",
    "archivos": [
     {
@@ -1357,7 +1385,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "MOFU",
    "caption": "Y no te va a gustar la respuesta si buscabas la fácil.\n\nDentro, lo que nadie te cuenta de cada una.\n\nEl checklist está en la bio.",
    "archivos": [
     {
@@ -1417,7 +1445,7 @@
    "tipo": "carrusel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "TOFU",
    "caption": "Y dos son de tu madre.\n\nNo te lo tomes como una señal de que no vales. Tómatelo como un dato.\n\nEl checklist está en la bio.",
    "archivos": [
     {
@@ -1514,12 +1542,72 @@
    "origen": "PARA_REVISAR/CARR_JORDI_ATAJO"
   },
   {
+   "id": "MEMES_JORDI_ELITE_18AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_plazo_de_envio.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__00.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__00.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_02_facturar_no_es_ganar.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__01.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__01.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_03_a_que_te_dedicas.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__02.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_04_el_proveedor.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__03.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__03.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_05_envio_gratis.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__04.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__04.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_06_subir_presupuesto.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__05.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__05.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_07_visitas_sin_ventas.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__06.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__06.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_08_resena_una_estrella.mp4",
+     "poster": "media/MEMES_JORDI_ELITE_18AGO__07.jpg",
+     "video": "media/MEMES_JORDI_ELITE_18AGO__07.mp4",
+     "peso_mb": 0.18
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_ELITE_18AGO"
+  },
+  {
    "id": "MEMES_JORDI_MES_14AGO",
    "cuenta": "JORDI",
    "tipo": "meme",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -1569,17 +1657,105 @@
      "poster": "media/MEMES_JORDI_MES_14AGO__07.jpg",
      "video": "media/MEMES_JORDI_MES_14AGO__07.mp4",
      "peso_mb": 0.18
-    },
-    {
-     "archivo": "_CLON_CHECK.png",
-     "poster": "media/MEMES_JORDI_MES_14AGO__08.jpg"
-    },
-    {
-     "archivo": "_MOS_8MEMES.jpg",
-     "poster": "media/MEMES_JORDI_MES_14AGO__09.jpg"
     }
    ],
    "origen": "PARA_REVISAR/MEMES_JORDI_MES_14AGO"
+  },
+  {
+   "id": "MEMES_JORDI_SEMANA_25AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_paquete_entregado.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__00.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__00.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_02_probar_mi_tienda.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__01.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__01.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_03_bajar_el_precio.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__02.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_04_abrir_sin_avisar.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__03.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__03.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_05_esperar_la_muestra.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__04.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__04.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_06_ficha_copiada.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__05.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__05.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_07_guardar_tutoriales.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__06.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__06.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "MEME_JORDI_08_primera_venta_real.mp4",
+     "poster": "media/MEMES_JORDI_SEMANA_25AGO__07.jpg",
+     "video": "media/MEMES_JORDI_SEMANA_25AGO__07.mp4",
+     "peso_mb": 0.18
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_25AGO"
+  },
+  {
+   "id": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "El vídeo dura diez segundos. Lo de antes duró años.\n\nDías de no dormir y meses facturando sin ganar nada. Eso último, además, no es mala señal: significa que estás aprendiendo dónde se te va el dinero.\n\n¿En qué punto estás tú ahora mismo?\n\n#ecommerce #dropshipping #emprender",
+   "archivos": [
+    {
+     "archivo": "FRASE_JORDI_PORSCHE_PROCESO.mp4",
+     "poster": "media/FRASE_JORDI_PORSCHE_PROCESO_19AGO__00.jpg",
+     "video": "media/FRASE_JORDI_PORSCHE_PROCESO_19AGO__00.mp4",
+     "peso_mb": 1.35
+    }
+   ],
+   "origen": "PARA_REVISAR/FRASE_JORDI_PORSCHE_PROCESO_19AGO"
+  },
+  {
+   "id": "FRASE_JORDI_RESTAURANTE_CUENTA_19AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Se mira la cena, no los tres años que la pagan.\n\nPor eso tanta gente copia el resultado y ninguno el proceso: el resultado se ve en una foto, el proceso no cabe en ninguna.\n\n¿Tú qué estás construyendo ahora mismo?\n\n#ecommerce #emprender #negocioonline",
+   "archivos": [
+    {
+     "archivo": "FRASE_JORDI_RESTAURANTE_CUENTA.mp4",
+     "poster": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.jpg",
+     "video": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.mp4",
+     "peso_mb": 0.31
+    }
+   ],
+   "origen": "PARA_REVISAR/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO"
   },
   {
    "id": "REEL_JORDI_META300_1AGO",
@@ -1587,7 +1763,7 @@
    "tipo": "reel",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "Mi objetivo nunca fue el coche.\n\nTenía un trabajo normal y solo quería un extra a final de mes. Esa era toda la ambición: una meta pequeña, de trescientos euros.\n\nY la cumplí. Y al cumplirla vi que había otra un poco más arriba que también podía cumplir. Así diez años.\n\nLa gente se pone metas enormes porque cree que las grandes son las que motivan. Es al revés: la meta enorme te frustra el primer mes y lo dejas. La pequeña la cumples, y cumplirla es lo que te enseña que puedes con la siguiente.\n\nEse es el proceso. No hay más.\n\n#emprendimiento #ecommerce #mentalidad",
    "archivos": [
     {
@@ -1641,7 +1817,7 @@
    "tipo": "story",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "Secuencia de stories · no lleva caption de feed.\nPalabra clave del CTA: RECURSOS (única cableada en ManyChat).\nRecurso a responder: calculadora de ROAS real (06_HERRAMIENTAS_HTML/calculadora-roas-real.html) — pantallazo nítido o link, decide Gerard.\nOrden de subida: s01 dolor → s02 win México → s03 win editor → s04 CTA. Entre medias, si Jordi quiere, una story humana suya (día documentado).",
    "archivos": [
     {
@@ -1669,7 +1845,7 @@
    "tipo": "story",
    "dia": "sin día",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "Secuencia de stories · palabra clave del CTA: RECURSOS (la única cableada en ManyChat).\nOrden: s01 dolor -> s02 win Mexico -> s03 win editor -> s04 CTA. Martes, cuenta de JORDI.\nV3 con las correcciones de Santi del 4-ago: fondos suyos sin personas y texto grande.",
    "archivos": [
     {
@@ -1697,7 +1873,7 @@
    "tipo": "story",
    "dia": "reserva",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "",
    "archivos": [
     {
@@ -1733,7 +1909,7 @@
    "tipo": "story",
    "dia": "reserva",
    "hora": "",
-   "etiqueta": "SIN",
+   "etiqueta": "BOFU",
    "caption": "",
    "archivos": [
     {
