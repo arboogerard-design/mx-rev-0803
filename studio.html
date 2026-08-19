@@ -166,6 +166,14 @@ a{color:var(--acc)}
 .refa summary::before{content:"▸ ";color:var(--acc)}
 .refa[open] summary::before{content:"▾ "}
 .refa .cont{font-size:12.5px;color:var(--txt-2);line-height:1.65}
+/* el molde medido: números duros, nunca prosa */
+.molde{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:0 12px 10px;
+  font-size:11px;color:var(--txt-2);font-weight:600}
+.molde span{background:var(--panel-3);border:1px solid var(--line);border-radius:5px;padding:2px 6px}
+.molde .fam{color:var(--acc);border-color:#7B72FF44;background:var(--acc-weak);text-transform:uppercase;
+  letter-spacing:.05em;font-size:10px}
+.molde .sw{width:15px;height:15px;padding:0;border-radius:4px;display:inline-block}
+.molde.sinmedir{display:block;color:var(--txt-3);font-weight:500;font-style:italic}
 .refa ul{margin:5px 0;padding-left:17px}
 .refa li{margin:3px 0}
 .repl{width:calc(100% - 24px);margin:0 12px 12px;padding:11px;border-radius:var(--r1);
@@ -384,7 +392,7 @@ const CLAVE="mentorium2026";
 let YO=null, TAB="repasar", FCUENTA="todo", FETAPA="todo", MODO="foco", RP_I=0;
 let E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[],notas:{}};
 let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};
-let DATOS={piezas:[],dias:[],semana:""}, SEED={}, REFS_PAREJA={}, CAL_AUTO={}, VIVO={};
+let DATOS={piezas:[],dias:[],semana:""}, SEED={}, REFS_PAREJA={}, CAL_AUTO={}, VIVO={}, MOLDES={};
 let guardando=false, pendiente=null, SOLO_LECTURA=false;
 
 const $=s=>document.querySelector(s);
@@ -528,6 +536,22 @@ function filtrosHTML(){
     `<button data-e="${v}" class="${FETAPA===v?"on":""}">${n}</button>`).join("")+'</div></div>';
 }
 
+/* EL MOLDE MEDIDO de un referente (moldes.json, salido de spec_clon.py: ffprobe + scene-detect + PIL).
+   Sin esto REPLICAR es un deseo; con esto es una spec. Si no está medido, se dice — no se inventa. */
+function moldeHTML(sc){
+  const m=MOLDES[sc];
+  if(!m) return `<div class="molde sinmedir">molde sin medir · no bajado todavía</div>`;
+  const d=x=>x==null?"—":x;
+  return `<div class="molde">
+    <span title="duración">${d(m.dur_s)}s</span>
+    <span title="cortes">${d(m.n_cortes)} cortes</span>
+    <span title="cortes por segundo">${m.cortes_s!=null?m.cortes_s.toFixed(3):"—"}/s</span>
+    ${m.primer_corte_s!=null?`<span title="primer corte">1er ${m.primer_corte_s}s</span>`:""}
+    ${m.familia?`<span class="fam">${esc(m.familia)}</span>`:""}
+    ${m.hex_banda?`<span class="sw" style="background:${esc(m.hex_banda)}" title="color de banda ${esc(m.hex_banda)}"></span>`:""}
+  </div>`;
+}
+
 /* CABINA — el pulso real de la fábrica (estado_vivo.json, medido del disco cada 10 min).
    Sin esto el panel es una foto; con esto sabes qué está pasando ahora mismo. */
 function cabinaHTML(){
@@ -574,6 +598,7 @@ function vistaFabrica(){
         ${t.likes!=null?`<span class="met">♥ ${Number(t.likes).toLocaleString("es")}</span>`:""}
         ${t.coms!=null?`<span class="met">💬 ${Number(t.coms).toLocaleString("es")}</span>`:""}
       </div>
+      ${moldeHTML(t.sc)}
       ${a?`<details class="refa"><summary>Análisis · qué tocar y qué no</summary><div class="cont">
         <p style="margin:0 0 7px">${esc(a.receta||"")}</p>
         <b style="color:var(--ok);font-size:11px">TOCAR</b><ul>${(a.tocar||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
@@ -968,11 +993,11 @@ async function entrar(quien){
 }
 async function cargar(){
   try{ MODO=localStorage.mx_modo||"foco"; }catch(e){}
-  const [pz,rf,cal,sd,vv]=await Promise.all([
+  const [pz,rf,cal,sd,vv,md]=await Promise.all([
     jget("piezas.json"), jget("referentes.json"), jget("calendario.json"), jget("seed.json"),
-    jget("estado_vivo.json",{cache:"no-store"})]);
+    jget("estado_vivo.json",{cache:"no-store"}), jget("moldes.json")]);
   if(pz) DATOS=pz;
-  VIVO=vv||{};
+  VIVO=vv||{}; MOLDES=md||{};
   SEED=sd||{};
   CAL_AUTO=cal||{};
   REFS_PAREJA={}; ((rf&&rf.pares)||[]).forEach(x=>{REFS_PAREJA[x.pieza]=x;});
