@@ -507,7 +507,14 @@ function pendientes(){
        Ahora CUALQUIER decision (aprobado, denegado o corregir) la saca de la cola.
        Las que estan en `corregir` no se pierden: siguen en DATOS y en el contrato, y se ven en la
        pestaña de calendario y en el JSON — lo que cambia es que ya no cuentan como pendientes. */
-    return paso_f1(p) && f1de(p)!=="denegado" && !d;});
+    /* ⛔ 19-ago · QUITADO `paso_f1(p)`. Era: `!HAY_F1() || f1de(p)==="aprobado"`, o sea que en
+       cuanto UNA sola pieza quedaba aprobada, la puerta se cerraba y solo pasaban las aprobadas.
+       Medido en el panel en vivo: f1 = {pendiente: 22, aprobado: 2} -> la cola daba 0 de 24, y
+       «Ver todo» imprimia «Has decidido las 24 piezas de esta vista» siendo mentira: faltaban 22,
+       entre ellas las 8 de JAVI de ese mismo dia. Una fase que se activa sola porque alguien
+       aprobo algo no es una fase: es una trampa. Si algun dia hace falta, que sea una bandera
+       explicita en DATOS, no deducida. */
+    return f1de(p)!=="denegado" && !d;});
 }
 
 /* ---------- el auto-orden que pidio Gerard ----------
@@ -625,7 +632,10 @@ function rpLista(){
   return (DATOS.piezas||[]).filter(p=>{
     if(FCUENTA!=="todo" && p.cuenta!==FCUENTA) return false;
     if(FETAPA!=="todo" && etapa(p)!==FETAPA) return false;
-    const d=dec(p); return !(d&&d.estado);          /* solo lo que falta por decidir */
+    /* dec() indexa por ID (`E.decisiones[id]`). Pasarle el objeto devolvia siempre
+       undefined, asi que una pieza YA decidida no salia nunca de la cola de «Repasar»,
+       que ademas es la pestaña por defecto. (19-ago) */
+    const d=dec(p.id); return !(d&&d.estado);       /* solo lo que falta por decidir */
   });
 }
 
@@ -635,7 +645,7 @@ function vistaRepasar(){
     +'<h2>Nada pendiente</h2><div class="rpsub">Ya has decidido todo lo que hay con estos filtros.</div></div>';
   if(RP_I>=ps.length) RP_I=ps.length-1;
   if(RP_I<0) RP_I=0;
-  const p=ps[RP_I], d=dec(p), et=etapa(p);
+  const p=ps[RP_I], d=dec(p.id), et=etapa(p);   /* dec() indexa por ID, no por objeto (19-ago) */
   /* archivos[0] es un OBJETO {archivo,poster,video} (no un string): hay que sacar .video,
      igual que hace cardHTML. Antes se metia el objeto crudo -> [object Object] -> nada se veia. */
   const a0=(p.archivos&&p.archivos[0])||null;
