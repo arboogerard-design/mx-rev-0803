@@ -1,8 +1,8 @@
 {
- "generado": "2026-08-19 14:40",
+ "generado": "2026-08-19 14:55",
  "piezas": {
-  "wip": 111,
-  "para_revisar": 140,
+  "wip": 110,
+  "para_revisar": 141,
   "bloqueadas": 161,
   "con_gate_pass": 3
  },
