@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-18",
+ "generado": "2026-08-19",
  "semana": "17-23 agosto 2026",
  "dias": [
   "lun 17",
@@ -836,6 +836,96 @@
    "origen": "PARA_REVISAR/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO"
   },
   {
+   "id": "CARR_JAVI_PANEL_8AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "BOFU",
+   "caption": "El panel de un alumno, tal cual. Sin recortes raros y sin maquillar.\n\nLlegó con tráfico y pocas ventas. Lo de siempre: la tienda no convertía.\n\nEl cambio: ✅ números claros cada día ✅ arreglar la tienda ANTES de meter más dinero en ads ✅ alguien delante que ya pasó por ahí\n\nEl mérito es suyo: ejecutó sin excusas.\n\nLa captura es de su panel real — la cifra la ves en la imagen, no te la escribo yo.\n\nComenta PANEL y te enseño por dónde se empieza. #ecommerce #negocios #casoreal",
+   "archivos": [
+    {
+     "archivo": "s01.png",
+     "poster": "media/CARR_JAVI_PANEL_8AGO__00.jpg"
+    },
+    {
+     "archivo": "s02.png",
+     "poster": "media/CARR_JAVI_PANEL_8AGO__01.jpg"
+    },
+    {
+     "archivo": "s03.png",
+     "poster": "media/CARR_JAVI_PANEL_8AGO__02.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARR_JAVI_PANEL_8AGO"
+  },
+  {
+   "id": "CARR_JAVI_PLACA_CLON_7AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "BOFU",
+   "caption": "Nueva placa entregada 🏆\n\nEste alumno llegó facturando pero sin ver un euro limpio: todo se le iba entre producto, envíos y ads.\n\nEl cambio: ✅ números claros desde el día uno ✅ un producto que sí deja margen ✅ estructura antes de escalar ✅ alguien delante que ya recorrió el camino\n\nEl mérito es suyo: vino a todas las sesiones y ejecutó sin excusas.\n\nEl resultado lo ves en las fotos — la placa se entregó delante de toda la comunidad en el último evento.\n\nNo fue suerte. Fue método, acompañamiento y ejecución.\n\nComenta PLACA y te cuento cómo empezó. #ecommerce #negocios #casoreal",
+   "archivos": [
+    {
+     "archivo": "s01.png",
+     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__00.jpg"
+    },
+    {
+     "archivo": "s02.png",
+     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__01.jpg"
+    },
+    {
+     "archivo": "s03.png",
+     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__02.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARR_JAVI_PLACA_CLON_7AGO"
+  },
+  {
+   "id": "CARR_JAVI_RECURSOS",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "BOFU",
+   "caption": "Lo que usan mis alumnos para no quemar dinero.\n\nDentro va lo mismo que usamos en las auditorías: calculadoras de cash real, margen y qué mirar en qué orden. Sin humo, herramientas reales.\n\nComenta RECURSOS y te llega. Gratis, hoy.\n\n#ecommerce #negocios #emprendedores",
+   "archivos": [
+    {
+     "archivo": "_PREVIEW_CARR_JAVI_RECURSOS.mp4",
+     "poster": "media/CARR_JAVI_RECURSOS__00.jpg",
+     "video": "media/CARR_JAVI_RECURSOS__00.mp4",
+     "peso_mb": 0.47
+    },
+    {
+     "archivo": "s01.png",
+     "poster": "media/CARR_JAVI_RECURSOS__01.jpg"
+    },
+    {
+     "archivo": "s02.png",
+     "poster": "media/CARR_JAVI_RECURSOS__02.jpg"
+    },
+    {
+     "archivo": "s03.png",
+     "poster": "media/CARR_JAVI_RECURSOS__03.jpg"
+    },
+    {
+     "archivo": "s04.png",
+     "poster": "media/CARR_JAVI_RECURSOS__04.jpg"
+    },
+    {
+     "archivo": "s05.png",
+     "poster": "media/CARR_JAVI_RECURSOS__05.jpg"
+    },
+    {
+     "archivo": "s06.png",
+     "poster": "media/CARR_JAVI_RECURSOS__06.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARR_JAVI_RECURSOS"
+  },
+  {
    "id": "MEME_JAVI_LIQUIDEZ_15AGO",
    "cuenta": "JAVI",
    "tipo": "meme",
@@ -858,6 +948,136 @@
    "origen": "PARA_REVISAR/MEME_JAVI_LIQUIDEZ_15AGO"
   },
   {
+   "id": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "mar 4",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "Trabajo desde casa y negocio propio no son lo mismo.\n\nEn uno alguien decide por ti y cobras igual. En el otro decides tú, y también asumes tú.\n\nSi lo que buscas es lo primero, esto no es tu sitio y te ahorro el tiempo.\n\nComenta RECURSOS y te llega el módulo de montar la tienda.\n\n#ecommerce #shopify",
+   "archivos": [
+    {
+     "archivo": "M1_empleo_vs_negocio.mp4",
+     "poster": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.mp4",
+     "peso_mb": 0.22
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO"
+  },
+  {
+   "id": "MEME_JAVI_M2_CLASE_17MIN_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "jue 6",
+   "hora": "19:30",
+   "etiqueta": "SIN",
+   "caption": "Abrir la cuenta de Shopify es la clase 01 del módulo y dura 1:23. Literal.\n\nLa clase 09 es el theme —lo que ve tu cliente— y dura 17:03. Es la más larga de las doce y es donde se atasca todo el mundo.\n\nNadie se queda fuera por no saber abrir una cuenta. Se queda fuera por el orden de lo que va después.\n\n12 clases. 1 h 06 min. Comenta RECURSOS.\n\n#shopify #ecommerce",
+   "archivos": [
+    {
+     "archivo": "M2_clase_17_minutos.mp4",
+     "poster": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.mp4",
+     "peso_mb": 0.19
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M2_CLASE_17MIN_1AGO"
+  },
+  {
+   "id": "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "sáb 8",
+   "hora": "libre",
+   "etiqueta": "SIN",
+   "caption": "Dentro del panel hay 64 herramientas repartidas en 10 secciones. Calculadoras, auditores, generadores, simuladores.\n\nNinguna decide qué vendes, ni a quién, ni a qué precio. Eso lo decides tú, y es la única parte que no se puede automatizar.\n\nLas herramientas ahorran horas. No ahorran criterio.\n\nComenta RECURSOS.\n\n#ecommerce #shopify #herramientas",
+   "archivos": [
+    {
+     "archivo": "M3_64_herramientas.mp4",
+     "poster": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.mp4",
+     "peso_mb": 0.19
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO"
+  },
+  {
+   "id": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "dom 9",
+   "hora": "19:30",
+   "etiqueta": "SIN",
+   "caption": "El primer paso no cuesta dinero, cuesta ponerse.\n\nLa clase 01 del módulo va de abrir tu tienda de Shopify por un euro al mes, y dura 1 minuto y 23 segundos. Está dentro del panel, sin pagar nada.\n\nSi eso no lo has hecho todavía, no preguntes por lo de después. Haz eso primero.\n\nComenta RECURSOS.\n\n#ecommerce #shopify",
+   "archivos": [
+    {
+     "archivo": "M4_precio_antes_de_empezar.mp4",
+     "poster": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.jpg",
+     "video": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.mp4",
+     "peso_mb": 0.22
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JAVI_M4_PRECIO_ANTES_1AGO"
+  },
+  {
+   "id": "MEME_REPLICA_JAVI_DEV1K",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CUENTA: @javier.sanchezecom\nFORMATO: meme letterbox @co1e0 · banda NEGRA + texto BLANCO · 1 plano fijo · 0 cortes · 7,50 s\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard.\n\nQUÉ VIRAL REPLICA (esto es lo que faltaba en la versión anterior)\n Réplica del post real `DYn3Ujti6Sd` de @co1e0 — 59.714 plays medidos (scrape Apify, 04-jun).\n Original literal:\n   \"How I look at bro after he just paid a dev $1k to build him a Shopify theme and I just\n    took a screenshot and asked Claude to give me the custom liquid\"\n Nuestra versión, traducción casi palabra por palabra:\n   \"Cómo miro a mi colega después de pagarle 1.000 € a un programador para el tema de Shopify,\n    y yo hice una captura y le pedí el código a Claude\"\n   (la captura tardó 4 segundos)\n 4 líneas, igual que el original. El remate entre paréntesis lo llevan solo el nº1 (407K) y el\n nº8 del corpus: es lo que separa un meme de 40K de uno de 400K.\n\n Y lo mejor: es VERDAD. El panel tiene una biblioteca de Liquid de Shopify hecha exactamente\n así (`biblioteca-liquid-shopify.html`, 175 KB, la herramienta más grande del panel).\n\nPLANO: Javi solo, en el evento, mirada de lado con media sonrisa — que es literalmente\n \"cómo miro a mi colega\". Clip verificado como Javi en el banco (`evento_r1c5602_17`, 4K).\n Descartado el plano del salón del evento donde salían los dos: identidad cruzada = pieza tirada.\n Descartada también la placa del alumno que aparece en ese clip: lleva una cifra visible y Javi\n viene de un baneo de Meta (cero cifras como reclamo).\n\nMÚSICA VIRAL: Cochise — Tell Em (Instrumental Remix, slowed + reverb). Trending, sin letra.\n Si puedes, súbela con la canción desde la app nativa de Instagram en vez de con el audio\n incrustado: así el reel entra en la página de esa canción y arrastra alcance.\n\nLUFS: input_i = -14,04 · input_tp = -4,52 (gate 2 PASS)\n\nCAPTION (pegar tal cual):\nEl tema no hay que programarlo desde cero. Hay que saber qué pedirle.\n\nDentro del panel está la biblioteca de códigos de Shopify y el módulo nuevo: 12 clases,\n1 h 06 min, de la cuenta vacía a la tienda publicada.\n\nComenta RECURSOS y te llega el acceso.\n\n#shopify #ecommerce\n\nNOTAS:\n - Post-baneo: cero promesas de dinero, cero cifras como reclamo. 2 hashtags de 3.\n - No nombrar ninguna agencia ni programador concreto, ni en pantalla ni en comentarios.",
+   "archivos": [
+    {
+     "archivo": "MEME_REPLICA_JAVI_DEV1K.mp4",
+     "poster": "media/MEME_REPLICA_JAVI_DEV1K__00.jpg",
+     "video": "media/MEME_REPLICA_JAVI_DEV1K__00.mp4",
+     "peso_mb": 0.16
+    },
+    {
+     "archivo": "MEME_REPLICA_JAVI_DEV1K_PORTADA.png",
+     "poster": "media/MEME_REPLICA_JAVI_DEV1K__01.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_REPLICA_JAVI_DEV1K"
+  },
+  {
+   "id": "REEL_JAVI_LO_PEOR_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "mar 4",
+   "hora": "19:30",
+   "etiqueta": "SIN",
+   "caption": "Cuando monté mi primera tienda fui con mis ahorros. Y lo que pensé no fue cuánto podía sacar, fue esto: si los pierdo, no pasa nada, porque sigo trabajando y sigo generando.\n\nAhí es donde la mayoría se equivoca. Miran el techo y no miran el suelo.\n\nLa pregunta buena no es cuánto puedes ganar. Es si puedes perder lo que vas a poner y seguir con tu vida exactamente igual.\n\nSi la respuesta es no, todavía no toca. Y no pasa nada: toca más adelante.\n\n#ecommerce #negocios #emprender",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_LO_PEOR.mp4",
+     "poster": "media/REEL_JAVI_LO_PEOR_1AGO__00.jpg",
+     "video": "media/REEL_JAVI_LO_PEOR_1AGO__00.mp4",
+     "peso_mb": 0.76
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_LO_PEOR_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_PANEL_MODULO_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "jue 6",
+   "hora": "19:30",
+   "etiqueta": "SIN",
+   "caption": "Esto es el módulo nuevo por dentro, sin montaje.\n\nDoce clases en el orden en que hay que hacerlas: cuenta, idioma, configuración, políticas, dominio, producto, colecciones, menú, theme, ficha, IA y el bonus de ATLAS.\n\nLa primera dura 1:23. La del theme, 17:03. Ahí es donde se decide si tu tienda parece una tienda.\n\nEstá dentro del panel. Comenta RECURSOS.\n\n#shopify #ecommerce",
+   "archivos": [
+    {
+     "archivo": "R3_panel_modulo_tienda.mp4",
+     "poster": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.jpg",
+     "video": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.mp4",
+     "peso_mb": 1.22
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_PANEL_MODULO_1AGO"
+  },
+  {
    "id": "TH_QUIEN_ES_JAVI_17AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -874,6 +1094,82 @@
     }
    ],
    "origen": "PARA_REVISAR/TH_QUIEN_ES_JAVI_17AGO"
+  },
+  {
+   "id": "STORIES_JAVI_FREESTYLE_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "reserva",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "(stories — sin caption; el CTA va en J4: «Responde ORDEN» → Auditor de Tienda y Checkout, gratis)\nOrden de publicación: J1 (sábado 8:33) → J2 (la flecha) → J3 (el grupo) → J4 (recurso).\nMisma palabra ORDEN que el carrusel de hoy: un solo embudo.",
+   "archivos": [
+    {
+     "archivo": "J1_sabado_833.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__00.jpg"
+    },
+    {
+     "archivo": "J2_flecha.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__01.jpg"
+    },
+    {
+     "archivo": "J3_grupo.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__02.jpg"
+    },
+    {
+     "archivo": "J4_recurso.jpg",
+     "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JAVI_FREESTYLE_2AGO"
+  },
+  {
+   "id": "STORIES_JAVI_MIERCOLES_A5_5AGO",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Secuencia de stories · no lleva caption de feed.\nPalabra clave del CTA: RECURSOS (única cableada en ManyChat).\nRecurso a responder: MENTORIUM_Recurso_Video_Ads (06_HERRAMIENTAS_HTML/MENTORIUM_Recurso_Video_Ads.html).\nOrden: s01 dolor → s02 win 8.446 MXN → s03 CTA. Día: MIÉRCOLES 5-ago, cuenta de JAVI.",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mxn.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__01.jpg"
+    },
+    {
+     "archivo": "s03_cta_recursos.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__02.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JAVI_MIERCOLES_A5_5AGO"
+  },
+  {
+   "id": "STORIES_JAVI_MIERCOLES_A5_V3",
+   "cuenta": "JAVI",
+   "tipo": "story",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Secuencia de stories · palabra clave: RECURSOS. Miercoles 5-ago, cuenta de JAVI.\nOrden: s01 dolor -> s02 win 8.446 MXN -> s03 CTA con el recurso Video Ads.\nV3 con las correcciones de Santi del 4-ago.",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_V3__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mxn.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_V3__01.jpg"
+    },
+    {
+     "archivo": "s03_cta_recursos.jpg",
+     "poster": "media/STORIES_JAVI_MIERCOLES_A5_V3__02.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JAVI_MIERCOLES_A5_V3"
   },
   {
    "id": "CARRUSEL_JORDI_50_EUROS_17AGO",
@@ -1176,6 +1472,48 @@
    "origen": "PARA_REVISAR/CARRUSEL_JORDI_TRES_VENTAS_18AGO"
   },
   {
+   "id": "CARR_JORDI_ATAJO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "MOFU",
+   "caption": "Empezó de cero en marzo. Mira cómo va.\n\nSin historia bonita: un sistema en orden y alguien diciéndole qué NO hacer. Las wins llegan así, cada semana. Enteras, sin retocar.\n\nComenta ATAJO. Lo tienes en el LINK DE LA BIO. Sin humo, hoy.\n\n#ecommerce #negocios #dropshipping",
+   "archivos": [
+    {
+     "archivo": "_PREVIEW_CARR_JORDI_ATAJO.mp4",
+     "poster": "media/CARR_JORDI_ATAJO__00.jpg",
+     "video": "media/CARR_JORDI_ATAJO__00.mp4",
+     "peso_mb": 0.52
+    },
+    {
+     "archivo": "s01.png",
+     "poster": "media/CARR_JORDI_ATAJO__01.jpg"
+    },
+    {
+     "archivo": "s02.png",
+     "poster": "media/CARR_JORDI_ATAJO__02.jpg"
+    },
+    {
+     "archivo": "s03.png",
+     "poster": "media/CARR_JORDI_ATAJO__03.jpg"
+    },
+    {
+     "archivo": "s04.png",
+     "poster": "media/CARR_JORDI_ATAJO__04.jpg"
+    },
+    {
+     "archivo": "s05.png",
+     "poster": "media/CARR_JORDI_ATAJO__05.jpg"
+    },
+    {
+     "archivo": "s06.png",
+     "poster": "media/CARR_JORDI_ATAJO__06.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARR_JORDI_ATAJO"
+  },
+  {
    "id": "MEMES_JORDI_MES_14AGO",
    "cuenta": "JORDI",
    "tipo": "meme",
@@ -1242,6 +1580,188 @@
     }
    ],
    "origen": "PARA_REVISAR/MEMES_JORDI_MES_14AGO"
+  },
+  {
+   "id": "REEL_JORDI_META300_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Mi objetivo nunca fue el coche.\n\nTenía un trabajo normal y solo quería un extra a final de mes. Esa era toda la ambición: una meta pequeña, de trescientos euros.\n\nY la cumplí. Y al cumplirla vi que había otra un poco más arriba que también podía cumplir. Así diez años.\n\nLa gente se pone metas enormes porque cree que las grandes son las que motivan. Es al revés: la meta enorme te frustra el primer mes y lo dejas. La pequeña la cumples, y cumplirla es lo que te enseña que puedes con la siguiente.\n\nEse es el proceso. No hay más.\n\n#emprendimiento #ecommerce #mentalidad",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_META300.mp4",
+     "poster": "media/REEL_JORDI_META300_1AGO__00.jpg",
+     "video": "media/REEL_JORDI_META300_1AGO__00.mp4",
+     "peso_mb": 1.02
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_META300_1AGO"
+  },
+  {
+   "id": "REEL_JORDI_MIEDO_QUEDIRAN",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Tardé en comprarme el coche por miedo al qué dirán.\n\nCuando por fin lo hice, no me crucé con una sola persona que me hiciera un comentario. Ni uno.\n\nEl miedo casi nunca es a la consecuencia. Es a la reacción de gente que ni se acuerda de ti al día siguiente. Y te bloquea igual para comprarte algo que para abrir una tienda, o para cambiar de casa.\n\nEsa es la primera barrera, y nos la ponemos nosotros.\n\n#ecommerce #mentalidad",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_MIEDO_QUEDIRAN.mp4",
+     "poster": "media/REEL_JORDI_MIEDO_QUEDIRAN__00.jpg",
+     "video": "media/REEL_JORDI_MIEDO_QUEDIRAN__00.mp4",
+     "peso_mb": 1.26
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_MIEDO_QUEDIRAN"
+  },
+  {
+   "id": "REEL_JORDI_NO_CAMBIO_NADA",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Me preguntaron qué me ha cambiado la vida esto. Y la respuesta decepciona: nada.\n\nMe levanto a la misma hora, llevo a mi hijo al colegio y trabajo las mismas horas. Antes esas horas las pasaba en el coche viajando y vendiendo. Ahora las paso en la oficina.\n\nEso es literalmente lo único que ha cambiado.\n\nSi esperas que el negocio te cambie la rutina, vas a esperar sentado. Lo que cambia es a quién le rindes cuentas.\n\n#ecommerce #mentalidad",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_NO_CAMBIO_NADA.mp4",
+     "poster": "media/REEL_JORDI_NO_CAMBIO_NADA__00.jpg",
+     "video": "media/REEL_JORDI_NO_CAMBIO_NADA__00.mp4",
+     "peso_mb": 1.42
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_NO_CAMBIO_NADA"
+  },
+  {
+   "id": "STORIES_JORDI_MARTES_A7_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Secuencia de stories · no lleva caption de feed.\nPalabra clave del CTA: RECURSOS (única cableada en ManyChat).\nRecurso a responder: calculadora de ROAS real (06_HERRAMIENTAS_HTML/calculadora-roas-real.html) — pantallazo nítido o link, decide Gerard.\nOrden de subida: s01 dolor → s02 win México → s03 win editor → s04 CTA. Entre medias, si Jordi quiere, una story humana suya (día documentado).",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mexico.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__01.jpg"
+    },
+    {
+     "archivo": "s03_win_editor.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__02.jpg"
+    },
+    {
+     "archivo": "s04_cta_recursos.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_MARTES_A7_4AGO"
+  },
+  {
+   "id": "STORIES_JORDI_MARTES_A7_V3",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Secuencia de stories · palabra clave del CTA: RECURSOS (la única cableada en ManyChat).\nOrden: s01 dolor -> s02 win Mexico -> s03 win editor -> s04 CTA. Martes, cuenta de JORDI.\nV3 con las correcciones de Santi del 4-ago: fondos suyos sin personas y texto grande.",
+   "archivos": [
+    {
+     "archivo": "s01_dolor.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_V3__00.jpg"
+    },
+    {
+     "archivo": "s02_win_mexico.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_V3__01.jpg"
+    },
+    {
+     "archivo": "s03_win_editor.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_V3__02.jpg"
+    },
+    {
+     "archivo": "s04_cta_recursos.jpg",
+     "poster": "media/STORIES_JORDI_MARTES_A7_V3__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_MARTES_A7_V3"
+  },
+  {
+   "id": "STORIES_JORDI_TESTIMONIOS_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "reserva",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "T1_primera_venta.jpg",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__00.jpg"
+    },
+    {
+     "archivo": "T1_primera_venta.png",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__01.jpg"
+    },
+    {
+     "archivo": "T2_dsers_cayo.jpg",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__02.jpg"
+    },
+    {
+     "archivo": "T2_dsers_cayo.png",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__03.jpg"
+    },
+    {
+     "archivo": "T3_clase.jpg",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__04.jpg"
+    },
+    {
+     "archivo": "T3_clase.png",
+     "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_TESTIMONIOS_1AGO"
+  },
+  {
+   "id": "STORIES_JORDI_WINS_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "reserva",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "W1_margen_25.jpg",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__00.jpg"
+    },
+    {
+     "archivo": "W1_margen_25.png",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__01.jpg"
+    },
+    {
+     "archivo": "W2_pedido_1003.jpg",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__02.jpg"
+    },
+    {
+     "archivo": "W2_pedido_1003.png",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__03.jpg"
+    },
+    {
+     "archivo": "W3_mes_anterior.jpg",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__04.jpg"
+    },
+    {
+     "archivo": "W3_mes_anterior.png",
+     "poster": "media/STORIES_JORDI_WINS_1AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_WINS_1AGO"
   }
  ]
 }

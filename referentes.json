@@ -190,5 +190,90 @@
    "como": "ruta local verificada"
   }
  ],
- "sin_referente": []
+ "sin_referente": [
+  {
+   "pieza": "CARR_JAVI_PANEL_8AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "CARR_JAVI_PLACA_CLON_7AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "CARR_JAVI_RECURSOS",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "CARR_JORDI_ATAJO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "MEME_JAVI_M2_CLASE_17MIN_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "MEME_REPLICA_JAVI_DEV1K",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "REEL_JAVI_LO_PEOR_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "REEL_JAVI_PANEL_MODULO_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "REEL_JORDI_META300_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "REEL_JORDI_MIEDO_QUEDIRAN",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "REEL_JORDI_NO_CAMBIO_NADA",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JAVI_FREESTYLE_2AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JAVI_MIERCOLES_A5_5AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JAVI_MIERCOLES_A5_V3",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JORDI_MARTES_A7_4AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JORDI_MARTES_A7_V3",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JORDI_TESTIMONIOS_1AGO",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "STORIES_JORDI_WINS_1AGO",
+   "motivo": "no declara referente"
+  }
+ ]
 }
