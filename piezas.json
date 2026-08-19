@@ -1782,6 +1782,24 @@
    "origen": "PARA_REVISAR/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO"
   },
   {
+   "id": "PAPEL_JORDI_UNA_TARDE_19AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "La gente cree que la IA le va a montar la tienda. No.\n\nLo que sí hace en una tarde es la parte que nadie quiere hacer: dejarte el stack decidido, el plan de contenido escrito y el sitio exacto por donde se te cae la gente. Lo aburrido. Lo que decide.\n\nLo demás sigue siendo trabajo tuyo, y menos mal.\n\n¿Cuál de las tres te ahorraría más tiempo esta semana?\n\n#ecommerce #inteligenciaartificial #emprender",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JORDI_UNA_TARDE.mp4",
+     "poster": "media/PAPEL_JORDI_UNA_TARDE_19AGO__00.jpg",
+     "video": "media/PAPEL_JORDI_UNA_TARDE_19AGO__00.mp4",
+     "peso_mb": 0.68
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JORDI_UNA_TARDE_19AGO"
+  },
+  {
    "id": "REEL_JORDI_META300_1AGO",
    "cuenta": "JORDI",
    "tipo": "reel",
