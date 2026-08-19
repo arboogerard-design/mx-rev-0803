@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-19 03:55",
+ "generado": "2026-08-19 04:10",
  "piezas": {
   "wip": 109,
   "para_revisar": 134,
@@ -33,7 +33,7 @@
  },
  "torre": {
   "viva": true,
-  "audios_transcritos": 197,
+  "audios_transcritos": 201,
   "referentes_bajados": 335
  },
  "fotos": {
