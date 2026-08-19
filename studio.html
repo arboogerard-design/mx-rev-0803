@@ -123,6 +123,19 @@ a{color:var(--acc)}
 .pill.BOFU{color:var(--warn);border-color:#E6AE4A44;background:#E6AE4A14}
 .pill.acc{color:var(--acc);border-color:#7B72FF55;background:var(--acc-weak)}
 
+/* ── CABINA (pulso real de la fábrica) ─────────────────────────────── */
+.cabina{background:var(--panel);border:1px solid var(--line);border-radius:var(--r2);
+  padding:14px 16px;margin-bottom:16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:10px}
+.kpi{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r1);
+  padding:9px 11px;text-align:center}
+.kpi b{display:block;font-size:19px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.kpi span{display:block;font-size:10px;color:var(--txt-3);text-transform:uppercase;
+  letter-spacing:.07em;font-weight:700;margin-top:2px}
+.aviso{margin-top:11px;padding:9px 12px;border-radius:var(--r1);background:#E6AE4A12;
+  border:1px solid #E6AE4A3a;color:var(--warn);font-size:12.5px;line-height:1.55}
+.sello{margin-top:9px;font-size:10.5px;color:var(--txt-3);text-align:right;letter-spacing:.04em}
+
 /* ── FÁBRICA (espía) ───────────────────────────────────────────────── */
 .nota{background:var(--panel);border:1px solid var(--line);border-left:2.5px solid var(--acc);
   border-radius:var(--r2);padding:13px 16px;color:var(--txt-2);font-size:13px;margin-bottom:18px;line-height:1.6}
@@ -371,7 +384,7 @@ const CLAVE="mentorium2026";
 let YO=null, TAB="repasar", FCUENTA="todo", FETAPA="todo", MODO="foco", RP_I=0;
 let E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[],notas:{}};
 let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};
-let DATOS={piezas:[],dias:[],semana:""}, SEED={}, REFS_PAREJA={}, CAL_AUTO={};
+let DATOS={piezas:[],dias:[],semana:""}, SEED={}, REFS_PAREJA={}, CAL_AUTO={}, VIVO={};
 let guardando=false, pendiente=null, SOLO_LECTURA=false;
 
 const $=s=>document.querySelector(s);
@@ -515,11 +528,31 @@ function filtrosHTML(){
     `<button data-e="${v}" class="${FETAPA===v?"on":""}">${n}</button>`).join("")+'</div></div>';
 }
 
+/* CABINA — el pulso real de la fábrica (estado_vivo.json, medido del disco cada 10 min).
+   Sin esto el panel es una foto; con esto sabes qué está pasando ahora mismo. */
+function cabinaHTML(){
+  const v=VIVO; if(!v||!v.generado) return "";
+  const m=v.moldes||{}, p=v.piezas||{}, t=v.torre||{}, f=v.fotos||{};
+  const kpi=(n,lab,col)=>`<div class="kpi"><b style="${col?"color:"+col:""}">${n}</b><span>${esc(lab)}</span></div>`;
+  return `<div class="cabina">
+    <div class="kpis">
+      ${kpi(m.referentes||0,"moldes bajados")}
+      ${kpi(m.medidos||0,"ya medidos",(m.medidos||0)?"var(--ok)":"var(--warn)")}
+      ${kpi(p.para_revisar||0,"por revisar")}
+      ${kpi((v.cola||{}).total||0,"en cola")}
+      ${kpi(t.viva?(t.audios_transcritos||0):"—","audios transcritos",t.viva?"var(--ok)":"var(--txt-3)")}
+      ${kpi((f.javi||0)+" / "+(f.jordi||0),"fotos Javi/Jordi",((Math.min(f.javi||0,f.jordi||0))<12)?"var(--warn)":"")}
+    </div>
+    ${(v.avisos||[]).map(a=>`<div class="aviso">${esc(a)}</div>`).join("")}
+    <div class="sello">medido del disco · ${esc(v.generado)}</div>
+  </div>`;
+}
+
 /* FÁBRICA — el corazón: referente → REPLICAR → clon */
 function vistaFabrica(){
   const fuera=new Set((SEED.ESPIA_FUERA||[]).map(s=>String(s).toLowerCase()));
   const an=SEED.ESPIA_ANALISIS||{};
-  let h='<div class="nota"><b>Aquí no se escribe nada desde cero.</b> Estos son los referentes '
+  let h=cabinaHTML()+'<div class="nota"><b>Aquí no se escribe nada desde cero.</b> Estos son los referentes '
    +'REALES medidos, con sus likes y comentarios. Pulsa <b>REPLICAR</b> y me llega la orden: '
    +'clono el molde 1:1 para Javi o Jordi y aparece en <b>Por revisar</b>. Pega abajo cualquier '
    +'link nuevo y entra a la parrilla.</div>'
@@ -935,9 +968,11 @@ async function entrar(quien){
 }
 async function cargar(){
   try{ MODO=localStorage.mx_modo||"foco"; }catch(e){}
-  const [pz,rf,cal,sd]=await Promise.all([
-    jget("piezas.json"), jget("referentes.json"), jget("calendario.json"), jget("seed.json")]);
+  const [pz,rf,cal,sd,vv]=await Promise.all([
+    jget("piezas.json"), jget("referentes.json"), jget("calendario.json"), jget("seed.json"),
+    jget("estado_vivo.json",{cache:"no-store"})]);
   if(pz) DATOS=pz;
+  VIVO=vv||{};
   SEED=sd||{};
   CAL_AUTO=cal||{};
   REFS_PAREJA={}; ((rf&&rf.pares)||[]).forEach(x=>{REFS_PAREJA[x.pieza]=x;});
