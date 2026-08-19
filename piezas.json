@@ -1040,6 +1040,42 @@
    "origen": "PARA_REVISAR/MEME_REPLICA_JAVI_DEV1K"
   },
   {
+   "id": "PAPEL_JAVI_CUATRO_FUGAS_19AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Nadie tiene un problema de tráfico. Casi todos tienen cuatro fugas abiertas a la vez.\n\nEl checkout que pide un paso de más. La ficha que hay que explicar. El precio que se toca por pánico. Y el producto que nunca se validó.\n\nNinguna de las cuatro se arregla metiendo más presupuesto: escalar amplifica lo que ya pasa.\n\n¿Por cuál empiezas tú? Dímelo en comentarios.\n\n#ecommerce #emprender #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JAVI_CUATRO_FUGAS.mp4",
+     "poster": "media/PAPEL_JAVI_CUATRO_FUGAS_19AGO__00.jpg",
+     "video": "media/PAPEL_JAVI_CUATRO_FUGAS_19AGO__00.mp4",
+     "peso_mb": 0.68
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JAVI_CUATRO_FUGAS_19AGO"
+  },
+  {
+   "id": "PAPEL_JAVI_EL_QUE_DUDA_19AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "El que duda no compra, y encima no te lo dice. Se va y ya está.\n\nPor eso las tiendas que no venden casi nunca tienen un problema de producto: tienen un problema de confianza. Y la confianza no se nota mirándola por dentro, porque tú ya te fías de ti.\n\nTres cosas que se miran antes de tocar el presupuesto, y ninguna te cuesta nada: si tu tienda da confianza a un desconocido, en qué punto de madurez estás de verdad, y qué pasaría si doblaras la inversión.\n\n¿Cuál de las tres crees que tienes peor?\n\n#ecommerce #emprender #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JAVI_EL_QUE_DUDA_NO_COMPRA.mp4",
+     "poster": "media/PAPEL_JAVI_EL_QUE_DUDA_19AGO__00.jpg",
+     "video": "media/PAPEL_JAVI_EL_QUE_DUDA_19AGO__00.mp4",
+     "peso_mb": 0.67
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JAVI_EL_QUE_DUDA_19AGO"
+  },
+  {
    "id": "REEL_JAVI_LO_PEOR_1AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -1168,24 +1204,6 @@
     }
    ],
    "origen": "PARA_REVISAR/STORIES_JAVI_MIERCOLES_A5_V3"
-  },
-  {
-   "id": "FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO",
-   "cuenta": "JORDI",
-   "tipo": "ad",
-   "dia": "sin día",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "Romantizamos ir justos a final de mes y lo llamamos humildad.\n\nNo lo es. Es conformismo con buena prensa. El dinero no arregla una vida, pero la falta de dinero decide por ti todos los días: dónde vives, cuánto duermes, con quién pasas el tiempo.\n\n¿Qué estás dejando de hacer este mes por no poder pagarlo?\n\n#ecommerce #emprender #mentalidad",
-   "archivos": [
-    {
-     "archivo": "FRASE_JORDI_ATICO_MEDIOCRIDAD.mp4",
-     "poster": "media/FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO__00.jpg",
-     "video": "media/FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO__00.mp4",
-     "peso_mb": 0.61
-    }
-   ],
-   "origen": "PARA_REVISAR/FRASE_JORDI_ATICO_MEDIOCRIDAD_19AGO"
   },
   {
    "id": "FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO",
