@@ -301,7 +301,8 @@ button,.btn,.tab{font-family:'Montserrat',sans-serif!important;font-weight:700!i
   <span style="font-size:12px;color:#8b8b9c" id="quien"></span>
   <div class="tabs">
     <button data-t="repasar" class="on">Repasar <span id="nrev"></span></button>
-    <button data-t="revisar">Ver todo <data-t="hoy">Hoy <span id="nhoy"></span></button>
+    <button data-t="revisar">Ver todo</button>
+    <button data-t="hoy">Hoy <span id="nhoy"></span></button>
     <button data-t="grabar">A grabar <span id="ngrab"></span></button>
     <button data-t="calendario">Calendario</button>
     <button data-t="hooks">Hooks <span id="nhk"></span></button>
@@ -576,14 +577,19 @@ fetch("referentes.json").then(r=>r.ok?r.json():null).then(d=>{
 
 function refHTML(p){
   const r=REFS_PAREJA[p.id]; if(!r) return "";
-  const mio=(p.archivos&&p.archivos[0])?p.archivos[0]:"";
+  /* archivos[0] es un OBJETO {archivo,poster,video}, no un string. Meterlo crudo en el src
+     pinta [object Object] y el lado "Lo nuestro" sale vacio (mismo fallo que ya se arreglo
+     en vistaRepasar). Se saca .video/.archivo igual que mediaHTML. */
+  const a0=(p.archivos&&p.archivos[0])||null;
+  const mio=a0?(typeof a0==="string"?a0:(a0.video||a0.archivo||"")):"";
+  const post=(a0&&typeof a0==="object"&&a0.poster)?a0.poster:"";
   const esVid=/\.(mp4|mov|webm)$/i.test(mio);
   const izq=r.es_video
-    ? `<video src="${r.ref}" controls preload="metadata" playsinline></video>`
-    : `<img src="${r.ref}" loading="lazy" alt="referente">`;
+    ? `<video src="${esc(r.ref)}" controls preload="metadata" playsinline></video>`
+    : `<img src="${esc(r.ref)}" loading="lazy" alt="referente">`;
   const der=mio? (esVid
-    ? `<video src="${mio}" controls preload="metadata" playsinline></video>`
-    : `<img src="${mio}" loading="lazy" alt="nuestra pieza">`) : "";
+    ? `<video src="${esc(mio)}" poster="${esc(post)}" controls preload="metadata" playsinline></video>`
+    : `<img src="${esc(mio)}" loading="lazy" alt="nuestra pieza">`) : "";
   return `<details class="cmp"><summary>Comparar con el referente</summary>
     <div class="cmpgrid">
       <figure><figcaption>Referente</figcaption>${izq}</figure>
@@ -1359,6 +1365,15 @@ async function arranca(){
     guardar(srv=>{ srv.hooks=JSON.parse(JSON.stringify(HOOKS_INI)); });
   }
 }
+/* GUARDIA DE PESTANAS (19-ago). La pestana "Hoy" estuvo 2 dias INVISIBLE: el header se fusiono
+   a mano y su <button> se quedo dentro del de "Ver todo", asi que vistaHoy() era codigo muerto y
+   nadie lo vio. Esto avisa por consola en cuanto una vista no tiene boton que la abra. */
+(function guardiaPestanas(){
+  const conVista=["repasar","revisar","hoy","grabar","calendario","hooks","referentes","guiones"];
+  const conBoton=[...document.querySelectorAll(".tabs button[data-t]")].map(b=>b.dataset.t);
+  const huerfanas=conVista.filter(t=>!conBoton.includes(t));
+  if(huerfanas.length)console.error("PANEL: vistas sin boton que las abra ->",huerfanas.join(", "));
+})();
 pintaLogin();
 const ses=sessionStorage.getItem("mx_yo");
 if(ses&&PERSONAS.includes(ses)&&localStorage.getItem("mx_clave")===CLAVE){
