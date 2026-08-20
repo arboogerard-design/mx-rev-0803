@@ -397,7 +397,8 @@ async function leerBlob(){
   if(!r.ok)throw new Error("GET "+r.status);
   const j=await r.json();
   const base=Object.assign({}, j, {decisiones:j.decisiones||{}, referentes:j.referentes||[],
-                                    calendario:j.calendario||{}, f1:j.f1||{}, notas:{}, hooks:j.hooks||[]});
+                                    calendario:j.calendario||{}, f1:j.f1||{}, notas:{}, hooks:j.hooks||[],
+                                    ordenes_todas:[]});
   const bins=await Promise.all(Object.entries(BINS).map(async([quien,url])=>{
     try{ const rr=await fetch(url,{cache:"no-store"}); return [quien, rr.ok? await rr.json():null]; }
     catch(e){ return [quien,null]; }
@@ -405,6 +406,7 @@ async function leerBlob(){
   for(const [quien,b] of bins){
     if(!b) continue;
     if(quien===YO) MIO=Object.assign({decisiones:{},hooks:{},ordenes:[],publicados:[]}, b);
+    for(const o of (b.ordenes||[])) base.ordenes_todas.push(Object.assign({},o,{por:o.por||quien}));
     for(const [pid,d] of Object.entries(b.decisiones||{})){
       (base.notas[pid]=base.notas[pid]||[]).push(Object.assign({por:quien},d));
       const prev=base.decisiones[pid];
@@ -420,7 +422,7 @@ async function leerBlob(){
 
 async function guardarMio(aplicar){
   /* escribe SOLO en mi bin, con reintento. Nadie puede pisar lo de nadie. */
-  const url=BINS[YO]; if(!url){aviso("Tu usuario no tiene almacén",true);return;}
+  const url=BINS[YO]; if(!url){aviso("Tu usuario no tiene almacén",true);return false;}
   for(let i=0;i<3;i++){
     try{
       const rr=await fetch(url,{cache:"no-store"});
@@ -431,8 +433,8 @@ async function guardarMio(aplicar){
       const w=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},
                                body:JSON.stringify(mio)});
       if(!w.ok)throw new Error("POST "+w.status);
-      MIO=mio; E=await leerBlob(); aviso("Guardado"); return;
-    }catch(e){ if(i===2){aviso("No se pudo guardar",true);return;}
+      MIO=mio; E=await leerBlob(); aviso("Guardado"); return true;
+    }catch(e){ if(i===2){aviso("No se pudo guardar (reintenta en unos segundos)",true);return false;}
       await new Promise(r=>setTimeout(r,500*(i+1))); }
   }
 }
@@ -1017,14 +1019,31 @@ function nRefsEspia(){const s=new Set();
   return s.size;}
 const REFS_MEDIDOS=[{"etapa": "TOFU", "sc": "DbPXWbuz3rB", "likes": 144, "coms": 87, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "Dat6ISIz2o2", "likes": 1050, "coms": 137, "autor": "ramiro.cubria"}, {"etapa": "TOFU", "sc": "DaRljBWT-6v", "likes": 214, "coms": 77, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbV_iq7zwVP", "likes": 420, "coms": 110, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "DbD6TNeTOoj", "likes": 387, "coms": 112, "autor": "ramiro.cubria"}, {"etapa": "MOFU", "sc": "Da3DHH_lMDR", "likes": 1247, "coms": 377, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DUN7gu6DT1p", "likes": 24, "coms": 5, "autor": "64639108237"}, {"etapa": "BOFU", "sc": "Da1FtiugJhd", "likes": 262, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbY_gjPTpaW", "likes": 168, "coms": 3, "autor": "ramiro.cubria"}, {"etapa": "BOFU", "sc": "DbQqHCxz4Pm", "likes": 572, "coms": 31, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DXpX3NgD4OM", "likes": 51528, "coms": 273, "autor": "arz.urus"}, {"etapa": "", "sc": "DVb2nT3jHO8", "likes": 26173, "coms": 73, "autor": "arz.urus"}, {"etapa": "", "sc": "DV_iaVjkbkg", "likes": 2931, "coms": 1797, "autor": "herasmedia"}, {"etapa": "", "sc": "DVtUufRDAZD", "likes": 5158, "coms": 1933, "autor": "jaimehigueraes"}, {"etapa": "", "sc": "DV54ns0ClFB", "likes": 20816, "coms": 1589, "autor": "javiniguezoficial"}, {"etapa": "", "sc": "DXwRG9nKd0J", "likes": 1129, "coms": 392, "autor": "javiniguezoficial"}, {"etapa": "", "sc": "DZU9zA2CUQh", "likes": 259, "coms": 650, "autor": "jesusorozcomo"}, {"etapa": "", "sc": "DWZhstNiv74", "likes": 184, "coms": 7, "autor": "jesusorozcomo"}, {"etapa": "", "sc": "DYnQZQFRob8", "likes": 830, "coms": 6, "autor": "marcverdu_"}, {"etapa": "", "sc": "DZuwXlmiyo2", "likes": 775, "coms": 50, "autor": "marcverdu_"}, {"etapa": "", "sc": "DZXwuEmjboX", "likes": 291, "coms": 142, "autor": "mpelaezecom"}, {"etapa": "", "sc": "DZaHhkGEbUM", "likes": 160, "coms": 38, "autor": "mpelaezecom"}, {"etapa": "", "sc": "DWM-BHBCZ61", "likes": 444, "coms": 880, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DVtVNLSDpTV", "likes": 333, "coms": 1, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DW65chdCcLY", "likes": 157, "coms": 47, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DX5PDMcnJ0c", "likes": 108, "coms": 34, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DZGssIvk8Nm", "likes": 66, "coms": 13, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DXzpkyanD6b", "likes": 58, "coms": 10, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DZdt6-XHAm1", "likes": 44, "coms": 8, "autor": "ramiro.cubria"}, {"etapa": "", "sc": "DZi8pm_k9U1", "likes": 35, "coms": 3, "autor": "ramiro.cubria"}];
 function scDe(url){const m=(url||"").match(/instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);return m?m[1]:null;}
+/* 20-ago: las ordenes REPLICAR/PRODUCIR se perdian de vista al recargar — el dato SI estaba en el
+   bin, pero el render no lo miraba. Ahora el estado se pinta desde E.ordenes_todas (los 4 bins). */
+function ordenReplica(sc){return (E.ordenes_todas||[]).find(o=>o.tipo==="replicar"&&(o.url||"").indexOf(sc)>=0);}
+function ordenGuion(id){return (E.ordenes_todas||[]).find(o=>o.tipo==="producir_guion"&&o.id===id);}
 const ESPIA_ANALISIS={"DbPXWbuz3rB": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Dat6ISIz2o2": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DaRljBWT-6v": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbV_iq7zwVP": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbD6TNeTOoj": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Da3DHH_lMDR": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Da1FtiugJhd": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbY_gjPTpaW": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "DbQqHCxz4Pm": {"receta": "Carrusel 8 slides · molde verde #BAFC68 · titular 2-4 palabras/línea · cifra DENTRO de la imagen · CTA comenta palabra clave", "tocar": ["La ESTRUCTURA slide a slide (hook → 3-5 pasos → prueba → CTA)", "El copy: inspirarse, tema nuestro (dolor dueño de tienda)", "La estética completa (regla 18 de Santi: se copia)"], "evitar": ["Cambiar el molde/tipografía (réplica-100: si no cabe, se acorta el TEXTO)", "Poner la cifra en el caption (va dentro de la imagen)", "Jerga: ROAS/CPA/funnel fuera (regla 11)"]}, "Db1IqIop5hM": {"receta": "Meme co1e0 8,0 s · plano fijo 0 cortes · banda + texto arriba · foto fija · música fija · fade oscuro→claro 2 s (medido en el clon LIQUIDEZ)", "tocar": ["SOLO el texto de la banda (frase entendible por novato)", "El caption corto tipo remate"], "evitar": ["La foto (fija por persona, exenta de cooldown)", "La música y el efecto de arranque (Jordi: «siempre me pasas todo cambiado»)", "Meter cortes (0 cortes ES el formato)"]}};
 function vistaEspia(){
   let h='<div class="nota"><b>Esto es el espía:</b> el contenido REAL de los referentes, reproducible aquí '
    +'dentro, con sus likes y comentarios medidos. Toca <b>REPLICAR</b> en el que quieras y me llega al '
    +'momento como orden: lo clono para Javi o Jordi y aparece en Por revisar. '
    +'Pega abajo cualquier link nuevo de reel/carrusel y entra a la parrilla.</div>'
-   +'<div class="addref"><input id="rurl" placeholder="https://instagram.com/reel/..."><button id="raddr">Añadir al espía</button></div>'
-   +'<div class="espgrid">';
+   +'<div class="addref"><input id="rurl" placeholder="https://instagram.com/reel/..."><button id="raddr">Añadir al espía</button></div>';
+  const _ords=(E.ordenes_todas||[]).slice().sort((a,b)=>(b.cuando||"").localeCompare(a.cuando||""));
+  if(_ords.length){
+    h+='<div class="nota" style="border-color:#2b4a33"><b>ÓRDENES ENVIADAS ('+_ords.length+')</b> — '
+      +'guardadas y en mi cola; «en cola» = la produzco en la siguiente pasada y la pieza aparece en Por revisar.'
+      +'<div style="margin-top:6px">';
+    for(const o of _ords.slice(0,15)){
+      const que=o.tipo==="replicar"?("replicar "+(scDe(o.url)||o.url||"")):("guion "+(o.id||""));
+      h+='<div style="font-size:12px;color:#aab;margin:2px 0">· <b>'+esc(que)+'</b> — '+esc(o.por||"")
+        +' '+esc(o.cuando||"")+' → <span style="color:'+(o.estado?"#3ECF8E":"#C9A227")+'">'
+        +esc(o.estado||"en cola")+'</span></div>';
+    }
+    h+='</div></div>';
+  }
+  h+='<div class="espgrid">';
   const vistos=new Set();
   const medidos=[], equipo=[];
   for(const m of REFS_MEDIDOS){ if(!vistos.has(m.sc) && !ESPIA_FUERA.has((m.autor||"").toLowerCase())){vistos.add(m.sc);
@@ -1042,7 +1061,8 @@ function vistaEspia(){
         ${t.coms!=null?`<span class="tag tipo">💬 ${t.coms}</span>`:""}
         ${t.nota?`<div style="font-size:12px;color:#999;margin:4px 0 0;width:100%">${esc(t.nota)}</div>`:""}
         ${ESPIA_ANALISIS[t.sc]?`<details class="espana"><summary>ANÁLISIS · qué tocar y qué no</summary><div class="esparec">${esc(ESPIA_ANALISIS[t.sc].receta)}</div><div class="espcol"><b style="color:#3ECF8E">TOCAR</b><ul>${ESPIA_ANALISIS[t.sc].tocar.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="espcol"><b style="color:#E5484D">NO TOCAR</b><ul>${ESPIA_ANALISIS[t.sc].evitar.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></details>`:""}
-        <button class="repl" data-sc="${esc(t.sc)}">REPLICAR</button>
+        ${(o=>o?`<button class="repl hecho" disabled>PEDIDO ✓ ${esc(o.por||"")} ${esc(o.cuando||"")}</button>`
+                :`<button class="repl" data-sc="${esc(t.sc)}">REPLICAR</button>`)(ordenReplica(t.sc))}
       </div></div>`;
   const cab=txt=>`<div style="grid-column:1/-1;font-weight:800;letter-spacing:.10em;color:#C9A227;margin:14px 0 2px;font-size:12px;text-transform:uppercase">${txt}</div>`;
   const ETQ={TOFU:"TOFU · atrapar al que no nos conoce",MOFU:"MOFU · demostrar que sabemos",BOFU:"BOFU · vender"};
@@ -1122,7 +1142,8 @@ function vistaGuiones(){
         <span class="tag tipo">min ${Math.floor(g.t1/60)}:${String(Math.floor(g.t1%60)).padStart(2,"0")}</span>
         <span class="tag cuenta">JAVI</span></div>
       <div class="hfuente">${esc(g.estructura||g.porque||"")}</div>
-      <div class="acc"><button class="ok gprod" data-gid="${esc(g.id)}">PRODUCIR</button></div></div>`;
+      <div class="acc">${(o=>o?`<button class="ok" disabled style="opacity:.55">EN COLA ✓ ${esc(o.por||"")} ${esc(o.cuando||"")}</button>`
+                :`<button class="ok gprod" data-gid="${esc(g.id)}">PRODUCIR</button>`)(ordenGuion(g.id))}</div></div>`;
   }
   return h;
 }
@@ -1287,18 +1308,22 @@ function cablear(){
     const t=hk.querySelector(".hedit");
     if(t) t.onkeydown=e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); hk.querySelector('[data-h="aprobado"]').click(); } };
   });
-  document.querySelectorAll(".gprod").forEach(b=>b.onclick=()=>{
-    guardarMio(mio=>{ mio.ordenes.push({tipo:"producir_guion", id:b.dataset.gid, por:YO,
-      cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
-    b.textContent="EN COLA ✓"; b.disabled=true; aviso("Orden enviada: producir "+b.dataset.gid);
+  document.querySelectorAll(".gprod").forEach(b=>b.onclick=async()=>{
+    const gid=b.dataset.gid; b.disabled=true; b.textContent="ENVIANDO…";
+    const ok=await guardarMio(mio=>{ if(!mio.ordenes.some(o=>o.tipo==="producir_guion"&&o.id===gid))
+      mio.ordenes.push({tipo:"producir_guion", id:gid, por:YO,
+        cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
+    if(ok){ aviso("Orden enviada: producir "+gid); render(); }
+    else { b.disabled=false; b.textContent="PRODUCIR"; }
   });
-  document.querySelectorAll(".repl").forEach(b=>b.onclick=()=>{
-    const sc=b.dataset.sc;
-    guardarMio(mio=>{ mio.ordenes.push({tipo:"replicar",
-      url:"https://www.instagram.com/reel/"+sc+"/", por:YO,
-      cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
-    b.textContent="PEDIDO ✓"; b.classList.add("hecho"); b.disabled=true;
-    aviso("Orden enviada a Claude: replicar "+sc);
+  document.querySelectorAll(".repl").forEach(b=>b.onclick=async()=>{
+    const sc=b.dataset.sc; b.disabled=true; b.textContent="ENVIANDO…";
+    const ok=await guardarMio(mio=>{ if(!mio.ordenes.some(o=>o.tipo==="replicar"&&(o.url||"").indexOf(sc)>=0))
+      mio.ordenes.push({tipo:"replicar",
+        url:"https://www.instagram.com/reel/"+sc+"/", por:YO,
+        cuando:new Date().toISOString().slice(0,16).replace("T"," ")}); });
+    if(ok){ aviso("Orden enviada a Claude: replicar "+sc); render(); }
+    else { b.disabled=false; b.textContent="REPLICAR"; }
   });
   const add=$("#raddr");
   if(add)add.onclick=()=>{
