@@ -342,24 +342,6 @@
    "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_17AGO"
   },
   {
-   "id": "TH_MILLONARIO_17AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "mié 19",
-   "hora": "19:30",
-   "etiqueta": "BOFU",
-   "caption": "Para mí el millonario de verdad no es el que más tiene.\n\nEs el que decide en qué gasta su día. El que no depende de estar en un sitio a una hora porque alguien se lo dice.\n\nSe puede tener mucho y no tener eso. Y se puede tener bastante menos y tenerlo entero.\n\nEse es el objetivo, y por eso monté lo que monté.\n\n¿Tú qué buscas de verdad? Dímelo abajo.\n\n#emprender #mentalidad",
-   "archivos": [
-    {
-     "archivo": "TH_MILLONARIO_17AGO.mp4",
-     "poster": "media/TH_MILLONARIO_17AGO__00.jpg",
-     "video": "media/TH_MILLONARIO_17AGO__00.mp4",
-     "peso_mb": 1.94
-    }
-   ],
-   "origen": "PARA_REVISAR/TH_MILLONARIO_17AGO"
-  },
-  {
    "id": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
    "cuenta": "JORDI",
    "tipo": "carrusel",
@@ -786,6 +768,42 @@
    "origen": "PARA_REVISAR/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO"
   },
   {
+   "id": "CARRUSEL_JAVI_MOROSO_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CAPTION (voz javi):\n\nSi has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JAVI_MOROSO_20AGO"
+  },
+  {
    "id": "CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO",
    "cuenta": "JAVI",
    "tipo": "carrusel",
@@ -1202,7 +1220,7 @@
      "archivo": "JAVI_NICHO_MERCADO_20AGO.mp4",
      "poster": "media/JAVI_NICHO_MERCADO_20AGO__00.jpg",
      "video": "media/JAVI_NICHO_MERCADO_20AGO__00.mp4",
-     "peso_mb": 1.55
+     "peso_mb": 1.53
     }
    ],
    "origen": "PARA_REVISAR/JAVI_NICHO_MERCADO_20AGO"
@@ -1280,6 +1298,24 @@
    "origen": "PARA_REVISAR/REEL_JAVI_CERO_2AGO"
   },
   {
+   "id": "REEL_JAVI_EVENTO_ALUMNOS_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CAPTION (voz Javi — directo, la prueba habla por él):\n\nNo me creas a mí. Escúchalos a ellos.\n\nGrabado en nuestro último evento, sin guion. Tres alumnos, tres momentos distintos, la misma historia.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "JAVI_EVENTO_ALUMNOS_20AGO.mp4",
+     "poster": "media/REEL_JAVI_EVENTO_ALUMNOS_20AGO__00.jpg",
+     "video": "media/REEL_JAVI_EVENTO_ALUMNOS_20AGO__00.mp4",
+     "peso_mb": 1.97
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_EVENTO_ALUMNOS_20AGO"
+  },
+  {
    "id": "REEL_JAVI_LO_PEOR_1AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -1332,96 +1368,6 @@
     }
    ],
    "origen": "PARA_REVISAR/REEL_JAVI_PERSEVERANCIA_2AGO"
-  },
-  {
-   "id": "REEL_POD_JUNTOS01_RESCATE_20AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "sin día",
-   "hora": "",
-   "etiqueta": "SIN",
-   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
-   "archivos": [
-    {
-     "archivo": "REEL_POD_JUNTOS01_V2_CORTES.mp4",
-     "poster": "media/REEL_POD_JUNTOS01_RESCATE_20AGO__00.jpg",
-     "video": "media/REEL_POD_JUNTOS01_RESCATE_20AGO__00.mp4",
-     "peso_mb": 2.17
-    }
-   ],
-   "origen": "PARA_REVISAR/REEL_POD_JUNTOS01_RESCATE_20AGO"
-  },
-  {
-   "id": "REEL_POD_JUNTOS11_RESCATE_20AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "sin día",
-   "hora": "",
-   "etiqueta": "SIN",
-   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
-   "archivos": [
-    {
-     "archivo": "REEL_POD_JUNTOS11_V2_CORTES.mp4",
-     "poster": "media/REEL_POD_JUNTOS11_RESCATE_20AGO__00.jpg",
-     "video": "media/REEL_POD_JUNTOS11_RESCATE_20AGO__00.mp4",
-     "peso_mb": 0.26
-    }
-   ],
-   "origen": "PARA_REVISAR/REEL_POD_JUNTOS11_RESCATE_20AGO"
-  },
-  {
-   "id": "REEL_POD_JUNTOS26_RESCATE_20AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "sin día",
-   "hora": "",
-   "etiqueta": "SIN",
-   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
-   "archivos": [
-    {
-     "archivo": "REEL_POD_JUNTOS26_V2_CORTES.mp4",
-     "poster": "media/REEL_POD_JUNTOS26_RESCATE_20AGO__00.jpg",
-     "video": "media/REEL_POD_JUNTOS26_RESCATE_20AGO__00.mp4",
-     "peso_mb": 0.9
-    }
-   ],
-   "origen": "PARA_REVISAR/REEL_POD_JUNTOS26_RESCATE_20AGO"
-  },
-  {
-   "id": "REEL_POD_QA11_RESCATE_20AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "sin día",
-   "hora": "",
-   "etiqueta": "SIN",
-   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
-   "archivos": [
-    {
-     "archivo": "REEL_POD_QA11_V2_CORTES.mp4",
-     "poster": "media/REEL_POD_QA11_RESCATE_20AGO__00.jpg",
-     "video": "media/REEL_POD_QA11_RESCATE_20AGO__00.mp4",
-     "peso_mb": 1.42
-    }
-   ],
-   "origen": "PARA_REVISAR/REEL_POD_QA11_RESCATE_20AGO"
-  },
-  {
-   "id": "TH_CUANTO_FACTURAN_17AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "sin día",
-   "hora": "",
-   "etiqueta": "SIN",
-   "caption": "CAPTION (voz Javi — directo, cero promesas de dinero en texto, cero links en DM):\n\nLa pregunta que todos hacen mal.\n\nNo es cuánto facturas. Es cuánto te queda.\n\nCuanto más facturas, más sube tu coste de adquisición — y el margen baja. Eso no te lo cuentan los que enseñan pantallazos.\n\nDatos, no corazonadas.\n\n#ecommerce #tiendaonline #emprender",
-   "archivos": [
-    {
-     "archivo": "TH_CUANTO_FACTURAN_17AGO.mp4",
-     "poster": "media/TH_CUANTO_FACTURAN_17AGO__00.jpg",
-     "video": "media/TH_CUANTO_FACTURAN_17AGO__00.mp4",
-     "peso_mb": 2.68
-    }
-   ],
-   "origen": "PARA_REVISAR/TH_CUANTO_FACTURAN_17AGO"
   },
   {
    "id": "TH_QUIEN_ES_JAVI_17AGO",
@@ -1744,6 +1690,42 @@
     }
    ],
    "origen": "PARA_REVISAR/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO"
+  },
+  {
+   "id": "CARRUSEL_JORDI_MOROSO_20AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CAPTION (voz jordi):\n\nSi has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__05.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JORDI_MOROSO_20AGO"
   },
   {
    "id": "CARRUSEL_JORDI_PEOR_WEB_17AGO",
