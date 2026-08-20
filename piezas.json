@@ -2220,6 +2220,24 @@
    "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_1AGO"
   },
   {
+   "id": "MEME_JORDI_TIENDA_FUNCIONA_20AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "Etiqueta a tu bro para manifestarlo.\n\n#ecommerce #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "MEME_TIENDA_FUNCIONA_20AGO.mp4",
+     "poster": "media/MEME_JORDI_TIENDA_FUNCIONA_20AGO__00.jpg",
+     "video": "media/MEME_JORDI_TIENDA_FUNCIONA_20AGO__00.mp4",
+     "peso_mb": 0.47
+    }
+   ],
+   "origen": "PARA_REVISAR/MEME_JORDI_TIENDA_FUNCIONA_20AGO"
+  },
+  {
    "id": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
    "cuenta": "JORDI",
    "tipo": "reel",
