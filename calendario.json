@@ -1,6 +1,6 @@
 {
- "generado": "2026-08-19T17:35:12",
- "desde": "2026-08-19",
+ "generado": "2026-08-20T16:34:37",
+ "desde": "2026-08-20",
  "dias": 7,
  "modo_f1": "aprobadas",
  "cuentas": {
@@ -24,27 +24,6 @@
    ],
    "vacios": [
     {
-     "fecha": "2026-08-19",
-     "dia": "mié",
-     "slot": 0,
-     "formato": "Respuesta TikTok",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-19",
-     "dia": "mié",
-     "slot": 1,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-19",
-     "dia": "mié",
-     "slot": 2,
-     "formato": "Carrusel",
-     "motivo": "sin candidatas"
-    },
-    {
      "fecha": "2026-08-20",
      "dia": "jue",
      "slot": 0,
@@ -159,6 +138,27 @@
     {
      "fecha": "2026-08-25",
      "dia": "mar",
+     "slot": 2,
+     "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-26",
+     "dia": "mié",
+     "slot": 0,
+     "formato": "Respuesta TikTok",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-26",
+     "dia": "mié",
+     "slot": 1,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-26",
+     "dia": "mié",
      "slot": 2,
      "formato": "Carrusel",
      "motivo": "sin candidatas"
@@ -180,40 +180,19 @@
    "techo_lm": 11,
    "colocadas": [
     {
-     "fecha": "2026-08-19",
-     "dia": "mié",
-     "slot": 2,
-     "formato_santi": "Carrusel",
+     "fecha": "2026-08-20",
+     "dia": "jue",
+     "slot": 0,
+     "formato_santi": "iPad / split",
      "id": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
      "etapa": "TOFU",
      "formato": "carrusel",
      "lead_magnet": true,
      "encaje": "exacto",
-     "sin_motor": false
+     "sin_motor": true
     }
    ],
    "vacios": [
-    {
-     "fecha": "2026-08-19",
-     "dia": "mié",
-     "slot": 0,
-     "formato": "Respuesta TikTok",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-19",
-     "dia": "mié",
-     "slot": 1,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 0,
-     "formato": "iPad / split",
-     "motivo": "sin candidatas"
-    },
     {
      "fecha": "2026-08-20",
      "dia": "jue",
@@ -329,6 +308,27 @@
     {
      "fecha": "2026-08-25",
      "dia": "mar",
+     "slot": 2,
+     "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-26",
+     "dia": "mié",
+     "slot": 0,
+     "formato": "Respuesta TikTok",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-26",
+     "dia": "mié",
+     "slot": 1,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-26",
+     "dia": "mié",
      "slot": 2,
      "formato": "Carrusel",
      "motivo": "sin candidatas"
