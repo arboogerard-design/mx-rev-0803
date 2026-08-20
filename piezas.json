@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-19",
+ "generado": "2026-08-20",
  "semana": "17-23 agosto 2026",
  "dias": [
   "lun 17",
@@ -588,6 +588,132 @@
    "origen": "PARA_REVISAR/HOOKAD_C_2ANOS_15AGO"
   },
   {
+   "id": "CARRUSEL_CLON_JAVI_OFERTA_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "mié 5",
+   "hora": "19:30",
+   "etiqueta": "MOFU",
+   "caption": "Te entran visitas y no te compran. Y lo primero que hace todo el mundo es cambiar de producto.\n\nCasi nunca es el producto. Es la oferta. Y la oferta son tres cosas.\n\n1. Precio. No se copia del de al lado. Se pone sabiendo qué te deja cada venta y qué aguanta tu\nmercado.\n\n2. Envío. El envío gratis no es gratis: sale de tu margen. O lo aguanta el pedido medio, o te lo\nestás pagando tú.\n\n3. Ticket. Con el mismo tráfico puedes cobrar más por pedido. Un complemento que encaje, no un\ndescuento: el descuento sale del mismo sitio.\n\nLas herramientas que salen en el carrusel son las que uso yo para mirar esto.\n\nComenta OFERTA y te digo cuál de los tres tocaría primero en tu tienda.\n\n#ecommerce #shopify #ventas",
+   "archivos": [
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__00.mp4",
+     "peso_mb": 0.16
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__01.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__02.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__03.mp4",
+     "peso_mb": 0.08
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__04.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__05.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__06.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "zz_PREVIEW_CARRUSEL_COMPLETO.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.mp4",
+     "peso_mb": 0.71
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_CLON_JAVI_OFERTA_2AGO"
+  },
+  {
+   "id": "CARRUSEL_CLON_JAVI_ORDEN_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "MOFU",
+   "caption": "Antes de tocar el presupuesto de anuncios miro tres cosas. Y las miro en este orden.\n\n1. Caja. La facturación es el escaparate. La caja es lo que queda después de producto, envío,\npasarela y devoluciones. Si eso está en rojo, escalar multiplica el rojo.\n\n2. Fugas. Antes de traer más gente, mira por dónde se escapa la que ya entra. El checkout es donde\nmás se pierde, y se tapa en una tarde.\n\n3. Escala. Solo cuando el margen aguanta y el checkout no gotea se sube el presupuesto. Y se sube\ncontra un número de referencia, no contra una corazonada.\n\nNo hace falta que me creas: las tres herramientas del carrusel están abiertas y son las mismas que\nuso yo. Arregla antes de escalar.\n\nComenta ORDEN y te digo por cuál de los tres empezaría en tu caso.\n\n#ecommerce #ecom #negocio",
+   "archivos": [
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__00.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__00.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__01.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__01.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__02.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__02.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__03.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__03.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__04.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__04.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__05.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__05.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__06.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__06.mp4",
+     "peso_mb": 0.13
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__07.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__07.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "zz_PREVIEW_CARRUSEL_COMPLETO.mp4",
+     "poster": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__08.jpg",
+     "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__08.mp4",
+     "peso_mb": 0.84
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_CLON_JAVI_ORDEN_2AGO"
+  },
+  {
    "id": "CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO",
    "cuenta": "JAVI",
    "tipo": "carrusel",
@@ -597,57 +723,63 @@
    "caption": "Solo te asegura empezar otra vez desde cero.\n\nY es la decisión más cómoda que existe, por eso la toma todo el mundo.\n\nEl validador de producto está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__00.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__00.mp4",
-     "peso_mb": 0.13
+     "peso_mb": 1.14
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__01.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__01.mp4",
      "peso_mb": 0.12
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__02.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__02.mp4",
      "peso_mb": 0.12
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__03.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__03.mp4",
      "peso_mb": 0.12
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__04.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__04.mp4",
      "peso_mb": 0.12
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__05.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__05.mp4",
      "peso_mb": 0.12
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__06.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__06.mp4",
      "peso_mb": 0.15
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__07.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__07.mp4",
      "peso_mb": 0.12
     },
     {
-     "archivo": "slide_09.mp4",
+     "archivo": "slide_08.mp4",
      "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__08.jpg",
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__08.mp4",
+     "peso_mb": 0.11
+    },
+    {
+     "archivo": "slide_09.mp4",
+     "poster": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__09.jpg",
+     "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__09.mp4",
      "peso_mb": 0.11
     }
    ],
@@ -663,51 +795,57 @@
    "caption": "No es una frase bonita: es lo que pasa cuando dejas de tapar un agujero con tráfico.\n\nDentro, qué miré ese mes.\n\nEl auditor de tienda está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__00.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__00.mp4",
-     "peso_mb": 0.04
+     "peso_mb": 0.96
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__01.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__01.mp4",
      "peso_mb": 0.02
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__02.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__03.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__04.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__05.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__06.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__07.jpg",
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__08.jpg",
+     "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -723,51 +861,57 @@
    "caption": "El que entra en tu tienda decide en segundo y medio si le estás resolviendo algo o si le estás pidiendo algo.\n\nLas cuatro señales están dentro.\n\nLa guía del checkout está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__00.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__00.mp4",
-     "peso_mb": 0.05
+     "peso_mb": 0.96
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__01.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__02.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__03.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__04.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__05.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__06.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.jpg",
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__08.jpg",
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -783,51 +927,57 @@
    "caption": "Si falla la primera, ya sé que no vende, y no hace falta abrir la cuenta de anuncios.\n\nLas tres están dentro.\n\nEl auditor de tienda está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__00.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__00.mp4",
-     "peso_mb": 0.09
+     "peso_mb": 1.03
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__01.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__02.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__03.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__04.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__05.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__06.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.jpg",
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__08.jpg",
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -1040,6 +1190,24 @@
    "origen": "PARA_REVISAR/MEME_REPLICA_JAVI_DEV1K"
   },
   {
+   "id": "JAVI_NICHO_MERCADO_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CAPTION (voz Javi — directo, seco, cero promesas de dinero en texto):\n\nEl error que veo cada semana: montar la tienda copiando el país de un compañero.\n\nA él le funciona. A ti no. Y no es el producto — es que no sabes cuánta gente puede comprarte en ESE mercado.\n\nEspecialízate en un nicho y un mercado. Datos, no corazonadas.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "JAVI_NICHO_MERCADO_20AGO.mp4",
+     "poster": "media/JAVI_NICHO_MERCADO_20AGO__00.jpg",
+     "video": "media/JAVI_NICHO_MERCADO_20AGO__00.mp4",
+     "peso_mb": 1.55
+    }
+   ],
+   "origen": "PARA_REVISAR/JAVI_NICHO_MERCADO_20AGO"
+  },
+  {
    "id": "PAPEL_JAVI_CUATRO_FUGAS_19AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -1076,6 +1244,42 @@
    "origen": "PARA_REVISAR/PAPEL_JAVI_EL_QUE_DUDA_19AGO"
   },
   {
+   "id": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sáb 8",
+   "hora": "libre",
+   "etiqueta": "MOFU",
+   "caption": "Antes de tocar el presupuesto de anuncios miro cinco cosas. Y las miro en este orden.\n\n5. Margen real por pedido. Lo que queda después de producto, envío, pasarela y devolución. Si eso\nestá en rojo, escalar solo multiplica el rojo.\n\n4. Coste de traer un cliente. No el del panel bonito: el que sale de dividir lo que gastas entre\nlos clientes que entran de verdad.\n\n3. Devoluciones y recompra. Un cliente que vuelve te arregla un coste de adquisición malo. Uno que\ndevuelve te lo rompe dos veces.\n\n2. Datos, no corazonadas. Si la decisión depende de lo que \"notas\", no es una decisión: es una\napuesta.\n\n1. Caja real, no facturación. La facturación es el escaparate. La caja es lo que queda en el banco\ndespués de pagar a todos.\n\nArregla antes de escalar. Escalar un negocio roto es romperlo más rápido.\n\nComenta ORDEN y te digo por cuál de las cinco empezaría en tu caso.\n\n#ecommerce #ecom #negocio",
+   "archivos": [
+    {
+     "archivo": "RANKING_JAVI_ANTES_DE_ESCALAR.mp4",
+     "poster": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.jpg",
+     "video": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.mp4",
+     "peso_mb": 1.15
+    }
+   ],
+   "origen": "PARA_REVISAR/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO"
+  },
+  {
+   "id": "REEL_JAVI_CERO_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "lun 3",
+   "hora": "19:30",
+   "etiqueta": "BOFU",
+   "caption": "No venimos de ser programadores. Ni de haber sido informáticos.\n\nYo era entrenador personal. Jordi tenía su trabajo. Ocho horas al día, profesiones\nnormales y corrientes, cambiando nuestro tiempo por dinero.\n\nEmpezamos totalmente de cero, aprendiendo como cualquier persona normal.\n\nSi estás esperando tener el perfil, el título o la experiencia para arrancar:\nnosotros tampoco los teníamos. Y así empezamos.\n\n#ecommerce #emprender #mentalidad",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_CERO.mp4",
+     "poster": "media/REEL_JAVI_CERO_2AGO__00.jpg",
+     "video": "media/REEL_JAVI_CERO_2AGO__00.mp4",
+     "peso_mb": 1.58
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_CERO_2AGO"
+  },
+  {
    "id": "REEL_JAVI_LO_PEOR_1AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -1110,6 +1314,114 @@
     }
    ],
    "origen": "PARA_REVISAR/REEL_JAVI_PANEL_MODULO_1AGO"
+  },
+  {
+   "id": "REEL_JAVI_PERSEVERANCIA_2AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "vie 7",
+   "hora": "19:30",
+   "etiqueta": "BOFU",
+   "caption": "Me pidieron una palabra. Una sola.\n\nNo dije talento. No dije suerte. No dije timing.\n\nDije perseverancia.\n\nY no es la frase bonita de turno: es lo único que separa al que sigue cuando el negocio deja\nde ser divertido, del que lo deja en el mes tres.\n\nEl deporte me enseñó que el trabajo y el esfuerzo tienen recompensa. Lo que pasa por el\ncamino muchas veces no depende de ti. Lo que sí depende: no parar.\n\n#ecommerce #mentalidad #emprender",
+   "archivos": [
+    {
+     "archivo": "REEL_JAVI_PERSEVERANCIA.mp4",
+     "poster": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.jpg",
+     "video": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.mp4",
+     "peso_mb": 0.8
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JAVI_PERSEVERANCIA_2AGO"
+  },
+  {
+   "id": "REEL_POD_JUNTOS01_RESCATE_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
+   "archivos": [
+    {
+     "archivo": "REEL_POD_JUNTOS01_V2_CORTES.mp4",
+     "poster": "media/REEL_POD_JUNTOS01_RESCATE_20AGO__00.jpg",
+     "video": "media/REEL_POD_JUNTOS01_RESCATE_20AGO__00.mp4",
+     "peso_mb": 2.17
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_POD_JUNTOS01_RESCATE_20AGO"
+  },
+  {
+   "id": "REEL_POD_JUNTOS11_RESCATE_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
+   "archivos": [
+    {
+     "archivo": "REEL_POD_JUNTOS11_V2_CORTES.mp4",
+     "poster": "media/REEL_POD_JUNTOS11_RESCATE_20AGO__00.jpg",
+     "video": "media/REEL_POD_JUNTOS11_RESCATE_20AGO__00.mp4",
+     "peso_mb": 0.26
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_POD_JUNTOS11_RESCATE_20AGO"
+  },
+  {
+   "id": "REEL_POD_JUNTOS26_RESCATE_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
+   "archivos": [
+    {
+     "archivo": "REEL_POD_JUNTOS26_V2_CORTES.mp4",
+     "poster": "media/REEL_POD_JUNTOS26_RESCATE_20AGO__00.jpg",
+     "video": "media/REEL_POD_JUNTOS26_RESCATE_20AGO__00.mp4",
+     "peso_mb": 0.9
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_POD_JUNTOS26_RESCATE_20AGO"
+  },
+  {
+   "id": "REEL_POD_QA11_RESCATE_20AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "[caption pendiente: se escribe del contenido real del tramo antes de publicar]",
+   "archivos": [
+    {
+     "archivo": "REEL_POD_QA11_V2_CORTES.mp4",
+     "poster": "media/REEL_POD_QA11_RESCATE_20AGO__00.jpg",
+     "video": "media/REEL_POD_QA11_RESCATE_20AGO__00.mp4",
+     "peso_mb": 1.42
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_POD_QA11_RESCATE_20AGO"
+  },
+  {
+   "id": "TH_CUANTO_FACTURAN_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CAPTION (voz Javi — directo, cero promesas de dinero en texto, cero links en DM):\n\nLa pregunta que todos hacen mal.\n\nNo es cuánto facturas. Es cuánto te queda.\n\nCuanto más facturas, más sube tu coste de adquisición — y el margen baja. Eso no te lo cuentan los que enseñan pantallazos.\n\nDatos, no corazonadas.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "TH_CUANTO_FACTURAN_17AGO.mp4",
+     "poster": "media/TH_CUANTO_FACTURAN_17AGO__00.jpg",
+     "video": "media/TH_CUANTO_FACTURAN_17AGO__00.mp4",
+     "peso_mb": 2.68
+    }
+   ],
+   "origen": "PARA_REVISAR/TH_CUANTO_FACTURAN_17AGO"
   },
   {
    "id": "TH_QUIEN_ES_JAVI_17AGO",
@@ -1233,55 +1545,139 @@
    "caption": "Te parece caro probar si el producto interesa, pero llevas cuatro meses gratis eligiendo el nombre.\n\nDentro te digo qué sale más caro.\n\nEl checklist de producto está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__00.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__00.mp4",
-     "peso_mb": 0.04
+     "peso_mb": 0.97
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__01.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__02.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__03.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__04.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__05.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__06.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__07.jpg",
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_50_EUROS_17AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
    "origen": "PARA_REVISAR/CARRUSEL_JORDI_50_EUROS_17AGO"
+  },
+  {
+   "id": "CARRUSEL_JORDI_FILTRO_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "MOFU",
+   "caption": "CUENTA: @jordigarcia89\nFORMATO: carrusel de 6 slides 4:5. Slide 1 = CLIP DE VÍDEO (1080x1350, 7 s, con música);\nslides 2-6 = PNG 2160x2700.\nSPEC: la MISMA clonada de @gala_lc que usa CARRUSEL_CLON_GALA_JORDI_31JUL (foto real a sangre,\ntitular serif Playfair + cuerpo Montserrat, UN solo acento, arco objeción -> remate -> antes\ncrudo -> verdad -> prueba real -> reencuadre + CTA). Cambia el QUÉ, nunca el CÓMO.\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard, pieza a pieza.\n\nCAPTION (pegar tal cual):\n\"He probado cinco productos y ninguno ha tirado.\"\n\nMe lo dicen cada semana. Y casi siempre el fallo no está en el producto: está en que se lanza el\nsexto sin haber mirado qué pasó con los cinco anteriores.\n\nPara. Y mira hacia atrás. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió\nde verdad, sin tener que regalarlo?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto. Y de\nese patrón sale tu filtro. El tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\nComenta RECURSOS y te paso el panel entero. Gratis.\n\n#ecommerce #dropshipping #producto\n\nNOTAS PARA GERARD:\n- Cero cifras de facturación de Jordi (Hacienda). Su autoridad va sin número: \"alguien que ha\n  tirado más productos de los que recuerda\".\n- Las dos capturas son de herramientas REALES y publicadas: validador-producto.html y\n  calculadora-rentabilidad-sku.html (06_HERRAMIENTAS_HTML/_deploy/). Se muestran en su estado\n  inicial, sin rellenar: no hay ni un dato inventado ni un resultado de alumno.\n- Portada = CLIP DE VÍDEO, no foto (Gerard 24-jul). Es también lo que la distingue de la portada\n  del carrusel de Javi (gate C6: tipo de portada distinto).\n- El copy sale del guion ya aprobado por gate de REEL_JORDI_FILTRO_2AGO. Ese reel y este carrusel\n  cuentan lo mismo: NO se publican el mismo día. Escalonar 2-3 días (regla C6).\n- Cuerpo de texto subido de 48 a 62 px respecto al clon del 31-jul: en móvil el tamaño original\n  se leía a 9 px. Responde a la petición de Jordi del 1-ago (20:49): que el texto se vea más grande.\n\nAUDITORÍA 2-ago (segunda pasada, slides miradas una a una):\n- ARREGLADO · slide 5. El pantallazo de la calculadora estaba cortado POR LA MITAD de la fila de\n  inputs: la fila quedaba a ras del borde, sin margen, y el panel \"TUS PRODUCTOS\" salía rebanado.\n  Parecía un pantallazo a medio cargar, y al lado de la slide 4 (que cierra limpia y redondeada)\n  cantaba. Re-cortado del mismo `rentabilidad.png`: ahora entra la tarjeta ENTERA — cabecera, las\n  3 filas, \"+ Añadir producto\" y el botón \"Analizar rentabilidad\". Además queda en formato retrato\n  como la captura de la slide 4, así que las dos slides de prueba pesan visualmente igual.\n- AÑADIDO · `_gate/_CLON_CHECK.png` — el lado a lado referente/pieza que exige replica-100.md\n  punto 5 y que faltaba. Cuatro columnas: portada, texto, pruebas y cierre. Va dentro de `_gate/`\n  a propósito: en la raíz de la pieza, el gate lo audita como si fuera una slide más y lo tumba\n  por apaisado (2200x1536), que es justo lo que tiene que ser un lado a lado.\n- DESVIACIÓN QUE DECIDE GERARD (está marcada en el _CLON_CHECK): en la portada, el referente\n  centra el remate en MAYÚSCULAS sobre un plano de objeto (el lambo). Aquí el remate va a la\n  IZQUIERDA y en caja baja, porque la portada es un CLIP de Jordi hablando y su cara ocupa la\n  mitad derecha: centrarlo se lo comería. Es la única desviación del CÓMO en toda la pieza.\n- OJO A LA FOTO DE LA SLIDE 2 (criterio, no fallo): es un rincón de hotel — butaca, planta y un\n  enchufe con el cable colgando en medio del encuadre. De Jordi solo se le ve el brazo. Encaja con\n  la spec (el referente también mete un plano ambiente sin cara), pero es el asset más flojo de la\n  pieza. Si quieres otra, se cambia y se vuelve a pasar el gate.\n- Verificado hoy, con mis ojos: identidad de la portada (Facenet512, dist_jordi 0,115 vs\n  dist_javi 0,576, exit 0) · cara de la portada a 89,8/255 de luminancia y la del cierre a 85,6\n  (mínimo 70) · las 6 slides caben en el 1:1 que recorta la cuadrícula de IG · las dos capturas\n  son pantallazos Playwright de los HTML reales y TODO lo que se ve en ellas (45, 12, 4, 80, \"Ej:\n  Masajeador\", el 60%, el rango 25-80€) son atributos `placeholder=` del propio HTML: cero dato\n  tecleado, cero dato inventado.",
+   "archivos": [
+    {
+     "archivo": "s01_portada.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__00.mp4",
+     "peso_mb": 0.21
+    },
+    {
+     "archivo": "s02_texto.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__01.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s02_texto.png",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__02.jpg"
+    },
+    {
+     "archivo": "s03_texto.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__03.mp4",
+     "peso_mb": 0.1
+    },
+    {
+     "archivo": "s03_texto.png",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__04.jpg"
+    },
+    {
+     "archivo": "s04_pruebas.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__05.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s04_pruebas.png",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__06.jpg"
+    },
+    {
+     "archivo": "s05_pruebas.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__07.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__07.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s05_pruebas.png",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__08.jpg"
+    },
+    {
+     "archivo": "s06_testimonio.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__09.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__09.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s06_testimonio.png",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__10.jpg"
+    },
+    {
+     "archivo": "s07_cierre.mp4",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__11.jpg",
+     "video": "media/CARRUSEL_JORDI_FILTRO_2AGO__11.mp4",
+     "peso_mb": 0.09
+    },
+    {
+     "archivo": "s07_cierre.png",
+     "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__12.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JORDI_FILTRO_2AGO"
   },
   {
    "id": "CARRUSEL_JORDI_IA_UNA_TARDE_18AGO",
@@ -1293,51 +1689,57 @@
    "caption": "Y tú llevas medio año montándola.\n\nPero ojo, que aquí es donde casi todos se equivocan.\n\nEl checklist está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__00.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__00.mp4",
-     "peso_mb": 0.04
+     "peso_mb": 0.98
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__01.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__02.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__03.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__04.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__05.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__06.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__07.jpg",
      "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -1353,51 +1755,57 @@
    "caption": "Llevas medio año puliendo la tienda y el que te está comiendo tiene una página fea.\n\nPor qué pasa eso, dentro.\n\nEl checklist de producto está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__00.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__00.mp4",
-     "peso_mb": 0.05
+     "peso_mb": 0.96
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__01.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__02.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__03.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__04.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__05.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__06.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__07.jpg",
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -1413,51 +1821,57 @@
    "caption": "Y no te va a gustar la respuesta si buscabas la fácil.\n\nDentro, lo que nadie te cuenta de cada una.\n\nEl checklist está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__00.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__00.mp4",
-     "peso_mb": 0.07
+     "peso_mb": 1.02
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__01.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__02.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__03.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__03.mp4",
      "peso_mb": 0.02
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__04.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__05.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__06.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__07.jpg",
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -1473,51 +1887,57 @@
    "caption": "Y dos son de tu madre.\n\nNo te lo tomes como una señal de que no vales. Tómatelo como un dato.\n\nEl checklist está en la bio.",
    "archivos": [
     {
-     "archivo": "slide_01.mp4",
+     "archivo": "_CARRUSEL_CON_MUSICA.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__00.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__00.mp4",
-     "peso_mb": 0.04
+     "peso_mb": 0.97
     },
     {
-     "archivo": "slide_02.mp4",
+     "archivo": "slide_01.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__01.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__01.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_03.mp4",
+     "archivo": "slide_02.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__02.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__02.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_04.mp4",
+     "archivo": "slide_03.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__03.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__03.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_05.mp4",
+     "archivo": "slide_04.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__04.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__04.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_06.mp4",
+     "archivo": "slide_05.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__05.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__05.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_07.mp4",
+     "archivo": "slide_06.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__06.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__06.mp4",
      "peso_mb": 0.01
     },
     {
-     "archivo": "slide_08.mp4",
+     "archivo": "slide_07.mp4",
      "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__07.jpg",
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__07.mp4",
+     "peso_mb": 0.02
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__08.jpg",
+     "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__08.mp4",
      "peso_mb": 0.02
     }
    ],
@@ -1746,6 +2166,60 @@
    "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_25AGO"
   },
   {
+   "id": "MEMES_JORDI_TANDA_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "mar 4",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "El problema casi nunca es el modelo.\n\nEs el proveedor que tarda 25 días, el margen que no calculaste hasta después de las devoluciones, o el checkout que pedía el código postal dos veces mientras tú cambiabas la creatividad por sexta vez.\n\nNada de eso se arregla escalando. Se arregla mirándolo.\n\n#ecommerce #negocios",
+   "archivos": [
+    {
+     "archivo": "M1_dropshipping_muerto.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__00.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__00.mp4",
+     "peso_mb": 0.22
+    },
+    {
+     "archivo": "M2_logo_tres_meses.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__01.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__01.mp4",
+     "peso_mb": 0.2
+    },
+    {
+     "archivo": "M3_sexta_creatividad.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__02.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__02.mp4",
+     "peso_mb": 0.18
+    },
+    {
+     "archivo": "M4_margen_despues.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__03.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__03.mp4",
+     "peso_mb": 0.19
+    },
+    {
+     "archivo": "M5_mes_record_sin_caja.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__04.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__04.mp4",
+     "peso_mb": 0.21
+    },
+    {
+     "archivo": "M6_checkout_codigo_postal.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__05.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__05.mp4",
+     "peso_mb": 0.17
+    },
+    {
+     "archivo": "M7_empezar_de_cero.mp4",
+     "poster": "media/MEMES_JORDI_TANDA_1AGO__06.jpg",
+     "video": "media/MEMES_JORDI_TANDA_1AGO__06.mp4",
+     "peso_mb": 0.21
+    }
+   ],
+   "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_1AGO"
+  },
+  {
    "id": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
    "cuenta": "JORDI",
    "tipo": "reel",
@@ -1800,6 +2274,42 @@
    "origen": "PARA_REVISAR/PAPEL_JORDI_UNA_TARDE_19AGO"
   },
   {
+   "id": "REEL_JORDI_CEREBRO_CORAZON_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "La pelea de verdad no es con el negocio. Es contigo.\n\nEl cerebro dice: un mes más y aflojo.\nEl corazón dice: cena sin el móvil.\n\nY casi siempre manda el cerebro. Hasta que un domingo te das cuenta de que estás en casa\npero no estás en casa.\n\nNo te voy a decir que trabajes menos. Te voy a decir otra cosa: decide tú cuándo paras,\nporque si no lo decides tú, lo decide el negocio por ti. Y el negocio nunca dice basta.\n\n¿Cuál de las dos frases te ha dolido más?\n\n#ecommerce #mentalidad #emprender",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_CEREBRO_CORAZON_2AGO.mp4",
+     "poster": "media/REEL_JORDI_CEREBRO_CORAZON_2AGO__00.jpg",
+     "video": "media/REEL_JORDI_CEREBRO_CORAZON_2AGO__00.mp4",
+     "peso_mb": 1.35
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_CEREBRO_CORAZON_2AGO"
+  },
+  {
+   "id": "REEL_JORDI_FILTRO_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "lun 3",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "La mayoría prueba productos. Muy poca gente construye un filtro.\n\nCoges cuatro o cinco, los lanzas… y ahí es donde casi todo el mundo se equivoca: sigue\nlanzando sin pararse a mirar qué pasó con los anteriores.\n\nPara. Analiza. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió de verdad?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto.\nY de ese patrón sale tu filtro, el tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\n#ecommerce #dropshipping #producto",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_FILTRO.mp4",
+     "poster": "media/REEL_JORDI_FILTRO_2AGO__00.jpg",
+     "video": "media/REEL_JORDI_FILTRO_2AGO__00.mp4",
+     "peso_mb": 1.71
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_FILTRO_2AGO"
+  },
+  {
    "id": "REEL_JORDI_META300_1AGO",
    "cuenta": "JORDI",
    "tipo": "reel",
@@ -1852,6 +2362,52 @@
     }
    ],
    "origen": "PARA_REVISAR/REEL_JORDI_NO_CAMBIO_NADA"
+  },
+  {
+   "id": "REEL_JORDI_RETARGETING_20AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "sin día",
+   "hora": "",
+   "etiqueta": "SIN",
+   "caption": "CAPTION (voz Jordi — CEO pausado, cero cifras de facturación suyas, cero jerga en el copy):\n\n«Eso a mí no me funciona.»\n\nLa excusa que más escucho de gente que lleva tienda. Y la respuesta en clase fue muy clara: no es que no funcione — es que no lo has testeado bien.\n\nUn intento pequeño de tres días no es una prueba. Es una excusa.\n\n#ecommerce #tiendaonline #metaads",
+   "archivos": [
+    {
+     "archivo": "JORDI_RETARGETING_20AGO.mp4",
+     "poster": "media/REEL_JORDI_RETARGETING_20AGO__00.jpg",
+     "video": "media/REEL_JORDI_RETARGETING_20AGO__00.mp4",
+     "peso_mb": 0.84
+    }
+   ],
+   "origen": "PARA_REVISAR/REEL_JORDI_RETARGETING_20AGO"
+  },
+  {
+   "id": "STORIES_JORDI_FREESTYLE_2AGO",
+   "cuenta": "JORDI",
+   "tipo": "story",
+   "dia": "reserva",
+   "hora": "",
+   "etiqueta": "BOFU",
+   "caption": "(stories — no llevan caption; el CTA va en la S4: «Responde MARGEN y te la mando entera, gratis»)\nOrden de publicación: S1 → S2 → S3 → S4. Las tres primeras son prueba, la cuarta captura.",
+   "archivos": [
+    {
+     "archivo": "S1_gracias.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__00.jpg"
+    },
+    {
+     "archivo": "S2_curva.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__01.jpg"
+    },
+    {
+     "archivo": "S3_julio.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__02.jpg"
+    },
+    {
+     "archivo": "S4_recurso.jpg",
+     "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__03.jpg"
+    }
+   ],
+   "origen": "PARA_REVISAR/STORIES_JORDI_FREESTYLE_2AGO"
   },
   {
    "id": "STORIES_JORDI_MARTES_A7_4AGO",
