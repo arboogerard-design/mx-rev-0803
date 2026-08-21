@@ -774,7 +774,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "TOFU",
-   "caption": "CAPTION (voz javi):\n\nSi has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
+   "caption": "Si has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
      "archivo": "slide_01.png",
@@ -1192,7 +1192,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "TOFU",
-   "caption": "CUENTA: @javier.sanchezecom\nFORMATO: meme letterbox @co1e0 · banda NEGRA + texto BLANCO · 1 plano fijo · 0 cortes · 7,50 s\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard.\n\nQUÉ VIRAL REPLICA (esto es lo que faltaba en la versión anterior)\n Réplica del post real `DYn3Ujti6Sd` de @co1e0 — 59.714 plays medidos (scrape Apify, 04-jun).\n Original literal:\n   \"How I look at bro after he just paid a dev $1k to build him a Shopify theme and I just\n    took a screenshot and asked Claude to give me the custom liquid\"\n Nuestra versión, traducción casi palabra por palabra:\n   \"Cómo miro a mi colega después de pagarle 1.000 € a un programador para el tema de Shopify,\n    y yo hice una captura y le pedí el código a Claude\"\n   (la captura tardó 4 segundos)\n 4 líneas, igual que el original. El remate entre paréntesis lo llevan solo el nº1 (407K) y el\n nº8 del corpus: es lo que separa un meme de 40K de uno de 400K.\n\n Y lo mejor: es VERDAD. El panel tiene una biblioteca de Liquid de Shopify hecha exactamente\n así (`biblioteca-liquid-shopify.html`, 175 KB, la herramienta más grande del panel).\n\nPLANO: Javi solo, en el evento, mirada de lado con media sonrisa — que es literalmente\n \"cómo miro a mi colega\". Clip verificado como Javi en el banco (`evento_r1c5602_17`, 4K).\n Descartado el plano del salón del evento donde salían los dos: identidad cruzada = pieza tirada.\n Descartada también la placa del alumno que aparece en ese clip: lleva una cifra visible y Javi\n viene de un baneo de Meta (cero cifras como reclamo).\n\nMÚSICA VIRAL: Cochise — Tell Em (Instrumental Remix, slowed + reverb). Trending, sin letra.\n Si puedes, súbela con la canción desde la app nativa de Instagram en vez de con el audio\n incrustado: así el reel entra en la página de esa canción y arrastra alcance.\n\nLUFS: input_i = -14,04 · input_tp = -4,52 (gate 2 PASS)\n\nCAPTION (pegar tal cual):\nEl tema no hay que programarlo desde cero. Hay que saber qué pedirle.\n\nDentro del panel está la biblioteca de códigos de Shopify y el módulo nuevo: 12 clases,\n1 h 06 min, de la cuenta vacía a la tienda publicada.\n\nComenta RECURSOS y te llega el acceso.\n\n#shopify #ecommerce\n\nNOTAS:\n - Post-baneo: cero promesas de dinero, cero cifras como reclamo. 2 hashtags de 3.\n - No nombrar ninguna agencia ni programador concreto, ni en pantalla ni en comentarios.",
+   "caption": "Mi cara cuando me dice lo que le ha cobrado el programador por la tienda.\n\nEtiqueta al que sigue pagando webs.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
      "archivo": "MEME_REPLICA_JAVI_DEV1K.mp4",
@@ -1214,7 +1214,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "MOFU",
-   "caption": "CAPTION (voz Javi — directo, seco, cero promesas de dinero en texto):\n\nEl error que veo cada semana: montar la tienda copiando el país de un compañero.\n\nA él le funciona. A ti no. Y no es el producto — es que no sabes cuánta gente puede comprarte en ESE mercado.\n\nEspecialízate en un nicho y un mercado. Datos, no corazonadas.\n\n#ecommerce #tiendaonline #emprender",
+   "caption": "El error que veo cada semana: montar la tienda copiando el país de un compañero.\n\nA él le funciona. A ti no. Y no es el producto — es que no sabes cuánta gente puede comprarte en ESE mercado.\n\nEspecialízate en un nicho y un mercado. Datos, no corazonadas.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
      "archivo": "JAVI_NICHO_MERCADO_20AGO.mp4",
@@ -1304,7 +1304,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "BOFU",
-   "caption": "CAPTION (voz Javi — directo, la prueba habla por él):\n\nNo me creas a mí. Escúchalos a ellos.\n\nGrabado en nuestro último evento, sin guion. Tres alumnos, tres momentos distintos, la misma historia.\n\n#ecommerce #tiendaonline #emprender",
+   "caption": "No me creas a mí. Escúchalos a ellos.\n\nGrabado en nuestro último evento, sin guion. Tres alumnos, tres momentos distintos, la misma historia.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
      "archivo": "JAVI_EVENTO_ALUMNOS_20AGO.mp4",
@@ -1554,7 +1554,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "MOFU",
-   "caption": "CUENTA: @jordigarcia89\nFORMATO: carrusel de 6 slides 4:5. Slide 1 = CLIP DE VÍDEO (1080x1350, 7 s, con música);\nslides 2-6 = PNG 2160x2700.\nSPEC: la MISMA clonada de @gala_lc que usa CARRUSEL_CLON_GALA_JORDI_31JUL (foto real a sangre,\ntitular serif Playfair + cuerpo Montserrat, UN solo acento, arco objeción -> remate -> antes\ncrudo -> verdad -> prueba real -> reencuadre + CTA). Cambia el QUÉ, nunca el CÓMO.\nESTADO: SIN PUBLICAR. Pendiente de OK de Gerard, pieza a pieza.\n\nCAPTION (pegar tal cual):\n\"He probado cinco productos y ninguno ha tirado.\"\n\nMe lo dicen cada semana. Y casi siempre el fallo no está en el producto: está en que se lanza el\nsexto sin haber mirado qué pasó con los cinco anteriores.\n\nPara. Y mira hacia atrás. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió\nde verdad, sin tener que regalarlo?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto. Y de\nese patrón sale tu filtro. El tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\nComenta RECURSOS y te paso el panel entero. Gratis.\n\n#ecommerce #dropshipping #producto\n\nNOTAS PARA GERARD:\n- Cero cifras de facturación de Jordi (Hacienda). Su autoridad va sin número: \"alguien que ha\n  tirado más productos de los que recuerda\".\n- Las dos capturas son de herramientas REALES y publicadas: validador-producto.html y\n  calculadora-rentabilidad-sku.html (06_HERRAMIENTAS_HTML/_deploy/). Se muestran en su estado\n  inicial, sin rellenar: no hay ni un dato inventado ni un resultado de alumno.\n- Portada = CLIP DE VÍDEO, no foto (Gerard 24-jul). Es también lo que la distingue de la portada\n  del carrusel de Javi (gate C6: tipo de portada distinto).\n- El copy sale del guion ya aprobado por gate de REEL_JORDI_FILTRO_2AGO. Ese reel y este carrusel\n  cuentan lo mismo: NO se publican el mismo día. Escalonar 2-3 días (regla C6).\n- Cuerpo de texto subido de 48 a 62 px respecto al clon del 31-jul: en móvil el tamaño original\n  se leía a 9 px. Responde a la petición de Jordi del 1-ago (20:49): que el texto se vea más grande.\n\nAUDITORÍA 2-ago (segunda pasada, slides miradas una a una):\n- ARREGLADO · slide 5. El pantallazo de la calculadora estaba cortado POR LA MITAD de la fila de\n  inputs: la fila quedaba a ras del borde, sin margen, y el panel \"TUS PRODUCTOS\" salía rebanado.\n  Parecía un pantallazo a medio cargar, y al lado de la slide 4 (que cierra limpia y redondeada)\n  cantaba. Re-cortado del mismo `rentabilidad.png`: ahora entra la tarjeta ENTERA — cabecera, las\n  3 filas, \"+ Añadir producto\" y el botón \"Analizar rentabilidad\". Además queda en formato retrato\n  como la captura de la slide 4, así que las dos slides de prueba pesan visualmente igual.\n- AÑADIDO · `_gate/_CLON_CHECK.png` — el lado a lado referente/pieza que exige replica-100.md\n  punto 5 y que faltaba. Cuatro columnas: portada, texto, pruebas y cierre. Va dentro de `_gate/`\n  a propósito: en la raíz de la pieza, el gate lo audita como si fuera una slide más y lo tumba\n  por apaisado (2200x1536), que es justo lo que tiene que ser un lado a lado.\n- DESVIACIÓN QUE DECIDE GERARD (está marcada en el _CLON_CHECK): en la portada, el referente\n  centra el remate en MAYÚSCULAS sobre un plano de objeto (el lambo). Aquí el remate va a la\n  IZQUIERDA y en caja baja, porque la portada es un CLIP de Jordi hablando y su cara ocupa la\n  mitad derecha: centrarlo se lo comería. Es la única desviación del CÓMO en toda la pieza.\n- OJO A LA FOTO DE LA SLIDE 2 (criterio, no fallo): es un rincón de hotel — butaca, planta y un\n  enchufe con el cable colgando en medio del encuadre. De Jordi solo se le ve el brazo. Encaja con\n  la spec (el referente también mete un plano ambiente sin cara), pero es el asset más flojo de la\n  pieza. Si quieres otra, se cambia y se vuelve a pasar el gate.\n- Verificado hoy, con mis ojos: identidad de la portada (Facenet512, dist_jordi 0,115 vs\n  dist_javi 0,576, exit 0) · cara de la portada a 89,8/255 de luminancia y la del cierre a 85,6\n  (mínimo 70) · las 6 slides caben en el 1:1 que recorta la cuadrícula de IG · las dos capturas\n  son pantallazos Playwright de los HTML reales y TODO lo que se ve en ellas (45, 12, 4, 80, \"Ej:\n  Masajeador\", el 60%, el rango 25-80€) son atributos `placeholder=` del propio HTML: cero dato\n  tecleado, cero dato inventado.",
+   "caption": "«No sé qué vender» no es tu problema. Es que eliges sin criterio.\n\nYo tampoco sabía. Hasta que dejé de elegir por corazonada y empecé a pasar cada producto por el mismo filtro. Los que lo pasan, se prueban. Los que no, fuera — da igual lo bonito que sea.\n\nGuárdalo para cuando toque elegir 📌\n\n¿Quieres que te enseñe el filtro? Comenta «CRITERIO» y te digo por dónde empezaría.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
      "archivo": "s01_portada.mp4",
@@ -1698,7 +1698,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "TOFU",
-   "caption": "CAPTION (voz jordi):\n\nSi has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
+   "caption": "Si has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
      "archivo": "slide_01.png",
@@ -2370,7 +2370,7 @@
    "dia": "sin día",
    "hora": "",
    "etiqueta": "MOFU",
-   "caption": "CAPTION (voz Jordi — CEO pausado, cero cifras de facturación suyas, cero jerga en el copy):\n\n«Eso a mí no me funciona.»\n\nLa excusa que más escucho de gente que lleva tienda. Y la respuesta en clase fue muy clara: no es que no funcione — es que no lo has testeado bien.\n\nUn intento pequeño de tres días no es una prueba. Es una excusa.\n\n#ecommerce #tiendaonline #metaads",
+   "caption": "«Eso a mí no me funciona.»\n\nLa excusa que más escucho de gente que lleva tienda. Y la respuesta en clase fue muy clara: no es que no funcione — es que no lo has testeado bien.\n\nUn intento pequeño de tres días no es una prueba. Es una excusa.\n\n#ecommerce #tiendaonline #anuncios",
    "archivos": [
     {
      "archivo": "JORDI_RETARGETING_20AGO.mp4",
