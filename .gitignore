@@ -4,3 +4,5 @@ _index_bak_*.html
 _index_v*_backup_*.html
 MASTERS/
 _media_previo_*/
+_gate_panel/
+__pycache__/
