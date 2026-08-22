@@ -572,42 +572,6 @@
    "origen": "PARA_REVISAR/REEL_JORDI_RETARGETING_20AGO"
   },
   {
-   "id": "REEL_JAVI_PAPEL_AUDITOR_16AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "jue 27",
-   "hora": "19:30",
-   "etiqueta": "MOFU",
-   "caption": "Facturas mucho y ganas poco: el agujero casi siempre está en el mismo sitio, y no es el producto.\nLos tres auditores están en la bio, gratis. Comenta AUDITOR y te leo.\n#ecommerce #tiendaonline #emprender",
-   "archivos": [
-    {
-     "archivo": "REEL_JAVI_PAPEL_AUDITOR.mp4",
-     "poster": "media/REEL_JAVI_PAPEL_AUDITOR_16AGO__00.jpg",
-     "peso_mb": 3.71,
-     "video": "media/REEL_JAVI_PAPEL_AUDITOR_16AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/REEL_JAVI_PAPEL_AUDITOR_16AGO"
-  },
-  {
-   "id": "PAPEL_JORDI_UNA_TARDE_19AGO",
-   "cuenta": "JORDI",
-   "tipo": "reel",
-   "dia": "jue 27",
-   "hora": "19:30",
-   "etiqueta": "MOFU",
-   "caption": "La gente cree que la IA le va a montar la tienda. No.\n\nLo que sí hace en una tarde es la parte que nadie quiere hacer: dejarte el stack decidido, el plan de contenido escrito y el sitio exacto por donde se te cae la gente. Lo aburrido. Lo que decide.\n\nLo demás sigue siendo trabajo tuyo, y menos mal.\n\n¿Cuál de las tres te ahorraría más tiempo esta semana?\n\n#ecommerce #inteligenciaartificial #emprender",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JORDI_UNA_TARDE.mp4",
-     "poster": "media/PAPEL_JORDI_UNA_TARDE_19AGO__00.jpg",
-     "peso_mb": 1.64,
-     "video": "media/PAPEL_JORDI_UNA_TARDE_19AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JORDI_UNA_TARDE_19AGO"
-  },
-  {
    "id": "JAVI_CLASE_BORROSA_9AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -642,39 +606,21 @@
    "origen": "PARA_REVISAR/REEL_JORDI_EMPEZAR_4AGO"
   },
   {
-   "id": "JAVI_SELFIE_COD_8AGO",
+   "id": "JAVI_SELFIE_EXITO_8AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
    "dia": "vie 28",
    "hora": "19:00",
-   "etiqueta": "MOFU",
-   "caption": "¿Tarjeta o contra reembolso? La respuesta que nadie te da sin humo.\n\nComenta CASH y te paso la auditoría real de tu checkout.\n\n#ecommerce #emprender #cod",
+   "etiqueta": "BOFU",
+   "caption": "¿El éxito te cambia o revela quién eras? Mi respuesta sin filtro.\n\n#mentalidad #emprender #éxito",
    "archivos": [
     {
-     "archivo": "JAVI_SELFIE_COD_8AGO.mp4",
-     "poster": "media/JAVI_SELFIE_COD_8AGO__00.jpg",
-     "peso_mb": 34.16
+     "archivo": "JAVI_SELFIE_EXITO_8AGO.mp4",
+     "poster": "media/JAVI_SELFIE_EXITO_8AGO__00.jpg",
+     "peso_mb": 49.65
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_SELFIE_COD_8AGO"
-  },
-  {
-   "id": "PAPEL_JAVI_CUATRO_FUGAS_19AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "vie 28",
-   "hora": "19:30",
-   "etiqueta": "MOFU",
-   "caption": "Nadie tiene un problema de tráfico. Casi todos tienen cuatro fugas abiertas a la vez.\n\nEl checkout que pide un paso de más. La ficha que hay que explicar. El precio que se toca por pánico. Y el producto que nunca se validó.\n\nNinguna de las cuatro se arregla metiendo más presupuesto: escalar amplifica lo que ya pasa.\n\n¿Por cuál empiezas tú? Dímelo en comentarios.\n\n#ecommerce #emprender #tiendaonline",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JAVI_CUATRO_FUGAS.mp4",
-     "poster": "media/PAPEL_JAVI_CUATRO_FUGAS_19AGO__00.jpg",
-     "peso_mb": 1.7,
-     "video": "media/PAPEL_JAVI_CUATRO_FUGAS_19AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JAVI_CUATRO_FUGAS_19AGO"
+   "origen": "PARA_REVISAR/JAVI_SELFIE_EXITO_8AGO"
   },
   {
    "id": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
@@ -1972,23 +1918,6 @@
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_B"
   },
   {
-   "id": "JAVI_SELFIE_EXITO_8AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "BOFU",
-   "caption": "¿El éxito te cambia o revela quién eras? Mi respuesta sin filtro.\n\n#mentalidad #emprender #éxito",
-   "archivos": [
-    {
-     "archivo": "JAVI_SELFIE_EXITO_8AGO.mp4",
-     "poster": "media/JAVI_SELFIE_EXITO_8AGO__00.jpg",
-     "peso_mb": 49.65
-    }
-   ],
-   "origen": "PARA_REVISAR/JAVI_SELFIE_EXITO_8AGO"
-  },
-  {
    "id": "MEMES_JAVI_TANDA_16AGO",
    "cuenta": "JAVI",
    "tipo": "meme",
@@ -2156,96 +2085,6 @@
     }
    ],
    "origen": "PARA_REVISAR/MUESTRA_JAVI_TOFU_V3_11AGO"
-  },
-  {
-   "id": "PAPEL_JAVI_EL_QUE_DUDA_19AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "El que duda no compra, y encima no te lo dice. Se va y ya está.\n\nPor eso las tiendas que no venden casi nunca tienen un problema de producto: tienen un problema de confianza. Y la confianza no se nota mirándola por dentro, porque tú ya te fías de ti.\n\nTres cosas que se miran antes de tocar el presupuesto, y ninguna te cuesta nada: si tu tienda da confianza a un desconocido, en qué punto de madurez estás de verdad, y qué pasaría si doblaras la inversión.\n\n¿Cuál de las tres crees que tienes peor?\n\n#ecommerce #emprender #tiendaonline",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JAVI_EL_QUE_DUDA_NO_COMPRA.mp4",
-     "poster": "media/PAPEL_JAVI_EL_QUE_DUDA_19AGO__00.jpg",
-     "peso_mb": 1.57,
-     "video": "media/PAPEL_JAVI_EL_QUE_DUDA_19AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JAVI_EL_QUE_DUDA_19AGO"
-  },
-  {
-   "id": "PAPEL_JAVI_NEGACION_22AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "Copiar el precio del de al lado es heredar su margen. Y su margen no es el tuyo.\n\nTu precio empieza en tus costes y en tu proveedor, no en la etiqueta de tu competencia. El que lo calcula decide. El que lo copia, obedece.\n\nSe calcula en una tarde.\n\nComenta «PRECIO» y te digo por dónde empezaría con el tuyo.\n\n#ecommerce #tiendaonline #emprender",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JAVI_NEGACION.mp4",
-     "poster": "media/PAPEL_JAVI_NEGACION_22AGO__00.jpg",
-     "peso_mb": 1.54,
-     "video": "media/PAPEL_JAVI_NEGACION_22AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JAVI_NEGACION_22AGO"
-  },
-  {
-   "id": "PAPEL_JAVI_OTRA_TIENDA_22AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "Cambiar de producto no arregla nada. Te devuelve a la casilla de salida con los mismos fallos.\n\nLa página de inicio que parece barata. La tienda que tarda en cargar. Eso viaja contigo al siguiente producto, y al siguiente.\n\nArreglar la tienda que ya tienes es más corto que empezar otra.\n\nComenta «TIENDA» y te digo qué arreglaría primero en la tuya.\n\n#ecommerce #tiendaonline #emprender",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JAVI_OTRA_TIENDA.mp4",
-     "poster": "media/PAPEL_JAVI_OTRA_TIENDA_22AGO__00.jpg",
-     "peso_mb": 1.53,
-     "video": "media/PAPEL_JAVI_OTRA_TIENDA_22AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JAVI_OTRA_TIENDA_22AGO"
-  },
-  {
-   "id": "PAPEL_JAVI_SINTOMA_22AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "Se nota cuando una tienda necesita la venta. Y el que entra lo nota antes que tú.\n\nDescuentos por todas partes, urgencia falsa, cero garantías claras. Nada de eso vende: espanta. La confianza vende más que la prisa.\n\nQuitar la súplica cuesta una tarde.\n\nComenta «VENTA» y te digo qué quitaría primero de tu tienda.\n\n#ecommerce #tiendaonline #emprender",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JAVI_HUELE_A_VENTA.mp4",
-     "poster": "media/PAPEL_JAVI_SINTOMA_22AGO__00.jpg",
-     "peso_mb": 1.53,
-     "video": "media/PAPEL_JAVI_SINTOMA_22AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JAVI_SINTOMA_22AGO"
-  },
-  {
-   "id": "PAPEL_JAVI_TEQUEDA0_22AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "El mejor mes de tu tienda y la cuenta se queda igual.\n\nNo es un problema de ventas. Es que no sabes tu margen real ni cuánto necesitas facturar para no perder. Dos números que deciden si tienes un negocio o un entretenimiento caro.\n\nLos dos se sacan en una tarde.\n\nComenta «MARGEN» y te digo cuál miraría primero en tu tienda.\n\n#ecommerce #tiendaonline #emprender",
-   "archivos": [
-    {
-     "archivo": "PAPEL_JAVI_TEQUEDA0.mp4",
-     "poster": "media/PAPEL_JAVI_TEQUEDA0_22AGO__00.jpg",
-     "peso_mb": 1.53,
-     "video": "media/PAPEL_JAVI_TEQUEDA0_22AGO__00.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/PAPEL_JAVI_TEQUEDA0_22AGO"
   },
   {
    "id": "POD_QA15_JAVI_15AGO",
