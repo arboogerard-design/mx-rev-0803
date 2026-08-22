@@ -1644,6 +1644,82 @@
    "origen": "PARA_REVISAR/HOOKAD_C_2ANOS_15AGO"
   },
   {
+   "id": "JAVI_BSEM_4_PREGUNTAS_ANUNCIOS",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "4 preguntas antes de poner un duro en anuncios. En este orden.\n\n1. ¿La gente YA lo compra?\n2. ¿La ficha aguanta?\n3. ¿Cada pedido deja algo?\n4. ¿Puedo aguantar la semana sin tocarlo?\n\nSi falla la primera, las otras tres dan igual.\n\nComenta «GASTO» si estas a punto de darle. Y guardalo.\n\n#ecommerce #anuncios #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__05.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/BSEM_4_PREGUNTAS_ANUNCIOS"
+  },
+  {
+   "id": "JAVI_BSEM_5_NUMEROS_LUNES",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Los 5 numeros que miro cada lunes en una tienda. Antes de tocar nada.\n\n1. La caja (lo que queda, no lo que entra)\n2. El margen por pedido\n3. Las devoluciones\n4. El coste de traer un pedido\n5. La recompra\n\nCinco minutos, panel abierto, cero opiniones.\n\nComenta «CAJA» si quieres la rutina completa. Y guardalo para el lunes.\n\n#ecommerce #tiendaonline #negocios",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__06.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/BSEM_5_NUMEROS_LUNES"
+  },
+  {
    "id": "JAVI_CAJITA3_9AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -1719,6 +1795,86 @@
     }
    ],
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_B"
+  },
+  {
+   "id": "JAVI_CLON_RAMA_5_HERRAMIENTAS",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__06.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_RAMA_5_HERRAMIENTAS"
+  },
+  {
+   "id": "JAVI_CLON_SYK_NOTICIA_SENAL",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__06.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_SYK_NOTICIA_SENAL"
   },
   {
    "id": "MEMES_JAVI_TANDA_16AGO",
@@ -3124,6 +3280,70 @@
    "origen": "PARA_REVISAR/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO"
   },
   {
+   "id": "JORDI_BSEM_3_COSAS_CONFIANZA",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "3 cosas que la gente mira antes de darte su dinero. Y no es el precio.\n\n1. Quien hay detras\n2. Que pasa si sale mal\n3. Cuanto tarda en llegar\n\nLa confianza se construye en la ficha. La gente compra a gente.\n\nComenta «SEÑAS» si tu ficha cojea. Y guardalo.\n\n#ecommerce #ventas",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JORDI_BSEM_3_COSAS_CONFIANZA__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JORDI_BSEM_3_COSAS_CONFIANZA__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JORDI_BSEM_3_COSAS_CONFIANZA__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JORDI_BSEM_3_COSAS_CONFIANZA__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JORDI_BSEM_3_COSAS_CONFIANZA__04.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/BSEM_3_COSAS_CONFIANZA"
+  },
+  {
+   "id": "JORDI_BSEM_3_SENALES_DEVOLUCION",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "3 señales de que ese producto te va a llenar de devoluciones. Se ven en la ficha, no en el paquete.\n\n1. Talla o medida dudosa\n2. La foto promete de mas\n3. Contra reembolso sin filtro\n\nComenta «AVISO» si te esta pasando. Y guardalo antes de pedir stock.\n\n#ecommerce #dropshipping",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JORDI_BSEM_3_SENALES_DEVOLUCION__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JORDI_BSEM_3_SENALES_DEVOLUCION__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JORDI_BSEM_3_SENALES_DEVOLUCION__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JORDI_BSEM_3_SENALES_DEVOLUCION__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JORDI_BSEM_3_SENALES_DEVOLUCION__04.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/BSEM_3_SENALES_DEVOLUCION"
+  },
+  {
    "id": "JORDI_CARRUSEL_B_las5_7slides",
    "cuenta": "JORDI",
    "tipo": "carrusel",
@@ -3198,6 +3418,38 @@
     }
    ],
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_V3_B"
+  },
+  {
+   "id": "JORDI_CLON_RAMA_3_FILTROS",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JORDI_CLON_RAMA_3_FILTROS__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JORDI_CLON_RAMA_3_FILTROS__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JORDI_CLON_RAMA_3_FILTROS__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JORDI_CLON_RAMA_3_FILTROS__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JORDI_CLON_RAMA_3_FILTROS__04.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CLON_RAMA_3_FILTROS"
   },
   {
    "id": "MEMES_JORDI_ELITE_18AGO",

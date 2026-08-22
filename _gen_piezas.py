@@ -78,17 +78,25 @@ def leer_caption(carpeta):
 
 
 def leer_etapa(carpeta):
+    """P15 (22-ago, Javi: «mientes en todo el panel con el tofu/mofu/bofu»): la etiqueta de
+    etapa SOLO vale si viene con su fuente (`etapa_fuente:` en _FORMATO.txt — slot del
+    calendario de Santi o cita del doc de estrategia). Etapa sin fuente = SIN CLASIFICAR:
+    el panel no inventa taxonomia."""
     ruta = os.path.join(carpeta, "_FORMATO.txt")
     if not os.path.isfile(ruta):
         return ""
+    etapa = fuente = ""
     with io.open(ruta, encoding="utf-8", errors="replace") as f:
         for ln in f:
             m = re.match(r"\s*etapa\s*:\s*(\w+)", ln, re.I)
-            if m:
-                v = m.group(1).upper()
-                if v in ("TOFU", "MOFU", "BOFU", "AD"):
-                    return v
-    return ""
+            if m and m.group(1).upper() in ("TOFU", "MOFU", "BOFU", "AD"):
+                etapa = m.group(1).upper()
+            m2 = re.match(r"\s*etapa_fuente\s*:\s*(.+)", ln, re.I)
+            if m2 and m2.group(1).strip():
+                fuente = m2.group(1).strip()
+    if etapa and not fuente:
+        return "SIN CLASIFICAR"
+    return etapa
 
 
 def leer_voz(carpeta):
