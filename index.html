@@ -324,24 +324,47 @@ function seccion(m,titulo,extra){
   h.innerHTML=titulo+(extra?` <small>${extra}</small>`:"");
   m.appendChild(h);
 }
+let verBanco=false;
 function vistaVotar(m){
   const cola=DATOS.piezas.filter(p=>!esStory(p)&&!votos[p.id]);
-  const asignadas=cola.filter(p=>p.dia), resto=cola.filter(p=>!p.dia);
-  document.getElementById("n-votar").style.display=cola.length?"":"none";
-  document.getElementById("n-votar").textContent=cola.length;
+  const semana=cola.filter(p=>p.dia), banco=cola.filter(p=>!p.dia);
+  document.getElementById("n-votar").style.display=semana.length?"":"none";
+  document.getElementById("n-votar").textContent=semana.length;
   if(!cola.length){
     m.innerHTML+='<div class="vacio" style="padding:44px 0;text-align:center">Todo votado. 🫡<br><br>Mira la pestaña SEMANA para ver la parrilla.</div>';
     return;
   }
-  seccion(m,`Por votar · <span>${cola.length}</span>`,"lo de la semana primero");
-  ["JAVI","JORDI"].forEach(c=>{
-    const ps=[...asignadas.filter(p=>p.cuenta===c),...resto.filter(p=>p.cuenta===c)];
-    if(!ps.length)return;
-    const t=document.createElement("div");t.className="cuenta-tag";t.textContent=c;m.appendChild(t);
-    const g=document.createElement("div");g.className="grid";
-    ps.forEach(p=>g.appendChild(tarjeta(p)));
-    m.appendChild(g);
-  });
+  const cuentaDe=p=>(p.cuenta==="JAVI"||p.cuenta==="JORDI")?p.cuenta:"OTRAS";
+  if(semana.length){
+    seccion(m,`Esta semana · <span>${semana.length}</span>`,"lo que sale del lun 24 al dom 30");
+    ["JAVI","JORDI","OTRAS"].forEach(c=>{
+      const ps=semana.filter(p=>cuentaDe(p)===c);
+      if(!ps.length)return;
+      const t=document.createElement("div");t.className="cuenta-tag";t.textContent=c;m.appendChild(t);
+      const g=document.createElement("div");g.className="grid";
+      ps.forEach(p=>g.appendChild(tarjeta(p)));
+      m.appendChild(g);
+    });
+  }
+  if(banco.length){
+    seccion(m,`Banco sin fecha · <span>${banco.length}</span>`,"piezas listas esperando hueco");
+    if(!verBanco){
+      const b=document.createElement("button");b.className="mini";
+      b.style.cssText="width:100%;padding:14px 0;margin-bottom:20px";
+      b.textContent=`Ver las ${banco.length} del banco`;
+      b.onclick=()=>{verBanco=true;pinta()};
+      m.appendChild(b);
+    }else{
+      ["JAVI","JORDI","OTRAS"].forEach(c=>{
+        const ps=banco.filter(p=>cuentaDe(p)===c);
+        if(!ps.length)return;
+        const t=document.createElement("div");t.className="cuenta-tag";t.textContent=c;m.appendChild(t);
+        const g=document.createElement("div");g.className="grid";
+        ps.forEach(p=>g.appendChild(tarjeta(p)));
+        m.appendChild(g);
+      });
+    }
+  }
 }
 function vistaSemana(m){
   seccion(m,`Semana del <span>${DATOS.semana||""}</span>`,"hueco = hueco; aquí no se esconde nada");
