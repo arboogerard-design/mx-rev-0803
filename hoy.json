@@ -1,0 +1,54 @@
+{
+ "generado": "2026-08-22",
+ "dia": "viernes 22",
+ "piezas": [
+  {
+   "id": "J1 Carrusel: el orden",
+   "cuenta": "JAVI",
+   "tipo": "Carrusel",
+   "poster": "media/hoy22/J1_CARRUSEL_REPLICA_GALA_p.jpg",
+   "caption": "Todos quieren la tienda que factura sola.\n\nNadie quiere las 200 horas de antes de la primera venta. Mi primer producto no funciono. El segundo tampoco. El tercero si — y no fue suerte: fue cambiar el orden. Primero validar el producto, luego tienda, luego anuncios.\n\nComenta «ORDEN» si estas en esas 200 horas. Y guardalo para el dia que quieras parar.\n\n#ecommerce #tiendaonline #emprender",
+   "slides": 6
+  },
+  {
+   "id": "J2 Carrusel: devoluciones",
+   "cuenta": "JAVI",
+   "tipo": "Carrusel",
+   "poster": "media/hoy22/J2_CARRUSEL_REPLICA_DEVOLUCIONES_p.jpg",
+   "caption": "Vendes mas. Y ganas menos.\n\nLas devoluciones se comen el margen en silencio: cada vuelta paga dos envios y el producto vuelve tocado. Y casi todas nacen ANTES de enviar: talla dudosa, foto que promete de mas, contra reembolso sin filtro.\n\nComenta «VUELTA» si te esta pasando. Y guardalo antes de lanzar tu proximo producto.\n\n#ecommerce #tiendaonline #emprender",
+   "slides": 8
+  },
+  {
+   "id": "J3 Reel: cajita",
+   "cuenta": "JAVI",
+   "tipo": "Reel",
+   "poster": "media/hoy22/J3_cajita.jpg",
+   "caption": "Todo el mundo me viene con lo mismo. Y casi nadie con lo que de verdad mueve la aguja.\n\n¿A ti qué te está frenando ahora mismo? Te leo.\n\n#ecommerce #negocios",
+   "slides": 0
+  },
+  {
+   "id": "JO1 Meme",
+   "cuenta": "JORDI",
+   "tipo": "Meme",
+   "poster": "media/hoy22/JO1_meme.jpg",
+   "caption": "Antes de gastar un solo día en traer gente, cómprate a ti mismo.\n\nCon el móvil, con los datos de verdad, hasta el final. Vas a descubrir el campo que no deja seguir, el gasto de envío que aparece de golpe y la pantalla de gracias que no dice nada.\n\nSe tarda diez minutos y es lo más rentable que vas a hacer esta semana.\n\n#ecommerce #tiendaonline",
+   "slides": 0
+  },
+  {
+   "id": "JO2 Carrusel: el filtro",
+   "cuenta": "JORDI",
+   "tipo": "Carrusel",
+   "poster": "media/hoy22/JO2_p.jpg",
+   "caption": "Deja de buscar el producto perfecto.\n\nLlevas semanas mirando productos y ninguno te convence. El problema no es el producto: es elegir con el gusto. Yo lo paso todo por 10 criterios. Los 3 primeros: la gente YA lo compra · se entiende en 5 segundos · queda margen tras el envio. Los otros 7 duelen mas.\n\nComenta «FILTRO» si sigues buscandolo. Guardalo y mandaselo a quien lleva meses eligiendo.\n\n#ecommerce #tiendaonline #emprender #dropshipping",
+   "slides": 8
+  },
+  {
+   "id": "JO3 Reel: frase lambo",
+   "cuenta": "JORDI",
+   "tipo": "Reel",
+   "poster": "media/hoy22/JO3_lambo.jpg",
+   "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
+   "slides": 0
+  }
+ ]
+}

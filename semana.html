@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mentorium · La mesa</title>
+<style>
+/* LA MESA — una sola función: ver la semana y aprobar pieza a pieza.
+   Cero métricas internas, cero siglas de marketing (Javi, 21-ago: «no es ni tofu ni mofu…»).
+   La cocina (gates, PASS/BLOCK) vive en index.html y no se enseña al equipo. */
+:root{--negro:#0D0D0F;--panel:#141417;--linea:#26262B;--crema:#F2EFE9;--gris:#9B978F;
+--oro:#D4A017;--ok:#3E9B5F;--no:#C24B42;--duda:#C9A227;--r:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--negro);color:var(--crema);
+font:15px/1.55 Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{width:min(1180px,94vw);margin:0 auto}
+header{padding:26px 0 18px;border-bottom:1px solid var(--linea)}
+header .wrap{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;letter-spacing:.02em}
+.logo b{color:var(--oro)}
+.sub{color:var(--gris);font-size:13.5px}
+.quien{margin-left:auto;display:flex;gap:8px}
+.quien button{background:transparent;border:1px solid var(--linea);color:var(--gris);
+padding:7px 14px;border-radius:999px;font:600 13px Montserrat,sans-serif;cursor:pointer}
+.quien button.on{border-color:var(--oro);color:var(--oro)}
+h2{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);
+font-weight:700;margin:34px 0 14px}
+h2 span{color:var(--crema)}
+.fila{display:grid;grid-template-columns:86px 1fr;gap:14px;align-items:start;margin-bottom:18px}
+.fila .cuenta{font-weight:800;font-size:13px;letter-spacing:.08em;color:var(--oro);padding-top:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);
+overflow:hidden;cursor:pointer;transition:.15s;position:relative}
+.card:hover{border-color:#3a3a40;transform:translateY(-2px)}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#000}
+.card .meta{padding:10px 12px 12px}
+.card .tipo{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);font-weight:700}
+.card .hook{font-size:13.5px;font-weight:600;line-height:1.35;margin-top:4px;
+display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.punto{position:absolute;top:10px;right:10px;width:12px;height:12px;border-radius:50%;
+border:2px solid #0009}
+.p-ok{background:var(--ok)} .p-no{background:var(--no)} .p-duda{background:var(--duda)}
+.vacio{color:var(--gris);font-size:13.5px;padding:10px 0}
+/* modal */
+.velo{position:fixed;inset:0;background:#000c;display:none;z-index:50;
+align-items:center;justify-content:center;padding:20px}
+.velo.on{display:flex}
+.caja{background:var(--panel);border:1px solid var(--linea);border-radius:16px;
+width:min(880px,96vw);max-height:92vh;overflow:auto;display:grid;grid-template-columns:340px 1fr}
+.caja img{width:100%;display:block}
+.caja .der{padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.caja h3{font-size:17px}
+.caja .cap{white-space:pre-wrap;color:var(--gris);font-size:13.5px;background:#0F0F12;
+border:1px solid var(--linea);border-radius:10px;padding:12px;max-height:230px;overflow:auto}
+.votos{display:flex;gap:8px}
+.votos button{flex:1;padding:11px 0;border-radius:10px;border:1px solid var(--linea);
+background:transparent;color:var(--crema);font:700 14px Montserrat,sans-serif;cursor:pointer}
+.votos .b-ok.on{background:var(--ok);border-color:var(--ok)}
+.votos .b-no.on{background:var(--no);border-color:var(--no)}
+.votos .b-duda.on{background:var(--duda);border-color:var(--duda);color:#141414}
+textarea{background:#0F0F12;border:1px solid var(--linea);border-radius:10px;color:var(--crema);
+padding:11px;font:14px Montserrat,sans-serif;min-height:84px;resize:vertical}
+.guardar{padding:12px 0;border-radius:10px;border:0;background:var(--oro);color:#141414;
+font:800 14px Montserrat,sans-serif;cursor:pointer}
+.guardar:disabled{opacity:.45;cursor:default}
+.cerrar{position:sticky;top:0;margin-left:auto;background:none;border:0;color:var(--gris);
+font-size:22px;cursor:pointer;padding:6px 10px}
+.aviso{font-size:12.5px;color:var(--gris)}
+footer{padding:40px 0 60px;color:#55524C;font-size:12.5px}
+@media(max-width:700px){.caja{grid-template-columns:1fr}.fila{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo"><b>M</b> MENTORIUM · La mesa</div>
+  <div class="sub" id="rango"></div>
+  <div class="quien" id="pest" style="margin-left:0">
+    <button class="on" id="pf" onclick="pestana('feed')">Feed</button>
+    <button id="ph" onclick="pestana('historias')">Historias · Santi</button>
+  </div>
+  <div class="quien" id="quien"></div>
+</div></header>
+
+<main class="wrap" id="main"></main>
+
+<div class="velo" id="velo"><div class="caja" id="caja"></div></div>
+<footer class="wrap">Cada OK / NO / DUDA se guarda con tu nombre y le llega a Gerard como orden.
+Nada se publica sin OK, pieza a pieza.</footer>
+
+<script>
+/* blobs por persona (los mismos del panel viejo: cada uno escribe SOLO el suyo) */
+const BLOBS={
+ "Gerard":"https://api.npoint.io/68aa90c4c40af52e94ac",
+ "Javi":  "https://api.npoint.io/88c82cab5478b18404f1",
+ "Jordi": "https://api.npoint.io/8d25623222020a3f41ec",
+ "Santi": "https://api.npoint.io/6a1e5a7506cc4248da2b"};
+const TIPO={reel:"Reel",carrusel:"Carrusel",meme:"Meme",story:"Historia"};
+let quien=localStorage.getItem("mesa_quien")||"Gerard";
+let votos=JSON.parse(localStorage.getItem("mesa_votos")||"{}");
+let HOY=null,SEM=null,abierta=null,PEST="feed";
+function pestana(p){PEST=p;
+  document.getElementById("pf").classList.toggle("on",p==="feed");
+  document.getElementById("ph").classList.toggle("on",p==="historias");
+  pinta();sinHistorias(document.getElementById('main'));}
+function esStory(p){return (p.tipo||"").toLowerCase()==="story"}
+function titulo(p){
+  const h=hook(p.caption);
+  if(h)return h;
+  return (p.id||"").replace(/_/g," ").replace(/(\d+slides|V\d+[A-Z]?|\d+AGO|SEMANA)/gi,"").trim();}
+function capSospechosa(c){return /\d{1,3}[.,]\d{3}|€|\$/.test(c||"")}
+
+function hook(c){return (c||"").split("\n")[0].slice(0,90)}
+function chipQuien(){
+  const q=document.getElementById("quien");q.innerHTML="";
+  Object.keys(BLOBS).forEach(n=>{
+    const b=document.createElement("button");b.textContent=n;
+    if(n===quien)b.classList.add("on");
+    b.onclick=()=>{quien=n;localStorage.setItem("mesa_quien",n);chipQuien()};
+    q.appendChild(b);});
+}
+function card(p){
+  const v=votos[p.id];
+  const d=document.createElement("div");d.className="card";
+  d.innerHTML=`<img loading="lazy" src="${p.poster||""}" alt="">
+   <div class="meta"><div class="tipo">${TIPO[(p.tipo||"").toLowerCase()]||p.tipo||""}${p.slides?` · ${p.slides} slides`:""}${p.hora?` · ${p.hora}`:""}</div>
+   <div class="hook">${titulo(p)}</div>
+   ${quien==="Gerard"&&capSospechosa(p.caption)?'<div style="color:var(--duda);font-size:11px;font-weight:700;margin-top:4px">caption con cifra: revisar</div>':""}</div>
+   ${v?`<div class="punto p-${v.v}"></div>`:""}`;
+  d.onclick=()=>abre(p);
+  return d;
+}
+function fila(cuenta,piezas,cont){
+  const f=document.createElement("div");f.className="fila";
+  const c=document.createElement("div");c.className="cuenta";c.textContent=cuenta;
+  const g=document.createElement("div");g.className="cards";
+  if(!piezas.length){g.innerHTML='<div class="vacio">— sin piezas —</div>'}
+  piezas.forEach(p=>g.appendChild(card(p)));
+  f.appendChild(c);f.appendChild(g);cont.appendChild(f);
+}
+function pinta(){
+  const m=document.getElementById("main");m.innerHTML="";
+  const filtra=ps=>ps.filter(p=>PEST==="historias"?esStory(p):!esStory(p));
+  if(HOY&&HOY.piezas.length&&PEST==="feed"){
+    const h=document.createElement("h2");h.innerHTML=`Hoy · <span>${HOY.dia}</span>`;m.appendChild(h);
+    ["JAVI","JORDI"].forEach(c=>fila(c,filtra(HOY.piezas).filter(p=>p.cuenta===c),m));
+  }
+  if(SEM){
+    document.getElementById("rango").textContent="Semana del "+(SEM.semana||"");
+    (SEM.dias||[]).forEach(dia=>{
+      const ps=filtra(SEM.piezas||[]).filter(p=>p.dia===dia);
+      if(!ps.length)return;
+      const h=document.createElement("h2");h.innerHTML=`<span>${dia}</span>`;m.appendChild(h);
+      ["JAVI","JORDI"].forEach(c=>fila(c,ps.filter(p=>p.cuenta===c),m));
+    });
+  }
+}
+function abre(p){
+  abierta=p;voto_tmp=null;const v=votos[p.id]||{};
+  const caja=document.getElementById("caja");
+  caja.innerHTML=`<div><img src="${p.poster||""}"></div>
+  <div class="der"><button class="cerrar" onclick="cierra()">×</button>
+   <h3>${p.id}</h3>
+   <div class="tipo" style="color:var(--gris);font-size:12px">${TIPO[(p.tipo||"").toLowerCase()]||p.tipo||""}${p.hora?` · sale ${p.hora}`:""}</div>
+   <div class="cap">${(p.caption||"(sin caption)")}</div>
+   <div class="votos">
+    <button class="b-ok${v.v==="ok"?" on":""}" onclick="vota('ok')">OK</button>
+    <button class="b-duda${v.v==="duda"?" on":""}" onclick="vota('duda')">DUDA</button>
+    <button class="b-no${v.v==="no"?" on":""}" onclick="vota('no')">NO</button>
+   </div>
+   <textarea id="txt" placeholder="Si es NO o DUDA: qué cambiarías (esto me llega como orden)">${v.txt||""}</textarea>
+   <button class="guardar" onclick="guarda()">Guardar como ${quien}</button>
+   <div class="aviso" id="aviso"></div>
+  </div>`;
+  document.getElementById("velo").classList.add("on");
+}
+function cierra(){document.getElementById("velo").classList.remove("on");abierta=null}
+document.getElementById("velo").addEventListener("click",e=>{if(e.target.id==="velo")cierra()});
+let voto_tmp=null;
+function vota(v){voto_tmp=v;
+  document.querySelectorAll(".votos button").forEach(b=>b.classList.remove("on"));
+  document.querySelector(".b-"+v).classList.add("on");}
+async function guarda(){
+  if(!abierta)return;
+  const v=voto_tmp||(votos[abierta.id]||{}).v;
+  if(!v){document.getElementById("aviso").textContent="Elige OK, DUDA o NO.";return}
+  const txt=document.getElementById("txt").value.trim();
+  votos[abierta.id]={v,txt,quien,cuando:new Date().toISOString().slice(0,16)};
+  localStorage.setItem("mesa_votos",JSON.stringify(votos));
+  document.getElementById("aviso").textContent="Guardado aquí. Subiendo…";
+  try{
+    const url=BLOBS[quien];
+    let blob={};try{blob=await (await fetch(url)).json()||{}}catch(e){}
+    blob.mesa=blob.mesa||{};blob.mesa[abierta.id]=votos[abierta.id];
+    const r=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(blob)});
+    document.getElementById("aviso").textContent=r.ok?
+      "Enviado. Le llega a Gerard como orden.":"Guardado en este móvil; se subirá al reabrir.";
+  }catch(e){document.getElementById("aviso").textContent="Guardado en este móvil; sin red ahora."}
+  pinta();
+}
+function sinHistorias(m){
+  if(PEST==="historias"&&!m.children.length){
+    m.innerHTML='<div class="vacio" style="padding:40px 0">Sin historias programadas esta semana. Las historias las produce el equipo y las sube Santi; aquí aparecerán para su OK antes de pasárselas.</div>'}}
+(async()=>{
+  chipQuien();
+  try{HOY=await (await fetch("hoy.json")).json()}catch(e){}
+  try{
+    SEM=await (await fetch("piezas.json")).json();
+    (SEM.piezas||[]).forEach(p=>{if(p.archivos&&p.archivos[0]){p.poster=p.archivos[0].poster}});
+  }catch(e){}
+  pinta();sinHistorias(document.getElementById('main'));
+})();
+</script>
+</body>
+</html>
