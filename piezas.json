@@ -1877,6 +1877,23 @@
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_SYK_NOTICIA_SENAL"
   },
   {
+   "id": "JAVI_TH_CAJITA3_SUBSXL",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Todo el mundo me viene con lo mismo. Y casi nadie con lo que de verdad mueve la aguja.\n\n¿A ti qué te está frenando ahora mismo? Te leo.\n\n#ecommerce #negocios",
+   "archivos": [
+    {
+     "archivo": "J3_th_CAJITA3_SUBSXL.mp4",
+     "poster": "media/JAVI_TH_CAJITA3_SUBSXL__00.jpg",
+     "peso_mb": 10.56
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/TH_CAJITA3_SUBSXL"
+  },
+  {
    "id": "MEMES_JAVI_TANDA_16AGO",
    "cuenta": "JAVI",
    "tipo": "meme",
@@ -3450,6 +3467,239 @@
     }
    ],
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CLON_RAMA_3_FILTROS"
+  },
+  {
+   "id": "JORDI_CO1E0_01_shipping_protection_407K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Si lo sabes, lo sabes.\n\n¿La llevas en tu tienda? Comenta.\n\n#ecommerce #dropshipping",
+   "archivos": [
+    {
+     "archivo": "REPLICA_01_shipping_protection_407K.mp4",
+     "poster": "media/JORDI_CO1E0_01_shipping_protection_407K__00.jpg",
+     "peso_mb": 1.38,
+     "video": "media/JORDI_CO1E0_01_shipping_protection_407K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_01_shipping_protection_407K"
+  },
+  {
+   "id": "JORDI_CO1E0_02_claude_theme_59K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "La IA no te quita el trabajo. Te quita los gastos tontos.\n\n¿Cuánto pagaste tú por el tuyo? Comenta.\n\n#ecommerce #ia #shopify",
+   "archivos": [
+    {
+     "archivo": "REPLICA_02_claude_theme_59K.mp4",
+     "poster": "media/JORDI_CO1E0_02_claude_theme_59K__00.jpg",
+     "peso_mb": 1.37,
+     "video": "media/JORDI_CO1E0_02_claude_theme_59K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_02_claude_theme_59K"
+  },
+  {
+   "id": "JORDI_CO1E0_03_envio_express_41K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "El botón cambia. El camión no.\n\nSi lo has hecho alguna vez, comenta sin miedo.\n\n#ecommerce #dropshipping",
+   "archivos": [
+    {
+     "archivo": "REPLICA_03_envio_express_41K.mp4",
+     "poster": "media/JORDI_CO1E0_03_envio_express_41K__00.jpg",
+     "peso_mb": 1.39,
+     "video": "media/JORDI_CO1E0_03_envio_express_41K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_03_envio_express_41K"
+  },
+  {
+   "id": "JORDI_CO1E0_04_subtotal_recurrente_37K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Vender una vez está bien. Cobrar cada mes está mejor.\n\n¿Tu producto se puede vender en suscripción? Piénsalo y comenta.\n\n#ecommerce #negocios",
+   "archivos": [
+    {
+     "archivo": "REPLICA_04_subtotal_recurrente_37K.mp4",
+     "poster": "media/JORDI_CO1E0_04_subtotal_recurrente_37K__00.jpg",
+     "peso_mb": 1.36,
+     "video": "media/JORDI_CO1E0_04_subtotal_recurrente_37K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_04_subtotal_recurrente_37K"
+  },
+  {
+   "id": "JORDI_CO1E0_05_caracteres_invisibles_86K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Hay atajos que salen carísimos.\n\nSi sabes cuál es este, comenta. Si no, mejor.\n\n#ecommerce #dropshipping",
+   "archivos": [
+    {
+     "archivo": "REPLICA_05_caracteres_invisibles_86K.mp4",
+     "poster": "media/JORDI_CO1E0_05_caracteres_invisibles_86K__00.jpg",
+     "peso_mb": 1.39,
+     "video": "media/JORDI_CO1E0_05_caracteres_invisibles_86K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_05_caracteres_invisibles_86K"
+  },
+  {
+   "id": "JORDI_CO1E0_06_resenas_inventadas_49K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "La prueba social se gana, no se escribe.\n\n¿Cuántas tiendas recién abiertas has visto con miles de reseñas? Comenta.\n\n#ecommerce #antihumo",
+   "archivos": [
+    {
+     "archivo": "REPLICA_06_resenas_inventadas_49K.mp4",
+     "poster": "media/JORDI_CO1E0_06_resenas_inventadas_49K__00.jpg",
+     "peso_mb": 1.38,
+     "video": "media/JORDI_CO1E0_06_resenas_inventadas_49K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_06_resenas_inventadas_49K"
+  },
+  {
+   "id": "JORDI_CO1E0_07_recarga_automatica_35K",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Léelo dos veces antes de marcar la casilla.\n\n¿Te ha pasado? Comenta.\n\n#ecommerce #consumo",
+   "archivos": [
+    {
+     "archivo": "REPLICA_07_recarga_automatica_35K.mp4",
+     "poster": "media/JORDI_CO1E0_07_recarga_automatica_35K__00.jpg",
+     "peso_mb": 1.34,
+     "video": "media/JORDI_CO1E0_07_recarga_automatica_35K__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_07_recarga_automatica_35K"
+  },
+  {
+   "id": "JORDI_FRASE_LAMBO_TIKI",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
+   "archivos": [
+    {
+     "archivo": "JO3_frase_lambo_TIKI.mp4",
+     "poster": "media/JORDI_FRASE_LAMBO_TIKI__00.jpg",
+     "peso_mb": 10.92
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/FRASE_LAMBO_TIKI"
+  },
+  {
+   "id": "JORDI_MEME_NUEVO_01_carrito_envio_sorpresa",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Nadie abandona por el producto. Abandonan por la sorpresa.\n\nSi el envío aparece por primera vez en el último paso, el cliente no siente que paga un envío: siente que le han movido el precio.\n\nDilo antes. En la ficha, grande. Vender con la verdad delante convierte menos visitas en más pedidos.\n\n¿A ti también te pasa? Cuéntamelo en comentarios.\n\n#ecommerce #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_carrito_envio_sorpresa.mp4",
+     "poster": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.jpg",
+     "peso_mb": 1.37,
+     "video": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_01_carrito_envio_sorpresa"
+  },
+  {
+   "id": "JORDI_MEME_NUEVO_02_dm_de_madrugada",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Contestar rápido está bien. Vivir pegado al móvil no es un sistema.\n\nSi tu tienda necesita que estés despierto para vender, no tienes una tienda: tienes un turno de noche.\n\nLa ficha tiene que responder sola lo que te preguntan siempre: precio claro, envío claro, talla clara.\n\n¿Cuál es la pregunta que más te repiten? Comenta.\n\n#ecommerce #dropshipping",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_02_dm_de_madrugada.mp4",
+     "poster": "media/JORDI_MEME_NUEVO_02_dm_de_madrugada__00.jpg",
+     "peso_mb": 1.39,
+     "video": "media/JORDI_MEME_NUEVO_02_dm_de_madrugada__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_02_dm_de_madrugada"
+  },
+  {
+   "id": "JORDI_MEME_NUEVO_03_contrareembolso_que_vuelve",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "El contra reembolso sin filtro no es una forma de pago: es una devolución con paseo.\n\nPedido que vuelve paga dos envíos y llega tocado. Y el que lo pidió ni se acuerda.\n\nConfirmación por mensaje antes de enviar. Una línea, y se caen solos los que nunca iban a abrir la puerta.\n\n¿Te ha vuelto alguno esta semana? Comenta.\n\n#ecommerce #negocios",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_03_contrareembolso_que_vuelve.mp4",
+     "poster": "media/JORDI_MEME_NUEVO_03_contrareembolso_que_vuelve__00.jpg",
+     "peso_mb": 1.41,
+     "video": "media/JORDI_MEME_NUEVO_03_contrareembolso_que_vuelve__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_03_contrareembolso_que_vuelve"
+  },
+  {
+   "id": "JORDI_MEME_NUEVO_04_mirar_ventas_seis_veces",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "El panel no es una máquina de ventas. Es un espejo.\n\nMirarlo cada diez minutos solo cambia una cosa: tu ansiedad. Las ventas las mueven la ficha, el producto y el tráfico — y ninguno de los tres se arregla mirando.\n\nUna revisión por la mañana, otra por la noche. El resto del día, a construir.\n\n¿Cuántas veces lo miras tú? Sé sincero en comentarios.\n\n#ecommerce #mentalidad",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_04_mirar_ventas_seis_veces.mp4",
+     "poster": "media/JORDI_MEME_NUEVO_04_mirar_ventas_seis_veces__00.jpg",
+     "peso_mb": 1.4,
+     "video": "media/JORDI_MEME_NUEVO_04_mirar_ventas_seis_veces__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_04_mirar_ventas_seis_veces"
+  },
+  {
+   "id": "JORDI_MEME_PROBAR_TIENDA",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "",
+   "caption": "Antes de gastar un solo día en traer gente, cómprate a ti mismo.\n\nCon el móvil, con los datos de verdad, hasta el final. Vas a descubrir el campo que no deja seguir, el gasto de envío que aparece de golpe y la pantalla de gracias que no dice nada.\n\nSe tarda diez minutos y es lo más rentable que vas a hacer esta semana.\n\n#ecommerce #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "JO1_meme_probar_tienda.mp4",
+     "poster": "media/JORDI_MEME_PROBAR_TIENDA__00.jpg",
+     "peso_mb": 1.4,
+     "video": "media/JORDI_MEME_PROBAR_TIENDA__00.mp4"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_PROBAR_TIENDA"
   },
   {
    "id": "MEMES_JORDI_ELITE_18AGO",
