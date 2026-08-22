@@ -2073,23 +2073,6 @@
    "origen": "PARA_REVISAR/POD_QA15_JAVI_15AGO"
   },
   {
-   "id": "REEL_JAVI_CERO_2AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "BOFU",
-   "caption": "No venimos de ser programadores. Ni de haber sido informáticos.\n\nYo era entrenador personal. Jordi tenía su trabajo. Ocho horas al día, profesiones\nnormales y corrientes, cambiando nuestro tiempo por dinero.\n\nEmpezamos totalmente de cero, aprendiendo como cualquier persona normal.\n\nSi estás esperando tener el perfil, el título o la experiencia para arrancar:\nnosotros tampoco los teníamos. Y así empezamos.\n\n#ecommerce #emprender #mentalidad",
-   "archivos": [
-    {
-     "archivo": "REEL_JAVI_CERO.mp4",
-     "poster": "media/REEL_JAVI_CERO_2AGO__00.jpg",
-     "peso_mb": 57.04
-    }
-   ],
-   "origen": "PARA_REVISAR/REEL_JAVI_CERO_2AGO"
-  },
-  {
    "id": "REEL_JAVI_CERO_V2",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -2321,30 +2304,6 @@
     }
    ],
    "origen": "PARA_REVISAR/STORIES_JAVI_FREESTYLE_2AGO"
-  },
-  {
-   "id": "STORIES_JAVI_MIERCOLES_A5_5AGO",
-   "cuenta": "JAVI",
-   "tipo": "story",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "BOFU",
-   "caption": "Secuencia de stories · no lleva caption de feed.\nPalabra clave del CTA: RECURSOS (única cableada en ManyChat).\nRecurso a responder: MENTORIUM_Recurso_Video_Ads (06_HERRAMIENTAS_HTML/MENTORIUM_Recurso_Video_Ads.html).\nOrden: s01 dolor → s02 win 8.446 MXN → s03 CTA. Día: MIÉRCOLES 5-ago, cuenta de JAVI.",
-   "archivos": [
-    {
-     "archivo": "s01_dolor.jpg",
-     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__00.jpg"
-    },
-    {
-     "archivo": "s02_win_mxn.jpg",
-     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__01.jpg"
-    },
-    {
-     "archivo": "s03_cta_recursos.jpg",
-     "poster": "media/STORIES_JAVI_MIERCOLES_A5_5AGO__02.jpg"
-    }
-   ],
-   "origen": "PARA_REVISAR/STORIES_JAVI_MIERCOLES_A5_5AGO"
   },
   {
    "id": "STORIES_JAVI_MIERCOLES_A5_V3",
@@ -4106,34 +4065,6 @@
     }
    ],
    "origen": "PARA_REVISAR/STORIES_JORDI_FREESTYLE_2AGO"
-  },
-  {
-   "id": "STORIES_JORDI_MARTES_A7_4AGO",
-   "cuenta": "JORDI",
-   "tipo": "story",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "BOFU",
-   "caption": "Secuencia de stories · no lleva caption de feed.\nPalabra clave del CTA: RECURSOS (única cableada en ManyChat).\nRecurso a responder: calculadora de ROAS real (06_HERRAMIENTAS_HTML/calculadora-roas-real.html) — pantallazo nítido o link, decide Gerard.\nOrden de subida: s01 dolor → s02 win México → s03 win editor → s04 CTA. Entre medias, si Jordi quiere, una story humana suya (día documentado).",
-   "archivos": [
-    {
-     "archivo": "s01_dolor.jpg",
-     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__00.jpg"
-    },
-    {
-     "archivo": "s02_win_mexico.jpg",
-     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__01.jpg"
-    },
-    {
-     "archivo": "s03_win_editor.jpg",
-     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__02.jpg"
-    },
-    {
-     "archivo": "s04_cta_recursos.jpg",
-     "poster": "media/STORIES_JORDI_MARTES_A7_4AGO__03.jpg"
-    }
-   ],
-   "origen": "PARA_REVISAR/STORIES_JORDI_MARTES_A7_4AGO"
   },
   {
    "id": "STORIES_JORDI_MARTES_A7_V3",
