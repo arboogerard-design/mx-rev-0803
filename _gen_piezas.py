@@ -52,6 +52,41 @@ def norm(s):
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
 
 
+def leer_huecos_plan():
+    """Filas «FALTA...» de la seccion 1 del plan → lista de huecos honestos por dia/cuenta.
+    El plan es la unica fuente; si no hay plan, no hay huecos que contar."""
+    huecos = []
+    if not os.path.isfile(PLAN):
+        return huecos
+    with io.open(PLAN, encoding="utf-8", errors="replace") as f:
+        txt = f.read()
+    m = re.search(r"^## 1\..*?(?=^## 2\.)", txt, re.M | re.S)
+    if not m:
+        return huecos
+    cuenta = ""
+    dia = ""
+    for ln in m.group(0).splitlines():
+        mc = re.search(r"###\s+(JAVI|JORDI)", ln)
+        if mc:
+            cuenta = mc.group(1)
+            dia = ""
+            continue
+        celdas = [c.strip() for c in ln.split("|")]
+        if len(celdas) < 6:
+            continue
+        md = re.search(r"(LUN|MAR|MI\S|JUE|VIE|S\SB|DOM)\s*(\d+)", celdas[1], re.I)
+        if md:
+            dia = (md.group(1)[:3] + " " + md.group(2)).lower().replace("mie", "mié").replace("sab", "sáb")
+        if "FALTA" in celdas[5].upper() and cuenta and dia:
+            motivo = re.sub(r"\*+|`", "", celdas[5])
+            motivo = re.sub(r"^\s*FALTA PRODUCIR\s*[—-]?\s*", "", motivo, flags=re.I).strip()
+            huecos.append({"dia": dia, "cuenta": cuenta,
+                           "formato": re.sub(r"\*+", "", celdas[3]).strip(),
+                           "hora": HORAS_SLOT.get(int(celdas[2]) if celdas[2].isdigit() else 0, ""),
+                           "motivo": motivo[:160]})
+    return huecos
+
+
 def veredicto_pass(carpeta):
     rep = os.path.join(carpeta, "_gate", "REPORTE.md")
     if not os.path.isfile(rep):
@@ -135,7 +170,21 @@ def tipo_de(nombre):
     if "CARRUSEL" in n or n.startswith("CARR_"):
         return "carrusel"
     if ES_AD.search(n):
-        return "ad"
+        return "reel"
+    return "reel"
+
+
+def tipo_medido(nombre, archivos):
+    """Mesa 2.0 (23-ago): el TIPO sale de los FICHEROS reales, no del nombre.
+    2+ imagenes = carrusel · si no, lo que diga el nombre (meme/story) · resto = reel.
+    Causa: BSEM_* y CLON_* salian como «REEL» en la mesa por adivinar del nombre —
+    Gerard 23-ago: «el panel ahora es peor que nunca»."""
+    imgs = sum(1 for a in archivos if not a.get("video") and not a["archivo"].lower().endswith(".mp4"))
+    por_nombre = tipo_de(nombre)
+    if por_nombre in ("story", "meme"):
+        return por_nombre
+    if imgs >= 2:
+        return "carrusel"
     return "reel"
 
 
@@ -262,7 +311,25 @@ def media_pieza(pid, carpeta, dry):
                     stats["videos"] += 1
                     stats["mb"] += mb
             else:
-                stats["omitidos"] += 1
+                # Mesa 2.0 (23-ago): un reel que no se puede VER no se puede votar.
+                # Los >LIM_MB no se tiran: se les hace preview 720p comprimida.
+                ent["video"] = "media/%s.mp4" % base
+                if not dry and not os.path.isfile(video_abs):
+                    cmd = ["ffmpeg", "-y", "-v", "error", "-i", src,
+                           "-vf", "scale='min(720,iw)':-2", "-c:v", "libx264",
+                           "-preset", "veryfast", "-crf", "28", "-movflags", "+faststart",
+                           "-c:a", "aac", "-b:a", "96k", video_abs]
+                    try:
+                        r = subprocess.run(cmd, capture_output=True, timeout=600, creationflags=NO_WIN)
+                        if r.returncode == 0 and os.path.isfile(video_abs) and os.path.getsize(video_abs) > 0:
+                            stats["videos"] += 1
+                            stats["mb"] += os.path.getsize(video_abs) / 1048576.0
+                        else:
+                            ent.pop("video", None)
+                            stats["omitidos"] += 1
+                    except Exception:
+                        ent.pop("video", None)
+                        stats["omitidos"] += 1
             if not dry and not os.path.isfile(poster_abs):
                 if ffmpeg_poster(src, poster_abs):
                     stats["posters"] += 1
@@ -381,16 +448,27 @@ def main():
             avisos.append("pieza sin media, fuera: " + p["id"])
             continue
         p["archivos"] = archivos
-        # orden de claves = esquema del panel (INTOCABLE)
+        # Mesa 2.0: tipo MEDIDO de los ficheros (gana a la herencia y al nombre)
+        p["tipo"] = tipo_medido(p["id"], archivos)
+        n_slides = sum(1 for a in archivos if a["archivo"].lower().endswith((".png", ".jpg", ".jpeg")))
+        if p["tipo"] == "carrusel" and n_slides:
+            p["slides"] = n_slides
+        p["sin_caption"] = not (p.get("caption") or "").strip()
+        # orden de claves = esquema del panel
+        # P16: los campos internos (etiqueta de embudo, ruta de origen) NO viajan en el
+        # json del equipo — el equipo ve piezas, no taxonomia nuestra
         salida.append({k: p[k] for k in
-                       ("id", "cuenta", "tipo", "dia", "hora", "etiqueta",
-                        "caption", "archivos", "origen")})
+                       ("id", "cuenta", "tipo", "dia", "hora",
+                        "caption", "archivos", "sin_caption")
+                       if k in p} | ({"slides": p["slides"]} if "slides" in p else {}))
 
+    huecos = leer_huecos_plan()
     doc = {
-        "generado": __import__("datetime").date.today().isoformat(),
+        "generado": __import__("datetime").datetime.now().isoformat(timespec="minutes"),
         "semana": SEMANA,
         "dias": DIAS,
         "piezas": salida,
+        "huecos": huecos,
     }
 
     print("TOTAL piezas: %d (antes: %d)" % (len(salida), len(heredado)))
@@ -408,19 +486,6 @@ def main():
     with io.open(PIEZAS_JSON, "w", encoding="utf-8") as f:
         json.dump(doc, f, ensure_ascii=False, indent=1)
     print("escrito:", PIEZAS_JSON)
-
-    # refrescar el fallback embebido de index.html (la fuente es el fetch; esto es solo
-    # el paracaidas de file:// — y se regenera aqui para que nunca vuelva a congelarse)
-    with io.open(INDEX, encoding="utf-8") as f:
-        html = f.read()
-    linea = "let DATOS=" + json.dumps(doc, ensure_ascii=False, separators=(",", ": ")) + ";"
-    html2, n = re.subn(r"^(?:const|let) DATOS=.*$", lambda m: linea, html, count=1, flags=re.M)
-    if n == 1:
-        with io.open(INDEX, "w", encoding="utf-8") as f:
-            f.write(html2)
-        print("embed fallback de index.html refrescado")
-    else:
-        print("AVISO: no se encontro la linea DATOS= en index.html — embed sin tocar")
 
 
 if __name__ == "__main__":

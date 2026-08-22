@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-22",
+ "generado": "2026-08-23T01:11",
  "semana": "24-30 agosto 2026",
  "dias": [
   "lun 24",
@@ -17,16 +17,16 @@
    "tipo": "reel",
    "dia": "lun 24",
    "hora": "19:00",
-   "etiqueta": "",
    "caption": "Todo el mundo me viene con lo mismo. Y casi nadie con lo que de verdad mueve la aguja.\n\n¿A ti qué te está frenando ahora mismo? Te leo.\n\n#ecommerce #negocios",
    "archivos": [
     {
      "archivo": "J3_th_CAJITA3_SUBSXL.mp4",
      "poster": "media/JAVI_TH_CAJITA3_SUBSXL__00.jpg",
-     "peso_mb": 10.56
+     "peso_mb": 10.56,
+     "video": "media/JAVI_TH_CAJITA3_SUBSXL__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/TH_CAJITA3_SUBSXL"
+   "sin_caption": false
   },
   {
    "id": "TH_JORDI_VALIDAR_SPLIT_8AGO",
@@ -34,24 +34,23 @@
    "tipo": "reel",
    "dia": "lun 24",
    "hora": "19:00",
-   "etiqueta": "MOFU",
    "caption": "¿Cómo sabes si un producto vale la pena ANTES de quemar dinero?\n\nComenta «VALIDA» si te está pasando. Y guárdalo.\n\n#ecommerce #dropshipping #emprender",
    "archivos": [
     {
      "archivo": "TH_JORDI_VALIDAR_SPLIT.mp4",
      "poster": "media/TH_JORDI_VALIDAR_SPLIT_8AGO__00.jpg",
-     "peso_mb": 18.34
+     "peso_mb": 18.34,
+     "video": "media/TH_JORDI_VALIDAR_SPLIT_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/TH_JORDI_VALIDAR_SPLIT_8AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_BSEM_5_NUMEROS_LUNES",
    "cuenta": "JAVI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "lun 24",
    "hora": "19:30",
-   "etiqueta": "",
    "caption": "Los 5 numeros que miro cada lunes en una tienda. Antes de tocar nada.\n\n1. La caja (lo que queda, no lo que entra)\n2. El margen por pedido\n3. Las devoluciones\n4. El coste de traer un pedido\n5. La recompra\n\nCinco minutos, panel abierto, cero opiniones.\n\nComenta «CAJA» si quieres la rutina completa. Y guardalo para el lunes.\n\n#ecommerce #tiendaonline #negocios",
    "archivos": [
     {
@@ -83,15 +82,15 @@
      "poster": "media/JAVI_BSEM_5_NUMEROS_LUNES__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/BSEM_5_NUMEROS_LUNES"
+   "sin_caption": false,
+   "slides": 7
   },
   {
    "id": "CARRUSEL_JORDI_TRES_VENTAS_18AGO",
    "cuenta": "JORDI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "lun 24",
    "hora": "19:30",
-   "etiqueta": "TOFU",
    "caption": "Y dos son de tu madre.\n\nNo te lo tomes como una señal de que no vales. Tómatelo como un dato.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -143,7 +142,7 @@
      "video": "media/CARRUSEL_JORDI_TRES_VENTAS_18AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_TRES_VENTAS_18AGO"
+   "sin_caption": false
   },
   {
    "id": "MEMES_JAVI_SEMANA_17AGO",
@@ -151,7 +150,6 @@
    "tipo": "meme",
    "dia": "mar 25",
    "hora": "19:00",
-   "etiqueta": "TOFU",
    "caption": "El que lo vive, lo sabe.\n\nGuardalo y mandaselo al que esta montando la tienda.\n\n#ecommerce #humor #emprender",
    "archivos": [
     {
@@ -191,7 +189,7 @@
      "video": "media/MEMES_JAVI_SEMANA_17AGO__05.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JAVI_SEMANA_17AGO"
+   "sin_caption": false
   },
   {
    "id": "MEMES_JORDI_SEMANA_25AGO",
@@ -199,7 +197,6 @@
    "tipo": "meme",
    "dia": "mar 25",
    "hora": "19:00",
-   "etiqueta": "TOFU",
    "caption": "Si te ha pasado con tu tienda, ya somos dos.\n\nEtiqueta a tu bro.\n\n#ecommerce #humor #dropshipping",
    "archivos": [
     {
@@ -251,7 +248,7 @@
      "video": "media/MEMES_JORDI_SEMANA_25AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_25AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CAJITA2_9AGO",
@@ -259,16 +256,16 @@
    "tipo": "reel",
    "dia": "mar 25",
    "hora": "19:30",
-   "etiqueta": "BOFU",
    "caption": "¿cuánto vale montar un shopify?\n\n#ecommerce #negocios",
    "archivos": [
     {
      "archivo": "JAVI_CAJITA2.mp4",
      "poster": "media/JAVI_CAJITA2_9AGO__00.jpg",
-     "peso_mb": 15.98
+     "peso_mb": 15.98,
+     "video": "media/JAVI_CAJITA2_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_CAJITA2_9AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_PROVEEDOR_4AGO",
@@ -276,24 +273,23 @@
    "tipo": "reel",
    "dia": "mar 25",
    "hora": "19:30",
-   "etiqueta": "MOFU",
    "caption": "Tu proveedor no es tu enemigo: es tu aliado. Y elegirlo bien marca la diferencia.\n\n#ecommerce #dropshipping #mentoria",
    "archivos": [
     {
      "archivo": "REEL_JORDI_PROVEEDOR.mp4",
      "poster": "media/REEL_JORDI_PROVEEDOR_4AGO__00.jpg",
-     "peso_mb": 43.31
+     "peso_mb": 43.31,
+     "video": "media/REEL_JORDI_PROVEEDOR_4AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_PROVEEDOR_4AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "mar 25",
    "hora": "20:00",
-   "etiqueta": "BOFU",
    "caption": "Solo te asegura empezar otra vez desde cero.\n\nY es la decisión más cómoda que existe, por eso la toma todo el mundo.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -351,15 +347,14 @@
      "video": "media/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__08.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CLON_RAMA_3_FILTROS",
    "cuenta": "JORDI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "mar 25",
    "hora": "20:00",
-   "etiqueta": "",
    "caption": "",
    "archivos": [
     {
@@ -383,7 +378,8 @@
      "poster": "media/JORDI_CLON_RAMA_3_FILTROS__04.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CLON_RAMA_3_FILTROS"
+   "sin_caption": true,
+   "slides": 5
   },
   {
    "id": "JAVI_PAU2_9AGO",
@@ -391,7 +387,6 @@
    "tipo": "reel",
    "dia": "mié 26",
    "hora": "19:30",
-   "etiqueta": "MOFU",
    "caption": "Esta tienda vende regalos personalizados\n\n#ecommerce #negocios",
    "archivos": [
     {
@@ -401,7 +396,7 @@
      "video": "media/JAVI_PAU2_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_PAU2_9AGO"
+   "sin_caption": false
   },
   {
    "id": "TH_JORDI_PERDIDAS_9AGO",
@@ -409,24 +404,23 @@
    "tipo": "reel",
    "dia": "mié 26",
    "hora": "19:30",
-   "etiqueta": "BOFU",
    "caption": "Necesitas pérdidas. Necesitas problemas.\n\nSi solo hubiera victorias no aprenderías nada, te confiarías, y el día del problema de verdad acabarías en quiebra.\n\nLo que me preocupa hoy no es perder: es rendirme.",
    "archivos": [
     {
      "archivo": "TH_JORDI_PERDIDAS.mp4",
      "poster": "media/TH_JORDI_PERDIDAS_9AGO__00.jpg",
-     "peso_mb": 17.79
+     "peso_mb": 17.79,
+     "video": "media/TH_JORDI_PERDIDAS_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/TH_JORDI_PERDIDAS_9AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CLON_RAMA_5_HERRAMIENTAS",
    "cuenta": "JAVI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "mié 26",
    "hora": "20:00",
-   "etiqueta": "",
    "caption": "",
    "archivos": [
     {
@@ -458,15 +452,15 @@
      "poster": "media/JAVI_CLON_RAMA_5_HERRAMIENTAS__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_RAMA_5_HERRAMIENTAS"
+   "sin_caption": true,
+   "slides": 7
   },
   {
    "id": "CARRUSEL_JORDI_PEOR_WEB_17AGO",
    "cuenta": "JORDI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "mié 26",
    "hora": "20:00",
-   "etiqueta": "MOFU",
    "caption": "Llevas medio año puliendo la tienda y el que te está comiendo tiene una página fea.\n\nPor qué pasa eso, dentro.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -518,7 +512,7 @@
      "video": "media/CARRUSEL_JORDI_PEOR_WEB_17AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_PEOR_WEB_17AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_NICHO_MERCADO_20AGO",
@@ -526,7 +520,6 @@
    "tipo": "reel",
    "dia": "jue 27",
    "hora": "19:00",
-   "etiqueta": "MOFU",
    "caption": "El error que veo cada semana: montar la tienda copiando el país de un compañero.\n\nA él le funciona. A ti no. Y no es el producto — es que no sabes cuánta gente puede comprarte en ESE mercado.\n\nEspecialízate en un nicho y un mercado. Datos, no corazonadas.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
@@ -536,15 +529,14 @@
      "video": "media/JAVI_NICHO_MERCADO_20AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_NICHO_MERCADO_20AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CLON_SYK_NOTICIA_SENAL",
    "cuenta": "JAVI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "jue 27",
    "hora": "19:30",
-   "etiqueta": "",
    "caption": "",
    "archivos": [
     {
@@ -576,7 +568,8 @@
      "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_SYK_NOTICIA_SENAL"
+   "sin_caption": true,
+   "slides": 7
   },
   {
    "id": "JORDI_FRASE_LAMBO_TIKI",
@@ -584,16 +577,16 @@
    "tipo": "reel",
    "dia": "jue 27",
    "hora": "19:30",
-   "etiqueta": "",
    "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
    "archivos": [
     {
      "archivo": "JO3_frase_lambo_TIKI.mp4",
      "poster": "media/JORDI_FRASE_LAMBO_TIKI__00.jpg",
-     "peso_mb": 10.92
+     "peso_mb": 10.92,
+     "video": "media/JORDI_FRASE_LAMBO_TIKI__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/FRASE_LAMBO_TIKI"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CLASE_BORROSA_9AGO",
@@ -601,16 +594,16 @@
    "tipo": "reel",
    "dia": "jue 27",
    "hora": "20:00",
-   "etiqueta": "BOFU",
    "caption": "Todo el mundo dice que el drop ha muerto\n\n#ecommerce #negocios",
    "archivos": [
     {
      "archivo": "JAVI_CLASE_BORROSA.mp4",
      "poster": "media/JAVI_CLASE_BORROSA_9AGO__00.jpg",
-     "peso_mb": 13.59
+     "peso_mb": 13.59,
+     "video": "media/JAVI_CLASE_BORROSA_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_CLASE_BORROSA_9AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_EMPEZAR_4AGO",
@@ -618,16 +611,16 @@
    "tipo": "reel",
    "dia": "jue 27",
    "hora": "20:00",
-   "etiqueta": "BOFU",
    "caption": "¿Cuánto necesitas de verdad para empezar? La respuesta sin humo.\n\n#ecommerce #emprender #mentoria",
    "archivos": [
     {
      "archivo": "REEL_JORDI_EMPEZAR.mp4",
      "poster": "media/REEL_JORDI_EMPEZAR_4AGO__00.jpg",
-     "peso_mb": 33.76
+     "peso_mb": 33.76,
+     "video": "media/REEL_JORDI_EMPEZAR_4AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_EMPEZAR_4AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_SELFIE_EXITO_8AGO",
@@ -635,24 +628,23 @@
    "tipo": "reel",
    "dia": "vie 28",
    "hora": "19:00",
-   "etiqueta": "BOFU",
    "caption": "¿El éxito te cambia o revela quién eras? Mi respuesta sin filtro.\n\n#mentalidad #emprender #éxito",
    "archivos": [
     {
      "archivo": "JAVI_SELFIE_EXITO_8AGO.mp4",
      "poster": "media/JAVI_SELFIE_EXITO_8AGO__00.jpg",
-     "peso_mb": 49.65
+     "peso_mb": 49.65,
+     "video": "media/JAVI_SELFIE_EXITO_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_SELFIE_EXITO_8AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JAVI_OLOR_A_VENTA_17AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "vie 28",
    "hora": "19:30",
-   "etiqueta": "TOFU",
    "caption": "El que entra en tu tienda decide en segundo y medio si le estás resolviendo algo o si le estás pidiendo algo.\n\nLas cuatro señales están dentro.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -704,7 +696,7 @@
      "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO"
+   "sin_caption": false
   },
   {
    "id": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
@@ -712,16 +704,16 @@
    "tipo": "reel",
    "dia": "vie 28",
    "hora": "19:30",
-   "etiqueta": "TOFU",
    "caption": "El vídeo dura diez segundos. Lo de antes duró años.\n\nDías de no dormir y meses facturando sin ganar nada. Eso último, además, no es mala señal: significa que estás aprendiendo dónde se te va el dinero.\n\n¿En qué punto estás tú ahora mismo?\n\n#ecommerce #dropshipping #emprender",
    "archivos": [
     {
      "archivo": "FRASE_JORDI_PORSCHE_PROCESO.mp4",
      "poster": "media/FRASE_JORDI_PORSCHE_PROCESO_19AGO__00.jpg",
-     "peso_mb": 13.36
+     "peso_mb": 13.36,
+     "video": "media/FRASE_JORDI_PORSCHE_PROCESO_19AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/FRASE_JORDI_PORSCHE_PROCESO_19AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CAJITA_PUBLICO_9AGO",
@@ -729,16 +721,16 @@
    "tipo": "reel",
    "dia": "vie 28",
    "hora": "20:00",
-   "etiqueta": "",
    "caption": "Para todos los dueños de tiendas online\n\n#ecommerce #negocios",
    "archivos": [
     {
      "archivo": "JAVI_CAJITA_PUBLICO.mp4",
      "poster": "media/JAVI_CAJITA_PUBLICO_9AGO__00.jpg",
-     "peso_mb": 15.35
+     "peso_mb": 15.35,
+     "video": "media/JAVI_CAJITA_PUBLICO_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_CAJITA_PUBLICO_9AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_FILTRO_2AGO",
@@ -746,24 +738,23 @@
    "tipo": "reel",
    "dia": "vie 28",
    "hora": "20:00",
-   "etiqueta": "MOFU",
    "caption": "La mayoría prueba productos. Muy poca gente construye un filtro.\n\nCoges cuatro o cinco, los lanzas… y ahí es donde casi todo el mundo se equivoca: sigue\nlanzando sin pararse a mirar qué pasó con los anteriores.\n\nPara. Analiza. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió de verdad?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto.\nY de ese patrón sale tu filtro, el tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\n#ecommerce #dropshipping #producto",
    "archivos": [
     {
      "archivo": "REEL_JORDI_FILTRO.mp4",
      "poster": "media/REEL_JORDI_FILTRO_2AGO__00.jpg",
-     "peso_mb": 38.81
+     "peso_mb": 38.81,
+     "video": "media/REEL_JORDI_FILTRO_2AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_FILTRO_2AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_BSEM_4_PREGUNTAS_ANUNCIOS",
    "cuenta": "JAVI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "sáb 29",
    "hora": "19:00",
-   "etiqueta": "",
    "caption": "4 preguntas antes de poner un duro en anuncios. En este orden.\n\n1. ¿La gente YA lo compra?\n2. ¿La ficha aguanta?\n3. ¿Cada pedido deja algo?\n4. ¿Puedo aguantar la semana sin tocarlo?\n\nSi falla la primera, las otras tres dan igual.\n\nComenta «GASTO» si estas a punto de darle. Y guardalo.\n\n#ecommerce #anuncios #tiendaonline",
    "archivos": [
     {
@@ -791,15 +782,15 @@
      "poster": "media/JAVI_BSEM_4_PREGUNTAS_ANUNCIOS__05.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/BSEM_4_PREGUNTAS_ANUNCIOS"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "JORDI_BSEM_3_SENALES_DEVOLUCION",
    "cuenta": "JORDI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "sáb 29",
    "hora": "19:00",
-   "etiqueta": "",
    "caption": "3 señales de que ese producto te va a llenar de devoluciones. Se ven en la ficha, no en el paquete.\n\n1. Talla o medida dudosa\n2. La foto promete de mas\n3. Contra reembolso sin filtro\n\nComenta «AVISO» si te esta pasando. Y guardalo antes de pedir stock.\n\n#ecommerce #dropshipping",
    "archivos": [
     {
@@ -823,7 +814,8 @@
      "poster": "media/JORDI_BSEM_3_SENALES_DEVOLUCION__04.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/BSEM_3_SENALES_DEVOLUCION"
+   "sin_caption": false,
+   "slides": 5
   },
   {
    "id": "REEL_JORDI_MIEDO_QUEDIRAN",
@@ -831,16 +823,16 @@
    "tipo": "reel",
    "dia": "sáb 29",
    "hora": "20:00",
-   "etiqueta": "TOFU",
    "caption": "Tardé en comprarme el coche por miedo al qué dirán.\n\nCuando por fin lo hice, no me crucé con una sola persona que me hiciera un comentario. Ni uno.\n\nEl miedo casi nunca es a la consecuencia. Es a la reacción de gente que ni se acuerda de ti al día siguiente. Y te bloquea igual para comprarte algo que para abrir una tienda, o para cambiar de casa.\n\nEsa es la primera barrera, y nos la ponemos nosotros.\n\n#ecommerce #mentalidad",
    "archivos": [
     {
      "archivo": "REEL_JORDI_MIEDO_QUEDIRAN.mp4",
      "poster": "media/REEL_JORDI_MIEDO_QUEDIRAN__00.jpg",
-     "peso_mb": 11.46
+     "peso_mb": 11.46,
+     "video": "media/REEL_JORDI_MIEDO_QUEDIRAN__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_MIEDO_QUEDIRAN"
+   "sin_caption": false
   },
   {
    "id": "MEME_JAVI_LIQUIDEZ_15AGO",
@@ -848,7 +840,6 @@
    "tipo": "meme",
    "dia": "dom 30",
    "hora": "19:00",
-   "etiqueta": "TOFU",
    "caption": "al menos tengo un negocio, hay que verle el lado positivo",
    "archivos": [
     {
@@ -862,7 +853,7 @@
      "poster": "media/MEME_JAVI_LIQUIDEZ_15AGO__01.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JAVI_LIQUIDEZ_15AGO"
+   "sin_caption": false
   },
   {
    "id": "MEME_JORDI_TIENDA_FUNCIONA_20AGO",
@@ -870,7 +861,6 @@
    "tipo": "meme",
    "dia": "dom 30",
    "hora": "19:00",
-   "etiqueta": "TOFU",
    "caption": "Etiqueta a tu bro para manifestarlo.\n\n#ecommerce #tiendaonline",
    "archivos": [
     {
@@ -880,7 +870,7 @@
      "video": "media/MEME_JORDI_TIENDA_FUNCIONA_20AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JORDI_TIENDA_FUNCIONA_20AGO"
+   "sin_caption": false
   },
   {
    "id": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
@@ -888,16 +878,16 @@
    "tipo": "reel",
    "dia": "dom 30",
    "hora": "19:30",
-   "etiqueta": "MOFU",
    "caption": "Antes de tocar el presupuesto de anuncios miro cinco cosas. Y las miro en este orden.\n\n5. Margen real por pedido. Lo que queda después de producto, envío, pasarela y devolución. Si eso\nestá en rojo, escalar solo multiplica el rojo.\n\n4. Coste de traer un cliente. No el del panel bonito: el que sale de dividir lo que gastas entre\nlos clientes que entran de verdad.\n\n3. Devoluciones y recompra. Un cliente que vuelve te arregla un coste de adquisición malo. Uno que\ndevuelve te lo rompe dos veces.\n\n2. Datos, no corazonadas. Si la decisión depende de lo que \"notas\", no es una decisión: es una\napuesta.\n\n1. Caja real, no facturación. La facturación es el escaparate. La caja es lo que queda en el banco\ndespués de pagar a todos.\n\nArregla antes de escalar. Escalar un negocio roto es romperlo más rápido.\n\nComenta «ORDEN» si te está pasando. Y guárdalo.\n\n#ecommerce #ecom #negocio",
    "archivos": [
     {
      "archivo": "RANKING_JAVI_ANTES_DE_ESCALAR.mp4",
      "poster": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.jpg",
-     "peso_mb": 32.67
+     "peso_mb": 32.67,
+     "video": "media/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/RANKING_JAVI_ANTES_DE_ESCALAR_2AGO"
+   "sin_caption": false
   },
   {
    "id": "TH_JORDI_PROCESO_9AGO",
@@ -905,16 +895,16 @@
    "tipo": "reel",
    "dia": "dom 30",
    "hora": "19:30",
-   "etiqueta": "BOFU",
    "caption": "El resultado es lo bonito. El proceso es lo difícil.\n\nDías malos, días de no dormir. Eso no lo cuenta nadie en redes — y es exactamente lo que separa al que llega del que mira.\n\nSi estás en el proceso: es normal. Sigue.",
    "archivos": [
     {
      "archivo": "TH_JORDI_PROCESO.mp4",
      "poster": "media/TH_JORDI_PROCESO_9AGO__00.jpg",
-     "peso_mb": 21.61
+     "peso_mb": 21.61,
+     "video": "media/TH_JORDI_PROCESO_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/TH_JORDI_PROCESO_9AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_CASO_JAVI_70K_12AGO_V3",
@@ -922,7 +912,6 @@
    "tipo": "carrusel",
    "dia": "dom 30",
    "hora": "20:00",
-   "etiqueta": "BOFU",
    "caption": "La cifra está en la captura de beneficio entre México y USA. Beneficio, no facturación.\n\nLa conversación va entera en el carrusel, sin retocar, y el dashboard del día también.\n\nLa herramienta con la que revisamos márgenes está en el LINK DE LA BIO: pásale tus últimos 30 pedidos.",
    "archivos": [
     {
@@ -950,7 +939,8 @@
      "poster": "media/CARRUSEL_CASO_JAVI_70K_12AGO_V3__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_CASO_JAVI_70K_12AGO_V3"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "CARRUSEL_CASO_JORDI_350K_12AGO_V3",
@@ -958,7 +948,6 @@
    "tipo": "carrusel",
    "dia": "dom 30",
    "hora": "20:00",
-   "etiqueta": "BOFU",
    "caption": "Tres mentorías no le funcionaron. La cuarta lo llevó a la cifra de la captura en 4 meses.\n\nSu mensaje va entero en el carrusel, sin recortar. Y él mismo dice que no fue por la operativa.\n\nComenta «CASO» si te está pasando. Y guárdalo.",
    "archivos": [
     {
@@ -986,15 +975,15 @@
      "poster": "media/CARRUSEL_CASO_JORDI_350K_12AGO_V3__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_CASO_JORDI_350K_12AGO_V3"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "ADS_GOOGLE_HORIZONTAL",
    "cuenta": "",
-   "tipo": "ad",
+   "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "",
    "archivos": [
     {
@@ -1010,15 +999,15 @@
      "poster": "media/ADS_GOOGLE_HORIZONTAL__02.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/ADS_GOOGLE_HORIZONTAL"
+   "sin_caption": true,
+   "slides": 3
   },
   {
    "id": "ADS_8_ANGULOS_JAVI_5AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Ads Meta 4:5 — 8 creatividades con los dos copys literales de Javi (van en el CSV de la carpeta, listos para importar en Ads Manager).",
    "archivos": [
     {
@@ -1054,15 +1043,15 @@
      "poster": "media/ADS_8_ANGULOS_JAVI_5AGO__07.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/ADS_8_ANGULOS_JAVI_5AGO"
+   "sin_caption": false,
+   "slides": 8
   },
   {
    "id": "CARRUSEL_CLON_JAVI_OFERTA_2AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Te entran visitas y no te compran. Y lo primero que hace todo el mundo es cambiar de producto.\n\nCasi nunca es el producto. Es la oferta. Y la oferta son tres cosas.\n\n1. Precio. No se copia del de al lado. Se pone sabiendo qué te deja cada venta y qué aguanta tu\nmercado.\n\n2. Envío. El envío gratis no es gratis: sale de tu margen. O lo aguanta el pedido medio, o te lo\nestás pagando tú.\n\n3. Ticket. Con el mismo tráfico puedes cobrar más por pedido. Un complemento que encaje, no un\ndescuento: el descuento sale del mismo sitio.\n\nLas herramientas que salen en el carrusel son las que uso yo para mirar esto.\n\nComenta «OFERTA» si te está pasando. Y guárdalo.\n\n#ecommerce #shopify #ventas",
    "archivos": [
     {
@@ -1114,15 +1103,14 @@
      "video": "media/CARRUSEL_CLON_JAVI_OFERTA_2AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_CLON_JAVI_OFERTA_2AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_CLON_JAVI_ORDEN_2AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Antes de tocar el presupuesto de anuncios miro tres cosas. Y las miro en este orden.\n\n1. Caja. La facturación es el escaparate. La caja es lo que queda después de producto, envío,\npasarela y devoluciones. Si eso está en rojo, escalar multiplica el rojo.\n\n2. Fugas. Antes de traer más gente, mira por dónde se escapa la que ya entra. El checkout es donde\nmás se pierde, y se tapa en una tarde.\n\n3. Escala. Solo cuando el margen aguanta y el checkout no gotea se sube el presupuesto. Y se sube\ncontra un número de referencia, no contra una corazonada.\n\nNo hace falta que me creas: las tres herramientas del carrusel están abiertas y son las mismas que\nuso yo. Arregla antes de escalar.\n\nComenta «ORDEN» si te está pasando. Y guárdalo.\n\n#ecommerce #ecom #negocio",
    "archivos": [
     {
@@ -1180,7 +1168,7 @@
      "video": "media/CARRUSEL_CLON_JAVI_ORDEN_2AGO__08.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_CLON_JAVI_ORDEN_2AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JAVI_10K_DIA_13AGO",
@@ -1188,7 +1176,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Un día récord (la cifra, en la captura). Y lo importante no es la cifra: es saber cuánto queda después de costes.\n\nLa conversación va entera en el carrusel, con el panel delante.\n\nLa herramienta con la que auditamos márgenes está en el LINK DE LA BIO.",
    "archivos": [
     {
@@ -1212,7 +1199,8 @@
      "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__04.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_10K_DIA_13AGO"
+   "sin_caption": false,
+   "slides": 5
   },
   {
    "id": "CARRUSEL_JAVI_MOROSO_20AGO",
@@ -1220,7 +1208,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Si has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
@@ -1248,15 +1235,15 @@
      "poster": "media/CARRUSEL_JAVI_MOROSO_20AGO__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_MOROSO_20AGO"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "No es una frase bonita: es lo que pasa cuando dejas de tapar un agujero con tráfico.\n\nDentro, qué miré ese mes.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -1308,15 +1295,14 @@
      "video": "media/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JAVI_POV_INBOX_16AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "El día después de abrir la tienda nadie te avisa de esto.\nSi ya te ha pasado, comenta INBOX y te leo.\n#ecommerce #emprender #tiendaonline",
    "archivos": [
     {
@@ -1374,7 +1360,7 @@
      "video": "media/CARRUSEL_JAVI_POV_INBOX_16AGO__08.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_POV_INBOX_16AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JAVI_TIENDA_LENTA",
@@ -1382,7 +1368,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1414,15 +1399,15 @@
      "poster": "media/CARRUSEL_JAVI_TIENDA_LENTA__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_JAVI_TIENDA_LENTA"
+   "sin_caption": true,
+   "slides": 7
   },
   {
    "id": "CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Si falla la primera, ya sé que no vende, y no hace falta abrir la cuenta de anuncios.\n\nLas tres están dentro.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -1474,15 +1459,14 @@
      "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JAVI_TRES_SENALES_16AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Antes de tocar los anuncios miro tres cosas. Si falla la primera, ya sé que no va a vender.\nComenta «ORDEN» si te está pasando. Y guárdalo.\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
@@ -1540,15 +1524,14 @@
      "video": "media/CARRUSEL_JAVI_TRES_SENALES_16AGO__08.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_TRES_SENALES_16AGO"
+   "sin_caption": false
   },
   {
    "id": "CARR_JAVI_CASH_VIDEO_9AGO",
    "cuenta": "JAVI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Facturas más que nunca y el banco no lo nota.\n\nCash real: margen por pedido, costes invisibles y lo que vale un cliente que repite. El prompt exacto va en el carrusel, copiable.\n\nEl auditor gratuito está en el link de la bio: pásale tus últimos 30 pedidos y mira cuánto margen se te escapa.",
    "archivos": [
     {
@@ -1588,7 +1571,7 @@
      "video": "media/CARR_JAVI_CASH_VIDEO_9AGO__05.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARR_JAVI_CASH_VIDEO_9AGO"
+   "sin_caption": false
   },
   {
    "id": "CARR_JAVI_PANEL_8AGO",
@@ -1596,7 +1579,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "El panel de un alumno, tal cual. Sin recortes raros y sin maquillar.\n\nLlegó con tráfico y pocas ventas. Lo de siempre: la tienda no convertía.\n\nEl cambio: ✅ números claros cada día ✅ arreglar la tienda ANTES de meter más dinero en ads ✅ alguien delante que ya pasó por ahí\n\nEl mérito es suyo: ejecutó sin excusas.\n\nLa captura es de su panel real — la cifra la ves en la imagen, no te la escribo yo.\n\nComenta PANEL y te enseño por dónde se empieza. #ecommerce #negocios #casoreal",
    "archivos": [
     {
@@ -1612,7 +1594,8 @@
      "poster": "media/CARR_JAVI_PANEL_8AGO__02.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARR_JAVI_PANEL_8AGO"
+   "sin_caption": false,
+   "slides": 3
   },
   {
    "id": "CARR_JAVI_PLACA_CLON_7AGO",
@@ -1620,7 +1603,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Nueva placa entregada \n\nEste alumno llegó facturando pero sin ver nada limpio a final de mes: todo se le iba entre producto, envíos y ads.\n\nEl cambio: - números claros desde el día uno - un producto que sí deja margen - estructura antes de escalar - alguien delante que ya recorrió el camino\n\nEl mérito es suyo: vino a todas las sesiones y ejecutó sin excusas.\n\nEl resultado lo ves en las fotos — la placa se entregó delante de toda la comunidad en el último evento.\n\nNo fue suerte. Fue método, acompañamiento y ejecución.\n\nComenta «PLACA» si te está pasando. Y guárdalo. #ecommerce #negocios #casoreal",
    "archivos": [
     {
@@ -1636,7 +1618,8 @@
      "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__02.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARR_JAVI_PLACA_CLON_7AGO"
+   "sin_caption": false,
+   "slides": 3
   },
   {
    "id": "CARR_JAVI_RECURSOS",
@@ -1644,7 +1627,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Lo que usan mis alumnos para no quemar dinero.\n\nDentro va lo mismo que usamos en las auditorías: calculadoras de cash real, margen y qué mirar en qué orden. Sin humo, herramientas reales.\n\nComenta RECURSOS y te llega. Gratis, hoy.\n\n#ecommerce #negocios #emprendedores",
    "archivos": [
     {
@@ -1672,58 +1654,59 @@
      "poster": "media/CARR_JAVI_RECURSOS__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARR_JAVI_RECURSOS"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "HOOKAD_A_QUEDA0_15AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Nuestros alumnos lo cuentan mejor que nosotros. Gente real, a la cara.\nSi tienes tienda (o vas en serio con montarla), agenda tu sesion de claridad — boton de abajo.",
    "archivos": [
     {
      "archivo": "HOOKAD_A_QUEDA0.mp4",
      "poster": "media/HOOKAD_A_QUEDA0_15AGO__00.jpg",
-     "peso_mb": 29.95
+     "peso_mb": 29.95,
+     "video": "media/HOOKAD_A_QUEDA0_15AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/HOOKAD_A_QUEDA0_15AGO"
+   "sin_caption": false
   },
   {
    "id": "HOOKAD_B_HUMO_15AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Nuestros alumnos lo cuentan mejor que nosotros. Gente real, a la cara.\nSi tienes tienda (o vas en serio con montarla), agenda tu sesion de claridad — boton de abajo.",
    "archivos": [
     {
      "archivo": "HOOKAD_B_HUMO.mp4",
      "poster": "media/HOOKAD_B_HUMO_15AGO__00.jpg",
-     "peso_mb": 28.9
+     "peso_mb": 28.9,
+     "video": "media/HOOKAD_B_HUMO_15AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/HOOKAD_B_HUMO_15AGO"
+   "sin_caption": false
   },
   {
    "id": "HOOKAD_C_2ANOS_15AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Nuestros alumnos lo cuentan mejor que nosotros. Gente real, a la cara.\nSi tienes tienda (o vas en serio con montarla), agenda tu sesion de claridad — boton de abajo.",
    "archivos": [
     {
      "archivo": "HOOKAD_C_2ANOS.mp4",
      "poster": "media/HOOKAD_C_2ANOS_15AGO__00.jpg",
-     "peso_mb": 28.86
+     "peso_mb": 28.86,
+     "video": "media/HOOKAD_C_2ANOS_15AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/HOOKAD_C_2ANOS_15AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CAJITA3_9AGO",
@@ -1731,16 +1714,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Todo el mundo me viene con lo mismo\n\n#ecommerce #negocios",
    "archivos": [
     {
      "archivo": "JAVI_CAJITA3.mp4",
      "poster": "media/JAVI_CAJITA3_9AGO__00.jpg",
-     "peso_mb": 10.56
+     "peso_mb": 10.56,
+     "video": "media/JAVI_CAJITA3_9AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/JAVI_CAJITA3_9AGO"
+   "sin_caption": false
   },
   {
    "id": "JAVI_CARRUSEL_A_filtro_8slides",
@@ -1748,7 +1731,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1784,7 +1766,8 @@
      "poster": "media/JAVI_CARRUSEL_A_filtro_8slides__07.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_A_filtro_8slides"
+   "sin_caption": true,
+   "slides": 8
   },
   {
    "id": "JAVI_CARRUSEL_B_6preguntas_8slides",
@@ -1792,7 +1775,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1828,7 +1810,8 @@
      "poster": "media/JAVI_CARRUSEL_B_6preguntas_8slides__07.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_B_6preguntas_8slides"
+   "sin_caption": true,
+   "slides": 8
   },
   {
    "id": "JAVI_CARRUSEL_V3_A_cash_real",
@@ -1836,7 +1819,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1848,7 +1830,8 @@
      "poster": "media/JAVI_CARRUSEL_V3_A_cash_real__01.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_A_cash_real"
+   "sin_caption": true,
+   "slides": 2
   },
   {
    "id": "JAVI_CARRUSEL_V3_B",
@@ -1856,7 +1839,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1888,7 +1870,8 @@
      "poster": "media/JAVI_CARRUSEL_V3_B__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_B"
+   "sin_caption": true,
+   "slides": 7
   },
   {
    "id": "MEMES_JAVI_TANDA_16AGO",
@@ -1896,7 +1879,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -1924,7 +1906,7 @@
      "video": "media/MEMES_JAVI_TANDA_16AGO__03.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JAVI_TANDA_16AGO"
+   "sin_caption": true
   },
   {
    "id": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO",
@@ -1932,7 +1914,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Trabajo desde casa y negocio propio no son lo mismo.\n\nEn uno alguien decide por ti y cobras igual. En el otro decides tú, y también asumes tú.\n\nSi lo que buscas es lo primero, esto no es tu sitio y te ahorro el tiempo.\n\nComenta RECURSOS y te llega el módulo de montar la tienda.\n\n#ecommerce #shopify",
    "archivos": [
     {
@@ -1942,7 +1923,7 @@
      "video": "media/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO"
+   "sin_caption": false
   },
   {
    "id": "MEME_JAVI_M2_CLASE_17MIN_1AGO",
@@ -1950,7 +1931,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Abrir la cuenta de Shopify es la clase 01 del módulo y dura 1:23. Literal.\n\nLa clase 09 es el theme —lo que ve tu cliente— y dura 17:03. Es la más larga de las doce y es donde se atasca todo el mundo.\n\nNadie se queda fuera por no saber abrir una cuenta. Se queda fuera por el orden de lo que va después.\n\n12 clases. 1 h 06 min. Comenta RECURSOS.\n\n#shopify #ecommerce",
    "archivos": [
     {
@@ -1960,7 +1940,7 @@
      "video": "media/MEME_JAVI_M2_CLASE_17MIN_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JAVI_M2_CLASE_17MIN_1AGO"
+   "sin_caption": false
   },
   {
    "id": "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO",
@@ -1968,7 +1948,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Dentro del panel hay 64 herramientas repartidas en 10 secciones. Calculadoras, auditores, generadores, simuladores.\n\nNinguna decide qué vendes, ni a quién, ni a qué precio. Eso lo decides tú, y es la única parte que no se puede automatizar.\n\nLas herramientas ahorran horas. No ahorran criterio.\n\nComenta RECURSOS.\n\n#ecommerce #shopify #herramientas",
    "archivos": [
     {
@@ -1978,7 +1957,7 @@
      "video": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO"
+   "sin_caption": false
   },
   {
    "id": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
@@ -1986,7 +1965,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "El primer paso no cuesta dinero, cuesta ponerse.\n\nLa clase 01 del módulo va de abrir tu tienda de Shopify por menos que un café al mes, y dura 1 minuto y 23 segundos. Está dentro del panel, sin pagar nada.\n\nSi eso no lo has hecho todavía, no preguntes por lo de después. Haz eso primero.\n\nComenta RECURSOS.\n\n#ecommerce #shopify",
    "archivos": [
     {
@@ -1996,7 +1974,7 @@
      "video": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JAVI_M4_PRECIO_ANTES_1AGO"
+   "sin_caption": false
   },
   {
    "id": "MEME_JAVI_TIP_15AGO",
@@ -2004,7 +1982,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Tutorial de cómo hacerse rico rápido 🤣",
    "archivos": [
     {
@@ -2018,7 +1995,7 @@
      "poster": "media/MEME_JAVI_TIP_15AGO__01.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/MEME_JAVI_TIP_15AGO"
+   "sin_caption": false
   },
   {
    "id": "MUESTRA_JAVI_TOFU_V3_11AGO",
@@ -2026,16 +2003,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Trabajaba de lunes a sábado buscando clientes de casa en casa. Sin tiempo y sin vida social.\n\nY aun así no llegaba. El problema no era currar más: era que nadie me había enseñado dónde mirar.\n\nComenta «RECURSOS» si te está pasando. Y guárdalo.\n\n#emprender #ecommerce #mentalidad",
    "archivos": [
     {
      "archivo": "MUESTRA_JAVI_TOFU_V3_11AGO.mp4",
      "poster": "media/MUESTRA_JAVI_TOFU_V3_11AGO__00.jpg",
-     "peso_mb": 33.68
+     "peso_mb": 33.68,
+     "video": "media/MUESTRA_JAVI_TOFU_V3_11AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MUESTRA_JAVI_TOFU_V3_11AGO"
+   "sin_caption": false
   },
   {
    "id": "POD_QA15_JAVI_15AGO",
@@ -2043,31 +2020,34 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Te enseñan el Rolex, pero nunca sus números.\nNosotros no mostramos lifestyle porque estamos currando. Lo fácil no existe.\n¿Tú de qué lado estás?\n#ecommerce #emprender #negocios",
    "archivos": [
     {
      "archivo": "POD_QA15_JAVI.mp4",
      "poster": "media/POD_QA15_JAVI_15AGO__00.jpg",
-     "peso_mb": 50.83
+     "peso_mb": 50.83,
+     "video": "media/POD_QA15_JAVI_15AGO__00.mp4"
     },
     {
      "archivo": "POD_QA15_JAVI_V2.mp4",
      "poster": "media/POD_QA15_JAVI_15AGO__01.jpg",
-     "peso_mb": 48.02
+     "peso_mb": 48.02,
+     "video": "media/POD_QA15_JAVI_15AGO__01.mp4"
     },
     {
      "archivo": "POD_QA15_JAVI_V3.mp4",
      "poster": "media/POD_QA15_JAVI_15AGO__02.jpg",
-     "peso_mb": 48.18
+     "peso_mb": 48.18,
+     "video": "media/POD_QA15_JAVI_15AGO__02.mp4"
     },
     {
      "archivo": "POD_QA15_JAVI_V4.mp4",
      "poster": "media/POD_QA15_JAVI_15AGO__03.jpg",
-     "peso_mb": 48.2
+     "peso_mb": 48.2,
+     "video": "media/POD_QA15_JAVI_15AGO__03.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/POD_QA15_JAVI_15AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_CERO_V2",
@@ -2075,16 +2055,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "No venimos de ser programadores. Ni de haber sido informáticos.\n\nYo era entrenador personal. Jordi tenía su trabajo. Ocho horas al día, profesiones\nnormales y corrientes, cambiando nuestro tiempo por dinero.\n\nEmpezamos totalmente de cero, aprendiendo como cualquier persona normal.\n\nSi estás esperando tener el perfil, el título o la experiencia para arrancar:\nnosotros tampoco los teníamos. Y así empezamos.\n\n#ecommerce #emprender #mentalidad",
    "archivos": [
     {
      "archivo": "REEL_JAVI_CERO_V2.mp4",
      "poster": "media/REEL_JAVI_CERO_V2__00.jpg",
-     "peso_mb": 60.61
+     "peso_mb": 60.61,
+     "video": "media/REEL_JAVI_CERO_V2__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_CERO_V2"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_FILIPINAS_13AGO",
@@ -2092,16 +2072,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Lo conocí de vacaciones en Filipinas. Trabajaba en un almacén y me veía sacar el ordenador por la noche en el hotel.\n\nCuando volvió a España entró en Mentorium. Hoy vive de sus tiendas, dejó su trabajo y se muda a Bali con su mujer. La cifra la ves en el vídeo.\n\nGuárdalo si tú también quieres empezar.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_FILIPINAS_13AGO.mp4",
      "poster": "media/REEL_JAVI_FILIPINAS_13AGO__00.jpg",
-     "peso_mb": 26.38
+     "peso_mb": 26.38,
+     "video": "media/REEL_JAVI_FILIPINAS_13AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_FILIPINAS_13AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_LO_PEOR_1AGO",
@@ -2109,16 +2089,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Cuando monté mi primera tienda fui con mis ahorros. Y lo que pensé no fue cuánto podía sacar, fue esto: si los pierdo, no pasa nada, porque sigo trabajando y sigo generando.\n\nAhí es donde la mayoría se equivoca. Miran el techo y no miran el suelo.\n\nLa pregunta buena no es cuánto puedes ganar. Es si puedes perder lo que vas a poner y seguir con tu vida exactamente igual.\n\nSi la respuesta es no, todavía no toca. Y no pasa nada: toca más adelante.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_LO_PEOR.mp4",
      "poster": "media/REEL_JAVI_LO_PEOR_1AGO__00.jpg",
-     "peso_mb": 8.56
+     "peso_mb": 8.56,
+     "video": "media/REEL_JAVI_LO_PEOR_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_LO_PEOR_1AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_PANEL_MODULO_1AGO",
@@ -2126,7 +2106,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Esto es el módulo nuevo por dentro, sin montaje.\n\nDoce clases en el orden en que hay que hacerlas: cuenta, idioma, configuración, políticas, dominio, producto, colecciones, menú, theme, ficha, IA y el bonus de ATLAS.\n\nLa primera dura 1:23. La del theme, 17:03. Ahí es donde se decide si tu tienda parece una tienda.\n\nEstá dentro del panel. Comenta RECURSOS.\n\n#shopify #ecommerce",
    "archivos": [
     {
@@ -2136,7 +2115,7 @@
      "video": "media/REEL_JAVI_PANEL_MODULO_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_PANEL_MODULO_1AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_PERDIMOS30K_7AGO",
@@ -2144,16 +2123,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Antes de facturar en serio, perdimos dinero en serio. Nadie te enseña esa parte.\n\nLa diferencia no fue la suerte: fue arreglar los números antes de escalar.\n\nComenta «CASH» si te está pasando. Y guárdalo.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_PERDIMOS30K.mp4",
      "poster": "media/REEL_JAVI_PERDIMOS30K_7AGO__00.jpg",
-     "peso_mb": 31.33
+     "peso_mb": 31.33,
+     "video": "media/REEL_JAVI_PERDIMOS30K_7AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_PERDIMOS30K_7AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_PERSEVERANCIA_2AGO",
@@ -2161,16 +2140,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Me pidieron una palabra. Una sola.\n\nNo dije talento. No dije suerte. No dije timing.\n\nDije perseverancia.\n\nY no es la frase bonita de turno: es lo único que separa al que sigue cuando el negocio deja\nde ser divertido, del que lo deja en el mes tres.\n\nEl deporte me enseñó que el trabajo y el esfuerzo tienen recompensa. Lo que pasa por el\ncamino muchas veces no depende de ti. Lo que sí depende: no parar.\n\n#ecommerce #mentalidad #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_PERSEVERANCIA.mp4",
      "poster": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.jpg",
-     "peso_mb": 20.97
+     "peso_mb": 20.97,
+     "video": "media/REEL_JAVI_PERSEVERANCIA_2AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_PERSEVERANCIA_2AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_QA11_V2",
@@ -2178,16 +2157,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Mi padre me dijo: \"¿Estás loco?\"\n\n#ecommerce #mentoria #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA11_V2.mp4",
      "poster": "media/REEL_JAVI_QA11_V2__00.jpg",
-     "peso_mb": 43.92
+     "peso_mb": 43.92,
+     "video": "media/REEL_JAVI_QA11_V2__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_QA11_V2"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_QA12_V2",
@@ -2195,16 +2174,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "\"Vende humos\" — la respuesta de Javi\n\n#ecommerce #mentoria #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA12_V2.mp4",
      "poster": "media/REEL_JAVI_QA12_V2__00.jpg",
-     "peso_mb": 59.35
+     "peso_mb": 59.35,
+     "video": "media/REEL_JAVI_QA12_V2__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_QA12_V2"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_QA16_V2",
@@ -2212,16 +2191,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "El verdadero millonario no es el que tú crees\n\n#ecommerce #mentoria #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA16_V2.mp4",
      "poster": "media/REEL_JAVI_QA16_V2__00.jpg",
-     "peso_mb": 44.64
+     "peso_mb": 44.64,
+     "video": "media/REEL_JAVI_QA16_V2__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_QA16_V2"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_QA19_V2",
@@ -2229,16 +2208,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "\"Soy Javier Sánchez, 45 años, padre de familia, exfutbolista\"\n\n#ecommerce #mentoria #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA19_V2.mp4",
      "poster": "media/REEL_JAVI_QA19_V2__00.jpg",
-     "peso_mb": 38.33
+     "peso_mb": 38.33,
+     "video": "media/REEL_JAVI_QA19_V2__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_QA19_V2"
+   "sin_caption": false
   },
   {
    "id": "REEL_JAVI_QA21_V2",
@@ -2246,16 +2225,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "\"No venimos de ser programadores\"\n\n#ecommerce #mentoria #emprender",
    "archivos": [
     {
      "archivo": "REEL_JAVI_QA21_V2.mp4",
      "poster": "media/REEL_JAVI_QA21_V2__00.jpg",
-     "peso_mb": 45.99
+     "peso_mb": 45.99,
+     "video": "media/REEL_JAVI_QA21_V2__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JAVI_QA21_V2"
+   "sin_caption": false
   },
   {
    "id": "SPECA_JAVI_VENDEHUMOS_12AGO",
@@ -2263,16 +2242,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "=== CAPTION (Javi · «vende humos») ===\n\nVende humos.\n\nLo dice gente que solo te ve desde detrás de una pantalla.\n\nYo era entrenador personal. Entrenaba a gente en un gimnasio y trabajaba en un sitio\ntradicional. Tomé acción, me formé, y llevo nueve años dedicándome a esto.\n\nCuando alguien lo ve todo desde fuera piensa que todo el mundo vende humo, que todo el\nmundo intenta engañar. Y a veces lo que hay no es un juicio: es un poco de envidia.\n\nDetrás de esto hay una plantilla entera y un almacén. Eso no se monta vendiendo humo.\n\nSi estás donde yo estaba, empieza por formarte con alguien que lleve años haciéndolo.",
    "archivos": [
     {
      "archivo": "SPECA_JAVI_VENDEHUMOS.mp4",
      "poster": "media/SPECA_JAVI_VENDEHUMOS_12AGO__00.jpg",
-     "peso_mb": 39.24
+     "peso_mb": 39.24,
+     "video": "media/SPECA_JAVI_VENDEHUMOS_12AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/SPECA_JAVI_VENDEHUMOS_12AGO"
+   "sin_caption": false
   },
   {
    "id": "STORIES_JAVI_FREESTYLE_2AGO",
@@ -2280,7 +2259,6 @@
    "tipo": "story",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "(stories — sin caption; el CTA va en J4: «Responde ORDEN» → Auditor de Tienda y Checkout, gratis)\nOrden de publicación: J1 (sábado 8:33) → J2 (la flecha) → J3 (el grupo) → J4 (recurso).\nMisma palabra ORDEN que el carrusel de hoy: un solo embudo.",
    "archivos": [
     {
@@ -2300,7 +2278,7 @@
      "poster": "media/STORIES_JAVI_FREESTYLE_2AGO__03.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/STORIES_JAVI_FREESTYLE_2AGO"
+   "sin_caption": false
   },
   {
    "id": "STORIES_JAVI_MIERCOLES_A5_V3",
@@ -2308,7 +2286,6 @@
    "tipo": "story",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Secuencia de stories · palabra clave: RECURSOS. Miercoles 5-ago, cuenta de JAVI.\nOrden: s01 dolor -> s02 win 8.446 MXN -> s03 CTA con el recurso Video Ads.\nV3 con las correcciones de Santi del 4-ago.",
    "archivos": [
     {
@@ -2324,7 +2301,7 @@
      "poster": "media/STORIES_JAVI_MIERCOLES_A5_V3__02.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/STORIES_JAVI_MIERCOLES_A5_V3"
+   "sin_caption": false
   },
   {
    "id": "TH_PADRE_LOCO_17AGO",
@@ -2332,16 +2309,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Mi padre me dijo que estaba loco.\n\nDejaba un trabajo que iba bien para meterme en algo que él no entendía. Y yo se lo explicaba y le explotaba la cabeza.\n\nHoy me pregunta cómo va lo de las tiendas online.\n\nNo hace falta convencer a nadie al principio. Hace falta aguantar el tiempo suficiente para que la pregunta cambie sola.\n\nSi te está pasando ahora, comenta y te leo.\n\n#emprender #ecommerce",
    "archivos": [
     {
      "archivo": "TH_PADRE_LOCO_17AGO.mp4",
      "poster": "media/TH_PADRE_LOCO_17AGO__00.jpg",
-     "peso_mb": 25.24
+     "peso_mb": 25.24,
+     "video": "media/TH_PADRE_LOCO_17AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/TH_PADRE_LOCO_17AGO"
+   "sin_caption": false
   },
   {
    "id": "TH_QUIEN_ES_JAVI_17AGO",
@@ -2349,16 +2326,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "45 años, padre de familia, exfutbolista y entrenador personal.\n\nHace nueve años me metí en las tiendas online sin tener ni idea. Hoy es a lo que me dedico al cien por cien, y con Mentorium formamos a gente que quiere hacer lo mismo.\n\nLo cuento porque mucha gente que me sigue no sabe de dónde vengo. Y de dónde vienes importa: yo no empecé sabiendo.\n\nSi estás pensando en montar algo, cuéntame por dónde vas.\n\n#ecommerce #emprender",
    "archivos": [
     {
      "archivo": "TH_QUIEN_ES_JAVI_17AGO.mp4",
      "poster": "media/TH_QUIEN_ES_JAVI_17AGO__00.jpg",
-     "peso_mb": 26.14
+     "peso_mb": 26.14,
+     "video": "media/TH_QUIEN_ES_JAVI_17AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/TH_QUIEN_ES_JAVI_17AGO"
+   "sin_caption": false
   },
   {
    "id": "TH_VENDEHUMOS_17AGO",
@@ -2366,84 +2343,84 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Nos llaman vende humos y lo entiendo.\n\nDesde fuera solo se ve el resultado. No se ve al entrenador personal que dejó su trabajo, ni los años que van desde ahí hasta aquí.\n\nLo que sí se puede mirar es lo de verdad: si detrás hay un equipo, si hay gente cobrando una nómina, si hay un almacén. Eso no se improvisa para un vídeo.\n\nAsí que cuando alguien te lo diga a ti, no discutas. Enseña el trabajo.\n\n¿Te lo han dicho alguna vez? Cuéntamelo en comentarios.\n\n#ecommerce #emprender",
    "archivos": [
     {
      "archivo": "TH_VENDEHUMOS_17AGO.mp4",
      "poster": "media/TH_VENDEHUMOS_17AGO__00.jpg",
-     "peso_mb": 54.29
+     "peso_mb": 54.29,
+     "video": "media/TH_VENDEHUMOS_17AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/TH_VENDEHUMOS_17AGO"
+   "sin_caption": false
   },
   {
    "id": "V_JAVI_2_QUEDA0_8AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Facturar mucho no es ganar mucho. Ellos lo aprendieron a tiempo — y por eso sus tiendas aguantan.\n\nDel último evento: alumnos reales.\n\nComenta «CASH» si te está pasando. Y guárdalo.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "V_JAVI_2_QUEDA0.mp4",
      "poster": "media/V_JAVI_2_QUEDA0_8AGO__00.jpg",
-     "peso_mb": 19.5
+     "peso_mb": 19.5,
+     "video": "media/V_JAVI_2_QUEDA0_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/V_JAVI_2_QUEDA0_8AGO"
+   "sin_caption": false
   },
   {
    "id": "V_JAVI_3_ALUMNOSREALES_8AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Sin guion y sin filtro: lo que dicen los que ya están dentro.\n\nDel último evento de Mentorium.\n\nComenta «CASH» si te está pasando. Y guárdalo.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "V_JAVI_3_ALUMNOSREALES.mp4",
      "poster": "media/V_JAVI_3_ALUMNOSREALES_8AGO__00.jpg",
-     "peso_mb": 27.31
+     "peso_mb": 27.31,
+     "video": "media/V_JAVI_3_ALUMNOSREALES_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/V_JAVI_3_ALUMNOSREALES_8AGO"
+   "sin_caption": false
   },
   {
    "id": "V_JAVI_HOOKAD01_7AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Facturar no es ganar. Los que salen en este video ya lo aprendieron — y por eso sus tiendas aguantan.\n\nDel último evento: alumnos reales contando lo que cambió.\n\nComenta «CASH» si te está pasando. Y guárdalo.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "V_JAVI_HOOKAD01.mp4",
      "poster": "media/V_JAVI_HOOKAD01_7AGO__00.jpg",
-     "peso_mb": 20.41
+     "peso_mb": 20.41,
+     "video": "media/V_JAVI_HOOKAD01_7AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/V_JAVI_HOOKAD01_7AGO"
+   "sin_caption": false
   },
   {
    "id": "V_JAVI_HOOKAD_SINMATI_8AGO",
    "cuenta": "JAVI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Facturar no es ganar. Los que salen en este video ya lo aprendieron — y por eso sus tiendas aguantan.\n\nDel último evento: alumnos reales contando lo que cambió.\n\nComenta «CASH» si te está pasando. Y guárdalo.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "V_JAVI_HOOKAD_SINMATI.mp4",
      "poster": "media/V_JAVI_HOOKAD_SINMATI_8AGO__00.jpg",
-     "peso_mb": 20.2
+     "peso_mb": 20.2,
+     "video": "media/V_JAVI_HOOKAD_SINMATI_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/V_JAVI_HOOKAD_SINMATI_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_APARENTAR_8AGO",
@@ -2451,16 +2428,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Hay mucha gente que aparenta en vez de saber.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_APARENTAR.mp4",
      "poster": "media/W_JAVI_APARENTAR_8AGO__00.jpg",
-     "peso_mb": 14.19
+     "peso_mb": 14.19,
+     "video": "media/W_JAVI_APARENTAR_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_APARENTAR_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_COMPROMISO_8AGO",
@@ -2468,16 +2445,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Con esa actitud, no entras. Así de claro.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_COMPROMISO.mp4",
      "poster": "media/W_JAVI_COMPROMISO_8AGO__00.jpg",
-     "peso_mb": 10.33
+     "peso_mb": 10.33,
+     "video": "media/W_JAVI_COMPROMISO_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_COMPROMISO_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_CREENCIAS_8AGO",
@@ -2485,16 +2462,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "¿Montar un negocio con cuatro duros? Piénsalo otra vez.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_CREENCIAS.mp4",
      "poster": "media/W_JAVI_CREENCIAS_8AGO__00.jpg",
-     "peso_mb": 12.65
+     "peso_mb": 12.65,
+     "video": "media/W_JAVI_CREENCIAS_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_CREENCIAS_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_CRITICAS_8AGO",
@@ -2502,16 +2479,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Opinar desde fuera es gratis. Emprender, no.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_CRITICAS.mp4",
      "poster": "media/W_JAVI_CRITICAS_8AGO__00.jpg",
-     "peso_mb": 8.5
+     "peso_mb": 8.5,
+     "video": "media/W_JAVI_CRITICAS_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_CRITICAS_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_DECISION_8AGO",
@@ -2519,16 +2496,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Mi padre me dijo: ¿estás loco? Hoy me pregunta si me va bien.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_DECISION.mp4",
      "poster": "media/W_JAVI_DECISION_8AGO__00.jpg",
-     "peso_mb": 9.15
+     "peso_mb": 9.15,
+     "video": "media/W_JAVI_DECISION_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_DECISION_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_EMPEZAR_8AGO",
@@ -2536,16 +2513,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Yo iba con mi mochilita a entrenar gente. Así empecé.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_EMPEZAR.mp4",
      "poster": "media/W_JAVI_EMPEZAR_8AGO__00.jpg",
-     "peso_mb": 10.85
+     "peso_mb": 10.85,
+     "video": "media/W_JAVI_EMPEZAR_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_EMPEZAR_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_FRACASO_8AGO",
@@ -2553,16 +2530,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Mi primera tienda: toda la inversión fuera y cero ventas. Ahí empezó todo.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_FRACASO.mp4",
      "poster": "media/W_JAVI_FRACASO_8AGO__00.jpg",
-     "peso_mb": 14.21
+     "peso_mb": 14.21,
+     "video": "media/W_JAVI_FRACASO_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_FRACASO_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_HISTORIA_8AGO",
@@ -2570,16 +2547,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "45 años, padre de familia, exfutbolista. Y esto es lo que hago.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_HISTORIA.mp4",
      "poster": "media/W_JAVI_HISTORIA_8AGO__00.jpg",
-     "peso_mb": 9.5
+     "peso_mb": 9.5,
+     "video": "media/W_JAVI_HISTORIA_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_HISTORIA_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_LIBERTAD_8AGO",
@@ -2587,16 +2564,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "El verdadero millonario no es el que tú crees.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_LIBERTAD.mp4",
      "poster": "media/W_JAVI_LIBERTAD_8AGO__00.jpg",
-     "peso_mb": 13.77
+     "peso_mb": 13.77,
+     "video": "media/W_JAVI_LIBERTAD_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_LIBERTAD_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_MIEDO_8AGO",
@@ -2604,16 +2581,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "La frase de mi mentor: ¿qué es lo peor que puede pasar?\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_MIEDO.mp4",
      "poster": "media/W_JAVI_MIEDO_8AGO__00.jpg",
-     "peso_mb": 13.45
+     "peso_mb": 13.45,
+     "video": "media/W_JAVI_MIEDO_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_MIEDO_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_PACIENCIA_8AGO",
@@ -2621,16 +2598,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "El dinero rápido no existe. Proceso, formación y acción.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_PACIENCIA.mp4",
      "poster": "media/W_JAVI_PACIENCIA_8AGO__00.jpg",
-     "peso_mb": 11.65
+     "peso_mb": 11.65,
+     "video": "media/W_JAVI_PACIENCIA_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_PACIENCIA_8AGO"
+   "sin_caption": false
   },
   {
    "id": "W_JAVI_REALIDAD_8AGO",
@@ -2638,24 +2615,23 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Facturar no es ganar. Los números de verdad.\n\n#ecommerce #mentalidad #negocios",
    "archivos": [
     {
      "archivo": "W_JAVI_REALIDAD.mp4",
      "poster": "media/W_JAVI_REALIDAD_8AGO__00.jpg",
-     "peso_mb": 9.21
+     "peso_mb": 9.21,
+     "video": "media/W_JAVI_REALIDAD_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/W_JAVI_REALIDAD_8AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JORDI_50_EUROS_17AGO",
    "cuenta": "JORDI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Te parece caro probar si el producto interesa, pero llevas cuatro meses gratis eligiendo el nombre.\n\nDentro te digo qué sale más caro.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -2707,7 +2683,7 @@
      "video": "media/CARRUSEL_JORDI_50_EUROS_17AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_50_EUROS_17AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JORDI_7BARES_4AGO",
@@ -2715,7 +2691,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Yo salía a la calle y contaba: hay 7 bares en una misma calle.\n\nTodos hacen lo mismo. Ponen una cerveza, una tapa, un bocadillo. Uno la hace mejor y otro la hace peor, pero todos tienen una inversión altísima y todos dependen de un personal.\n\nYo estaba en mi casa trabajando con una inversión muy baja y sin personal. Si un mes me iba mal, no tenía que preocuparme.\n\nEllos no: un mes de lluvias, el covid, lo que sea, y ya tienen un problema serio. Porque los gastos fijos hay que pagarlos igual.\n\nCualquier negocio en el que no dependas de un gasto fijo cada mes, para mí es el negocio perfecto.\n\nComenta «RECURSOS» y te paso las 64 herramientas que uso.\n\n#ecommerce #dropshipping #negocios",
    "archivos": [
     {
@@ -2747,7 +2722,8 @@
      "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__06.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_7BARES_4AGO"
+   "sin_caption": false,
+   "slides": 7
   },
   {
    "id": "CARRUSEL_JORDI_ALQUILADO_4AGO",
@@ -2755,7 +2731,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "«¿Es alquilado?» Me lo preguntan todas las semanas.\n\nNo: lo compré con una de mis empresas. Y sí, es verdad que lo podría alquilar — sería más barato y nadie lo notaría.\n\nPero yo no quiero hacer un personaje. Si el coche es el negocio, no hay negocio.\n\nLo compré por la experiencia que me da. Y porque a veces creo que necesitamos todos un caramelo: cualquier negocio son muchas horas, y un día malo pesa igual con coche o sin él.\n\nEl coche no monta la tienda. El sistema sí.\n\nComenta «RECURSOS» y te paso las 64 herramientas que uso.\n\n#ecommerce #dropshipping #mentalidad",
    "archivos": [
     {
@@ -2787,7 +2762,8 @@
      "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__06.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_ALQUILADO_4AGO"
+   "sin_caption": false,
+   "slides": 7
   },
   {
    "id": "CARRUSEL_JORDI_CIRCULO_QUEJA_4AGO",
@@ -2795,7 +2771,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Hay casas donde todo son problemas.\n\nUn niño de 10, 12, 15 años llega a casa y sus padres: problemas con el dinero, problemas con la familia, problemas con las amistades. Se quejan de la televisión y se quejan.\n\nEso crea un círculo de queja, una energía negativa dentro de casa que puede que te influya en tu futuro. Y eso es lo importante: romperlo.\n\nEn mi casa montaron negocios y se quebraron. Gracias a esos errores soy conservador en todos los negocios que monto.\n\nHoy cada día soy más estricto con mi círculo: cuando a la gente de mi entorno le pasa un problema, busca solución. No se queja.\n\n¿Te suena esa casa? Cuéntamelo en comentarios.\n\n#ecommerce #mentalidad #entorno",
    "archivos": [
     {
@@ -2827,7 +2802,8 @@
      "poster": "media/CARRUSEL_JORDI_CIRCULO_QUEJA_4AGO__06.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_CIRCULO_QUEJA_4AGO"
+   "sin_caption": false,
+   "slides": 7
   },
   {
    "id": "CARRUSEL_JORDI_ELEGIR_PRODUCTO",
@@ -2835,7 +2811,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -2871,7 +2846,8 @@
      "poster": "media/CARRUSEL_JORDI_ELEGIR_PRODUCTO__07.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_JORDI_ELEGIR_PRODUCTO"
+   "sin_caption": true,
+   "slides": 8
   },
   {
    "id": "CARRUSEL_JORDI_FILTRO_2AGO",
@@ -2879,7 +2855,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "\"He probado cinco productos y ninguno ha tirado.\"\n\nMe lo dicen cada semana. Y casi siempre el fallo no está en el producto: está en que se lanza el sexto sin haber mirado qué pasó con los cinco anteriores.\n\nPara. Y mira hacia atrás. ¿Cuál creó más interés? ¿Cuál te dejaba menos margen? ¿Cuál se vendió de verdad, sin tener que regalarlo?\n\nDe ahí sale un patrón: producto pequeño, con margen, que funciona en ese mercado concreto. Y de ese patrón sale tu filtro. El tuyo, no el que te vendan.\n\nEs lo más complicado del negocio. Y a la vez lo más bonito.\n\nComenta «RECURSOS» si quieres verlo a fondo.\n\n#ecommerce #dropshipping #producto",
    "archivos": [
     {
@@ -2949,7 +2924,8 @@
      "poster": "media/CARRUSEL_JORDI_FILTRO_2AGO__12.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_FILTRO_2AGO"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "CARRUSEL_JORDI_MOROSO_20AGO",
@@ -2957,7 +2933,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Si has llegado a la última lámina ya sabes que nadie nos debe nada.\n\nPero los resultados de las capturas son de alumnos de verdad, del grupo de ORGÁNICO. Eso es lo único que no era teatro.\n\n#ecommerce #tiendaonline #emprender",
    "archivos": [
     {
@@ -2985,15 +2960,15 @@
      "poster": "media/CARRUSEL_JORDI_MOROSO_20AGO__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_MOROSO_20AGO"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
    "cuenta": "JORDI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "El nombre de la tienda no ha vendido nunca nada. Lo que decide es qué vendes y a quién.\n¿En qué parte estás atascado? Comenta EMPIEZO y te leo.\n#ecommerce #emprender #tiendaonline",
    "archivos": [
     {
@@ -3051,7 +3026,7 @@
      "video": "media/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO__08.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO"
+   "sin_caption": false
   },
   {
    "id": "CARRUSEL_JORDI_Q4_13AGO",
@@ -3059,7 +3034,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Crecer un 79% en beneficio neto en un mes. No es el caso del millón: es el caso REAL.\n\nEl mensaje va entero en el carrusel, tal cual llegó al grupo.\n\nComenta «Q4» si te está pasando. Y guárdalo.",
    "archivos": [
     {
@@ -3083,7 +3057,8 @@
      "poster": "media/CARRUSEL_JORDI_Q4_13AGO__04.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_Q4_13AGO"
+   "sin_caption": false,
+   "slides": 5
   },
   {
    "id": "CARRUSEL_JORDI_TEMPORADA_ALTA",
@@ -3091,7 +3066,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -3119,15 +3093,15 @@
      "poster": "media/CARRUSEL_JORDI_TEMPORADA_ALTA__05.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_JORDI_TEMPORADA_ALTA"
+   "sin_caption": true,
+   "slides": 6
   },
   {
    "id": "CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO",
    "cuenta": "JORDI",
-   "tipo": "carrusel",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "Y no te va a gustar la respuesta si buscabas la fácil.\n\nDentro, lo que nadie te cuenta de cada una.\n\nGuárdalo para cuando te toque.",
    "archivos": [
     {
@@ -3179,7 +3153,7 @@
      "video": "media/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO"
+   "sin_caption": false
   },
   {
    "id": "CARR_JORDI_ATAJO",
@@ -3187,7 +3161,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Empezó de cero en marzo. Mira cómo va.\n\nSin historia bonita: un sistema en orden y alguien diciéndole qué NO hacer. Las wins llegan así, cada semana. Enteras, sin retocar.\n\nComenta ATAJO. Lo tienes en el LINK DE LA BIO. Sin humo, hoy.\n\n#ecommerce #negocios #dropshipping",
    "archivos": [
     {
@@ -3215,24 +3188,25 @@
      "poster": "media/CARR_JORDI_ATAJO__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/CARR_JORDI_ATAJO"
+   "sin_caption": false,
+   "slides": 6
   },
   {
    "id": "FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO",
    "cuenta": "JORDI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
    "archivos": [
     {
      "archivo": "FRASE_JORDI_LAMBO_CREDIBILIDAD.mp4",
      "poster": "media/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO__00.jpg",
-     "peso_mb": 10.98
+     "peso_mb": 10.98,
+     "video": "media/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO"
+   "sin_caption": false
   },
   {
    "id": "FRASE_JORDI_RESTAURANTE_CUENTA_19AGO",
@@ -3240,7 +3214,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Se mira la cena, no los tres años que la pagan.\n\nPor eso tanta gente copia el resultado y ninguno el proceso: el resultado se ve en una foto, el proceso no cabe en ninguna.\n\n¿Tú qué estás construyendo ahora mismo?\n\n#ecommerce #emprender #negocioonline",
    "archivos": [
     {
@@ -3250,15 +3223,14 @@
      "video": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO"
+   "sin_caption": false
   },
   {
    "id": "JORDI_BSEM_3_COSAS_CONFIANZA",
    "cuenta": "JORDI",
-   "tipo": "reel",
+   "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "3 cosas que la gente mira antes de darte su dinero. Y no es el precio.\n\n1. Quien hay detras\n2. Que pasa si sale mal\n3. Cuanto tarda en llegar\n\nLa confianza se construye en la ficha. La gente compra a gente.\n\nComenta «SEÑAS» si tu ficha cojea. Y guardalo.\n\n#ecommerce #ventas",
    "archivos": [
     {
@@ -3282,7 +3254,8 @@
      "poster": "media/JORDI_BSEM_3_COSAS_CONFIANZA__04.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/BSEM_3_COSAS_CONFIANZA"
+   "sin_caption": false,
+   "slides": 5
   },
   {
    "id": "JORDI_CARRUSEL_A_desde_cero_7slides",
@@ -3290,7 +3263,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3322,7 +3294,8 @@
      "poster": "media/JORDI_CARRUSEL_A_desde_cero_7slides__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_A_desde_cero_7slides"
+   "sin_caption": true,
+   "slides": 7
   },
   {
    "id": "JORDI_CARRUSEL_B_las5_7slides",
@@ -3330,7 +3303,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3362,7 +3334,8 @@
      "poster": "media/JORDI_CARRUSEL_B_las5_7slides__06.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_B_las5_7slides"
+   "sin_caption": true,
+   "slides": 7
   },
   {
    "id": "JORDI_CARRUSEL_V3_A",
@@ -3370,7 +3343,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -3406,7 +3378,8 @@
      "poster": "media/JORDI_CARRUSEL_V3_A__07.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_V3_A"
+   "sin_caption": true,
+   "slides": 8
   },
   {
    "id": "JORDI_CARRUSEL_V3_B",
@@ -3414,7 +3387,6 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -3442,7 +3414,8 @@
      "poster": "media/JORDI_CARRUSEL_V3_B__05.jpg"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_V3_B"
+   "sin_caption": true,
+   "slides": 6
   },
   {
    "id": "JORDI_CO1E0_01_shipping_protection_407K",
@@ -3450,7 +3423,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Si lo sabes, lo sabes.\n\n¿La llevas en tu tienda? Comenta.\n\n#ecommerce #dropshipping",
    "archivos": [
     {
@@ -3460,7 +3432,7 @@
      "video": "media/JORDI_CO1E0_01_shipping_protection_407K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_01_shipping_protection_407K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CO1E0_02_claude_theme_59K",
@@ -3468,7 +3440,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "La IA no te quita el trabajo. Te quita los gastos tontos.\n\n¿Cuánto pagaste tú por el tuyo? Comenta.\n\n#ecommerce #ia #shopify",
    "archivos": [
     {
@@ -3478,7 +3449,7 @@
      "video": "media/JORDI_CO1E0_02_claude_theme_59K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_02_claude_theme_59K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CO1E0_03_envio_express_41K",
@@ -3486,7 +3457,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "El botón cambia. El camión no.\n\nSi lo has hecho alguna vez, comenta sin miedo.\n\n#ecommerce #dropshipping",
    "archivos": [
     {
@@ -3496,7 +3466,7 @@
      "video": "media/JORDI_CO1E0_03_envio_express_41K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_03_envio_express_41K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CO1E0_04_subtotal_recurrente_37K",
@@ -3504,7 +3474,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Vender una vez está bien. Cobrar cada mes está mejor.\n\n¿Tu producto se puede vender en suscripción? Piénsalo y comenta.\n\n#ecommerce #negocios",
    "archivos": [
     {
@@ -3514,7 +3483,7 @@
      "video": "media/JORDI_CO1E0_04_subtotal_recurrente_37K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_04_subtotal_recurrente_37K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CO1E0_05_caracteres_invisibles_86K",
@@ -3522,7 +3491,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Hay atajos que salen carísimos.\n\nSi sabes cuál es este, comenta. Si no, mejor.\n\n#ecommerce #dropshipping",
    "archivos": [
     {
@@ -3532,7 +3500,7 @@
      "video": "media/JORDI_CO1E0_05_caracteres_invisibles_86K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_05_caracteres_invisibles_86K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CO1E0_06_resenas_inventadas_49K",
@@ -3540,7 +3508,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "La prueba social se gana, no se escribe.\n\n¿Cuántas tiendas recién abiertas has visto con miles de reseñas? Comenta.\n\n#ecommerce #antihumo",
    "archivos": [
     {
@@ -3550,7 +3517,7 @@
      "video": "media/JORDI_CO1E0_06_resenas_inventadas_49K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_06_resenas_inventadas_49K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_CO1E0_07_recarga_automatica_35K",
@@ -3558,7 +3525,6 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Léelo dos veces antes de marcar la casilla.\n\n¿Te ha pasado? Comenta.\n\n#ecommerce #consumo",
    "archivos": [
     {
@@ -3568,7 +3534,7 @@
      "video": "media/JORDI_CO1E0_07_recarga_automatica_35K__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_07_recarga_automatica_35K"
+   "sin_caption": false
   },
   {
    "id": "JORDI_MEME_NUEVO_01_carrito_envio_sorpresa",
@@ -3576,7 +3542,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Nadie abandona por el producto. Abandonan por la sorpresa.\n\nSi el envío aparece por primera vez en el último paso, el cliente no siente que paga un envío: siente que le han movido el precio.\n\nDilo antes. En la ficha, grande. Vender con la verdad delante convierte menos visitas en más pedidos.\n\n¿A ti también te pasa? Cuéntamelo en comentarios.\n\n#ecommerce #tiendaonline",
    "archivos": [
     {
@@ -3586,7 +3551,7 @@
      "video": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_01_carrito_envio_sorpresa"
+   "sin_caption": false
   },
   {
    "id": "JORDI_MEME_NUEVO_02_dm_de_madrugada",
@@ -3594,7 +3559,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Contestar rápido está bien. Vivir pegado al móvil no es un sistema.\n\nSi tu tienda necesita que estés despierto para vender, no tienes una tienda: tienes un turno de noche.\n\nLa ficha tiene que responder sola lo que te preguntan siempre: precio claro, envío claro, talla clara.\n\n¿Cuál es la pregunta que más te repiten? Comenta.\n\n#ecommerce #dropshipping",
    "archivos": [
     {
@@ -3604,7 +3568,7 @@
      "video": "media/JORDI_MEME_NUEVO_02_dm_de_madrugada__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_02_dm_de_madrugada"
+   "sin_caption": false
   },
   {
    "id": "JORDI_MEME_NUEVO_03_contrareembolso_que_vuelve",
@@ -3612,7 +3576,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "El contra reembolso sin filtro no es una forma de pago: es una devolución con paseo.\n\nPedido que vuelve paga dos envíos y llega tocado. Y el que lo pidió ni se acuerda.\n\nConfirmación por mensaje antes de enviar. Una línea, y se caen solos los que nunca iban a abrir la puerta.\n\n¿Te ha vuelto alguno esta semana? Comenta.\n\n#ecommerce #negocios",
    "archivos": [
     {
@@ -3622,7 +3585,7 @@
      "video": "media/JORDI_MEME_NUEVO_03_contrareembolso_que_vuelve__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_03_contrareembolso_que_vuelve"
+   "sin_caption": false
   },
   {
    "id": "JORDI_MEME_NUEVO_04_mirar_ventas_seis_veces",
@@ -3630,7 +3593,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "El panel no es una máquina de ventas. Es un espejo.\n\nMirarlo cada diez minutos solo cambia una cosa: tu ansiedad. Las ventas las mueven la ficha, el producto y el tráfico — y ninguno de los tres se arregla mirando.\n\nUna revisión por la mañana, otra por la noche. El resto del día, a construir.\n\n¿Cuántas veces lo miras tú? Sé sincero en comentarios.\n\n#ecommerce #mentalidad",
    "archivos": [
     {
@@ -3640,7 +3602,7 @@
      "video": "media/JORDI_MEME_NUEVO_04_mirar_ventas_seis_veces__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_NUEVO_04_mirar_ventas_seis_veces"
+   "sin_caption": false
   },
   {
    "id": "JORDI_MEME_PROBAR_TIENDA",
@@ -3648,7 +3610,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
    "caption": "Antes de gastar un solo día en traer gente, cómprate a ti mismo.\n\nCon el móvil, con los datos de verdad, hasta el final. Vas a descubrir el campo que no deja seguir, el gasto de envío que aparece de golpe y la pantalla de gracias que no dice nada.\n\nSe tarda diez minutos y es lo más rentable que vas a hacer esta semana.\n\n#ecommerce #tiendaonline",
    "archivos": [
     {
@@ -3658,7 +3619,7 @@
      "video": "media/JORDI_MEME_PROBAR_TIENDA__00.mp4"
     }
    ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/MEME_PROBAR_TIENDA"
+   "sin_caption": false
   },
   {
    "id": "MEMES_JORDI_ELITE_18AGO",
@@ -3666,7 +3627,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3718,7 +3678,7 @@
      "video": "media/MEMES_JORDI_ELITE_18AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JORDI_ELITE_18AGO"
+   "sin_caption": true
   },
   {
    "id": "MEMES_JORDI_MES_14AGO",
@@ -3726,7 +3686,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3778,7 +3737,7 @@
      "video": "media/MEMES_JORDI_MES_14AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JORDI_MES_14AGO"
+   "sin_caption": true
   },
   {
    "id": "MEMES_JORDI_SEMANA_17AGO",
@@ -3786,7 +3745,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3838,7 +3796,7 @@
      "video": "media/MEMES_JORDI_SEMANA_17AGO__07.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JORDI_SEMANA_17AGO"
+   "sin_caption": true
   },
   {
    "id": "MEMES_JORDI_TANDA_16AGO",
@@ -3846,7 +3804,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3880,7 +3837,7 @@
      "video": "media/MEMES_JORDI_TANDA_16AGO__04.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_16AGO"
+   "sin_caption": true
   },
   {
    "id": "MEMES_JORDI_TANDA_1AGO",
@@ -3888,7 +3845,6 @@
    "tipo": "meme",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "El problema casi nunca es el modelo.\n\nEs el proveedor que tarda 25 días, el margen que no calculaste hasta después de las devoluciones, o el checkout que pedía el código postal dos veces mientras tú cambiabas la creatividad por sexta vez.\n\nNada de eso se arregla escalando. Se arregla mirándolo.\n\n#ecommerce #negocios",
    "archivos": [
     {
@@ -3934,7 +3890,7 @@
      "video": "media/MEMES_JORDI_TANDA_1AGO__06.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/MEMES_JORDI_TANDA_1AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_CASO_EXITO_13AGO",
@@ -3942,16 +3898,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "El caso de éxito más común no es el del millón al mes.\n\nEs la persona que empezó de cero, llegó a sus primeros pedidos y hoy gana más que un salario medio en España — la cifra la ves en el vídeo. A partir de ahí, el techo lo pones tú.\n\nComenta «ÉXITO» si te está pasando. Y guárdalo.\n\n#ecommerce #negocios #emprender",
    "archivos": [
     {
      "archivo": "REEL_JORDI_CASO_EXITO_13AGO.mp4",
      "poster": "media/REEL_JORDI_CASO_EXITO_13AGO__00.jpg",
-     "peso_mb": 29.85
+     "peso_mb": 29.85,
+     "video": "media/REEL_JORDI_CASO_EXITO_13AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_CASO_EXITO_13AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_CC_V5_CENTRO_8AGO",
@@ -3959,16 +3915,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "La eterna pelea. 🧠❤\n\n#mentalidad #emprender #negocios",
    "archivos": [
     {
      "archivo": "REEL_JORDI_CC_V5_CENTRO.mp4",
      "poster": "media/REEL_JORDI_CC_V5_CENTRO_8AGO__00.jpg",
-     "peso_mb": 10.61
+     "peso_mb": 10.61,
+     "video": "media/REEL_JORDI_CC_V5_CENTRO_8AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_CC_V5_CENTRO_8AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_CEREBRO_CORAZON_2AGO",
@@ -3976,16 +3932,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "La pelea de verdad no es con el negocio. Es contigo.\n\nEl cerebro dice: un mes más y aflojo.\nEl corazón dice: cena sin el móvil.\n\nY casi siempre manda el cerebro. Hasta que un domingo te das cuenta de que estás en casa\npero no estás en casa.\n\nNo te voy a decir que trabajes menos. Te voy a decir otra cosa: decide tú cuándo paras,\nporque si no lo decides tú, lo decide el negocio por ti. Y el negocio nunca dice basta.\n\n¿Cuál de las dos frases te ha dolido más?\n\n#ecommerce #mentalidad #emprender",
    "archivos": [
     {
      "archivo": "REEL_JORDI_CEREBRO_CORAZON_2AGO.mp4",
      "poster": "media/REEL_JORDI_CEREBRO_CORAZON_2AGO__00.jpg",
-     "peso_mb": 15.04
+     "peso_mb": 15.04,
+     "video": "media/REEL_JORDI_CEREBRO_CORAZON_2AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_CEREBRO_CORAZON_2AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_META300_1AGO",
@@ -3993,16 +3949,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Mi objetivo nunca fue el coche.\n\nTenía un trabajo normal y solo quería un extra a final de mes. Esa era toda la ambición: una meta pequeña, un extra y ya.\n\nY la cumplí. Y al cumplirla vi que había otra un poco más arriba que también podía cumplir. Así diez años.\n\nLa gente se pone metas enormes porque cree que las grandes son las que motivan. Es al revés: la meta enorme te frustra el primer mes y lo dejas. La pequeña la cumples, y cumplirla es lo que te enseña que puedes con la siguiente.\n\nEse es el proceso. No hay más.\n\n#emprendimiento #ecommerce #mentalidad",
    "archivos": [
     {
      "archivo": "REEL_JORDI_META300.mp4",
      "poster": "media/REEL_JORDI_META300_1AGO__00.jpg",
-     "peso_mb": 9.12
+     "peso_mb": 9.12,
+     "video": "media/REEL_JORDI_META300_1AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_META300_1AGO"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_NO_CAMBIO_NADA",
@@ -4010,16 +3966,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "TOFU",
    "caption": "Me preguntaron qué me ha cambiado la vida esto. Y la respuesta decepciona: nada.\n\nMe levanto a la misma hora, llevo a mi hijo al colegio y trabajo las mismas horas. Antes esas horas las pasaba en el coche viajando y vendiendo. Ahora las paso en la oficina.\n\nEso es literalmente lo único que ha cambiado.\n\nSi esperas que el negocio te cambie la rutina, vas a esperar sentado. Lo que cambia es a quién le rindes cuentas.\n\n#ecommerce #mentalidad",
    "archivos": [
     {
      "archivo": "REEL_JORDI_NO_CAMBIO_NADA.mp4",
      "poster": "media/REEL_JORDI_NO_CAMBIO_NADA__00.jpg",
-     "peso_mb": 12.52
+     "peso_mb": 12.52,
+     "video": "media/REEL_JORDI_NO_CAMBIO_NADA__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_NO_CAMBIO_NADA"
+   "sin_caption": false
   },
   {
    "id": "REEL_JORDI_OBJETIVOS_13AGO",
@@ -4027,16 +3983,16 @@
    "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Una persona sin objetivos es una persona muerta.\n\nEl día que se te acaban los objetivos, dejas de tener éxito. Si quieres el coche, cúrratelo. Si quieres viajar, trabaja para lograrlo.\n\n¿Cuál es tu próximo objetivo?\n\n#mentalidad #negocios #emprender",
    "archivos": [
     {
      "archivo": "REEL_JORDI_OBJETIVOS_13AGO.mp4",
      "poster": "media/REEL_JORDI_OBJETIVOS_13AGO__00.jpg",
-     "peso_mb": 28.74
+     "peso_mb": 28.74,
+     "video": "media/REEL_JORDI_OBJETIVOS_13AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/REEL_JORDI_OBJETIVOS_13AGO"
+   "sin_caption": false
   },
   {
    "id": "STORIES_JORDI_FREESTYLE_2AGO",
@@ -4044,7 +4000,6 @@
    "tipo": "story",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "(stories — no llevan caption; el CTA va en la S4: «Responde MARGEN y te la mando entera, gratis»)\nOrden de publicación: S1 → S2 → S3 → S4. Las tres primeras son prueba, la cuarta captura.",
    "archivos": [
     {
@@ -4064,7 +4019,7 @@
      "poster": "media/STORIES_JORDI_FREESTYLE_2AGO__03.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/STORIES_JORDI_FREESTYLE_2AGO"
+   "sin_caption": false
   },
   {
    "id": "STORIES_JORDI_MARTES_A7_V3",
@@ -4072,7 +4027,6 @@
    "tipo": "story",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "Secuencia de stories · palabra clave del CTA: RECURSOS (la única cableada en ManyChat).\nOrden: s01 dolor -> s02 win Mexico -> s03 win editor -> s04 CTA. Martes, cuenta de JORDI.\nV3 con las correcciones de Santi del 4-ago: fondos suyos sin personas y texto grande.",
    "archivos": [
     {
@@ -4092,7 +4046,7 @@
      "poster": "media/STORIES_JORDI_MARTES_A7_V3__03.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/STORIES_JORDI_MARTES_A7_V3"
+   "sin_caption": false
   },
   {
    "id": "STORIES_JORDI_TESTIMONIOS_1AGO",
@@ -4100,7 +4054,6 @@
    "tipo": "story",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "",
    "archivos": [
     {
@@ -4128,7 +4081,7 @@
      "poster": "media/STORIES_JORDI_TESTIMONIOS_1AGO__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/STORIES_JORDI_TESTIMONIOS_1AGO"
+   "sin_caption": true
   },
   {
    "id": "STORIES_JORDI_WINS_1AGO",
@@ -4136,7 +4089,6 @@
    "tipo": "story",
    "dia": "",
    "hora": "",
-   "etiqueta": "BOFU",
    "caption": "",
    "archivos": [
     {
@@ -4164,24 +4116,75 @@
      "poster": "media/STORIES_JORDI_WINS_1AGO__05.jpg"
     }
    ],
-   "origen": "PARA_REVISAR/STORIES_JORDI_WINS_1AGO"
+   "sin_caption": true
   },
   {
    "id": "V_JORDI_HOOKAD12_7AGO",
    "cuenta": "JORDI",
-   "tipo": "ad",
+   "tipo": "reel",
    "dia": "",
    "hora": "",
-   "etiqueta": "AD",
    "caption": "Esto no es otro curso de ecommerce. Es lo que pasa cuando alguien que ya recorrió el camino te dice qué NO hacer.\n\nLo de este video es del último evento: alumnos reales, resultados reales.\n\nComenta ATAJO. Lo tienes en el LINK DE LA BIO.\n\n#ecommerce #negocios #mentoria",
    "archivos": [
     {
      "archivo": "V_JORDI_HOOKAD12.mp4",
      "poster": "media/V_JORDI_HOOKAD12_7AGO__00.jpg",
-     "peso_mb": 22.18
+     "peso_mb": 22.18,
+     "video": "media/V_JORDI_HOOKAD12_7AGO__00.mp4"
     }
    ],
-   "origen": "PARA_REVISAR/V_JORDI_HOOKAD12_7AGO"
+   "sin_caption": false
+  }
+ ],
+ "huecos": [
+  {
+   "dia": "lun 24",
+   "cuenta": "JAVI",
+   "formato": "iPad caso de éxito",
+   "hora": "20:00",
+   "motivo": "motor MONTADO 22-ago (_SCRIPTS/motor_caso_exito.py, molde medido y clon-check OK) — FALTA el material: grabación de llamada con un alumno validado, la tiene que"
+  },
+  {
+   "dia": "mié 26",
+   "cuenta": "JAVI",
+   "formato": "Respuesta comentario TikTok",
+   "hora": "19:00",
+   "motivo": "motor no montado (declarado en la propia regla)"
+  },
+  {
+   "dia": "sáb 29",
+   "cuenta": "JAVI",
+   "formato": "iPad / pantalla dividida",
+   "hora": "19:30",
+   "motivo": "solo existe 1 pantalla dividida de Javi y va el jueves"
+  },
+  {
+   "dia": "lun 24",
+   "cuenta": "JORDI",
+   "formato": "iPad caso de éxito",
+   "hora": "20:00",
+   "motivo": "motor MONTADO 22-ago (_SCRIPTS/motor_caso_exito.py, molde medido y clon-check OK) — FALTA el material: grabación de llamada con un alumno validado, la tiene que"
+  },
+  {
+   "dia": "mié 26",
+   "cuenta": "JORDI",
+   "formato": "Respuesta comentario TikTok",
+   "hora": "19:00",
+   "motivo": "motor no montado"
+  },
+  {
+   "dia": "vie 28",
+   "cuenta": "JORDI",
+   "formato": "Selfie",
+   "hora": "19:00",
+   "motivo": "motor no montado Y cero raw selfie de Jordi en inventario"
+  },
+  {
+   "dia": "sáb 29",
+   "cuenta": "JORDI",
+   "formato": "iPad / pantalla dividida",
+   "hora": "19:30",
+   "motivo": "solo existe 1 pantalla dividida de Jordi y va el jueves"
   }
  ]
 }
