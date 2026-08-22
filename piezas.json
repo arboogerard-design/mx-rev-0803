@@ -362,7 +362,7 @@
    "tipo": "carrusel",
    "dia": "mar 25",
    "hora": "20:00",
-   "etiqueta": "",
+   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -437,7 +437,7 @@
    "tipo": "carrusel",
    "dia": "mié 26",
    "hora": "20:00",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -733,7 +733,7 @@
    "tipo": "carrusel",
    "dia": "sáb 29",
    "hora": "19:00",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -770,6 +770,98 @@
     }
    ],
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_B_6preguntas_8slides"
+  },
+  {
+   "id": "JAVI_CARRUSEL_V3_A",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "sáb 29",
+   "hora": "19:00",
+   "etiqueta": "MOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__06.jpg"
+    },
+    {
+     "archivo": "slide_08.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__07.jpg"
+    },
+    {
+     "archivo": "slide_09.png",
+     "poster": "media/JAVI_CARRUSEL_V3_A__08.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_A"
+  },
+  {
+   "id": "JORDI_CARRUSEL_V3_A",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "sáb 29",
+   "hora": "19:00",
+   "etiqueta": "MOFU",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__06.jpg"
+    },
+    {
+     "archivo": "slide_08.png",
+     "poster": "media/JORDI_CARRUSEL_V3_A__07.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_V3_A"
   },
   {
    "id": "REEL_JAVI_EVENTO_ALUMNOS_20AGO",
@@ -1183,7 +1275,7 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1393,7 +1485,7 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1820,60 +1912,12 @@
    "origen": "PARA_REVISAR/JAVI_CAJITA3_9AGO"
   },
   {
-   "id": "JAVI_CARRUSEL_V3_A",
-   "cuenta": "JAVI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "",
-   "caption": "",
-   "archivos": [
-    {
-     "archivo": "slide_01.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__00.jpg"
-    },
-    {
-     "archivo": "slide_02.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__01.jpg"
-    },
-    {
-     "archivo": "slide_03.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__02.jpg"
-    },
-    {
-     "archivo": "slide_04.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__03.jpg"
-    },
-    {
-     "archivo": "slide_05.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__04.jpg"
-    },
-    {
-     "archivo": "slide_06.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__05.jpg"
-    },
-    {
-     "archivo": "slide_07.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__06.jpg"
-    },
-    {
-     "archivo": "slide_08.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__07.jpg"
-    },
-    {
-     "archivo": "slide_09.png",
-     "poster": "media/JAVI_CARRUSEL_V3_A__08.jpg"
-    }
-   ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_A"
-  },
-  {
    "id": "JAVI_CARRUSEL_V3_A_cash_real",
    "cuenta": "JAVI",
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -1893,7 +1937,7 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -2970,7 +3014,7 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -3352,7 +3396,7 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
@@ -3519,7 +3563,7 @@
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "TOFU",
    "caption": "",
    "archivos": [
     {
@@ -3554,56 +3598,12 @@
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_B_las5_7slides"
   },
   {
-   "id": "JORDI_CARRUSEL_V3_A",
-   "cuenta": "JORDI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "",
-   "caption": "",
-   "archivos": [
-    {
-     "archivo": "slide_01.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__00.jpg"
-    },
-    {
-     "archivo": "slide_02.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__01.jpg"
-    },
-    {
-     "archivo": "slide_03.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__02.jpg"
-    },
-    {
-     "archivo": "slide_04.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__03.jpg"
-    },
-    {
-     "archivo": "slide_05.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__04.jpg"
-    },
-    {
-     "archivo": "slide_06.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__05.jpg"
-    },
-    {
-     "archivo": "slide_07.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__06.jpg"
-    },
-    {
-     "archivo": "slide_08.png",
-     "poster": "media/JORDI_CARRUSEL_V3_A__07.jpg"
-    }
-   ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CARRUSEL_V3_A"
-  },
-  {
    "id": "JORDI_CARRUSEL_V3_B",
    "cuenta": "JORDI",
    "tipo": "carrusel",
    "dia": "",
    "hora": "",
-   "etiqueta": "",
+   "etiqueta": "MOFU",
    "caption": "",
    "archivos": [
     {
