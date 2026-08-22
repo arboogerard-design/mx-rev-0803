@@ -539,6 +539,63 @@
    "origen": "PARA_REVISAR/JAVI_NICHO_MERCADO_20AGO"
   },
   {
+   "id": "JAVI_CLON_SYK_NOTICIA_SENAL",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "jue 27",
+   "hora": "19:30",
+   "etiqueta": "",
+   "caption": "",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__06.jpg"
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_SYK_NOTICIA_SENAL"
+  },
+  {
+   "id": "JORDI_FRASE_LAMBO_TIKI",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "jue 27",
+   "hora": "19:30",
+   "etiqueta": "",
+   "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
+   "archivos": [
+    {
+     "archivo": "JO3_frase_lambo_TIKI.mp4",
+     "poster": "media/JORDI_FRASE_LAMBO_TIKI__00.jpg",
+     "peso_mb": 10.92
+    }
+   ],
+   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/FRASE_LAMBO_TIKI"
+  },
+  {
    "id": "JAVI_CLASE_BORROSA_9AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -588,6 +645,66 @@
     }
    ],
    "origen": "PARA_REVISAR/JAVI_SELFIE_EXITO_8AGO"
+  },
+  {
+   "id": "CARRUSEL_JAVI_OLOR_A_VENTA_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "vie 28",
+   "hora": "19:30",
+   "etiqueta": "TOFU",
+   "caption": "El que entra en tu tienda decide en segundo y medio si le estás resolviendo algo o si le estás pidiendo algo.\n\nLas cuatro señales están dentro.\n\nGuárdalo para cuando te toque.",
+   "archivos": [
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__00.jpg",
+     "peso_mb": 0.36,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__00.mp4"
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__01.jpg",
+     "peso_mb": 0.04,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__01.mp4"
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__02.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__02.mp4"
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__03.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__03.mp4"
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__04.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__04.mp4"
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__05.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__05.mp4"
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__06.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__06.mp4"
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.jpg",
+     "peso_mb": 0.08,
+     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.mp4"
+    }
+   ],
+   "origen": "PARA_REVISAR/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO"
   },
   {
    "id": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
@@ -1194,66 +1311,6 @@
    "origen": "PARA_REVISAR/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO"
   },
   {
-   "id": "CARRUSEL_JAVI_OLOR_A_VENTA_17AGO",
-   "cuenta": "JAVI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "TOFU",
-   "caption": "El que entra en tu tienda decide en segundo y medio si le estás resolviendo algo o si le estás pidiendo algo.\n\nLas cuatro señales están dentro.\n\nGuárdalo para cuando te toque.",
-   "archivos": [
-    {
-     "archivo": "slide_01.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__00.jpg",
-     "peso_mb": 0.36,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__00.mp4"
-    },
-    {
-     "archivo": "slide_02.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__01.jpg",
-     "peso_mb": 0.04,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__01.mp4"
-    },
-    {
-     "archivo": "slide_03.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__02.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__02.mp4"
-    },
-    {
-     "archivo": "slide_04.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__03.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__03.mp4"
-    },
-    {
-     "archivo": "slide_05.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__04.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__04.mp4"
-    },
-    {
-     "archivo": "slide_06.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__05.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__05.mp4"
-    },
-    {
-     "archivo": "slide_07.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__06.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__06.mp4"
-    },
-    {
-     "archivo": "slide_08.mp4",
-     "poster": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.jpg",
-     "peso_mb": 0.08,
-     "video": "media/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__07.mp4"
-    }
-   ],
-   "origen": "PARA_REVISAR/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO"
-  },
-  {
    "id": "CARRUSEL_JAVI_POV_INBOX_16AGO",
    "cuenta": "JAVI",
    "tipo": "carrusel",
@@ -1832,46 +1889,6 @@
     }
    ],
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CARRUSEL_V3_B"
-  },
-  {
-   "id": "JAVI_CLON_SYK_NOTICIA_SENAL",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "",
-   "caption": "",
-   "archivos": [
-    {
-     "archivo": "slide_01.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__00.jpg"
-    },
-    {
-     "archivo": "slide_02.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__01.jpg"
-    },
-    {
-     "archivo": "slide_03.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__02.jpg"
-    },
-    {
-     "archivo": "slide_04.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__03.jpg"
-    },
-    {
-     "archivo": "slide_05.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__04.jpg"
-    },
-    {
-     "archivo": "slide_06.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__05.jpg"
-    },
-    {
-     "archivo": "slide_07.png",
-     "poster": "media/JAVI_CLON_SYK_NOTICIA_SENAL__06.jpg"
-    }
-   ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/1_JAVI/CLON_SYK_NOTICIA_SENAL"
   },
   {
    "id": "MEMES_JAVI_TANDA_16AGO",
@@ -3552,23 +3569,6 @@
     }
    ],
    "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/CO1E0_07_recarga_automatica_35K"
-  },
-  {
-   "id": "JORDI_FRASE_LAMBO_TIKI",
-   "cuenta": "JORDI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "etiqueta": "",
-   "caption": "Lo que más me preguntan no es cómo se construye un negocio. Es si el coche es alquilado.\n\nY ahí está el problema: se le da más crédito a lo que se ve que a lo que se hace. Lo de fuera se compra en un día; lo de dentro tarda años.\n\n¿A ti qué te está costando más: el resultado o el proceso?\n\n#ecommerce #emprender #mentalidad",
-   "archivos": [
-    {
-     "archivo": "JO3_frase_lambo_TIKI.mp4",
-     "poster": "media/JORDI_FRASE_LAMBO_TIKI__00.jpg",
-     "peso_mb": 10.92
-    }
-   ],
-   "origen": "_CONTENIDO_JAVI_JORDI_HOY/2_JORDI/FRASE_LAMBO_TIKI"
   },
   {
    "id": "JORDI_MEME_NUEVO_01_carrito_envio_sorpresa",
