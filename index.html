@@ -673,9 +673,17 @@ function mediaHTML(p,i){
    Lo genera _SCRIPTS/panel_referente_al_lado.py resolviendo el _REFERENTE.txt de la pieza con la
    MISMA funcion que usa el gate, para que no haya dos criterios de "cual es el referente". */
 let REFS_PAREJA={};
+/* REFS_DISCO — lo MEDIDO en disco por referentes_medir.py (dur + cortes/s a los DOS umbrales
+   @0.30 y @0.12, familia y estado). Es lo que saca a la pestaña Referentes del "sin analizar"
+   eterno: el dato viene del mismo referentes.json, una sola fuente. */
+let REFS_DISCO={}, REFS_DISCO_LISTA=[], REFS_DISCO_GEN="";
+const REF_EST_COLOR={clonado:"#3ECF8E",molde:"#C9A227",medido:"#5B9DFF",bajado:"#8b8b9c",pendiente:"#E5484D"};
 fetch("referentes.json").then(r=>r.ok?r.json():null).then(d=>{
   if(!d)return;
   (d.pares||[]).forEach(x=>{REFS_PAREJA[x.pieza]=x;});
+  REFS_DISCO_LISTA=d.medidos||[];
+  REFS_DISCO_GEN=d.medidos_generado||"";
+  REFS_DISCO_LISTA.forEach(m=>{if(m.sc)REFS_DISCO[m.sc]=m;});
   if(typeof render==="function")render();
 }).catch(()=>{});
 
@@ -1115,6 +1123,18 @@ function vistaEspia(){
    +'momento como orden: lo clono para Javi o Jordi y aparece en Por revisar. '
    +'Pega abajo cualquier link nuevo de reel/carrusel y entra a la parrilla.</div>'
    +'<div class="addref"><input id="rurl" placeholder="https://instagram.com/reel/..."><button id="raddr">Añadir al espía</button></div>';
+  /* Resumen medido EN DISCO — la respuesta a «la pestaña de referentes no está en tiempo real»:
+     esto viene de referentes_medir.py (ffmpeg sobre los ficheros locales), no de una promesa. */
+  if(REFS_DISCO_LISTA.length){
+    const cnt={};REFS_DISCO_LISTA.forEach(m=>{const e=m.estado||"bajado";cnt[e]=(cnt[e]||0)+1;});
+    const med=REFS_DISCO_LISTA.filter(m=>m.cortes_s_012!=null).length;
+    h+='<div class="nota" style="border-color:#2b3a4a"><b>EN DISCO, MEDIDO:</b> '
+      +REFS_DISCO_LISTA.length+' referentes en inventario · <b>'+med+'</b> con ritmo a los dos umbrales (@0.30 y @0.12)'
+      +(REFS_DISCO_GEN?' · medido '+esc(REFS_DISCO_GEN):'')+' — '
+      +["clonado","molde","medido","bajado","pendiente"].filter(e=>cnt[e])
+        .map(e=>'<span style="color:'+(REF_EST_COLOR[e]||"#999")+';font-weight:700">'+cnt[e]+' '+e+'</span>').join(' · ')
+      +'</div>';
+  }
   const _ords=(E.ordenes_todas||[]).slice().sort((a,b)=>(b.cuando||"").localeCompare(a.cuando||""));
   if(_ords.length){
     h+='<div class="nota" style="border-color:#2b4a33"><b>ÓRDENES ENVIADAS ('+_ords.length+')</b> — '
@@ -1144,6 +1164,12 @@ function vistaEspia(){
         ${t.quien?`<span class="tag tipo">pasado por ${esc(t.quien)}</span>`:""}
         ${t.likes!=null?`<span class="tag tipo">♥ ${t.likes.toLocaleString("es")}</span>`:""}
         ${t.coms!=null?`<span class="tag tipo">💬 ${t.coms}</span>`:""}
+        ${(m=>m&&m.dur!=null?`<span class="tag tipo">⏱ ${m.dur.toFixed(1).replace(".",",")}s</span>`
+          +(m.cortes_s_030!=null?`<span class="tag tipo">${m.cortes_s_030.toFixed(2).replace(".",",")} c/s @0.30</span>`:"")
+          +(m.cortes_s_012!=null?`<span class="tag tipo">${m.cortes_s_012.toFixed(2).replace(".",",")} c/s @0.12</span>`:"")
+          +(m.familia?`<span class="tag tipo">${esc(m.familia)}</span>`:""):"")(REFS_DISCO[t.sc]||null)}
+        ${(m=>{const e=m?(m.estado||"bajado"):"pendiente";
+          return `<span class="tag tipo" style="border-color:${REF_EST_COLOR[e]||"#666"};color:${REF_EST_COLOR[e]||"#999"};font-weight:700">${e}</span>`;})(REFS_DISCO[t.sc]||null)}
         ${t.nota?`<div style="font-size:12px;color:#999;margin:4px 0 0;width:100%">${esc(t.nota)}</div>`:""}
         ${ESPIA_ANALISIS[t.sc]?`<details class="espana"><summary>ANÁLISIS · qué tocar y qué no</summary><div class="esparec">${esc(ESPIA_ANALISIS[t.sc].receta)}</div><div class="espcol"><b style="color:#3ECF8E">TOCAR</b><ul>${ESPIA_ANALISIS[t.sc].tocar.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="espcol"><b style="color:#E5484D">NO TOCAR</b><ul>${ESPIA_ANALISIS[t.sc].evitar.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></details>`:""}
         ${(o=>o?`<button class="repl hecho" disabled>PEDIDO ✓ ${esc(o.por||"")} ${esc(o.cuando||"")}</button>`
@@ -1161,6 +1187,22 @@ function vistaEspia(){
      pasados por el equipo NO se pintan aquí (van a la fábrica y entran cuando estén MEDIDOS
      y sean de competencia). El espía es SOLO competencia medida. */
   h+='</div>';
+  /* Inventario completo medido en disco: dur + cortes/s @0.30 y @0.12 + familia + estado. */
+  if(REFS_DISCO_LISTA.length){
+    const f2=v=>v!=null?v.toFixed(2).replace(".",","):"–";
+    h+='<div style="grid-column:1/-1;font-weight:800;letter-spacing:.10em;color:#C9A227;margin:18px 0 6px;font-size:12px;text-transform:uppercase">Inventario medido en disco ('+REFS_DISCO_LISTA.length+')</div>';
+    h+='<div style="overflow-x:auto"><table class="igtab"><tr><th>Referente</th><th class="r">dur</th><th class="r">c/s @0.30</th><th class="r">c/s @0.12</th><th>familia</th><th>estado</th></tr>';
+    for(const m of REFS_DISCO_LISTA){
+      const nom=m.sc||m.fichero||"";
+      const link=m.url?`<a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(nom)}</a>`:esc(nom);
+      h+=`<tr><td>${link}<div style="font-size:11px;color:#666">${esc(m.carpeta||"")}${m.quien?" · pasado por "+esc(m.quien):""}</div></td>`
+        +`<td class="r">${m.dur!=null?m.dur.toFixed(1).replace(".",",")+"s":"–"}</td>`
+        +`<td class="r">${f2(m.cortes_s_030)}</td><td class="r">${f2(m.cortes_s_012)}</td>`
+        +`<td>${esc(m.familia||"")}</td>`
+        +`<td><span style="color:${REF_EST_COLOR[m.estado]||"#999"};font-weight:700">${esc(m.estado||"")}</span></td></tr>`;
+    }
+    h+='</table></div>';
+  }
   return h;
 }
 

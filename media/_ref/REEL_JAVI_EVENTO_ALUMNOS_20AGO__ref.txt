@@ -1,0 +1,1 @@
+Receta V14 (7-ago, validada por Javi «están fenómenos»): gancho + 2-3 alumnos reales a cámara (frase completa + aire) + cierre. Fuente de ventanas: _SCRIPTS/ads_v14.py MOM.
