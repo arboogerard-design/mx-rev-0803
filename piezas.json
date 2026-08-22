@@ -2176,6 +2176,78 @@
    "origen": "PARA_REVISAR/PAPEL_JAVI_EL_QUE_DUDA_19AGO"
   },
   {
+   "id": "PAPEL_JAVI_NEGACION_22AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Copiar el precio del de al lado es heredar su margen. Y su margen no es el tuyo.\n\nTu precio empieza en tus costes y en tu proveedor, no en la etiqueta de tu competencia. El que lo calcula decide. El que lo copia, obedece.\n\nSe calcula en una tarde.\n\nComenta «PRECIO» y te digo por dónde empezaría con el tuyo.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JAVI_NEGACION.mp4",
+     "poster": "media/PAPEL_JAVI_NEGACION_22AGO__00.jpg",
+     "peso_mb": 1.54,
+     "video": "media/PAPEL_JAVI_NEGACION_22AGO__00.mp4"
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JAVI_NEGACION_22AGO"
+  },
+  {
+   "id": "PAPEL_JAVI_OTRA_TIENDA_22AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Cambiar de producto no arregla nada. Te devuelve a la casilla de salida con los mismos fallos.\n\nLa página de inicio que parece barata. La tienda que tarda en cargar. Eso viaja contigo al siguiente producto, y al siguiente.\n\nArreglar la tienda que ya tienes es más corto que empezar otra.\n\nComenta «TIENDA» y te digo qué arreglaría primero en la tuya.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JAVI_OTRA_TIENDA.mp4",
+     "poster": "media/PAPEL_JAVI_OTRA_TIENDA_22AGO__00.jpg",
+     "peso_mb": 1.53,
+     "video": "media/PAPEL_JAVI_OTRA_TIENDA_22AGO__00.mp4"
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JAVI_OTRA_TIENDA_22AGO"
+  },
+  {
+   "id": "PAPEL_JAVI_SINTOMA_22AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "Se nota cuando una tienda necesita la venta. Y el que entra lo nota antes que tú.\n\nDescuentos por todas partes, urgencia falsa, cero garantías claras. Nada de eso vende: espanta. La confianza vende más que la prisa.\n\nQuitar la súplica cuesta una tarde.\n\nComenta «VENTA» y te digo qué quitaría primero de tu tienda.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JAVI_HUELE_A_VENTA.mp4",
+     "poster": "media/PAPEL_JAVI_SINTOMA_22AGO__00.jpg",
+     "peso_mb": 1.53,
+     "video": "media/PAPEL_JAVI_SINTOMA_22AGO__00.mp4"
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JAVI_SINTOMA_22AGO"
+  },
+  {
+   "id": "PAPEL_JAVI_TEQUEDA0_22AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "",
+   "hora": "",
+   "etiqueta": "TOFU",
+   "caption": "El mejor mes de tu tienda y la cuenta se queda igual.\n\nNo es un problema de ventas. Es que no sabes tu margen real ni cuánto necesitas facturar para no perder. Dos números que deciden si tienes un negocio o un entretenimiento caro.\n\nLos dos se sacan en una tarde.\n\nComenta «MARGEN» y te digo cuál miraría primero en tu tienda.\n\n#ecommerce #tiendaonline #emprender",
+   "archivos": [
+    {
+     "archivo": "PAPEL_JAVI_TEQUEDA0.mp4",
+     "poster": "media/PAPEL_JAVI_TEQUEDA0_22AGO__00.jpg",
+     "peso_mb": 1.53,
+     "video": "media/PAPEL_JAVI_TEQUEDA0_22AGO__00.mp4"
+    }
+   ],
+   "origen": "PARA_REVISAR/PAPEL_JAVI_TEQUEDA0_22AGO"
+  },
+  {
    "id": "POD_QA15_JAVI_15AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
