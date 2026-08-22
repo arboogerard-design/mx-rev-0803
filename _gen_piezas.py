@@ -37,7 +37,7 @@ PIEZAS_JSON = os.path.join(PANEL, "piezas.json")
 BASE = r"C:\Users\PC\Desktop\MENTORIUM\MENTORIUM_SISTEMA_UNIFICADO"
 PR = os.path.join(BASE, "PARA_REVISAR")
 HOY = r"C:\Users\PC\Desktop\_CONTENIDO_JAVI_JORDI_HOY"
-PLAN = r"C:\Users\PC\Desktop\_HOY_20AGO\PLAN_SEMANA_JAVI_JORDI.md"
+PLAN = r"C:\Users\PC\Desktop\_DOCS_VIVOS\PLAN_SEMANA_24_30.md"
 
 LIM_MB = 8.0                      # techo de video que viaja al repo (GitHub Pages)
 SEMANA = "24-30 agosto 2026"
