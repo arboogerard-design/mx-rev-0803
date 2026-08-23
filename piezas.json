@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-23T10:43",
+ "generado": "2026-08-23T11:32",
  "semana": "24-30 agosto 2026",
  "dias": [
   "dom 23",
@@ -443,6 +443,38 @@
     }
    ],
    "sin_caption": false
+  },
+  {
+   "id": "CARRUSEL_JAVI_OFERTA_GANADORA_24AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "lun 24",
+   "hora": "20:00",
+   "caption": "Le va pillando el rollo. Y lo dice él, no yo.\n\nEl panel del día y su mensaje van enteros en el carrusel, tal cual llegaron al grupo.\n\nLo importante no es el día bueno: es tener ya la oferta y el creativo que funcionan ANTES de escalar. Al revés se quema el presupuesto.\n\nComenta «OFERTA» si quieres saber qué señales miro antes de subir el gasto.\n\n#ecommerce #tiendaonline #negocios",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JAVI_OFERTA_GANADORA_24AGO__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JAVI_OFERTA_GANADORA_24AGO__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JAVI_OFERTA_GANADORA_24AGO__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JAVI_OFERTA_GANADORA_24AGO__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JAVI_OFERTA_GANADORA_24AGO__04.jpg"
+    }
+   ],
+   "sin_caption": false,
+   "slides": 5
   },
   {
    "id": "MEMES_JAVI_SEMANA_17AGO",
@@ -4138,13 +4170,6 @@
   }
  ],
  "huecos": [
-  {
-   "dia": "lun 24",
-   "cuenta": "JAVI",
-   "formato": "iPad caso de éxito",
-   "hora": "20:00",
-   "motivo": "motor MONTADO 22-ago (_SCRIPTS/motor_caso_exito.py, molde medido y clon-check OK) — FALTA el material: grabación de llamada con un alumno validado, la tiene que"
-  },
   {
    "dia": "mié 26",
    "cuenta": "JAVI",
