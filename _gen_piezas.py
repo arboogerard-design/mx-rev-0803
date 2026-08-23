@@ -41,8 +41,10 @@ PLAN = r"C:\Users\PC\Desktop\_DOCS_VIVOS\PLAN_SEMANA_24_30.md"
 
 LIM_MB = 8.0                      # techo de video que viaja al repo (GitHub Pages)
 SEMANA = "24-30 agosto 2026"
-DIAS = ["lun 24", "mar 25", "mié 26", "jue 27", "vie 28", "sáb 29", "dom 30"]
-HORAS_SLOT = {1: "19:00", 2: "19:30", 3: "20:00"}
+DIAS = ["dom 23", "lun 24", "mar 25", "mié 26", "jue 27", "vie 28", "sáb 29", "dom 30"]
+# 1-3 = franja de prime que pide Jordi (19-20 h). 4-5 = los extra del dia, repartidos
+# a mediodia/tarde para no apilar 5 posts en una hora (regla 25: nunca a las 23 h).
+HORAS_SLOT = {1: "19:00", 2: "19:30", 3: "20:00", 4: "12:00", 5: "15:00"}
 MEDIA_EXT = (".mp4", ".png", ".jpg", ".jpeg")
 NO_WIN = 0x08000000 if os.name == "nt" else 0   # CREATE_NO_WINDOW (protocolo-torre 5)
 
@@ -60,7 +62,7 @@ def leer_huecos_plan():
         return huecos
     with io.open(PLAN, encoding="utf-8", errors="replace") as f:
         txt = f.read()
-    m = re.search(r"^## 1\..*?(?=^## 2\.)", txt, re.M | re.S)
+    m = re.search(r"^## 0-bis\..*?(?=^## 2\.)", txt, re.M | re.S) or re.search(r"^## 1\..*?(?=^## 2\.)", txt, re.M | re.S)
     if not m:
         return huecos
     cuenta = ""
@@ -196,7 +198,7 @@ def parsear_plan():
         return slots
     with io.open(PLAN, encoding="utf-8", errors="replace") as f:
         txt = f.read()
-    m = re.search(r"^## 1\..*?(?=^## 2\.)", txt, re.M | re.S)
+    m = re.search(r"^## 0-bis\..*?(?=^## 2\.)", txt, re.M | re.S) or re.search(r"^## 1\..*?(?=^## 2\.)", txt, re.M | re.S)
     if not m:
         print("AVISO: seccion 1 del plan no localizada")
         return slots

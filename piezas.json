@@ -1,7 +1,8 @@
 {
- "generado": "2026-08-23T01:11",
+ "generado": "2026-08-23T10:43",
  "semana": "24-30 agosto 2026",
  "dias": [
+  "dom 23",
   "lun 24",
   "mar 25",
   "mié 26",
@@ -11,6 +12,305 @@
   "dom 30"
  ],
  "piezas": [
+  {
+   "id": "CARR_JAVI_RECURSOS",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "dom 23",
+   "hora": "12:00",
+   "caption": "Lo que usan mis alumnos para no quemar dinero.\n\nDentro va lo mismo que usamos en las auditorías: calculadoras de cash real, margen y qué mirar en qué orden. Sin humo, herramientas reales.\n\nComenta RECURSOS y te llega. Gratis, hoy.\n\n#ecommerce #negocios #emprendedores",
+   "archivos": [
+    {
+     "archivo": "s01.png",
+     "poster": "media/CARR_JAVI_RECURSOS__00.jpg"
+    },
+    {
+     "archivo": "s02.png",
+     "poster": "media/CARR_JAVI_RECURSOS__01.jpg"
+    },
+    {
+     "archivo": "s03.png",
+     "poster": "media/CARR_JAVI_RECURSOS__02.jpg"
+    },
+    {
+     "archivo": "s04.png",
+     "poster": "media/CARR_JAVI_RECURSOS__03.jpg"
+    },
+    {
+     "archivo": "s05.png",
+     "poster": "media/CARR_JAVI_RECURSOS__04.jpg"
+    },
+    {
+     "archivo": "s06.png",
+     "poster": "media/CARR_JAVI_RECURSOS__05.jpg"
+    }
+   ],
+   "sin_caption": false,
+   "slides": 6
+  },
+  {
+   "id": "FRASE_JORDI_RESTAURANTE_CUENTA_19AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "dom 23",
+   "hora": "12:00",
+   "caption": "Se mira la cena, no los tres años que la pagan.\n\nPor eso tanta gente copia el resultado y ninguno el proceso: el resultado se ve en una foto, el proceso no cabe en ninguna.\n\n¿Tú qué estás construyendo ahora mismo?\n\n#ecommerce #emprender #negocioonline",
+   "archivos": [
+    {
+     "archivo": "FRASE_JORDI_RESTAURANTE_CUENTA.mp4",
+     "poster": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.jpg",
+     "peso_mb": 4.49,
+     "video": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.mp4"
+    }
+   ],
+   "sin_caption": false
+  },
+  {
+   "id": "CARRUSEL_JAVI_10K_DIA_13AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "dom 23",
+   "hora": "15:00",
+   "caption": "Un día récord (la cifra, en la captura). Y lo importante no es la cifra: es saber cuánto queda después de costes.\n\nLa conversación va entera en el carrusel, con el panel delante.\n\nLa herramienta con la que auditamos márgenes está en el LINK DE LA BIO.",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__04.jpg"
+    }
+   ],
+   "sin_caption": false,
+   "slides": 5
+  },
+  {
+   "id": "CARRUSEL_JORDI_ALQUILADO_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "dom 23",
+   "hora": "15:00",
+   "caption": "«¿Es alquilado?» Me lo preguntan todas las semanas.\n\nNo: lo compré con una de mis empresas. Y sí, es verdad que lo podría alquilar — sería más barato y nadie lo notaría.\n\nPero yo no quiero hacer un personaje. Si el coche es el negocio, no hay negocio.\n\nLo compré por la experiencia que me da. Y porque a veces creo que necesitamos todos un caramelo: cualquier negocio son muchas horas, y un día malo pesa igual con coche o sin él.\n\nEl coche no monta la tienda. El sistema sí.\n\nComenta «RECURSOS» y te paso las 64 herramientas que uso.\n\n#ecommerce #dropshipping #mentalidad",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__06.jpg"
+    }
+   ],
+   "sin_caption": false,
+   "slides": 7
+  },
+  {
+   "id": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
+   "cuenta": "JAVI",
+   "tipo": "meme",
+   "dia": "dom 23",
+   "hora": "19:00",
+   "caption": "El primer paso no cuesta dinero, cuesta ponerse.\n\nLa clase 01 del módulo va de abrir tu tienda de Shopify por menos que un café al mes, y dura 1 minuto y 23 segundos. Está dentro del panel, sin pagar nada.\n\nSi eso no lo has hecho todavía, no preguntes por lo de después. Haz eso primero.\n\nComenta RECURSOS.\n\n#ecommerce #shopify",
+   "archivos": [
+    {
+     "archivo": "M4_precio_antes_de_empezar.mp4",
+     "poster": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.jpg",
+     "peso_mb": 0.98,
+     "video": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.mp4"
+    }
+   ],
+   "sin_caption": false
+  },
+  {
+   "id": "JORDI_MEME_NUEVO_01_carrito_envio_sorpresa",
+   "cuenta": "JORDI",
+   "tipo": "meme",
+   "dia": "dom 23",
+   "hora": "19:00",
+   "caption": "Nadie abandona por el producto. Abandonan por la sorpresa.\n\nSi el envío aparece por primera vez en el último paso, el cliente no siente que paga un envío: siente que le han movido el precio.\n\nDilo antes. En la ficha, grande. Vender con la verdad delante convierte menos visitas en más pedidos.\n\n¿A ti también te pasa? Cuéntamelo en comentarios.\n\n#ecommerce #tiendaonline",
+   "archivos": [
+    {
+     "archivo": "MEME_JORDI_01_carrito_envio_sorpresa.mp4",
+     "poster": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.jpg",
+     "peso_mb": 1.37,
+     "video": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.mp4"
+    }
+   ],
+   "sin_caption": false
+  },
+  {
+   "id": "CARR_JAVI_PLACA_CLON_7AGO",
+   "cuenta": "JAVI",
+   "tipo": "carrusel",
+   "dia": "dom 23",
+   "hora": "19:30",
+   "caption": "Nueva placa entregada \n\nEste alumno llegó facturando pero sin ver nada limpio a final de mes: todo se le iba entre producto, envíos y ads.\n\nEl cambio: - números claros desde el día uno - un producto que sí deja margen - estructura antes de escalar - alguien delante que ya recorrió el camino\n\nEl mérito es suyo: vino a todas las sesiones y ejecutó sin excusas.\n\nEl resultado lo ves en las fotos — la placa se entregó delante de toda la comunidad en el último evento.\n\nNo fue suerte. Fue método, acompañamiento y ejecución.\n\nComenta «PLACA» si te está pasando. Y guárdalo. #ecommerce #negocios #casoreal",
+   "archivos": [
+    {
+     "archivo": "s01.png",
+     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__00.jpg"
+    },
+    {
+     "archivo": "s02.png",
+     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__01.jpg"
+    },
+    {
+     "archivo": "s03.png",
+     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__02.jpg"
+    }
+   ],
+   "sin_caption": false,
+   "slides": 3
+  },
+  {
+   "id": "REEL_JORDI_META300_1AGO",
+   "cuenta": "JORDI",
+   "tipo": "reel",
+   "dia": "dom 23",
+   "hora": "19:30",
+   "caption": "Mi objetivo nunca fue el coche.\n\nTenía un trabajo normal y solo quería un extra a final de mes. Esa era toda la ambición: una meta pequeña, un extra y ya.\n\nY la cumplí. Y al cumplirla vi que había otra un poco más arriba que también podía cumplir. Así diez años.\n\nLa gente se pone metas enormes porque cree que las grandes son las que motivan. Es al revés: la meta enorme te frustra el primer mes y lo dejas. La pequeña la cumples, y cumplirla es lo que te enseña que puedes con la siguiente.\n\nEse es el proceso. No hay más.\n\n#emprendimiento #ecommerce #mentalidad",
+   "archivos": [
+    {
+     "archivo": "REEL_JORDI_META300.mp4",
+     "poster": "media/REEL_JORDI_META300_1AGO__00.jpg",
+     "peso_mb": 9.12,
+     "video": "media/REEL_JORDI_META300_1AGO__00.mp4"
+    }
+   ],
+   "sin_caption": false
+  },
+  {
+   "id": "CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO",
+   "cuenta": "JAVI",
+   "tipo": "reel",
+   "dia": "dom 23",
+   "hora": "20:00",
+   "caption": "Si falla la primera, ya sé que no vende, y no hace falta abrir la cuenta de anuncios.\n\nLas tres están dentro.\n\nGuárdalo para cuando te toque.",
+   "archivos": [
+    {
+     "archivo": "slide_01.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__00.jpg",
+     "peso_mb": 1.12,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__00.mp4"
+    },
+    {
+     "archivo": "slide_02.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__01.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__01.mp4"
+    },
+    {
+     "archivo": "slide_03.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__02.jpg",
+     "peso_mb": 0.06,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__02.mp4"
+    },
+    {
+     "archivo": "slide_04.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__03.jpg",
+     "peso_mb": 0.06,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__03.mp4"
+    },
+    {
+     "archivo": "slide_05.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__04.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__04.mp4"
+    },
+    {
+     "archivo": "slide_06.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__05.jpg",
+     "peso_mb": 0.05,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__05.mp4"
+    },
+    {
+     "archivo": "slide_07.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__06.jpg",
+     "peso_mb": 0.06,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__06.mp4"
+    },
+    {
+     "archivo": "slide_08.mp4",
+     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.jpg",
+     "peso_mb": 0.08,
+     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.mp4"
+    }
+   ],
+   "sin_caption": false
+  },
+  {
+   "id": "CARRUSEL_JORDI_7BARES_4AGO",
+   "cuenta": "JORDI",
+   "tipo": "carrusel",
+   "dia": "dom 23",
+   "hora": "20:00",
+   "caption": "Yo salía a la calle y contaba: hay 7 bares en una misma calle.\n\nTodos hacen lo mismo. Ponen una cerveza, una tapa, un bocadillo. Uno la hace mejor y otro la hace peor, pero todos tienen una inversión altísima y todos dependen de un personal.\n\nYo estaba en mi casa trabajando con una inversión muy baja y sin personal. Si un mes me iba mal, no tenía que preocuparme.\n\nEllos no: un mes de lluvias, el covid, lo que sea, y ya tienen un problema serio. Porque los gastos fijos hay que pagarlos igual.\n\nCualquier negocio en el que no dependas de un gasto fijo cada mes, para mí es el negocio perfecto.\n\nComenta «RECURSOS» y te paso las 64 herramientas que uso.\n\n#ecommerce #dropshipping #negocios",
+   "archivos": [
+    {
+     "archivo": "slide_01.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__00.jpg"
+    },
+    {
+     "archivo": "slide_02.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__01.jpg"
+    },
+    {
+     "archivo": "slide_03.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__02.jpg"
+    },
+    {
+     "archivo": "slide_04.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__03.jpg"
+    },
+    {
+     "archivo": "slide_05.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__04.jpg"
+    },
+    {
+     "archivo": "slide_06.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__05.jpg"
+    },
+    {
+     "archivo": "slide_07.png",
+     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__06.jpg"
+    }
+   ],
+   "sin_caption": false,
+   "slides": 7
+  },
   {
    "id": "JAVI_TH_CAJITA3_SUBSXL",
    "cuenta": "JAVI",
@@ -1171,38 +1471,6 @@
    "sin_caption": false
   },
   {
-   "id": "CARRUSEL_JAVI_10K_DIA_13AGO",
-   "cuenta": "JAVI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "caption": "Un día récord (la cifra, en la captura). Y lo importante no es la cifra: es saber cuánto queda después de costes.\n\nLa conversación va entera en el carrusel, con el panel delante.\n\nLa herramienta con la que auditamos márgenes está en el LINK DE LA BIO.",
-   "archivos": [
-    {
-     "archivo": "slide_01.png",
-     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__00.jpg"
-    },
-    {
-     "archivo": "slide_02.png",
-     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__01.jpg"
-    },
-    {
-     "archivo": "slide_03.png",
-     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__02.jpg"
-    },
-    {
-     "archivo": "slide_04.png",
-     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__03.jpg"
-    },
-    {
-     "archivo": "slide_05.png",
-     "poster": "media/CARRUSEL_JAVI_10K_DIA_13AGO__04.jpg"
-    }
-   ],
-   "sin_caption": false,
-   "slides": 5
-  },
-  {
    "id": "CARRUSEL_JAVI_MOROSO_20AGO",
    "cuenta": "JAVI",
    "tipo": "carrusel",
@@ -1403,65 +1671,6 @@
    "slides": 7
   },
   {
-   "id": "CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO",
-   "cuenta": "JAVI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "caption": "Si falla la primera, ya sé que no vende, y no hace falta abrir la cuenta de anuncios.\n\nLas tres están dentro.\n\nGuárdalo para cuando te toque.",
-   "archivos": [
-    {
-     "archivo": "slide_01.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__00.jpg",
-     "peso_mb": 1.12,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__00.mp4"
-    },
-    {
-     "archivo": "slide_02.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__01.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__01.mp4"
-    },
-    {
-     "archivo": "slide_03.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__02.jpg",
-     "peso_mb": 0.06,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__02.mp4"
-    },
-    {
-     "archivo": "slide_04.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__03.jpg",
-     "peso_mb": 0.06,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__03.mp4"
-    },
-    {
-     "archivo": "slide_05.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__04.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__04.mp4"
-    },
-    {
-     "archivo": "slide_06.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__05.jpg",
-     "peso_mb": 0.05,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__05.mp4"
-    },
-    {
-     "archivo": "slide_07.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__06.jpg",
-     "peso_mb": 0.06,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__06.mp4"
-    },
-    {
-     "archivo": "slide_08.mp4",
-     "poster": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.jpg",
-     "peso_mb": 0.08,
-     "video": "media/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__07.mp4"
-    }
-   ],
-   "sin_caption": false
-  },
-  {
    "id": "CARRUSEL_JAVI_TRES_SENALES_16AGO",
    "cuenta": "JAVI",
    "tipo": "reel",
@@ -1596,66 +1805,6 @@
    ],
    "sin_caption": false,
    "slides": 3
-  },
-  {
-   "id": "CARR_JAVI_PLACA_CLON_7AGO",
-   "cuenta": "JAVI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "caption": "Nueva placa entregada \n\nEste alumno llegó facturando pero sin ver nada limpio a final de mes: todo se le iba entre producto, envíos y ads.\n\nEl cambio: - números claros desde el día uno - un producto que sí deja margen - estructura antes de escalar - alguien delante que ya recorrió el camino\n\nEl mérito es suyo: vino a todas las sesiones y ejecutó sin excusas.\n\nEl resultado lo ves en las fotos — la placa se entregó delante de toda la comunidad en el último evento.\n\nNo fue suerte. Fue método, acompañamiento y ejecución.\n\nComenta «PLACA» si te está pasando. Y guárdalo. #ecommerce #negocios #casoreal",
-   "archivos": [
-    {
-     "archivo": "s01.png",
-     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__00.jpg"
-    },
-    {
-     "archivo": "s02.png",
-     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__01.jpg"
-    },
-    {
-     "archivo": "s03.png",
-     "poster": "media/CARR_JAVI_PLACA_CLON_7AGO__02.jpg"
-    }
-   ],
-   "sin_caption": false,
-   "slides": 3
-  },
-  {
-   "id": "CARR_JAVI_RECURSOS",
-   "cuenta": "JAVI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "caption": "Lo que usan mis alumnos para no quemar dinero.\n\nDentro va lo mismo que usamos en las auditorías: calculadoras de cash real, margen y qué mirar en qué orden. Sin humo, herramientas reales.\n\nComenta RECURSOS y te llega. Gratis, hoy.\n\n#ecommerce #negocios #emprendedores",
-   "archivos": [
-    {
-     "archivo": "s01.png",
-     "poster": "media/CARR_JAVI_RECURSOS__00.jpg"
-    },
-    {
-     "archivo": "s02.png",
-     "poster": "media/CARR_JAVI_RECURSOS__01.jpg"
-    },
-    {
-     "archivo": "s03.png",
-     "poster": "media/CARR_JAVI_RECURSOS__02.jpg"
-    },
-    {
-     "archivo": "s04.png",
-     "poster": "media/CARR_JAVI_RECURSOS__03.jpg"
-    },
-    {
-     "archivo": "s05.png",
-     "poster": "media/CARR_JAVI_RECURSOS__04.jpg"
-    },
-    {
-     "archivo": "s06.png",
-     "poster": "media/CARR_JAVI_RECURSOS__05.jpg"
-    }
-   ],
-   "sin_caption": false,
-   "slides": 6
   },
   {
    "id": "HOOKAD_A_QUEDA0_15AGO",
@@ -1955,23 +2104,6 @@
      "poster": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.jpg",
      "peso_mb": 0.89,
      "video": "media/MEME_JAVI_M3_64_HERRAMIENTAS_1AGO__00.mp4"
-    }
-   ],
-   "sin_caption": false
-  },
-  {
-   "id": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
-   "cuenta": "JAVI",
-   "tipo": "meme",
-   "dia": "",
-   "hora": "",
-   "caption": "El primer paso no cuesta dinero, cuesta ponerse.\n\nLa clase 01 del módulo va de abrir tu tienda de Shopify por menos que un café al mes, y dura 1 minuto y 23 segundos. Está dentro del panel, sin pagar nada.\n\nSi eso no lo has hecho todavía, no preguntes por lo de después. Haz eso primero.\n\nComenta RECURSOS.\n\n#ecommerce #shopify",
-   "archivos": [
-    {
-     "archivo": "M4_precio_antes_de_empezar.mp4",
-     "poster": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.jpg",
-     "peso_mb": 0.98,
-     "video": "media/MEME_JAVI_M4_PRECIO_ANTES_1AGO__00.mp4"
     }
    ],
    "sin_caption": false
@@ -2686,86 +2818,6 @@
    "sin_caption": false
   },
   {
-   "id": "CARRUSEL_JORDI_7BARES_4AGO",
-   "cuenta": "JORDI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "caption": "Yo salía a la calle y contaba: hay 7 bares en una misma calle.\n\nTodos hacen lo mismo. Ponen una cerveza, una tapa, un bocadillo. Uno la hace mejor y otro la hace peor, pero todos tienen una inversión altísima y todos dependen de un personal.\n\nYo estaba en mi casa trabajando con una inversión muy baja y sin personal. Si un mes me iba mal, no tenía que preocuparme.\n\nEllos no: un mes de lluvias, el covid, lo que sea, y ya tienen un problema serio. Porque los gastos fijos hay que pagarlos igual.\n\nCualquier negocio en el que no dependas de un gasto fijo cada mes, para mí es el negocio perfecto.\n\nComenta «RECURSOS» y te paso las 64 herramientas que uso.\n\n#ecommerce #dropshipping #negocios",
-   "archivos": [
-    {
-     "archivo": "slide_01.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__00.jpg"
-    },
-    {
-     "archivo": "slide_02.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__01.jpg"
-    },
-    {
-     "archivo": "slide_03.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__02.jpg"
-    },
-    {
-     "archivo": "slide_04.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__03.jpg"
-    },
-    {
-     "archivo": "slide_05.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__04.jpg"
-    },
-    {
-     "archivo": "slide_06.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__05.jpg"
-    },
-    {
-     "archivo": "slide_07.png",
-     "poster": "media/CARRUSEL_JORDI_7BARES_4AGO__06.jpg"
-    }
-   ],
-   "sin_caption": false,
-   "slides": 7
-  },
-  {
-   "id": "CARRUSEL_JORDI_ALQUILADO_4AGO",
-   "cuenta": "JORDI",
-   "tipo": "carrusel",
-   "dia": "",
-   "hora": "",
-   "caption": "«¿Es alquilado?» Me lo preguntan todas las semanas.\n\nNo: lo compré con una de mis empresas. Y sí, es verdad que lo podría alquilar — sería más barato y nadie lo notaría.\n\nPero yo no quiero hacer un personaje. Si el coche es el negocio, no hay negocio.\n\nLo compré por la experiencia que me da. Y porque a veces creo que necesitamos todos un caramelo: cualquier negocio son muchas horas, y un día malo pesa igual con coche o sin él.\n\nEl coche no monta la tienda. El sistema sí.\n\nComenta «RECURSOS» y te paso las 64 herramientas que uso.\n\n#ecommerce #dropshipping #mentalidad",
-   "archivos": [
-    {
-     "archivo": "slide_01.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__00.jpg"
-    },
-    {
-     "archivo": "slide_02.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__01.jpg"
-    },
-    {
-     "archivo": "slide_03.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__02.jpg"
-    },
-    {
-     "archivo": "slide_04.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__03.jpg"
-    },
-    {
-     "archivo": "slide_05.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__04.jpg"
-    },
-    {
-     "archivo": "slide_06.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__05.jpg"
-    },
-    {
-     "archivo": "slide_07.png",
-     "poster": "media/CARRUSEL_JORDI_ALQUILADO_4AGO__06.jpg"
-    }
-   ],
-   "sin_caption": false,
-   "slides": 7
-  },
-  {
    "id": "CARRUSEL_JORDI_CIRCULO_QUEJA_4AGO",
    "cuenta": "JORDI",
    "tipo": "carrusel",
@@ -3209,23 +3261,6 @@
    "sin_caption": false
   },
   {
-   "id": "FRASE_JORDI_RESTAURANTE_CUENTA_19AGO",
-   "cuenta": "JORDI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "caption": "Se mira la cena, no los tres años que la pagan.\n\nPor eso tanta gente copia el resultado y ninguno el proceso: el resultado se ve en una foto, el proceso no cabe en ninguna.\n\n¿Tú qué estás construyendo ahora mismo?\n\n#ecommerce #emprender #negocioonline",
-   "archivos": [
-    {
-     "archivo": "FRASE_JORDI_RESTAURANTE_CUENTA.mp4",
-     "poster": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.jpg",
-     "peso_mb": 4.49,
-     "video": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.mp4"
-    }
-   ],
-   "sin_caption": false
-  },
-  {
    "id": "JORDI_BSEM_3_COSAS_CONFIANZA",
    "cuenta": "JORDI",
    "tipo": "carrusel",
@@ -3532,23 +3567,6 @@
      "poster": "media/JORDI_CO1E0_07_recarga_automatica_35K__00.jpg",
      "peso_mb": 1.34,
      "video": "media/JORDI_CO1E0_07_recarga_automatica_35K__00.mp4"
-    }
-   ],
-   "sin_caption": false
-  },
-  {
-   "id": "JORDI_MEME_NUEVO_01_carrito_envio_sorpresa",
-   "cuenta": "JORDI",
-   "tipo": "meme",
-   "dia": "",
-   "hora": "",
-   "caption": "Nadie abandona por el producto. Abandonan por la sorpresa.\n\nSi el envío aparece por primera vez en el último paso, el cliente no siente que paga un envío: siente que le han movido el precio.\n\nDilo antes. En la ficha, grande. Vender con la verdad delante convierte menos visitas en más pedidos.\n\n¿A ti también te pasa? Cuéntamelo en comentarios.\n\n#ecommerce #tiendaonline",
-   "archivos": [
-    {
-     "archivo": "MEME_JORDI_01_carrito_envio_sorpresa.mp4",
-     "poster": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.jpg",
-     "peso_mb": 1.37,
-     "video": "media/JORDI_MEME_NUEVO_01_carrito_envio_sorpresa__00.mp4"
     }
    ],
    "sin_caption": false
@@ -3939,23 +3957,6 @@
      "poster": "media/REEL_JORDI_CEREBRO_CORAZON_2AGO__00.jpg",
      "peso_mb": 15.04,
      "video": "media/REEL_JORDI_CEREBRO_CORAZON_2AGO__00.mp4"
-    }
-   ],
-   "sin_caption": false
-  },
-  {
-   "id": "REEL_JORDI_META300_1AGO",
-   "cuenta": "JORDI",
-   "tipo": "reel",
-   "dia": "",
-   "hora": "",
-   "caption": "Mi objetivo nunca fue el coche.\n\nTenía un trabajo normal y solo quería un extra a final de mes. Esa era toda la ambición: una meta pequeña, un extra y ya.\n\nY la cumplí. Y al cumplirla vi que había otra un poco más arriba que también podía cumplir. Así diez años.\n\nLa gente se pone metas enormes porque cree que las grandes son las que motivan. Es al revés: la meta enorme te frustra el primer mes y lo dejas. La pequeña la cumples, y cumplirla es lo que te enseña que puedes con la siguiente.\n\nEse es el proceso. No hay más.\n\n#emprendimiento #ecommerce #mentalidad",
-   "archivos": [
-    {
-     "archivo": "REEL_JORDI_META300.mp4",
-     "poster": "media/REEL_JORDI_META300_1AGO__00.jpg",
-     "peso_mb": 9.12,
-     "video": "media/REEL_JORDI_META300_1AGO__00.mp4"
     }
    ],
    "sin_caption": false
