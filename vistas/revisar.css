@@ -1,0 +1,363 @@
+/* =============================================================================
+   vistas/revisar.css  ·  piel de la pantalla «POR REVISAR»  (BUILD_SPEC §4 · §5.2)
+   -----------------------------------------------------------------------------
+   Todo cuelga de `.rv` (la raíz que pinta vistaRepasar/vistaRevisar) y del visor
+   de reserva `#rv-visor`, así que no toca ni una regla de las demás pantallas.
+
+   COLOR — §4.1, ni un valor a pelo:
+     · el acento violeta (--acc) está RESERVADO a la máquina (REPLICAR / Claude /
+       lo activo). Aquí solo aparece en el modo seleccionado y en el foco de
+       teclado: ninguna acción normal lo usa.
+     · verde/ámbar/rojo (--ok/--warn/--danger) SOLO cuando alguien decide.
+       En reposo la pantalla es neutra: el color es información, no decoración.
+   Cada var() lleva su fallback del §4.1 para que el fichero funcione aunque se
+   cargue antes que los tokens de index.html.
+   ============================================================================= */
+
+/* --- tokens §4.1. Si index.html ya los define, esta declaración es idéntica y
+       no cambia nada; se puede borrar el bloque sin que la hoja se rompa. ----- */
+:root{
+  --bg:#0A0B0D; --panel:#14161B; --panel-2:#191C22; --panel-3:#1F232B;
+  --line:#24282F; --line-2:#31363F;
+  --txt:#ECEDF0; --txt-2:#9AA0AB; --txt-3:#656B76;
+  --acc:#7B72FF; --acc-weak:#7B72FF22;
+  --ok:#34C08A; --warn:#E6AE4A; --danger:#F0575D;
+  --javi:#4C9BFF; --jordi:#E5904C;
+  --r-1:8px; --r-2:12px; --r-3:16px;
+  --sh-1:0 1px 2px #0008; --sh-2:0 8px 24px #000a;
+}
+
+/* ------------------------------------------------------------------ armazón */
+.rv{
+  box-sizing:border-box;                      /* §4.3: el contenido cabe en 1180, padding incluido */
+  max-width:1180px; margin:0 auto; padding:14px 14px 96px;
+  color:var(--txt,#ECEDF0);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px; line-height:1.5;
+  font-variant-numeric:tabular-nums;          /* §4.2: las cifras no bailan */
+}
+.rv *{box-sizing:border-box}
+.rv button{font-family:inherit; font-variant-numeric:tabular-nums; cursor:pointer}
+.rv :focus-visible{outline:2px solid var(--acc,#7B72FF); outline-offset:2px}
+
+.rv-cab{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px}
+
+/* segmented Foco / Cuadrícula + filtros de reserva: mismo componente */
+.rv .vermodo,
+.rv .rv-filtros{
+  display:flex; gap:2px; padding:3px;
+  background:var(--panel,#14161B); border:1px solid var(--line,#24282F);
+  border-radius:999px;
+}
+.rv .rv-filtros{flex-wrap:wrap}
+.rv .rv-sep{width:8px}
+.rv .vermodo button,
+.rv .rv-filtros button{
+  border:0; background:transparent; color:var(--txt-2,#9AA0AB);
+  padding:7px 15px; border-radius:999px;
+  font-size:12.5px; font-weight:600; letter-spacing:.01em; transition:.14s;
+}
+.rv .vermodo button:hover,
+.rv .rv-filtros button:hover{color:var(--txt,#ECEDF0)}
+.rv .vermodo button.on,
+.rv .rv-filtros button.on{
+  background:var(--acc-weak,#7B72FF22); color:var(--acc,#7B72FF);
+  box-shadow:inset 0 0 0 1px var(--acc,#7B72FF);
+}
+
+/* barra «X de Y» */
+.rv-prog{display:flex; align-items:center; gap:12px; margin-bottom:12px}
+.rv-cifra{
+  font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--txt-3,#656B76); white-space:nowrap;
+}
+.rv-progbar{
+  flex:1; height:3px; border-radius:999px; overflow:hidden;
+  background:var(--panel-3,#1F232B);
+}
+.rv-progbar i{display:block; height:100%; background:var(--acc,#7B72FF); transition:width .25s}
+
+/* --------------------------------------------------------------- pieza foco */
+.rv-foco{
+  background:var(--panel,#14161B); border:1px solid var(--line,#24282F);
+  border-radius:var(--r-3,16px); box-shadow:var(--sh-2,0 8px 24px #000a);
+  padding:14px;
+}
+.rv-clon{
+  font-size:11.5px; color:var(--txt-3,#656B76); margin-bottom:10px;
+}
+.rv-clon b{color:var(--txt-2,#9AA0AB); font-weight:600}
+
+.rv-tit{
+  font-size:19px; font-weight:700; letter-spacing:-.01em; line-height:1.28;
+  margin:14px 0 8px;
+}
+.rv-tit2{font-size:14.5px; font-weight:600; line-height:1.35; margin:8px 0 4px}
+.rv-id{
+  font-size:10.5px; letter-spacing:.06em; color:var(--txt-3,#656B76);
+  word-break:break-all; margin-bottom:10px;
+}
+.rv-meta{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.rv-tag,.rv-pill,.rv-badge{
+  font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  padding:4px 9px; border-radius:999px;
+  border:1px solid var(--line-2,#31363F); color:var(--txt-3,#656B76);
+}
+.rv-tag i{font-style:normal; opacity:.55; letter-spacing:.04em}
+.rv-pill.javi{color:var(--javi,#4C9BFF); border-color:#4C9BFF55; background:#4C9BFF14}
+.rv-pill.jordi{color:var(--jordi,#E5904C); border-color:#E5904C55; background:#E5904C14}
+.rv-badge.warn{color:var(--warn,#E6AE4A); border-color:#E6AE4A55; background:#E6AE4A14}
+.rv-badge.ok{color:var(--ok,#34C08A); border-color:#34C08A55; background:#34C08A14}
+.rv-badge.no{color:var(--danger,#F0575D); border-color:#F0575D55; background:#F0575D14}
+
+/* ------------------------------------------------------------------- media */
+.rv-med{
+  position:relative; background:#000; border-radius:var(--r-2,12px); overflow:hidden;
+  border:1px solid var(--line,#24282F);
+}
+.rv-med video,.rv-med img{display:block; width:100%; height:100%; object-fit:contain; background:#000}
+.rv-med.grande{height:60vh; min-height:280px}     /* §3.6: media grande, con sonido */
+.rv-med:not(.grande){aspect-ratio:4/5}
+.rv-nomedia{
+  display:grid; place-items:center; min-height:180px; height:100%;
+  color:var(--txt-3,#656B76); font-size:12px; background:var(--panel-2,#191C22);
+}
+.rv-nav{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+  width:36px; height:36px; display:grid; place-items:center;
+  border:0; border-radius:999px; background:#000a; color:#fff; font-size:19px; line-height:1;
+}
+.rv-nav:hover{background:#000d}
+.rv-nav.izq{left:8px} .rv-nav.der{right:8px}
+.rv-cnt{
+  position:absolute; top:10px; right:10px; z-index:3; pointer-events:none;
+  background:#000a; color:#fff; font-size:11px; font-weight:700;
+  padding:3px 9px; border-radius:999px;
+}
+.rv-ver{
+  position:absolute; left:8px; bottom:8px; z-index:3;
+  background:#000b; color:#fff; border:1px solid #ffffff2e; border-radius:999px;
+  padding:6px 12px; font-size:11.5px; font-weight:600;
+}
+.rv-ver:hover{background:#000e}
+.rv-son{
+  position:absolute; right:10px; bottom:10px; z-index:2; pointer-events:none;
+  font-size:10px; letter-spacing:.07em; text-transform:uppercase;
+  color:#ffffffb0; background:#0009; padding:3px 8px; border-radius:999px;
+}
+
+/* ------------------------------------------------- comparación referente↔clon */
+.rv-cmp,.rv-foco details,.rv-card details{
+  margin-top:10px; background:var(--panel-2,#191C22);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-2,12px);
+}
+.rv summary{
+  cursor:pointer; padding:11px 13px; list-style:none;
+  font-size:12px; font-weight:600; color:var(--txt-2,#9AA0AB);
+}
+.rv summary::-webkit-details-marker{display:none}
+.rv summary::before{content:"▸ "; color:var(--txt-3,#656B76)}
+.rv details[open]>summary::before{content:"▾ "}
+.rv-cont{
+  padding:0 13px 13px; font-size:13px; color:var(--txt-2,#9AA0AB);
+  white-space:pre-wrap; word-break:break-word;
+}
+.rv-cmpgrid{display:grid; grid-template-columns:1fr; gap:10px; padding:0 13px 12px}
+.rv-cmpgrid figure{margin:0}
+.rv-cmpgrid figcaption{
+  font-size:10px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--txt-3,#656B76); margin-bottom:6px;
+}
+.rv-cmpgrid video,.rv-cmpgrid img{
+  width:100%; border-radius:var(--r-1,8px); background:#000; display:block;
+  border:1px solid var(--line,#24282F);
+}
+.rv-cmpnota{padding:0 13px 13px; font-size:11.5px; color:var(--txt-3,#656B76); line-height:1.55}
+
+/* fila «medido eje por eje» */
+.rv-ejes{
+  display:flex; gap:6px; list-style:none; margin:0; padding:0 13px 10px;
+  overflow-x:auto; scrollbar-width:none;
+}
+.rv-ejes::-webkit-scrollbar{display:none}
+.rv-eje{
+  display:flex; align-items:center; gap:6px; white-space:nowrap;
+  background:var(--panel-3,#1F232B); border:1px solid var(--line,#24282F);
+  border-radius:999px; padding:5px 11px; font-size:11.5px; color:var(--txt-2,#9AA0AB);
+}
+.rv-eje b{font-size:12px; line-height:1}
+.rv-eje i{font-style:normal; font-size:10.5px; color:var(--txt-3,#656B76)}
+.rv-eje.si b{color:var(--ok,#34C08A)}
+.rv-eje.no{border-color:#F0575D55} .rv-eje.no b{color:var(--danger,#F0575D)}
+.rv-eje.nd{opacity:.5}            /* sin medir: ni ✓ ni ✕ inventado (ley 4) */
+.rv-par{display:flex; align-items:center; gap:9px; padding:0 13px 12px; font-size:11.5px; color:var(--txt-3,#656B76)}
+.rv-parbar{flex:1; height:4px; border-radius:999px; background:var(--panel-3,#1F232B); overflow:hidden}
+.rv-parbar i{display:block; height:100%; background:var(--ok,#34C08A)}
+.rv-par b{color:var(--txt,#ECEDF0); font-weight:700}
+.rv-sinref{
+  margin-top:10px; padding:11px 13px; font-size:11.5px; line-height:1.5;
+  color:var(--warn,#E6AE4A); background:#E6AE4A0f;
+  border:1px solid #E6AE4A33; border-radius:var(--r-2,12px);
+}
+
+/* ---------------------------------------------------- corrección: chips+texto */
+.rv .fixr{display:flex; flex-wrap:wrap; gap:6px; padding:0 13px 10px}
+.rv .fixr button{
+  background:var(--panel-3,#1F232B); border:1px solid var(--line-2,#31363F);
+  color:var(--txt-2,#9AA0AB); border-radius:999px; padding:7px 12px;
+  font-size:12px; font-weight:600; transition:.14s;
+}
+.rv .fixr button:hover{color:var(--txt,#ECEDF0); border-color:var(--txt-3,#656B76)}
+.rv .fixr button.on{
+  color:var(--warn,#E6AE4A); border-color:#E6AE4A88; background:#E6AE4A16;
+}
+.rv textarea.motivo{
+  display:block; width:calc(100% - 26px); margin:0 13px 13px;
+  background:var(--bg,#0A0B0D); border:1px solid var(--line-2,#31363F);
+  border-radius:var(--r-1,8px); color:var(--txt,#ECEDF0);
+  padding:11px; font:14px/1.5 inherit; min-height:76px; resize:vertical;
+}
+.rv textarea.motivo::placeholder{color:var(--txt-3,#656B76)}
+
+/* --------------------------------------------------------- las 3 decisiones */
+/* En móvil se pegan abajo (zona del pulgar, §3.6); en escritorio quedan en flujo. */
+.rv .rpacc{
+  position:sticky; bottom:0; z-index:5;
+  display:flex; gap:8px; margin-top:12px;
+  padding:10px 0 calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(to top, var(--panel,#14161B) 62%, transparent);
+}
+.rv .rv-card .rpacc{position:static; padding:10px 13px 0; background:none}
+.rv .acc{
+  flex:1; padding:14px 6px; border-radius:var(--r-2,12px);
+  border:1px solid var(--line-2,#31363F); background:var(--panel-2,#191C22);
+  color:var(--txt,#ECEDF0); font-size:14px; font-weight:700; transition:.14s;
+}
+.rv .acc:disabled{opacity:.45}
+.rv .acc.ok:hover,.rv .acc.ok.sel{background:var(--ok,#34C08A); border-color:var(--ok,#34C08A); color:#06261a}
+.rv .acc.fix:hover,.rv .acc.fix.sel{background:var(--warn,#E6AE4A); border-color:var(--warn,#E6AE4A); color:#2a1e05}
+.rv .acc.no:hover,.rv .acc.no.sel{background:var(--danger,#F0575D); border-color:var(--danger,#F0575D); color:#2b0709}
+
+.rv-nav2{display:flex; gap:8px; margin-top:12px}
+.rv-nav2 button{
+  flex:1; padding:11px 6px; border-radius:var(--r-2,12px);
+  border:1px solid var(--line,#24282F); background:transparent;
+  color:var(--txt-2,#9AA0AB); font-size:12.5px; font-weight:600;
+}
+.rv-nav2 button:hover{color:var(--txt,#ECEDF0); border-color:var(--line-2,#31363F)}
+.rv-tecla{
+  margin-top:12px; font-size:11px; line-height:1.7; color:var(--txt-3,#656B76);
+}
+.rv-tecla b{color:var(--txt-2,#9AA0AB)}
+
+/* ------------------------------------------------------------- cuadrícula */
+.rv-sec{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  margin:26px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line,#24282F);
+}
+.rv-sec h2{
+  margin:0; font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--txt-2,#9AA0AB);
+}
+.rv-sec h2 span{color:var(--txt-3,#656B76); margin-left:4px}
+.rv .secacc{
+  margin-left:auto; background:transparent; border:1px solid var(--line-2,#31363F);
+  color:var(--txt-3,#656B76); border-radius:999px; padding:6px 13px;
+  font-size:11.5px; font-weight:600;
+}
+.rv .secacc:hover{color:var(--ok,#34C08A); border-color:#34C08A66}
+.rv .secacc:disabled{opacity:.4}
+.rv-grid{display:grid; grid-template-columns:1fr; gap:14px}
+.rv-card{
+  background:var(--panel,#14161B); border:1px solid var(--line,#24282F);
+  border-radius:var(--r-3,16px); overflow:hidden; box-shadow:var(--sh-1,0 1px 2px #0008);
+}
+.rv-cuerpo{padding:12px 13px 14px}
+.rv-card .rv-meta{margin-bottom:2px}
+.rv-porque{
+  margin:8px 0; padding:9px 11px; border-radius:var(--r-1,8px);
+  background:var(--panel-2,#191C22); border-left:2px solid var(--acc,#7B72FF);
+  font-size:12px; color:var(--txt-2,#9AA0AB); line-height:1.5;
+}
+.rv-porque b{
+  display:block; font-size:9.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--txt-3,#656B76); margin-bottom:3px;
+}
+.rv-cap{
+  margin:8px 0; font-size:12.5px; color:var(--txt-2,#9AA0AB); white-space:pre-wrap;
+  max-height:5.4em; overflow:hidden; position:relative; cursor:pointer;
+}
+.rv-cap.abierta{max-height:none}
+.rv-cap:not(.abierta):after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2.2em;
+  background:linear-gradient(transparent, var(--panel,#14161B));
+}
+.rv-card details,.rv-card .rv-cmp{background:var(--panel-2,#191C22)}
+.rv-card .fixr,.rv-card textarea.motivo{padding-left:11px; padding-right:11px}
+.rv-card textarea.motivo{width:calc(100% - 22px); margin-left:11px; margin-right:11px}
+
+/* -------------------------------------------------------- vacíos y remates */
+.rv-fin{text-align:center; padding:70px 20px}
+.rv-fin-ico{
+  width:52px; height:52px; margin:0 auto 16px; border-radius:999px;
+  display:grid; place-items:center; font-size:24px;
+  color:var(--ok,#34C08A); background:#34C08A18; border:1px solid #34C08A44;
+}
+.rv-fin h2{font-size:20px; font-weight:700; letter-spacing:-.01em; margin-bottom:6px}
+.rv-fin p{color:var(--txt-3,#656B76); font-size:13px}
+.rv-vacio{padding:40px 0; text-align:center; color:var(--txt-3,#656B76); font-size:13px}
+
+/* ------------------------------------------- visor de reserva (§5.8 mínimo) */
+#rv-visor{
+  position:fixed; inset:0; z-index:90; display:none;
+  background:#000000ee; backdrop-filter:blur(6px);
+  flex-direction:column;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--txt,#ECEDF0);
+}
+#rv-visor.on{display:flex}
+.rv-vtop{
+  display:flex; align-items:center; gap:12px; padding:12px 14px;
+  border-bottom:1px solid var(--line,#24282F); font-size:12px; color:var(--txt-2,#9AA0AB);
+}
+#rv-vcerrar{
+  margin-left:auto; background:transparent; border:1px solid var(--line-2,#31363F);
+  color:var(--txt,#ECEDF0); border-radius:999px; width:34px; height:34px; font-size:15px;
+}
+.rv-vpistas{
+  flex:1; display:flex; gap:14px; overflow-x:auto; padding:14px;
+  scroll-snap-type:x mandatory;
+}
+.rv-vslide{
+  flex:0 0 min(78vw, 420px); scroll-snap-align:center;
+  display:flex; flex-direction:column; gap:8px;
+}
+.rv-vslide video,.rv-vslide img{
+  width:100%; max-height:62vh; object-fit:contain; background:#000;
+  border-radius:var(--r-2,12px); border:1px solid var(--line,#24282F);
+}
+.rv-vn{font-size:10.5px; letter-spacing:.08em; color:var(--txt-3,#656B76)}
+.rv-vslide .snota{
+  background:var(--panel,#14161B); border:1px solid var(--line-2,#31363F);
+  border-radius:var(--r-1,8px); color:var(--txt,#ECEDF0);
+  padding:9px; font:13px/1.45 inherit; min-height:58px; resize:vertical; width:100%;
+}
+.rv-vslide .snota:not(:placeholder-shown){border-color:var(--warn,#E6AE4A)}
+
+/* ------------------------------------------------------------ escritorio ≥820 */
+@media(min-width:820px){
+  .rv{padding:20px 20px 40px}
+  .rv-med.grande{height:min(66vh, 620px)}
+  .rv-foco{padding:18px}
+  .rv-tit{font-size:22px}
+  .rv-cmpgrid{grid-template-columns:1fr 1fr}
+  .rv .rpacc{position:static; padding:0; background:none; margin-top:14px}
+  .rv .acc{padding:13px 8px}
+  .rv-grid{grid-template-columns:1fr 1fr}
+}
+@media(min-width:1120px){
+  .rv-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv *,.rv *:before,.rv *:after{transition:none !important; animation:none !important}
+}

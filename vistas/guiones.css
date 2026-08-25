@@ -1,0 +1,338 @@
+/* =============================================================================
+   vistas/guiones.css  ·  piel de «GUIONES (cortes de podcast)»
+                          BUILD_SPEC_PANEL_ELITE.md §4 · §5.7
+   -----------------------------------------------------------------------------
+   Todo cuelga de `.gp-root` (la raíz que pinta `vistaGuiones()`), así que esta
+   hoja no toca ni una regla de las demás pantallas. Prefijo `gp-` en todo, para
+   no chocar con el `gb-` de «A grabar» ni con el `hk-` de «Hooks».
+
+   COLOR — §4.1, NI UN VALOR A PELO:
+     · **El violeta (--acc) es de la MÁQUINA y aquí la máquina existe**: PRODUCIR
+       encola trabajo para Claude, que es exactamente lo que el §1 reserva para
+       ese color («el acento de color está reservado a la máquina: REPLICAR /
+       Claude»). Es el hermano del botón REPLICAR de la Fábrica y se ve igual: el
+       ojo va directo al siguiente clon. Ninguna otra cosa de esta pantalla usa
+       violeta salvo el foco de teclado.
+     · **Verde/ámbar/rojo SOLO cuando alguien decidió.** Aquí nadie aprueba ni
+       deniega nada: no hay decisión, hay encargo. Por eso el verde (--ok) NO se
+       usa para el estado normal; aparece únicamente en el sello «EN COLA ✓», que
+       es la constancia de una acción humana ya hecha, y el rojo (--danger) solo
+       cuando un guardado FALLÓ. En reposo la pantalla es neutra.
+     · **Azul/naranja (--javi/--jordi) NO aparecen en esta hoja, a propósito.**
+       `GUIONES` no trae `cuenta` (medido: 42/42 sin ese campo) y pintar una pill
+       de cuenta sería inventarla — que es lo que hacía el panel viejo con los 28
+       cortes `JUNTOS`. Un color que codifica identidad no se usa cuando no hay
+       identidad en el dato (§1 ley 1 · `identidad-javi-jordi.md`).
+
+   MÓVIL PRIMERO (§3.6) — el equipo revisa desde el teléfono:
+     · base = una columna y el gancho a 16 px, que es lo único que se lee de pie;
+     · PRODUCIR a **ancho completo y 46 px de alto**, en la zona del pulgar, con
+       margen de sobra respecto a la ficha de al lado;
+     · el buscador es una barra de ancho completo y los chips de meta rompen en
+       varias líneas en vez de salirse (aquí no hay scroll-x: son etiquetas
+       cortas y partirlas se lee mejor que deslizarlas);
+     · a partir de 720 px la lista pasa a dos columnas y el botón deja de ser de
+       ancho completo. A 1100 px, tres.
+     Verificado a 375 px y a 1280 px.
+
+   TIPOGRAFÍA (§4.2): base 14 px, `tabular-nums` en TODA la pantalla — los
+   minutos («min 27:42 – 28:03»), los segundos y los contadores de sección
+   cambian al filtrar, y sin cifras de ancho fijo la columna entera bailaría.
+   Título de vista 22/700 con tracking −0,01em; cabeceras de sección en
+   mayúsculas con tracking +0,09em; meta a 11,5 px en --txt-3.
+
+   TODOS los hex de esta hoja son un token del §4.1, tal cual o con dos dígitos
+   de alfa detrás (`#7B72FF14` = --acc al 8 %). Es la misma técnica con la que la
+   propia spec define `--acc-weak:#7B72FF22`. Ni un color nuevo.
+
+   Cada `var()` lleva su fallback del §4.1 para que la hoja funcione aunque se
+   cargue antes que los tokens de index.html.
+   ============================================================================= */
+
+/* --- tokens §4.1. Si index.html ya los define, esta declaración es idéntica y
+       no cambia nada; se puede borrar el bloque sin que la hoja se rompa. ----- */
+:root{
+  --bg:#0A0B0D; --panel:#14161B; --panel-2:#191C22; --panel-3:#1F232B;
+  --line:#24282F; --line-2:#31363F;
+  --txt:#ECEDF0; --txt-2:#9AA0AB; --txt-3:#656B76;
+  --acc:#7B72FF; --acc-weak:#7B72FF22;
+  --ok:#34C08A; --warn:#E6AE4A; --danger:#F0575D;
+  --javi:#4C9BFF; --jordi:#E5904C;
+  --r-1:8px; --r-2:12px; --r-3:16px;
+  --sh-1:0 1px 2px #0008; --sh-2:0 8px 24px #000a;
+}
+
+/* ------------------------------------------------------------------ armazón */
+.gp-root{
+  max-width:1180px;                 /* §4.3: contenido centrado a 1180 */
+  margin:0 auto;
+  padding:4px 0 72px;               /* el hueco de abajo deja respirar sobre la
+                                       tab bar de móvil (§3.6) */
+  color:var(--txt,#ECEDF0);
+  font-size:14px;
+  line-height:1.55;
+  font-variant-numeric:tabular-nums;
+  -webkit-text-size-adjust:100%;
+}
+.gp-root *{box-sizing:border-box}
+.gp-root [hidden]{display:none !important}
+
+/* ----------------------------------------------------------------- cabecera */
+.gp-head{margin:0 0 18px}
+.gp-h2{
+  font-size:22px; font-weight:700; letter-spacing:-.01em; line-height:1.2;
+  margin:0 0 6px; color:var(--txt,#ECEDF0);
+}
+.gp-sub{
+  margin:0 0 12px; max-width:74ch;
+  font-size:13.5px; color:var(--txt-2,#9AA0AB);
+}
+.gp-sub b{color:var(--txt,#ECEDF0); font-weight:600}
+
+/* Las cifras de la cabecera se MIDEN al pintar (`estado-se-mide.md`): ninguna
+   está escrita a mano, y por eso van en tabular-nums. */
+.gp-cifras{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 12px}
+.gp-cifra{
+  display:inline-flex; align-items:baseline; gap:5px;
+  padding:5px 11px; border-radius:999px;
+  border:1px solid var(--line,#24282F); background:var(--panel,#14161B);
+  font-size:11.5px; color:var(--txt-3,#656B76);
+}
+.gp-cifra b{font-size:13px; font-weight:700; color:var(--txt,#ECEDF0)}
+/* «en cola» es trabajo ya encargado a la máquina → violeta, como el botón. */
+.gp-cifra-cola{border-color:#7B72FF55; background:var(--acc-weak,#7B72FF22)}
+.gp-cifra-cola b{color:var(--acc,#7B72FF)}
+.gp-cifra-filtro{border-style:dashed}
+
+/* Notas honestas: por qué el filtro de cuenta no aplica, por qué no se declara
+   quién habla, y el aviso de solo-lectura. No decoran: informan. */
+.gp-nota{
+  margin:0 0 8px; max-width:78ch;
+  padding:9px 12px; border-radius:var(--r-1,8px);
+  border:1px solid var(--line,#24282F);
+  border-left:3px solid var(--line-2,#31363F);
+  background:var(--panel,#14161B);
+  font-size:12.5px; color:var(--txt-2,#9AA0AB);
+}
+.gp-nota b{color:var(--txt,#ECEDF0); font-weight:600}
+.gp-nota-id{border-left-color:var(--line-2,#31363F)}
+/* Solo-lectura = fallo del sistema, no decisión de nadie: ámbar, y visible.
+   §6.6 — «fallo de npoint = solo-lectura visible, nunca pérdida silenciosa». */
+.gp-nota-alerta{
+  border-color:#E6AE4A44; border-left-color:var(--warn,#E6AE4A);
+  background:#E6AE4A12; color:var(--txt,#ECEDF0);
+}
+.gp-nota-alerta b{color:var(--warn,#E6AE4A)}
+
+/* ------------------------------------------------------- filtros de reserva */
+/* Solo se pintan si index.html no trae `filtrosHTML()`. Si lo trae, manda su
+   estilo y este bloque no se usa. */
+.gp-filtros{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 12px}
+.gp-seg{
+  display:inline-flex; padding:3px; gap:3px;
+  border:1px solid var(--line,#24282F); border-radius:999px;
+  background:var(--panel,#14161B);
+  max-width:100%; overflow-x:auto; scrollbar-width:none;
+}
+.gp-seg::-webkit-scrollbar{display:none}
+.gp-seg button{
+  appearance:none; border:0; cursor:pointer; white-space:nowrap;
+  padding:7px 14px; min-height:34px; border-radius:999px;
+  background:transparent; color:var(--txt-2,#9AA0AB);
+  font:600 12.5px/1 inherit; font-family:inherit;
+  transition:background .15s, color .15s;
+}
+.gp-seg button:hover{color:var(--txt,#ECEDF0)}
+.gp-seg button.on{background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0)}
+
+/* ---------------------------------------------------------------- buscador */
+.gp-busca-fila{display:flex; align-items:center; gap:10px; margin:0 0 18px}
+.gp-busca{position:relative; flex:1 1 auto; min-width:0}
+.gp-input{
+  width:100%; min-height:44px;                 /* objetivo táctil (§3.6) */
+  padding:10px 38px 10px 14px;
+  border:1px solid var(--line,#24282F); border-radius:var(--r-2,12px);
+  background:var(--panel,#14161B); color:var(--txt,#ECEDF0);
+  font:14px/1.4 inherit; font-family:inherit;
+}
+.gp-input::placeholder{color:var(--txt-3,#656B76)}
+.gp-input:focus{outline:none; border-color:var(--acc,#7B72FF); box-shadow:0 0 0 3px var(--acc-weak,#7B72FF22)}
+.gp-input::-webkit-search-cancel-button{display:none}   /* la ✕ la ponemos nosotros */
+.gp-x{
+  position:absolute; right:6px; top:50%; transform:translateY(-50%);
+  width:30px; height:30px; display:grid; place-items:center;
+  appearance:none; border:0; border-radius:999px; cursor:pointer;
+  background:transparent; color:var(--txt-3,#656B76);
+  font:20px/1 inherit; font-family:inherit;
+}
+.gp-x:hover{color:var(--txt,#ECEDF0); background:var(--panel-3,#1F232B)}
+.gp-busca-n{flex:0 0 auto; font-size:12px; color:var(--txt-3,#656B76); white-space:nowrap}
+
+/* ------------------------------------------------------ cabecera de sección */
+.gp-sec{
+  display:flex; align-items:baseline; gap:10px;
+  margin:26px 0 10px; padding-bottom:8px;
+  border-bottom:1px solid var(--line,#24282F);
+}
+.gp-sec-n{
+  font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--txt,#ECEDF0);
+}
+.gp-sec-d{font-size:12px; font-weight:400; color:var(--txt-3,#656B76)}
+.gp-sec-c{
+  margin-left:auto; font-size:12px; font-weight:700; color:var(--txt-3,#656B76);
+}
+
+/* ------------------------------------------------------------------- lista */
+.gp-lista{display:grid; grid-template-columns:1fr; gap:12px}
+
+.gp-card{
+  display:flex; flex-direction:column; gap:10px;
+  padding:16px 16px 14px;
+  border:1px solid var(--line,#24282F); border-radius:var(--r-3,16px);
+  background:var(--panel,#14161B); box-shadow:var(--sh-1,0 1px 2px #0008);
+  transition:border-color .15s, background .15s;
+}
+.gp-card:hover{border-color:var(--line-2,#31363F)}
+/* Ya encargado a la máquina: se marca en violeta y se apaga un punto, para que
+   el ojo vaya a los que TODAVÍA no se han pedido (§1: «el ojo va directo al
+   siguiente clon»). No se esconde: sigue siendo material consultable. */
+.gp-card-cola{
+  border-color:#7B72FF3D; background:var(--panel-2,#191C22);
+}
+.gp-card-cola .gp-hook{color:var(--txt-2,#9AA0AB)}
+
+/* --- el gancho: lo primero que se lee y lo que hace elegir --- */
+.gp-hook{
+  margin:0; padding:0 0 0 14px;
+  border-left:3px solid var(--line-2,#31363F);
+  font-size:16px; font-weight:600; line-height:1.4; letter-spacing:-.005em;
+  color:var(--txt,#ECEDF0);
+}
+.gp-hook::before{content:"\201C"}
+.gp-hook::after{content:"\201D"}
+.gp-card-cola .gp-hook{border-left-color:#7B72FF55}
+
+/* --- meta: etapa, familia, segundos, minuto exacto e id. TODO sale del dato --- */
+.gp-meta{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.gp-tag{
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 9px; border-radius:999px;
+  border:1px solid var(--line,#24282F); background:var(--panel-2,#191C22);
+  font-size:11.5px; font-weight:600; color:var(--txt-2,#9AA0AB); white-space:nowrap;
+}
+.gp-tag i{font-style:normal; font-weight:400; color:var(--txt-3,#656B76)}
+/* La etapa NO usa un color semántico: TOFU/MOFU/BOFU no son «bien/mal», son
+   posición en el embudo. Se diferencian por peso de superficie, no por color. */
+.gp-etapa{background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0)}
+.gp-fam{border-style:dashed}
+.gp-num{font-variant-numeric:tabular-nums}
+.gp-id{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.02em; color:var(--txt-3,#656B76);
+}
+
+/* --- estructura: el texto literal del mapeo frase a frase --- */
+.gp-estructura{
+  margin:0; font-size:12.5px; line-height:1.6; color:var(--txt-2,#9AA0AB);
+}
+
+/* ------------------------------------------------------------- la acción */
+.gp-acc{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:2px}
+
+.gp-btn{
+  appearance:none; cursor:pointer;
+  flex:1 1 100%;                       /* móvil: ancho completo, zona del pulgar */
+  min-height:46px; padding:12px 20px;
+  border:1px solid transparent; border-radius:var(--r-2,12px);
+  font:700 13.5px/1 inherit; font-family:inherit; letter-spacing:.04em;
+  transition:background .15s, border-color .15s, color .15s, transform .08s;
+}
+.gp-btn:active{transform:scale(.985)}
+.gp-btn:focus-visible{outline:none; box-shadow:0 0 0 3px var(--acc-weak,#7B72FF22)}
+
+/* PRODUCIR = la máquina. Es el único violeta sólido de la pantalla. */
+.gp-btn-prod{
+  background:var(--acc,#7B72FF); border-color:var(--acc,#7B72FF); color:#0A0B0D;
+}
+.gp-btn-prod:hover{filter:brightness(1.12)}   /* aclara el token, no inventa un violeta nuevo */
+
+/* «Enviando…»: el POST está en vuelo y todavía NO se puede cantar victoria
+   (§6.6). El punto que late dice que hay algo pasando sin prometer que salió. */
+.gp-btn-espera{
+  background:var(--acc-weak,#7B72FF22); border-color:#7B72FF55;
+  color:var(--acc,#7B72FF); cursor:progress;
+}
+.gp-btn-espera::after{
+  content:""; display:inline-block; width:6px; height:6px; margin-left:8px;
+  border-radius:999px; background:currentColor; vertical-align:middle;
+  animation:gp-late 1s ease-in-out infinite;
+}
+@keyframes gp-late{0%,100%{opacity:.25}50%{opacity:1}}
+
+/* EN COLA ✓ — constancia de una acción humana ya hecha y verificada contra el
+   bin. Verde, y desactivado: no se vuelve a pedir lo mismo. */
+.gp-btn-hecho{
+  background:#34C08A18; border-color:#34C08A66; color:var(--ok,#34C08A);
+  cursor:default;
+}
+/* Sin almacén: gris, apagado y explícito. Nunca un botón que parece vivo. */
+.gp-btn-off{
+  background:var(--panel-2,#191C22); border-color:var(--line,#24282F);
+  color:var(--txt-3,#656B76); cursor:not-allowed;
+}
+.gp-btn[disabled]{pointer-events:none}
+
+.gp-pedido{
+  flex:1 1 auto; font-size:11.5px; color:var(--txt-3,#656B76); white-space:nowrap;
+}
+
+/* El único rojo de la pantalla: el guardado falló y la orden NO está en cola. */
+.gp-error{
+  margin:0; padding:9px 12px; border-radius:var(--r-1,8px);
+  border:1px solid #F0575D55; background:#F0575D14;
+  font-size:12.5px; color:var(--txt,#ECEDF0);
+}
+.gp-error b{color:var(--danger,#F0575D)}
+
+/* -------------------------------------------------------------- vacíos */
+.gp-vacio{
+  margin:24px 0; padding:22px 18px; text-align:center;
+  border:1px dashed var(--line-2,#31363F); border-radius:var(--r-3,16px);
+  background:var(--panel,#14161B);
+  font-size:13.5px; color:var(--txt-2,#9AA0AB);
+}
+.gp-vacio b{display:block; margin-bottom:4px; color:var(--txt,#ECEDF0); font-size:15px}
+.gp-vacio code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px;
+  padding:1px 5px; border-radius:5px; background:var(--panel-3,#1F232B); color:var(--txt-2,#9AA0AB);
+}
+/* «No hay resultados» del buscador al vuelo: mismo cajón que .gp-vacio, pero
+   nace plegado y lo enseña/esconde `onInput` sin repintar la vista. */
+.gp-nada{margin-top:8px}
+
+.gp-link{
+  appearance:none; border:0; background:none; cursor:pointer; padding:0;
+  color:var(--acc,#7B72FF); font:600 13.5px inherit; font-family:inherit;
+  text-decoration:underline; text-underline-offset:3px;
+}
+
+/* ============================ ESCRITORIO ==================================
+   El móvil manda (§3.6) y estas dos consultas solo AÑADEN columnas cuando hay
+   sitio. Nada de lo de arriba depende de que se apliquen.                    */
+@media (min-width:720px){
+  .gp-lista{grid-template-columns:1fr 1fr}
+  .gp-btn{flex:0 0 auto; min-width:190px}     /* el botón deja de ser una barra */
+  .gp-root{padding-bottom:48px}
+}
+@media (min-width:1100px){
+  .gp-lista{grid-template-columns:repeat(3,1fr)}
+  .gp-btn{min-width:0; width:100%}            /* en 3 columnas la barra vuelve a
+                                                 caber y se lee mejor centrada */
+  .gp-pedido{flex:1 1 100%; white-space:normal}
+}
+
+/* Respeta a quien tiene el sistema en «menos movimiento». */
+@media (prefers-reduced-motion:reduce){
+  .gp-root *,.gp-root *::after{animation:none !important; transition:none !important}
+}

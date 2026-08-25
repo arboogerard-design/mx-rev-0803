@@ -1,0 +1,316 @@
+/* =============================================================================
+   vistas/hooks.css  ·  piel de la pantalla «HOOKS»  (BUILD_SPEC_PANEL_ELITE §4 · §5.5)
+   -----------------------------------------------------------------------------
+   Todo cuelga de `.hk-root` (la raíz que pinta vistaHooks), así que esta hoja no
+   toca ni una regla de las demás pantallas.
+
+   COLOR — §4.1, ni un valor a pelo:
+     · el acento violeta (--acc) está RESERVADO a la máquina (REPLICAR / Claude).
+       En esta pantalla no hay máquina: no se clona ni se encola nada. Por eso el
+       violeta aparece SOLO en el foco de teclado. Ninguna acción normal lo usa.
+     · verde/ámbar/rojo (--ok/--warn/--danger) SOLO cuando alguien decidió:
+       aprobado (verde), denegado (rojo), y el ámbar únicamente mientras hay un
+       texto escrito sin guardar. En reposo la pantalla es neutra: aquí el color
+       es información, no decoración.
+     · azul/naranja (--javi/--jordi) codifican la cuenta, igual que en el resto.
+
+   MÓVIL PRIMERO (§3.6) — el equipo revisa desde el teléfono:
+     · base = una columna; la comilla decorativa se esconde por debajo de 560 px
+       (roba 34 px de ancho al texto, que es lo único que importa aquí);
+     · los cuatro botones van en rejilla 2×2 con 44 px de alto — zona del pulgar,
+       objetivo táctil de sobra y sin peligro de dar al de al lado;
+     · el buscador es una barra de ancho completo y los chips hacen scroll
+       horizontal en vez de romper en cuatro líneas.
+     · a partir de 640 px los botones pasan a una sola fila y la comilla vuelve.
+     Verificado a 375 px y a 1280 px.
+
+   TIPOGRAFÍA (§4.2): base 14 px, `tabular-nums` global (los contadores de los
+   chips cambian en cada tecla del buscador: sin cifras de ancho fijo la barra
+   entera bailaría), títulos con tracking negativo, cabeceras de sección en
+   mayúsculas con tracking positivo.
+
+   TODOS los hex de esta hoja son un token del §4.1, tal cual o con dos dígitos
+   de alfa detrás (#34C08A18 = --ok al 9 %). Es la misma técnica con la que la
+   propia spec define --acc-weak:#7B72FF22. Ni un color nuevo: comprobado
+   listando los hex del fichero contra los del bloque :root.
+
+   Cada var() lleva su fallback del §4.1 para que la hoja funcione aunque se
+   cargue antes que los tokens de index.html.
+   ============================================================================= */
+
+/* --- tokens §4.1. Si index.html ya los define, esta declaración es idéntica y
+       no cambia nada; se puede borrar el bloque sin que la hoja se rompa. ----- */
+:root{
+  --bg:#0A0B0D; --panel:#14161B; --panel-2:#191C22; --panel-3:#1F232B;
+  --line:#24282F; --line-2:#31363F;
+  --txt:#ECEDF0; --txt-2:#9AA0AB; --txt-3:#656B76;
+  --acc:#7B72FF; --acc-weak:#7B72FF22;
+  --ok:#34C08A; --warn:#E6AE4A; --danger:#F0575D;
+  --javi:#4C9BFF; --jordi:#E5904C;
+  --r-1:8px; --r-2:12px; --r-3:16px;
+  --sh-1:0 1px 2px #0008; --sh-2:0 8px 24px #000a;
+}
+
+/* ------------------------------------------------------------------ armazón */
+.hk-root{
+  box-sizing:border-box;                    /* el contenido cabe en 1180, padding incluido */
+  max-width:1180px; margin:0 auto; padding:14px 14px 96px;
+  color:var(--txt,#ECEDF0);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px; line-height:1.5;
+  font-variant-numeric:tabular-nums;
+}
+.hk-root *{box-sizing:border-box}
+.hk-root button{font-family:inherit; font-variant-numeric:tabular-nums; cursor:pointer}
+.hk-root :focus-visible{outline:2px solid var(--acc,#7B72FF); outline-offset:2px; border-radius:4px}
+.hk-root .num{font-variant-numeric:tabular-nums}
+
+/* ----------------------------------------------------------------- cabecera */
+.hk-cab{margin-bottom:14px}
+.hk-h2{
+  font-size:22px; font-weight:700; letter-spacing:-.01em; line-height:1.15;
+  margin:0 0 4px; color:var(--txt,#ECEDF0);
+}
+.hk-sub{margin:0; color:var(--txt-2,#9AA0AB); font-size:13px; max-width:74ch}
+.hk-sub b{color:var(--txt,#ECEDF0); font-weight:600}
+.hk-cifras{
+  margin:8px 0 0; color:var(--txt-3,#656B76);
+  font-size:10.5px; text-transform:uppercase; letter-spacing:.09em; font-weight:600;
+}
+.hk-cifras .num{color:var(--txt-2,#9AA0AB)}
+.hk-cifras b .num, .hk-cifras b{color:var(--txt,#ECEDF0)}
+
+/* Solo lectura: no es un adorno, es el aviso de que un voto no se guardaría. */
+.hk-ro{
+  margin:10px 0 0; padding:9px 12px;
+  background:#E6AE4A14; border:1px solid #E6AE4A55; border-left:3px solid var(--warn,#E6AE4A);
+  border-radius:var(--r-1,8px); color:var(--warn,#E6AE4A); font-size:12.5px;
+}
+.hk-ro b{font-weight:700}
+
+/* ------------------------------------------------- barra: cuentas + buscador */
+.hk-barra{display:flex; flex-direction:column; gap:8px; margin-bottom:10px}
+
+.hk-cuentas{display:flex; gap:6px}
+.hk-cuenta{
+  flex:1 1 0; min-height:38px; padding:8px 10px;
+  background:var(--panel,#14161B); color:var(--txt-2,#9AA0AB);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-1,8px);
+  font-size:12.5px; font-weight:600; white-space:nowrap;
+  transition:background .12s, color .12s, border-color .12s;
+}
+.hk-cuenta:hover{color:var(--txt,#ECEDF0); border-color:var(--line-2,#31363F)}
+.hk-cuenta.on{background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0); border-color:var(--line-2,#31363F)}
+
+.hk-busca{position:relative; display:flex; align-items:center}
+.hk-lupa{
+  position:absolute; left:11px; font-size:15px; line-height:1;
+  color:var(--txt-3,#656B76); pointer-events:none;
+}
+.hk-q{
+  width:100%; min-height:42px; padding:10px 36px 10px 32px;
+  background:var(--panel,#14161B); color:var(--txt,#ECEDF0);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-1,8px);
+  font:inherit; font-size:14px;
+}
+.hk-q::placeholder{color:var(--txt-3,#656B76)}
+.hk-q:focus{border-color:var(--line-2,#31363F); outline:2px solid var(--acc,#7B72FF); outline-offset:1px}
+.hk-q::-webkit-search-cancel-button{display:none}   /* la ✕ la ponemos nosotros */
+.hk-limpia{
+  position:absolute; right:6px; width:30px; height:30px;
+  display:grid; place-items:center;
+  background:transparent; color:var(--txt-3,#656B76);
+  border:0; border-radius:999px; font-size:13px; line-height:1;
+}
+.hk-limpia:hover{color:var(--txt,#ECEDF0); background:var(--panel-3,#1F232B)}
+
+/* -------------------------------------------------------------------- chips */
+.hk-chips{
+  display:flex; gap:6px; margin:0 0 14px;
+  overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  padding-bottom:2px;
+}
+.hk-chips::-webkit-scrollbar{display:none}
+.hk-chip{
+  flex:0 0 auto; min-height:34px; padding:6px 12px;
+  background:transparent; color:var(--txt-2,#9AA0AB);
+  border:1px solid var(--line,#24282F); border-radius:999px;
+  font-size:12.5px; font-weight:600; white-space:nowrap;
+  transition:background .12s, color .12s, border-color .12s;
+}
+.hk-chip .num{color:var(--txt-3,#656B76); margin-left:2px; font-weight:700}
+.hk-chip:hover{color:var(--txt,#ECEDF0); border-color:var(--line-2,#31363F)}
+.hk-chip.on{background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0); border-color:var(--line-2,#31363F)}
+.hk-chip.on .num{color:var(--txt-2,#9AA0AB)}
+/* semántico: solo los chips que hablan de una decisión ya tomada */
+.hk-chip.t-ok{color:var(--ok,#34C08A); border-color:#34C08A44}
+.hk-chip.t-ok.on{background:#34C08A18; border-color:#34C08A88}
+.hk-chip.t-no{color:var(--danger,#F0575D); border-color:#F0575D44}
+.hk-chip.t-no.on{background:#F0575D18; border-color:#F0575D88}
+
+/* -------------------------------------------------------------------- lista */
+.hk-lista{display:flex; flex-direction:column; gap:10px}
+
+.hk-fila{
+  display:flex; gap:10px;
+  background:var(--panel,#14161B);
+  border:1px solid var(--line,#24282F); border-left:3px solid var(--line,#24282F);
+  border-radius:var(--r-2,12px); padding:14px;
+  box-shadow:var(--sh-1,0 1px 2px #0008);
+  transition:border-color .12s, opacity .12s;
+}
+.hk-fila:hover{border-color:var(--line-2,#31363F)}
+/* el color aparece cuando alguien decidió, y solo entonces */
+.hk-fila.es-ok{border-left-color:var(--ok,#34C08A)}
+.hk-fila.es-no{border-left-color:var(--danger,#F0575D); opacity:.62}
+.hk-fila.es-no:hover{opacity:1}
+.hk-fila.editando{border-left-color:var(--warn,#E6AE4A)}
+.hk-fila.enviando{opacity:.55}
+
+.hk-comilla{
+  flex:0 0 auto; width:22px;
+  font-family:Georgia,"Times New Roman",serif; font-size:44px; line-height:.72;
+  color:var(--line-2,#31363F); user-select:none;
+}
+.hk-cuerpo{flex:1 1 auto; min-width:0}
+
+.hk-texto{
+  margin:0 0 8px; font-size:15.5px; font-weight:600; line-height:1.42;
+  letter-spacing:-.005em; color:var(--txt,#ECEDF0);
+  overflow-wrap:anywhere;
+}
+.hk-sucio{
+  display:inline-block; vertical-align:2px; margin-left:6px;
+  font-size:10px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--warn,#E6AE4A); border:1px solid #E6AE4A55; border-radius:999px; padding:2px 7px;
+}
+
+/* --------------------------------------------------------------------- tags */
+.hk-tags{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:8px}
+.hk-pill{
+  font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  padding:3px 9px; border-radius:999px;
+}
+.hk-javi {color:var(--javi,#4C9BFF);  background:#4C9BFF1a; border:1px solid #4C9BFF44}
+.hk-jordi{color:var(--jordi,#E5904C); background:#E5904C1a; border:1px solid #E5904C44}
+
+.hk-tag{
+  font-size:11.5px; color:var(--txt-2,#9AA0AB);
+  background:var(--panel-2,#191C22); border:1px solid var(--line,#24282F);
+  border-radius:999px; padding:3px 9px; max-width:100%;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.hk-tag-b{cursor:pointer; transition:color .12s, border-color .12s}
+.hk-tag-b:hover{color:var(--txt,#ECEDF0); border-color:var(--line-2,#31363F)}
+
+.hk-win{
+  font-size:10.5px; font-weight:700; letter-spacing:.05em;
+  color:var(--ok,#34C08A); background:#34C08A18; border:1px solid #34C08A55;
+  border-radius:999px; padding:3px 9px;
+}
+.hk-est{
+  font-size:10.5px; font-weight:700; letter-spacing:.05em;
+  border-radius:999px; padding:3px 9px;
+}
+.hk-e-ok{color:var(--ok,#34C08A);     background:#34C08A18; border:1px solid #34C08A55}
+.hk-e-no{color:var(--danger,#F0575D); background:#F0575D18; border:1px solid #F0575D55}
+
+.hk-fuente{
+  margin:0 0 6px; font-size:11.5px; line-height:1.5; color:var(--txt-3,#656B76);
+  overflow-wrap:anywhere;
+}
+.hk-editado{color:var(--warn,#E6AE4A); opacity:.85}
+.hk-uso{margin:0 0 6px; font-size:11.5px; color:var(--txt-2,#9AA0AB)}
+.hk-uso .num{color:var(--txt,#ECEDF0); font-weight:700}
+
+/* ------------------------------------------------------------------- editor */
+.hk-editor{margin:8px 0 10px}
+.hk-editor[hidden]{display:none}
+.hk-edit{
+  width:100%; min-height:76px; resize:vertical;
+  padding:10px 12px;
+  background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0);
+  border:1px solid var(--warn,#E6AE4A); border-radius:var(--r-1,8px);
+  font:inherit; font-size:15px; line-height:1.45;
+}
+.hk-ayuda{margin:6px 0 0; font-size:11.5px; color:var(--txt-3,#656B76)}
+.hk-ayuda b{color:var(--warn,#E6AE4A); font-weight:700}
+
+/* ---------------------------------------------------------------- acciones */
+/* Móvil: rejilla 2×2 en la zona del pulgar. 44 px de alto = objetivo táctil. */
+.hk-acc{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:2px}
+.hk-b{
+  min-height:44px; padding:10px 12px;
+  background:var(--panel-2,#191C22); color:var(--txt,#ECEDF0);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-1,8px);
+  font-size:13px; font-weight:700;
+  transition:background .12s, color .12s, border-color .12s, opacity .12s;
+}
+.hk-b:hover{border-color:var(--line-2,#31363F)}
+.hk-b:active{transform:translateY(1px)}
+.hk-b[disabled]{opacity:.35; cursor:not-allowed}
+.hk-b[disabled]:hover{border-color:var(--line,#24282F)}
+
+.hk-b-copiar{color:var(--txt-2,#9AA0AB); background:transparent}
+.hk-b-copiar:hover{color:var(--txt,#ECEDF0)}
+.hk-b-copiar.hecho{color:var(--ok,#34C08A); border-color:#34C08A66}
+
+/* En reposo, neutros. El color entra al pasar por encima (intención) y se queda
+   fijo cuando ESA es la decisión guardada. */
+.hk-b-ok:hover:not([disabled]) {color:var(--ok,#34C08A);     border-color:#34C08A66}
+.hk-b-fix:hover:not([disabled]){color:var(--warn,#E6AE4A);   border-color:#E6AE4A66}
+.hk-b-no:hover:not([disabled]) {color:var(--danger,#F0575D); border-color:#F0575D66}
+.hk-b-ok.on {background:#34C08A22; color:var(--ok,#34C08A);     border-color:#34C08A88}
+.hk-b-fix.on{background:#E6AE4A22; color:var(--warn,#E6AE4A);   border-color:#E6AE4A88}
+.hk-b-no.on {background:#F0575D22; color:var(--danger,#F0575D); border-color:#F0575D88}
+
+/* -------------------------------------------------------------------- vacío */
+.hk-vacio{
+  border:1px dashed var(--line-2,#31363F); border-radius:var(--r-2,12px);
+  padding:26px 18px; text-align:center; color:var(--txt-2,#9AA0AB);
+}
+.hk-vacio p{margin:0 0 4px; font-size:14.5px; font-weight:600; color:var(--txt,#ECEDF0)}
+.hk-vacio-p{font-size:12.5px !important; font-weight:400 !important; color:var(--txt-3,#656B76) !important}
+.hk-link{
+  background:none; border:0; padding:0; color:var(--txt-2,#9AA0AB);
+  font:inherit; font-size:12.5px; text-decoration:underline; text-underline-offset:2px;
+}
+.hk-link:hover{color:var(--txt,#ECEDF0)}
+
+/* ==========================================================================
+   ESCRITORIO — a partir de 640 px los botones caben en una fila
+   ========================================================================== */
+@media (min-width:640px){
+  .hk-acc{grid-template-columns:auto 1fr 1fr 1fr; gap:8px}
+  .hk-b-copiar{min-width:104px}
+}
+
+@media (min-width:820px){
+  .hk-root{padding:18px 18px 40px}
+  .hk-barra{flex-direction:row; align-items:center; gap:10px}
+  .hk-cuentas{flex:0 0 auto}
+  .hk-cuenta{flex:0 0 auto}
+  .hk-busca{flex:1 1 auto}
+  .hk-h2{font-size:24px}
+  .hk-fila{padding:16px 18px}
+  .hk-texto{font-size:16.5px}
+}
+
+/* Por debajo de 560 px la comilla decorativa estorba: 34 px que le robaba al
+   texto, que es lo único que se lee en el móvil. */
+@media (max-width:559px){
+  .hk-comilla{display:none}
+  .hk-fila{padding:13px}
+}
+
+/* ==========================================================================
+   ACCESIBILIDAD Y RESPETO AL SISTEMA
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  .hk-root *{transition:none !important; animation:none !important}
+}
+/* El panel es DARK-COMMITTED (§4.1): no hay bloque de modo claro a propósito.
+   Hubo uno y se quitó porque subía el contraste del texto apagado
+   con un gris que NO está en la paleta, o sea un color inventado — justo lo que
+   §4.1 prohíbe. Si algún día hace falta modo claro, se define su paleta entera
+   en la spec y baja a index.html, no a la hoja de una pantalla suelta. */

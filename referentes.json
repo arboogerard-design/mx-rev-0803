@@ -43,13 +43,6 @@
    "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
   },
   {
-   "pieza": "CARRUSEL_JORDI_IA_UNA_TARDE_18AGO",
-   "ref": "media/_ref/CARRUSEL_JORDI_IA_UNA_TARDE_18AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
-  },
-  {
    "pieza": "CARRUSEL_JORDI_MOROSO_20AGO",
    "ref": "media/_ref/CARRUSEL_JORDI_MOROSO_20AGO__ref.jpg",
    "es_video": false,
@@ -190,48 +183,6 @@
    "como": "ruta local verificada"
   },
   {
-   "pieza": "PAPEL_JAVI_CUATRO_FUGAS_19AGO",
-   "ref": "media/_ref/PAPEL_JAVI_CUATRO_FUGAS_19AGO__ref.mp4",
-   "es_video": true,
-   "origen": "Dbg6ZDEz3bf.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "PAPEL_JAVI_EL_QUE_DUDA_19AGO",
-   "ref": "media/_ref/PAPEL_JAVI_EL_QUE_DUDA_19AGO__ref.mp4",
-   "es_video": true,
-   "origen": "Dbg6ZDEz3bf.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "PAPEL_JORDI_UNA_TARDE_19AGO",
-   "ref": "media/_ref/PAPEL_JORDI_UNA_TARDE_19AGO__ref.mp4",
-   "es_video": true,
-   "origen": "Dbg6ZDEz3bf.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "REEL_JAVI_EVENTO_ALUMNOS_20AGO",
-   "ref": "media/_ref/REEL_JAVI_EVENTO_ALUMNOS_20AGO__ref.txt",
-   "es_video": false,
-   "origen": "ads_v14_receta.txt",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "REEL_JAVI_PAPEL_AUDITOR_16AGO",
-   "ref": "media/_ref/REEL_JAVI_PAPEL_AUDITOR_16AGO__ref.mp4",
-   "es_video": true,
-   "origen": "FMTNOREQ_Dbg6ZDEz3bf.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "REEL_JORDI_RETARGETING_20AGO",
-   "ref": "media/_ref/REEL_JORDI_RETARGETING_20AGO__ref.mp4",
-   "es_video": true,
-   "origen": "DZXwuEmjboX.mp4",
-   "como": "ruta local verificada"
-  },
-  {
    "pieza": "TH_PADRE_LOCO_17AGO",
    "ref": "media/_ref/TH_PADRE_LOCO_17AGO__ref.md",
    "es_video": false,
@@ -255,6 +206,10 @@
  ],
  "sin_referente": [
   {
+   "pieza": "ADS_8_ANGULOS_JAVI_5AGO",
+   "motivo": "no declara referente"
+  },
+  {
    "pieza": "CARRUSEL_CLON_JAVI_OFERTA_2AGO",
    "motivo": "no declara referente"
   },
@@ -267,16 +222,8 @@
    "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
   },
   {
-   "pieza": "CARRUSEL_JAVI_TRES_COSAS_V2_16AGO",
-   "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
-  },
-  {
    "pieza": "CARRUSEL_JORDI_FILTRO_2AGO",
    "motivo": "no declara referente"
-  },
-  {
-   "pieza": "CARRUSEL_JORDI_IA_TIENDA_16AGO",
-   "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
   },
   {
    "pieza": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
@@ -319,15 +266,7 @@
    "motivo": "no declara referente"
   },
   {
-   "pieza": "MEME_REPLICA_JAVI_DEV1K",
-   "motivo": "no declara referente"
-  },
-  {
    "pieza": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JAVI_CERO_2AGO",
    "motivo": "no declara referente"
   },
   {
@@ -367,19 +306,11 @@
    "motivo": "no declara referente"
   },
   {
-   "pieza": "STORIES_JAVI_MIERCOLES_A5_5AGO",
-   "motivo": "no declara referente"
-  },
-  {
    "pieza": "STORIES_JAVI_MIERCOLES_A5_V3",
    "motivo": "no declara referente"
   },
   {
    "pieza": "STORIES_JORDI_FREESTYLE_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JORDI_MARTES_A7_4AGO",
    "motivo": "no declara referente"
   },
   {

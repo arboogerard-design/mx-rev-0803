@@ -1,0 +1,279 @@
+/* =============================================================================
+   vistas/calendario.css  ·  piel del CALENDARIO DE LA SEMANA (BUILD_SPEC §4 · §5.4)
+   -----------------------------------------------------------------------------
+   Acompaña a vistas/calendario.js. TODO cuelga de `.cal`, que es la raíz que
+   pinta vistaCalendario(): en el panel ensamblado conviven varios `vistas/*.css`
+   y un `.col` o un `.pill` suelto es un choque esperando a pasar.
+
+   COLOR — §4.1, ni un valor a pelo:
+     · El violeta --acc está RESERVADO a la máquina y a lo ACTIVO. Aquí solo lo
+       llevan el día de hoy (lo pide la spec: «el día actual marcado Hoy con
+       borde acento») y el hueco que está listo para recibir la pieza cogida.
+     · --ok/--warn/--danger NO aparecen: en esta pantalla nadie decide nada.
+       Programar coloca; aprobar/denegar vive en «Por revisar».
+     · La ETAPA y el reparto se codifican por PESO y por profundidad de gris,
+       no por color: el 50/30/20 es orientación, no una alarma (§5.4).
+     · Las cuentas sí llevan su color (--javi azul / --jordi naranja): §4.1 dice
+       literalmente que codifican «tarjetas y eventos de calendario».
+   Cada var() lleva su fallback con el valor EXACTO de la spec, para que la
+   pantalla se vea bien aunque esta hoja cargue antes del :root de index.html.
+
+   MÓVIL PRIMERO (§3.6) — el equipo revisa desde el teléfono:
+     · Una fila de columnas con scroll horizontal y scroll-snap por día.
+     · La pieza cogida se anuncia en una barra fija abajo, en zona de pulgar.
+     · Objetivo táctil ≥44 px en lo principal (huecos «+ Programar», flechas de
+       semana, «Hoy»); 36 px en «Quitar», que es secundario y no debe caer bajo
+       el pulgar por accidente. Medido en el banco de pruebas a 375 px.
+     · A partir de 1240 px la rejilla se abre a [Sin fecha | 7 días] sin scroll
+       (el umbral está MEDIDO, no elegido a ojo: ver el bloque de abajo).
+   ============================================================================= */
+
+/* --- tokens §4.1. Si index.html ya los define, esta declaración es idéntica y
+       no cambia nada; se puede borrar el bloque sin que la hoja se rompa. ----- */
+:root{
+  --bg:#0A0B0D; --panel:#14161B; --panel-2:#191C22; --panel-3:#1F232B;
+  --line:#24282F; --line-2:#31363F;
+  --txt:#ECEDF0; --txt-2:#9AA0AB; --txt-3:#656B76;
+  --acc:#7B72FF; --acc-weak:#7B72FF22;
+  --ok:#34C08A; --warn:#E6AE4A; --danger:#F0575D;
+  --javi:#4C9BFF; --jordi:#E5904C;
+  --r-1:8px; --r-2:12px; --r-3:16px;
+  --sh-1:0 1px 2px #0008; --sh-2:0 8px 24px #000a;
+}
+
+/* ------------------------------------------------------------------ armazón */
+.cal{
+  font-variant-numeric:tabular-nums;              /* §4.2: las cifras no bailan */
+  padding-bottom:96px;                            /* hueco para la barra fija   */
+}
+.cal *{box-sizing:border-box}
+
+/* ------------------------------------------------------------ cabecera / wknav */
+.cal-top{margin:0 0 16px}
+.cal-wknav{display:flex;align-items:center;gap:8px}
+.cal-rango{
+  font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--txt,#ECEDF0);
+  min-width:9.5ch;text-align:center;
+}
+.cal-nav,.cal-hoybtn{
+  min-width:44px;min-height:44px;padding:0 12px;cursor:pointer;
+  background:var(--panel,#14161B);border:1px solid var(--line,#24282F);
+  border-radius:var(--r-1,8px);color:var(--txt-2,#9AA0AB);
+  font:600 15px/1 inherit;transition:border-color .15s,color .15s,background .15s;
+}
+.cal-nav{font-size:20px}
+.cal-hoybtn{margin-left:4px;font-size:12.5px;font-weight:700;letter-spacing:.02em}
+.cal-nav:hover,.cal-hoybtn:hover{color:var(--txt,#ECEDF0);border-color:var(--line-2,#31363F);background:var(--panel-2,#191C22)}
+.cal-nav:focus-visible,.cal-hoybtn:focus-visible{outline:2px solid var(--acc,#7B72FF);outline-offset:2px}
+
+.cal-sub{margin:8px 0 0;color:var(--txt-3,#656B76);font-size:11.5px;line-height:1.5;max-width:62ch}
+.cal-sub b{color:var(--txt-2,#9AA0AB);font-weight:600}
+
+/* ------------------------------------------------------- barra 50/30/20 §5.4 */
+.cal-mix{
+  background:var(--panel,#14161B);border:1px solid var(--line,#24282F);
+  border-radius:var(--r-2,12px);padding:14px 14px 12px;margin:0 0 16px;box-shadow:var(--sh-1,0 1px 2px #0008);
+}
+.cal-h3{
+  margin:0 0 12px;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;
+  font-weight:700;color:var(--txt-3,#656B76);
+}
+.cal-h3 small{text-transform:none;letter-spacing:0;font-weight:500;margin-left:8px;font-size:11px}
+
+.cal-mixfila{display:grid;grid-template-columns:1fr;gap:8px;padding:10px 0;border-top:1px solid var(--line,#24282F)}
+.cal-mixfila:first-of-type{border-top:0}
+.cal-barra{
+  display:flex;height:8px;border-radius:999px;overflow:hidden;
+  background:var(--panel-3,#1F232B);border:1px solid var(--line,#24282F);
+}
+.cal-seg{display:block;height:100%}
+.cal-seg-tofu{background:var(--txt,#ECEDF0)}
+.cal-seg-mofu{background:var(--txt-2,#9AA0AB)}
+.cal-seg-bofu{background:var(--txt-3,#656B76)}
+.cal-seg-sin {background:repeating-linear-gradient(135deg,var(--line-2,#31363F) 0 4px,transparent 4px 8px)}
+
+.cal-mixnum{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;font-size:11.5px;color:var(--txt-3,#656B76)}
+.cal-cifra{color:var(--txt-2,#9AA0AB);letter-spacing:.04em}
+.cal-cifra b{color:var(--txt,#ECEDF0);font-weight:700;margin-left:4px}
+.cal-cifra i{font-style:normal;color:var(--txt-3,#656B76)}
+.cal-cifra.ok b{color:var(--txt,#ECEDF0)}
+.cal-cifra.sin{color:var(--txt-3,#656B76)}
+.cal-sep{color:var(--line-2,#31363F)}
+.cal-mixvacio{margin:0;font-size:12px;color:var(--txt-3,#656B76)}
+.cal-mixvacio b{color:var(--txt-2,#9AA0AB)}
+.cal-nota{margin:10px 0 0;font-size:11px;line-height:1.5;color:var(--txt-3,#656B76)}
+.cal-nota b{color:var(--txt-2,#9AA0AB);font-weight:600}
+
+/* --------------------------------------------------------------- la rejilla */
+.cal-scroll{
+  overflow-x:auto;overflow-y:visible;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  margin:0 -14px;padding:0 14px 6px;scrollbar-width:thin;
+}
+.cal-scroll::-webkit-scrollbar{height:8px}
+.cal-scroll::-webkit-scrollbar-thumb{background:var(--line-2,#31363F);border-radius:999px}
+.cal-grid{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(238px,82vw);
+  gap:10px;align-items:start;
+}
+.cal-col{
+  scroll-snap-align:start;
+  background:var(--panel,#14161B);border:1px solid var(--line,#24282F);
+  border-radius:var(--r-2,12px);padding:10px;min-height:120px;
+}
+.cal-col.hoy{border-color:var(--acc,#7B72FF);box-shadow:0 0 0 1px var(--acc-weak,#7B72FF22)}
+.cal-col.sobre{border-color:var(--acc,#7B72FF);background:var(--panel-2,#191C22)}
+
+.cal-colhead{
+  display:flex;align-items:baseline;gap:8px;padding:2px 2px 10px;
+  border-bottom:1px solid var(--line,#24282F);margin-bottom:10px;
+}
+.cal-diasem{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--txt-3,#656B76)}
+.cal-dianum{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--txt,#ECEDF0);margin-left:auto}
+.cal-hoymark{
+  font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--acc,#7B72FF);background:var(--acc-weak,#7B72FF22);
+  border-radius:999px;padding:3px 8px;margin-left:6px;
+}
+.cal-back{background:var(--panel-2,#191C22)}
+.cal-backhead .cal-dianum{color:var(--txt,#ECEDF0)}
+
+.cal-bloque{margin-bottom:12px}
+.cal-bloque:last-child{margin-bottom:0}
+.cal-vacio{margin:6px 0 0;font-size:11px;line-height:1.5;color:var(--txt-3,#656B76)}
+.cal-vacio code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px}
+
+/* ------------------------------------------------------- tarjeta de evento */
+.cal-ev{
+  background:var(--panel-2,#191C22);border:1px solid var(--line,#24282F);
+  border-radius:var(--r-1,8px);padding:8px;margin:6px 0 0;cursor:grab;
+  transition:border-color .15s,transform .12s,background .15s;
+}
+.cal-back .cal-ev{background:var(--panel-3,#1F232B)}
+.cal-ev:hover{border-color:var(--line-2,#31363F)}
+.cal-ev:active{cursor:grabbing}
+.cal-ev.arrastrando{opacity:.45}
+.cal-ev.cogida{border-color:var(--acc,#7B72FF);background:var(--acc-weak,#7B72FF22)}
+
+.cal-ev-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.cal-hora{font-size:12px;font-weight:700;color:var(--txt,#ECEDF0);letter-spacing:.02em}
+.cal-ev-cuerpo{display:flex;gap:8px;align-items:flex-start}
+.cal-th{
+  width:34px;height:44px;flex:0 0 34px;object-fit:cover;border-radius:var(--r-1,8px);
+  background:var(--panel-3,#1F232B);border:1px solid var(--line,#24282F);display:block;
+}
+.cal-th-no{display:block}
+.cal-tit{
+  font-size:12.5px;font-weight:600;line-height:1.35;color:var(--txt,#ECEDF0);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.cal-ev-pie{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px}
+.cal-coger{margin:8px 0 0;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;color:var(--txt-3,#656B76)}
+.cal-ev.cogida .cal-coger{color:var(--acc,#7B72FF)}
+
+/* píldoras y metadatos */
+.cal-pill{
+  font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:3px 8px;border-radius:999px;border:1px solid var(--line-2,#31363F);color:var(--txt-2,#9AA0AB);
+}
+.cal-pill.cal-javi {color:var(--javi,#4C9BFF); border-color:var(--javi,#4C9BFF)}
+.cal-pill.cal-jordi{color:var(--jordi,#E5904C);border-color:var(--jordi,#E5904C)}
+.cal-fmt{font-size:11px;color:var(--txt-3,#656B76)}
+.cal-etapa{font-size:10px;font-weight:700;letter-spacing:.07em;color:var(--txt-2,#9AA0AB)}
+.cal-etapa.sin{font-weight:500;color:var(--txt-3,#656B76);letter-spacing:.03em;text-transform:none}
+/* Objetivo táctil: 36 px de alto. No los 44 de un botón principal a propósito —
+   quita la fecha de una pieza y no debería caer bajo el pulgar por accidente—,
+   pero tampoco los 23 px que medía antes, que en un móvil no se aciertan. */
+.cal-quitar{
+  margin-left:auto;background:transparent;border:0;cursor:pointer;
+  min-height:36px;padding:4px 6px;
+  font:600 11px/1 inherit;color:var(--txt-3,#656B76);text-decoration:underline;text-underline-offset:2px;
+}
+.cal-quitar:hover{color:var(--txt-2,#9AA0AB)}
+.cal-quitar:focus-visible{outline:2px solid var(--acc,#7B72FF);outline-offset:2px;border-radius:var(--r-1,8px)}
+
+/* ----------------------------------------------------------- hueco / slot */
+.cal-slot{
+  display:block;width:100%;text-align:left;margin:6px 0 0;padding:10px;min-height:44px;
+  background:transparent;border:1px dashed var(--line-2,#31363F);border-radius:var(--r-1,8px);
+  color:var(--txt-3,#656B76);cursor:pointer;font:inherit;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.cal-slot:hover{border-color:var(--txt-3,#656B76);color:var(--txt-2,#9AA0AB)}
+.cal-slot.listo{border-color:var(--acc,#7B72FF);border-style:solid;background:var(--acc-weak,#7B72FF22)}
+.cal-slot.sobre{border-color:var(--acc,#7B72FF);border-style:solid;background:var(--acc-weak,#7B72FF22)}
+.cal-slot:focus-visible{outline:2px solid var(--acc,#7B72FF);outline-offset:2px}
+.cal-mas{display:block;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--txt-2,#9AA0AB)}
+.cal-slot.listo .cal-mas{color:var(--acc,#7B72FF)}
+.cal-slotfmt{display:block;margin-top:3px;font-size:11.5px;color:var(--txt-3,#656B76)}
+.cal-slotfmt b{color:var(--txt-2,#9AA0AB);font-weight:700}
+.cal-motivo{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  margin-top:4px;font-size:10.5px;line-height:1.45;color:var(--txt-3,#656B76);opacity:.85}
+/* El motivo lo escribe una persona en piezas.json y a veces son 3 renglones:
+   se recorta a la vista y el texto entero vive en el `title` del elemento. */
+
+/* --------------------------------------------------------------- pie/fuente */
+.cal-fuente{margin:12px 0 0;font-size:11px;line-height:1.5;color:var(--txt-3,#656B76)}
+.cal-fuente code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;color:var(--txt-2,#9AA0AB)}
+
+/* ---------------------------------- barra de «pieza cogida» (zona de pulgar) */
+.cal-cogida{
+  position:fixed;left:50%;transform:translateX(-50%);z-index:60;
+  bottom:calc(14px + env(safe-area-inset-bottom));
+  width:min(560px,calc(100% - 24px));
+  display:flex;align-items:center;gap:12px;padding:12px 14px;
+  background:var(--panel-2,#191C22);border:1px solid var(--acc,#7B72FF);
+  border-radius:var(--r-3,16px);box-shadow:var(--sh-2,0 8px 24px #000a);
+  font-size:12.5px;color:var(--txt-2,#9AA0AB);
+}
+.cal-cogida span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal-cogida b{color:var(--txt,#ECEDF0);font-weight:600}
+.cal-cancel{
+  flex:0 0 auto;min-height:36px;padding:0 14px;cursor:pointer;
+  background:transparent;border:1px solid var(--line-2,#31363F);border-radius:var(--r-1,8px);
+  color:var(--txt-2,#9AA0AB);font:700 12px/1 inherit;
+}
+.cal-cancel:hover{color:var(--txt,#ECEDF0);border-color:var(--txt-3,#656B76)}
+
+/* ------------------------------------------------------------- escritorio */
+/* La fila del mix se abre a 3 columnas en cuanto hay sitio. */
+@media (min-width:820px){
+  .cal-mixfila{grid-template-columns:96px minmax(160px,1fr) auto;align-items:center;gap:14px}
+  .cal-cogida{bottom:20px}
+}
+
+/* --- la rejilla completa [Sin fecha | 7 días] SOLO cuando de verdad cabe -----
+   MEDIDO en el banco de pruebas: con 1.180 px de contenido (el ancho del panel,
+   §4.3) la columna de un día queda en 128 px. Ahí una miniatura de 34 px se come
+   el título, así que en modo rejilla la miniatura se queda donde sirve para
+   ELEGIR —la columna «Sin fecha», que es ancha— y en el móvil, donde la columna
+   mide 82 vw. Por debajo de 1240 px manda el carrusel horizontal con snap. */
+@media (min-width:1240px){
+  .cal-scroll{overflow:visible;margin:0;padding:0;scroll-snap-type:none}
+  .cal-grid{
+    grid-auto-flow:row;grid-auto-columns:auto;
+    grid-template-columns:208px repeat(7,minmax(0,1fr));gap:8px;
+  }
+  .cal-dia .cal-th{display:none}
+  .cal-dia .cal-tit{-webkit-line-clamp:3;font-size:12px}
+  .cal-dia .cal-ev,.cal-dia .cal-slot{padding:7px}
+  .cal-dia .cal-fmt,.cal-dia .cal-slotfmt{font-size:10.5px}
+  .cal-dia .cal-motivo{-webkit-line-clamp:2}
+}
+@media (min-width:1500px){
+  .cal-grid{grid-template-columns:240px repeat(7,minmax(0,1fr));gap:10px}
+  .cal-dia .cal-th{display:block}
+}
+
+/* Respeto por quien apaga las animaciones. */
+@media (prefers-reduced-motion:reduce){
+  .cal-ev,.cal-slot,.cal-nav,.cal-hoybtn{transition:none}
+}
+
+/* Aviso de que el filtro de etapa está escondiendo piezas (ver calendario.js:
+   un control que parece no hacer nada es peor que un resultado incómodo). */
+.cal-filtroaviso{
+  margin:8px 0 0;font-size:11.5px;line-height:1.5;color:var(--txt-3,#656B76);
+  border-left:2px solid var(--line-2,#31363F);padding-left:8px;
+}
+.cal-filtroaviso b{color:var(--txt-2,#9AA0AB);font-weight:700}

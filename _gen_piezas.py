@@ -347,6 +347,37 @@ def media_pieza(pid, carpeta, dry):
     return archivos, stats
 
 
+ESTADO_PIEZAS = os.path.join(
+    "C:/Users/PC/Desktop/MENTORIUM/MENTORIUM_SISTEMA_UNIFICADO",
+    "OBSIDIAN_2CEREBRO", "_contexto", "ESTADO_PIEZAS.json")
+
+
+def denegadas():
+    """Los ids que Gerard ya tumbo en el filtro 1. NO vuelven al panel.
+
+    EL BUG QUE ESTO CIERRA (medido 23-ago): el panel ensenaba 145 piezas y 88 estaban DENEGADAS
+    por Gerard — el 61 % era contenido que el ya habia tumbado, algunas del 1 de agosto. Su queja
+    literal: «en el panel aun veo todo el contenido antiguo mal hecho».
+
+    La causa era de diseno: este generador barre PARA_REVISAR buscando VEREDICTO PASS, y el gate
+    tecnico no sabe nada de los votos. Una pieza denegada conserva su PASS en disco, asi que
+    volvia al panel en CADA regeneracion, para siempre. Denegar no servia de nada.
+
+    Los ids casan 1:1 entre ESTADO_PIEZAS.json y piezas.json (comprobado: 145 de 145), asi que el
+    filtro es exacto y no hay que adivinar nombres.
+
+    Las piezas NO se borran del disco: solo dejan de ensenarse (mover/ocultar, nunca rm).
+    """
+    try:
+        with io.open(ESTADO_PIEZAS, encoding="utf-8") as f:
+            d = json.load(f)
+    except Exception as e:
+        print("AVISO: no pude leer los votos (%s) -> no se filtra nada" % str(e)[:60])
+        return set()
+    return set(x["id"] for x in d.get("piezas", [])
+               if (x.get("f1") or {}).get("estado") == "denegado")
+
+
 def main():
     dry = "--dry-run" in sys.argv
     os.makedirs(MEDIA, exist_ok=True)
@@ -371,6 +402,9 @@ def main():
 
     piezas = []
     avisos = []
+    VETADAS = denegadas()
+    print("vetadas por Gerard (filtro 1 = denegado):", len(VETADAS))
+    n_veto = 0
 
     # 1) PARA_REVISAR: solo VEREDICTO PASS, salta _BLOQUEADAS y carpetas internas
     n_pass = n_skip = 0
@@ -380,6 +414,9 @@ def main():
             continue
         if not veredicto_pass(carpeta):
             n_skip += 1
+            continue
+        if nombre in VETADAS:            # Gerard ya la tumbo: no vuelve al panel
+            n_veto += 1
             continue
         n_pass += 1
         her = heredado.get(nombre, {})
@@ -397,7 +434,8 @@ def main():
             "carpeta_abs": carpeta,
             "origen": "PARA_REVISAR/" + nombre,
         })
-    print("PARA_REVISAR: %d PASS · %d saltadas (sin PASS o internas)" % (n_pass, n_skip))
+    print("PARA_REVISAR: %d PASS · %d saltadas · %d VETADAS por Gerard"
+          % (n_pass, n_skip, n_veto))
 
     # 2) _CONTENIDO_JAVI_JORDI_HOY: carpetas de pieza del 21-ago (sin gate todavia)
     n_hoy = 0

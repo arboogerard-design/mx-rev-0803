@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- =============================================================================
+  vistas/_probe_hoy.html  ·  BANCO DE PRUEBAS de la pantalla «HOY»
+  -----------------------------------------------------------------------------
+  Abre la pantalla SOLA, sin index.html: carga vistas/hoy.css + hoy.js y lee el
+  piezas.json REAL. La pantalla «Hoy» es de SOLO LECTURA (no llama a guardar ni
+  a guardarMio), así que este banco no puede tocar ni un voto del equipo.
+
+  Los botones de arriba mueven el DÍA a mano: son los 4 estados que hay que
+  mirar antes de dar la pantalla por buena y que en un día normal no se ven.
+
+  Servir con:  python -m http.server 8765 --directory C:/Users/PC/Desktop/_panel_mx
+  Abrir:       http://localhost:8765/vistas/_probe_hoy.html
+============================================================================= -->
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>probe hoy</title>
+<link rel="stylesheet" href="hoy.css">
+<style>
+ body{background:#0A0B0D;color:#ECEDF0;margin:0;font:14px Inter,system-ui,sans-serif}
+ #tabs{padding:8px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid #24282F}
+ #tabs button{background:#1F232B;color:#ECEDF0;border:1px solid #31363F;border-radius:8px;
+   padding:6px 10px;font:12px Inter,system-ui,sans-serif;cursor:pointer}
+ #sonda{position:fixed;right:8px;bottom:8px;z-index:200;background:#111;border:1px solid #333;
+   padding:8px;font:11px/1.4 monospace;max-width:320px;max-height:34vh;overflow:auto;white-space:pre-wrap}
+</style></head><body>
+<div id="tabs">
+  <button onclick="caso('hoy')">hoy de verdad</button>
+  <button onclick="caso('denegada')">con una denegada</button>
+  <button onclick="caso('vacio')">día vacío (regla 32)</button>
+  <button onclick="caso('otra')">plan de otra semana</button>
+  <button onclick="FCUENTA='todo';render()">las dos</button>
+  <button onclick="FCUENTA='JAVI';render()">Javi</button>
+  <button onclick="FCUENTA='JORDI';render()">Jordi</button>
+</div>
+<main id="app"></main>
+<div id="sonda">cargando…</div>
+<script>
+let BASE={piezas:[]};
+let DATOS={piezas:[]};
+let E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[],notas:{}};
+let YO="Gerard", TAB="hoy", FCUENTA="todo", FETAPA="todo";
+let LOG=[];
+function aviso(t,mal){LOG.unshift((mal?"! ":"· ")+t);sonda();}
+function render(){
+  document.querySelector("#app").innerHTML=vistaHoy();
+  cablearHoy(); sonda();
+}
+function clon(o){return JSON.parse(JSON.stringify(o));}
+function caso(k){
+  E.decisiones={};
+  if(k==="hoy"){ DATOS=clon(BASE); }
+  if(k==="denegada"){
+    DATOS=clon(BASE);
+    const p=VISTA_HOY.todasDeHoy()[0];
+    if(p)E.decisiones[p.id]={estado:"denegado",motivo:"la portada no es del dueño",
+      por:"Jordi",cuando:"2026-08-25 12:00"};
+  }
+  if(k==="vacio"){ DATOS=clon(BASE); DATOS.piezas=[]; DATOS.huecos=[]; }
+  if(k==="otra"){ DATOS=clon(BASE); DATOS.piezas=[]; DATOS.huecos=[];
+    DATOS.dias=["lun 1","mar 2"]; DATOS.semana="1-7 enero 2027"; }
+  render();
+}
+function sonda(){
+  document.querySelector("#sonda").textContent=
+    "hoy: "+VISTA_HOY.hoyEtiqueta()+"  ("+VISTA_HOY.isoHoy()+")\n"+
+    "a subir: "+deHoy().length+"   retiradas: "+VISTA_HOY.retiradasHoy().length+
+    "   huecos: "+VISTA_HOY.huecosHoy().length+"\n"+LOG.slice(0,5).join("\n");
+}
+</script>
+<script src="hoy.js"></script>
+<script>
+fetch("../piezas.json").then(r=>r.json()).then(d=>{BASE=d;caso("hoy");})
+  .catch(e=>{document.querySelector("#app").textContent="No se pudo leer ../piezas.json — "+e;});
+</script>
+</body></html>

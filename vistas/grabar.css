@@ -1,0 +1,342 @@
+/* =============================================================================
+   vistas/grabar.css  ·  piel de la pantalla «A GRABAR»  (BUILD_SPEC §4 · §5.6)
+   -----------------------------------------------------------------------------
+   Todo cuelga de `.gb` (la raíz que pinta vistaGuionesGrabar), así que esta hoja
+   no toca ni una regla de las demás pantallas.
+
+   COLOR — §4.1, ni un valor a pelo:
+     · el acento violeta (--acc) está RESERVADO a la máquina. En esta pantalla no
+       hay máquina —no se clona ni se encola nada—, así que el violeta aparece
+       SOLO en el anillo de foco de teclado. Ninguna acción normal lo usa.
+     · verde/ámbar/rojo (--ok/--warn/--danger) SOLO cuando alguien decide o
+       cuando hay un incumplimiento medido. Aquí no se decide, así que el único
+       uso es el ámbar del descuadre de segundos (un dato que no cuadra con
+       otro dato) y el verde momentáneo de «Copiado ✓».
+     · azul/naranja (--javi/--jordi) codifican la cuenta, como en el resto.
+
+   · LOS 5 COLORES DE BLOQUE SON FAMILIA APARTE (--bl-*), a propósito.
+       Son los mismos hexadecimales que el equipo ya conoce del panel anterior
+       (`COLOR_BLOQUE`), y NO son ni semánticos ni de máquina: tiñen el filo
+       izquierdo, el rótulo y el tramo de la barra de ritmo de un bloque de
+       guion — nunca un botón, nunca un estado, nunca una decisión. Por eso
+       tienen tokens propios en vez de reutilizar --ok/--warn/--danger/--acc:
+       reutilizarlos habría hecho que el verde significase dos cosas.
+     Se aplican por `data-bl="<slug>"`, así que en el JS no hay ni un color.
+
+   MÓVIL PRIMERO (§3.6) — esta pantalla se lee CON LA CÁMARA DELANTE:
+     · base = una columna; la cabecera de cada ficha es un botón a ancho
+       completo de ≥56 px (se abre con el pulgar, sin apuntar);
+     · el texto del guion va a 15.5 px y line-height 1.62 — es texto para
+       LEERLO en voz alta, no metadatos;
+     · «Copiar guion» es una barra a lo ancho al final de la ficha, en la zona
+       del pulgar;
+     · a partir de 760 px, escena y el par música/rótulo pasan a dos columnas.
+     Verificado el layout a 375 px y a 1280 px.
+
+   Cada var() lleva su fallback del §4.1 para que la hoja funcione aunque se
+   cargue antes que los tokens de index.html.
+   ============================================================================= */
+
+/* --- tokens §4.1. Si index.html ya los define, esta declaración es idéntica y
+       no cambia nada; se puede borrar el bloque sin que la hoja se rompa. ----- */
+:root{
+  --bg:#0A0B0D; --panel:#14161B; --panel-2:#191C22; --panel-3:#1F232B;
+  --line:#24282F; --line-2:#31363F;
+  --txt:#ECEDF0; --txt-2:#9AA0AB; --txt-3:#656B76;
+  --acc:#7B72FF; --acc-weak:#7B72FF22;
+  --ok:#34C08A; --warn:#E6AE4A; --danger:#F0575D;
+  --javi:#4C9BFF; --jordi:#E5904C;
+  --r-1:8px; --r-2:12px; --r-3:16px;
+  --sh-1:0 1px 2px #0008; --sh-2:0 8px 24px #000a;
+}
+
+/* --- familia propia: los 5 bloques del guion (ver cabecera) ---------------- */
+.gb{
+  --bl-atencion:#FF6B6B; --bl-atencion-w:#FF6B6B1A;
+  --bl-problema:#FFB020; --bl-problema-w:#FFB0201A;
+  --bl-solucion:#3ECF8E; --bl-solucion-w:#3ECF8E1A;
+  --bl-prueba:#5B9DFF;   --bl-prueba-w:#5B9DFF1A;
+  --bl-cta:#C58BFF;      --bl-cta-w:#C58BFF1A;
+  --bl-otro:var(--txt-3,#656B76); --bl-otro-w:transparent;
+}
+
+/* ------------------------------------------------------------------ armazón */
+.gb{
+  box-sizing:border-box;                       /* el contenido cabe en 1180, padding incluido */
+  max-width:1180px; margin:0 auto; padding:14px 14px 96px;
+  color:var(--txt,#ECEDF0);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px; line-height:1.5;
+  font-variant-numeric:tabular-nums;           /* §4.2: los segundos no bailan al repintar */
+}
+.gb *{box-sizing:border-box}
+.gb button{font-family:inherit; font-variant-numeric:tabular-nums; cursor:pointer}
+.gb :focus-visible{outline:2px solid var(--acc,#7B72FF); outline-offset:2px; border-radius:var(--r-1,8px)}
+.gb code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px;
+  background:var(--panel-3,#1F232B); border-radius:5px; padding:1px 5px;
+}
+
+/* ----------------------------------------------------------------- cabecera */
+.gb-cabeza{margin-bottom:14px}
+.gb-h2{font-size:22px; font-weight:700; letter-spacing:-.01em; line-height:1.15; margin:0 0 4px}
+.gb-sub{margin:0; font-size:12.5px; color:var(--txt-2,#9AA0AB); max-width:70ch}
+.gb-sub b{color:var(--txt,#ECEDF0); font-weight:600}
+
+.gb-total{margin:10px 0 0; font-size:12.5px; color:var(--txt-2,#9AA0AB)}
+.gb-total b{color:var(--txt,#ECEDF0); font-size:15px; font-weight:700}
+.gb-de{color:var(--txt-3,#656B76)}
+
+.gb-acc-todo{margin-top:10px}
+
+/* ------------------------------------------------------------------ botones */
+.gb-btn{
+  background:var(--panel-2,#191C22); color:var(--txt,#ECEDF0);
+  border:1px solid var(--line-2,#31363F); border-radius:var(--r-1,8px);
+  padding:9px 14px; font-size:12.5px; font-weight:600; min-height:40px;
+  transition:background .12s ease, border-color .12s ease, color .12s ease;
+}
+.gb-btn:hover{background:var(--panel-3,#1F232B); border-color:var(--txt-3,#656B76)}
+.gb-btn.ancho{width:100%; min-height:48px; font-size:13.5px}   /* zona del pulgar */
+.gb-btn.ok{color:var(--ok,#34C08A); border-color:var(--ok,#34C08A)}
+
+/* ------------------------------------------------ filtros (solo los de reserva) */
+.gb-filtros{display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 16px}
+.gb-seg{
+  display:inline-flex; background:var(--panel,#14161B);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-1,8px); overflow:hidden;
+}
+.gb-seg button{
+  background:transparent; border:0; color:var(--txt-2,#9AA0AB);
+  padding:8px 13px; font-size:12.5px; font-weight:600; min-height:38px;
+  border-right:1px solid var(--line,#24282F);
+}
+.gb-seg button:last-child{border-right:0}
+.gb-seg button:hover{color:var(--txt,#ECEDF0); background:var(--panel-2,#191C22)}
+.gb-seg button.on{background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0)}
+
+/* ------------------------------------------------------- encabezados de grupo */
+.gb-h3{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:8px;
+  font-size:16px; font-weight:700; letter-spacing:-.01em;
+  margin:26px 0 4px; padding-left:10px;
+  border-left:3px solid var(--line-2,#31363F);
+}
+.gb-h3[data-cuenta="JAVI"]{border-left-color:var(--javi,#4C9BFF)}
+.gb-h3[data-cuenta="JORDI"]{border-left-color:var(--jordi,#E5904C)}
+.gb-h3-sub{font-size:12.5px; font-weight:500; color:var(--txt-2,#9AA0AB)}
+
+.gb-etapa{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:8px;
+  margin:18px 0 8px; padding-left:13px;
+  font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.09em;
+  color:var(--txt-3,#656B76);
+}
+.gb-etapa-hum{font-weight:500; text-transform:none; letter-spacing:0; font-size:11.5px}
+.gb-etapa-n{margin-left:auto; letter-spacing:.04em; font-weight:600}
+
+/* --------------------------------------------------------------- ficha (card) */
+.gb-ficha{
+  background:var(--panel,#14161B);
+  border:1px solid var(--line,#24282F);
+  border-left:3px solid var(--line-2,#31363F);
+  border-radius:var(--r-2,12px);
+  margin-bottom:10px; overflow:hidden;
+  box-shadow:var(--sh-1,0 1px 2px #0008);
+}
+.gb-ficha[data-cuenta="JAVI"]{border-left-color:var(--javi,#4C9BFF)}
+.gb-ficha[data-cuenta="JORDI"]{border-left-color:var(--jordi,#E5904C)}
+.gb-ficha.abierta{background:var(--panel-2,#191C22); box-shadow:var(--sh-2,0 8px 24px #000a)}
+
+/* cabecera-botón: todo el ancho, ≥56 px, sin nada que apuntar */
+.gb-cab{
+  display:block; width:100%; text-align:left;
+  background:transparent; border:0; color:inherit;
+  padding:13px 40px 13px 14px; min-height:56px; position:relative;
+}
+.gb-cab:hover{background:var(--panel-2,#191C22)}
+.gb-ficha.abierta .gb-cab:hover{background:var(--panel-3,#1F232B)}
+
+.gb-cab-l1{display:flex; flex-wrap:wrap; align-items:center; gap:7px}
+.gb-titulo{font-size:14.5px; font-weight:600; letter-spacing:-.005em; line-height:1.3}
+
+.gb-pill{
+  font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  padding:2px 8px; border-radius:999px;
+  border:1px solid var(--line-2,#31363F); color:var(--txt-2,#9AA0AB);
+}
+.gb-pill.javi{color:var(--javi,#4C9BFF); border-color:#4C9BFF55}
+.gb-pill.jordi{color:var(--jordi,#E5904C); border-color:#E5904C55}
+
+.gb-chip{
+  font-size:10.5px; font-weight:600; letter-spacing:.05em;
+  padding:2px 8px; border-radius:999px;
+  border:1px solid var(--line,#24282F); color:var(--txt-3,#656B76);
+}
+.gb-chip.seg{letter-spacing:.02em}
+
+/* la frase literal del gancho: es lo que hace elegir un guion de una lista */
+.gb-gancho{
+  display:block; margin-top:6px;
+  font-size:13px; line-height:1.45; color:var(--txt-2,#9AA0AB);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.gb-ficha.abierta .gb-gancho{display:none}   /* abierta, el texto entero está abajo */
+
+/* flecha de plegado: un cuadrado girado, cero iconos externos (CSP, §3.5) */
+.gb-flecha{
+  position:absolute; right:16px; top:22px; width:8px; height:8px;
+  border-right:2px solid var(--txt-3,#656B76); border-bottom:2px solid var(--txt-3,#656B76);
+  transform:rotate(45deg); transition:transform .15s ease;
+}
+.gb-ficha.abierta .gb-flecha{transform:rotate(-135deg); border-color:var(--txt-2,#9AA0AB)}
+
+/* --------------------------------------------------------- barra de ritmo */
+/* Cada tramo mide lo que duran SUS segundos. De un vistazo se ve si el guion
+   es todo problema y el CTA dura un suspiro. */
+.gb-ritmo{display:flex; gap:2px; margin-top:9px; height:4px; border-radius:2px; overflow:hidden}
+.gb-ritmo i{display:block; height:100%; border-radius:2px; background:var(--bl-otro)}
+.gb-ritmo i[data-bl="atencion"]{background:var(--bl-atencion)}
+.gb-ritmo i[data-bl="problema"]{background:var(--bl-problema)}
+.gb-ritmo i[data-bl="solucion"]{background:var(--bl-solucion)}
+.gb-ritmo i[data-bl="prueba"]{background:var(--bl-prueba)}
+.gb-ritmo i[data-bl="cta"]{background:var(--bl-cta)}
+
+/* ------------------------------------------------------------------ cuerpo */
+.gb-cuerpo{padding:2px 14px 14px; border-top:1px solid var(--line,#24282F)}
+.gb-cuerpo[hidden]{display:none}
+
+.gb-para{
+  margin:12px 0 0; font-size:11px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--txt-3,#656B76);
+}
+.gb-formula{margin:8px 0 0; font-size:12px; line-height:1.6; color:var(--txt-2,#9AA0AB)}
+.gb-formula b{color:var(--txt-2,#9AA0AB); font-weight:700}
+
+/* El único ámbar de la pantalla: dos datos que no cuadran entre sí. */
+.gb-descuadre{
+  margin:12px 0 0; padding:9px 12px;
+  background:var(--panel-3,#1F232B);
+  border:1px solid var(--line,#24282F); border-left:3px solid var(--warn,#E6AE4A);
+  border-radius:var(--r-1,8px);
+  font-size:12.5px; color:var(--txt-2,#9AA0AB);
+}
+.gb-descuadre b{color:var(--warn,#E6AE4A); font-weight:700}
+
+/* ------------------------------------------------------------ cajas y escena */
+.gb-caja{
+  margin-top:12px; padding:11px 12px;
+  background:var(--panel-3,#1F232B);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-1,8px);
+}
+.gb-cabecilla{
+  margin:0 0 7px; font-size:10.5px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--txt-3,#656B76);
+}
+.gb-cabecilla-sola{margin:18px 0 8px}
+
+.gb-dl{margin:0; font-size:13px; line-height:1.6}
+.gb-dl dt{
+  font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--txt-3,#656B76); margin-top:8px;
+}
+.gb-dl dt:first-child{margin-top:0}
+.gb-dl dd{margin:2px 0 0; color:var(--txt,#ECEDF0)}
+
+.gb-plano{margin:0; font-size:13px; line-height:1.6; color:var(--txt,#ECEDF0)}
+/* El rótulo se enseña como se va a ver: en mayúsculas y con peso. */
+.gb-rotulo{
+  margin:0; font-size:15px; font-weight:700; line-height:1.35; letter-spacing:.01em;
+  color:var(--txt,#ECEDF0); text-transform:uppercase;
+}
+.gb-duo{display:grid; grid-template-columns:1fr; gap:10px}
+.gb-duo .gb-caja{margin-top:0}
+.gb-duo:not(:empty){margin-top:12px}
+
+/* ------------------------------------------------------------ los 5 bloques */
+.gb-bloque{
+  margin-bottom:8px; padding:10px 12px;
+  border-left:3px solid var(--bl-otro);
+  background:var(--bl-otro-w);
+  border-radius:0 var(--r-1,8px) var(--r-1,8px) 0;
+}
+.gb-bloque[data-bl="atencion"]{border-left-color:var(--bl-atencion); background:var(--bl-atencion-w)}
+.gb-bloque[data-bl="problema"]{border-left-color:var(--bl-problema); background:var(--bl-problema-w)}
+.gb-bloque[data-bl="solucion"]{border-left-color:var(--bl-solucion); background:var(--bl-solucion-w)}
+.gb-bloque[data-bl="prueba"]  {border-left-color:var(--bl-prueba);   background:var(--bl-prueba-w)}
+.gb-bloque[data-bl="cta"]     {border-left-color:var(--bl-cta);      background:var(--bl-cta-w)}
+
+.gb-bhead{display:flex; flex-wrap:wrap; align-items:baseline; gap:7px; margin-bottom:5px}
+.gb-bname{
+  font-size:10.5px; font-weight:700; letter-spacing:.07em; color:var(--txt-2,#9AA0AB);
+}
+.gb-bloque[data-bl="atencion"] .gb-bname{color:var(--bl-atencion)}
+.gb-bloque[data-bl="problema"] .gb-bname{color:var(--bl-problema)}
+.gb-bloque[data-bl="solucion"] .gb-bname{color:var(--bl-solucion)}
+.gb-bloque[data-bl="prueba"]   .gb-bname{color:var(--bl-prueba)}
+.gb-bloque[data-bl="cta"]      .gb-bname{color:var(--bl-cta)}
+.gb-bdesc{font-size:11.5px; color:var(--txt-3,#656B76)}
+.gb-bseg{margin-left:auto; font-size:11.5px; font-weight:600; color:var(--txt-3,#656B76)}
+
+/* ESTE es el texto que alguien va a decir en voz alta. Manda sobre todo lo demás. */
+.gb-btexto{margin:0; font-size:15.5px; line-height:1.62; color:var(--txt,#ECEDF0)}
+.gb-bnota{
+  margin:6px 0 0; font-size:12px; line-height:1.55; font-style:italic;
+  color:var(--txt-2,#9AA0AB);
+}
+
+/* ---------------------------------------------------------------- caption */
+.gb-caption{margin-top:12px}
+.gb-caption summary{
+  font-size:12px; font-weight:600; color:var(--txt-2,#9AA0AB);
+  padding:8px 0; min-height:36px; cursor:pointer; list-style:none;
+}
+.gb-caption summary::-webkit-details-marker{display:none}
+.gb-caption summary:before{content:"▸ "; color:var(--txt-3,#656B76)}
+.gb-caption[open] summary:before{content:"▾ "}
+.gb-caption summary:hover{color:var(--txt,#ECEDF0)}
+
+.gb-ta{
+  display:block; width:100%; resize:vertical;
+  background:var(--bg,#0A0B0D); color:var(--txt,#ECEDF0);
+  border:1px solid var(--line,#24282F); border-radius:var(--r-1,8px);
+  padding:10px 12px; margin-bottom:8px;
+  font-family:inherit; font-size:13px; line-height:1.6; white-space:pre-wrap;
+}
+.gb-ta-tmp{position:absolute; left:-9999px; top:0; width:1px; height:1px; opacity:0}
+
+.gb-acciones{margin-top:12px}
+
+/* ------------------------------------------------------------------ vacíos */
+.gb-vacio{
+  margin-top:16px; padding:22px 18px;
+  background:var(--panel,#14161B);
+  border:1px dashed var(--line-2,#31363F); border-radius:var(--r-2,12px);
+  color:var(--txt-2,#9AA0AB); font-size:13px; line-height:1.6;
+}
+.gb-vacio p{margin:0 0 8px}
+.gb-vacio b{color:var(--txt,#ECEDF0)}
+.gb-pre{
+  margin:6px 0 0; padding:11px 12px; overflow-x:auto;      /* §3.6: scroll suyo, no del body */
+  background:var(--bg,#0A0B0D); border:1px solid var(--line,#24282F);
+  border-radius:var(--r-1,8px);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px; line-height:1.6; color:var(--txt,#ECEDF0); white-space:pre;
+}
+
+/* --------------------------------------------------------------- escritorio */
+@media (min-width:760px){
+  .gb{padding:20px 20px 80px; font-size:14px}
+  .gb-cab{padding:15px 44px 15px 16px}
+  .gb-cuerpo{padding:2px 16px 16px}
+  .gb-duo{grid-template-columns:1fr 1fr}
+  .gb-dl{display:grid; grid-template-columns:auto 1fr; column-gap:14px; row-gap:6px}
+  .gb-dl dt{margin-top:0; padding-top:2px}
+  .gb-dl dd{margin:0}
+  .gb-btn.ancho{width:auto; min-width:220px}
+  .gb-btexto{font-size:15px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gb *,.gb *:before,.gb *:after{transition:none !important}
+}

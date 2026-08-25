@@ -1,0 +1,466 @@
+/* ============================================================================
+ * vistas/espia.css  ·  FABRICA / ESPIA  —  acompana a vistas/espia.js (§5.1)
+ * ============================================================================
+ * Solo tokens de §4.1: ni un color a pelo. Cada var() lleva su fallback con el
+ * valor EXACTO de la spec, para que la pantalla se vea bien aunque este fichero
+ * se cargue antes de que index.html defina el :root (y para poder probarla sola).
+ *
+ * TODO va colgado de `.fab`, que es la raiz que pinta vistaEspia(). Es a
+ * proposito: en el panel ensamblado conviven varios `vistas/*.css` y un `.ref`
+ * o un `.repl` sueltos son un choque esperando a pasar. Los nombres de clase
+ * del marcado son los que nombra la spec (.grid-ref, article.ref, .repl); lo
+ * unico que cambia es que aqui van scopeados.
+ *
+ * Reglas de color que se respetan:
+ *   · El violeta --acc es de LA MAQUINA. Aqui solo lo llevan REPLICAR, el chip
+ *     activo y el sello "YA CLONADO". Ninguna otra cosa lo usa.
+ *   · Verde/rojo solo en el bloque SE TOCA / NO SE TOCA del analisis, que es
+ *     permitido/prohibido literal de la doctrina, y solo como color de TEXTO:
+ *     cero rellenos semanticos decorando una pantalla en reposo.
+ *   · La ETAPA se codifica por peso, no por color: no la decide nadie.
+ *   · tabular-nums en todo numero (§4.2): las cifras no bailan al repintar.
+ *
+ * Movil primero (§3.6): una columna, botones en zona de pulgar (>=44 px), la
+ * barra de chips con scroll horizontal. El grid se abre a partir de 700 px.
+ * Verificado a 375 px y a 1280 px: cero scroll horizontal en los dos.
+ * ========================================================================= */
+
+.fab {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 14px 40px;
+  font-variant-numeric: tabular-nums;
+}
+.fab .num { font-variant-numeric: tabular-nums; }
+
+/* ---------- cabecera de vista ---------- */
+.fab .vhead { padding: 18px 0 14px; }
+.fab .vhead h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--txt, #ECEDF0);
+  margin: 0 0 6px;
+}
+.fab .vhead p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--txt-2, #9AA0AB);
+}
+
+/* ---------- avisos de estado de datos (nunca un cero silencioso) ---------- */
+.fab .fab-aviso {
+  margin: 0 0 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--line, #24282F);
+  border-radius: var(--r-1, 8px);
+  background: var(--panel, #14161B);
+  color: var(--txt-2, #9AA0AB);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.fab .fab-aviso code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11.5px;
+  color: var(--txt, #ECEDF0);
+}
+.fab .fab-aviso-mal {
+  border-color: var(--warn, #E6AE4A);
+  color: var(--warn, #E6AE4A);
+}
+.fab .fab-aviso-mal b { color: var(--warn, #E6AE4A); }
+
+/* ---------- anadir referente al espia ---------- */
+.fab .fab-add {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px 0 16px;
+}
+.fab .fab-add input {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 1px solid var(--line, #24282F);
+  border-radius: var(--r-1, 8px);
+  background: var(--panel-2, #191C22);
+  color: var(--txt, #ECEDF0);
+  font: inherit;
+  font-size: 14px;
+}
+.fab .fab-add input::placeholder { color: var(--txt-3, #656B76); }
+.fab .fab-add input:focus-visible {
+  outline: none;
+  border-color: var(--acc, #7B72FF);
+  box-shadow: 0 0 0 3px var(--acc-weak, #7B72FF22);
+}
+.fab .fab-add button {
+  min-height: 44px;
+  padding: 11px 18px;
+  border: 1px solid var(--line-2, #31363F);
+  border-radius: var(--r-1, 8px);
+  background: var(--panel-3, #1F232B);
+  color: var(--txt, #ECEDF0);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.fab .fab-add button:hover {
+  border-color: var(--txt-3, #656B76);
+  background: var(--panel-2, #191C22);
+}
+.fab .fab-add button:active { transform: translateY(1px); }
+
+/* ---------- barra Radar ---------- */
+.fab .fab-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+.fab .fab-chipgrupo {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.fab .fab-chipgrupo::-webkit-scrollbar { display: none; }
+.fab .fab-chip {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1px solid var(--line, #24282F);
+  border-radius: 999px;
+  background: var(--panel, #14161B);
+  color: var(--txt-2, #9AA0AB);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.fab .fab-chip:hover {
+  border-color: var(--line-2, #31363F);
+  color: var(--txt, #ECEDF0);
+}
+/* activo = maquina, por eso lleva el acento */
+.fab .fab-chip.on {
+  border-color: var(--acc, #7B72FF);
+  background: var(--acc-weak, #7B72FF22);
+  color: var(--acc, #7B72FF);
+}
+.fab .fab-chip-et { font-size: 11.5px; letter-spacing: .04em; }
+
+/* ---------- contador y textos sueltos ---------- */
+.fab .fab-cuenta {
+  margin: 0 0 16px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--txt-3, #656B76);
+}
+.fab .fab-cuenta .num { color: var(--txt-2, #9AA0AB); }
+.fab .fab-vacio {
+  padding: 44px 0;
+  text-align: center;
+  color: var(--txt-2, #9AA0AB);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.fab .fab-pie {
+  margin: 26px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line, #24282F);
+  font-size: 12px;
+  color: var(--txt-3, #656B76);
+}
+.fab .fab-pie b { color: var(--txt-2, #9AA0AB); font-weight: 600; }
+
+/* ---------- parrilla ---------- */
+.fab .grid-ref {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 700px) {
+  .fab .fab-add { flex-direction: row; align-items: center; }
+  .fab .fab-add input#rurl { flex: 1 1 46%; }
+  .fab .fab-add input#rnota { flex: 1 1 38%; }
+  .fab .fab-add button { flex: 0 0 auto; }
+  .fab .fab-chips { flex-direction: row; align-items: center; gap: 18px; }
+  .fab .grid-ref { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+}
+
+/* ---------- tarjeta de referente ---------- */
+.fab .ref {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel, #14161B);
+  border: 1px solid var(--line, #24282F);
+  border-radius: var(--r-3, 16px);
+  overflow: hidden;
+  box-shadow: var(--sh-1, 0 1px 2px #0008);
+  transition: border-color .18s, transform .18s, box-shadow .18s;
+}
+.fab .ref:hover {
+  border-color: var(--line-2, #31363F);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2, 0 8px 24px #000a);
+}
+
+.fab .ref-thumb {
+  position: relative;
+  background: #000;
+  border-bottom: 1px solid var(--line, #24282F);
+}
+.fab .ref-thumb img,
+.fab .ref-thumb video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #000;
+}
+.fab .ref-thumb iframe {
+  display: block;
+  width: 100%;
+  min-height: 430px;
+  border: 0;
+  background: #000;
+}
+.fab .ref-thumb-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  aspect-ratio: 4 / 5;
+  background: var(--panel-2, #191C22);
+  cursor: pointer;
+  transition: background .15s;
+}
+.fab .ref-thumb-vacio:hover { background: var(--panel-3, #1F232B); }
+.fab .ref-thumb-vacio:focus-visible {
+  outline: 2px solid var(--acc, #7B72FF);
+  outline-offset: -2px;
+}
+.fab .ref-sc {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  color: var(--txt-2, #9AA0AB);
+  letter-spacing: .02em;
+}
+.fab .ref-thumb-pie {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--txt-3, #656B76);
+}
+.fab .ref-thumb:not(.ref-thumb-vacio) .ref-thumb-pie {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  padding: 3px 8px;
+  border-radius: var(--r-1, 8px);
+  background: #000a;
+}
+
+/* ---------- cuerpo ---------- */
+.fab .ref-body {
+  flex: 1 1 auto;
+  padding: 12px 14px 4px;
+}
+.fab .ref-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 9px;
+}
+.fab .ref-badge {
+  padding: 3px 9px;
+  border: 1px solid var(--line, #24282F);
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--txt-3, #656B76);
+  white-space: nowrap;
+}
+.fab .ref-sinmedir { border-style: dashed; }
+/* La etapa se codifica por PESO, nunca por color: verde/ambar/rojo estan
+   reservados a cuando alguien DECIDE (§4), y una etapa no la decide nadie. */
+.fab .ref-badge.et-TOFU { border-color: var(--line, #24282F);   color: var(--txt-3, #656B76); }
+.fab .ref-badge.et-MOFU { border-color: var(--line-2, #31363F); color: var(--txt-2, #9AA0AB); }
+.fab .ref-badge.et-BOFU { border-color: var(--txt-3, #656B76);  color: var(--txt, #ECEDF0); }
+/* "ya clonado" es estado de la MAQUINA: por eso lleva el acento */
+.fab .ref-clonado {
+  border-color: var(--acc, #7B72FF);
+  background: var(--acc-weak, #7B72FF22);
+  color: var(--acc, #7B72FF);
+}
+.fab .ref-rank {
+  border-color: var(--line-2, #31363F);
+  color: var(--txt-2, #9AA0AB);
+  letter-spacing: .04em;
+}
+
+.fab .ref-metrica {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--txt, #ECEDF0);
+}
+.fab .ref-metrica .num { font-weight: 600; }
+.fab .ref-nota {
+  margin: 0 0 8px;
+  padding-left: 10px;
+  border-left: 2px solid var(--line-2, #31363F);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--txt-2, #9AA0AB);
+}
+.fab .ref-molde {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: var(--txt-2, #9AA0AB);
+}
+.fab .ref-molde b {
+  color: var(--txt-3, #656B76);
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.fab .ref-molde .num { color: var(--txt, #ECEDF0); }
+.fab .ref-molde-sin { color: var(--txt-3, #656B76); font-style: italic; }
+
+/* ---------- analisis ---------- */
+.fab .ref-sinana {
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  color: var(--txt-3, #656B76);
+}
+.fab .ref-ana {
+  margin: 0 0 10px;
+  border: 1px solid var(--line, #24282F);
+  border-radius: var(--r-1, 8px);
+  background: var(--panel-2, #191C22);
+  overflow: hidden;
+}
+.fab .ref-ana > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 9px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--txt-2, #9AA0AB);
+  user-select: none;
+}
+.fab .ref-ana > summary::-webkit-details-marker { display: none; }
+.fab .ref-ana > summary::after { content: " \25BE"; color: var(--txt-3, #656B76); }
+.fab .ref-ana[open] > summary::after { content: " \25B4"; }
+.fab .ref-ana > summary:hover { color: var(--txt, #ECEDF0); }
+.fab .ref-receta {
+  margin: 0;
+  padding: 0 12px 10px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--txt, #ECEDF0);
+}
+.fab .ref-ana-col { padding: 0 12px 10px; }
+.fab .ref-ana-col b {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10.5px;
+  letter-spacing: .09em;
+}
+.fab .ref-ana-col ul { margin: 0; padding-left: 16px; }
+.fab .ref-ana-col li {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--txt-2, #9AA0AB);
+  margin-bottom: 3px;
+}
+.fab .ref-tocar b { color: var(--ok, #34C08A); }
+.fab .ref-evitar b { color: var(--danger, #F0575D); }
+
+/* ---------- CTA ---------- */
+.fab .ref-cta {
+  display: flex;
+  gap: 8px;
+  padding: 4px 14px 14px;
+}
+.fab .repl {
+  flex: 1 1 auto;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: var(--r-2, 12px);
+  background: var(--acc, #7B72FF);
+  color: #0A0B0D;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  cursor: pointer;
+  transition: filter .15s, transform .12s;
+}
+.fab .repl:hover { filter: brightness(1.08); }
+.fab .repl:active { transform: translateY(1px); }
+.fab .repl:focus-visible { outline: 2px solid var(--txt, #ECEDF0); outline-offset: 2px; }
+
+/* "Clonando..." — la orden AUN NO esta confirmada en el almacen */
+.fab .repl.cargando {
+  position: relative;
+  padding-left: 34px;
+  background: var(--acc-weak, #7B72FF22);
+  color: var(--acc, #7B72FF);
+  cursor: progress;
+}
+.fab .repl.cargando::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  margin-top: -7px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: fab-giro .7s linear infinite;
+}
+@keyframes fab-giro { to { transform: rotate(360deg); } }
+
+/* confirmado: la orden ESTA en el bin */
+.fab .repl:disabled {
+  background: var(--panel-3, #1F232B);
+  color: var(--txt-2, #9AA0AB);
+  cursor: default;
+  filter: none;
+}
+.fab .repl.hecho {
+  background: var(--panel-3, #1F232B);
+  color: var(--acc, #7B72FF);
+  box-shadow: inset 0 0 0 1px var(--acc, #7B72FF);
+  cursor: default;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fab .ref,
+  .fab .repl,
+  .fab .fab-chip,
+  .fab .fab-add button { transition: none; }
+  .fab .repl.cargando::before { animation-duration: 2.4s; }
+}

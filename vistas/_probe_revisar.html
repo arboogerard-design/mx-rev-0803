@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- =============================================================================
+  vistas/_probe_revisar.html  ·  BANCO DE PRUEBAS de la pantalla «Por revisar»
+  -----------------------------------------------------------------------------
+  Abre la pantalla SOLA, sin index.html: carga vistas/revisar.css + revisar.js,
+  lee los piezas.json / referentes.json REALES y FINGE el guardado.
+  ⚠ NO habla con npoint: `guardar` y `guardarMio` escriben en objetos de esta
+    página, así que no puede tocar ni un voto del equipo. Ejecutarlo es gratis.
+  Sirve para: comprobar que la pantalla sigue viva tras tocar revisar.js, y ver
+  qué forma exacta tienen `decisiones` y `ordenes` (la sonda de abajo a la dcha).
+  Servir con:  python -m http.server 8765 --directory C:/Users/PC/Desktop/_panel_mx
+  Abrir:       http://localhost:8765/vistas/_probe_revisar.html
+============================================================================= -->
+
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>probe revisar</title>
+<link rel="stylesheet" href="revisar.css">
+<style>
+ body{background:#0A0B0D;color:#ECEDF0;margin:0;font:14px Inter,system-ui,sans-serif}
+ #sonda{position:fixed;right:8px;bottom:8px;z-index:200;background:#111;border:1px solid #333;
+   padding:8px;font:11px/1.4 monospace;max-width:340px;max-height:40vh;overflow:auto;white-space:pre-wrap}
+ #tabs{padding:8px}#tabs button{margin-right:6px}
+</style></head><body>
+<div id="tabs"><button onclick="TAB='repasar';render()">tab repasar</button>
+<button onclick="TAB='revisar';render()">tab revisar</button></div>
+<main id="app"></main>
+<div id="sonda">cargando…</div>
+<script>
+let DATOS={piezas:[]}, E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[],notas:{}};
+let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};
+let REFS_PAREJA={}, REFS_SIN=[];
+let YO="Gerard", TAB="repasar", FCUENTA="todo", FETAPA="todo", MODO="foco";
+let SRV={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[]};
+let LOG=[];
+function aviso(t,mal){LOG.unshift((mal?"! ":"· ")+t);sonda();}
+async function guardar(fn){
+  await new Promise(r=>setTimeout(r,30));
+  fn(SRV);
+  E=Object.assign({},SRV,{notas:{}});
+  aviso("Guardado");
+  render();
+}
+async function guardarMio(fn){
+  await new Promise(r=>setTimeout(r,20));
+  fn(MIO); aviso("Guardado (bin)");
+}
+function render(){
+  document.querySelector("#app").innerHTML=(TAB==="revisar"?vistaRevisar:vistaRepasar)();
+  cablearRevisar(); sonda();
+}
+function sonda(){
+  document.querySelector("#sonda").textContent=
+    "decisiones BLOB: "+JSON.stringify(SRV.decisiones)+"\n\nordenes BIN: "+
+    JSON.stringify(MIO.ordenes)+"\n\n"+LOG.slice(0,6).join("\n");
+}
+</script>
+<script src="revisar.js"></script>
+<script>
+Promise.all([fetch("../piezas.json").then(r=>r.json()),
+             fetch("../referentes.json").then(r=>r.json())]).then(([pz,rf])=>{
+  DATOS=pz;
+  /* el probe vive en vistas/, las rutas de media son relativas a la raiz */
+  DATOS.piezas.forEach(p=>(p.archivos||[]).forEach(a=>{
+    if(a.poster)a.poster="../"+a.poster; if(a.video)a.video="../"+a.video;}));
+  (rf.pares||[]).forEach(x=>{if(x.ref)x.ref="../"+x.ref; REFS_PAREJA[x.pieza]=x;});
+  REFS_SIN=rf.sin_referente||[];
+  /* pieza 0: se le inyectan ejes + parecido para probar la fila medida.
+     Los valores son de PRUEBA y viven solo en este harness, nunca en los datos. */
+  const p0=DATOS.piezas[0];
+  if(p0&&REFS_PAREJA[p0.id]===undefined){
+    REFS_PAREJA[p0.id]={pieza:p0.id,ref:(p0.archivos[0]||{}).poster||"",es_video:false,
+      como:"harness",ejes:{cortes:{ok:true,ref:"0,88",mio:"0,87"},musica:false,portada:true},
+      parecido:82};
+  }
+  /* etapa/porque de prueba en las 6 primeras para ver la cuadricula agrupada */
+  ["TOFU","TOFU","MOFU","BOFU","MOFU",""].forEach((e,i)=>{if(DATOS.piezas[i])DATOS.piezas[i].etiqueta=e;});
+  if(DATOS.piezas[1])DATOS.piezas[1].porque="probe: por que existe esta pieza";
+  if(DATOS.piezas[2])DATOS.piezas[2].f1="pendiente";
+  render();
+});
+</script>
+</body></html>

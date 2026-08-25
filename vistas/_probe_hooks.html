@@ -1,0 +1,132 @@
+<!doctype html>
+<!-- =============================================================================
+  vistas/_probe_hooks.html  ·  BANCO DE PRUEBAS de la pantalla «HOOKS»
+  -----------------------------------------------------------------------------
+  Abre la pantalla SOLA, sin index.html: carga vistas/hooks.css + hooks.js con
+  los 16 ganchos REALES del almacén (copiados a mano abajo, tal cual salen del
+  GET del 25-ago) y el piezas.json real para el contador de «usado en N piezas».
+
+  ⛔ AQUÍ NO SE ESCRIBE EN NPOINT. `guardar()` está sustituido por una versión
+  LOCAL que solo toca la variable E de esta página. Este banco no puede tocar ni
+  un voto del equipo — que es la única forma de poder probar los tres botones.
+
+  Los botones de arriba montan los estados que en un día normal no se ven y que
+  son justo donde se rompen las pantallas: almacén caído, banco vacío, ganchos
+  ya votados, y un gancho con los campos que la spec pide y los datos no tienen
+  (formula + winner + usado_en) para comprobar que los chips aparecen SOLOS.
+
+  Servir con:  python -m http.server 8765 --directory C:/Users/PC/Desktop/_panel_mx
+  Abrir:       http://localhost:8765/vistas/_probe_hooks.html
+============================================================================= -->
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>probe hooks</title>
+<link rel="stylesheet" href="hooks.css">
+<style>
+ body{background:#0A0B0D;color:#ECEDF0;margin:0;font:14px Inter,system-ui,sans-serif}
+ #tabs{padding:8px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid #24282F}
+ #tabs button{background:#1F232B;color:#ECEDF0;border:1px solid #31363F;border-radius:8px;
+   padding:6px 10px;font:12px Inter,system-ui,sans-serif;cursor:pointer}
+ #sonda{position:fixed;right:8px;bottom:8px;z-index:200;background:#111;border:1px solid #333;
+   padding:8px;font:11px/1.4 monospace;max-width:340px;max-height:34vh;overflow:auto;white-space:pre-wrap}
+</style></head><body>
+<div id="tabs">
+  <button onclick="caso('real')">banco real (16, sin votar)</button>
+  <button onclick="caso('votado')">con votos</button>
+  <button onclick="caso('rico')">con formula+winner+usado_en</button>
+  <button onclick="caso('bin')">E.hooks en forma de BIN (§6.4)</button>
+  <button onclick="caso('vacio')">banco vacío</button>
+  <button onclick="caso('caido')">almacén caído (solo lectura)</button>
+  <button onclick="FCUENTA='todo';render()">las dos</button>
+  <button onclick="FCUENTA='JAVI';render()">Javi</button>
+  <button onclick="FCUENTA='JORDI';render()">Jordi</button>
+</div>
+<main id="app"></main>
+<div id="sonda">cargando…</div>
+
+<script>
+/* ---- los 16 ganchos REALES (GET api.npoint.io/76533e2a…, 25-ago-2026) ------ */
+const HOOKS_INI=[
+ {id:"HK_JAVI_01",cuenta:"JAVI",tipo:"hablado",texto:"En España han cerrado 30.000 tiendas de ropa. La tuya puede ser la siguiente.",angulo:"tienda física → online",fuente:"dato real: comercio textil ES 2006-2025 (73.160→43.452). Ángulo aprobado por Javi hoy 19:15"},
+ {id:"HK_JAVI_02",cuenta:"JAVI",tipo:"hablado",texto:"El alquiler y la luz se pagan el día 1. Vendas o no vendas.",angulo:"tienda física → online",fuente:"corregido por Javi 14-ago 20:34: nada de autónomos/impuestos — alquiler y luz"},
+ {id:"HK_JAVI_03",cuenta:"JAVI",tipo:"hablado",texto:"Tu problema no es tu producto. Es tu calle.",angulo:"tienda física → online",fuente:"derivado del ángulo aprobado (techo = la gente que pasa)"},
+ {id:"HK_JAVI_04",cuenta:"JAVI",tipo:"hablado",texto:"El contra reembolso no es una forma de cobrar. Es una forma de perder dinero.",angulo:"COD = problema de caja",fuente:"canon de Santi en la estrategia («COD es una mierda…»)"},
+ {id:"HK_JAVI_05",cuenta:"JAVI",tipo:"hablado",texto:"Tu tienda no vende porque tarda. Se van antes de ver el producto.",angulo:"velocidad de carga",fuente:"pieza en producción con datos verificados de conversión"},
+ {id:"HK_JAVI_06",cuenta:"JAVI",tipo:"hablado",texto:"Facturar 10.000 y ganar cero. Eso es competir en precio.",angulo:"guerra de precios",fuente:"cifra ILUSTRATIVA de la tesis, no un caso — si molesta se cambia"},
+ {id:"HK_JAVI_07",cuenta:"JAVI",tipo:"hablado",texto:"Las cuentas virales no convierten. Lo he comprobado.",angulo:"views ≠ leads",fuente:"palabras LITERALES de Javi hoy 18:56 — es su propia conclusión"},
+ {id:"HK_JAVI_08",cuenta:"JAVI",tipo:"hablado",texto:"Deja de contar views. Empieza a contar ventas.",angulo:"views ≠ leads",fuente:"variante del anterior"},
+ {id:"HK_JORDI_01",cuenta:"JORDI",tipo:"leido",texto:"Tu sueldo lleva tres años igual. Tu alquiler no.",angulo:"vender tiempo vs producto",fuente:"universal, cero cifras suyas"},
+ {id:"HK_JORDI_02",cuenta:"JORDI",tipo:"leido",texto:"Vender tu tiempo es el único negocio que no puede escalar.",angulo:"vender tiempo vs producto",fuente:"universal"},
+ {id:"HK_JORDI_03",cuenta:"JORDI",tipo:"leido",texto:"Todos quieren el resultado. Nadie quiere los dos años de proceso.",angulo:"mentalidad / proceso",fuente:"universal, BOFU mentalidad (su territorio)"},
+ {id:"HK_JORDI_04",cuenta:"JORDI",tipo:"leido",texto:"El ecommerce no está muerto. Está matando al comercio de tu calle.",angulo:"romper objeción «saturado»",fuente:"detrás va el dato textil real (30.000 cierres)"},
+ {id:"HK_JORDI_05",cuenta:"JORDI",tipo:"leido",texto:"«No tengo dinero para empezar» es la excusa más cara que existe.",angulo:"romper objeción capital",fuente:"universal"},
+ {id:"HK_JORDI_06",cuenta:"JORDI",tipo:"leido",texto:"Nadie te va a pagar más por ser leal a tu empresa.",angulo:"mentalidad empleo",fuente:"universal"},
+ {id:"HK_JORDI_07",cuenta:"JORDI",tipo:"leido",texto:"Un negocio online cobra los 365 días. Tú cobras el día 30.",angulo:"vender tiempo vs producto",fuente:"universal"},
+ {id:"HK_JORDI_08",cuenta:"JORDI",tipo:"leido",texto:"Nueve años de universidad. Dos meses y medio de ecommerce. Ya sabes qué le cambió la vida.",angulo:"caso real",fuente:"caso VALIDADO Nil (_casos_exito): 9 años de estudios, +200K en 2,5 meses — la cifra NO se dice, va en la captura"}];
+
+let DATOS={piezas:[]};
+let E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[],notas:{}};
+let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};
+let YO="Gerard", TAB="hooks", FCUENTA="todo", FETAPA="todo";
+let CAIDO=false, LOG=[];
+
+function aviso(t,mal){LOG.unshift((mal?"! ":"· ")+t);sonda();}
+function render(){ document.querySelector("#app").innerHTML=vistaHooks(); cablearHooks(); sonda(); }
+
+/* guardar() LOCAL — misma firma y mismo comportamiento visible que el de
+   index.html (server-first, repinta al terminar), pero contra memoria. */
+async function guardar(aplicar){
+  if(CAIDO){ aviso("No se pudo guardar (almacén caído). El panel sigue en solo-lectura.",true); render(); return; }
+  const srv=JSON.parse(JSON.stringify(E));
+  aplicar(srv);
+  await new Promise(r=>setTimeout(r,120));
+  E=srv; aviso("Guardado"); render();
+}
+function clon(o){return JSON.parse(JSON.stringify(o));}
+
+function caso(k){
+  CAIDO=false;
+  E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:clon(HOOKS_INI),notas:{}};
+  MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};
+  if(k==="votado"){
+    E.hooks[0]=Object.assign(E.hooks[0],{estado:"aprobado",por:"Javi",cuando:"2026-08-25 17:12"});
+    E.hooks[2]=Object.assign(E.hooks[2],{estado:"denegado",por:"Jordi",cuando:"2026-08-25 09:03"});
+    E.hooks[9]=Object.assign(E.hooks[9],{estado:"aprobado",por:"Gerard",cuando:"2026-08-24 20:40",
+      texto:"Vender tu tiempo es el único negocio que nunca escala.",editado:"2026-08-24 20:40 por Gerard"});
+  }
+  if(k==="rico"){
+    E.hooks[0]=Object.assign(E.hooks[0],{formula:"objecion"});
+    E.hooks[1]=Object.assign(E.hooks[1],{formula:"contraste"});
+    E.hooks[6]=Object.assign(E.hooks[6],{formula:"autoridad",winner:true,usado_en:3});
+    E.hooks[8]=Object.assign(E.hooks[8],{formula:"historia",winner:true,usado_en:["A","B"]});
+  }
+  if(k==="bin"){            /* §6.4: la forma de BIN puesta donde va el array */
+    const o={};
+    o["HK_JAVI_01"]={estado:"aprobado",por:"Santi",cuando:"2026-08-25 18:00"};
+    o["HK_JORDI_04"]={estado:"denegado",por:"Javi",cuando:"2026-08-25 18:01"};
+    E.hooks=o;
+  }
+  if(k==="vacio"){ E.hooks=[]; }
+  if(k==="caido"){ CAIDO=true; }
+  render();
+}
+
+function sonda(){
+  const l=(typeof hooksNormalizados==="function")?hooksNormalizados():[];
+  const s=document.querySelector("#sonda");
+  s.textContent=
+    "hooks normalizados: "+l.length+
+    "\nsin decidir (#nhk): "+hooksSinEstado().length+
+    "\naprobados: "+l.filter(h=>h.estado==="aprobado").length+
+    " · denegados: "+l.filter(h=>h.estado==="denegado").length+
+    "\nchips: "+VISTA_HOOKS.chipsDe(l).map(c=>c.txt+"("+c.n+")").join(" ")+
+    "\nvisibles con el filtro: "+VISTA_HOOKS.visibles().length+
+    "\nusado_en>0: "+l.filter(h=>VISTA_HOOKS.usosDe(h)>0).length+" de "+l.length+
+    "\n\n"+LOG.slice(0,8).join("\n");
+}
+
+fetch("../piezas.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{DATOS=j;caso("real");})
+  .catch(()=>{caso("real");});
+</script>
+<script src="hooks.js"></script>
+</body></html>

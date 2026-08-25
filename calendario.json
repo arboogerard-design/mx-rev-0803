@@ -1,6 +1,6 @@
 {
- "generado": "2026-08-20T20:37:44",
- "desde": "2026-08-20",
+ "generado": "2026-08-23T17:42:38",
+ "desde": "2026-08-23",
  "dias": 7,
  "modo_f1": "aprobadas",
  "cuentas": {
@@ -10,82 +10,19 @@
    "techo_lm": 11,
    "colocadas": [
     {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 1,
-     "formato_santi": "Formato que no te requiere",
-     "id": "MEMES_JAVI_SEMANA_17AGO",
-     "etapa": "TOFU",
-     "formato": "meme",
-     "lead_magnet": false,
-     "encaje": "sustituto",
-     "sin_motor": true
-    }
-   ],
-   "vacios": [
-    {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 0,
-     "formato": "iPad / split",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 2,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-21",
-     "dia": "vie",
-     "slot": 0,
-     "formato": "Selfie",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-21",
-     "dia": "vie",
-     "slot": 1,
-     "formato": "Formato que no te requiere",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-21",
-     "dia": "vie",
-     "slot": 2,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-22",
-     "dia": "sáb",
-     "slot": 0,
-     "formato": "Carrusel",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-22",
-     "dia": "sáb",
-     "slot": 1,
-     "formato": "iPad / split",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-22",
-     "dia": "sáb",
-     "slot": 2,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
      "fecha": "2026-08-23",
      "dia": "dom",
      "slot": 0,
-     "formato": "Meme",
-     "motivo": "sin candidatas"
-    },
+     "formato_santi": "Meme",
+     "id": "MEMES_JAVI_SEMANA_17AGO",
+     "etapa": "SIN",
+     "formato": "meme",
+     "lead_magnet": false,
+     "encaje": "exacto",
+     "sin_motor": false
+    }
+   ],
+   "vacios": [
     {
      "fecha": "2026-08-23",
      "dia": "dom",
@@ -162,13 +99,76 @@
      "slot": 2,
      "formato": "Carrusel",
      "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-27",
+     "dia": "jue",
+     "slot": 0,
+     "formato": "iPad / split",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-27",
+     "dia": "jue",
+     "slot": 1,
+     "formato": "Formato que no te requiere",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-27",
+     "dia": "jue",
+     "slot": 2,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-28",
+     "dia": "vie",
+     "slot": 0,
+     "formato": "Selfie",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-28",
+     "dia": "vie",
+     "slot": 1,
+     "formato": "Formato que no te requiere",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-28",
+     "dia": "vie",
+     "slot": 2,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-29",
+     "dia": "sáb",
+     "slot": 0,
+     "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-29",
+     "dia": "sáb",
+     "slot": 1,
+     "formato": "iPad / split",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-29",
+     "dia": "sáb",
+     "slot": 2,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
     }
    ],
    "reparto": {
-    "TOFU": 1,
+    "TOFU": 0,
     "MOFU": 0,
     "BOFU": 0,
-    "SIN": 0
+    "SIN": 1
    },
    "sin_colocar": [],
    "violaciones": [],
@@ -180,87 +180,24 @@
    "techo_lm": 11,
    "colocadas": [
     {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 0,
-     "formato_santi": "iPad / split",
+     "fecha": "2026-08-23",
+     "dia": "dom",
+     "slot": 1,
+     "formato_santi": "Talking Head",
      "id": "CARRUSEL_JORDI_NOMBRE_TIENDA_16AGO",
-     "etapa": "TOFU",
-     "formato": "carrusel",
+     "etapa": "SIN",
+     "formato": "reel",
      "lead_magnet": true,
      "encaje": "exacto",
-     "sin_motor": true
+     "sin_motor": false
     }
    ],
    "vacios": [
-    {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 1,
-     "formato": "Formato que no te requiere",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-20",
-     "dia": "jue",
-     "slot": 2,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-21",
-     "dia": "vie",
-     "slot": 0,
-     "formato": "Selfie",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-21",
-     "dia": "vie",
-     "slot": 1,
-     "formato": "Formato que no te requiere",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-21",
-     "dia": "vie",
-     "slot": 2,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-22",
-     "dia": "sáb",
-     "slot": 0,
-     "formato": "Carrusel",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-22",
-     "dia": "sáb",
-     "slot": 1,
-     "formato": "iPad / split",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-22",
-     "dia": "sáb",
-     "slot": 2,
-     "formato": "Talking Head",
-     "motivo": "sin candidatas"
-    },
     {
      "fecha": "2026-08-23",
      "dia": "dom",
      "slot": 0,
      "formato": "Meme",
-     "motivo": "sin candidatas"
-    },
-    {
-     "fecha": "2026-08-23",
-     "dia": "dom",
-     "slot": 1,
-     "formato": "Talking Head",
      "motivo": "sin candidatas"
     },
     {
@@ -332,13 +269,76 @@
      "slot": 2,
      "formato": "Carrusel",
      "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-27",
+     "dia": "jue",
+     "slot": 0,
+     "formato": "iPad / split",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-27",
+     "dia": "jue",
+     "slot": 1,
+     "formato": "Formato que no te requiere",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-27",
+     "dia": "jue",
+     "slot": 2,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-28",
+     "dia": "vie",
+     "slot": 0,
+     "formato": "Selfie",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-28",
+     "dia": "vie",
+     "slot": 1,
+     "formato": "Formato que no te requiere",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-28",
+     "dia": "vie",
+     "slot": 2,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-29",
+     "dia": "sáb",
+     "slot": 0,
+     "formato": "Carrusel",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-29",
+     "dia": "sáb",
+     "slot": 1,
+     "formato": "iPad / split",
+     "motivo": "sin candidatas"
+    },
+    {
+     "fecha": "2026-08-29",
+     "dia": "sáb",
+     "slot": 2,
+     "formato": "Talking Head",
+     "motivo": "sin candidatas"
     }
    ],
    "reparto": {
-    "TOFU": 1,
+    "TOFU": 0,
     "MOFU": 0,
     "BOFU": 0,
-    "SIN": 0
+    "SIN": 1
    },
    "sin_colocar": [],
    "violaciones": [],

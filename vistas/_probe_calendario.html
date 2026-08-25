@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- =============================================================================
+  vistas/_probe_calendario.html  ·  BANCO DE PRUEBAS del CALENDARIO (§5.4)
+  -----------------------------------------------------------------------------
+  Abre la pantalla SOLA, sin index.html: carga vistas/calendario.css +
+  calendario.js y lee los piezas.json / calendario.json REALES del panel.
+  ⚠ NO habla con npoint: `guardar` escribe en un objeto de esta página, así que
+    no puede tocar ni un voto ni una fecha del equipo. Ejecutarlo es gratis.
+  Sirve para ver la rejilla con los ojos (regla: mirar el output, no solo el
+  número) y para leer la forma EXACTA que toma la clave `calendario` del BLOB
+  al programar — sale en la sonda de abajo a la derecha.
+
+  Servir con:  python -m http.server 8765 --directory C:/Users/PC/Desktop/_panel_mx
+  Abrir:       http://localhost:8765/vistas/_probe_calendario.html
+============================================================================= -->
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>probe calendario</title>
+<link rel="stylesheet" href="calendario.css">
+<style>
+ body{background:var(--bg);color:var(--txt);margin:0;
+      font:14px Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+ main{max-width:1180px;margin:0 auto;padding:14px}
+ #barra{padding:8px 14px;border-bottom:1px solid var(--line);display:flex;gap:6px;flex-wrap:wrap}
+ #barra button{background:var(--panel-2);color:var(--txt-2);border:1px solid var(--line);
+      border-radius:8px;padding:7px 10px;font:600 12px inherit;cursor:pointer}
+ #sonda{position:fixed;right:8px;bottom:8px;z-index:200;background:var(--panel);
+      border:1px solid var(--line-2);border-radius:8px;padding:8px;
+      font:11px/1.45 ui-monospace,monospace;max-width:340px;max-height:38vh;overflow:auto;
+      white-space:pre-wrap;color:var(--txt-2)}
+</style></head><body>
+
+<div id="barra">
+  <button onclick="FCUENTA='todo';render()">las dos</button>
+  <button onclick="FCUENTA='JAVI';render()">solo Javi</button>
+  <button onclick="FCUENTA='JORDI';render()">solo Jordi</button>
+  <button onclick="aprobarTodo()">aprobar las sin fecha (llena el backlog)</button>
+</div>
+<main id="app">cargando…</main>
+<div id="sonda">cargando…</div>
+
+<script>
+/* --- los globals que en producción pone index.html (contrato §2) ----------- */
+let DATOS={piezas:[]}, CAL_AUTO={}, TABLON=[], REFS_PAREJA={};
+let E={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[],notas:{}};
+let MIO={decisiones:{},hooks:{},ordenes:[],publicados:[]};
+let YO="Gerard", TAB="calendario", FCUENTA="todo", FETAPA="todo";
+let SRV={decisiones:{},referentes:[],calendario:{},f1:{},hooks:[]};
+let LOG=[];
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>(
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function aviso(t,mal){LOG.unshift((mal?"! ":"· ")+t);sonda();}
+async function guardar(fn){
+  /* Imita a guardar() del index: SERVER-FIRST — se re-lee el estado entero
+     (leerBlob) y encima se aplica el cambio, así no se pisa ninguna otra clave.
+     Ojo: si aquí se partiera de un SRV vacío se borrarían las `decisiones`, que
+     es justo el clobber que los bins vinieron a arreglar (§6.5). */
+  await new Promise(r=>setTimeout(r,25));
+  SRV=JSON.parse(JSON.stringify(E));
+  fn(SRV);
+  E=Object.assign({},JSON.parse(JSON.stringify(SRV)),{notas:{}});
+  aviso("Guardado");
+  render();
+}
+function render(){
+  document.querySelector("#app").innerHTML=vistaCalendario();
+  cablearCalendario();
+  sonda();
+}
+function sonda(){
+  document.querySelector("#sonda").textContent=
+    "BLOB.calendario = "+JSON.stringify(SRV.calendario||{},null,1)+
+    "\n\nsin fecha (aprobadas): "+(window.nSinFecha?nSinFecha():"?")+
+    "\n\n"+LOG.slice(0,8).join("\n");
+}
+function aprobarTodo(){
+  DATOS.piezas.filter(p=>!p.dia).slice(0,8).forEach(p=>{
+    E.decisiones[p.id]={estado:"aprobado",por:"Gerard",cuando:"2026-08-25 10:00"};});
+  aviso("8 piezas marcadas como aprobadas (solo en esta página)");
+  render();
+}
+(async function(){
+  const j=async f=>(await fetch(f+"?t="+Date.now())).json();
+  try{ DATOS   =await j("../piezas.json");
+       /* las rutas de media son relativas a la RAIZ del panel, no a vistas/ */
+       (DATOS.piezas||[]).forEach(p=>(p.archivos||[]).forEach(a=>{
+         if(a&&a.poster&&!/^\.\.\//.test(a.poster))a.poster="../"+a.poster;
+         if(a&&a.video &&!/^\.\.\//.test(a.video ))a.video ="../"+a.video;}));
+  }catch(e){ aviso("piezas.json no carga",true); }
+  try{ CAL_AUTO=await j("../calendario.json"); }catch(e){ aviso("calendario.json no carga",true); }
+  try{ REFS_PAREJA=(await j("../referentes.json")).pares||{}; }catch(e){}
+  render();
+})();
+</script>
+<script src="calendario.js"></script>
+</body></html>
