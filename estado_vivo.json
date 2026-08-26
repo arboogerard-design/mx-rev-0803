@@ -1,10 +1,10 @@
 {
- "generado": "2026-08-26 12:25",
+ "generado": "2026-08-26 13:07",
  "piezas": {
-  "wip": 164,
-  "para_revisar": 177,
-  "bloqueadas": 64,
-  "con_gate_pass": 168
+  "wip": 163,
+  "para_revisar": 178,
+  "bloqueadas": 66,
+  "con_gate_pass": 169
  },
  "moldes": {
   "referentes": 227,
