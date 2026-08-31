@@ -1,228 +1,779 @@
 {
  "pares": [
   {
-   "pieza": "CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO",
-   "ref": "media/_ref/CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+   "pieza": "FRASE_JORDI_RESTAURANTE_CUENTA_19AGO",
+   "ref": "media/_ref/d57dc30f46e2.mp4",
+   "es_video": true,
+   "origen": "Db7tc6rS-OC.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "frase_atico_v1"
   },
   {
-   "pieza": "CARRUSEL_JAVI_MOROSO_20AGO",
-   "ref": "media/_ref/CARRUSEL_JAVI_MOROSO_20AGO__ref.jpg",
-   "es_video": false,
-   "origen": "img_01.jpg",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO",
-   "ref": "media/_ref/CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
-  },
-  {
-   "pieza": "CARRUSEL_JAVI_OLOR_A_VENTA_17AGO",
-   "ref": "media/_ref/CARRUSEL_JAVI_OLOR_A_VENTA_17AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+   "pieza": "JORDI_MEME_NUEVO_01_carrito_envio_sorpresa",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
   },
   {
    "pieza": "CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO",
-   "ref": "media/_ref/CARRUSEL_JAVI_TRES_COSAS_ANTES_17AGO__ref.jpg",
+   "ref": "media/_ref/15306af12528.jpg",
    "es_video": false,
    "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
-  },
-  {
-   "pieza": "CARRUSEL_JORDI_50_EUROS_17AGO",
-   "ref": "media/_ref/CARRUSEL_JORDI_50_EUROS_17AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
-  },
-  {
-   "pieza": "CARRUSEL_JORDI_MOROSO_20AGO",
-   "ref": "media/_ref/CARRUSEL_JORDI_MOROSO_20AGO__ref.jpg",
-   "es_video": false,
-   "origen": "img_01.jpg",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "CARRUSEL_JORDI_PEOR_WEB_17AGO",
-   "ref": "media/_ref/CARRUSEL_JORDI_PEOR_WEB_17AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
-  },
-  {
-   "pieza": "CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO",
-   "ref": "media/_ref/CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO__ref.jpg",
-   "es_video": false,
-   "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
   },
   {
    "pieza": "CARRUSEL_JORDI_TRES_VENTAS_18AGO",
-   "ref": "media/_ref/CARRUSEL_JORDI_TRES_VENTAS_18AGO__ref.jpg",
+   "ref": "media/_ref/15306af12528.jpg",
    "es_video": false,
    "origen": "slide_01.jpg",
-   "como": "shortcode DK7yeriOaKU bajado en CARRUSELES"
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
   },
   {
-   "pieza": "FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO",
-   "ref": "media/_ref/FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO__ref.mp4",
-   "es_video": true,
-   "origen": "Db7tc6rS-OC.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
-   "ref": "media/_ref/FRASE_JORDI_PORSCHE_PROCESO_19AGO__ref.mp4",
-   "es_video": true,
-   "origen": "Db7tc6rS-OC.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "FRASE_JORDI_RESTAURANTE_CUENTA_19AGO",
-   "ref": "media/_ref/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__ref.mp4",
-   "es_video": true,
-   "origen": "Db7tc6rS-OC.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "HOOKAD_A_QUEDA0_15AGO",
-   "ref": "media/_ref/HOOKAD_A_QUEDA0_15AGO__ref.mp4",
-   "es_video": true,
-   "origen": "V_JAVI_HOOKAD_SINMATI.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "HOOKAD_B_HUMO_15AGO",
-   "ref": "media/_ref/HOOKAD_B_HUMO_15AGO__ref.mp4",
-   "es_video": true,
-   "origen": "V_JAVI_HOOKAD_SINMATI.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "HOOKAD_C_2ANOS_15AGO",
-   "ref": "media/_ref/HOOKAD_C_2ANOS_15AGO__ref.mp4",
-   "es_video": true,
-   "origen": "V_JAVI_HOOKAD_SINMATI.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "JAVI_NICHO_MERCADO_20AGO",
-   "ref": "media/_ref/JAVI_NICHO_MERCADO_20AGO__ref.mp4",
-   "es_video": true,
-   "origen": "DZXwuEmjboX.mp4",
-   "como": "ruta local verificada"
+   "pieza": "CARRUSEL_JAVI_OFERTA_GANADORA_24AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_caso_captura_v1"
   },
   {
    "pieza": "MEMES_JAVI_SEMANA_17AGO",
-   "ref": "media/_ref/MEMES_JAVI_SEMANA_17AGO__ref.mp4",
+   "ref": "media/_ref/2856d7cee053.mp4",
    "es_video": true,
    "origen": "DYaO0J2ihh5.mp4",
-   "como": "shortcode DYaO0J2ihh5 bajado en co1e0"
-  },
-  {
-   "pieza": "MEMES_JAVI_TANDA_16AGO",
-   "ref": "media/_ref/MEMES_JAVI_TANDA_16AGO__ref.mp4",
-   "es_video": true,
-   "origen": "DYaO0J2ihh5.mp4",
-   "como": "shortcode DYaO0J2ihh5 bajado en co1e0"
-  },
-  {
-   "pieza": "MEMES_JORDI_ELITE_18AGO",
-   "ref": "media/_ref/MEMES_JORDI_ELITE_18AGO__ref.mp4",
-   "es_video": true,
-   "origen": "DYaO0J2ihh5.mp4",
-   "como": "shortcode DYaO0J2ihh5 bajado en co1e0"
-  },
-  {
-   "pieza": "MEMES_JORDI_MES_14AGO",
-   "ref": "media/_ref/MEMES_JORDI_MES_14AGO__ref.mp4",
-   "es_video": true,
-   "origen": "video_20260713_201456.mp4",
-   "como": "ruta local verificada"
-  },
-  {
-   "pieza": "MEMES_JORDI_SEMANA_17AGO",
-   "ref": "media/_ref/MEMES_JORDI_SEMANA_17AGO__ref.mp4",
-   "es_video": true,
-   "origen": "video_20260713_201456.mp4",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
   },
   {
    "pieza": "MEMES_JORDI_SEMANA_25AGO",
-   "ref": "media/_ref/MEMES_JORDI_SEMANA_25AGO__ref.mp4",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
    "es_video": true,
    "origen": "video_20260713_201456.mp4",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · ruta local verificada"
   },
   {
-   "pieza": "MEMES_JORDI_TANDA_16AGO",
-   "ref": "media/_ref/MEMES_JORDI_TANDA_16AGO__ref.mp4",
+   "pieza": "CARRUSEL_JAVI_CAMBIAR_PRODUCTO_18AGO",
+   "ref": "media/_ref/15306af12528.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "MEMES_JAVI_NOCHE_24AGO",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "MEMES_JORDI_POV_24AGO",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
    "es_video": true,
    "origen": "video_20260713_201456.mp4",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · ruta local verificada"
   },
   {
-   "pieza": "MEME_JAVI_LIQUIDEZ_15AGO",
-   "ref": "media/_ref/MEME_JAVI_LIQUIDEZ_15AGO__ref.mp4",
+   "pieza": "PAPEL_JORDI_INVISIBLE_24AGO",
+   "ref": "media/_ref/3623a38e8741.mp4",
    "es_video": true,
-   "origen": "MEME_JAVI_TIP.mp4",
-   "como": "ruta local verificada"
+   "origen": "Dbg6ZDEz3bf.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "papel_cuadriculado_v1"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_GASTO_24AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_LANZAR_24AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_PEOR_WEB_17AGO",
+   "ref": "media/_ref/15306af12528.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "JAVI_NICHO_MERCADO_20AGO",
+   "ref": "media/_ref/ae84df59e2bc.mp4",
+   "es_video": true,
+   "origen": "DZXwuEmjboX.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "mpelaez_pantalla_dividida"
+  },
+  {
+   "pieza": "MEME_JORDI_TRADUCIDO_24AGO",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_OFERTA_24AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_OLOR_A_VENTA_17AGO",
+   "ref": "media/_ref/15306af12528.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_MERCADO_24AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES"
+  },
+  {
+   "pieza": "FRASE_JORDI_PORSCHE_PROCESO_19AGO",
+   "ref": "media/_ref/d57dc30f46e2.mp4",
+   "es_video": true,
+   "origen": "Db7tc6rS-OC.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "frase_atico_v1"
   },
   {
    "pieza": "MEME_JORDI_TIENDA_FUNCIONA_20AGO",
-   "ref": "media/_ref/MEME_JORDI_TIENDA_FUNCIONA_20AGO__ref.mp4",
+   "ref": "media/_ref/efb907894ed3.mp4",
    "es_video": true,
    "origen": "Da-stP3tPvK.mp4",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "meme_clip_pelicula_manifest"
   },
   {
-   "pieza": "TH_PADRE_LOCO_17AGO",
-   "ref": "media/_ref/TH_PADRE_LOCO_17AGO__ref.md",
+   "pieza": "CARRUSEL_JAVI_Q4_CLON_23AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_Q4_CLON_23AGO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_001_EMPEZAR_TARDE",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_003_CAC_SUBE",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_002_IA_NO_DECIDE",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_004_CHECKOUT_FUGA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_003_COMPARARSE",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_005_PRODUCTO_VALIDADO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_004_PROVEEDOR",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_ENVIO_LENTO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_005_UN_CANAL",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_FOTOS_PRODUCTO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_COMPARAR_IA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_STOCK_MUERTO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_CONSTANCIA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_EDAD",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_ENTORNO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_EXCUSA_DINERO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_MIEDO_QUEDIRAN",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_MULTITAREA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_02SEP_CHECKOUT_FUGA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_30AGO_PRECIO_CUENTA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_CLON_CONFIANZA_24AGO",
+   "ref": "media/_ref/5befa3077d69.mp4",
+   "es_video": true,
+   "origen": "DcbbuadlRNo.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_MOROSO_20AGO",
+   "ref": "media/_ref/78644ef9a876.jpg",
+   "es_video": false,
+   "origen": "img_01.jpg",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "callout_moroso_giro"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_NO_ES_ESCALAR_18AGO",
+   "ref": "media/_ref/15306af12528.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "FAB_JAVI_COMPETENCIA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JAVI_UNA_COSA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "MEME_JAVI_MENSAJES_SIN_VENTA_30AGO",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0",
+   "molde": "meme_banda_co1e0"
+  },
+  {
+   "pieza": "MEME_JAVI_META_FAMILIA_25AGO",
+   "ref": "media/_ref/ace96f05c8ff.mp4",
+   "es_video": true,
+   "origen": "JORDI__DZFdv-2RRkJ.mp4",
+   "como": "_REFERENTE.txt · shortcode DZFdv-2RRkJ bajado en refs_14ago",
+   "molde": "meme_texto_encima_jordi_16jul"
+  },
+  {
+   "pieza": "REEL_JAVI_QUIEN_DA_CLASE_27AGO",
+   "ref": "media/_ref/548bebdefa74.mp4",
+   "es_video": true,
+   "origen": "REEL_JORDI_FILTRO.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_hook_filtro_2ago"
+  },
+  {
+   "pieza": "TH_CUANTO_FACTURAN_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
    "es_video": false,
    "origen": "MAPA_QA_26_REELS_3JUL.md",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_DE_CERO_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_DINERO_RAPIDO_17AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_JAVI_29AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_PADRE_LOCO_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
   },
   {
    "pieza": "TH_QUIEN_ES_JAVI_17AGO",
-   "ref": "media/_ref/TH_QUIEN_ES_JAVI_17AGO__ref.md",
+   "ref": "media/_ref/ad29280ec5a8.md",
    "es_video": false,
    "origen": "MAPA_QA_26_REELS_3JUL.md",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · ruta local verificada"
   },
   {
-   "pieza": "TH_VENDEHUMOS_17AGO",
-   "ref": "media/_ref/TH_VENDEHUMOS_17AGO__ref.md",
+   "pieza": "TH_QUIEN_ES_JAVI_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
    "es_video": false,
    "origen": "MAPA_QA_26_REELS_3JUL.md",
-   "como": "ruta local verificada"
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_VENDEHUMOS_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_30AGO_TARDE_EN_PREGUNTAR",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_31AGO_NADIE_PREPARADO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_50_EUROS_17AGO",
+   "ref": "media/_ref/15306af12528.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_MOROSO_20AGO",
+   "ref": "media/_ref/78644ef9a876.jpg",
+   "es_video": false,
+   "origen": "img_01.jpg",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "callout_moroso_giro"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_TIENDA_O_AMAZON_18AGO",
+   "ref": "media/_ref/15306af12528.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DK7yeriOaKU bajado en CARRUSELES"
+  },
+  {
+   "pieza": "FAB_JORDI_NICHO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_PACIENCIA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_PERFECCIONISMO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_REDES_SIN_VENDER",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_SABERLO_TODO",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FAB_JORDI_SUERTE",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
+   "pieza": "FRASE_JORDI_LAMBO_CREDIBILIDAD_19AGO",
+   "ref": "media/_ref/d57dc30f46e2.mp4",
+   "es_video": true,
+   "origen": "Db7tc6rS-OC.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "frase_atico_v1"
+  },
+  {
+   "pieza": "JORDI_CO1E0_01_shipping_protection_407K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_CO1E0_02_claude_theme_59K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_CO1E0_03_envio_express_41K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_CO1E0_04_subtotal_recurrente_37K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_CO1E0_05_caracteres_invisibles_86K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_CO1E0_06_resenas_inventadas_49K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_CO1E0_07_recarga_automatica_35K",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "JORDI_MEME_NUEVO_02_dm_de_madrugada",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "JORDI_MEME_NUEVO_03_contrareembolso_que_vuelve",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "JORDI_MEME_NUEVO_04_mirar_ventas_seis_veces",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "JORDI_MEME_PROBAR_TIENDA",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "JORDI_REPLICA_30AGO",
+   "ref": "media/_ref/b432591f6aec.mp4",
+   "es_video": true,
+   "origen": "DcmosoUhOI1.mp4",
+   "como": "_REFERENTE.txt · shortcode DcmosoUhOI1 bajado en refs_14ago",
+   "molde": "replica_marcverdu_DcmosoUhOI1"
+  },
+  {
+   "pieza": "MEMES_JORDI_ELITE_18AGO",
+   "ref": "media/_ref/2856d7cee053.mp4",
+   "es_video": true,
+   "origen": "DYaO0J2ihh5.mp4",
+   "como": "_REFERENTE.txt · shortcode DYaO0J2ihh5 bajado en co1e0"
+  },
+  {
+   "pieza": "MEMES_JORDI_SEMANA_17AGO",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "MEMES_JORDI_TANDA_16AGO",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "MEMES_JORDI_TANDA_23AGO",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada"
+  },
+  {
+   "pieza": "MEME_JORDI_DIA_LIBRE_30AGO",
+   "ref": "media/_ref/bbb1d17e4263.mp4",
+   "es_video": true,
+   "origen": "video_20260713_201456.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "meme_banda_co1e0"
+  },
+  {
+   "pieza": "MEME_JORDI_META_DESACTIVADA_25AGO",
+   "ref": "media/_ref/ace96f05c8ff.mp4",
+   "es_video": true,
+   "origen": "JORDI__DZFdv-2RRkJ.mp4",
+   "como": "_REFERENTE.txt · shortcode DZFdv-2RRkJ bajado en refs_14ago",
+   "molde": "meme_texto_encima_jordi_16jul"
+  },
+  {
+   "pieza": "REEL_JORDI_HOBBY_SUELDO_28AGO",
+   "ref": "media/_ref/548bebdefa74.mp4",
+   "es_video": true,
+   "origen": "REEL_JORDI_FILTRO.mp4",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_hook_filtro_2ago"
+  },
+  {
+   "pieza": "TH_CERO_EXPERIENCIA_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_jordi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_NEGOCIOS_ABURREN_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_jordi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_VINE_SIN_NADA_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_jordi_podcast_3cam"
   }
  ],
  "sin_referente": [
   {
-   "pieza": "ADS_8_ANGULOS_JAVI_5AGO",
+   "pieza": "JAVI_TH_CAJITA3_SUBSXL",
    "motivo": "no declara referente"
   },
   {
-   "pieza": "CARRUSEL_CLON_JAVI_OFERTA_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "CARRUSEL_CLON_JAVI_ORDEN_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "CARRUSEL_JAVI_POV_INBOX_16AGO",
+   "pieza": "JAVI_BSEM_5_NUMEROS_LUNES",
    "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
   },
   {
-   "pieza": "CARRUSEL_JORDI_FILTRO_2AGO",
+   "pieza": "JORDI_CLON_RAMA_3_FILTROS",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JAVI_CLON_RAMA_5_HERRAMIENTAS",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JAVI_CLON_SYK_NOTICIA_SENAL",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JORDI_FRASE_LAMBO_TIKI",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JAVI_BSEM_4_PREGUNTAS_ANUNCIOS",
+   "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
+  },
+  {
+   "pieza": "JORDI_BSEM_3_SENALES_DEVOLUCION",
+   "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
+  },
+  {
+   "pieza": "ADS_GOOGLE_HORIZONTAL",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_TIENDA_LENTA",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "CARRUSEL_JAVI_TRES_SENALES_16AGO",
+   "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
+  },
+  {
+   "pieza": "JAVI_CARRUSEL_A_filtro_8slides",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JAVI_CARRUSEL_B_6preguntas_8slides",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JAVI_CARRUSEL_V3_A_cash_real",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "JAVI_CARRUSEL_V3_B",
+   "motivo": "no declara referente"
+  },
+  {
+   "pieza": "CARRUSEL_JORDI_ELEGIR_PRODUCTO",
    "motivo": "no declara referente"
   },
   {
@@ -230,99 +781,27 @@
    "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
   },
   {
-   "pieza": "CARR_JAVI_PANEL_8AGO",
+   "pieza": "CARRUSEL_JORDI_TEMPORADA_ALTA",
    "motivo": "no declara referente"
   },
   {
-   "pieza": "CARR_JAVI_PLACA_CLON_7AGO",
+   "pieza": "JORDI_BSEM_3_COSAS_CONFIANZA",
+   "motivo": "ni ruta local ni shortcode reconocible en la declaracion"
+  },
+  {
+   "pieza": "JORDI_CARRUSEL_A_desde_cero_7slides",
    "motivo": "no declara referente"
   },
   {
-   "pieza": "CARR_JAVI_RECURSOS",
+   "pieza": "JORDI_CARRUSEL_B_las5_7slides",
    "motivo": "no declara referente"
   },
   {
-   "pieza": "CARR_JORDI_ATAJO",
+   "pieza": "JORDI_CARRUSEL_V3_A",
    "motivo": "no declara referente"
   },
   {
-   "pieza": "MEMES_JORDI_TANDA_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "MEME_JAVI_M1_EMPLEO_VS_NEGOCIO_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "MEME_JAVI_M2_CLASE_17MIN_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "MEME_JAVI_M3_64_HERRAMIENTAS_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "MEME_JAVI_M4_PRECIO_ANTES_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "RANKING_JAVI_ANTES_DE_ESCALAR_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JAVI_LO_PEOR_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JAVI_PANEL_MODULO_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JAVI_PERSEVERANCIA_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JORDI_CEREBRO_CORAZON_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JORDI_FILTRO_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JORDI_META300_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JORDI_MIEDO_QUEDIRAN",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "REEL_JORDI_NO_CAMBIO_NADA",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JAVI_FREESTYLE_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JAVI_MIERCOLES_A5_V3",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JORDI_FREESTYLE_2AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JORDI_MARTES_A7_V3",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JORDI_TESTIMONIOS_1AGO",
-   "motivo": "no declara referente"
-  },
-  {
-   "pieza": "STORIES_JORDI_WINS_1AGO",
+   "pieza": "JORDI_CARRUSEL_V3_B",
    "motivo": "no declara referente"
   }
  ],
@@ -2008,5 +2487,6 @@
    "estado": "pendiente"
   }
  ],
- "medidos_generado": "2026-08-22 12:47"
+ "medidos_generado": "2026-08-22 12:47",
+ "pares_generado": "2026-08-31T11:52"
 }
