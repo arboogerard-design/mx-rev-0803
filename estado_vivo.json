@@ -1,7 +1,7 @@
 {
- "generado": "2026-08-31 17:55",
+ "generado": "2026-08-31 18:10",
  "piezas": {
-  "wip": 217,
+  "wip": 218,
   "para_revisar": 197,
   "bloqueadas": 77,
   "con_gate_pass": 195
@@ -36,9 +36,9 @@
  },
  "fotos": {
   "javi": 10,
-  "jordi": 9
+  "jordi": 10
  },
  "avisos": [
-  "Pool de portadas corto (10 de Javi / 9 de Jordi): una tanda de mas de 6 piezas por cuenta repetira portada. Pedirles 15-20 fotos de movil en sitios distintos."
+  "Pool de portadas corto (10 de Javi / 10 de Jordi): una tanda de mas de 6 piezas por cuenta repetira portada. Pedirles 15-20 fotos de movil en sitios distintos."
  ]
 }
