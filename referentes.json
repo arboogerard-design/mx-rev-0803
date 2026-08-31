@@ -323,6 +323,14 @@
    "molde": "ramiro_bofu_DbUIat6HOLY"
   },
   {
+   "pieza": "CARRUSEL_JAVI_30AGO_LO_QUE_QUEDA",
+   "ref": "media/_ref/631e8db5ca14.jpg",
+   "es_video": false,
+   "origen": "slide_01.jpg",
+   "como": "_REFERENTE.txt · shortcode DbUIat6HOLY bajado en CARRUSELES",
+   "molde": "ramiro_bofu_DbUIat6HOLY"
+  },
+  {
    "pieza": "CARRUSEL_JAVI_30AGO_PRECIO_CUENTA",
    "ref": "media/_ref/631e8db5ca14.jpg",
    "es_video": false,
@@ -425,6 +433,14 @@
    "molde": "talking_javi_podcast_3cam"
   },
   {
+   "pieza": "TH_MIEDO_PERDER_31AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
    "pieza": "TH_PADRE_LOCO_26AGO",
    "ref": "media/_ref/ad29280ec5a8.md",
    "es_video": false,
@@ -449,6 +465,14 @@
   },
   {
    "pieza": "TH_VENDEHUMOS_26AGO",
+   "ref": "media/_ref/ad29280ec5a8.md",
+   "es_video": false,
+   "origen": "MAPA_QA_26_REELS_3JUL.md",
+   "como": "_REFERENTE.txt · ruta local verificada",
+   "molde": "talking_javi_podcast_3cam"
+  },
+  {
+   "pieza": "TH_YOUTUBE_NO_CONTESTA_31AGO",
    "ref": "media/_ref/ad29280ec5a8.md",
    "es_video": false,
    "origen": "MAPA_QA_26_REELS_3JUL.md",
@@ -2488,5 +2512,5 @@
   }
  ],
  "medidos_generado": "2026-08-22 12:47",
- "pares_generado": "2026-08-31T11:52"
+ "pares_generado": "2026-08-31T13:37"
 }
