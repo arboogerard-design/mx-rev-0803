@@ -115,6 +115,37 @@
 .gb-seg button:hover{color:var(--txt,#ECEDF0); background:var(--panel-2,#191C22)}
 .gb-seg button.on{background:var(--panel-3,#1F232B); color:var(--txt,#ECEDF0)}
 
+/* ------------------------------------------------------------------ buscador */
+/* Son 21 guiones con escena + 5 bloques + música + rótulo + caption cada uno.
+   Sin buscador, encontrar «el de la calculadora» era bajar ficha a ficha, y el
+   equipo hace esto desde el móvil. */
+.gb-busca-fila{display:flex; align-items:center; gap:10px; margin:0 0 16px}
+.gb-busca{
+  position:relative; flex:1 1 auto; display:flex; align-items:center;
+  background:var(--panel,#14161B); border:1px solid var(--line,#24282F);
+  border-radius:var(--r-1,8px);
+}
+.gb-busca:focus-within{border-color:var(--line-2,#31363F)}
+.gb-input{
+  flex:1 1 auto; width:100%; min-height:42px; padding:9px 12px;
+  background:transparent; border:0; outline:0;
+  font-size:13.5px; color:var(--txt,#ECEDF0);
+}
+.gb-input::placeholder{color:var(--txt-3,#656B76)}
+.gb-input::-webkit-search-cancel-button{display:none}   /* el ✕ es el nuestro */
+.gb-x{
+  flex:0 0 auto; background:transparent; border:0; cursor:pointer;
+  min-width:38px; min-height:38px; font-size:17px; line-height:1;
+  color:var(--txt-3,#656B76); border-radius:var(--r-1,8px);
+}
+.gb-x:hover{color:var(--txt,#ECEDF0); background:var(--panel-3,#1F232B)}
+.gb-busca-n{flex:0 0 auto; font-size:12px; color:var(--txt-3,#656B76); white-space:nowrap}
+.gb [hidden]{display:none !important}
+/* Mientras se busca, los recuentos de cada encabezado se calcularon al pintar y
+   mentirían. Se esconden en vez de reescribirse: manda el «N de 21» de arriba. */
+.gb.gb-buscando .gb-h3-sub,
+.gb.gb-buscando .gb-etapa-n{display:none}
+
 /* ------------------------------------------------------- encabezados de grupo */
 .gb-h3{
   display:flex; flex-wrap:wrap; align-items:baseline; gap:8px;

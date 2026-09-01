@@ -76,6 +76,11 @@
   background:var(--panel-3,#1F232B);
 }
 .rv-progbar i{display:block; height:100%; background:var(--acc,#7B72FF); transition:width .25s}
+/* cuántas faltan: el número que de verdad se mira al repasar en el móvil */
+.rv-quedan{
+  font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--txt-3,#656B76); white-space:nowrap;
+}
 
 /* --------------------------------------------------------------- pieza foco */
 .rv-foco{
@@ -194,11 +199,16 @@
 .rv-parbar{flex:1; height:4px; border-radius:999px; background:var(--panel-3,#1F232B); overflow:hidden}
 .rv-parbar i{display:block; height:100%; background:var(--ok,#34C08A)}
 .rv-par b{color:var(--txt,#ECEDF0); font-weight:700}
-.rv-sinref{
-  margin-top:10px; padding:11px 13px; font-size:11.5px; line-height:1.5;
-  color:var(--warn,#E6AE4A); background:#E6AE4A0f;
-  border:1px solid #E6AE4A33; border-radius:var(--r-2,12px);
+/* SIN REFERENTE. El drawer sigue estando —mismo sitio, mismo gesto— pero se ve
+   de un vistazo que aquí no hay con qué comparar: ámbar, no el gris de siempre.
+   Antes esto era un <div> suelto (o nada), y el control desaparecía entre una
+   pieza y la siguiente sin explicación. */
+.rv-cmp.sinref{
+  border-color:#E6AE4A33; background:#E6AE4A0d;
 }
+.rv-cmp.sinref>summary{color:var(--warn,#E6AE4A)}
+.rv-cmp.sinref>summary::before{color:var(--warn,#E6AE4A)}
+.rv-cmp.sinref .rv-cmpnota{color:var(--txt-2,#9AA0AB); padding-top:0}
 
 /* ---------------------------------------------------- corrección: chips+texto */
 .rv .fixr{display:flex; flex-wrap:wrap; gap:6px; padding:0 13px 10px}

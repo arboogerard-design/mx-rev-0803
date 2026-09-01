@@ -100,6 +100,18 @@
     if (mal) console.warn("[espia]", t); else console.log("[espia]", t);
   }
   function repinta() {
+    /* SOLO si mi pantalla esta puesta. El shell precalienta los modulos por
+       detras (`calienta()`) mientras el equipo trabaja en OTRA pestana, y este
+       fichero llama a repinta() cuando le resuelve un fetch — justo durante ese
+       precalentamiento. Un render() de mas repinta #app ENTERO y borra el motivo
+       que estuvieras escribiendo en "Corregir" (el propio index.html lo avisa en
+       el comentario de `calienta`). Si no estoy en pantalla, refresco solo el
+       badge #nref, que es lo unico mio que se ve desde fuera. */
+    if (!document.querySelector(".fab")) {
+      if (typeof window.pintaContadores === "function")
+        try { window.pintaContadores(); } catch (e) {}
+      return;
+    }
     const f = g("render");
     if (typeof f === "function") return f();
     const nodo = document.querySelector(".fab");            // shell minimo: repinto lo mio
@@ -155,6 +167,20 @@
     repinta();
   }).catch(() => { DISCO_ESTADO = "sin-fichero"; });
 
+  /* moldes.json — LA RECETA DEL CLON, y estaba muerta en el repo.
+     26 KB ya publicados junto al index.html que —medido con grep el 25-ago— no
+     leia NADIE: ni el shell ni ninguna de las 7 vistas. Cubre 98 de los 134
+     referentes y trae justo los ejes con los que se clona 1:1 y con los que se
+     revisa despues (`refHTML`, §5.2): cuando ENTRA LA MUSICA (76 medidos),
+     donde cae el PRIMER CORTE (69) y la BANDA del meme —%, y su hex— (76),
+     que es el canon que Gerard midio el 14-ago (Javi negra / Jordi blanca).
+     Sin esto la tarjeta solo sabia decir duracion y cortes/s. */
+  let MOLDES = {};
+  fetch("moldes.json").then(r => r.ok ? r.json() : null).then(d => {
+    if (d && typeof d === "object" && !Array.isArray(d)) { MOLDES = d; repinta(); }
+  }).catch(() => {});
+  const molde = sc => MOLDES[sc] || {};
+
   function pares() {
     const v = g("REFS_PAREJA");                       // el shell lo indexa por pieza
     if (v && typeof v === "object" && Object.keys(v).length) return Object.values(v);
@@ -165,7 +191,14 @@
      `como` viene como "shortcode DK7yeriOaKU bajado en CARRUSELES". */
   function scDelPar(p) {
     const m = String((p && p.como) || "").match(/shortcode\s+([A-Za-z0-9_-]+)/);
-    return m ? m[1] : null;
+    if (m) return m[1];
+    /* `como` no siempre lo dice: 21 de los 71 pares ponen solo "ruta local
+       verificada". Pero `origen` guarda el fichero del que se clono y muchas
+       veces ES el shortcode ("DZXwuEmjboX.mp4"). Medido: recupera 4 moldes mas,
+       uno de ellos el unico par de JAVI_NICHO_MERCADO_20AGO — sin esto esa
+       tarjeta no sabia que su clon YA existe. */
+    const o = String((p && p.origen) || "").match(/^([A-Za-z0-9_-]{8,20})\.[A-Za-z0-9]{3,4}$/);
+    return o ? o[1] : null;
   }
   /* §5.1 / §6.3: el shortcode de una URL de Instagram (reel o post). */
   function scDe(url) {
@@ -269,6 +302,130 @@
   function nRefsEspia() { try { return radar().length; } catch (e) { return 0; } }
 
   /* ======================================================================
+     4-bis · EL CICLO DE UNA ORDEN  —  pedido · produciendo · clonado
+     ------------------------------------------------------------------
+     Gerard pide ver el estado del bucle, y el estado YA EXISTE en los datos:
+     nadie lo estaba pintando. Medido hoy en el bin de Gerard (GET, 25-ago):
+     8 ordenes, 7 de tipo `replicar`, y 6 de ellas llevan un campo `estado` que
+     escribe quien produce — "en cola — manana toca carrusel" x4 y
+     "produciendo — pantalla dividida Javi (2026-08-20 15:45)" x2. El panel las
+     pintaba TODAS con el mismo "PEDIDO ✓" plano, asi que daba igual que una
+     llevara 7 dias parada y otra estuviera renderizando.
+     Y al reves: `referentes.json` marca 3 moldes como `estado:"clonado"` y 71
+     pares dicen que pieza salio de que molde — tampoco se veia.
+     Regla de desempate: MANDA LA MEDICION DEL DISCO sobre la nota de la orden
+     (`estado-se-mide.md`). Caso real: DZXwuEmjboX tiene una orden que dice
+     "produciendo" del 20-ago y el disco dice que su clon
+     (JAVI_NICHO_MERCADO_20AGO) ya existe. Se pinta CLONADO.
+     ================================================================== */
+
+  /* Las ordenes de los DEMAS: `leerBlob()` del shell solo copia MI bin a MIO,
+     asi que hasta ahora una orden de Javi era invisible para Jordi y los dos
+     podian pedir el mismo clon. Aqui se LEEN los 4 bins — GET y solo GET, nunca
+     un POST desde esta pantalla (§2.B: `guardarMio` es el unico que escribe). */
+  let ORD_EQUIPO = [];              // [{...orden, quien}]
+  let ORD_ESTADO = "no";            // no | pidiendo | ok | fallo
+  function binsDelShell() { try { return typeof BINS !== "undefined" ? BINS : null; } catch (e) {} }
+  function pideOrdenes() {
+    const B = binsDelShell();
+    if (!B || ORD_ESTADO === "pidiendo" || ORD_ESTADO === "ok") return;
+    ORD_ESTADO = "pidiendo";
+    const y = yo();
+    /* mi bin NO se vuelve a pedir: `leerBlob()` ya lo ha dejado en MIO y ahi
+       esta mas fresco que cualquier copia (se actualiza al escribir). */
+    Promise.all(Object.keys(B).filter(q => q !== y).map(q =>
+      fetch(B[q], { cache: "no-store" })
+        .then(r => r.ok ? r.json() : null).then(b => [q, b]).catch(() => [q, null])
+    )).then(res => {
+      const out = []; let vivo = false;
+      for (const par of res) {
+        const q = par[0], b = par[1];
+        if (!b) continue;
+        vivo = true;
+        const o = Array.isArray(b.ordenes) ? b.ordenes : [];
+        for (const x of o) if (x) out.push(Object.assign({ quien: q }, x));
+      }
+      ORD_EQUIPO = out;
+      ORD_ESTADO = vivo ? "ok" : "fallo";
+      repinta();
+    }).catch(() => { ORD_ESTADO = "fallo"; });
+  }
+
+  /* Mi bin manda sobre la copia leida (MIO se actualiza al escribir; la copia
+     es de cuando se abrio la pantalla). */
+  function ordenes() {
+    const mio = g("MIO"), y = yo();
+    const mias = (mio && Array.isArray(mio.ordenes) ? mio.ordenes : [])
+      .map(o => Object.assign({ quien: y || "tú" }, o));
+    return mias.concat(ORD_EQUIPO.filter(o => o.quien !== y));
+  }
+  function scDeOrden(o) { return (o && o.sc) || scDe(o && o.url) || null; }
+
+  function ordenDe(sc) {
+    let mejor = null;
+    for (const o of ordenes()) {
+      if (!o || o.tipo !== "replicar" || scDeOrden(o) !== sc) continue;
+      if (!mejor || String(o.cuando || "") > String(mejor.cuando || "")) mejor = o;
+    }
+    return mejor;
+  }
+
+  function diasDesde(cuando) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(cuando || ""));
+    if (!m) return null;
+    const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+    return Math.round((hoy - new Date(+m[1], +m[2] - 1, +m[3])) / 86400000);
+  }
+  function haceTxt(cuando) {
+    const d = diasDesde(cuando);
+    if (d == null) return "";
+    if (d <= 0) return "hoy";
+    if (d === 1) return "ayer";
+    return "hace " + d + " días";
+  }
+
+  /* La nota que escribe quien produce viene como "cabeza — cola". */
+  function parteEstado(est) {
+    const s = String(est || "").trim();
+    const i = s.indexOf("—");
+    return i >= 0
+      ? { cabeza: s.slice(0, i).trim(), cola: s.slice(i + 1).trim() }
+      : { cabeza: s, cola: "" };
+  }
+
+  /* Devuelve null cuando no hay NADA que contar (ni orden ni clon ni descarga):
+     una tarjeta en reposo no lleva chip, y asi el que si lo lleva canta. */
+  function cicloDe(t) {
+    const o = ordenDe(t.sc);
+    const p = parteEstado(o && o.estado);
+    const clonado = (t.clonado && t.clonado.length) || t.estado === "clonado";
+
+    if (clonado) {
+      const n = (t.clonado || []).length;
+      return {
+        k: "clonado", txt: "CLONADO",
+        pie: n ? (n === 1 ? "1 pieza salió de este molde" : n + " piezas salieron de este molde")
+               : "el disco lo da por clonado",
+        piezas: t.clonado || []
+      };
+    }
+    if (o && /^produciendo/i.test(p.cabeza))
+      return { k: "produciendo", txt: "CLONANDO AHORA", pie: p.cola || ("lo pidió " + (o.quien || o.por || "alguien")), orden: o };
+    if (o) {
+      const dias = diasDesde(o.cuando);
+      return {
+        k: "cola", txt: "PEDIDO · EN COLA",
+        pie: "lo pidió " + (o.quien || o.por || "alguien") + " " + haceTxt(o.cuando) +
+             (p.cola ? " · " + p.cola : ""),
+        viejo: dias != null && dias >= 3, orden: o
+      };
+    }
+    if (t.estado === "bajado")
+      return { k: "bajado", txt: "REFERENTE YA BAJADO", pie: "el vídeo está en disco: clonarlo no cuesta descarga" };
+    return null;
+  }
+
+  /* ======================================================================
      5 · HTML
      ================================================================== */
   const NUM = n => Number(n).toLocaleString("es-ES");
@@ -289,7 +446,23 @@
     if (typeof t.dur === "number") p.push(DEC(t.dur, 1) + " s");
     if (typeof t.cortes === "number") p.push(DEC(t.cortes, 2) + " cortes/s");
     if (!p.length) return '<p class="ref-molde ref-molde-sin">Molde sin medir todavía</p>';
-    return '<p class="ref-molde"><b>Molde:</b> <span class="num">' + p.join(" · ") + "</span></p>";
+
+    /* segunda linea: los ejes de moldes.json con los que se clona y se revisa.
+       Solo se pinta el eje que EXISTE medido para este molde (ley 4). */
+    const m = molde(t.sc), q = [];
+    if (typeof m.musica_entra_s === "number") q.push("música entra " + DEC(m.musica_entra_s, 1) + " s");
+    if (typeof m.primer_corte_s === "number") q.push("1er corte " + DEC(m.primer_corte_s, 1) + " s");
+    /* La banda SOLO en los memes. En un talking-head `banda_pct` es cuanto
+       ocupa la franja plana del encuadre y no se puede hacer nada con ese
+       numero; en un meme co1e0 la banda ES el formato, y su color es canon de
+       identidad (Javi negra/texto blanco · Jordi blanca/texto negro), asi que
+       ahi si dice algo al que va a clonarlo. */
+    if (t.familia === "meme" && typeof m.banda_pct === "number")
+      q.push((m.hex_banda ? '<i class="ref-tinta" style="background:' + X(m.hex_banda) + '"></i>' : "") +
+             "banda " + DEC(m.banda_pct, 0) + " %");
+
+    return '<p class="ref-molde"><b>Molde:</b> <span class="num">' + p.join(" · ") + "</span></p>" +
+      (q.length ? '<p class="ref-ejes num">' + q.join(" · ") + "</p>" : "");
   }
 
   function metricaHTML(t) {
@@ -326,13 +499,16 @@
       "</details>";
   }
 
-  /* PEDIDO ✓ persistente: si ya hay una orden mia para ese sc, el boton nace
-     hecho aunque se recargue la pagina. */
-  function yaPedido(t) {
-    const mio = g("MIO");
-    const ord = (mio && Array.isArray(mio.ordenes)) ? mio.ordenes : [];
-    return ord.some(o => o && o.tipo === "replicar" &&
-      (o.sc === t.sc || String(o.url || "").indexOf("/" + t.sc + "/") >= 0));
+  /* El chip del ciclo. Es lo unico que se mueve de sitio en la tarjeta: va
+     PEGADO al boton, porque la pregunta que contesta ("¿esto ya lo pedi?") se
+     hace justo antes de pulsarlo. */
+  function cicloHTML(c) {
+    if (!c) return "";
+    const pie = c.pie
+      ? '<span class="ref-ciclo-pie' + (c.viejo ? " ref-ciclo-viejo" : "") + '">' + X(c.pie) + "</span>"
+      : "";
+    return '<p class="ref-ciclo ref-ciclo-' + c.k + '"><span class="ref-luz"></span>' +
+      "<b>" + X(c.txt) + "</b>" + pie + "</p>";
   }
 
   function tarjeta(t, rank) {
@@ -341,10 +517,31 @@
       b.push('<span class="ref-badge et-' + X(t.etapa) + '" title="' + X(ETAPA_HUMANO_LOCAL[t.etapa]) + '">' + X(t.etapa) + "</span>");
     if (t.autor) b.push('<span class="ref-badge">@' + X(t.autor) + "</span>");
     if (t.quien) b.push('<span class="ref-badge">lo pasó ' + X(t.quien) + "</span>");
-    if (t.clonado.length) b.push('<span class="ref-badge ref-clonado" title="' + X(t.clonado.join(" · ")) + '">YA CLONADO ×' + t.clonado.length + "</span>");
     if (rank) b.push('<span class="ref-rank num">#' + rank + " del radar</span>");
 
-    const hecho = yaPedido(t);
+    const c = cicloDe(t);
+    const abierta = !!(c && (c.k === "cola" || c.k === "produciendo"));
+    const yaClon = !!(c && c.k === "clonado");
+
+    /* Tres botones posibles, nunca dos veces el mismo trabajo:
+         orden abierta -> PEDIDO ✓ (muerto, con el chip explicando en que va)
+         ya clonado    -> "Replicar otra vez" + salto a la pieza en Por revisar
+         en reposo     -> ⚡ Replicar
+       Una orden solo BLOQUEA el boton mientras siga PENDIENTE. Un molde ya
+       clonado se vuelve a pedir: 32 de nuestras piezas salieron de DbUIat6HOLY
+       y 8 de DK7yeriOaKU — repetir un molde ganador es el trabajo, no un error.
+       Antes la primera orden dejaba ese boton muerto para siempre. */
+    let cta;
+    if (abierta) {
+      cta = '<button type="button" class="repl hecho" data-sc="' + X(t.sc) + '" disabled>PEDIDO ✓</button>';
+    } else {
+      cta = '<button type="button" class="repl" data-sc="' + X(t.sc) + '">' +
+        (yaClon ? "⚡ Replicar otra vez" : "⚡ Replicar") + "</button>";
+      if (yaClon && c.piezas && c.piezas.length)
+        cta += '<button type="button" class="ref-ir" data-ir="1" title="' + X(c.piezas.join(" · ")) +
+          '">Ver el clon</button>';
+    }
+
     return '<article class="ref" data-sc="' + X(t.sc) + '">' +
       thumbHTML(t) +
       '<div class="ref-body">' +
@@ -354,10 +551,8 @@
       moldeHTML(t) +
       analisisHTML(t) +
       "</div>" +
-      '<div class="ref-cta">' +
-      '<button type="button" class="repl' + (hecho ? " hecho" : "") + '" data-sc="' + X(t.sc) + '"' +
-      (hecho ? " disabled" : "") + ">" + (hecho ? "PEDIDO ✓" : "⚡ Replicar") + "</button>" +
-      "</div></article>";
+      cicloHTML(c) +
+      '<div class="ref-cta">' + cta + "</div></article>";
   }
 
   function chipsHTML() {
@@ -372,7 +567,40 @@
       '<div class="fab-chipgrupo">' + e + "</div></nav>";
   }
 
+  /* La cola, en una linea y con numeros medidos. Es la que delata que el bucle
+     esta parado: §7.2 de la spec dice que HOY nadie consume `_ORDENES_PANEL.jsonl`,
+     y sin esta linea el panel enseñaba 7 "PEDIDO ✓" verdes como si todo fuera
+     bien. Si algo lleva dias en cola, aqui se ve. */
+  function colaHTML() {
+    const r = radar();
+    let pedidos = 0, produciendo = 0, listos = 0, masViejo = null;
+    for (const t of r) {
+      const c = cicloDe(t);
+      if (!c) continue;
+      if (c.k === "clonado") { if (ordenDe(t.sc)) listos++; continue; }
+      if (c.k === "produciendo") { produciendo++; continue; }
+      if (c.k === "cola") {
+        pedidos++;
+        const d = diasDesde(c.orden && c.orden.cuando);
+        if (d != null && (masViejo == null || d > masViejo)) masViejo = d;
+      }
+    }
+    if (!pedidos && !produciendo && !listos) return "";
+    const p = [];
+    if (pedidos) p.push('<b class="num">' + NUM(pedidos) + "</b> esperando en cola" +
+      (masViejo != null && masViejo >= 3
+        ? ' <span class="fab-cola-viejo">(el más viejo, hace ' + masViejo + " días)</span>"
+        : ""));
+    if (produciendo) p.push('<b class="num">' + NUM(produciendo) + "</b> clonándose ahora");
+    if (listos) p.push('<b class="num">' + NUM(listos) + "</b> ya en “Por revisar”");
+    return '<p class="fab-cola">Tus órdenes: ' + p.join(" · ") +
+      (ORD_ESTADO === "fallo"
+        ? ' <span class="fab-cola-viejo">· no se han podido leer las de los demás</span>' : "") +
+      "</p>";
+  }
+
   function vistaEspia() {
+    pideOrdenes();                       // ordenes del equipo: GET perezoso, no bloquea
     const l = lista();
     const total = radar().length;
     const medidos = l.filter(conMetrica).length;
@@ -407,9 +635,26 @@
       '<span class="num">' + NUM(medidos) + "</span> con métrica medida · " +
       '<span class="num">' + NUM(total) + "</span> en el radar entero</p>";
 
+    h += colaHTML();
+
     if (!l.length) {
-      h += '<p class="fab-vacio">Nada aquí con estos filtros. Cambia de chip, o pega arriba el ' +
-        "link del referente que quieras clonar.</p></section>";
+      /* Decir POR QUE esta vacio. Medido: solo 10 de los 137 referentes traen
+         etapa (las 10 de la semilla); el resto la tiene a "". Filtrar por TOFU/
+         MOFU/BOFU vacia la pantalla y sin esta linea no hay forma de saber si
+         es que no hay nada o si es que el panel esta roto — el mismo agujero
+         que el aviso `sinEtapa()` del shell tapa en "Por revisar". */
+      const et = etapaActiva(), r = radar();
+      const conEtapa = r.filter(t => t.etapa).length;
+      h += '<p class="fab-vacio">';
+      if (et !== "todo" && conEtapa === 0)
+        h += "<b>Ningún referente trae etapa en los datos</b>, así que filtrar por " + X(et) +
+          " deja esto vacío — no es que no haya moldes.";
+      else if (et !== "todo")
+        h += "Ninguno de los <b>" + NUM(r.length) + "</b> referentes del radar es " + X(et) +
+          " con este chip. Solo <b>" + NUM(conEtapa) + "</b> traen etapa medida.";
+      else
+        h += "Nada aquí con estos filtros.";
+      h += " Cambia de chip, o pega arriba el link del referente que quieras clonar.</p></section>";
       return h;
     }
 
@@ -472,8 +717,23 @@
     const add = t.closest("#raddr");
     if (add) { anadeReferente(); return; }
 
+    const ir = t.closest("[data-ir]");
+    if (ir) { vePorRevisar(); return; }
+
     const rep = t.closest(".repl");
     if (rep) { replicar(rep); return; }
+  }
+
+  /* El clon ya existe: se salta a la cola de revision. No hay deep-link a una
+     pieza concreta en el contrato del shell (el hash solo guarda la pestaña),
+     asi que se abre "Por revisar" y ya. Si el shell no expone `fijaTab`, se
+     avisa en vez de fingir que se ha ido a algun sitio. */
+  function vePorRevisar() {
+    const fija = window.fijaTab, pinta = window.render;
+    if (typeof fija === "function" && typeof pinta === "function") {
+      fija("repasar"); pinta(); return;
+    }
+    toast("Abre “Por revisar”: el clon de este molde ya está ahí.", false);
   }
 
   /* El embed oficial de IG funciona sin login y es la unica forma de ver el
@@ -515,8 +775,19 @@
       toast("No hay almacén conectado: la orden no se ha enviado.", true);
       return;
     }
+    /* Campos AÑADIDOS, nunca renombrados (§2.B es sagrado): el listener
+       deduplica por `oid` y no mira el resto. Van los tres datos que le ahorran
+       trabajo al productor y que ya estan medidos en disco — de que familia es
+       el molde, y DONDE esta ya bajado el video (25 referentes tienen
+       estado "bajado": si se sabe, no hay que volver a descargarlo). */
+    const extra = {};
+    if (t.familia) extra.familia = t.familia;
+    if (t.carpeta) extra.carpeta = t.carpeta;
+    if (t.estado) extra.estado_ref = t.estado;
+
     await guardarMioFn(mio => {
-      mio.ordenes.push({ oid: oid, tipo: "replicar", sc: sc, url: url, por: yo(), cuando: ahora() });
+      mio.ordenes.push(Object.assign(
+        { oid: oid, tipo: "replicar", sc: sc, url: url, por: yo(), cuando: ahora() }, extra));
     });
 
     const mio = g("MIO");
@@ -526,10 +797,36 @@
       btn.textContent = "PEDIDO ✓";
       btn.classList.add("hecho");
       toast("Orden enviada a Claude: replicar " + sc);
+      refrescaTarjeta(sc);          // para que salga el chip del ciclo, no solo el boton
     } else {
       btn.disabled = false;
       btn.textContent = txt0;
       toast("No se pudo enviar la orden (almacén caído). No se ha perdido nada: vuelve a pulsar.", true);
+    }
+  }
+
+  /* Repinta UNA tarjeta y la linea de cola, no la pantalla entera: con 137
+     tarjetas un render() completo tras cada clic te mueve el scroll de sitio
+     justo cuando estas repasando el radar en el movil. */
+  function refrescaTarjeta(sc) {
+    const caja = document.querySelector(".fab");
+    if (!caja) return;
+    const art = caja.querySelector('article.ref[data-sc="' + sc + '"]');
+    if (art) {
+      const l = lista();
+      let rank = 0, html = null;
+      for (const t of l) {
+        const r = conMetrica(t) ? ++rank : 0;
+        if (t.sc === sc) { html = tarjeta(t, r); break; }
+      }
+      if (html) art.outerHTML = html;
+    }
+    const vieja = caja.querySelector(".fab-cola");
+    const nueva = colaHTML();
+    if (vieja) { if (nueva) vieja.outerHTML = nueva; else vieja.remove(); }
+    else if (nueva) {
+      const ancla = caja.querySelector(".fab-cuenta");
+      if (ancla) ancla.insertAdjacentHTML("afterend", nueva);
     }
   }
 

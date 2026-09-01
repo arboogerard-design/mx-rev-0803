@@ -195,7 +195,14 @@
      "video": "media/FRASE_JORDI_RESTAURANTE_CUENTA_19AGO__00.mp4"
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "url": null,
+    "shortcode": "Db7tc6rS-OC (instagram.com/reel/Db7tc6rS-OC, lo pasó Jordi el 18-ago)"
+   },
+   "molde": "frase_atico_v1"
   },
   {
    "id": "MEMES_JAVI_SEMANA_17AGO",
@@ -246,7 +253,12 @@
      "video": "media/MEMES_JAVI_SEMANA_17AGO__05.mp4"
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON de @co1e0 · instagram.com/p/DYaO0J2ihh5 — su meme con MÁS plays de los 9 medidos (407.533). Fichero en disco: 07_REFERENCIAS_VIRALES/co1e0/DYaO0J2ihh5.mp4."
+   }
   },
   {
    "id": "JORDI_CLON_RAMA_3_FILTROS",
@@ -282,7 +294,9 @@
     }
    ],
    "sin_caption": true,
-   "slides": 5
+   "slides": 5,
+   "verificada": "SIN_CARPETA",
+   "verificada_por_que": "la pieza no esta en PARA_REVISAR ni en _WIP: el panel la sirve pero en disco no existe (archivada o renombrada)"
   },
   {
    "id": "MEMES_JAVI_NOCHE_24AGO",
@@ -317,7 +331,12 @@
      "peso_mb": 0.62
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON de @co1e0 · instagram.com/p/DYaO0J2ihh5 — su meme con MÁS plays de los 9 medidos (407.533). Fichero en disco: 07_REFERENCIAS_VIRALES/co1e0/DYaO0J2ihh5.mp4."
+   }
   },
   {
    "id": "MEME_JORDI_TRADUCIDO_24AGO",
@@ -337,7 +356,14 @@
      "peso_mb": 1.18
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON del propio meme publicado de JORDI, no de un referente ajeno.\nFuente: D:\\CEREBRO_WHATSAPP\\_DESDE_TORRE_14AGO\\268551487229961@lid\\video_20260713_201456.mp4 "
+   },
+   "musica": "audio_canon_jordi_8.0s.m4a | pieza entera | extraído con -c copy del meme publicado de Jordi (video_20260713_201456.mp4)",
+   "clon_check": "PARA_REVISAR/MEME_JORDI_TRADUCIDO_24AGO/_CLON_CHECK.png"
   },
   {
    "id": "CARRUSEL_JORDI_MERCADO_24AGO",
@@ -409,7 +435,13 @@
     }
    ],
    "sin_caption": false,
-   "slides": 5
+   "slides": 5,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "Molde BOFU de @ramiro.cubria (instagram.com/p/DbUIat6HOLY), el que Santi marcó «respetar estética». Medido el 23-ago: alterna fondo claro y oscuro por slide y r"
+   },
+   "musica": "Like That - Metro Boomin, Future.mp3 | pieza entera | PACK_EDICION, entra en el drop (88.5 s)"
   },
   {
    "id": "FAB_JORDI_003_COMPARARSE",
@@ -475,7 +507,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 5
+   "slides": 5,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "End Song Project X soundtrack.mp3 | pieza entera | PACK_EDICION, entra en el drop (3.2 s)",
+   "motor": "_SCRIPTS/fabrica_masiva.py -> carrusel_clon_ramiro.py + carrusel_a_video.py"
   },
   {
    "id": "FAB_JORDI_COMPARAR_IA",
@@ -541,7 +582,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 5
+   "slides": 5,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "End Song Project X soundtrack.mp3 | pieza entera | PACK_EDICION, entra en el drop (3.2 s)",
+   "motor": "_SCRIPTS/fabrica_masiva.py -> carrusel_clon_ramiro.py + carrusel_a_video.py"
   },
   {
    "id": "CARRUSEL_JAVI_02SEP_CHECKOUT_FUGA",
@@ -607,7 +657,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 5
+   "slides": 5,
+   "verificada": "BLOCK",
+   "verificada_por_que": "| K cierre/CTA | **PASS** |   VEREDICTO: PASS |",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "TIKI_TIKI_Slowed.mp3 | pieza entera | viral · TIKI TIKI slowed, trend de feed | arranca en 0 s",
+   "motor": "_SCRIPTS/fabrica_masiva.py -> carrusel_clon_ramiro.py + carrusel_a_video.py"
   },
   {
    "id": "CARRUSEL_JAVI_30AGO_LO_QUE_QUEDA",
@@ -656,7 +715,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 7
+   "slides": 7,
+   "verificada": "BLOCK",
+   "verificada_por_que": "| K cierre/CTA | **PASS** |   VEREDICTO: PASS |",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "Frank Saint (Slowed).mp3 | pieza entera | PACK_EDICION, entra en el drop (0.0 s)",
+   "motor": "_SCRIPTS/_carrusel_bofu_30ago.py   (driver de las dos piezas BOFU del 30-ago)"
   },
   {
    "id": "CARRUSEL_JAVI_30AGO_PRECIO_CUENTA",
@@ -740,7 +808,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 7
+   "slides": 7,
+   "verificada": "BLOCK",
+   "verificada_por_que": "| K cierre/CTA | **PASS** |   VEREDICTO: PASS |",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "Gesaffelstein - OPR (remix) [TRAP CINOU].mp3 | pieza entera | viral · trap cinematico, tension — encaja con el dolor del precio | arranca en 0 s",
+   "motor": "_SCRIPTS/fabrica_masiva.py -> carrusel_clon_ramiro.py + carrusel_a_video.py"
   },
   {
    "id": "MEME_JAVI_MENSAJES_SIN_VENTA_30AGO",
@@ -760,7 +837,15 @@
      "peso_mb": 0.62
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON de @co1e0 · instagram.com/p/DYaO0J2ihh5 — su meme con MÁS plays de los 9 medidos (407.533). Fichero en disco: 07_REFERENCIAS_VIRALES/co1e0/DYaO0J2ihh5.mp4."
+   },
+   "molde": "meme_banda_co1e0",
+   "musica": "audio_canon_7.2s.m4a | pieza entera | extraído del propio referente de @co1e0 (07_REFERENCIAS_VIRALES/co1e0/DYaO0J2ihh5.mp4)",
+   "motor": "_meme_javi_30ago.py"
   },
   {
    "id": "REEL_JAVI_QUIEN_DA_CLASE_27AGO",
@@ -780,7 +865,15 @@
      "peso_mb": 21.37
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "molde talking_hook APROBADO — winner local medible (ruta absoluta: el gate R solo reconoce absoluta o shortcode):\nC:\\Users\\PC\\Desktop\\MENTORIUM\\MENTORIUM_SISTEM"
+   },
+   "molde": "talking_hook_filtro_2ago",
+   "musica": "hook: D:\\PACK_EDICION\\PACKS\\MÚSICA DE FONDO\\Phoenix - 1901 (Instrumental) HQ.mp3 @0.00",
+   "motor": "reel_javi_quiendaclase_27ago.py"
   },
   {
    "id": "TH_MIEDO_PERDER_31AGO",
@@ -800,7 +893,15 @@
      "peso_mb": 36.07
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "D:\\MENTORIUM_ENTREVISTAS_PODCASTS\\PODCAST_3CAM\\MAPA_QA_26_REELS_3JUL.md\nventana NUEVA (no está en el MAPA_QA_26_REELS_3JUL ni en el MAPA_JUNTOS_30_4JUL): 2177,5"
+   },
+   "molde": "talking_javi_podcast_3cam",
+   "musica": "unica: ninguna",
+   "motor": "_SCRIPTS/fabrica_th_podcast.py --pieza miedo_perder"
   },
   {
    "id": "TH_YOUTUBE_NO_CONTESTA_31AGO",
@@ -820,7 +921,15 @@
      "peso_mb": 34.77
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "D:\\MENTORIUM_ENTREVISTAS_PODCASTS\\PODCAST_3CAM\\MAPA_QA_26_REELS_3JUL.md\nsuplente S1 del MAPA_QA_26_REELS_3JUL, ventana reacotada por micro (canal R) el 29-ago E"
+   },
+   "molde": "talking_javi_podcast_3cam",
+   "musica": "unica: ninguna",
+   "motor": "_SCRIPTS/fabrica_th_podcast.py --pieza youtube_no_contesta"
   },
   {
    "id": "CARRUSEL_JORDI_30AGO_TARDE_EN_PREGUNTAR",
@@ -873,7 +982,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 8
+   "slides": 8,
+   "verificada": "BLOCK",
+   "verificada_por_que": "| K cierre/CTA | **PASS** |   VEREDICTO: PASS |",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "The Game - Hate It Or Love It (Instrumental).mp3 | pieza entera | PACK_EDICION, entra en el drop (0.0 s)",
+   "motor": "_SCRIPTS/_carrusel_bofu_30ago.py   (driver de las dos piezas BOFU del 30-ago)"
   },
   {
    "id": "FAB_JORDI_REDES_SIN_VENDER",
@@ -939,7 +1057,16 @@
     }
    ],
    "sin_caption": false,
-   "slides": 5
+   "slides": 5,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "url": "https://www.instagram.com/p/DbUIat6HOLY/",
+    "shortcode": "DbUIat6HOLY"
+   },
+   "molde": "ramiro_bofu_DbUIat6HOLY",
+   "musica": "End Song Project X soundtrack.mp3 | pieza entera | PACK_EDICION, entra en el drop (3.2 s)",
+   "motor": "_SCRIPTS/fabrica_masiva.py -> carrusel_clon_ramiro.py + carrusel_a_video.py"
   },
   {
    "id": "JORDI_BSEM_3_COSAS_CONFIANZA",
@@ -975,7 +1102,9 @@
     }
    ],
    "sin_caption": false,
-   "slides": 5
+   "slides": 5,
+   "verificada": "SIN_CARPETA",
+   "verificada_por_que": "la pieza no esta en PARA_REVISAR ni en _WIP: el panel la sirve pero en disco no existe (archivada o renombrada)"
   },
   {
    "id": "JORDI_REPLICA_30AGO",
@@ -995,7 +1124,16 @@
      "peso_mb": 5.16
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "https://www.instagram.com/reel/DcmosoUhOI1/\nLo paso JORDI el 30-ago-2026 16:01 por WhatsApp, con dos clips suyos y estas palabras:\n  «Pilla el clip que quieras»"
+   },
+   "molde": "replica_marcverdu_DcmosoUhOI1",
+   "musica": "unica: audio del propio referente (_build/referente_jordi.mp4, shortcode DcmosoUhOI1), copiado sin tocar.",
+   "clon_check": "PARA_REVISAR/JORDI_REPLICA_30AGO/_CLON_CHECK.png",
+   "motor": "one-off ffmpeg (réplica al píxel, sin motor canon: letterbox 62,7 % + banda PNG + audio del"
   },
   {
    "id": "MEMES_JORDI_ELITE_18AGO",
@@ -1058,7 +1196,14 @@
      "video": "media/MEMES_JORDI_ELITE_18AGO__07.mp4"
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON 1:1 del meme publicado de Jordi (canon medido, no un referente ajeno):\nhttps://www.instagram.com/p/DYaO0J2ihh5\n\nFichero medido: D:\\CEREBRO_WHATSAPP\\_DESDE_"
+   },
+   "musica": "audio_canon_jordi_8.0s.m4a | pieza entera | extraído con -c copy del meme publicado de Jordi (video_20260713_201456.mp4)",
+   "clon_check": "PARA_REVISAR/MEMES_JORDI_ELITE_18AGO/_CLON_CHECK.png"
   },
   {
    "id": "MEMES_JORDI_SEMANA_17AGO",
@@ -1121,7 +1266,14 @@
      "video": "media/MEMES_JORDI_SEMANA_17AGO__07.mp4"
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON del propio meme publicado de JORDI, no de un referente ajeno.\nFuente: D:\\CEREBRO_WHATSAPP\\_DESDE_TORRE_14AGO\\268551487229961@lid\\video_20260713_201456.mp4 "
+   },
+   "musica": "audio_canon_jordi_8.0s.m4a | pieza entera | extraído con -c copy del meme publicado de Jordi (video_20260713_201456.mp4)",
+   "clon_check": "PARA_REVISAR/MEMES_JORDI_SEMANA_17AGO/_CLON_CHECK.png"
   },
   {
    "id": "MEMES_JORDI_TANDA_16AGO",
@@ -1166,7 +1318,14 @@
      "video": "media/MEMES_JORDI_TANDA_16AGO__04.mp4"
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON del propio meme publicado de JORDI, no de un referente ajeno.\nFuente: D:\\CEREBRO_WHATSAPP\\_DESDE_TORRE_14AGO\\268551487229961@lid\\video_20260713_201456.mp4 "
+   },
+   "musica": "audio_canon_jordi_8.0s.m4a | pieza entera | extraído con -c copy del meme publicado de Jordi (video_20260713_201456.mp4)",
+   "clon_check": "PARA_REVISAR/MEMES_JORDI_TANDA_16AGO/_CLON_CHECK.png"
   },
   {
    "id": "MEMES_JORDI_TANDA_23AGO",
@@ -1211,7 +1370,14 @@
      "video": "media/MEMES_JORDI_TANDA_23AGO__04.mp4"
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON del propio meme publicado de JORDI, no de un referente ajeno.\nFuente: D:\\CEREBRO_WHATSAPP\\_DESDE_TORRE_14AGO\\268551487229961@lid\\video_20260713_201456.mp4 "
+   },
+   "musica": "audio_canon_jordi_8.0s.m4a | pieza entera | extraído con -c copy del meme publicado de Jordi (video_20260713_201456.mp4)",
+   "clon_check": "PARA_REVISAR/MEMES_JORDI_TANDA_23AGO/_CLON_CHECK.png"
   },
   {
    "id": "MEME_JORDI_DIA_LIBRE_30AGO",
@@ -1231,7 +1397,16 @@
      "peso_mb": 1.19
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "CLON del propio meme publicado de JORDI, no de un referente ajeno.\nFuente: D:\\CEREBRO_WHATSAPP\\_DESDE_TORRE_14AGO\\268551487229961@lid\\video_20260713_201456.mp4 "
+   },
+   "molde": "meme_banda_co1e0",
+   "musica": "audio_canon_jordi_8.0s.m4a | pieza entera | extraído con -c copy del meme publicado de Jordi (video_20260713_201456.mp4)",
+   "clon_check": "PARA_REVISAR/MEME_JORDI_DIA_LIBRE_30AGO/_CLON_CHECK.png",
+   "motor": "_meme_jordi_30ago.py"
   },
   {
    "id": "MEME_JORDI_META_DESACTIVADA_25AGO",
@@ -1251,7 +1426,15 @@
      "peso_mb": 10.46
     }
    ],
-   "sin_caption": false
+   "sin_caption": false,
+   "verificada": "BLOCK",
+   "verificada_por_que": "## VEREDICTO: PASS — apto para revisión de Gerard",
+   "referente": {
+    "texto": "MOLDE (medido, no interpretado): https://www.instagram.com/reel/DZFdv-2RRkJ/\n  lo pasó JORDI el 16-jul-2026 19:07 y aprobó el montaje a las 19:38 con «Perfect»."
+   },
+   "molde": "meme_texto_encima_jordi_16jul",
+   "musica": "unica: REF_JORDI_DcPYXNmJdXq_25ago.mp3 @0.00",
+   "motor": "meme_texto_encima.py"
   }
  ],
  "huecos": [

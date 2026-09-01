@@ -116,6 +116,8 @@ var EJES_SEL = {};    /* {piezaId: [ejes de los chips pulsados]} */
 var ENVUELO = {};     /* {piezaId: true} mientras su voto está en el aire */
 var FILTRO = {cuenta: "todo", etapa: "todo"};   /* solo si index.html no trae los suyos */
 var MONTADO = false;
+var HECHAS = {};      /* {piezaId: true} decididas EN ESTA PASADA (para la barra) */
+var FIRMA0 = null;    /* firma del filtro con la que se está contando */
 
 /* --------------------------------------------------- puentes con los globals */
 /* Todo acceso a un global va por aquí: si index.html todavía no lo define, la
@@ -133,6 +135,7 @@ function _fc() { try { if (typeof FCUENTA !== "undefined") return FCUENTA || "to
 function _fe() { try { if (typeof FETAPA  !== "undefined") return FETAPA  || "todo"; } catch (e) {} return FILTRO.etapa; }
 function _setFiltro(k, v) {
   FILTRO[k] = v;
+  HECHAS = {};     /* otra cola = otra pasada; si no, la barra contaría contra la anterior */
   try { if (k === "cuenta") FCUENTA = v; else FETAPA = v; } catch (e) { /* no lo declara index.html */ }
 }
 
@@ -165,6 +168,16 @@ function sello() { return new Date().toISOString().slice(0, 16).replace("T", " "
 function oid() {
   try { if (window.crypto && crypto.randomUUID) return crypto.randomUUID(); } catch (e) {}
   return "oid-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+}
+
+/* Quita la frase de un chip del motivo sin destrozar lo escrito a mano: se
+   prueban primero las dos formas con separador que inserta el propio chip. */
+function quitarFrase(txt, frase) {
+  var s = String(txt || "");
+  s = s.split(frase + ". ").join("");
+  s = s.split(". " + frase).join("");
+  s = s.split(frase).join("");
+  return s.trim();
 }
 
 function decDe(id)   { return (_est().decisiones || {})[id] || null; }
@@ -231,6 +244,15 @@ function badgeF1(p) {
   return '<span class="rv-badge">' + esc_(f) + "</span>";
 }
 
+/* El estado del referente, visible SIN desplegar nada. En el móvil nadie abre un
+   drawer para enterarse de que no hay con qué comparar, y esa es justo la pieza
+   que hay que mirar con más cuidado antes de aprobar. */
+function badgeRef(p) {
+  if (_refs()[p.id]) return "";
+  var sin = _refsSin().find(function (x) { return x.pieza === p.id; });
+  return '<span class="rv-badge warn">' + (sin ? "sin referente" : "sin emparejar") + "</span>";
+}
+
 /* Galería multi-slide. `grande` = modo foco (media grande, con sonido). */
 function mediaHTML(p, i, grande) {
   var arr = p.archivos || [], n = arr.length;
@@ -289,15 +311,42 @@ function moldeDe(r) {
   return m ? m[1] : "";
 }
 
+/* SIN REFERENTE — el drawer NO desaparece, lo dice.
+   Medido el 25-ago sobre los datos vivos: de las 91 piezas de la cola, 22 no
+   tienen pareja en `referentes.json`. Con el código de antes esas 22 perdían el
+   control «Comparar con el referente» — no salía nada donde en la pieza anterior
+   había un desplegable. Y la pieza que todavía no está catalogada en NINGUNA de
+   las dos listas (`pares` ni `sin_referente`) devolvía `""`: ni drawer, ni aviso,
+   ni una línea. Reproducido quitando una pieza de REFS_SIN y repintando.
+   Ese es el estado por defecto de toda pieza recién producida hasta que alguien
+   regenera `referentes.json`, así que no es un caso raro: es el caso nuevo.
+
+   Se distinguen los dos motivos porque NO son lo mismo (ley 4, cero inventar):
+   una pieza catalogada «sin referente» sabemos que no salió de ninguno; una que
+   no aparece en ninguna lista puede tenerlo y faltar solo el cruce. Decir «no
+   tiene referente» de la segunda sería inventarse un hecho. */
+function sinRefHTML(p) {
+  var sin = _refsSin().find(function (x) { return x.pieza === p.id; });
+  var titulo, cuerpo;
+  if (sin) {
+    titulo = "Sin referente con el que comparar";
+    cuerpo = "Esta pieza no salió de ningún referente" +
+             (sin.motivo ? " — " + esc_(sin.motivo) : "") + ". No hay original que " +
+             "poner al lado, así que júzgala sola: hook, tamaño de letra, ritmo y CTA. " +
+             "Si algo falla, escríbelo en Corregir.";
+  } else {
+    titulo = "Referente todavía sin emparejar";
+    cuerpo = "Esta pieza aún no está cruzada con su referente, así que el panel no " +
+             "tiene con qué compararla. Puede que sí lo tenga y falte solo el cruce: " +
+             "el panel no lo sabe y no se lo inventa.";
+  }
+  return '<details class="rv-cmp sinref"><summary>' + titulo + "</summary>" +
+         '<p class="rv-cmpnota">' + cuerpo + "</p></details>";
+}
+
 function comparaHTML(p) {
   var r = _refs()[p.id];
-  if (!r) {
-    var sin = _refsSin().find(function (x) { return x.pieza === p.id; });
-    if (!sin) return "";
-    return '<div class="rv-sinref">Sin referente declarado' +
-           (sin.motivo ? " · " + esc_(sin.motivo) : "") +
-           ". Sin original al lado, aprobar es adivinar (§1 ley 1).</div>";
-  }
+  if (!r) return sinRefHTML(p);
   var m = rutaDe((p.archivos || [])[0]);   /* §6.3: ruta del objeto, no el objeto */
   var izq = r.ref
     ? (r.es_video
@@ -361,7 +410,28 @@ function foco(ps) {
   if (RVI >= ps.length) RVI = ps.length - 1;
   if (RVI < 0) RVI = 0;
   var p = ps[RVI], d = decDe(p.id), et = etapaDe(p);
-  var pct = Math.round((RVI / ps.length) * 100);
+
+  /* La barra estaba SIEMPRE al 0 %. `pct` salía de RVI/ps.length, pero la pieza
+     decidida sale de la cola, así que RVI se queda en 0 y la cola encoge: medido
+     el 25-ago, tras aprobar la barra pasaba de «1 de 91» a «1 de 90» con el
+     relleno clavado en width:0%. Repasar 40 piezas seguidas sin ver moverse la
+     barra ni una vez es peor que no tenerla.
+
+     Se cuentan las decididas EN ESTA PASADA, una por una. El primer intento las
+     dedujo restando (cola inicial − cola actual) y salió mal, medido en una carga
+     limpia: la cola inicial se fija en el primer render, que ocurre ANTES de que
+     lleguen las decisiones de npoint, así que los 13 votos que el equipo ya tenía
+     guardados se contaban como trabajo de esta sesión y la barra abría en «7 de
+     94». Contar lo que de verdad se decide aquí no depende del orden de carga. */
+  var firma = _fc() + "|" + _fe();
+  /* Los filtros de arriba los pinta y CABLEA index.html (`filtrosHTML`), así que
+     `_setFiltro` de este módulo no siempre se entera; la firma sí se ve al pintar.
+     Otra cola = otra pasada: el recuento se reinicia. */
+  if (firma !== FIRMA0) { FIRMA0 = firma; HECHAS = {}; }
+  var hechas = Object.keys(HECHAS).length;
+  var total = ps.length + hechas;
+  var puesto = Math.min(hechas + RVI + 1, total);
+  var pct = total ? Math.round(((puesto - 1) / total) * 100) : 0;
   var r = _refs()[p.id];
   var clon = r
     ? '<div class="rv-clon">Clon de <b>' + esc_(p.cuenta || "") + "</b>" +
@@ -369,8 +439,9 @@ function foco(ps) {
     : "";
 
   return '<article class="rv-foco">' +
-    '<div class="rv-prog"><span class="rv-cifra">' + (RVI + 1) + " de " + ps.length + "</span>" +
-      '<span class="rv-progbar"><i style="width:' + pct + '%"></i></span></div>' +
+    '<div class="rv-prog"><span class="rv-cifra">' + puesto + " de " + total + "</span>" +
+      '<span class="rv-progbar"><i style="width:' + pct + '%"></i></span>' +
+      '<span class="rv-quedan">quedan ' + ps.length + "</span></div>" +
     clon +
     mediaHTML(p, SLIDE[p.id] || 0, true) +
     '<h2 class="rv-tit">' + esc_(hookDe(p) || p.id) + "</h2>" +
@@ -379,7 +450,7 @@ function foco(ps) {
       '<span class="rv-tag">' + esc_(ETAPA_HUMANO[et] || et) + ' <i>' + esc_(et) + "</i></span>" +
       (p.dia ? '<span class="rv-tag">' + esc_(p.dia) + (p.hora ? " · " + esc_(p.hora) : "") + "</span>" : "") +
       ((p.archivos || []).length > 1 ? '<span class="rv-tag">' + p.archivos.length + " slides</span>" : "") +
-      badgeF1(p) +
+      badgeF1(p) + badgeRef(p) +
     "</div>" +
     '<div class="rv-id">' + esc_(p.id) + "</div>" +
     comparaHTML(p) +
@@ -407,7 +478,7 @@ function cardHTML(p) {
         '<span class="rv-tag">' + esc_(p.tipo || "") + "</span>" +
         '<span class="rv-tag">' + esc_(etapaDe(p)) + "</span>" +
         (p.hora ? '<span class="rv-tag">' + esc_(p.hora) + "</span>" : "") +
-        badgeF1(p) +
+        badgeF1(p) + badgeRef(p) +
       "</div>" +
       '<h3 class="rv-tit2">' + esc_(hookDe(p) || p.id) + "</h3>" +
       '<div class="rv-id">' + esc_(p.id) + "</div>" +
@@ -497,6 +568,7 @@ async function decidir(p, estado, motivo, ejes) {
     }
     delete BORRADOR[p.id];
     delete EJES_SEL[p.id];
+    HECHAS[p.id] = true;          /* cuenta para la barra: decidida en esta pasada */
 
     if (estado === "corregir") await ordenCorregir(p, motivo, ejes);
     return true;
@@ -530,6 +602,7 @@ async function aprobarSeccion(ps) {
       srv.decisiones[p.id] = {estado: "aprobado", motivo: "", por: yo, cuando: cuando};
     });
   });
+  ps.forEach(function (p) { if ((decDe(p.id) || {}).estado === "aprobado") HECHAS[p.id] = true; });
   var faltan = ps.filter(function (p) { var d = decDe(p.id); return !d || d.estado !== "aprobado"; });
   if (faltan.length) avisar("No se guardaron " + faltan.length + " de " + ps.length, true);
   else avisar("Aprobadas " + ps.length);
@@ -646,23 +719,36 @@ function onClick(ev) {
   /* navegación del foco */
   if (b.hasAttribute("data-rpnav")) { RVI += (+b.dataset.rpnav); pintar(); return; }
 
-  /* chips de corrección: rellenan el motivo, no deciden nada */
+  /* Chips de corrección: rellenan el motivo, no deciden nada. Y AHORA SE
+     DESMARCAN. Antes solo sumaban: un chip pulsado por error se quedaba pegado,
+     y su eje viajaba igual en la orden que vuelve a la fábrica (§7.1) — o sea,
+     se re-producía un eje que nadie quería tocar. Medido el 25-ago: dos clics
+     en el mismo chip dejaban `chips_on` en 2 y el texto sin cambiar. */
   if (b.hasAttribute("data-fx")) {
     var f = FIX_RAPIDO[+b.dataset.fx]; if (!f) return;
     var pc = piezaDelEvento(b); if (!pc) return;
     var raiz = b.closest(".rv-card") || b.closest(".rv-foco");
     var ta = raiz && raiz.querySelector(".motivo");
-    if (ta) {
-      var v = ta.value.trim();
-      if (v.indexOf(f[1]) < 0) ta.value = v ? v + ". " + f[1] : f[1];
-      BORRADOR[pc.id] = ta.value;
-      ta.focus();
+    var sel = EJES_SEL[pc.id] = EJES_SEL[pc.id] || [];
+    var txt = ta ? ta.value : (BORRADOR[pc.id] || "");
+    var pos = sel.indexOf(f[2]);
+
+    if (pos >= 0) {
+      sel.splice(pos, 1);
+      txt = quitarFrase(txt, f[1]);
+      b.classList.remove("on");
     } else {
-      BORRADOR[pc.id] = (BORRADOR[pc.id] ? BORRADOR[pc.id] + ". " : "") + f[1];
+      sel.push(f[2]);
+      if (txt.indexOf(f[1]) < 0) {
+        /* se quita la puntuación final antes de unir: si no, un motivo escrito a
+           mano que ya acaba en punto salía como «…a mano.. La letra es…» */
+        var base = txt.trim().replace(/[.,;:\s]+$/, "");
+        txt = base ? base + ". " + f[1] : f[1];
+      }
+      b.classList.add("on");
     }
-    EJES_SEL[pc.id] = EJES_SEL[pc.id] || [];
-    if (EJES_SEL[pc.id].indexOf(f[2]) < 0) EJES_SEL[pc.id].push(f[2]);
-    b.classList.add("on");
+    if (ta) { ta.value = txt; ta.focus(); }
+    BORRADOR[pc.id] = txt;
     return;
   }
 
@@ -711,9 +797,23 @@ function onChange(ev) {
 
 function onTecla(ev) {
   if (_tab() !== "repasar" || _modo() !== "foco") return;
-  /* con el foco en un control, el teclado es suyo: Enter sobre un botón ya es un
-     clic y Enter en un textarea es un salto de línea. */
-  if (/(input|textarea|select|button|a)/i.test(ev.target.tagName || "")) return;
+  /* Con el foco en un control, el teclado es suyo: Enter sobre un botón ya es un
+     clic y Enter en un textarea es un salto de línea. Pero el filtro de antes,
+     /(input|textarea|select|button|a)/i, NO estaba anclado: la alternativa suelta
+     `a` casa con CUALQUIER etiqueta que lleve una «a» — SUMMARY, SPAN, ARTICLE,
+     DETAILS, LABEL.
+     Medido el 25-ago en el navegador: al pulsar «Comparar con el referente» el
+     foco se queda en su <summary>, y desde ahí 1/2/3 y las flechas dejaban de
+     responder. O sea: abrir la comparación —lo que esta pantalla existe para que
+     hagas antes de decidir— apagaba el teclado, y sin decir nada.
+     Ahora se separan los dos casos de verdad. */
+  var tag = String(ev.target.tagName || "").toUpperCase();
+  if (ev.target.isContentEditable) return;
+  /* se comen TODA tecla: se está escribiendo dentro */
+  if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+  /* se activan con Enter/Espacio: esas dos teclas son suyas, las demás no */
+  if ((tag === "BUTTON" || tag === "SUMMARY" || tag === "A") &&
+      (ev.key === "Enter" || ev.key === " " || ev.key === "Spacebar")) return;
   var box = document.querySelector("#rv-visor");
   if (box && box.classList.contains("on")) { if (ev.key === "Escape") cerrarVisor(); return; }
   if (!document.querySelector(".rv-foco")) return;

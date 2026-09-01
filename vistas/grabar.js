@@ -182,6 +182,7 @@ var MONTADO = false;
 var ABIERTAS = {};                 /* {idGuion: true} — sobrevive a los repintados */
 var FILTRO = {cuenta: "todo", etapa: "todo"};   /* solo si index.html no trae los suyos */
 var PROPIOS = false;               /* ¿pinté yo los filtros? → entonces los cableo yo */
+var BUSCA   = "";                  /* buscador local — sobrevive a los repintados */
 
 /* ------------------------------------------------- puentes con los globals */
 /* `typeof` sobre un identificador que no existe no lanza; leerlo a pelo sí. */
@@ -279,12 +280,40 @@ function gruposDe(gs, campo) {
    JAVI, el número de la pestaña no puede bajar: la faena de Jordi sigue ahí. */
 function guionesParaGrabar() { return _guiones(); }
 
+/* ------------------------------------------------------------- el buscador */
+/* Por qué existe: son 21 guiones y cada uno trae escena + 5 bloques + música +
+   rótulo + caption. Plegados no se ve el contenido, y abiertos son ~1.400 líneas
+   de scroll. Sin buscador, encontrar «el de la calculadora» o «el de los 423 €»
+   era bajar ficha a ficha — y el equipo hace esto desde el móvil. Se busca en
+   TODO lo que un humano recuerda de un guion: el título, el rótulo, lo que se
+   dice en los bloques y lo que se ve en la escena. */
+function normBusca(s) {
+  var q = String(s == null ? "" : s).toLowerCase().trim();
+  if (q.normalize) q = q.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return q.replace(/\s+/g, " ");
+}
+var _hene = {};   /* {idGuion: texto buscable} — se calcula una vez por guion */
+function textoBuscable(g) {
+  var k = g.id || g.titulo || "";
+  if (_hene[k] != null) return _hene[k];
+  var e = g.escena || {};
+  var partes = [g.id, g.titulo, g.cuenta, g.etapa, g.formula, g.musica,
+                g.texto_en_pantalla, g.caption,
+                e.donde, e.plano, e.que_se_ve, e.atrezzo];
+  (g.bloques || []).forEach(function (b) {
+    partes.push(b.bloque, b.texto, b.nota_direccion);
+  });
+  _hene[k] = normBusca(partes.join(" "));
+  return _hene[k];
+}
+function coincide(g, q) { return !q || textoBuscable(g).indexOf(q) >= 0; }
+
 function visibles() {
-  var fc = _fc(), fe = _fe();
+  var fc = _fc(), fe = _fe(), q = normBusca(BUSCA);
   return guionesParaGrabar().filter(function (g) {
     if (fc !== "todo" && cuentaDe(g) !== String(fc).toUpperCase()) return false;
     if (fe !== "todo" && etapaDe(g)  !== String(fe).toUpperCase()) return false;
-    return true;
+    return coincide(g, q);
   });
 }
 
@@ -310,6 +339,24 @@ function filtros() {
                 (e === "todo" ? "Todas" : e) + "</button>";
        }).join("") + "</div>";
   return h + "</div>";
+}
+
+/* El ✕ y el «N de 21» se emiten SIEMPRE y se pliegan con `hidden`: el buscador
+   filtra sobre el DOM ya pintado (si repintara, el input perdería el foco en
+   cada tecla), así que ningún repintado va a crearlos mientras escribes. Es el
+   mismo fallo que se midió en `guiones.js` el 25-ago; aquí no se repite. */
+function buscadorHTML(visto, total) {
+  var hay = !!normBusca(BUSCA);
+  return '<div class="gb-busca-fila">' +
+    '<div class="gb-busca">' +
+      '<input type="search" class="gb-input" data-gb-busca autocomplete="off" spellcheck="false"' +
+        ' placeholder="Buscar: «calculadora», «423», un rótulo, una frase del guion…"' +
+        ' aria-label="Buscar entre los guiones a grabar" value="' + esc_(BUSCA) + '">' +
+      '<button type="button" class="gb-x" data-gb-x aria-label="Limpiar la búsqueda"' +
+        (hay ? "" : " hidden") + ">&times;</button>" +
+    "</div>" +
+    '<span class="gb-busca-n"' + (hay ? "" : " hidden") + ">" + visto + " de " + total + "</span>" +
+  "</div>";
 }
 
 function pillCuenta(c) {
@@ -377,7 +424,10 @@ function fichaGuion(g) {
   var seg = segundosDe(g);
   var gancho = ((g.bloques || [])[0] || {}).texto || "";
 
-  var h = '<article class="gb-ficha' + (abierta ? " abierta" : "") + '" data-cuenta="' + esc_(c) + '">';
+  /* `data-gb-id` lo usa el buscador para saber QUÉ guion es cada tarjeta sin
+     tener que leerle el HTML. Es el mismo id que el toggle. */
+  var h = '<article class="gb-ficha' + (abierta ? " abierta" : "") + '" data-cuenta="' + esc_(c) +
+          '" data-gb-id="' + esc_(id) + '">';
 
   /* --- cabecera: es un botón entero, para que en el móvil se abra con el
          pulgar sin apuntar a un icono de 12 px --- */
@@ -484,6 +534,7 @@ function vistaGuionesGrabar() {
 
   h += "</header>";
   h += filtros();
+  h += buscadorHTML(vs.length, todos.length);
 
   if (!vs.length) {
     h += '<div class="gb-vacio">' +
@@ -493,6 +544,14 @@ function vistaGuionesGrabar() {
          "</div></div>";
     return h;
   }
+
+  /* El mismo «no hay nada», pero PLEGADO. Al teclear no hay repintado que pueda
+     añadirlo, así que tiene que estar ya en el DOM: dejar la pantalla en blanco
+     sin una palabra se lee como «el panel está roto». */
+  h += '<div class="gb-vacio gb-nada" hidden>' +
+       "<p><b>Ningún guion dice eso.</b></p>" +
+       '<button type="button" class="gb-btn" data-gb-x>Ver los ' + todos.length + " guiones</button>" +
+       "</div>";
 
   gruposDe(vs, "cuenta").forEach(function (c) {
     var mios = vs.filter(function (g) { return cuentaDe(g) === c; });
@@ -620,8 +679,18 @@ function porId(id) {
    handlers ni dejar ninguno colgando de un nodo que ya no existe. */
 
 function onClick(ev) {
-  var b = ev.target && ev.target.closest ? ev.target.closest("[data-gb-toggle],[data-gb-todo],[data-gb-copia],[data-gb-copiacap],[data-gb-f],[data-gb-e],[data-gb-limpiar]") : null;
+  var b = ev.target && ev.target.closest ? ev.target.closest("[data-gb-toggle],[data-gb-todo],[data-gb-copia],[data-gb-copiacap],[data-gb-f],[data-gb-e],[data-gb-limpiar],[data-gb-x]") : null;
   if (!b) return;
+
+  /* Limpiar la búsqueda: se vacía el input y se vuelve a filtrar en el DOM. NO
+     se repinta — repintar aquí cerraría las fichas que tuvieras abiertas. */
+  if (b.hasAttribute("data-gb-x")) {
+    BUSCA = "";
+    var inp = document.querySelector("[data-gb-busca]");
+    if (inp) { inp.value = ""; inp.focus(); }
+    filtraDOM();
+    return;
+  }
 
   /* Plegar / desplegar una ficha: se toca el DOM, no se repinta el panel. */
   if (b.hasAttribute("data-gb-toggle")) {
@@ -691,10 +760,67 @@ function sincronizaBotonTodo() {
   b.textContent = todas ? "Cerrar todas" : "Abrir todas";
 }
 
+/* --------------------------------------------------------- buscar al teclear */
+/* Se enseña/esconde sobre el DOM ya pintado, nunca se repinta: repintar en cada
+   tecla le quita el foco al input y escribir se vuelve imposible. Los
+   encabezados que se quedan sin fichas se pliegan con su ficha, o queda un
+   «JAVI · 11 guiones» encabezando el vacío. */
+function filtraDOM() {
+  var raiz = document.querySelector(".gb");
+  if (!raiz) return;
+  var q = normBusca(BUSCA);
+  var porId = {}, gs = guionesParaGrabar();
+  gs.forEach(function (g) { porId[g.id || g.titulo] = g; });
+
+  var vistos = 0;
+  raiz.querySelectorAll(".gb-ficha").forEach(function (art) {
+    var g = porId[art.getAttribute("data-gb-id")];
+    var ok = !!g && coincide(g, q);
+    art.hidden = !ok;
+    if (ok) vistos++;
+  });
+
+  /* Un encabezado manda sobre las fichas que van DETRÁS hasta el siguiente
+     encabezado del mismo nivel o superior: no hay contenedor por sección. */
+  function repasa(sel, corta) {
+    raiz.querySelectorAll(sel).forEach(function (hd) {
+      var n = 0, s = hd.nextElementSibling;
+      while (s && !corta(s)) {
+        if (s.classList.contains("gb-ficha") && !s.hidden) n++;
+        s = s.nextElementSibling;
+      }
+      hd.hidden = n === 0;
+    });
+  }
+  repasa(".gb-etapa", function (s) { return s.classList.contains("gb-etapa") || s.classList.contains("gb-h3"); });
+  repasa(".gb-h3",    function (s) { return s.classList.contains("gb-h3"); });
+
+  /* Los recuentos de cada encabezado («JAVI · 11 guiones · 13 min») se calculan
+     al pintar y al filtrar quedarían mintiendo. Se ESCONDEN mientras se busca en
+     vez de reescribirlos: el número que manda entonces es el «N de 21» de arriba,
+     que sí está medido sobre lo que se ve. Cero cifra falsa en pantalla (ley 4). */
+  raiz.classList.toggle("gb-buscando", !!q);
+
+  var n = raiz.querySelector(".gb-busca-n");
+  if (n) { n.textContent = vistos + " de " + gs.length; n.hidden = !q; }
+  var x = raiz.querySelector("[data-gb-x]");
+  if (x) x.hidden = !q;
+  var nada = raiz.querySelector(".gb-nada");
+  if (nada) nada.hidden = vistos > 0;
+}
+
+function onInput(ev) {
+  var i = ev.target;
+  if (!i || !i.hasAttribute || !i.hasAttribute("data-gb-busca")) return;
+  BUSCA = i.value;
+  filtraDOM();
+}
+
 function montar() {
   if (MONTADO) return;
   MONTADO = true;
   document.addEventListener("click", onClick);
+  document.addEventListener("input", onInput);
 }
 
 /* ---------------------------------------------------------------- salida */

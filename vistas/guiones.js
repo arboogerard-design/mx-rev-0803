@@ -425,14 +425,24 @@ function cabecera(total, visto, minutos, nCola) {
   return h;
 }
 
+/* El ✕ y el contador «N de 42» se emiten SIEMPRE y se pliegan con `hidden`.
+   Antes se emitían solo `if (BUSCA)`, y como el buscador filtra sobre el DOM ya
+   pintado (para no perderle el foco al input), NUNCA llegaba un repintado que
+   pudiera crearlos mientras escribías: medido el 25-ago tecleando «millon» sobre
+   los 42 cortes → 3 fichas visibles, `.gp-busca-n` = null y `[data-gp-limpiar]`
+   = null. O sea: el contador y el botón de limpiar solo existían cuando ya no
+   hacían falta, y para vaciar la búsqueda en el móvil había que borrar a mano
+   letra a letra. Existiendo desde el primer pintado, `onInput` solo los enseña. */
 function buscador(visto, total) {
+  var hay = !!BUSCA;
   var h = '<div class="gp-busca-fila">';
   h += '<div class="gp-busca">';
   h += '<input type="search" class="gp-input" data-gp-busca placeholder="Buscar en los ganchos, el id o la estructura…" ' +
        'value="' + esc_(BUSCA) + '" aria-label="Buscar entre los cortes de podcast" autocomplete="off">';
-  if (BUSCA) h += '<button type="button" class="gp-x" data-gp-limpiar aria-label="Limpiar la búsqueda">&times;</button>';
+  h += '<button type="button" class="gp-x" data-gp-limpiar aria-label="Limpiar la búsqueda"' +
+       (hay ? "" : " hidden") + ">&times;</button>";
   h += "</div>";
-  if (BUSCA) h += '<span class="gp-busca-n">' + visto + " de " + total + "</span>";
+  h += '<span class="gp-busca-n"' + (hay ? "" : " hidden") + ">" + visto + " de " + total + "</span>";
   return h + "</div>";
 }
 
@@ -677,7 +687,9 @@ function onInput(ev) {
     }
   });
   var n = document.querySelector(".gp-root .gp-busca-n");
-  if (n) n.textContent = vistos + " de " + gs.length;
+  if (n) { n.textContent = vistos + " de " + gs.length; n.hidden = !q; }
+  var x = document.querySelector(".gp-root [data-gp-limpiar]");
+  if (x) x.hidden = !q;
   /* Cero resultados sin una palabra que lo explique se lee como «se ha roto». */
   var nada = document.querySelector(".gp-root .gp-nada");
   if (nada) nada.hidden = vistos > 0;

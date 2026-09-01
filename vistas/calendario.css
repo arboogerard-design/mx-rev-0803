@@ -51,9 +51,10 @@
 /* ------------------------------------------------------------ cabecera / wknav */
 .cal-top{margin:0 0 16px}
 .cal-wknav{display:flex;align-items:center;gap:8px}
+.cal-wknav{flex-wrap:wrap}
 .cal-rango{
-  font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--txt,#ECEDF0);
-  min-width:9.5ch;text-align:center;
+  font-size:20px;font-weight:700;letter-spacing:-.01em;color:var(--txt,#ECEDF0);
+  min-width:13ch;text-align:center;                /* "28 dic 2026 – 3 ene 2027" */
 }
 .cal-nav,.cal-hoybtn{
   min-width:44px;min-height:44px;padding:0 12px;cursor:pointer;
@@ -105,10 +106,15 @@
 .cal-nota b{color:var(--txt-2,#9AA0AB);font-weight:600}
 
 /* --------------------------------------------------------------- la rejilla */
+/* El sangrado lateral tiene que valer EXACTAMENTE el padding de `#app` (12 px,
+   medido en el shell). Con -14 px sobraban 2 px por lado y a 375 px la PAGINA
+   entera cogía scroll horizontal (medido: scrollWidth 377 vs clientWidth 375):
+   el panel se movía de lado bajo el pulgar al arrastrar una pieza. Si algún día
+   cambia el padding del shell, este número cambia con él. */
 .cal-scroll{
   overflow-x:auto;overflow-y:visible;
   scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  margin:0 -14px;padding:0 14px 6px;scrollbar-width:thin;
+  margin:0 -12px;padding:0 12px 6px;scrollbar-width:thin;
 }
 .cal-scroll::-webkit-scrollbar{height:8px}
 .cal-scroll::-webkit-scrollbar-thumb{background:var(--line-2,#31363F);border-radius:999px}
@@ -277,3 +283,58 @@
   border-left:2px solid var(--line-2,#31363F);padding-left:8px;
 }
 .cal-filtroaviso b{color:var(--txt-2,#9AA0AB);font-weight:700}
+
+/* ============================================================================
+   AÑADIDO 25-AGO · lo que pide la columna «Sin fecha» de verdad y la navegación
+   de un panel que dura años. Ver la cabecera de calendario.js:
+     · `.cal-nsem`  — cuántas piezas tiene la semana visible (o que está vacía,
+                      con el atajo para saltar a la más cercana que tenga algo).
+     · `.cal-espera`/`.cal-esp` — las piezas sin fecha y SIN aprobar. Se ven y se
+                      cuentan, pero NO se arrastran: por eso NO llevan `cursor:grab`
+                      ni el fondo de una tarjeta de evento. La diferencia entre
+                      «colocable» y «no colocable» tiene que verse sin leer.
+   Cero color semántico aquí: en esta pantalla nadie decide nada (§4).
+   ========================================================================== */
+
+.cal-nsem{
+  font-size:11.5px;color:var(--txt-3,#656B76);letter-spacing:.02em;
+  margin-left:auto;display:inline-flex;align-items:center;gap:6px;
+}
+.cal-nsem b{color:var(--txt-2,#9AA0AB);font-weight:700}
+.cal-nsem.vacia{color:var(--txt-3,#656B76)}
+.cal-ir{
+  font:inherit;font-size:11.5px;cursor:pointer;padding:6px 8px;min-height:32px;
+  background:transparent;border:1px solid var(--line-2,#31363F);border-radius:999px;
+  color:var(--txt-2,#9AA0AB);
+}
+.cal-ir:hover{color:var(--txt,#ECEDF0);border-color:var(--txt-3,#656B76)}
+
+.cal-subhead{
+  margin:0 0 8px;font-size:11px;line-height:1.5;color:var(--txt-3,#656B76);
+}
+
+.cal-espera{margin:10px 0 0;border-top:1px solid var(--line,#24282F);padding-top:8px}
+.cal-espera>summary{
+  cursor:pointer;list-style:none;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;color:var(--txt-3,#656B76);
+  padding:9px 0;min-height:40px;display:flex;align-items:center;gap:6px;
+}
+.cal-espera>summary::-webkit-details-marker{display:none}
+.cal-espera>summary::before{content:"▸";font-size:10px;transition:transform .12s}
+.cal-espera[open]>summary::before{transform:rotate(90deg)}
+.cal-espera>summary:hover{color:var(--txt-2,#9AA0AB)}
+
+.cal-esp{
+  border:1px dashed var(--line,#24282F);border-radius:var(--r-1,8px);
+  padding:7px 8px;margin:6px 0 0;background:transparent;   /* NO es arrastrable */
+}
+.cal-esp-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.cal-esp-est{
+  font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--txt-3,#656B76);
+}
+.cal-esp-est.corregir{color:var(--txt-2,#9AA0AB)}
+.cal-esp-tit{
+  font-size:12px;line-height:1.35;color:var(--txt-2,#9AA0AB);display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}

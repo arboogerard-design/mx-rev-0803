@@ -618,15 +618,35 @@ function decide(hid, accion) {
 
   ENVIADO[hid] = nuevo;                      /* se suelta cuando el almacén lo confirme */
 
-  guardar(function (srv) {
-    srv.hooks = (srv.hooks && srv.hooks.length) ? srv.hooks : semilla;
-    var k = null;
-    for (var j = 0; j < srv.hooks.length; j++) if (srv.hooks[j].id === hid) { k = srv.hooks[j]; break; }
-    if (!k) return;
-    if (nuevo && nuevo !== k.texto) { k.texto = nuevo; k.editado = marca + " por " + yo; }
-    k.estado = accion; k.por = yo; k.cuando = marca;
+  var p;
+  try {
+    p = guardar(function (srv) {
+      srv.hooks = (srv.hooks && srv.hooks.length) ? srv.hooks : semilla;
+      var k = null;
+      for (var j = 0; j < srv.hooks.length; j++) if (srv.hooks[j].id === hid) { k = srv.hooks[j]; break; }
+      if (!k) return;
+      if (nuevo && nuevo !== k.texto) { k.texto = nuevo; k.editado = marca + " por " + yo; }
+      k.estado = accion; k.por = yo; k.cuando = marca;
+    });
+  } catch (e) { p = null; }
+  /* Sin `.then(render)`: `guardar()` repinta él solo al resolver (§3.3).
+     Lo que SÍ hace falta es soltar el «enviando» cuando el guardado NO fue.
+     ⛔ Ley 1: que llegue el `.then` no prueba nada — `guardar()` resuelve
+     IGUAL después de fallar sus 3 reintentos (avisa en rojo y hace `return`).
+     Medido el 25-ago bloqueando el POST: la fila se quedaba a `opacity:.55`
+     («parece que sigue enviando») para siempre, y si además le habías cambiado
+     el texto, `conciliaBorradores` nunca podía soltarlo, porque compara contra
+     un `h.texto` que el almacén jamás llegó a recibir. Se comprueba contra el
+     estado ya releído, y si no está, se suelta y se repinta. */
+  Promise.resolve(p).then(function () {
+    var l = hooksNormalizados(), k = null;
+    for (var i = 0; i < l.length; i++) if (l[i].id === hid) { k = l[i]; break; }
+    var ok = !!(k && k.estado === accion && k.texto === nuevo);
+    if (!ok && Object.prototype.hasOwnProperty.call(ENVIADO, hid)) { delete ENVIADO[hid]; repinta(); }
+  }, function () {
+    delete ENVIADO[hid];
+    repinta();
   });
-  /* Sin `.then(render)`: `guardar()` repinta él solo al resolver (§3.3). */
 }
 
 /* ------------------------------------------------------------------ copiar */

@@ -6,9 +6,12 @@
    --------
    Pinta la semana real de publicación en una rejilla [Sin fecha | 7 días]:
 
-     · COLUMNA BACKLOG «Sin fecha (N)» — las piezas APROBADAS que todavía no
-       tienen día. Se cogen y se sueltan en un hueco. En móvil no hay drag: se
-       TOCA la pieza (queda «cogida») y se TOCA el hueco. Mismo camino de código.
+     · COLUMNA BACKLOG «Sin fecha (N)» — TODO lo que no tiene día, en dos grupos:
+       las APROBADAS (se cogen y se sueltan en un hueco) y, plegadas debajo, las
+       que siguen esperando decisión (se ven y se cuentan, pero no se colocan:
+       una pieza entra en el calendario cuando alguien la aprueba). En móvil no
+       hay drag: se TOCA la pieza (queda «cogida») y se TOCA el hueco. Mismo
+       camino de código.
      · 7 COLUMNAS DÍA — lo que ya está colocado (hora · título · pill de cuenta ·
        formato) y, debajo, los huecos que el calendario de Santi pide para ese
        día con su motivo medido. El día de hoy va con borde de acento.
@@ -23,17 +26,26 @@
    --------------------------------------------------------------------------
    LECTURA — globals que este módulo NO declara; los pone index.html:
 
-     DATOS       {generado, semana, dias[], piezas[]}          ← piezas.json
-                 pieza = {id, cuenta:"JAVI"|"JORDI", tipo, dia, hora, etiqueta?,
+     DATOS       {generado, hoy, rango:{desde,hasta}, semana, dias[], dias_iso[],
+                  piezas[], huecos[]}                         ← piezas.json
+                 pieza = {id, cuenta:"JAVI"|"JORDI", tipo, fecha:"2026-08-25",
+                          dia:"mar 25", hora, etiqueta:"TOFU"|…|"SIN",
                           caption, archivos:[{archivo, poster, video?, peso_mb?}]}
                  ⚠ archivos[] es un array de OBJETOS: se lee .poster/.video,
                    NUNCA se interpola el objeto crudo (bug §6.3).
-                 ⚠ MEDIDO HOY en piezas.json: `etiqueta` NO viene en ninguna de
-                   las 64 piezas y `dia` vale "" (no "sin día") en 43 de ellas.
+                 ⭐ `fecha` es ISO y es LA FUENTE. `dia` es una ETIQUETA de
+                   pintado ("mar 25"): no dice mes ni año y NO se usa para
+                   decidir en qué día cae una pieza — ver `fechaISOde()` y el
+                   bug que arregló (agosto repetido en las 52 semanas del año).
+                 ⚠ MEDIDO el 25-ago sobre las **94** piezas del fichero:
+                   **44 no traen fecha** (el 47 %) y **65 traen `etiqueta:"SIN"`**.
                    Por eso la barra 50/30/20 cuenta aparte las «sin clasificar»
-                   en vez de repartirlas a ojo (ley 4: cero inventar).
-                 DATOS.huecos[] (opcional, existe hoy) = {dia, cuenta, formato,
-                   hora, motivo}: el motivo REAL de cada hueco, escrito a mano.
+                   en vez de repartirlas a ojo, y la columna «Sin fecha» enseña
+                   las 44 (ley 4: lo que no se sabe se dice, no se rellena).
+                 dias_iso[] = [{fecha:"2026-08-25", etiqueta:"mar 25"}] — el
+                   Único sitio que traduce una etiqueta a una fecha de verdad.
+                 huecos[] = {dia, fecha, cuenta, formato, hora, motivo}: el
+                   motivo REAL de cada hueco, escrito a mano.
      CAL_AUTO    ← calendario.json, lo genera `calendario_auto.py`:
                  {generado, desde, dias, modo_f1,
                   cuentas:{JAVI|JORDI:{lm, feed, techo_lm, reparto:{TOFU..},
@@ -179,10 +191,44 @@ function columnas() {
   }
   return out;
 }
+/* El AÑO va siempre. Un panel que dura años no puede tener una cabecera que no
+   diga de qué año es la semana que estás mirando: "24 – 30 ago" es la misma
+   frase en 2026 y en 2027, y navegando 52 semanas se pierde el norte. */
 function rangoTexto(cols) {
   var a = cols[0].d, b = cols[6].d;
-  if (a.getMonth() === b.getMonth()) return a.getDate() + " – " + b.getDate() + " " + MES_CORTO[b.getMonth()];
-  return a.getDate() + " " + MES_CORTO[a.getMonth()] + " – " + b.getDate() + " " + MES_CORTO[b.getMonth()];
+  if (a.getFullYear() !== b.getFullYear()) {
+    return a.getDate() + " " + MES_CORTO[a.getMonth()] + " " + a.getFullYear() + " – " +
+           b.getDate() + " " + MES_CORTO[b.getMonth()] + " " + b.getFullYear();
+  }
+  if (a.getMonth() === b.getMonth()) {
+    return a.getDate() + " – " + b.getDate() + " " + MES_CORTO[b.getMonth()] + " " + b.getFullYear();
+  }
+  return a.getDate() + " " + MES_CORTO[a.getMonth()] + " – " +
+         b.getDate() + " " + MES_CORTO[b.getMonth()] + " " + b.getFullYear();
+}
+
+/* ---- navegar un año entero sin ir a ciegas -------------------------------
+   Con ‹ › solos, ir de agosto a diciembre son 17 clics sin saber si hay algo al
+   otro lado. Estas dos funciones dan las dos únicas cosas que hacen falta: cuántas
+   piezas tiene la semana visible, y a qué semana saltar si está vacía. */
+function fechasConPieza() {
+  var l = piezas(), vis = {}, i, f;
+  for (i = 0; i < l.length; i++) {
+    if (!pasaCuenta(l[i])) continue;
+    f = fechaISOde(l[i]);
+    if (f) vis[f] = 1;
+  }
+  return Object.keys(vis);
+}
+/* Lunes más cercano (antes o después) que tenga alguna pieza. "" si no hay ninguna. */
+function lunesConPieza(refLunes) {
+  var f = fechasConPieza(), best = "", bd = Infinity, i, lun, d;
+  for (i = 0; i < f.length; i++) {
+    lun = lunesDe(new Date(f[i] + "T00:00:00"));
+    d = Math.abs(lun.getTime() - refLunes.getTime());
+    if (d > 0 && d < bd) { bd = d; best = iso(lun); }
+  }
+  return best;
 }
 
 /* ---------------------------------------------------------- lecturas de dato */
@@ -235,26 +281,65 @@ function colocadaDe(id) {
   return null;
 }
 
-/* Fecha efectiva de una pieza dentro de la semana visible.
-   Devuelve {iso, fuera}:
-     iso ""  + fuera false  → sin fecha (va al backlog si está aprobada)
-     iso ISO + fuera false  → cae en una columna de esta semana
-     iso ""  + fuera true   → tiene día, pero de otra semana (ni backlog ni grid)
-   `pieza.dia` solo trae "lun 24": el número de día se resuelve contra la semana
-   que se está mirando, que es la única forma sin inventarse el mes. */
-function fechaDe(p, cols) {
-  var c = calDe(p.id), lab, n, i;
-  if (c && typeof c.fecha === "string") {
-    if (!c.fecha) return {iso: "", fuera: false};                 /* "" = desprogramada a mano */
-    for (i = 0; i < cols.length; i++) if (cols[i].iso === c.fecha) return {iso: c.fecha, fuera: false};
-    return {iso: "", fuera: true};
+/* ⛔ LA ETIQUETA "dom 23" NO ES UNA FECHA — y tratarla como si lo fuera hacía
+   que el calendario REPITIERA AGOSTO ENTERO en las 52 semanas del año.
+   Medido el 25-ago en el navegador: abriendo la semana del **21-27 sep**
+   salían **21 de 23 piezas que son de agosto** — `dom 23` (2026-08-23)
+   aterrizaba el miércoles **23 de septiembre**. La causa era esta función:
+   sacaba el número del día con /(\d{1,2})\s*$/ y lo casaba contra la columna
+   que tuviera ese mismo número EN LA SEMANA QUE SE ESTUVIERA MIRANDO, o sea
+   ignorando el mes. Y no es solo pintado: la barra 50/30/20 contaba esas
+   piezas fantasma, así que el reparto de CUALQUIER semana era el de agosto.
+   Es exactamente la queja de Gerard — «un panel para siempre» — porque todas
+   las semanas se veían iguales.
+
+   Ahora la fecha sale SIEMPRE de un ISO real, en este orden:
+     1. `E.calendario[id].fecha`  — lo que alguien programó aquí (manda siempre;
+        "" significa EXPLÍCITAMENTE «devuelta a Sin fecha»).
+     2. `pieza.fecha`             — ISO del generador (50 de las 94 lo traen hoy).
+     3. la etiqueta `pieza.dia` resuelta contra `DATOS.dias_iso`, que es el
+        ÚNICO sitio del contrato que dice de qué mes es «dom 23».
+   Si no se resuelve por ninguna de las tres, la pieza NO tiene fecha y se dice:
+   el mes no se adivina (ley 4). */
+
+/* Mapa etiqueta → ISO, de `DATOS.dias_iso`. Se cachea contra el propio array:
+   si el shell recarga los datos, el mapa se rehace solo. */
+var _MAPA = null, _MAPA_SRC = null;
+function mapaDias() {
+  var l = _datos().dias_iso || [];
+  if (_MAPA && _MAPA_SRC === l) return _MAPA;
+  var m = {}, i, e;
+  for (i = 0; i < l.length; i++) {
+    e = String(l[i].etiqueta || "").trim();
+    if (!e || !l[i].fecha) continue;
+    /* Etiqueta repetida dentro del rango cargado ("mié 23" de dos meses) =
+       ambigua: se deja SIN resolver. Elegir una de las dos a cara o cruz es
+       justo el bug que se está arreglando. */
+    m[e] = Object.prototype.hasOwnProperty.call(m, e) ? "" : l[i].fecha;
   }
+  _MAPA = m; _MAPA_SRC = l;
+  return m;
+}
+
+/* Fecha ISO efectiva de una pieza, o "" si no tiene. NO depende de qué semana
+   se esté mirando — por eso ya no puede cambiar al navegar. */
+function fechaISOde(p) {
+  var c = calDe(p.id), lab;
+  if (c && typeof c.fecha === "string") return c.fecha;      /* "" = desprogramada a mano */
+  if (/^\d{4}-\d{2}-\d{2}$/.test(String(p.fecha || ""))) return p.fecha;
   lab = String(p.dia || "").trim();
-  if (!lab || /^sin/i.test(lab)) return {iso: "", fuera: false};   /* "" y "sin día" */
-  n = lab.match(/(\d{1,2})\s*$/);
-  if (!n) return {iso: "", fuera: false};
-  n = parseInt(n[1], 10);
-  for (i = 0; i < cols.length; i++) if (cols[i].num === n) return {iso: cols[i].iso, fuera: false};
+  if (!lab || /^sin/i.test(lab)) return "";
+  return mapaDias()[lab] || "";
+}
+
+/* {iso, fuera} respecto a la semana visible:
+     iso ""  + fuera false  → sin fecha (columna «Sin fecha»)
+     iso ISO + fuera false  → cae en una columna de esta semana
+     iso ""  + fuera true   → tiene fecha, pero de otra semana */
+function fechaDe(p, cols) {
+  var f = fechaISOde(p), i;
+  if (!f) return {iso: "", fuera: false};
+  for (i = 0; i < cols.length; i++) if (cols[i].iso === f) return {iso: f, fuera: false};
   return {iso: "", fuera: true};
 }
 function horaDe(p) {
@@ -284,8 +369,18 @@ function cuentasVisibles() {
 }
 
 /* Reparto de las piezas de la semana por columna y cuenta. Una sola pasada. */
+/* La columna «Sin fecha» enseña TODO lo que no tiene día, no solo lo aprobado.
+   Antes solo entraban las aprobadas y el resultado medido era un contador que
+   ponía **1** habiendo **44 piezas sin fecha**: las otras 43 no existían para
+   nadie que mirara el calendario, que es justo donde se planifica. Ahora salen
+   las dos cosas, separadas, porque no son lo mismo:
+     · `backlog` — APROBADAS: se arrastran y se colocan.
+     · `espera`  — sin fecha y sin aprobar (sin votar o «corregir»): se ven y se
+                   cuentan, pero NO se colocan. Una pieza entra en el calendario
+                   cuando alguien la aprueba (§1 ley 3), y eso no se toca.
+   Las denegadas se cuentan aparte y no se listan: ya se decidió que no van. */
 function repartir(cols) {
-  var idx = {}, back = [], fuera = 0, sinDecidir = 0, ocultas = 0, i, j, p, f;
+  var idx = {}, back = [], espera = [], fuera = 0, negadas = 0, ocultaSem = 0, ocultaSin = 0, i, j, p, f, est, d;
   for (i = 0; i < cols.length; i++) idx[cols[i].iso] = {};
   var l = piezas();
   for (j = 0; j < l.length; j++) {
@@ -293,7 +388,8 @@ function repartir(cols) {
     if (!pasaCuenta(p)) continue;
     if (!pasaEtapa(p)) {                       /* contar lo que esconde el filtro */
       f = fechaDe(p, cols);
-      if ((f.iso && !f.fuera) || (!f.iso && !f.fuera && aprobada(p.id))) ocultas++;
+      if (f.iso) ocultaSem++;                  /* estaba en la rejilla de esta semana */
+      else if (!f.fuera) ocultaSin++;          /* estaba en «Sin fecha» */
       continue;
     }
     f = fechaDe(p, cols);
@@ -301,19 +397,27 @@ function repartir(cols) {
     if (f.iso) {
       var c = p.cuenta || "";
       (idx[f.iso][c] = idx[f.iso][c] || []).push(p);
-    } else if (aprobada(p.id)) {
-      back.push(p);
-    } else if (!decDe(p.id)) {
-      sinDecidir++;                       /* sin fecha y sin decidir: está en «Por revisar» */
+      continue;
     }
+    d = decDe(p.id);
+    est = d ? String(d.estado || "").toLowerCase() : "";
+    if (est === "aprobado") back.push(p);
+    else if (est === "denegado") negadas++;
+    else espera.push(p);
   }
   for (i = 0; i < cols.length; i++) {
     for (var k in idx[cols[i].iso]) {
       idx[cols[i].iso][k].sort(function (a, b) { return String(horaDe(a)).localeCompare(String(horaDe(b))); });
     }
   }
-  back.sort(function (a, b) { return String(a.cuenta).localeCompare(String(b.cuenta)) || String(a.id).localeCompare(String(b.id)); });
-  return {porDia: idx, backlog: back, fuera: fuera, sinDecidir: sinDecidir, ocultas: ocultas};
+  var porCuentaLuegoId = function (a, b) {
+    return String(a.cuenta).localeCompare(String(b.cuenta)) || String(a.id).localeCompare(String(b.id));
+  };
+  back.sort(porCuentaLuegoId);
+  espera.sort(porCuentaLuegoId);
+  return {porDia: idx, backlog: back, espera: espera, fuera: fuera, negadas: negadas,
+          sinDecidir: espera.length, ocultaSem: ocultaSem, ocultaSin: ocultaSin,
+          ocultas: ocultaSem + ocultaSin};
 }
 
 /* ------------------------------------------------- el plan de Santi (CAL_AUTO) */
@@ -334,13 +438,18 @@ function planDe(isoFecha, cuenta) {
 }
 
 /* DATOS.huecos trae el motivo REAL escrito a mano y, a veces, la hora buena.
-   Se cruza por etiqueta de día + cuenta + primera palabra del formato. */
-function huecoDisco(etiqueta, cuenta, formato) {
+   Se cruza por FECHA + cuenta + primera palabra del formato.
+   ⚠ Antes se cruzaba por ETIQUETA ("mié 26") y es el mismo agujero que
+   `fechaDe`: la etiqueta se repite cada pocos meses, así que el motivo de un
+   hueco de agosto se colaba en un día de otro mes. Los huecos ya traen `fecha`
+   ISO; la etiqueta queda solo de reserva para ficheros viejos. */
+function huecoDisco(col, cuenta, formato) {
   var l = _datos().huecos || [], i, h, f0 = String(formato || "").split(/[\s/]+/)[0].toLowerCase();
   var cand = null;
+  if (!col) return null;
   for (i = 0; i < l.length; i++) {
     h = l[i];
-    if (String(h.dia || "").trim() !== etiqueta) continue;
+    if (h.fecha ? String(h.fecha) !== col.iso : String(h.dia || "").trim() !== col.etiqueta) continue;
     if (String(h.cuenta || "") !== cuenta) continue;
     if (!cand) cand = h;
     if (f0 && String(h.formato || "").toLowerCase().indexOf(f0) === 0) return h;
@@ -361,10 +470,24 @@ function mixHTML(cols, rep) {
   if (!cuentas.length) cuentas = ["JAVI", "JORDI"];
 
   var filas = cuentas.map(function (cu) {
+    /* ⛔ EL REPARTO SE MIDE SOBRE LA SEMANA ENTERA, NUNCA SOBRE LO FILTRADO.
+       Antes contaba `rep.porDia`, que YA viene filtrado por FETAPA — así que con
+       el filtro «TOFU» puesto salía **«TOFU 3/2 +1»** (medido 25-ago): 3 TOFU
+       sobre un total de 3, o sea un supuesto SUPERÁVIT, cuando la semana real
+       tiene 28 piezas y el objetivo de TOFU son 14. Un reparto de una etapa
+       contra sí misma no es un reparto: es un espejo. El filtro de etapa sirve
+       para BUSCAR piezas; el 50/30/20 responde «¿cómo va la semana?» y esa
+       pregunta no depende de lo que esté filtrado.
+       El filtro de CUENTA sí manda, porque el reparto ES por cuenta (S1). */
     var cnt = {TOFU: 0, MOFU: 0, BOFU: 0, SIN: 0}, total = 0;
-    cols.forEach(function (c) {
-      ((rep.porDia[c.iso] || {})[cu] || []).forEach(function (p) { cnt[etapaDe(p)]++; total++; });
-    });
+    var l = piezas(), i, p, f;
+    for (i = 0; i < l.length; i++) {
+      p = l[i];
+      if ((p.cuenta || "") !== cu) continue;
+      f = fechaDe(p, cols);
+      if (!f.iso || f.fuera) continue;
+      cnt[etapaDe(p)]++; total++;
+    }
     var obj = objetivo(total);
 
     if (!total) {
@@ -396,7 +519,9 @@ function mixHTML(cols, rep) {
   }).join("");
 
   return '<section class="cal-mix">' +
-    '<h3 class="cal-h3">Reparto de la semana <small>50 / 30 / 20 — orientación, no bloqueo</small></h3>' +
+    '<h3 class="cal-h3">Reparto de la semana <small>50 / 30 / 20 — orientación, no bloqueo' +
+      (_fe() !== "todo" ? " · cuenta la semana entera, no el filtro " + esc_(_fe()) : "") +
+    '</small></h3>' +
     filas +
     '<p class="cal-nota">«Sin clasificar» son piezas que no traen etapa en los datos. No se reparten a ojo: ' +
     'se enseñan como lo que son.</p></section>';
@@ -446,15 +571,33 @@ function backHTML(p) {
   '</article>';
 }
 
+/* ⛔ `calendario.json` cubre SOLO la semana que generó `calendario_auto.py`
+   (medido: 2026-08-23 → 2026-08-29, 7 días). Fuera de ahí `planDe()` devuelve []
+   y no se pintaba ningún «+ Programar»: en el móvil, donde NO hay drag y solo
+   existe el flujo tocar-pieza → tocar-hueco, el calendario era de **solo lectura
+   en 51 semanas de 52**. Un panel «para siempre» que solo deja programar una
+   semana no es un panel para siempre.
+   Los huecos genéricos son las 3 horas de la regla 25 del equipo (19:00 · 19:30
+   · 20:00, subir entre 19 y 20) y se etiquetan como lo que son: hueco libre SIN
+   formato asignado. No se inventa el formato de Santi para un día que su plan
+   no cubre. */
+function slotsGenericos(yaPuestas) {
+  var out = [], i;
+  for (i = yaPuestas; i < HORA_SLOT.length; i++) {
+    out.push({slot: i, formato: "", motivo: "", id: "", generico: true});
+  }
+  return out;
+}
+
 function slotHTML(col, cuenta, plan) {
-  var h = huecoDisco(col.etiqueta, cuenta, plan.formato);
+  var h = huecoDisco(col, cuenta, plan.formato);
   var hora = (h && h.hora) || HORA_SLOT[plan.slot | 0] || "";
   var motivo = (h && h.motivo) || plan.motivo || "";
   return '<button type="button" class="cal-slot' + (SEL ? " listo" : "") + '"' +
       ' data-cal-slot="' + esc_(col.iso) + '" data-cal-cuenta="' + esc_(cuenta) + '"' +
       ' data-cal-hora="' + esc_(hora) + '">' +
     '<span class="cal-mas">+ Programar</span>' +
-    '<span class="cal-slotfmt">' + esc_(plan.formato || "sin formato asignado") +
+    '<span class="cal-slotfmt">' + esc_(plan.formato || (plan.generico ? "hueco libre" : "sin formato asignado")) +
       (hora ? ' · <b>' + esc_(hora) + '</b>' : "") + '</span>' +
     (motivo ? '<span class="cal-motivo" title="' + esc_(motivo) + '">' + esc_(motivo) + '</span>' : "") +
   '</button>';
@@ -466,18 +609,15 @@ function columnaDia(col, rep) {
   var esHoy = col.iso === hoyISO();
   var bloques = cuentasVisibles().map(function (cu) {
     var evs = (rep.porDia[col.iso] || {})[cu] || [];
+    if (cu === "" && !evs.length) return "";          /* «sin cuenta» solo si tiene algo */
     var plan = planDe(col.iso, cu);
-    /* Los huecos que quedan: el plan de Santi menos lo que ya está puesto. */
-    var libres = plan.slice(evs.length);
-    if (!evs.length && !libres.length && !plan.length) {
-      if (cu === "") return "";                       /* «sin cuenta» solo si tiene algo */
-      return '<div class="cal-bloque">' + pillCuenta(cu) +
-             '<p class="cal-vacio">Sin plan para este día en <code>calendario.json</code>.</p></div>';
-    }
+    /* Con plan de Santi: el plan menos lo ya puesto. Sin plan (cualquier semana
+       fuera de la que generó calendario_auto.py): las 3 horas de la regla 25. */
+    var libres = plan.length ? plan.slice(evs.length) : slotsGenericos(evs.length);
     return '<div class="cal-bloque">' + pillCuenta(cu) +
       evs.map(eventoHTML).join("") +
       libres.map(function (pl) { return slotHTML(col, cu, pl); }).join("") +
-      (!evs.length && !libres.length ? '<p class="cal-vacio">Los 3 slots de este día ya están cubiertos.</p>' : "") +
+      (!evs.length && !libres.length ? '<p class="cal-vacio">Los 3 huecos de este día ya están cubiertos.</p>' : "") +
     '</div>';
   }).join("");
 
@@ -489,18 +629,41 @@ function columnaDia(col, rep) {
     '</header>' + bloques + '</section>';
 }
 
+/* Fila compacta de una pieza SIN fecha y SIN aprobar. Sin miniatura y sin
+   `draggable`: se ve y se cuenta, pero no se puede colocar. El estado va escrito
+   — «sin votar» no es lo mismo que «pendiente de corregir». */
+function esperaHTML(p) {
+  var d = decDe(p.id), est = d ? String(d.estado || "").toLowerCase() : "";
+  var txt = est === "corregir" ? "pendiente de corregir" : "sin votar";
+  return '<div class="cal-esp" title="' + esc_(tituloDe(p) + " · " + p.id) + '">' +
+    '<div class="cal-esp-top">' + pillCuenta(p.cuenta) +
+      '<span class="cal-fmt">' + esc_(p.tipo || "pieza") + '</span>' +
+      '<span class="cal-esp-est' + (est === "corregir" ? " corregir" : "") + '">' + txt + '</span>' +
+    '</div>' +
+    '<span class="cal-esp-tit">' + esc_(tituloDe(p)) + '</span>' +
+  '</div>';
+}
+
 function columnaBacklog(rep) {
-  var n = rep.backlog.length;
+  var n = rep.backlog.length, m = rep.espera.length, tot = n + m;
   return '<section class="cal-col cal-back" data-cal-dia="">' +
     '<header class="cal-colhead cal-backhead">' +
-      '<span class="cal-diasem">Sin fecha</span><span class="cal-dianum">' + n + '</span>' +
+      '<span class="cal-diasem">Sin fecha</span><span class="cal-dianum">' + tot + '</span>' +
     '</header>' +
+    '<p class="cal-subhead">' + n + ' lista' + (n === 1 ? "" : "s") + ' para colocar' +
+      (m ? ' · ' + m + ' esperando decisión' : "") + '</p>' +
     (n ? rep.backlog.map(backHTML).join("")
-       : '<p class="cal-vacio">Ninguna aprobada esperando fecha.' +
-         (rep.sinDecidir ? ' Hay <b>' + rep.sinDecidir + '</b> sin decidir en «Por revisar».' : "") + '</p>') +
-    (rep.fuera ? '<p class="cal-nota">+' + rep.fuera + ' ya programadas en otra semana.</p>' : "") +
-    '<p class="cal-nota">Solo entran aquí las <b>aprobadas</b>. Programar coloca la pieza en su día: ' +
-    '<b>no publica nada</b>.</p>' +
+       : '<p class="cal-vacio">Ninguna <b>aprobada</b> esperando fecha.</p>') +
+    (m ? '<details class="cal-espera"' + (n ? "" : " open") + '>' +
+           '<summary>' + m + ' sin fecha y sin aprobar</summary>' +
+           rep.espera.map(esperaHTML).join("") +
+           '<p class="cal-nota">Se aprueban en <b>Por revisar</b>. Desde aquí no se colocan: ' +
+           'una pieza entra en el calendario cuando alguien la aprueba.</p>' +
+         '</details>' : "") +
+    (rep.negadas ? '<p class="cal-nota">' + rep.negadas + ' denegada' + (rep.negadas === 1 ? "" : "s") +
+                   ' sin fecha, no se listan.</p>' : "") +
+    (rep.fuera ? '<p class="cal-nota">+' + rep.fuera + ' ya con fecha en otra semana.</p>' : "") +
+    '<p class="cal-nota">Programar coloca la pieza en su día: <b>no publica nada</b>.</p>' +
   '</section>';
 }
 
@@ -509,6 +672,16 @@ function columnaBacklog(rep) {
 function vistaCalendario() {
   var cols = columnas(), rep = repartir(cols);
   var cal = _cal();
+
+  /* Cuántas piezas tiene la semana visible, y a dónde saltar si no tiene ninguna
+     (ver `lunesConPieza`: navegar 52 semanas a ciegas es lo que hace inservible
+     un calendario anual). */
+  var nSem = 0;
+  cols.forEach(function (c) {
+    var porC = rep.porDia[c.iso] || {};
+    Object.keys(porC).forEach(function (k) { nSem += porC[k].length; });
+  });
+  var salto = nSem ? "" : lunesConPieza(semanaBase());
 
   var filtros = "";
   if (typeof filtrosHTML === "function") { try { filtros = filtrosHTML() || ""; } catch (e) { filtros = ""; } }
@@ -522,13 +695,19 @@ function vistaCalendario() {
         '<b class="cal-rango">' + esc_(rangoTexto(cols)) + '</b>' +
         '<button type="button" class="cal-nav" data-cal-wk="1" aria-label="Semana siguiente">›</button>' +
         '<button type="button" class="cal-hoybtn" data-cal-wk="0">Hoy</button>' +
+        (nSem
+          ? '<span class="cal-nsem"><b>' + nSem + '</b> ' + (nSem === 1 ? "pieza" : "piezas") + '</span>'
+          : '<span class="cal-nsem vacia">semana vacía' +
+            (salto ? ' · <button type="button" class="cal-ir" data-cal-ir="' + esc_(salto) +
+                     '">ir a la más cercana con piezas</button>' : "") + '</span>') +
       '</div>' +
       '<p class="cal-sub">Arrastra una pieza aprobada de <b>Sin fecha</b> al hueco que quieras. ' +
       'En el móvil, tócala y toca el hueco. Programar <b>no publica</b>.</p>' +
       filtros +
       (_fe() !== "todo" && rep.ocultas
-        ? '<p class="cal-filtroaviso">Filtro <b>' + esc_(_fe()) + '</b>: se ocultan <b>' + rep.ocultas +
-          '</b> piezas de esta semana que no llevan esa etapa en los datos.</p>' : "") +
+        ? '<p class="cal-filtroaviso">Filtro <b>' + esc_(_fe()) + '</b>: se ocultan <b>' +
+          rep.ocultaSem + '</b> de esta semana y <b>' + rep.ocultaSin + '</b> sin fecha. ' +
+          'El reparto de abajo sigue contando la semana entera.</p>' : "") +
     '</header>' +
 
     mixHTML(cols, rep) +
@@ -540,9 +719,11 @@ function vistaCalendario() {
       '</div>' +
     '</div>' +
 
-    '<p class="cal-fuente">Huecos y formatos por día: <code>calendario.json</code>' +
+    '<p class="cal-fuente">Formatos por día: <code>calendario.json</code>' +
       (cal.generado ? ' · medido el ' + esc_(String(cal.generado).slice(0, 10)) : "") +
-      '. Horas de publicación 19:00-20:00 (regla 25 del equipo).</p>' +
+      (cal.desde ? ' · cubre ' + esc_(cal.desde) + ' + ' + (cal.dias || 7) + ' días' : "") +
+      '. Fuera de ese rango los huecos son las 3 horas de siempre, <b>sin formato ' +
+      'asignado</b>: no se inventa el plan de Santi. Publicación 19:00-20:00 (regla 25).</p>' +
 
     (sel ? '<div class="cal-cogida" role="status">' +
         '<span>Moviendo <b>' + esc_(tituloDe(sel)) + '</b> — toca un hueco</span>' +
@@ -604,7 +785,7 @@ function horaLibre(isoFecha, cuenta, cols) {
   if (libre) {
     var col = null, i;
     for (i = 0; i < cols.length; i++) if (cols[i].iso === isoFecha) col = cols[i];
-    var h = col ? huecoDisco(col.etiqueta, cuenta, libre.formato) : null;
+    var h = huecoDisco(col, cuenta, libre.formato);
     if (h && h.hora) return h.hora;
     return HORA_SLOT[libre.slot | 0] || HORA_SLOT[HORA_SLOT.length - 1];
   }
@@ -635,6 +816,14 @@ function onClick(ev) {
     if (v === 0) SEM = null;
     else { var b = semanaBase(); b.setDate(b.getDate() + v * 7); SEM = b; }
     pintar(); return;
+  }
+
+  n = cerca(t, "data-cal-ir");
+  if (n) {
+    ev.preventDefault();
+    var f = n.getAttribute("data-cal-ir");
+    if (f) { SEM = lunesDe(new Date(f + "T00:00:00")); pintar(); }
+    return;
   }
 
   n = cerca(t, "data-cal-cancel");
@@ -728,7 +917,12 @@ function montar() {
 window.vistaCalendario   = vistaCalendario;
 window.cablearCalendario = montar;
 /* Para un badge en la barra lateral, si el shell lo quiere. */
-window.nSinFecha = function () { return repartir(columnas()).backlog.length; };
+/* El badge de la pestaña cuenta TODO lo que no tiene día (aprobado o no), que es
+   el número por el que Gerard preguntó. Las denegadas no cuentan: ya se decidió. */
+window.nSinFecha = function () {
+  var r = repartir(columnas());
+  return r.backlog.length + r.espera.length;
+};
 window.VISTA_CALENDARIO = {
   vistaCalendario: vistaCalendario, cablear: montar,
   programar: programar, columnas: columnas, repartir: repartir,

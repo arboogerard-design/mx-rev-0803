@@ -28,17 +28,21 @@
    --------------------------------------------------------------------------
    LECTURA (globals que este módulo NO declara; los pone index.html):
 
-     DATOS      {generado, semana, dias[], piezas[], huecos[]}      ← piezas.json
-                pieza  = {id, cuenta:"JAVI"|"JORDI", tipo, dia:"mar 25", hora:"19:30",
+     DATOS      {generado, hoy, rango:{desde,hasta}, semana, dias[], dias_iso[],
+                 piezas[], huecos[]}                            ← piezas.json
+                pieza  = {id, cuenta:"JAVI"|"JORDI", tipo, fecha:"2026-08-25",
+                          dia:"mar 25", hora:"19:30", etiqueta,
                           caption, archivos:[{archivo, poster, video?, peso_mb?}], …}
-                hueco  = {dia, cuenta, hora, formato, motivo}
+                hueco  = {dia, fecha, cuenta, hora, formato, motivo}
                 ⚠ `archivos[]` es un array de OBJETOS. Nunca se interpola crudo
                   (bug §6.3: `src="[object Object]"`). Se lee `.video || .poster`.
+                ⭐ QUÉ DÍA ES UNA PIEZA SALE DE `fecha` (ISO), no de `dia`. La
+                  etiqueta "mar 25" no dice mes ni año: ver `fechaISOde()` y la
+                  colisión de diciembre que arregló.
                 Opcionales que se pintan SOLO si existen (cero inventar, ley 4):
-                  etiqueta · f1 · f1_motivo · sin_caption · slides · verificada.
-                Medido hoy en `piezas.json` (64 piezas): NO traen `etiqueta` ni
-                `f1`. Por eso ni la etapa ni el badge de portada se pintan a la
-                fuerza: si el campo no está, no hay chip. Nada de «SIN» inventado.
+                  f1 · f1_motivo · sin_caption · slides · verificada. Medido el
+                  25-ago sobre las 94 piezas: `f1` no lo trae ninguna y 65 traen
+                  `etiqueta:"SIN"`. Si el campo no está, no hay chip.
      E          estado vivo fusionado por leerBlob():
                 {decisiones:{[id]:{estado,motivo,por,cuando}}, f1:{[id]:{estado,motivo}},
                  referentes:[], calendario:{}, hooks:[], notas:{}}
@@ -158,7 +162,7 @@ function isoHoy(d) {
 }
 function fechaLarga(d) {
   d = d || new Date();
-  return DIAS_LARGO[d.getDay()] + " " + d.getDate() + " " + MESES_AB[d.getMonth()];
+  return DIAS_LARGO[d.getDay()] + " " + d.getDate() + " " + MESES_AB[d.getMonth()] + " " + d.getFullYear();
 }
 function esSabado(d) { return (d || new Date()).getDay() === 6; }
 
@@ -212,10 +216,57 @@ function hookDe(p) {
 
 /* ------------------------------------------------------------- la lista §5.3 */
 
-/* TODAS las piezas cuyo `dia` es hoy, decididas o no. */
+/* ⛔ «mar 25» NO ES UNA FECHA, y esta pantalla la usaba como si lo fuera.
+   `p.dia` es una etiqueta día-de-la-semana + número: no dice ni mes ni año. El
+   día que coincidan el nombre y el número, una pieza vieja sale como «hay que
+   subirla hoy». Medido el 25-ago en el navegador: el **23-dic-2026** (miércoles
+   23) `hoyEtiqueta()` devuelve "mié 23" y casa con `FAB_JORDI_MULTITAREA`, que
+   es del **23-sep**. Tres meses de diferencia, y el panel lo pone en la lista de
+   publicar de esa noche. Hoy (25-ago) acertaba de casualidad.
+
+   Y había un segundo desacuerdo, este de todos los días: si alguien arrastraba
+   una pieza a HOY en el Calendario, esa fecha se guarda en `E.calendario` y esta
+   pantalla **no la miraba**. Las dos pantallas del mismo panel decían cosas
+   distintas del mismo día.
+
+   Las dos se arreglan con la misma función: la fecha efectiva es un ISO, y sale
+   de `E.calendario` → `p.fecha` → la etiqueta resuelta contra `DATOS.dias_iso`.
+   Es EXACTAMENTE el mismo orden que usa `vistas/calendario.js`, a propósito:
+   dos criterios distintos para «qué día es esta pieza» es cómo se vuelve a
+   desincronizar. */
+
+function calDe(id) { return (_est().calendario || {})[id] || null; }
+
+/* Mapa etiqueta → ISO, de `DATOS.dias_iso`. Etiqueta repetida en el rango
+   cargado = ambigua: se deja sin resolver antes que adivinar el mes (ley 4). */
+var _MAPA = null, _MAPA_SRC = null;
+function mapaDias() {
+  var l = _datos().dias_iso || [];
+  if (_MAPA && _MAPA_SRC === l) return _MAPA;
+  var m = {}, i, e;
+  for (i = 0; i < l.length; i++) {
+    e = String(l[i].etiqueta || "").trim();
+    if (!e || !l[i].fecha) continue;
+    m[e] = Object.prototype.hasOwnProperty.call(m, e) ? "" : l[i].fecha;
+  }
+  _MAPA = m; _MAPA_SRC = l;
+  return m;
+}
+
+/* Fecha ISO efectiva de una pieza, o "" si no tiene ninguna. */
+function fechaISOde(p) {
+  var c = calDe(p.id), lab;
+  if (c && typeof c.fecha === "string") return c.fecha;      /* "" = desprogramada a mano */
+  if (/^\d{4}-\d{2}-\d{2}$/.test(String(p.fecha || ""))) return p.fecha;
+  lab = String(p.dia || "").trim();
+  if (!lab || /^sin/i.test(lab)) return "";
+  return mapaDias()[lab] || "";
+}
+
+/* TODAS las piezas que toca publicar HOY, decididas o no. */
 function todasDeHoy() {
-  var et = hoyEtiqueta();
-  return (_datos().piezas || []).filter(function (p) { return String(p.dia || "") === et; });
+  var h = isoHoy();
+  return (_datos().piezas || []).filter(function (p) { return fechaISOde(p) === h; });
 }
 /* Una pieza retirada (denegada por alguien, o con la portada denegada en f1) NO
    toca subirla hoy. Sale de la lista principal, pero NO desaparece: se enseña
@@ -231,10 +282,18 @@ function deHoy() {
 function retiradasHoy() {
   return todasDeHoy().filter(retirada);
 }
+/* La hora también puede venir de una programación del Calendario, igual que la
+   fecha: si se colocó la pieza en el hueco de las 20:00, aquí sale a las 20:00. */
+function horaDe(p) {
+  var c = calDe(p.id);
+  if (c && c.hora) return c.hora;
+  return String(p.hora || "");
+}
+
 function porCuenta(ps, c) {
   return ps.filter(function (p) { return String(p.cuenta || "").toUpperCase() === c; })
            .sort(function (a, b) {
-             var x = minutos(a.hora), y = minutos(b.hora);
+             var x = minutos(horaDe(a)), y = minutos(horaDe(b));
              if (x === null && y === null) return 0;
              if (x === null) return 1;             /* sin hora, al final */
              if (y === null) return -1;
@@ -249,7 +308,9 @@ function huecosHoy() {
   var et = hoyEtiqueta();
   var hs = _datos().huecos;
   if (hs && hs.length) {
-    return hs.filter(function (h) { return String(h.dia || "") === et; })
+    /* Los huecos ya traen `fecha` ISO en piezas.json: se casa por fecha y la
+       etiqueta queda solo de reserva para ficheros viejos. */
+    return hs.filter(function (h) { return h.fecha ? String(h.fecha) === isoHoy() : String(h.dia || "") === et; })
              .map(function (h) {
                return {cuenta: String(h.cuenta || "").toUpperCase(), hora: h.hora || "",
                        formato: h.formato || "", motivo: h.motivo || "", fuente: ""};
@@ -272,9 +333,25 @@ function huecosHoy() {
    una lista vacía NO significa «no hay nada programado»: significa que el
    fichero es de otra semana. Decirlo es la diferencia entre informar y mentir. */
 function planCubreHoy() {
-  var ds = _datos().dias;
-  if (!ds || !ds.length) return true;              /* sin dato, no se afirma nada */
-  return ds.indexOf(hoyEtiqueta()) >= 0;
+  var d = _datos(), h = isoHoy(), i;
+  /* Por FECHA, no por etiqueta: es la misma corrección que `todasDeHoy`. */
+  if (d.dias_iso && d.dias_iso.length) {
+    for (i = 0; i < d.dias_iso.length; i++) if (d.dias_iso[i].fecha === h) return true;
+    return false;
+  }
+  if (d.rango && d.rango.desde && d.rango.hasta) return h >= d.rango.desde && h <= d.rango.hasta;
+  if (d.dias && d.dias.length) return d.dias.indexOf(hoyEtiqueta()) >= 0;
+  return true;                                     /* sin dato, no se afirma nada */
+}
+
+/* Qué rango de días cubren los datos cargados, en cristiano. Se usa SOLO para
+   explicar un vacío — nunca como identidad de la pantalla. */
+function rangoTexto() {
+  var d = _datos();
+  if (d.rango && d.rango.desde && d.rango.hasta) return d.rango.desde + " → " + d.rango.hasta;
+  if (d.dias_iso && d.dias_iso.length)
+    return d.dias_iso[0].fecha + " → " + d.dias_iso[d.dias_iso.length - 1].fecha;
+  return "";
 }
 
 /* ----------------------------------------------------------- componentes UI */
@@ -318,7 +395,7 @@ function chips(p) {
   else if (!d) h += '<span class="hy-chip">sin votar</span>';
 
   if (p.sin_caption) h += '<span class="hy-chip warn">falta caption</span>';
-  if (horaFueraDeVentana(p.hora)) h += '<span class="hy-chip warn">fuera de 19-20</span>';
+  if (horaFueraDeVentana(horaDe(p))) h += '<span class="hy-chip warn">fuera de 19-20</span>';
   return h;
 }
 
@@ -338,7 +415,7 @@ function fila(p, idTa) {
     '</button>' +
     '<div class="hy-cuerpo">' +
       '<div class="hy-linea1">' +
-        '<b class="hy-hora">' + esc_(p.hora || "sin hora") + "</b>" +
+        '<b class="hy-hora">' + esc_(horaDe(p) || "sin hora") + "</b>" +
         pill(String(p.cuenta || "").toUpperCase()) +
       "</div>" +
       '<div class="hy-chips">' + chips(p) + "</div>" +
@@ -391,7 +468,7 @@ function bloqueRetiradas(ps) {
   ps.forEach(function (p) {
     var d = decDe(p.id);
     h += '<div class="hy-ret">' +
-           "<b>" + esc_(p.hora || "sin hora") + "</b> · " + esc_(p.cuenta || "") + " · " +
+           "<b>" + esc_(horaDe(p) || "sin hora") + "</b> · " + esc_(p.cuenta || "") + " · " +
            esc_(hookDe(p) || p.id) +
            (d && d.por ? '<span class="hy-ret-q"> — denegada por ' + esc_(d.por) + "</span>" : "") +
            (d && d.motivo ? '<p class="hy-ret-m">' + esc_(d.motivo) + "</p>" : "") +
@@ -404,8 +481,13 @@ function cabecera(lista) {
   var sab = esSabado();
   var h = '<header class="hy-cab">' +
     '<h2 class="hy-h2">Hoy</h2>' +
-    '<p class="hy-sub">' + esc_(fechaLarga()) + " · <b>" + esc_(hoyEtiqueta()) + "</b>" +
-      (_datos().semana ? " · semana " + esc_(_datos().semana) : "") + "</p>" +
+    /* ⛔ Aquí ponía «· semana <DATOS.semana>». Es la misma enfermedad que Gerard
+       cantó en la cabecera del panel: un rótulo de SEMANA como identidad de una
+       pantalla que es de HOY — y encima hoy `DATOS.semana` ya no es una semana,
+       vale "23 ago → 24 sep 2026", que son 33 días. Lo que importa aquí es la
+       fecha de hoy, con su año. El rango de los datos solo aparece cuando hace
+       falta para explicar un vacío (ver `vacio()`). */
+    '<p class="hy-sub">' + esc_(fechaLarga()) + "</p>" +
     '<p class="hy-horario' + (sab ? " libre" : "") + '">' +
       (sab ? "Hoy es <b>sábado</b>: la hora da igual."
            : "Se sube entre <b>" + VENTANA.desde + " y " + VENTANA.hasta + "</b>. Nunca a las 23 h.") +
@@ -430,14 +512,13 @@ function cabecera(lista) {
    del fichero. Enseñar el primero cuando pasa el segundo sería mentir. */
 function vacio() {
   if (!planCubreHoy()) {
-    var ds = _datos().dias || [];
+    var rg = rangoTexto();
     return '<div class="hy-vacio">' +
-      "<h3>El plan cargado no incluye hoy</h3>" +
-      "<p>Hoy es <b>" + esc_(hoyEtiqueta()) + "</b> y el fichero de piezas cubre " +
-      (_datos().semana ? "la semana <b>" + esc_(_datos().semana) + "</b>" : "otros días") +
-      (ds.length ? " (" + esc_(ds.join(" · ")) + ")" : "") + "." +
-      " No es que no haya nada: es que estos datos son de otra semana. Hay que regenerar " +
-      "<code>piezas.json</code>.</p></div>";
+      "<h3>Los datos cargados no llegan a hoy</h3>" +
+      "<p>Hoy es <b>" + esc_(isoHoy()) + "</b> y <code>piezas.json</code> cubre " +
+      (rg ? "<b>" + esc_(rg) + "</b>" : "otros días") + "." +
+      " No es que no haya nada programado: es que el fichero se quedó atrás. Hay que " +
+      "regenerarlo (<code>_gen_piezas.py</code>).</p></div>";
   }
   return '<div class="hy-vacio">' +
     "<h3>Hoy no hay nada programado</h3>" +
@@ -602,7 +683,8 @@ window.VISTA_HOY    = {
   vistaHoy: vistaHoy, cablear: montar,
   deHoy: deHoy, todasDeHoy: todasDeHoy, retiradasHoy: retiradasHoy,
   huecosHoy: huecosHoy, hoyEtiqueta: hoyEtiqueta, isoHoy: isoHoy,
-  planCubreHoy: planCubreHoy, VENTANA: VENTANA
+  planCubreHoy: planCubreHoy, VENTANA: VENTANA,
+  fechaISOde: fechaISOde, horaDe: horaDe, rangoTexto: rangoTexto
 };
 
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", montar);

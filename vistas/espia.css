@@ -342,6 +342,23 @@
 .fab .ref-molde .num { color: var(--txt, #ECEDF0); }
 .fab .ref-molde-sin { color: var(--txt-3, #656B76); font-style: italic; }
 
+/* los ejes medidos de moldes.json (musica, primer corte, banda del meme) */
+.fab .ref-ejes {
+  margin: -6px 0 10px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--txt-3, #656B76);
+}
+.fab .ref-tinta {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+  border: 1px solid var(--line-2, #31363F);
+  border-radius: 2px;
+  vertical-align: baseline;
+}
+
 /* ---------- analisis ---------- */
 .fab .ref-sinana {
   margin: 0 0 10px;
@@ -394,12 +411,88 @@
 .fab .ref-tocar b { color: var(--ok, #34C08A); }
 .fab .ref-evitar b { color: var(--danger, #F0575D); }
 
+/* ---------- el ciclo de la orden: pedido · clonando · clonado -------------
+   Va PEGADO al boton porque contesta la pregunta que te haces justo antes de
+   pulsarlo. Sigue la ley del §4: el acento violeta es de la MAQUINA, y aqui
+   todo lo que pasa lo hace la maquina — asi que el color del ciclo es violeta
+   y NUNCA verde/ambar/rojo, que estan reservados a las decisiones de personas.
+   La unica excepcion es el ambar de "lleva dias parado", que no es una
+   decision: es una averia de nuestro propio bucle y tiene que doler. */
+.fab .ref-ciclo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  margin: 0;
+  padding: 9px 14px 2px;
+  font-size: 11px;
+}
+.fab .ref-ciclo b {
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--acc, #7B72FF);
+}
+.fab .ref-ciclo-pie {
+  flex: 1 1 100%;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--txt-3, #656B76);
+}
+.fab .ref-ciclo-viejo { color: var(--warn, #E6AE4A); }
+.fab .ref-luz {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--acc, #7B72FF);
+  transform: translateY(-1px);
+}
+/* en cola y bajado: punto hueco — hay algo, pero no se mueve nada */
+.fab .ref-ciclo-cola .ref-luz,
+.fab .ref-ciclo-bajado .ref-luz {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--txt-3, #656B76);
+}
+.fab .ref-ciclo-bajado b { color: var(--txt-3, #656B76); }
+.fab .ref-ciclo-cola b { color: var(--txt-2, #9AA0AB); }
+/* clonandose AHORA: lo unico que late en toda la pantalla */
+.fab .ref-ciclo-produciendo .ref-luz { animation: fab-late 1.6s ease-in-out infinite; }
+@keyframes fab-late { 50% { opacity: .25; transform: translateY(-1px) scale(.8); } }
+
+/* la linea de cola de arriba */
+.fab .fab-cola {
+  margin: -10px 0 16px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--txt-2, #9AA0AB);
+}
+.fab .fab-cola b { color: var(--txt, #ECEDF0); font-weight: 700; }
+.fab .fab-cola-viejo { color: var(--warn, #E6AE4A); }
+
 /* ---------- CTA ---------- */
 .fab .ref-cta {
   display: flex;
   gap: 8px;
   padding: 4px 14px 14px;
 }
+/* salto al clon ya hecho: navegacion, no maquina — por eso NO lleva acento */
+.fab .ref-ir {
+  flex: 0 0 auto;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-2, #31363F);
+  border-radius: var(--r-2, 12px);
+  background: var(--panel-2, #191C22);
+  color: var(--txt-2, #9AA0AB);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fab .ref-ir:hover { color: var(--txt, #ECEDF0); border-color: var(--txt-3, #656B76); }
+.fab .ref-ir:focus-visible { outline: 2px solid var(--txt, #ECEDF0); outline-offset: 2px; }
 .fab .repl {
   flex: 1 1 auto;
   min-height: 46px;
@@ -463,4 +556,5 @@
   .fab .fab-chip,
   .fab .fab-add button { transition: none; }
   .fab .repl.cargando::before { animation-duration: 2.4s; }
+  .fab .ref-ciclo-produciendo .ref-luz { animation: none; opacity: .6; }
 }
