@@ -1,0 +1,509 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ventanas de aluminio a medida — Configurador (maqueta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d10; --bg2:#11151a; --panel:#151a20; --linea:rgba(255,255,255,.09);
+  --tinta:#e8eaed; --gris:#8b949e; --acento:#4ade80; --acento2:#38bdf8; --alerta:#f97316;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tinta);font:400 16px/1.65 'Sora',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.w{max-width:1220px;margin:0 auto;padding:0 22px}
+.kick{font:600 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--acento)}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.06;font-weight:600}
+a{color:inherit}
+
+nav{position:sticky;top:0;z-index:60;background:rgba(11,13,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:-.02em}
+.logo i{width:11px;height:11px;background:var(--acento);border-radius:2px;display:block;animation:lat 2.6s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
+nav .links{display:flex;gap:26px;font-size:14px;color:var(--gris)}
+nav .links a{text-decoration:none;transition:color .2s}
+nav .links a:hover{color:var(--acento)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--acento);color:#06210f;border:0;border-radius:8px;padding:12px 20px;font:600 14.5px 'Sora',sans-serif;cursor:pointer;text-decoration:none;transition:transform .16s,box-shadow .16s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(74,222,128,.28)}
+.btn.ghost{background:transparent;color:var(--tinta);border:1px solid var(--linea)}
+.btn.ghost:hover{border-color:var(--acento);box-shadow:none}
+@media(max-width:760px){nav .links{display:none}}
+
+header{position:relative;padding:76px 0 54px;overflow:hidden}
+header::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 380px at 78% 12%,rgba(56,189,248,.16),transparent 62%),
+  radial-gradient(560px 340px at 12% 78%,rgba(74,222,128,.11),transparent 60%);pointer-events:none}
+.malla{position:absolute;inset:0;background-image:linear-gradient(var(--linea) 1px,transparent 1px),linear-gradient(90deg,var(--linea) 1px,transparent 1px);background-size:56px 56px;opacity:.32;-webkit-mask-image:radial-gradient(ellipse 74% 62% at 50% 34%,#000 38%,transparent 100%);mask-image:radial-gradient(ellipse 74% 62% at 50% 34%,#000 38%,transparent 100%)}
+.hero{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.hero h1{font-size:clamp(34px,4.7vw,60px);margin:16px 0 18px}
+.hero h1 em{font-style:normal;color:var(--acento)}
+.hero p.lead{color:var(--gris);font-size:17.5px;max-width:50ch}
+.cta{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.tiras{display:flex;gap:26px;margin-top:38px;padding-top:26px;border-top:1px solid var(--linea);flex-wrap:wrap}
+.tira b{display:block;font:600 23px/1.1 var(--mono);color:var(--tinta)}
+.tira span{font-size:12.5px;color:var(--gris)}
+@media(max-width:940px){.hero{grid-template-columns:1fr;gap:38px}}
+
+.escena{perspective:1300px;display:grid;place-items:center;min-height:430px}
+.giro{transform-style:preserve-3d;animation:orbita 17s linear infinite}
+.escena:hover .giro{animation-play-state:paused}
+@keyframes orbita{
+  0%{transform:rotateX(9deg) rotateY(-21deg)}
+  50%{transform:rotateX(9deg) rotateY(21deg)}
+  100%{transform:rotateX(9deg) rotateY(-21deg)}
+}
+.ventana{position:relative;width:300px;height:390px;transform-style:preserve-3d;transition:width .45s,height .45s}
+.marco{position:absolute;inset:0;border:15px solid var(--colmarco,#2b3138);border-radius:4px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.10),0 34px 70px rgba(0,0,0,.62),inset 0 0 0 1px rgba(255,255,255,.06);transition:border-color .4s}
+.hoja{position:absolute;top:15px;bottom:15px;width:calc(50% - 15px);background:var(--vidrio,rgba(140,190,215,.30));
+  border:2px solid var(--colmarco,#2b3138);transform-origin:left center;transition:transform .75s cubic-bezier(.42,0,.2,1),background .4s,border-color .4s;
+  box-shadow:inset 0 0 34px rgba(255,255,255,.16)}
+.hoja.izq{left:15px}
+.hoja.der{right:15px;transform-origin:right center}
+.hoja::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,255,255,.30) 0 16%,transparent 16% 44%,rgba(255,255,255,.15) 44% 52%,transparent 52%);pointer-events:none}
+.tirador{position:absolute;top:50%;width:7px;height:38px;background:#c9ced4;border-radius:4px;transform:translateY(-50%);box-shadow:0 2px 5px rgba(0,0,0,.5)}
+.hoja.izq .tirador{right:8px}
+.hoja.der .tirador{left:8px}
+.ventana[data-ap="practicable"] .hoja.izq{transform:rotateY(-34deg)}
+.ventana[data-ap="practicable"] .hoja.der{transform:rotateY(34deg)}
+.ventana[data-ap="oscilo"] .hoja.izq{transform:rotateX(-15deg);transform-origin:bottom center}
+.ventana[data-ap="oscilo"] .hoja.der{transform:rotateX(-15deg);transform-origin:bottom center}
+.ventana[data-ap="corredera"] .hoja.izq{transform:translateX(46%) translateZ(16px)}
+.ventana[data-ap="corredera"] .hoja.der{transform:none}
+.ventana[data-ap="fija"] .hoja{transform:none}
+.cota{position:absolute;font:600 11px var(--mono);color:var(--gris);letter-spacing:.06em}
+.cota.ancho{bottom:-30px;left:0;right:0;text-align:center}
+.cota.alto{top:50%;right:-64px;transform:translateY(-50%)}
+.pista{margin-top:52px;font:400 12px var(--mono);color:var(--gris);text-align:center}
+
+section{padding:78px 0;position:relative}
+.seccab{max-width:60ch;margin-bottom:40px}
+.seccab h2{font-size:clamp(25px,3.3vw,38px);margin:13px 0 12px}
+.seccab p{color:var(--gris)}
+.wizard{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.pasos{background:var(--panel);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+.barra{display:flex;border-bottom:1px solid var(--linea)}
+.barra div{flex:1;padding:14px 8px;text-align:center;font:600 11.5px var(--mono);letter-spacing:.1em;color:var(--gris);border-right:1px solid var(--linea);position:relative;transition:color .25s;cursor:pointer}
+.barra div:last-child{border-right:0}
+.barra div.on{color:var(--acento)}
+.barra div.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--acento)}
+.paso{display:none;padding:28px 26px 30px}
+.paso.on{display:block;animation:entra .34s ease}
+@keyframes entra{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.paso h3{font-size:20px;margin-bottom:6px}
+.paso .sub{color:var(--gris);font-size:14px;margin-bottom:22px}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.op{background:var(--bg2);border:1px solid var(--linea);border-radius:10px;padding:15px;cursor:pointer;transition:border-color .2s,transform .16s,background .2s;text-align:left;color:inherit;font-family:inherit}
+.op:hover{transform:translateY(-2px);border-color:rgba(74,222,128,.5)}
+.op.sel{border-color:var(--acento);background:rgba(74,222,128,.09)}
+.op b{display:block;font-size:15px;font-weight:600;margin-bottom:3px}
+.op span{font-size:12.5px;color:var(--gris);line-height:1.45}
+.colores{display:flex;gap:12px;flex-wrap:wrap}
+.col{width:52px;height:52px;border-radius:9px;border:2px solid transparent;cursor:pointer;position:relative;transition:transform .16s,border-color .2s}
+.col:hover{transform:scale(1.09)}
+.col.sel{border-color:var(--acento)}
+.col small{position:absolute;top:60px;left:50%;transform:translateX(-50%);font:600 10px var(--mono);color:var(--gris);white-space:nowrap}
+.medidas{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.campo label{display:block;font:600 11px var(--mono);letter-spacing:.12em;color:var(--gris);margin-bottom:7px;text-transform:uppercase}
+.campo input{width:100%;background:var(--bg2);border:1px solid var(--linea);border-radius:9px;color:var(--tinta);padding:13px 14px;font:400 16px 'Sora',sans-serif}
+.campo input:focus{outline:0;border-color:var(--acento)}
+.navpaso{display:flex;justify-content:space-between;gap:12px;margin-top:26px;padding-top:20px;border-top:1px solid var(--linea)}
+.resumen{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:26px;position:sticky;top:82px}
+.resumen h3{font-size:17px;margin-bottom:18px}
+.fila{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--linea);font-size:14.5px}
+.fila span:first-child{color:var(--gris)}
+.fila span:last-child{font-family:var(--mono);font-weight:600;text-align:right}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;padding-top:18px;border-top:1px solid var(--linea)}
+.total b{font:700 30px/1 var(--mono);color:var(--acento)}
+.aviso{margin-top:16px;font-size:12px;color:var(--gris);line-height:1.55;border-left:2px solid var(--alerta);padding-left:11px}
+@media(max-width:940px){
+  .wizard{grid-template-columns:1fr}
+  .resumen{position:static}
+  .ops{grid-template-columns:1fr}
+}
+
+.mini{display:none}
+@media(max-width:940px){
+  .mini{display:block;position:sticky;top:62px;z-index:40;background:rgba(11,13,16,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea);padding:14px 0}
+  .mini .escena{min-height:0;perspective:900px}
+  .mini .ventana{width:132px;height:172px}
+  .mini .marco{border-width:8px}
+  .mini .hoja{top:8px;bottom:8px;width:calc(50% - 8px)}
+  .mini .hoja.izq{left:8px}.mini .hoja.der{right:8px}
+  .mini .tirador{height:20px;width:5px}
+  .mini .giro{animation:none;transform:rotateX(6deg) rotateY(-13deg)}
+}
+
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}
+.tar{background:var(--panel);border:1px solid var(--linea);border-radius:13px;padding:26px 24px;transition:transform .2s,border-color .2s}
+.tar:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.42)}
+.tar .n{font:600 11px var(--mono);color:var(--acento2);letter-spacing:.16em;margin-bottom:13px}
+.tar h3{font-size:18px;margin-bottom:9px}
+.tar p{font-size:14.5px;color:var(--gris)}
+
+.burbuja{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--acento);color:#06210f;border:0;cursor:pointer;display:grid;place-items:center;box-shadow:0 12px 32px rgba(74,222,128,.4);transition:transform .2s}
+.burbuja:hover{transform:scale(1.07)}
+.burbuja svg{width:27px;height:27px}
+.burbuja .punto{position:absolute;top:3px;right:3px;width:14px;height:14px;background:var(--alerta);border:2px solid var(--bg);border-radius:50%}
+.chat{position:fixed;right:22px;bottom:94px;z-index:95;width:372px;max-width:calc(100vw - 44px);height:min(560px,72vh);background:var(--panel);border:1px solid var(--linea);border-radius:16px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 26px 64px rgba(0,0,0,.6)}
+.chat.on{display:flex;animation:sube .26s ease}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.chat .cab{padding:16px 18px;background:var(--bg2);border-bottom:1px solid var(--linea);display:flex;align-items:center;gap:11px}
+.chat .cab .av{width:36px;height:36px;border-radius:50%;background:var(--acento);display:grid;place-items:center;color:#06210f;font-weight:700;font-size:15px;flex:none}
+.chat .cab b{display:block;font-size:15px}
+.chat .cab small{color:var(--acento);font:600 11.5px var(--mono)}
+.chat .cab button{margin-left:auto;background:0;border:0;color:var(--gris);font-size:22px;cursor:pointer;line-height:1}
+.msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:13px}
+.msg{max-width:86%;padding:11px 14px;border-radius:13px;font-size:14.5px;line-height:1.55;white-space:pre-line}
+.msg.bot{background:var(--bg2);border:1px solid var(--linea);border-top-left-radius:4px;align-self:flex-start}
+.msg.yo{background:var(--acento);color:#06210f;border-top-right-radius:4px;align-self:flex-end;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 18px 12px}
+.chip{background:var(--bg2);border:1px solid var(--linea);color:var(--gris);border-radius:20px;padding:7px 13px;font-size:12.5px;cursor:pointer;transition:all .18s;font-family:inherit}
+.chip:hover{border-color:var(--acento);color:var(--acento)}
+.escribe{display:flex;gap:9px;padding:13px 14px;border-top:1px solid var(--linea);background:var(--bg2)}
+.escribe input{flex:1;background:var(--bg);border:1px solid var(--linea);border-radius:9px;color:var(--tinta);padding:11px 13px;font:400 14.5px 'Sora',sans-serif}
+.escribe input:focus{outline:0;border-color:var(--acento)}
+.escribe button{background:var(--acento);border:0;border-radius:9px;width:42px;color:#06210f;cursor:pointer;font-size:17px}
+.pensando span{display:inline-block;width:6px;height:6px;background:var(--gris);border-radius:50%;margin-right:4px;animation:bota 1.1s infinite}
+.pensando span:nth-child(2){animation-delay:.16s}.pensando span:nth-child(3){animation-delay:.32s}
+@keyframes bota{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-6px);opacity:1}}
+
+footer.pie{border-top:1px solid var(--linea);padding:34px 0;color:var(--gris);font:400 13px/1.75 var(--mono)}
+</style></head><body>
+
+<nav><div class="w">
+  <div class="logo"><i></i>ALUMINIOS <span style="color:var(--gris);font-weight:400">&middot; maqueta</span></div>
+  <div class="links"><a href="#config">Configurador</a><a href="#porque">Por qué nosotros</a><a href="#" onclick="abreChat();return false">Preguntas</a></div>
+  <a class="btn" href="#config">Calcular mi ventana</a>
+</div></nav>
+
+<header><div class="malla"></div><div class="w hero">
+  <div>
+    <div class="kick">Fabricación propia &middot; Sevilla</div>
+    <h1>Tu ventana, <em>configurada</em> en 4 pasos.</h1>
+    <p class="lead">Eliges apertura, medidas, color y vidrio, y ves la ventana montada mientras decides. Sin llamadas y sin esperar tres días a que alguien te devuelva un número.</p>
+    <div class="cta">
+      <a class="btn" href="#config">Empezar ahora</a>
+      <button class="btn ghost" onclick="abreChat()">Tengo una duda</button>
+    </div>
+    <div class="tiras">
+      <div class="tira"><b>4</b><span>pasos, un minuto</span></div>
+      <div class="tira"><b>3D</b><span>la ves antes de pedirla</span></div>
+      <div class="tira"><b>24 h</b><span>presupuesto en firme</span></div>
+    </div>
+  </div>
+  <div class="escena">
+    <div class="giro"><div class="ventana" id="vHero" data-ap="practicable">
+      <div class="marco"></div>
+      <div class="hoja izq"><i class="tirador"></i></div>
+      <div class="hoja der"><i class="tirador"></i></div>
+      <div class="cota ancho" id="cotaA">1200 mm</div>
+      <div class="cota alto" id="cotaH">1400 mm</div>
+    </div></div>
+    <div class="pista">gira sola &middot; pasa el ratón para pararla</div>
+  </div>
+</div></header>
+
+<div class="mini"><div class="w"><div class="escena">
+  <div class="giro"><div class="ventana" id="vMini" data-ap="practicable">
+    <div class="marco"></div><div class="hoja izq"><i class="tirador"></i></div><div class="hoja der"><i class="tirador"></i></div>
+  </div></div>
+</div></div></div>
+
+<section id="config"><div class="w">
+  <div class="seccab"><div class="kick">Configurador</div>
+    <h2>Dime cómo la quieres y te doy el número.</h2>
+    <p>Cada cambio se ve al momento en la ventana de arriba. El precio que sale es una estimación con una tarifa de ejemplo: el definitivo lo firma la fábrica después de medir.</p>
+  </div>
+  <div class="wizard">
+    <div class="pasos">
+      <div class="barra" id="barra">
+        <div class="on" data-i="0">01 &middot; Apertura</div><div data-i="1">02 &middot; Medidas</div><div data-i="2">03 &middot; Color</div><div data-i="3">04 &middot; Vidrio</div>
+      </div>
+
+      <div class="paso on" data-p="0">
+        <h3>¿Cómo se abre?</h3><p class="sub">Toca una y mírala moverse arriba.</p>
+        <div class="ops" id="opAp">
+          <button class="op sel" data-v="practicable" data-t="Practicable" data-f="1"><b>Practicable</b><span>Se abre hacia dentro como una puerta. La más habitual.</span></button>
+          <button class="op" data-v="oscilo" data-t="Oscilobatiente" data-f="1.18"><b>Oscilobatiente</b><span>Abre entera o solo se inclina arriba para ventilar.</span></button>
+          <button class="op" data-v="corredera" data-t="Corredera" data-f="0.88"><b>Corredera</b><span>Las hojas se deslizan. No ocupa sitio dentro.</span></button>
+          <button class="op" data-v="fija" data-t="Fija" data-f="0.62"><b>Fija</b><span>No se abre. Solo luz. Es la más barata.</span></button>
+        </div>
+        <div class="navpaso"><span></span><button class="btn" onclick="irA(1)">Siguiente &rarr;</button></div>
+      </div>
+
+      <div class="paso" data-p="1">
+        <h3>¿Qué mide el hueco?</h3><p class="sub">A ojo vale — al medir en casa se ajusta.</p>
+        <div class="medidas">
+          <div class="campo"><label>Ancho (mm)</label><input type="number" id="inA" value="1200" min="400" max="4000" step="10"></div>
+          <div class="campo"><label>Alto (mm)</label><input type="number" id="inH" value="1400" min="400" max="3000" step="10"></div>
+        </div>
+        <div class="navpaso"><button class="btn ghost" onclick="irA(0)">&larr; Atrás</button><button class="btn" onclick="irA(2)">Siguiente &rarr;</button></div>
+      </div>
+
+      <div class="paso" data-p="2">
+        <h3>Color del aluminio</h3><p class="sub">Lacado en horno. Se ve al momento en la ventana.</p>
+        <div class="colores" id="opCol" style="margin-bottom:34px">
+          <button class="col sel" data-v="#2b3138" data-t="Antracita" data-f="1" style="background:#2b3138"><small>Antracita</small></button>
+          <button class="col" data-v="#e9e9e6" data-t="Blanco" data-f="0.96" style="background:#e9e9e6"><small>Blanco</small></button>
+          <button class="col" data-v="#8a6a45" data-t="Imitación madera" data-f="1.14" style="background:linear-gradient(120deg,#8a6a45,#6d5133)"><small>Madera</small></button>
+          <button class="col" data-v="#9aa0a6" data-t="Plata" data-f="0.98" style="background:linear-gradient(120deg,#c3c8cd,#8b9298)"><small>Plata</small></button>
+          <button class="col" data-v="#1a1c1e" data-t="Negro" data-f="1.04" style="background:#1a1c1e"><small>Negro</small></button>
+        </div>
+        <div class="navpaso"><button class="btn ghost" onclick="irA(1)">&larr; Atrás</button><button class="btn" onclick="irA(3)">Siguiente &rarr;</button></div>
+      </div>
+
+      <div class="paso" data-p="3">
+        <h3>El vidrio</h3><p class="sub">Es lo que más cambia el frío, el calor y el ruido.</p>
+        <div class="ops" id="opVid">
+          <button class="op sel" data-v="rgba(140,190,215,.30)" data-t="Doble estándar" data-f="1"><b>Doble estándar</b><span>Dos lunas con cámara. El mínimo razonable hoy.</span></button>
+          <button class="op" data-v="rgba(150,205,190,.34)" data-t="Bajo emisivo" data-f="1.16"><b>Bajo emisivo</b><span>Deja entrar la luz y frena el calor que se escapa.</span></button>
+          <button class="op" data-v="rgba(120,165,200,.44)" data-t="Acústico" data-f="1.27"><b>Acústico</b><span>Lámina especial. Para calle con tráfico.</span></button>
+          <button class="op" data-v="rgba(105,140,170,.55)" data-t="Control solar" data-f="1.22"><b>Control solar</b><span>Rechaza el sol de poniente sin oscurecer.</span></button>
+        </div>
+        <div class="navpaso"><button class="btn ghost" onclick="irA(2)">&larr; Atrás</button><button class="btn" onclick="abreChat('presupuesto')">Pedir presupuesto real</button></div>
+      </div>
+    </div>
+
+    <aside class="resumen">
+      <h3>Tu ventana</h3>
+      <div class="fila"><span>Apertura</span><span id="rAp">Practicable</span></div>
+      <div class="fila"><span>Medidas</span><span id="rMed">1200 &times; 1400 mm</span></div>
+      <div class="fila"><span>Superficie</span><span id="rSup">1,68 m&sup2;</span></div>
+      <div class="fila"><span>Color</span><span id="rCol">Antracita</span></div>
+      <div class="fila"><span>Vidrio</span><span id="rVid">Doble estándar</span></div>
+      <div class="total"><span style="color:var(--gris);font-size:14px">Estimación</span><b id="rPre">&mdash;</b></div>
+      <div class="aviso"><b>Precio de EJEMPLO.</b> Sale de una tarifa de muestra por m&sup2; para que se vea el configurador funcionando. El precio real lo pone la fábrica con su tarifa y después de medir el hueco.</div>
+      <button class="btn" style="width:100%;justify-content:center;margin-top:18px" onclick="abreChat('presupuesto')">Que me lo confirmen</button>
+    </aside>
+  </div>
+</div></section>
+
+<section id="porque" style="background:var(--bg2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)"><div class="w">
+  <div class="seccab"><div class="kick">Por qué nosotros</div><h2>Fabricamos nosotros. Por eso el plazo lo controlamos.</h2></div>
+  <div class="tarjetas">
+    <div class="tar"><div class="n">01</div><h3>Taller propio</h3><p>No subcontratamos el corte ni el montaje. Si algo hay que rehacerlo, se rehace aquí y no se pierde una semana.</p></div>
+    <div class="tar"><div class="n">02</div><h3>Medición incluida</h3><p>Vamos a medir antes de fabricar. Un hueco mal medido es una ventana que no entra.</p></div>
+    <div class="tar"><div class="n">03</div><h3>Instalación y remate</h3><p>Se coloca, se sella y se deja el hueco rematado. No te dejamos la obra a medias.</p></div>
+    <div class="tar"><div class="n">04</div><h3>Garantía por escrito</h3><p>Con el presupuesto va lo que cubre y durante cuánto. <span style="color:var(--alerta)">[condiciones reales de la fábrica]</span></p></div>
+  </div>
+</div></section>
+
+<section><div class="w" style="text-align:center;max-width:720px">
+  <div class="kick" style="margin-bottom:14px">Siguiente paso</div>
+  <h2 style="font-size:clamp(26px,3.6vw,40px);margin-bottom:16px">¿Lo dejamos en un número en firme?</h2>
+  <p style="color:var(--gris);margin-bottom:30px">Con la configuración de arriba ya sabemos qué quieres. Nos falta ver el hueco.</p>
+  <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+    <a class="btn" href="#config">Configurar otra ventana</a>
+    <button class="btn ghost" onclick="abreChat()">Preguntar por el chat</button>
+  </div>
+</div></section>
+
+<footer class="pie"><div class="w">
+  MAQUETA DE TRABAJO &middot; 1-sep-2026. No indexada. Precios de ejemplo y textos de muestra:
+  se sustituyen por los datos reales de la fábrica antes de que lo vea un cliente final.
+</div></footer>
+
+<button class="burbuja" onclick="abreChat()" aria-label="Abrir el chat de dudas">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
+  <i class="punto"></i>
+</button>
+
+<div class="chat" id="chat">
+  <div class="cab">
+    <div class="av">A</div>
+    <div><b>Asistente</b><small>&#9679; responde al momento</small></div>
+    <button onclick="cierraChat()" aria-label="Cerrar">&times;</button>
+  </div>
+  <div class="msgs" id="msgs"></div>
+  <div class="chips" id="chips"></div>
+  <div class="escribe">
+    <input id="inChat" placeholder="Escribe tu duda..." autocomplete="off">
+    <button onclick="envia()" aria-label="Enviar">&#10148;</button>
+  </div>
+</div>
+
+<script>
+/* ===== configurador ===== */
+var TARIFA_EJEMPLO_M2 = 210;   /* EJEMPLO. No es la tarifa de la fabrica. */
+var est={ap:"practicable",apT:"Practicable",apF:1,a:1200,h:1400,
+         col:"#2b3138",colT:"Antracita",colF:1,
+         vid:"rgba(140,190,215,.30)",vidT:"Doble estandar",vidF:1};
+
+function pinta(){
+  var ids=["vHero","vMini"];
+  for(var i=0;i<ids.length;i++){
+    var v=document.getElementById(ids[i]);
+    if(!v)continue;
+    v.setAttribute("data-ap",est.ap);
+    v.style.setProperty("--colmarco",est.col);
+    v.style.setProperty("--vidrio",est.vid);
+  }
+  var vh=document.getElementById("vHero");
+  var base=390, ancho=Math.round(base*(est.a/est.h));
+  vh.style.height=base+"px";
+  vh.style.width=Math.max(150,Math.min(430,ancho))+"px";
+  document.getElementById("cotaA").textContent=est.a+" mm";
+  document.getElementById("cotaH").textContent=est.h+" mm";
+
+  var sup=(est.a/1000)*(est.h/1000);
+  document.getElementById("rAp").textContent=est.apT;
+  document.getElementById("rMed").textContent=est.a+" × "+est.h+" mm";
+  document.getElementById("rSup").textContent=sup.toFixed(2).replace(".",",")+" m²";
+  document.getElementById("rCol").textContent=est.colT;
+  document.getElementById("rVid").textContent=est.vidT;
+  var p=sup*TARIFA_EJEMPLO_M2*est.apF*est.colF*est.vidF;
+  if(sup<0.9){p=p*1.22;}
+  document.getElementById("rPre").textContent=(Math.round(p/5)*5)+" €";
+}
+function selGrupo(cont,btn,clase,cb){
+  var hs=cont.children;
+  for(var i=0;i<hs.length;i++){hs[i].classList.remove("sel");}
+  btn.classList.add("sel"); cb(btn); pinta();
+}
+var cAp=document.getElementById("opAp");
+cAp.addEventListener("click",function(e){
+  var b=e.target.closest(".op"); if(!b)return;
+  selGrupo(cAp,b,"op",function(x){est.ap=x.getAttribute("data-v");est.apT=x.getAttribute("data-t");est.apF=parseFloat(x.getAttribute("data-f"));});
+});
+var cCol=document.getElementById("opCol");
+cCol.addEventListener("click",function(e){
+  var b=e.target.closest(".col"); if(!b)return;
+  selGrupo(cCol,b,"col",function(x){est.col=x.getAttribute("data-v");est.colT=x.getAttribute("data-t");est.colF=parseFloat(x.getAttribute("data-f"));});
+});
+var cVid=document.getElementById("opVid");
+cVid.addEventListener("click",function(e){
+  var b=e.target.closest(".op"); if(!b)return;
+  selGrupo(cVid,b,"op",function(x){est.vid=x.getAttribute("data-v");est.vidT=x.getAttribute("data-t");est.vidF=parseFloat(x.getAttribute("data-f"));});
+});
+document.getElementById("inA").addEventListener("input",function(){
+  est.a=Math.max(400,Math.min(4000,parseInt(this.value||"1200",10)||1200));pinta();});
+document.getElementById("inH").addEventListener("input",function(){
+  est.h=Math.max(400,Math.min(3000,parseInt(this.value||"1400",10)||1400));pinta();});
+
+function irA(n){
+  var ps=document.querySelectorAll(".paso"), bs=document.querySelectorAll("#barra div");
+  for(var i=0;i<ps.length;i++){ps[i].classList.toggle("on",i===n);}
+  for(var j=0;j<bs.length;j++){bs[j].classList.toggle("on",j===n);}
+}
+document.getElementById("barra").addEventListener("click",function(e){
+  var d=e.target.closest("[data-i]"); if(d){irA(parseInt(d.getAttribute("data-i"),10));}
+});
+pinta();
+
+/* ===== chatbot FAQ (local, sin conexion ni API) ===== */
+var FAQ=[
+ {k:["precio","cuesta","cuanto","vale","caro","barato","tarifa","coste","presupuest"],
+  r:"El número que ves arriba es una ESTIMACIÓN con una tarifa de ejemplo, para que veas el configurador funcionando.\n\nEl precio real depende de tres cosas: las medidas exactas del hueco, el perfil que se monte y el vidrio. Por eso se mide antes de dar un número en firme."},
+ {k:["plazo","tarda","cuando","tiempo","semanas","dias","entrega"],
+  r:"El plazo cuenta desde que se firma el presupuesto: primero la medición, después la fabricación y por último el montaje.\n\nEl plazo concreto lo confirma la fábrica según la carga del taller — es un dato que en esta maqueta todavía no está puesto de verdad."},
+ {k:["oscilobatiente","oscilo","practicable","corredera","fija","abre","apertura","diferencia"],
+  r:"En corto:\n\n· PRACTICABLE — se abre hacia dentro como una puerta.\n· OSCILOBATIENTE — hace lo mismo Y además se inclina arriba para ventilar sin abrir del todo.\n· CORREDERA — las hojas se deslizan, no ocupan sitio dentro de la habitación.\n· FIJA — no se abre, solo entra luz. Es la más barata.\n\nPruébalas en el paso 1: la ventana de arriba se mueve."},
+ {k:["ruido","acustico","acustica","insonor","sonido","calle","trafico","vecino"],
+  r:"Si el problema es el ruido, lo que manda es EL VIDRIO, no el marco.\n\nEl vidrio acústico lleva una lámina intermedia que amortigua. Si vives en una calle con tráfico o cerca de bares, es la opción que más se nota."},
+ {k:["frio","calor","aislamiento","termico","rpt","puente","factura","condensacion","humedad"],
+  r:"Dos piezas trabajan juntas:\n\n· El PERFIL con rotura de puente térmico: corta el paso del frío por el aluminio.\n· El VIDRIO bajo emisivo: deja entrar la luz y frena el calor que se escapa.\n\nCambiar solo el vidrio y dejar un marco viejo sin rotura es quedarse a medias."},
+ {k:["medir","medida","medidas","hueco","mido"],
+  r:"Para la estimación de aquí vale con la medida a ojo del hueco.\n\nPara fabricar vamos nosotros a medir: un hueco casi nunca es un rectángulo perfecto y hay que ver el estado del cerco viejo. La medición va incluida."},
+ {k:["obra","escombro","romper","suciedad","tabique","ensucia","polvo","picar"],
+  r:"Depende de cómo esté el cerco actual. En muchos casos se puede montar sobre el marco viejo y apenas hay obra.\n\nSi el cerco está en mal estado hay que picar, y eso se dice ANTES en el presupuesto: no aparece como sorpresa el día del montaje."},
+ {k:["garantia","garantias","averia","rompe","postventa","reparar"],
+  r:"El presupuesto lleva por escrito qué cubre la garantía y durante cuánto tiempo.\n\nLas condiciones concretas las pone la fábrica y en esta maqueta todavía no están puestas."},
+ {k:["color","lacado","madera","blanco","negro","antracita","ral","acabado"],
+  r:"El aluminio va lacado en horno. En el paso 3 tienes los acabados más pedidos y el color se ve al momento en la ventana.\n\nSi buscas un RAL concreto o el imitación madera con una veta específica, se consulta: no todos entran en el mismo plazo."},
+ {k:["instalacion","montaje","montar","colocar","instalan","poneis","quien pone"],
+  r:"Sí, se coloca. Se monta, se sella y se remata el hueco.\n\nNo entregamos la ventana en el rellano para que la ponga otro: si la fabricamos, la montamos."},
+ {k:["seguridad","robo","antirrobo","cierre","bulon","bajo"],
+  r:"La seguridad está en los puntos de cierre del herraje y en el vidrio.\n\nSi la ventana da a un patio o a un bajo, merece la pena mirar herraje con puntos de cierre reforzados. Dilo al pedir presupuesto y se valora aparte."},
+ {k:["persiana","mosquitera","monoblock","monobloque","cajon"],
+  r:"Se puede montar con persiana en monobloque y con mosquitera.\n\nSon partidas aparte del presupuesto: no van incluidas en la estimación de arriba."},
+ {k:["contacto","hablar","llamar","telefono","whatsapp","cita","visita","persona"],
+  r:"Para darte un número en firme hace falta: la configuración que acabas de hacer, la dirección para ir a medir y un teléfono.\n\nEn esta maqueta el formulario todavía no está conectado — el canal real de contacto lo decide la fábrica."},
+ {k:["aluminio","pvc","material","mejor"],
+  r:"El aluminio con rotura de puente térmico aguanta mejor el sol y el paso del tiempo, y permite perfiles más finos: entra más luz por el mismo hueco.\n\nEl PVC aísla parecido pero pide perfiles más gruesos. Nosotros fabricamos aluminio, así que te lo digo sabiendo de qué lado estoy."}
+];
+var SUGE=["¿Cuánto cuesta?","¿Y para el ruido?","¿Qué es oscilobatiente?","¿Hay que hacer obra?","¿Lo montáis vosotros?"];
+
+function normaliza(s){
+  s=String(s).toLowerCase();
+  var de="áàäâéèëêíìïîóòöôúùüûñç";
+  var a ="aaaaeeeeiiiioooouuuunc";
+  var o="";
+  for(var i=0;i<s.length;i++){var p=de.indexOf(s.charAt(i)); o+=(p>=0?a.charAt(p):s.charAt(i));}
+  return o;
+}
+function busca(t){
+  var n=normaliza(t), mejor=null, max=0;
+  for(var i=0;i<FAQ.length;i++){
+    var p=0;
+    for(var j=0;j<FAQ[i].k.length;j++){
+      if(n.indexOf(FAQ[i].k[j])>=0){p+=FAQ[i].k[j].length;}
+    }
+    if(p>max){max=p;mejor=FAQ[i];}
+  }
+  return max>=4?mejor.r:null;
+}
+function anade(txt,quien){
+  var d=document.createElement("div");
+  d.className="msg "+(quien==="yo"?"yo":"bot");
+  d.textContent=txt;
+  var m=document.getElementById("msgs");
+  m.appendChild(d); m.scrollTop=m.scrollHeight;
+}
+function pintaChips(){
+  var c=document.getElementById("chips"); c.innerHTML="";
+  for(var i=0;i<SUGE.length;i++){
+    (function(t){
+      var b=document.createElement("button");
+      b.className="chip"; b.textContent=t;
+      b.onclick=function(){document.getElementById("inChat").value=t;envia();};
+      c.appendChild(b);
+    })(SUGE[i]);
+  }
+}
+function responde(t){
+  var m=document.getElementById("msgs");
+  var d=document.createElement("div");
+  d.className="msg bot pensando";
+  d.innerHTML="<span></span><span></span><span></span>";
+  m.appendChild(d); m.scrollTop=m.scrollHeight;
+  setTimeout(function(){
+    if(d.parentNode){m.removeChild(d);}
+    var r=busca(t);
+    if(r){anade(r,"bot");}
+    else{anade("Esa no la tengo respondida todavía.\n\nLo que sí sé de memoria: precios, plazos, tipos de apertura, ruido, aislamiento, obra, garantía, colores y montaje. Prueba con una de esas — o déjala escrita y te la contesta una persona.","bot");}
+  },560+Math.random()*420);
+}
+function envia(){
+  var i=document.getElementById("inChat"), t=i.value.replace(/^\s+|\s+$/g,"");
+  if(!t){return;}
+  anade(t,"yo"); i.value=""; responde(t);
+}
+document.getElementById("inChat").addEventListener("keydown",function(e){
+  if(e.key==="Enter"){envia();}
+});
+
+var arrancado=false;
+function abreChat(modo){
+  document.getElementById("chat").classList.add("on");
+  var p=document.querySelector(".burbuja .punto");
+  if(p){p.style.display="none";}
+  if(!arrancado){
+    arrancado=true;
+    anade("Hola. Resuelvo dudas de ventanas: precio, plazos, tipos de apertura, ruido, aislamiento y montaje.\n\n¿Qué quieres saber?","bot");
+    pintaChips();
+  }
+  if(modo==="presupuesto"){
+    setTimeout(function(){
+      anade("Tienes configurada una "+est.apT.toLowerCase()+" de "+est.a+" × "+est.h+" mm, en "+est.colT.toLowerCase()+" y con vidrio "+est.vidT.toLowerCase()+".\n\nPara cerrar el precio real hace falta ir a medir el hueco. ¿Te lo preparo?","bot");
+    },430);
+  }
+  setTimeout(function(){document.getElementById("inChat").focus();},260);
+}
+function cierraChat(){document.getElementById("chat").classList.remove("on");}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){cierraChat();}});
+</script>
+</body></html>
