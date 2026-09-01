@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Ventanas de aluminio a medida · Sevilla · maqueta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CASA MEDITERRÁNEA — arena, terracota, oliva. Sol y sombra.
+   ============================================================ */
+:root{
+  --arena:#f6ead8;
+  --arena-2:#eddcc1;
+  --crema:#fffaf2;
+  --terra:#c05a36;
+  --terra-osc:#96422a;
+  --terra-cl:#e08d67;
+  --oliva:#6f7a55;
+  --oliva-cl:#98a37c;
+  --sol:#efb04a;
+  --tinta:#3a291e;
+  --tinta-2:#7a6656;
+  --linea:rgba(58,41,30,.14);
+  --r-s:12px; --r-m:20px; --r-l:30px; --r-xl:44px;
+  --sombra:0 6px 14px -9px rgba(90,52,30,.42);
+  --sombra-larga:26px 34px 46px -30px rgba(90,52,30,.55), 0 4px 12px -6px rgba(90,52,30,.20);
+  --cab:74px;
+  --ease:cubic-bezier(.22,.72,.24,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--arena); color:var(--tinta);
+  font-family:'Karla',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+h1,h2,h3,h4,.sora{font-family:'Sora','Karla',system-ui,sans-serif; font-weight:600; letter-spacing:-.02em; line-height:1.08; margin:0}
+p{margin:0}
+img{max-width:100%; display:block}
+button{font:inherit; color:inherit}
+a{color:inherit}
+.env{width:min(1180px,100% - 32px); margin-inline:auto}
+@media (max-width:860px){ .env{width:min(1180px,100% - 28px)} }
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.6em; justify-content:center;
+  border:0; border-radius:999px; padding:.86em 1.5em; cursor:pointer;
+  font-family:'Sora',sans-serif; font-weight:600; font-size:.97rem; letter-spacing:-.01em;
+  transition:transform .42s var(--ease), box-shadow .42s var(--ease), background-color .25s;
+  text-decoration:none;
+}
+.btn-terra{background:var(--terra); color:#fff8f0; box-shadow:6px 8px 0 0 var(--terra-osc)}
+.btn-terra:hover{transform:translate(-3px,-3px); box-shadow:14px 18px 0 0 var(--terra-osc)}
+.btn-terra:active{transform:translate(2px,2px); box-shadow:3px 4px 0 0 var(--terra-osc)}
+.btn-hueco{background:transparent; color:var(--tinta); box-shadow:inset 0 0 0 2px rgba(58,41,30,.28)}
+.btn-hueco:hover{transform:translateY(-3px); box-shadow:inset 0 0 0 2px var(--terra), 0 16px 24px -18px rgba(90,52,30,.8)}
+.btn:focus-visible{outline:3px solid var(--oliva); outline-offset:3px}
+
+/* ---------- cabecera ---------- */
+header.cab{
+  position:sticky; top:0; z-index:40; height:var(--cab);
+  background:rgba(246,234,216,.90); backdrop-filter:blur(12px) saturate(1.2);
+  border-bottom:1px solid var(--linea);
+}
+.cab-in{height:100%; display:flex; align-items:center; gap:12px; justify-content:space-between}
+.marca{display:flex; align-items:center; gap:11px; min-width:0; flex:1 1 auto}
+.marca svg{flex:0 0 auto}
+.marca-txt{min-width:0}
+.marca-nom{
+  font-family:'Sora',sans-serif; font-weight:600; font-size:.98rem; letter-spacing:-.01em;
+  border:1.5px dashed rgba(58,41,30,.38); border-radius:8px; padding:1px 9px; display:block;
+  color:var(--tinta-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
+}
+.marca-sub{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; color:var(--tinta-2); margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.cab .btn{padding:.62em 1.15em; font-size:.88rem; flex:0 0 auto; white-space:nowrap}
+@media (max-width:860px){
+  :root{--cab:60px}
+  .marca-sub{display:none}
+  .marca-nom{font-size:.84rem; padding:1px 8px}
+  .marca svg{width:32px; height:32px}
+  .cab .btn{padding:.58em .95em; font-size:.82rem}
+}
+@media (max-width:620px){ .cab .btn .larga{display:none} }
+@media (max-width:400px){ .marca-nom{font-size:.76rem} }
+
+/* ---------- hero ---------- */
+.hero{position:relative; padding:clamp(38px,6vw,86px) 0 clamp(44px,6vw,90px); overflow:hidden}
+.hero::before{
+  content:''; position:absolute; width:min(720px,92vw); aspect-ratio:1; right:-16%; top:-30%;
+  background:radial-gradient(circle,rgba(239,176,74,.42),rgba(239,176,74,0) 62%); pointer-events:none;
+}
+.hero-grid{position:relative; display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(24px,4vw,58px); align-items:center}
+.pill{
+  display:inline-flex; align-items:center; gap:.55em; background:rgba(111,122,85,.14); color:#4f5940;
+  border-radius:999px; padding:.42em 1em; font-size:.79rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+}
+h1{font-size:clamp(2.35rem,6vw,4.15rem); margin:.5em 0 .34em; font-weight:600}
+h1 em{font-style:normal; color:var(--terra); position:relative; white-space:nowrap}
+h1 em::after{content:''; position:absolute; left:0; right:0; bottom:.06em; height:.14em; background:rgba(239,176,74,.55); border-radius:99px; z-index:-1}
+.hero p.lead{font-size:clamp(1.03rem,1.6vw,1.2rem); color:var(--tinta-2); max-width:46ch}
+.hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+.hero-datos{display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:30px; padding-top:22px; border-top:1px solid var(--linea)}
+.dato b{display:block; font-family:'Sora',sans-serif; font-size:1.28rem; color:var(--terra)}
+.dato span{font-size:.83rem; color:var(--tinta-2)}
+.arco{
+  position:relative; border-radius:999px 999px var(--r-l) var(--r-l); overflow:hidden;
+  aspect-ratio:4/5; background:var(--arena-2);
+  box-shadow:var(--sombra-larga);
+  transition:box-shadow .55s var(--ease), transform .55s var(--ease);
+}
+.arco:hover{transform:translate(-4px,-6px); box-shadow:44px 56px 64px -34px rgba(90,52,30,.6), 0 6px 16px -8px rgba(90,52,30,.25)}
+.arco img{width:100%; height:100%; object-fit:cover}
+.arco-nota{
+  position:absolute; left:14px; bottom:14px; right:14px;
+  background:rgba(255,250,242,.93); border-radius:14px; padding:9px 13px;
+  font-size:.79rem; color:var(--tinta-2); line-height:1.4;
+}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr; gap:26px}
+  .arco{aspect-ratio:5/4; border-radius:190px 190px var(--r-m) var(--r-m); order:-1}
+  .hero-datos{gap:8px 20px}
+}
+
+/* ---------- secciones ---------- */
+section{scroll-margin-top:calc(var(--cab) + 10px)}
+.tit-sec{max-width:62ch}
+.tit-sec h2{font-size:clamp(1.75rem,3.6vw,2.7rem)}
+.tit-sec p{color:var(--tinta-2); margin-top:12px}
+.kicker{font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--terra); font-weight:700}
+
+/* ---------- CONFIGURADOR ---------- */
+.conf{background:var(--crema); padding:clamp(34px,5vw,74px) 0 clamp(40px,5vw,80px); border-block:1px solid var(--linea)}
+.conf-grid{display:grid; grid-template-columns:1.06fr .94fr; gap:clamp(18px,2.6vw,38px); margin-top:clamp(20px,3vw,34px)}
+.col-vis{min-width:0}
+.panel-vis{position:sticky; top:calc(var(--cab) + 14px)}
+.col-ctl{min-width:0}
+
+.escena{
+  position:relative; aspect-ratio:1000/660; width:100%; border-radius:var(--r-m);
+  overflow:hidden; background:var(--arena-2); box-shadow:var(--sombra-larga);
+  user-select:none; -webkit-user-select:none; touch-action:pan-y;
+}
+.capa{position:absolute; inset:0}
+.capa svg{width:100%; height:100%; display:block}
+.capa-b{clip-path:inset(0 0 0 var(--sp,50%))}
+.chip-e{
+  position:absolute; top:10px; z-index:3; background:rgba(255,250,242,.94); color:var(--tinta);
+  border-radius:999px; padding:5px 12px; font-size:.76rem; font-weight:700; font-family:'Sora',sans-serif;
+  letter-spacing:.02em; white-space:nowrap; box-shadow:0 4px 10px -6px rgba(0,0,0,.4);
+}
+.chip-a{left:10px; background:rgba(29,40,48,.88); color:#e6eef2}
+.chip-b{right:10px}
+.chip-corr{
+  position:absolute; left:10px; bottom:10px; z-index:3; background:rgba(29,40,48,.86); color:#bcdcf0;
+  border-radius:10px; padding:4px 10px; font-size:.72rem; font-weight:600; white-space:nowrap;
+}
+.divisor{position:absolute; top:0; bottom:0; left:var(--sp,50%); width:0; z-index:5; pointer-events:none}
+.divisor::before{content:''; position:absolute; top:0; bottom:0; left:-1.5px; width:3px; background:rgba(255,250,242,.92); box-shadow:0 0 0 1px rgba(58,41,30,.22)}
+.tirador{
+  position:absolute; top:50%; left:0; transform:translate(-50%,-50%);
+  width:52px; height:52px; border-radius:999px; border:0; cursor:ew-resize; pointer-events:auto;
+  background:var(--crema); color:var(--terra); display:grid; place-items:center;
+  box-shadow:0 8px 18px -8px rgba(58,41,30,.7), inset 0 0 0 2px var(--terra);
+  touch-action:none; transition:box-shadow .4s var(--ease), transform .25s var(--ease);
+}
+.tirador:hover{box-shadow:0 20px 30px -12px rgba(58,41,30,.75), inset 0 0 0 2px var(--terra)}
+.tirador:active{transform:translate(-50%,-50%) scale(.94)}
+.tirador:focus-visible{outline:3px solid var(--oliva); outline-offset:3px}
+.tirador::after{content:''; position:absolute; inset:-6px; border-radius:999px; border:2px solid rgba(192,90,54,.35); animation:lat 2.6s ease-out infinite}
+@keyframes lat{0%{transform:scale(.86); opacity:.9} 70%,100%{transform:scale(1.24); opacity:0}}
+.corr-anim{animation:corr 2.6s linear infinite}
+@keyframes corr{to{stroke-dashoffset:-64}}
+@media (prefers-reduced-motion:reduce){ .tirador::after,.corr-anim{animation:none} }
+
+/* franja precio */
+.franja{
+  margin-top:12px; background:var(--tinta); color:#fdf4e7; border-radius:var(--r-m);
+  padding:13px 16px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  box-shadow:var(--sombra);
+}
+.franja .fp-num{font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(1.5rem,3.4vw,2rem); letter-spacing:-.03em; line-height:1}
+.franja .fp-lab{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; opacity:.66; display:block; margin-bottom:3px}
+.franja .fp-res{margin-left:auto; font-size:.82rem; opacity:.82; text-align:right; line-height:1.35; max-width:22ch}
+.aviso{
+  font-size:.78rem; line-height:1.45; color:var(--tinta-2); margin-top:10px;
+  display:flex; gap:8px; align-items:flex-start;
+}
+.aviso svg{flex:0 0 auto; margin-top:2px}
+
+/* controles */
+.grupo{margin-bottom:22px}
+.grupo>label.tit,.grupo>.tit{
+  display:flex; align-items:baseline; gap:8px; justify-content:space-between;
+  font-family:'Sora',sans-serif; font-weight:600; font-size:.95rem; margin-bottom:9px;
+}
+.grupo .tit small{font-weight:400; font-size:.78rem; color:var(--tinta-2); font-family:'Karla',sans-serif}
+.med{display:flex; align-items:center; gap:12px}
+.med input[type=range]{flex:1; min-width:0; -webkit-appearance:none; appearance:none; height:30px; background:transparent; cursor:pointer}
+.med input[type=range]::-webkit-slider-runnable-track{height:8px; border-radius:99px; background:linear-gradient(90deg,var(--terra-cl),var(--terra))}
+.med input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:26px; height:26px; margin-top:-9px; border-radius:99px; background:var(--crema); box-shadow:0 0 0 3px var(--terra), 0 4px 8px -3px rgba(58,41,30,.6)}
+.med input[type=range]::-moz-range-track{height:8px; border-radius:99px; background:linear-gradient(90deg,var(--terra-cl),var(--terra))}
+.med input[type=range]::-moz-range-thumb{width:26px; height:26px; border:0; border-radius:99px; background:var(--crema); box-shadow:0 0 0 3px var(--terra)}
+.med input[type=range]:focus-visible{outline:3px solid var(--oliva); outline-offset:2px; border-radius:99px}
+.num{
+  display:flex; align-items:baseline; gap:3px; background:var(--arena); border-radius:12px;
+  padding:7px 11px; flex:0 0 auto; box-shadow:inset 0 0 0 1.5px var(--linea);
+}
+.num input{
+  width:4.6ch; border:0; background:transparent; font-family:'Sora',sans-serif; font-weight:600;
+  font-size:1rem; text-align:right; padding:0; color:var(--tinta);
+  -moz-appearance:textfield;
+}
+.num input::-webkit-outer-spin-button,.num input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
+.num input:focus{outline:0}
+.num span{font-size:.78rem; color:var(--tinta-2)}
+.num:focus-within{box-shadow:inset 0 0 0 2px var(--terra)}
+
+.seg{display:flex; flex-wrap:wrap; gap:8px}
+.seg button{
+  border:0; border-radius:999px; padding:.56em 1.02em; cursor:pointer; background:var(--arena);
+  box-shadow:inset 0 0 0 1.5px var(--linea); font-size:.9rem; font-weight:600;
+  transition:box-shadow .38s var(--ease), transform .38s var(--ease), background-color .2s, color .2s;
+}
+.seg button:hover:not([aria-pressed=true]):not(:disabled){transform:translateY(-2px); box-shadow:inset 0 0 0 1.5px var(--terra-cl), 0 10px 16px -12px rgba(90,52,30,.9)}
+.seg button[aria-pressed=true]{background:var(--terra); color:#fff8f0; box-shadow:0 4px 0 0 var(--terra-osc)}
+.seg button:disabled{opacity:.38; cursor:not-allowed}
+.seg button:focus-visible{outline:3px solid var(--oliva); outline-offset:2px}
+.seg.mini button{padding:.5em .95em; font-size:.86rem}
+
+.tarjetas{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
+.tarjetas button{
+  border:0; text-align:left; border-radius:var(--r-s); padding:11px 12px; cursor:pointer;
+  background:var(--arena); box-shadow:inset 0 0 0 1.5px var(--linea);
+  transition:box-shadow .38s var(--ease), transform .38s var(--ease);
+}
+.tarjetas button:hover:not([aria-pressed=true]){transform:translateY(-3px); box-shadow:inset 0 0 0 1.5px var(--terra-cl), 0 14px 20px -14px rgba(90,52,30,.9)}
+.tarjetas button[aria-pressed=true]{background:#fff; box-shadow:inset 0 0 0 2.5px var(--terra), 0 6px 0 -2px rgba(192,90,54,.25)}
+.tarjetas b{display:block; font-family:'Sora',sans-serif; font-size:.92rem; margin-bottom:2px}
+.tarjetas small{display:block; font-size:.75rem; color:var(--tinta-2); line-height:1.35}
+.tarjetas .pr{display:block; margin-top:6px; font-size:.76rem; font-weight:700; color:var(--terra)}
+@media (max-width:520px){ .tarjetas{grid-template-columns:1fr} }
+
+.desglose{
+  background:var(--arena); border-radius:var(--r-m); padding:16px 18px; margin-top:6px;
+  box-shadow:inset 0 0 0 1.5px var(--linea);
+}
+.desglose h4{font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--tinta-2); font-weight:700; margin-bottom:10px}
+.dl{display:flex; justify-content:space-between; gap:12px; padding:5px 0; font-size:.89rem; border-bottom:1px dashed rgba(58,41,30,.14)}
+.dl:last-of-type{border-bottom:0}
+.dl span:first-child{color:var(--tinta-2)}
+.dl b{font-family:'Sora',sans-serif; font-weight:600; white-space:nowrap}
+.dl.min b{color:var(--terra)}
+.tot{display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-top:12px; padding-top:12px; border-top:2px solid var(--tinta)}
+.tot .n{font-family:'Sora',sans-serif; font-weight:700; font-size:2rem; letter-spacing:-.03em; line-height:1}
+.badge{display:inline-block; background:rgba(111,122,85,.16); color:#4f5940; border-radius:8px; padding:2px 8px; font-size:.72rem; font-weight:700; margin-left:6px; vertical-align:2px}
+
+/* ---------- proceso ---------- */
+.proceso{padding:clamp(40px,6vw,86px) 0}
+.pasos{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2vw,26px); margin-top:clamp(22px,3vw,38px)}
+.paso{background:var(--crema); border-radius:var(--r-m); overflow:hidden; box-shadow:var(--sombra); transition:box-shadow .5s var(--ease), transform .5s var(--ease)}
+.paso:hover{transform:translate(-3px,-5px); box-shadow:30px 40px 50px -32px rgba(90,52,30,.62)}
+.paso .im{aspect-ratio:4/3; overflow:hidden; background:var(--arena-2)}
+.paso .im img{width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease)}
+.paso:hover .im img{transform:scale(1.05)}
+.calida{filter:sepia(.44) saturate(1.55) hue-rotate(-9deg) brightness(1.02) contrast(1.04)}
+.paso .tx{padding:16px 18px 20px}
+.paso .n{font-family:'Sora',sans-serif; font-weight:700; color:var(--terra); font-size:.8rem; letter-spacing:.14em}
+.paso h3{font-size:1.14rem; margin:5px 0 7px}
+.paso p{font-size:.9rem; color:var(--tinta-2)}
+@media (max-width:860px){ .pasos{grid-template-columns:1fr} .paso .im{aspect-ratio:16/9} }
+
+.banda{
+  margin-top:clamp(26px,4vw,46px); background:var(--oliva); color:#f4f6ee; border-radius:var(--r-l);
+  padding:clamp(24px,3.4vw,40px); display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(18px,3vw,40px); align-items:center;
+}
+.banda h3{font-size:clamp(1.35rem,2.6vw,1.95rem)}
+.banda ul{list-style:none; padding:0; margin:0; display:grid; gap:11px}
+.banda li{display:flex; gap:11px; align-items:flex-start; font-size:.95rem}
+.banda li svg{flex:0 0 auto; margin-top:3px}
+@media (max-width:860px){ .banda{grid-template-columns:1fr} }
+
+/* ---------- FAQ ---------- */
+.faq{padding:0 0 clamp(40px,6vw,84px)}
+.faq-lista{margin-top:clamp(18px,2.6vw,30px); display:grid; gap:10px; max-width:840px}
+details{background:var(--crema); border-radius:var(--r-m); box-shadow:inset 0 0 0 1.5px var(--linea); overflow:hidden}
+details[open]{box-shadow:inset 0 0 0 2px var(--terra-cl)}
+summary{
+  cursor:pointer; list-style:none; padding:16px 54px 16px 20px; position:relative;
+  font-family:'Sora',sans-serif; font-weight:600; font-size:1rem;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:''; position:absolute; right:20px; top:50%; width:12px; height:12px; margin-top:-8px;
+  border-right:2.5px solid var(--terra); border-bottom:2.5px solid var(--terra);
+  transform:rotate(45deg); transition:transform .35s var(--ease);
+}
+details[open] summary::after{transform:rotate(-135deg); margin-top:-2px}
+summary:focus-visible{outline:3px solid var(--oliva); outline-offset:-3px}
+details .cuerpo{padding:0 20px 18px; color:var(--tinta-2); font-size:.94rem}
+
+/* ---------- CTA final ---------- */
+.cta{
+  position:relative; overflow:hidden; background:var(--terra); color:#fff5ea;
+  border-radius:var(--r-xl); padding:clamp(34px,5vw,64px) clamp(22px,4vw,54px); text-align:center;
+  box-shadow:var(--sombra-larga);
+}
+.cta::before{content:''; position:absolute; width:520px; aspect-ratio:1; left:-140px; bottom:-260px; background:radial-gradient(circle,rgba(239,176,74,.55),transparent 65%)}
+.cta::after{content:''; position:absolute; width:420px; aspect-ratio:1; right:-130px; top:-220px; background:radial-gradient(circle,rgba(255,255,255,.22),transparent 65%)}
+.cta>*{position:relative}
+.cta h2{font-size:clamp(1.7rem,4vw,2.8rem); max-width:20ch; margin-inline:auto}
+.cta p{margin:14px auto 26px; max-width:52ch; color:rgba(255,245,234,.9)}
+.btn-crema{background:var(--crema); color:var(--terra-osc); box-shadow:6px 8px 0 0 rgba(0,0,0,.22)}
+.btn-crema:hover{transform:translate(-3px,-3px); box-shadow:15px 19px 0 0 rgba(0,0,0,.26)}
+.cta-nota{margin-top:18px; font-size:.8rem; color:rgba(255,245,234,.78)}
+
+/* ---------- footer ---------- */
+footer{padding:34px 0 44px; border-top:1px solid var(--linea); margin-top:clamp(40px,6vw,80px)}
+.foot-maq{
+  background:rgba(58,41,30,.06); border:1.5px dashed rgba(58,41,30,.3); border-radius:var(--r-m);
+  padding:14px 18px; font-size:.85rem; color:var(--tinta-2); line-height:1.5;
+}
+.foot-b{display:flex; flex-wrap:wrap; gap:10px 22px; justify-content:space-between; align-items:center; margin-top:18px; font-size:.8rem; color:var(--tinta-2)}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* ---------- MÓVIL ---------- */
+@media (max-width:860px){
+  body{font-size:16.5px}
+  .conf-grid{grid-template-columns:1fr; gap:18px}
+  .col-vis{
+    position:sticky; top:var(--cab); z-index:20;
+    background:var(--crema);
+    padding:10px 14px 12px; margin-inline:-14px;
+    box-shadow:0 16px 18px -16px rgba(90,52,30,.55);
+  }
+  .panel-vis{position:static}
+  .escena{border-radius:14px}
+  .tirador{width:46px; height:46px}
+  .franja{margin-top:9px; padding:10px 13px; border-radius:14px; gap:10px}
+  .franja .fp-res{font-size:.74rem; max-width:16ch}
+  .aviso{display:none}
+  .chip-e{font-size:.68rem; padding:4px 9px; top:8px}
+  .chip-a{left:8px} .chip-b{right:8px}
+  .chip-corr{font-size:.66rem; bottom:8px; left:8px}
+}
+</style>
+</head>
+<body>
+
+<a href="#configurador" class="sr">Ir al configurador</a>
+
+<header class="cab">
+  <div class="env cab-in">
+    <div class="marca">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="12" r="7" fill="#efb04a"/>
+        <rect x="7.5" y="16.5" width="25" height="19" rx="3" fill="none" stroke="#c05a36" stroke-width="2.6"/>
+        <path d="M20 16.5v19M7.5 26h25" stroke="#c05a36" stroke-width="2.2"/>
+      </svg>
+      <div class="marca-txt">
+        <span class="marca-nom">[ nombre de la fábrica ]</span>
+        <div class="marca-sub">Aluminio a medida · Sevilla</div>
+      </div>
+    </div>
+    <a href="#configurador" class="btn btn-terra">Configura<span> tu ventana</span></a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="env hero-grid">
+    <div>
+      <span class="pill">Fábrica familiar · 30 años</span>
+      <h1>La casa cambia cuando cambia <em>el hueco</em>.</h1>
+      <p class="lead">Cortamos, ensamblamos y montamos ventanas de aluminio a medida en nuestro propio taller de Sevilla. Tú eliges el hueco; nosotros lo llenamos de luz.</p>
+      <div class="hero-cta">
+        <a href="#configurador" class="btn btn-terra">Dibuja tu ventana</a>
+        <a href="#proceso" class="btn btn-hueco">Ver cómo la hacemos</a>
+      </div>
+      <div class="hero-datos">
+        <div class="dato"><b>30 años</b><span>de taller familiar</span></div>
+        <div class="dato"><b>A medida</b><span>ni un milímetro de más</span></div>
+        <div class="dato"><b>Sevilla</b><span>medimos y montamos</span></div>
+      </div>
+    </div>
+    <figure class="arco" style="margin:0">
+      <img src="_fotos/f00.jpg" alt="Ventana de aluminio instalada en una habitación, con luz de tarde entrando y un jardín otoñal al otro lado">
+      <figcaption class="arco-nota">Lo que se compra no es un perfil de aluminio: es la tarde de octubre entrando en el salón.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= CONFIGURADOR ================= -->
+<section class="conf" id="configurador">
+  <div class="env">
+    <div class="tit-sec">
+      <span class="kicker">El configurador</span>
+      <h2>Ponla en tu casa antes de pedirla.</h2>
+      <p>Mueve las medidas y mira el hueco de tu pared: a la izquierda, la ventana vieja que deja pasar el aire; a la derecha, la que te fabricamos. <strong>Arrastra el tirador</strong> para comparar.</p>
+    </div>
+
+    <div class="conf-grid">
+      <!-- ---- columna visual (sticky) ---- -->
+      <div class="col-vis">
+        <div class="panel-vis">
+          <div class="escena" id="escena" style="--sp:50%">
+            <div class="capa capa-a" id="capaA"></div>
+            <div class="capa capa-b" id="capaB"></div>
+            <span class="chip-e chip-a" style="pointer-events:none">Antes · el hueco de hoy</span>
+            <span class="chip-e chip-b" style="pointer-events:none" id="chipB">Después · tu ventana</span>
+            <span class="chip-corr" style="pointer-events:none">↝ corrientes y frío</span>
+            <div class="divisor">
+              <button class="tirador" id="tirador" role="slider" aria-label="Comparador antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="mitad y mitad">
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 6 4 12l5 6M15 6l5 6-5 6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="franja">
+            <div>
+              <span class="fp-lab">Cifra orientativa</span>
+              <span class="fp-num" id="fpNum">—</span>
+            </div>
+            <div class="fp-res" id="fpRes">—</div>
+          </div>
+          <p class="aviso">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#7a6656" stroke-width="1.9" aria-hidden="true"><circle cx="10" cy="10" r="8.2"/><path d="M10 9v5M10 6.2v.1" stroke-linecap="round"/></svg>
+            <span>Cifra orientativa sobre tarifa de ejemplo — el precio en firme lo pone la fábrica.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- ---- columna controles ---- -->
+      <div class="col-ctl">
+
+        <div class="grupo">
+          <div class="tit">Empieza por un hueco típico <small>o ajústalo abajo</small></div>
+          <div class="seg mini" id="presets">
+            <button type="button" data-w="1200" data-h="1200" data-ap="pract" data-hj="2">Ventana de salón</button>
+            <button type="button" data-w="900" data-h="1100" data-ap="oscilo" data-hj="1">Dormitorio</button>
+            <button type="button" data-w="1800" data-h="2100" data-ap="corre" data-hj="2">Balconera</button>
+            <button type="button" data-w="600" data-h="600" data-ap="fija" data-hj="1">Ojo de buey</button>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <label class="tit" for="rAncho">Ancho del hueco <small>de 400 a 3.000 mm</small></label>
+          <div class="med">
+            <input type="range" id="rAncho" min="400" max="3000" step="10" value="1200" aria-describedby="nAncho">
+            <span class="num"><input type="number" id="nAncho" min="400" max="3000" step="10" value="1200" aria-label="Ancho en milímetros"><span>mm</span></span>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <label class="tit" for="rAlto">Alto del hueco <small>de 400 a 2.800 mm</small></label>
+          <div class="med">
+            <input type="range" id="rAlto" min="400" max="2800" step="10" value="1200" aria-describedby="nAlto">
+            <span class="num"><input type="number" id="nAlto" min="400" max="2800" step="10" value="1200" aria-label="Alto en milímetros"><span>mm</span></span>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <div class="tit">Cómo se abre</div>
+          <div class="seg" id="segAp" role="group" aria-label="Tipo de apertura">
+            <button type="button" data-v="fija">Fija</button>
+            <button type="button" data-v="pract">Practicable</button>
+            <button type="button" data-v="oscilo">Oscilobatiente</button>
+            <button type="button" data-v="corre">Corredera</button>
+          </div>
+          <p class="aviso" id="notaAp" style="display:none"></p>
+        </div>
+
+        <div class="grupo">
+          <div class="tit">Hojas <small id="notaHojas">cada hoja de más suma mano de obra</small></div>
+          <div class="seg" id="segHj" role="group" aria-label="Número de hojas">
+            <button type="button" data-v="1">1</button>
+            <button type="button" data-v="2">2</button>
+            <button type="button" data-v="3">3</button>
+            <button type="button" data-v="4">4</button>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <div class="tit">Vidrio</div>
+          <div class="tarjetas" id="segVi" role="group" aria-label="Tipo de vidrio">
+            <button type="button" data-v="doble"><b>Doble</b><small>Dos lunas con cámara de aire.</small><span class="pr">incluido</span></button>
+            <button type="button" data-v="bajoe"><b>Bajo emisivo</b><small>Doble con capa que frena el calor.</small><span class="pr">+34 €/m²</span></button>
+            <button type="button" data-v="triple"><b>Triple</b><small>Tres lunas, dos cámaras.</small><span class="pr">+72 €/m²</span></button>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <div class="tit">Acabado <small>solo visual · no altera la cifra</small></div>
+          <div class="seg mini" id="segAc" role="group" aria-label="Acabado del marco">
+            <button type="button" data-v="blanco">Blanco</button>
+            <button type="button" data-v="antracita">Antracita</button>
+          </div>
+        </div>
+
+        <div class="desglose">
+          <h4>De dónde sale la cifra</h4>
+          <div id="lineas"></div>
+          <div class="tot">
+            <div>
+              <div style="font-size:.78rem; letter-spacing:.13em; text-transform:uppercase; color:var(--tinta-2); font-weight:700">Orientativo</div>
+              <div class="n" id="totNum">—</div>
+            </div>
+            <button type="button" class="btn btn-terra" id="btnPres">Pedir el precio en firme</button>
+          </div>
+          <p class="aviso" style="margin-top:12px">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#7a6656" stroke-width="1.9" aria-hidden="true"><circle cx="10" cy="10" r="8.2"/><path d="M10 9v5M10 6.2v.1" stroke-linecap="round"/></svg>
+            <span>Cifra orientativa sobre tarifa de ejemplo — el precio en firme lo pone la fábrica.</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESO ================= -->
+<section class="proceso" id="proceso">
+  <div class="env">
+    <div class="tit-sec">
+      <span class="kicker">Del perfil a tu pared</span>
+      <h2>Se fabrica aquí. Por eso se puede cambiar un milímetro.</h2>
+      <p>No revendemos ventanas de catálogo: entran barras de aluminio por una puerta y sale tu ventana por la otra. Cuando el que corta y el que monta son la misma casa, el ajuste deja de ser un problema del cliente.</p>
+    </div>
+
+    <div class="pasos">
+      <article class="paso">
+        <div class="im"><img src="_fotos/f04.jpg" alt="Radial cortando un perfil de aluminio, con chispas saltando sobre la mesa del taller" loading="lazy"></div>
+        <div class="tx">
+          <div class="n">01</div>
+          <h3>Se corta a tu medida</h3>
+          <p>Tomamos el hueco en tu casa y el perfil se corta con esas cifras, no con las de un catálogo. Las medidas que has movido arriba son exactamente las que viajan al taller.</p>
+        </div>
+      </article>
+      <article class="paso">
+        <div class="im"><img src="_fotos/f02.jpg" class="calida" alt="Operario soldando en el taller, entre máquinas y mesas de trabajo" loading="lazy"></div>
+        <div class="tx">
+          <div class="n">02</div>
+          <h3>Se ensambla en el taller</h3>
+          <p>Marco, hoja, herrajes y vidrio se montan bajo el mismo techo. Si algo no encaja, se corrige en el banco de trabajo y no en el salón de tu casa.</p>
+        </div>
+      </article>
+      <article class="paso">
+        <div class="im"><img src="_fotos/f09.jpg" class="calida" alt="Fachada con varias ventanas de aluminio ya instaladas, una de ellas abierta en proyección" loading="lazy"></div>
+        <div class="tx">
+          <div class="n">03</div>
+          <h3>La montamos nosotros</h3>
+          <p>Quien la instala trabaja en la misma fábrica que la ha hecho. No hay intermediario al que reclamar ni un tercero al que echarle la culpa.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="banda">
+      <div>
+        <span class="kicker" style="color:#e6ecd7">Por qué a la fábrica</span>
+        <h3 style="margin-top:8px">Menos manos entre tu hueco y tu ventana.</h3>
+      </div>
+      <ul>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="#e6ecd7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.6l4 4 8-9"/></svg><span><strong>Una sola casa responde.</strong> Medición, fabricación y montaje salen del mismo taller.</span></li>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="#e6ecd7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.6l4 4 8-9"/></svg><span><strong>Se ajusta a tu hueco real</strong>, con sus desplomes y sus centímetros raros, que casi ninguna casa antigua tiene rectos.</span></li>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="#e6ecd7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.6l4 4 8-9"/></svg><span><strong>Los montadores son de casa.</strong> Trabajamos también para profesionales que nos piden series.</span></li>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="#e6ecd7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.6l4 4 8-9"/></svg><span><strong>La garantía va por escrito en tu presupuesto</strong>, con su alcance y su duración, antes de que firmes nada.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="env">
+    <div class="tit-sec">
+      <span class="kicker">Preguntas</span>
+      <h2>Lo que preguntan antes de decidirse.</h2>
+    </div>
+    <div class="faq-lista">
+      <details>
+        <summary>¿La cifra del configurador es el precio final?</summary>
+        <div class="cuerpo">No. Es una cifra orientativa calculada sobre una tarifa de ejemplo, para que te hagas una idea del orden de magnitud mientras juegas con las medidas. El precio en firme lo pone la fábrica después de medir el hueco, porque ahí aparecen cosas que una calculadora no ve: el estado del cerco viejo, el acceso, la altura o el remate de la obra.</div>
+      </details>
+      <details>
+        <summary>¿Tengo que saber las medidas exactas?</summary>
+        <div class="cuerpo">No hace falta. Mide el hueco por dentro a ojo con una cinta y muévelo arriba: sirve para ver el tipo de ventana y el orden de precio. Antes de fabricar nada vamos nosotros a medir, y esa medición manda sobre cualquier número que hayas puesto aquí.</div>
+      </details>
+      <details>
+        <summary>¿Qué diferencia hay entre doble, bajo emisivo y triple?</summary>
+        <div class="cuerpo">El <strong>doble</strong> son dos lunas con una cámara de aire entre ellas. El <strong>bajo emisivo</strong> es un doble con una capa casi invisible que devuelve parte del calor hacia dentro en invierno y frena parte del que llega de fuera en verano. El <strong>triple</strong> añade una tercera luna y una segunda cámara: pesa más, aísla más y no siempre compensa. En Sevilla, la conversación honesta suele ser entre los dos primeros, y depende de a qué orientación da el hueco.</div>
+      </details>
+      <details>
+        <summary>¿Practicable, oscilobatiente o corredera?</summary>
+        <div class="cuerpo"><strong>Practicable</strong> abre hacia dentro como una puerta y cierra muy bien. <strong>Oscilobatiente</strong> hace eso mismo y además se inclina por arriba para ventilar sin abrir del todo, que es lo cómodo en dormitorios y cocinas. <strong>Corredera</strong> corre lateralmente y no roba sitio en la habitación: es lo lógico en balconeras y donde hay muebles pegados al hueco.</div>
+      </details>
+      <details>
+        <summary>¿En cuánto tiempo la tengo puesta?</summary>
+        <div class="cuerpo">El plazo depende de la medida, del vidrio y de la carga que tenga el taller esa semana, así que no lo prometemos por una web. Se te dice por escrito en el presupuesto, con fecha, antes de que aceptes.</div>
+      </details>
+      <details>
+        <summary>¿Trabajáis con montadores y profesionales?</summary>
+        <div class="cuerpo">Sí. Además del cliente particular, fabricamos para montadores e instaladores que necesitan series a medida. Si vienes por ese camino, dilo al pedir el presupuesto y se te trata como lo que eres: alguien que sabe leer una ficha técnica.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="faq" style="padding-top:0">
+  <div class="env">
+    <div class="cta">
+      <h2>Dinos el hueco. Te decimos el precio de verdad.</h2>
+      <p>Mándanos las medidas que has configurado y te contestamos con una cifra en firme, sin compromiso y sin que nadie se presente en tu casa a vender nada.</p>
+      <button type="button" class="btn btn-crema" id="btnFinal">Pedir mi presupuesto</button>
+      <p class="cta-nota">Garantía y plazo, por escrito en tu presupuesto.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="env">
+    <p class="foot-maq">MAQUETA DE TRABAJO — nada publicado ni indexado. Tarifa y datos de ejemplo: se sustituyen por los reales de la fábrica.</p>
+    <div class="foot-b">
+      <span>[ nombre de la fábrica ] · Sevilla · aluminio a medida</span>
+      <span>Fotografías de referencia. Ilustraciones del configurador: esquemáticas.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ===== TARIFA DE EJEMPLO (no se inventa otra) ===== */
+var TAR={m2:210,fija:-25,pract:0,oscilo:38,corre:22,doble:0,bajoe:34,triple:72,minimo:145,hoja:46};
+
+var NOM_AP={fija:'Fija',pract:'Practicable',oscilo:'Oscilobatiente',corre:'Corredera'};
+var NOM_VI={doble:'Vidrio doble',bajoe:'Vidrio bajo emisivo',triple:'Vidrio triple'};
+
+var st={ancho:1200,alto:1200,apertura:'pract',hojas:2,vidrio:'bajoe',acabado:'blanco',split:50};
+
+var eur=new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+var eur2=new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:0});
+var num=new Intl.NumberFormat('es-ES',{maximumFractionDigits:2});
+
+/* ===== GEOMETRÍA DE LA ESCENA =====
+   La cámara "da un paso atrás" cuando la ventana no cabe: k es el zoom.
+   Así una ventana de 600 mm se ve pequeña y una balconera llena la pared,
+   sin que ninguna de las dos se salga del encuadre. */
+var S=0.155, SUELO=476, CX=500, VW=1000, VH=660;
+function geom(){
+  var balc=st.alto>=1900;
+  var ante=balc?0:480;                 /* antepecho en mm */
+  var w0=st.ancho*S, h0=st.alto*S, a0=ante*S;
+  var kW=(VW-170)/w0;
+  var kH=(SUELO-26)/(h0+a0);
+  var k=Math.min(2.6,kW,kH);
+  var w=w0*k, h=h0*k;
+  var sill=SUELO-a0*k;
+  return {x:CX-w/2, y:sill-h, w:w, h:h, sill:sill, balc:balc, k:k};
+}
+function r2(n){return Math.round(n*100)/100}
+
+/* ===== PARTES COMUNES DE LA ESCENA ===== */
+function defs(s,cal){
+  return '<defs>'+
+  '<linearGradient id="pa'+s+'" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0" stop-color="'+(cal?'#faeed8':'#c9cfd2')+'"/>'+
+    '<stop offset=".62" stop-color="'+(cal?'#f2ddba':'#b6bec2')+'"/>'+
+    '<stop offset="1" stop-color="'+(cal?'#e9cfa6':'#a7b0b5')+'"/>'+
+  '</linearGradient>'+
+  '<linearGradient id="su'+s+'" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0" stop-color="'+(cal?'#c98a5f':'#8d959a')+'"/>'+
+    '<stop offset="1" stop-color="'+(cal?'#a2653f':'#6d757a')+'"/>'+
+  '</linearGradient>'+
+  '<linearGradient id="vi'+s+'" x1="0" y1="0" x2="0" y2="1">'+
+    (cal?'<stop offset="0" stop-color="#ffe6ac"/><stop offset=".44" stop-color="#cfe3ee"/><stop offset=".62" stop-color="#b7d2df"/><stop offset="1" stop-color="#9db486"/>'
+        :'<stop offset="0" stop-color="#aab7bd"/><stop offset=".46" stop-color="#8c9aa1"/><stop offset=".64" stop-color="#78868d"/><stop offset="1" stop-color="#6a7469"/>')+
+  '</linearGradient>'+
+  '<linearGradient id="so'+s+'" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0" stop-color="#ffdf9c" stop-opacity=".95"/>'+
+    '<stop offset="1" stop-color="#ffcf7a" stop-opacity="0"/>'+
+  '</linearGradient>'+
+  '<radialGradient id="gl'+s+'" cx=".5" cy=".5" r=".5">'+
+    '<stop offset="0" stop-color="#ffd98c" stop-opacity=".62"/>'+
+    '<stop offset="1" stop-color="#ffd98c" stop-opacity="0"/>'+
+  '</radialGradient>'+
+  '<filter id="bl'+s+'" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>'+
+  '<filter id="bs'+s+'" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>'+
+  '</defs>';
+}
+
+function habitacion(s,cal){
+  var o='';
+  /* pared */
+  o+='<rect x="0" y="0" width="1000" height="'+SUELO+'" fill="url(#pa'+s+')"/>';
+  /* textura cal: manchas suaves */
+  o+='<g opacity="'+(cal?'.20':'.14')+'" fill="'+(cal?'#d9b98c':'#8d979c')+'">'+
+     '<ellipse cx="150" cy="120" rx="180" ry="90"/><ellipse cx="880" cy="230" rx="150" ry="80"/><ellipse cx="420" cy="60" rx="200" ry="60"/></g>';
+  /* suelo */
+  o+='<rect x="0" y="'+SUELO+'" width="1000" height="'+(660-SUELO)+'" fill="url(#su'+s+')"/>';
+  /* juntas en perspectiva */
+  o+='<g stroke="'+(cal?'#8d5533':'#5c6469')+'" stroke-opacity=".38" stroke-width="1.6">';
+  for(var i=-4;i<=12;i++){ var bx=i*130-160; o+='<line x1="'+(500+(bx-500)*0.34)+'" y1="'+SUELO+'" x2="'+bx+'" y2="660"/>'; }
+  o+='<line x1="0" y1="'+(SUELO+34)+'" x2="1000" y2="'+(SUELO+34)+'"/>'+
+     '<line x1="0" y1="'+(SUELO+92)+'" x2="1000" y2="'+(SUELO+92)+'"/></g>';
+  /* rodapié */
+  o+='<rect x="0" y="'+(SUELO-15)+'" width="1000" height="15" fill="'+(cal?'#f7ecd9':'#d3d8da')+'"/>'+
+     '<rect x="0" y="'+(SUELO-15)+'" width="1000" height="3" fill="'+(cal?'#e0c9a4':'#b8c0c4')+'"/>';
+  /* alfombra, bajo donde cae el sol */
+  var G=geom();
+  o+='<ellipse cx="'+r2(G.x+G.w*0.12)+'" cy="596" rx="'+r2(Math.min(360,G.w*0.62+180))+'" ry="46" fill="'+(cal?'#b5643f':'#788085')+'" opacity="'+(cal?'.45':'.3')+'"/>';
+  return o;
+}
+
+/* La planta se coloca AL LADO de la ventana y crece con el zoom:
+   si la cámara se acerca, la planta se acerca con ella. */
+function planta(s,cal){
+  var G=geom();
+  var ps=Math.max(.9,Math.min(1.75,G.k));
+  var cx=Math.min(VW-72*ps, G.x+G.w+96*ps);
+  var by=SUELO+56;                       /* base de la maceta, sobre el suelo */
+  var maceta=cal?'#c05a36':'#7c8489', maceta2=cal?'#9c4529':'#636b70';
+  var h1=cal?'#6f7a55':'#5d666a', h2=cal?'#93a06f':'#727c80';
+  var o='<g transform="translate('+r2(cx)+' '+r2(by)+') scale('+r2(ps)+')">';
+  o+='<ellipse cx="0" cy="2" rx="74" ry="13" fill="#3a291e" opacity="'+(cal?'.22':'.16')+'"/>';
+  for(var i=0;i<9;i++){
+    var ang=-92+(i-4)*20;
+    var len=50+(4-Math.abs(i-4))*23;
+    o+='<g transform="rotate('+ang+' 0 -58)">'+
+       '<ellipse cx="0" cy="'+r2(-58-len)+'" rx="10.5" ry="'+len+'" fill="'+((i%2)?h2:h1)+'"/>'+
+       '<line x1="0" y1="-58" x2="0" y2="'+r2(-58-len*1.7)+'" stroke="'+h1+'" stroke-width="2.2" opacity=".8"/></g>';
+  }
+  o+='<path d="M-46 -60 h92 l-12 60 h-68 z" fill="'+maceta+'"/>'+
+     '<rect x="-52" y="-68" width="104" height="15" rx="5" fill="'+maceta2+'"/>'+
+     '<path d="M-34 -50 h30 l-4 42 h-23 z" fill="#ffffff" opacity=".14"/>';
+  o+='</g>';
+  return o;
+}
+
+/* ===== VENTANA NUEVA (después) ===== */
+function ventanaNueva(s){
+  var G=geom(), x=G.x,y=G.y,w=G.w,h=G.h;
+  var blanco=st.acabado==='blanco';
+  var mc=blanco?'#f5f1e8':'#4b4b49', mc2=blanco?'#d5cdbc':'#2f2f2d', mcL=blanco?'#ffffff':'#6a6a67';
+  var t=Math.max(7,Math.min(26,68*S*G.k));   /* perfil de ~68 mm, a escala */
+  var n=(st.apertura==='fija')?1:st.hojas;
+  var o='';
+
+  /* sombra proyectada del hueco */
+  o+='<rect x="'+r2(x-14)+'" y="'+r2(y-8)+'" width="'+r2(w+42)+'" height="'+r2(h+40)+'" rx="6" fill="#7a4a28" opacity=".22" filter="url(#bs'+s+')"/>';
+  /* jamba / mocheta (grosor de muro) */
+  o+='<rect x="'+r2(x-20)+'" y="'+r2(y-20)+'" width="'+r2(w+40)+'" height="'+r2(h+20)+'" rx="4" fill="#c79f74"/>'+
+     '<rect x="'+r2(x-20)+'" y="'+r2(y-20)+'" width="'+r2(w+40)+'" height="'+r2(h+20)+'" rx="4" fill="#000" opacity=".10"/>'+
+     '<path d="M'+r2(x-20)+' '+r2(y-20)+' h'+r2(w+40)+' l-13 13 h-'+r2(w+14)+' z" fill="#8f6a46" opacity=".55"/>'+
+     '<path d="M'+r2(x-20)+' '+r2(y-20)+' v'+r2(h+20)+' l13 0 v-'+r2(h+7)+' z" fill="#a37e58" opacity=".5"/>';
+
+  /* halo de sol alrededor */
+  o+='<ellipse cx="'+r2(x+w/2)+'" cy="'+r2(y+h/2)+'" rx="'+r2(w*0.95)+'" ry="'+r2(h*0.9)+'" fill="url(#gl'+s+')"/>';
+
+  /* vidrio de fondo */
+  o+='<rect x="'+r2(x+t)+'" y="'+r2(y+t)+'" width="'+r2(w-2*t)+'" height="'+r2(h-2*t)+'" fill="url(#vi'+s+')"/>';
+  /* paisaje simple tras el vidrio */
+  o+='<g clip-path="none" opacity=".55">'+
+     '<circle cx="'+r2(x+w*0.72)+'" cy="'+r2(y+h*0.26)+'" r="'+r2(Math.min(w,h)*0.09)+'" fill="#fff3cc"/>'+
+     '</g>';
+
+  /* montantes / hojas */
+  var iw=w-2*t, ix=x+t, iy=y+t, ih=h-2*t;
+  var lw=iw/n;
+  var g='<g>';
+  for(var i=0;i<n;i++){
+    var lx=ix+i*lw;
+    if(st.apertura==='corre'){
+      /* hoja corredera: marco propio y ligero desfase */
+      var dy=(i%2)?3:0;
+      g+='<rect x="'+r2(lx+2)+'" y="'+r2(iy+dy)+'" width="'+r2(lw-4)+'" height="'+r2(ih-dy)+'" fill="none" stroke="'+mc+'" stroke-width="'+r2(t*0.7)+'"/>';
+      g+='<rect x="'+r2(lx+2)+'" y="'+r2(iy+dy)+'" width="'+r2(lw-4)+'" height="'+r2(ih-dy)+'" fill="none" stroke="'+mc2+'" stroke-width="1"/>';
+      /* flecha de deslizamiento */
+      var cy=iy+ih*0.52, ax=lx+lw*0.5, aw=Math.min(lw*0.3,34);
+      g+='<g stroke="'+(blanco?'#8d9aa2':'#c9ccc9')+'" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".9">'+
+         '<line x1="'+r2(ax-aw)+'" y1="'+r2(cy)+'" x2="'+r2(ax+aw)+'" y2="'+r2(cy)+'"/>'+
+         '<polyline points="'+r2(ax-aw+9)+','+r2(cy-7)+' '+r2(ax-aw)+','+r2(cy)+' '+r2(ax-aw+9)+','+r2(cy+7)+'"/>'+
+         '<polyline points="'+r2(ax+aw-9)+','+r2(cy-7)+' '+r2(ax+aw)+','+r2(cy)+' '+r2(ax+aw-9)+','+r2(cy+7)+'"/></g>';
+    } else if(st.apertura!=='fija'){
+      var izq=(i!==n-1)||n===1;
+      var pd=Math.min(12,lw*0.10), pv=Math.min(12,ih*0.06);
+      var la=lx+pd, lb=lx+lw-pd, ta=iy+pv, tb=iy+ih-pv;
+      var hx=izq?la:lb, ox=izq?lb:la;
+      g+='<g stroke="'+(blanco?'#7f8f99':'#e2e4df')+'" stroke-width="2.6" stroke-dasharray="10 8" stroke-linecap="round" fill="none" opacity=".95">'+
+         '<line x1="'+r2(ox)+'" y1="'+r2(ta)+'" x2="'+r2(hx)+'" y2="'+r2(iy+ih/2)+'"/>'+
+         '<line x1="'+r2(ox)+'" y1="'+r2(tb)+'" x2="'+r2(hx)+'" y2="'+r2(iy+ih/2)+'"/>';
+      if(st.apertura==='oscilo'){
+        g+='<line x1="'+r2(la)+'" y1="'+r2(tb)+'" x2="'+r2(lx+lw/2)+'" y2="'+r2(ta)+'"/>'+
+           '<line x1="'+r2(lb)+'" y1="'+r2(tb)+'" x2="'+r2(lx+lw/2)+'" y2="'+r2(ta)+'"/>';
+      }
+      g+='</g>';
+      /* manilla */
+      var mx=izq?lx+lw-t*0.9:lx+t*0.9;
+      g+='<g><rect x="'+r2(mx-3.2)+'" y="'+r2(iy+ih*0.5-4)+'" width="6.4" height="'+r2(Math.min(30,ih*0.16))+'" rx="3.2" fill="'+(blanco?'#b9b2a3':'#d8d5cd')+'"/>'+
+         '<circle cx="'+r2(mx)+'" cy="'+r2(iy+ih*0.5-6)+'" r="4.6" fill="'+(blanco?'#a8a294':'#c9c6be')+'"/></g>';
+    }
+    /* montante entre hojas */
+    if(i>0 && st.apertura!=='fija'){
+      g+='<rect x="'+r2(lx-t*0.42)+'" y="'+r2(iy)+'" width="'+r2(t*0.84)+'" height="'+r2(ih)+'" fill="'+mc+'"/>'+
+         '<rect x="'+r2(lx-t*0.42)+'" y="'+r2(iy)+'" width="1.6" height="'+r2(ih)+'" fill="'+mcL+'"/>';
+    }
+  }
+  g+='</g>';
+  o+=g;
+
+  /* reflejos del vidrio */
+  var refl=(st.vidrio==='triple')?3:2;
+  o+='<g opacity="'+(st.vidrio==='bajoe'?'.30':'.24')+'">';
+  for(var k=0;k<refl;k++){
+    var off=k*(iw*0.16)+iw*0.06;
+    o+='<path d="M'+r2(ix+off)+' '+r2(iy+ih)+' L'+r2(ix+off+ih*0.42)+' '+r2(iy)+' l'+r2(iw*0.055)+' 0 L'+r2(ix+off+iw*0.055+ih*0.42)+' '+r2(iy+ih)+' z" fill="#ffffff"/>';
+  }
+  o+='</g>';
+  if(st.vidrio==='bajoe'){
+    o+='<rect x="'+r2(ix)+'" y="'+r2(iy)+'" width="'+r2(iw)+'" height="'+r2(ih)+'" fill="#f0c266" opacity=".13"/>';
+  }
+  if(st.vidrio==='triple'){
+    o+='<rect x="'+r2(ix)+'" y="'+r2(iy)+'" width="'+r2(iw)+'" height="'+r2(ih)+'" fill="#8fb7c9" opacity=".13"/>';
+  }
+
+  /* marco exterior */
+  o+='<rect x="'+r2(x+t/2)+'" y="'+r2(y+t/2)+'" width="'+r2(w-t)+'" height="'+r2(h-t)+'" fill="none" stroke="'+mc+'" stroke-width="'+r2(t)+'"/>'+
+     '<rect x="'+r2(x)+'" y="'+r2(y)+'" width="'+r2(w)+'" height="'+r2(h)+'" fill="none" stroke="'+mc2+'" stroke-width="1.6"/>'+
+     '<rect x="'+r2(x+t)+'" y="'+r2(y+t)+'" width="'+r2(w-2*t)+'" height="'+r2(h-2*t)+'" fill="none" stroke="'+mc2+'" stroke-width="1.2" opacity=".6"/>'+
+     '<line x1="'+r2(x+t*0.35)+'" y1="'+r2(y+t)+'" x2="'+r2(x+t*0.35)+'" y2="'+r2(y+h-t)+'" stroke="'+mcL+'" stroke-width="1.8" opacity=".85"/>';
+
+  /* alféizar en perspectiva */
+  if(!G.balc){
+    o+='<path d="M'+r2(x-30)+' '+r2(G.sill)+' H'+r2(x+w+30)+' l16 20 H'+r2(x-46)+' z" fill="#e6cfa8"/>'+
+       '<path d="M'+r2(x-46)+' '+r2(G.sill+20)+' H'+r2(x+w+46)+' v7 H'+r2(x-46)+' z" fill="#c9ab80"/>'+
+       '<path d="M'+r2(x-30)+' '+r2(G.sill)+' H'+r2(x+w+30)+' v3 H'+r2(x-30)+' z" fill="#fff7e6" opacity=".8"/>';
+  } else {
+    o+='<path d="M'+r2(x-16)+' '+r2(G.sill-6)+' H'+r2(x+w+16)+' l10 12 H'+r2(x-26)+' z" fill="#d8bd93"/>';
+  }
+  return o;
+}
+
+/* ===== VENTANA VIEJA (antes) ===== */
+function ventanaVieja(s){
+  var G=geom(), x=G.x,y=G.y,w=G.w,h=G.h;
+  var t=Math.max(5,Math.min(14,42*S*G.k));   /* perfil viejo, más fino que el nuevo */
+  var o='';
+  /* jamba fría */
+  o+='<rect x="'+r2(x-20)+'" y="'+r2(y-20)+'" width="'+r2(w+40)+'" height="'+r2(h+20)+'" rx="4" fill="#8b9298"/>'+
+     '<path d="M'+r2(x-20)+' '+r2(y-20)+' h'+r2(w+40)+' l-13 13 h-'+r2(w+14)+' z" fill="#5f676d" opacity=".7"/>'+
+     '<path d="M'+r2(x-20)+' '+r2(y-20)+' v'+r2(h+20)+' l13 0 v-'+r2(h+7)+' z" fill="#727a80" opacity=".7"/>';
+  /* vidrio turbio pero VIDRIO: se ve algo de fuera, apagado */
+  o+='<rect x="'+r2(x+t)+'" y="'+r2(y+t)+'" width="'+r2(w-2*t)+'" height="'+r2(h-2*t)+'" fill="url(#vi'+s+')"/>';
+  var gx=x+t, gy=y+t, gw=w-2*t, gh=h-2*t;
+  /* reflejo mate */
+  o+='<path d="M'+r2(gx+gw*0.08)+' '+r2(gy+gh)+' L'+r2(gx+gw*0.08+gh*0.4)+' '+r2(gy)+' l'+r2(gw*0.07)+' 0 L'+r2(gx+gw*0.15+gh*0.4)+' '+r2(gy+gh)+' z" fill="#ffffff" opacity=".10"/>';
+  /* condensación: banda baja con gotas, no un manchón */
+  o+='<rect x="'+r2(gx)+'" y="'+r2(gy+gh*0.82)+'" width="'+r2(gw)+'" height="'+r2(gh*0.18)+'" fill="#cfe0e8" opacity=".22"/>';
+  o+='<g fill="#dbe9f0" opacity=".3">';
+  for(var q=0;q<7;q++){
+    o+='<ellipse cx="'+r2(gx+gw*(0.08+q*0.135))+'" cy="'+r2(gy+gh*(0.9+(q%2)*0.05))+'" rx="'+r2(Math.max(2,gw*0.012))+'" ry="'+r2(Math.max(3,gh*0.02))+'"/>';
+  }
+  o+='</g>';
+  /* marco viejo: dos hojas + travesaño */
+  o+='<rect x="'+r2(x+t/2)+'" y="'+r2(y+t/2)+'" width="'+r2(w-t)+'" height="'+r2(h-t)+'" fill="none" stroke="#b3b3ab" stroke-width="'+r2(t)+'"/>'+
+     '<rect x="'+r2(x+w/2-t*0.38)+'" y="'+r2(y+t)+'" width="'+r2(t*0.76)+'" height="'+r2(h-2*t)+'" fill="#b3b3ab"/>'+
+     '<rect x="'+r2(gx)+'" y="'+r2(gy+gh*0.42-t*0.3)+'" width="'+r2(gw)+'" height="'+r2(t*0.6)+'" fill="#b3b3ab" opacity=".9"/>'+
+     '<rect x="'+r2(x)+'" y="'+r2(y)+'" width="'+r2(w)+'" height="'+r2(h)+'" fill="none" stroke="#6d757a" stroke-width="1.4"/>';
+  /* manillas viejas */
+  o+='<g fill="#8e9294">'+
+     '<rect x="'+r2(x+w/2-t*1.5)+'" y="'+r2(gy+gh*0.5)+'" width="'+r2(t*0.55)+'" height="'+r2(Math.min(26,gh*0.13))+'" rx="2"/>'+
+     '<rect x="'+r2(x+w/2+t*0.95)+'" y="'+r2(gy+gh*0.5)+'" width="'+r2(t*0.55)+'" height="'+r2(Math.min(26,gh*0.13))+'" rx="2"/></g>';
+  /* óxido / desconchones */
+  o+='<g fill="#8a7d68" opacity=".6">'+
+     '<rect x="'+r2(x+w*0.1)+'" y="'+r2(y+h-t*1.3)+'" width="'+r2(w*0.18)+'" height="'+r2(t*0.6)+'" rx="2"/>'+
+     '<rect x="'+r2(x+t*0.2)+'" y="'+r2(y+h*0.34)+'" width="'+r2(t*0.55)+'" height="'+r2(h*0.14)+'" rx="2"/></g>';
+  /* huecos de aire: slivers claros */
+  o+='<g fill="#d8ecf7" opacity=".85">'+
+     '<rect x="'+r2(x+w*0.06)+'" y="'+r2(y+t*0.1)+'" width="'+r2(w*0.22)+'" height="2.6"/>'+
+     '<rect x="'+r2(x+w-t*0.2)+'" y="'+r2(y+h*0.4)+'" width="2.6" height="'+r2(h*0.22)+'"/>'+
+     '<rect x="'+r2(x+w*0.4)+'" y="'+r2(y+h-t*0.25)+'" width="'+r2(w*0.24)+'" height="2.6"/></g>';
+  /* alféizar frío */
+  if(!G.balc){
+    o+='<path d="M'+r2(x-30)+' '+r2(G.sill)+' H'+r2(x+w+30)+' l16 20 H'+r2(x-46)+' z" fill="#aeb5b9"/>'+
+       '<path d="M'+r2(x-46)+' '+r2(G.sill+20)+' H'+r2(x+w+46)+' v7 H'+r2(x-46)+' z" fill="#878f94"/>';
+  } else {
+    o+='<path d="M'+r2(x-16)+' '+r2(G.sill-6)+' H'+r2(x+w+16)+' l10 12 H'+r2(x-26)+' z" fill="#9aa2a7"/>';
+  }
+
+  /* corrientes de aire */
+  var cs='#8fc6e6';
+  function onda(px,py,dx,dy){
+    var p='M'+r2(px)+' '+r2(py);
+    for(var i=1;i<=4;i++){ p+=' q '+r2(dx*0.26)+' '+r2((i%2?-1:1)*13+dy*0.2)+' '+r2(dx*0.25)+' '+r2(dy*0.25); }
+    return '<path d="'+p+'" fill="none" stroke="'+cs+'" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="11 7" class="corr-anim" opacity=".92"/>';
+  }
+  o+='<g>'+
+     onda(x+w*0.16, y+t, -150, 70)+
+     onda(x-4, y+h*0.5, -170, 26)+
+     onda(x+w*0.52, y+h-t, -140, 62)+
+     '</g>';
+  /* puntas de flecha */
+  o+='<g fill="'+cs+'" opacity=".95">'+
+     '<polygon points="'+r2(x+w*0.16-158)+','+r2(y+t+72)+' '+r2(x+w*0.16-140)+','+r2(y+t+64)+' '+r2(x+w*0.16-141)+','+r2(y+t+83)+'"/>'+
+     '<polygon points="'+r2(x-180)+','+r2(y+h*0.5+27)+' '+r2(x-162)+','+r2(y+h*0.5+19)+' '+r2(x-163)+','+r2(y+h*0.5+38)+'"/>'+
+     '</g>';
+  /* velo frío general */
+  o+='<rect x="0" y="0" width="1000" height="660" fill="#1c2a33" opacity=".26"/>';
+  return o;
+}
+
+/* ===== SOL (después) ===== */
+function sol(s){
+  var G=geom(), x=G.x,w=G.w;
+  var o='';
+  o+='<g filter="url(#bl'+s+')" opacity=".72">'+
+     '<polygon points="'+r2(x)+','+r2(G.sill)+' '+r2(x+w)+','+r2(G.sill)+' '+r2(x+w-140)+',660 '+r2(x-250)+',660" fill="url(#so'+s+')"/></g>';
+  o+='<g filter="url(#bs'+s+')" opacity=".55">'+
+     '<polygon points="'+r2(x+w*0.18)+','+r2(G.sill)+' '+r2(x+w*0.8)+','+r2(G.sill)+' '+r2(x+w*0.6)+',660 '+r2(x-120)+',660" fill="#ffe4a6"/></g>';
+  return o;
+}
+
+/* ===== MONTAJE DE LAS DOS CAPAS ===== */
+var capaA=document.getElementById('capaA');
+var capaB=document.getElementById('capaB');
+
+function pinta(){
+  capaA.innerHTML='<svg viewBox="0 0 1000 660" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Escena del hueco actual: ventana vieja, habitación fría y corrientes de aire">'+
+    defs('A',false)+habitacion('A',false)+planta('A',false)+ventanaVieja('A')+'</svg>';
+  capaB.innerHTML='<svg viewBox="0 0 1000 660" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Escena con la ventana configurada instalada y el sol entrando en la habitación">'+
+    defs('B',true)+habitacion('B',true)+sol('B')+planta('B',true)+ventanaNueva('B')+'</svg>';
+}
+
+/* ===== CÁLCULO ===== */
+function calcula(){
+  var m2=(st.ancho/1000)*(st.alto/1000);
+  var vid=TAR[st.vidrio], ape=TAR[st.apertura];
+  var base=m2*(TAR.m2+vid);
+  var extra=0;
+  var p=base+ape;
+  if(st.apertura!=='fija' && st.hojas>1){ extra=(st.hojas-1)*TAR.hoja; p+=extra; }
+  var min=p<TAR.minimo;
+  return {m2:m2,vid:vid,ape:ape,base:base,extra:extra,bruto:p,total:min?TAR.minimo:p,min:min};
+}
+
+/* ===== PINTA PRECIO ===== */
+var elLineas=document.getElementById('lineas');
+var elTot=document.getElementById('totNum');
+var elFpN=document.getElementById('fpNum');
+var elFpR=document.getElementById('fpRes');
+var elChipB=document.getElementById('chipB');
+
+function fila(a,b,cls){ return '<div class="dl'+(cls?' '+cls:'')+'"><span>'+a+'</span><b>'+b+'</b></div>'; }
+
+function pintaPrecio(){
+  var c=calcula();
+  var n=(st.apertura==='fija')?1:st.hojas;
+  var G=geom();
+  var html='';
+  html+=fila('Superficie · '+num.format(st.ancho/1000)+' × '+num.format(st.alto/1000)+' m', num.format(Math.round(c.m2*100)/100)+' m²');
+  html+=fila(NOM_VI[st.vidrio]+' · '+eur2.format(TAR.m2+c.vid)+'/m²', eur2.format(Math.round(c.base)));
+  html+=fila('Apertura · '+NOM_AP[st.apertura], (c.ape===0?'incluida':(c.ape>0?'+':'−')+eur2.format(Math.abs(c.ape))));
+  if(c.extra>0) html+=fila('Hojas adicionales · '+(n-1)+' × '+eur2.format(TAR.hoja), '+'+eur2.format(c.extra));
+  else html+=fila('Hojas · '+n, n>1?'incluidas':'incluida');
+  if(c.min) html+=fila('Mínimo de fabricación', eur2.format(TAR.minimo),'min');
+  elLineas.innerHTML=html;
+
+  var tot=eur.format(Math.round(c.total));
+  elTot.textContent=tot;
+  elFpN.textContent=tot;
+
+  var res=NOM_AP[st.apertura]+' · '+n+(n>1?' hojas':' hoja')+' · '+NOM_VI[st.vidrio].replace('Vidrio ','vidrio ');
+  elFpR.textContent=res;
+  elChipB.textContent='Después · '+st.ancho+'×'+st.alto+' mm'+(G.balc?' · balconera':'');
+}
+
+/* ===== UI ===== */
+function marca(cont, val){
+  var bs=cont.querySelectorAll('button');
+  for(var i=0;i<bs.length;i++){ bs[i].setAttribute('aria-pressed', bs[i].dataset.v===String(val)?'true':'false'); }
+}
+var segAp=document.getElementById('segAp'), segHj=document.getElementById('segHj'),
+    segVi=document.getElementById('segVi'), segAc=document.getElementById('segAc');
+var notaAp=document.getElementById('notaAp'), notaHojas=document.getElementById('notaHojas');
+var rA=document.getElementById('rAncho'), nA=document.getElementById('nAncho');
+var rH=document.getElementById('rAlto'),  nH=document.getElementById('nAlto');
+
+function estadoHojas(){
+  var bs=segHj.querySelectorAll('button');
+  var fija=st.apertura==='fija', corre=st.apertura==='corre';
+  for(var i=0;i<bs.length;i++){
+    var v=parseInt(bs[i].dataset.v,10);
+    bs[i].disabled = fija || (corre && v<2);
+  }
+  if(fija){
+    notaHojas.textContent='una ventana fija va de una pieza';
+    notaAp.style.display='flex';
+    notaAp.innerHTML='<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#7a6656" stroke-width="1.9" aria-hidden="true"><circle cx="10" cy="10" r="8.2"/><path d="M10 9v5M10 6.2v.1" stroke-linecap="round"/></svg><span>La fija no se abre: entra luz, no aire. Por eso la tarifa de ejemplo le descuenta 25 €.</span>';
+  } else if(corre){
+    notaHojas.textContent='una corredera necesita dos hojas como mínimo';
+    notaAp.style.display='flex';
+    notaAp.innerHTML='<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#7a6656" stroke-width="1.9" aria-hidden="true"><circle cx="10" cy="10" r="8.2"/><path d="M10 9v5M10 6.2v.1" stroke-linecap="round"/></svg><span>La corredera no roba sitio a la habitación, pero cierra peor que una practicable. Para dormitorios con mucho frío o mucho ruido, díselo al comercial.</span>';
+  } else {
+    notaHojas.textContent='cada hoja de más suma mano de obra';
+    notaAp.style.display='none';
+  }
+}
+
+var pend=false;
+function refresca(){
+  if(pend) return; pend=true;
+  requestAnimationFrame(function(){
+    pend=false;
+    pinta(); pintaPrecio();
+  });
+}
+function actualiza(){
+  marca(segAp,st.apertura); marca(segHj,st.hojas); marca(segVi,st.vidrio); marca(segAc,st.acabado);
+  estadoHojas();
+  rA.value=st.ancho; nA.value=st.ancho; rH.value=st.alto; nH.value=st.alto;
+  refresca();
+}
+
+function limita(v,min,max,def){ v=parseInt(v,10); if(isNaN(v)) return def; return Math.max(min,Math.min(max,v)); }
+
+rA.addEventListener('input',function(){ st.ancho=limita(rA.value,400,3000,1200); nA.value=st.ancho; refresca(); });
+rH.addEventListener('input',function(){ st.alto=limita(rH.value,400,2800,1200); nH.value=st.alto; refresca(); });
+nA.addEventListener('input',function(){ var v=parseInt(nA.value,10); if(!isNaN(v)&&v>=400&&v<=3000){ st.ancho=v; rA.value=v; refresca(); } });
+nH.addEventListener('input',function(){ var v=parseInt(nH.value,10); if(!isNaN(v)&&v>=400&&v<=2800){ st.alto=v; rH.value=v; refresca(); } });
+nA.addEventListener('blur',function(){ st.ancho=limita(nA.value,400,3000,st.ancho); nA.value=st.ancho; rA.value=st.ancho; refresca(); });
+nH.addEventListener('blur',function(){ st.alto=limita(nH.value,400,2800,st.alto); nH.value=st.alto; rH.value=st.alto; refresca(); });
+
+segAp.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  st.apertura=b.dataset.v;
+  if(st.apertura==='corre' && st.hojas<2) st.hojas=2;
+  actualiza();
+});
+segHj.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b||b.disabled) return;
+  st.hojas=parseInt(b.dataset.v,10); actualiza();
+});
+segVi.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  st.vidrio=b.dataset.v; actualiza();
+});
+segAc.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  st.acabado=b.dataset.v; actualiza();
+});
+document.getElementById('presets').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  st.ancho=parseInt(b.dataset.w,10); st.alto=parseInt(b.dataset.h,10);
+  st.apertura=b.dataset.ap; st.hojas=parseInt(b.dataset.hj,10);
+  if(st.apertura==='corre'&&st.hojas<2) st.hojas=2;
+  actualiza();
+});
+
+/* ===== COMPARADOR ===== */
+var esc=document.getElementById('escena');
+var tir=document.getElementById('tirador');
+function aplicaSplit(){
+  esc.style.setProperty('--sp', st.split.toFixed(2)+'%');
+  tir.style.left='0';
+  tir.setAttribute('aria-valuenow', String(Math.round(st.split)));
+  tir.setAttribute('aria-valuetext', Math.round(st.split)+'% de la ventana nueva a la vista');
+}
+function setSplitPx(px){
+  var r=esc.getBoundingClientRect();
+  if(!r.width) return;
+  var p=((px-r.left)/r.width)*100;
+  st.split=Math.max(3,Math.min(97,p));
+  aplicaSplit();
+}
+var arrastrando=false;
+function down(e){
+  arrastrando=true;
+  try{ e.target.setPointerCapture && e.target.setPointerCapture(e.pointerId); }catch(err){}
+  setSplitPx(e.clientX);
+}
+function move(e){ if(!arrastrando) return; e.preventDefault(); setSplitPx(e.clientX); }
+function up(){ arrastrando=false; }
+
+tir.addEventListener('pointerdown',function(e){ e.preventDefault(); down(e); });
+tir.addEventListener('pointermove',move);
+tir.addEventListener('pointerup',up);
+tir.addEventListener('pointercancel',up);
+esc.addEventListener('pointerdown',function(e){
+  if(e.pointerType!=='mouse') return;      /* en táctil sólo el tirador, para no robar el scroll */
+  if(e.target===tir||tir.contains(e.target)) return;
+  arrastrando=true; setSplitPx(e.clientX);
+});
+window.addEventListener('pointermove',function(e){ if(arrastrando) setSplitPx(e.clientX); });
+window.addEventListener('pointerup',up);
+tir.addEventListener('keydown',function(e){
+  var k=e.key, d=0;
+  if(k==='ArrowLeft') d=-4; else if(k==='ArrowRight') d=4;
+  else if(k==='Home'){ st.split=3; aplicaSplit(); e.preventDefault(); return; }
+  else if(k==='End'){ st.split=97; aplicaSplit(); e.preventDefault(); return; }
+  if(d){ st.split=Math.max(3,Math.min(97,st.split+d)); aplicaSplit(); e.preventDefault(); }
+});
+
+/* ===== CTA maqueta ===== */
+function maqueta(){ alert('Maqueta: aquí irá el formulario/WhatsApp de la fábrica'); }
+document.getElementById('btnPres').addEventListener('click',maqueta);
+document.getElementById('btnFinal').addEventListener('click',maqueta);
+
+/* ===== ARRANQUE ===== */
+aplicaSplit();
+actualiza();
+window.addEventListener('resize',function(){ aplicaSplit(); });
+
+})();
+</script>
+</body>
+</html>

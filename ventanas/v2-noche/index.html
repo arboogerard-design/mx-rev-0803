@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ventanas de aluminio a medida — Sevilla · Maqueta</title>
+<script>window.__errs=[];window.addEventListener('error',function(e){__errs.push(String(e.message||e))});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0b09; --panel:#14120e; --panel2:#181510; --line:rgba(201,151,63,.16);
+  --amber:#c9973f; --amber2:#e8c37a; --txt:#ece4d3; --muted:#9d937e; --dim:#6f664f;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:0;z-index:100;height:58px;display:flex;align-items:center;
+  background:rgba(12,11,9,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topIn{display:flex;align-items:center;gap:18px;width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.brand{font-family:var(--serif);font-weight:500;font-size:1.06rem;letter-spacing:.02em;white-space:nowrap}
+.brand em{color:var(--amber2);font-style:italic}
+nav.mainNav{display:flex;gap:22px;margin-left:auto;font-size:.86rem;color:var(--muted)}
+nav.mainNav a{transition:color .25s}
+nav.mainNav a:hover{color:var(--amber2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;
+  border:1px solid var(--amber);background:transparent;color:var(--amber2);
+  padding:9px 20px;font-size:.88rem;font-weight:600;letter-spacing:.02em;
+  transition:box-shadow .3s,background .3s,color .3s,transform .2s}
+.btn:hover{box-shadow:0 0 0 1px rgba(201,151,63,.5),0 6px 28px rgba(201,151,63,.28);transform:translateY(-1px)}
+.btn.solid{background:linear-gradient(160deg,#dcae56,#b9862f);color:#191204;border-color:transparent}
+.btn.solid:hover{box-shadow:0 0 0 1px rgba(232,195,122,.55),0 10px 34px rgba(201,151,63,.4)}
+.btn.big{padding:14px 30px;font-size:1rem}
+.topCta{margin-left:6px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;
+  background:
+   linear-gradient(90deg,rgba(12,11,9,.86) 0%,rgba(12,11,9,.6) 30%,rgba(12,11,9,.12) 58%,rgba(12,11,9,.3) 100%),
+   linear-gradient(180deg,rgba(12,11,9,.5) 0%,rgba(12,11,9,.06) 38%,rgba(12,11,9,.5) 72%,#0c0b09 98%),
+   radial-gradient(120% 90% at 75% 12%,rgba(201,151,63,.10),transparent 62%),
+   url('f00.jpg') center 38%/cover no-repeat;}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 140px 24px rgba(12,11,9,.55)}
+.heroIn{position:relative;z-index:2;padding:120px 22px 84px;max-width:1180px;margin:0 auto;width:100%}
+.kicker{font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--amber2);margin-bottom:18px}
+.kicker::before{content:'';display:inline-block;width:34px;height:1px;background:var(--amber);
+  vertical-align:middle;margin-right:12px}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:1.08;
+  letter-spacing:-.01em;max-width:14ch;text-shadow:0 2px 26px rgba(12,11,9,.85),0 1px 4px rgba(12,11,9,.6)}
+h1 em{font-style:italic;font-weight:400;color:var(--amber2)}
+.heroSub{max-width:52ch;color:#c8bda6;margin:22px 0 34px;font-size:1.06rem;
+  text-shadow:0 1px 14px rgba(12,11,9,.9),0 1px 3px rgba(12,11,9,.7)}
+.heroBtns{display:flex;gap:14px;flex-wrap:wrap}
+.heroTrust{display:flex;gap:26px;flex-wrap:wrap;margin-top:46px;padding-top:20px;
+  border-top:1px solid rgba(236,228,211,.12);font-size:.8rem;color:var(--muted);letter-spacing:.06em}
+.heroTrust span::before{content:'◆';font-size:.5rem;color:var(--amber);margin-right:9px;vertical-align:2px}
+
+/* ---------- sections ---------- */
+section{padding:90px 0}
+.secHead{max-width:640px;margin-bottom:48px}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.12}
+h2 em{font-style:italic;color:var(--amber2)}
+.secHead p{color:var(--muted);margin-top:14px}
+
+/* ---------- configurador ---------- */
+#configurador{scroll-margin-top:70px;padding-top:70px}
+.cfg{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:34px;align-items:start}
+.viewerWrap{position:sticky;top:74px;z-index:40}
+.stage{position:relative;height:520px;border:1px solid var(--line);border-radius:20px;
+  background:
+   radial-gradient(90% 70% at 50% 8%,rgba(201,151,63,.09),transparent 60%),
+   linear-gradient(180deg,#131109,#0e0d0a 55%,#12100b);
+  overflow:hidden;user-select:none;-webkit-user-select:none}
+.stageTag{position:absolute;top:14px;left:18px;z-index:5;font-size:.68rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--dim)}
+.stageTag b{color:var(--amber2);font-weight:600}
+.halo{position:absolute;left:50%;top:50%;width:130%;aspect-ratio:1.4;transform:translate(-50%,-52%);
+  background:radial-gradient(closest-side,rgba(201,151,63,.13),transparent 68%);pointer-events:none}
+.floorGlow{position:absolute;left:50%;bottom:6%;width:64%;height:60px;transform:translateX(-50%);
+  background:radial-gradient(closest-side,rgba(201,151,63,.22),transparent 72%);
+  filter:blur(6px);pointer-events:none}
+.scene{position:absolute;inset:0;perspective:1500px;touch-action:none;cursor:grab}
+.scene.grabbing{cursor:grabbing}
+.rig{position:absolute;left:50%;top:47%;transform-style:preserve-3d}
+.b3d{pointer-events:none}
+.face{position:absolute;backface-visibility:hidden}
+.alu .ff{background:linear-gradient(160deg,#4c5058,#32353b 55%,#292b30);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.alu .fb{background:#26282d}
+.alu .fs{background:#1a1c20}
+.alu .ft{background:#17181c}
+.alu2 .ff{background:linear-gradient(160deg,#585c65,#3a3d43 60%,#2f3136);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.alu2 .fb{background:#2b2d32}
+.alu2 .fs{background:#1e2024}
+.alu2 .ft{background:#1a1b1f}
+.hojaPivot{transition:transform 1.05s cubic-bezier(.22,.9,.24,1)}
+.hojaPivot.noTrans{transition:none}
+.glass{border:1px solid rgba(205,222,235,.10);
+  background:
+   linear-gradient(115deg,transparent 22%,rgba(255,255,255,.15) 38%,rgba(255,255,255,.03) 47%,transparent 60%),
+   var(--tint,linear-gradient(180deg,rgba(150,178,198,.16),rgba(120,146,168,.10)));
+  background-size:260% 100%,100% 100%;
+  background-position:calc(40% + var(--gx,0%)) 0,0 0;
+  box-shadow:inset 0 0 34px rgba(0,0,0,.20)}
+.g-doble{--tint:linear-gradient(180deg,rgba(150,178,198,.15),rgba(118,144,166,.09))}
+.g-bajoe{--tint:linear-gradient(180deg,rgba(200,180,138,.17),rgba(152,138,100,.10))}
+.g-triple{--tint:linear-gradient(180deg,rgba(140,172,208,.21),rgba(104,136,172,.14))}
+.handle{position:absolute;border-radius:5px;
+  background:linear-gradient(160deg,#e8c37a,#a87c2c 70%);
+  box-shadow:0 0 8px rgba(201,151,63,.5),inset 0 1px 0 rgba(255,255,255,.4)}
+.stageHints{position:absolute;left:0;right:0;bottom:14px;z-index:6;display:flex;gap:10px;
+  justify-content:center;align-items:center;flex-wrap:wrap;padding:0 12px}
+.pill{border-radius:999px;padding:7px 15px;font-size:.76rem;letter-spacing:.04em;
+  background:rgba(12,11,9,.62);border:1px solid rgba(201,151,63,.28);color:var(--muted)}
+button.pill{color:var(--amber2);font-weight:600;transition:box-shadow .3s,background .3s}
+button.pill:hover{box-shadow:0 0 0 1px rgba(201,151,63,.45),0 4px 20px rgba(201,151,63,.3)}
+button.pill:disabled{opacity:.45;cursor:default;box-shadow:none}
+
+.priceBar{margin-top:14px;border:1px solid var(--line);border-radius:16px;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));padding:16px 20px;
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.pMain{display:flex;flex-direction:column;min-width:150px}
+.pLabel{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+#precio{font-family:var(--serif);font-weight:500;font-size:2.1rem;color:var(--amber2);line-height:1.15}
+#specLine{font-size:.76rem;color:var(--muted)}
+.pNote{flex:1;min-width:200px;font-size:.74rem;color:var(--dim);line-height:1.5;
+  border-left:1px solid var(--line);padding-left:16px}
+
+/* controls */
+.ctl{display:flex;flex-direction:column;gap:26px}
+.ctlBlock h3{font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.ctlBlock h3 .num{color:var(--amber);margin-right:10px;font-family:var(--serif);font-style:italic;
+  font-size:.95rem;letter-spacing:0}
+.sliderRow{display:grid;grid-template-columns:64px minmax(0,1fr) 92px;gap:12px;align-items:center;margin-bottom:10px}
+.sliderRow label{font-size:.84rem;color:var(--muted)}
+.sliderRow output{font-size:.9rem;text-align:right;color:var(--amber2);font-weight:600;font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:26px;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:2px;
+  background:linear-gradient(90deg,var(--amber) var(--fill,50%),rgba(236,228,211,.14) var(--fill,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+  margin-top:-7.5px;background:linear-gradient(160deg,#e8c37a,#b9862f);border:2px solid #0c0b09;
+  box-shadow:0 0 0 1px rgba(201,151,63,.6),0 2px 10px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-track{height:3px;border-radius:2px;background:rgba(236,228,211,.14)}
+input[type=range]::-moz-range-progress{height:3px;border-radius:2px;background:var(--amber)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
+  background:linear-gradient(160deg,#e8c37a,#b9862f);border:2px solid #0c0b09}
+.hintTxt{font-size:.76rem;color:var(--dim);margin-top:4px}
+.optGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.optGrid.v{grid-template-columns:repeat(3,minmax(0,1fr))}
+.opt{position:relative;text-align:left;border:1px solid var(--line);border-radius:14px;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));color:var(--txt);
+  padding:13px 14px;display:flex;flex-direction:column;gap:5px;
+  transition:box-shadow .3s,border-color .3s,transform .2s}
+.opt:hover{box-shadow:0 0 0 1px rgba(201,151,63,.35),0 8px 26px rgba(201,151,63,.14);transform:translateY(-1px)}
+.opt.on{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber),0 8px 30px rgba(201,151,63,.22)}
+.opt svg{width:26px;height:26px;stroke:var(--amber2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.opt .oName{font-weight:600;font-size:.9rem}
+.opt .oDesc{font-size:.72rem;color:var(--muted);line-height:1.4}
+.opt .oPrice{font-size:.7rem;color:var(--amber2);align-self:flex-start;margin-top:3px;
+  font-variant-numeric:tabular-nums;border:1px solid rgba(201,151,63,.3);border-radius:999px;padding:2px 8px}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;border:1px solid var(--line);background:var(--panel);color:var(--txt);
+  border-radius:12px;padding:10px 0;font-size:1rem;font-weight:600;transition:box-shadow .3s,border-color .3s}
+.seg button:hover{box-shadow:0 0 0 1px rgba(201,151,63,.35)}
+.seg button.on{border-color:var(--amber);color:var(--amber2);box-shadow:0 0 0 1px var(--amber)}
+.seg button:disabled{opacity:.35;cursor:default;box-shadow:none}
+.ctaWrap{margin-top:4px}
+.tiny{font-size:.74rem;color:var(--dim);margin-top:10px}
+
+/* ---------- proceso ---------- */
+.phGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:56px}
+.ph{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.03);
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.045)}
+.ph::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(12,11,9,.08),rgba(12,11,9,.62) 88%),
+   radial-gradient(120% 90% at 50% 30%,transparent 55%,rgba(12,11,9,.5));
+  box-shadow:inset 0 0 60px 10px rgba(12,11,9,.55);transition:box-shadow .4s}
+.ph:hover::after{box-shadow:inset 0 0 60px 10px rgba(12,11,9,.55),inset 0 0 0 1px rgba(201,151,63,.4)}
+.ph figcaption{position:absolute;left:16px;bottom:13px;z-index:2;font-family:var(--serif);
+  font-style:italic;font-size:1.02rem;color:var(--amber2)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.step{border:1px solid var(--line);border-radius:16px;padding:22px 20px;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));transition:box-shadow .3s,transform .25s}
+.step:hover{box-shadow:0 0 0 1px rgba(201,151,63,.3),0 10px 32px rgba(201,151,63,.12);transform:translateY(-2px)}
+.step .n{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--amber);display:block;margin-bottom:10px}
+.step h4{font-size:.95rem;font-weight:600;margin-bottom:6px}
+.step p{font-size:.8rem;color:var(--muted);line-height:1.55}
+
+/* ---------- faq ---------- */
+#faq .wrap{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+details summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px;
+  padding:20px 4px;font-family:var(--serif);font-size:1.14rem;font-weight:400;transition:color .3s}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'+';color:var(--amber);font-family:var(--sans);font-weight:400;
+  font-size:1.2rem;transition:transform .3s;flex:0 0 auto}
+details[open] summary::before{transform:rotate(45deg)}
+details summary:hover{color:var(--amber2)}
+details p{padding:0 4px 22px 36px;color:var(--muted);font-size:.92rem;max-width:60ch}
+
+/* ---------- cta final ---------- */
+.finale{text-align:center;padding:110px 22px;position:relative;
+  background:radial-gradient(60% 70% at 50% 100%,rgba(201,151,63,.12),transparent 70%)}
+.finale h2{font-size:clamp(2.1rem,4.4vw,3.4rem);max-width:16ch;margin:0 auto 18px}
+.finale p{color:var(--muted);max-width:44ch;margin:0 auto 34px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:34px 22px 44px;text-align:center}
+footer .brand{display:block;margin-bottom:12px}
+.maqueta{font-size:.74rem;color:var(--dim);max-width:64ch;margin:0 auto;line-height:1.6;
+  border:1px dashed rgba(201,151,63,.35);border-radius:12px;padding:10px 18px;display:inline-block}
+
+/* ---------- móvil ---------- */
+@media (max-width:1020px){
+  .cfg{grid-template-columns:minmax(0,1fr)}
+  .viewerWrap{top:64px}
+  .stage{height:440px}
+}
+@media (max-width:860px){
+  nav.mainNav{display:none}
+  section{padding:64px 0}
+  .hero{min-height:78vh}
+  .heroIn{padding:100px 22px 60px}
+  .heroTrust{gap:14px;font-size:.72rem}
+  #configurador{padding-top:48px;scroll-margin-top:60px}
+  .cfg{display:block}
+  .viewerWrap{position:sticky;top:58px;z-index:60;margin:0 -22px 26px;padding:10px 14px 12px;
+    background:linear-gradient(180deg,#0c0b09 82%,rgba(12,11,9,.96));
+    border-bottom:1px solid var(--line);box-shadow:0 18px 30px -12px rgba(0,0,0,.65)}
+  .stage{height:min(38vh,300px);border-radius:16px}
+  .stageTag{font-size:.6rem}
+  .priceBar{margin-top:8px;padding:8px 12px;gap:10px;border-radius:12px;align-items:center}
+  #precio{font-size:1.35rem}
+  .pMain{min-width:118px}
+  .pNote{flex-basis:100%;min-width:0;font-size:.64rem;padding-left:0;border-left:none;
+    border-top:1px solid var(--line);padding-top:6px}
+  .pLabel{font-size:.6rem}
+  #specLine{font-size:.66rem}
+  .stageHints{bottom:10px}
+  .pill{padding:6px 12px;font-size:.7rem}
+  .optGrid.v{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .opt .oDesc{display:none}
+  .opt{padding:11px 12px}
+  .phGrid{grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:40px}
+  .ph{aspect-ratio:16/9}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  h1{max-width:100%}
+}
+@media (max-width:400px){
+  .optGrid.v{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topIn">
+    <a class="brand" href="#">Fábrica de <em>Ventanas</em> · Sevilla</a>
+    <nav class="mainNav">
+      <a href="#configurador">Configurador</a>
+      <a href="#proceso">La fábrica</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <button class="btn topCta" onclick="maquetaCTA()">Presupuesto</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="heroIn">
+    <div class="kicker">Fábrica familiar · Sevilla · 30 años</div>
+    <h1>El aluminio se trabaja <em>a la medida</em> de tu casa.</h1>
+    <p class="heroSub">Ventanas cortadas, soldadas y montadas por la misma fábrica que te atiende.
+    Sin intermediarios, sin medidas estándar: tu hueco, tu ventana.</p>
+    <div class="heroBtns">
+      <a class="btn solid big" href="#configurador">Diseña tu ventana en 3D</a>
+      <button class="btn big" onclick="maquetaCTA()">Pedir presupuesto</button>
+    </div>
+    <div class="heroTrust">
+      <span>Medida exacta, no estándar</span>
+      <span>Fabricación propia en Sevilla</span>
+      <span>Garantía por escrito en tu presupuesto</span>
+    </div>
+  </div>
+</div>
+
+<section id="configurador">
+  <div class="wrap">
+    <div class="secHead">
+      <div class="kicker">El taller, en tu pantalla</div>
+      <h2>Gírala. Ábrela. <em>Ponle precio.</em></h2>
+      <p>Arrastra la ventana para verla por todos sus lados. Cada opción que toques
+      se refleja en el modelo y en la cifra — así se decide una ventana.</p>
+    </div>
+
+    <div class="cfg">
+      <div class="viewerWrap">
+        <div class="stage" id="stage">
+          <div class="stageTag"><b>Editor 3D</b> · tu ventana</div>
+          <div class="halo"></div>
+          <div class="floorGlow"></div>
+          <div class="scene" id="scene"><div class="rig" id="rig"></div></div>
+          <div class="stageHints">
+            <span class="pill">↻ Arrastra para girar</span>
+            <button class="pill" id="btnOpen">Abrir hojas</button>
+          </div>
+        </div>
+        <div class="priceBar">
+          <div class="pMain">
+            <span class="pLabel">Precio orientativo</span>
+            <strong id="precio">—</strong>
+            <span id="specLine"></span>
+          </div>
+          <div class="pNote">Cifra orientativa sobre tarifa de ejemplo — el precio en firme lo pone la fábrica.</div>
+        </div>
+      </div>
+
+      <div class="ctl">
+        <div class="ctlBlock">
+          <h3><span class="num">01</span> Medidas</h3>
+          <div class="sliderRow">
+            <label for="anchoR">Ancho</label>
+            <input type="range" id="anchoR" min="500" max="2600" step="10" value="1400">
+            <output id="anchoO">1400 mm</output>
+          </div>
+          <div class="sliderRow">
+            <label for="altoR">Alto</label>
+            <input type="range" id="altoR" min="500" max="2300" step="10" value="1200">
+            <output id="altoO">1200 mm</output>
+          </div>
+          <p class="hintTxt">Medidas del hueco. La fábrica las afina contigo antes de cortar.</p>
+        </div>
+
+        <div class="ctlBlock">
+          <h3><span class="num">02</span> Apertura</h3>
+          <div class="optGrid" id="aperturaG">
+            <button class="opt" data-k="pract">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 3l13 9L3 21"/></svg>
+              <span class="oName">Practicable</span>
+              <span class="oDesc">Abre de par en par, fácil de limpiar.</span>
+              <span class="oPrice">+0 €</span>
+            </button>
+            <button class="opt" data-k="oscilo">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 21L12 7l9 14"/></svg>
+              <span class="oName">Oscilobatiente</span>
+              <span class="oDesc">Bascula para ventilar con seguridad.</span>
+              <span class="oPrice">+38 €</span>
+            </button>
+            <button class="opt" data-k="corre">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="11" height="14" rx="1"/><rect x="10" y="5" width="11" height="14" rx="1"/><path d="M6 22h12M15 22l2-2m-2 2l2 2" transform="translate(0,-1)"/></svg>
+              <span class="oName">Corredera</span>
+              <span class="oDesc">Desliza, no roba espacio a la estancia.</span>
+              <span class="oPrice">+22 €</span>
+            </button>
+            <button class="opt" data-k="fija">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><rect x="7.5" y="7.5" width="9" height="9"/></svg>
+              <span class="oName">Fija</span>
+              <span class="oDesc">Solo luz: máximo vidrio, mínimo perfil.</span>
+              <span class="oPrice">−25 €</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="ctlBlock">
+          <h3><span class="num">03</span> Hojas</h3>
+          <div class="seg" id="hojasG">
+            <button data-n="1">1</button>
+            <button data-n="2">2</button>
+            <button data-n="3">3</button>
+            <button data-n="4">4</button>
+          </div>
+          <p class="hintTxt" id="hojasHint">Cada hoja extra suma +46 € (salvo en ventana fija).</p>
+        </div>
+
+        <div class="ctlBlock">
+          <h3><span class="num">04</span> Vidrio</h3>
+          <div class="optGrid v" id="vidrioG">
+            <button class="opt" data-k="doble">
+              <span class="oName">Doble</span>
+              <span class="oDesc">Dos lunas con cámara de aire.</span>
+              <span class="oPrice">+0 €/m²</span>
+            </button>
+            <button class="opt" data-k="bajoe">
+              <span class="oName">Bajo emisivo</span>
+              <span class="oDesc">Guarda el calor en invierno.</span>
+              <span class="oPrice">+34 €/m²</span>
+            </button>
+            <button class="opt" data-k="triple">
+              <span class="oName">Triple</span>
+              <span class="oDesc">Tres lunas: aislamiento máximo.</span>
+              <span class="oPrice">+72 €/m²</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="ctaWrap">
+          <button class="btn solid big" style="width:100%" onclick="maquetaCTA()">Pedir presupuesto con esta ventana</button>
+          <p class="tiny">Sin compromiso. La fábrica revisa tus medidas y te da el precio en firme, por escrito.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <div class="secHead">
+      <div class="kicker">Del perfil en bruto a tu salón</div>
+      <h2>Comprar a la fábrica <em>se nota.</em></h2>
+      <p>Aquí no hay catálogo de medidas: hay sierra, soldadura y una familia que lleva
+      30 años haciendo ventanas en Sevilla. Lo que configuras arriba, lo cortamos abajo.</p>
+    </div>
+    <div class="phGrid">
+      <figure class="ph"><img src="f04.jpg" alt="Radial cortando aluminio con chispas"><figcaption>Corte a medida</figcaption></figure>
+      <figure class="ph"><img src="f02.jpg" alt="Interior del taller de la fábrica"><figcaption>El taller</figcaption></figure>
+      <figure class="ph"><img src="f06.jpg" alt="Soldador trabajando"><figcaption>Soldadura propia</figcaption></figure>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h4>Nos cuentas tu hueco</h4><p>Con las medidas del configurador ya podemos orientarte. Sin compromiso.</p></div>
+      <div class="step"><span class="n">02</span><h4>La fábrica mide</h4><p>Se toma la medida real en tu casa antes de tocar un solo perfil.</p></div>
+      <div class="step"><span class="n">03</span><h4>Corte, soldadura y montaje</h4><p>Tu ventana sale del taller, no de un almacén. Instalada y sellada.</p></div>
+      <div class="step"><span class="n">04</span><h4>Garantía por escrito</h4><p>Va en tu presupuesto, junto al detalle de perfil, vidrio y montaje.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="secHead">
+      <div class="kicker">Lo que todo el mundo pregunta</div>
+      <h2>Antes de <em>pedir precio.</em></h2>
+    </div>
+    <details open>
+      <summary>¿El precio del configurador es el final?</summary>
+      <p>No. Es una cifra orientativa calculada con una tarifa de ejemplo, para que compares opciones
+      con criterio. El precio en firme lo pone la fábrica después de medir tu hueco, y te lo llevas
+      por escrito.</p>
+    </details>
+    <details>
+      <summary>¿Qué apertura me conviene?</summary>
+      <p>Practicable si quieres limpiar por dentro y por fuera sin esfuerzo. Oscilobatiente para
+      ventilar sin abrir del todo — con niños o mascotas se agradece. Corredera cuando la hoja no
+      tiene sitio para barrer. Fija cuando lo que buscas es luz.</p>
+    </details>
+    <details>
+      <summary>¿Y el vidrio?</summary>
+      <p>El doble es el punto de partida. El bajo emisivo devuelve el calor a la habitación — se nota
+      en la factura. El triple es el máximo en aislamiento térmico y acústico: para dormitorios a
+      calle o climas duros.</p>
+    </details>
+    <details>
+      <summary>¿Hacéis medidas especiales?</summary>
+      <p>Solo hacemos medidas especiales: cada ventana se corta y suelda para tu hueco exacto.
+      Si el configurador se te queda corto, la fábrica estudia tu caso.</p>
+    </details>
+    <details>
+      <summary>¿Qué garantía tengo?</summary>
+      <p>La que se te entrega por escrito en tu presupuesto, con el detalle de lo que cubre
+      perfil, vidrio y montaje. Sin letra pequeña que no puedas leer antes de decidir.</p>
+    </details>
+  </div>
+</section>
+
+<div class="finale">
+  <div class="kicker" style="display:inline-block">¿Le ponemos medidas?</div>
+  <h2>Tu ventana ya existe. <em>Solo falta cortarla.</em></h2>
+  <p>Envíanos la configuración y la fábrica te devuelve un presupuesto en firme, por escrito.</p>
+  <button class="btn solid big" onclick="maquetaCTA()">Pedir presupuesto</button>
+</div>
+
+<footer>
+  <span class="brand">Fábrica de <em>Ventanas</em> · Sevilla</span>
+  <p class="maqueta">MAQUETA DE TRABAJO — nada publicado ni indexado. Tarifa y datos de ejemplo:
+  se sustituyen por los reales de la fábrica.</p>
+</footer>
+
+<script>
+'use strict';
+function maquetaCTA(){alert('Maqueta: aquí irá el formulario/WhatsApp de la fábrica');}
+var TAR={m2:210,fija:-25,pract:0,oscilo:38,corre:22,doble:0,bajoe:34,triple:72,minimo:145,hoja:46};
+var NOMA={fija:'fija',pract:'practicable',oscilo:'oscilobatiente',corre:'corredera'};
+var NOMV={doble:'doble',bajoe:'bajo emisivo',triple:'triple'};
+var PANES={doble:2,bajoe:2,triple:3};
+var state={w:1400,h:1200,apertura:'pract',hojas:2,vidrio:'doble',abierta:false};
+
+var $=function(id){return document.getElementById(id)};
+var stage=$('stage'),scene=$('scene'),rig=$('rig');
+var pivots=[];
+
+/* ---------- construccion 3D ---------- */
+function box(parent,x,y,w,h,d,cls){
+  var b=document.createElement('div');
+  b.className='b3d';
+  b.style.cssText='position:absolute;transform-style:preserve-3d;left:'+x+'px;top:'+y+'px;width:'+w+'px;height:'+h+'px;';
+  function mk(fw,fh,tf,extra){
+    var f=document.createElement('div');
+    f.className='face '+extra;
+    f.style.width=fw+'px';f.style.height=fh+'px';
+    f.style.left=((w-fw)/2)+'px';f.style.top=((h-fh)/2)+'px';
+    f.style.transform=tf;
+    b.appendChild(f);
+  }
+  mk(w,h,'translateZ('+(d/2)+'px)','ff');
+  mk(w,h,'rotateY(180deg) translateZ('+(d/2)+'px)','fb');
+  mk(d,h,'rotateY(90deg) translateZ('+(w/2)+'px)','fs');
+  mk(d,h,'rotateY(-90deg) translateZ('+(w/2)+'px)','fs');
+  mk(w,d,'rotateX(90deg) translateZ('+(h/2)+'px)','ft');
+  mk(w,d,'rotateX(-90deg) translateZ('+(h/2)+'px)','ft');
+  b.classList.add(cls);
+  parent.appendChild(b);
+  return b;
+}
+
+function buildWindow(){
+  rig.innerHTML='';pivots=[];
+  var availW=stage.clientWidth*0.76, availH=stage.clientHeight*0.72;
+  var s=Math.min(availW/state.w, availH/state.h);
+  var W=state.w*s, H=state.h*s;
+  var F=Math.max(58*s,10), D=Math.max(82*s,22);
+  rig.style.width=W+'px';rig.style.height=H+'px';
+  rig.style.marginLeft=(-W/2)+'px';rig.style.marginTop=(-H/2)+'px';
+  box(rig,0,0,W,F,D,'alu');
+  box(rig,0,H-F,W,F,D,'alu');
+  box(rig,0,F,F,H-2*F,D,'alu');
+  box(rig,W-F,F,F,H-2*F,D,'alu');
+  var iw=W-2*F, ih=H-2*F, n=state.hojas, sw=iw/n;
+  var sf=Math.max(46*s,9), sd=Math.max(62*s,16);
+  for(var i=0;i<n;i++){
+    var hinge=(i<n/2)?'left':'right';
+    var pv=document.createElement('div');
+    pv.className='hojaPivot noTrans';
+    pv.style.cssText='position:absolute;transform-style:preserve-3d;left:'+(F+i*sw)+'px;top:'+F+'px;width:'+sw+'px;height:'+ih+'px;';
+    var hoja=document.createElement('div');
+    hoja.style.cssText='position:absolute;left:0;top:0;right:0;bottom:0;transform-style:preserve-3d;';
+    box(hoja,0,0,sw,sf,sd,'alu2');
+    box(hoja,0,ih-sf,sw,sf,sd,'alu2');
+    box(hoja,0,sf,sf,ih-2*sf,sd,'alu2');
+    box(hoja,sw-sf,sf,sf,ih-2*sf,sd,'alu2');
+    var gw=sw-2*sf, gh=ih-2*sf, panes=PANES[state.vidrio];
+    for(var p=0;p<panes;p++){
+      var z=(panes===1)?0:((p-(panes-1)/2)*(sd*0.5/(panes-1)*2/2));
+      z=(p-(panes-1)/2)*(sd*0.5/Math.max(panes-1,1));
+      var pane=document.createElement('div');
+      pane.className='glass g-'+state.vidrio;
+      pane.style.cssText='position:absolute;left:'+sf+'px;top:'+sf+'px;width:'+gw+'px;height:'+gh+'px;transform:translateZ('+z+'px);';
+      hoja.appendChild(pane);
+    }
+    if(state.apertura!=='fija'){
+      var hh=Math.max(Math.min(gh*0.26,70*s),18), hw=Math.max(9*s,5);
+      var hx=(state.apertura==='corre')?(sw-sf*0.75-hw/2):((hinge==='left')?(sw-sf*0.72-hw/2):(sf*0.72-hw/2));
+      var hd=document.createElement('div');
+      hd.className='handle';
+      hd.style.cssText='left:'+hx+'px;top:'+((ih-hh)/2)+'px;width:'+hw+'px;height:'+hh+'px;transform:translateZ('+(sd/2+2)+'px);';
+      hoja.appendChild(hd);
+    }
+    pv.appendChild(hoja);
+    rig.appendChild(pv);
+    pivots.push({el:pv,i:i,hinge:hinge,sw:sw,sd:sd});
+  }
+  applyOpen();                      // estado cerrado/base sin transicion
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    pivots.forEach(function(p){p.el.classList.remove('noTrans')});
+    applyOpen();                    // si esta abierta, ahora anima
+  })});
+}
+
+function applyOpen(){
+  pivots.forEach(function(p){
+    var noTrans=p.el.classList.contains('noTrans');
+    var t='none';
+    if(state.apertura==='corre'){
+      var zr=(p.i%2===0)?p.sd*0.72:-p.sd*0.28;
+      var dx=(state.abierta&&!noTrans&&state.hojas>1&&p.i%2===0&&p.i+1<state.hojas)?p.sw*0.88:0;
+      p.el.style.transformOrigin='center center';
+      t='translateX('+dx+'px) translateZ('+zr+'px)';
+    }else if(state.apertura==='pract'){
+      p.el.style.transformOrigin=(p.hinge==='left')?'left center':'right center';
+      t=(state.abierta&&!noTrans)?('rotateY('+(p.hinge==='left'?-72:72)+'deg)'):'rotateY(0deg)';
+    }else if(state.apertura==='oscilo'){
+      p.el.style.transformOrigin='50% 100%';
+      t=(state.abierta&&!noTrans)?'rotateX(-22deg)':'rotateX(0deg)';
+    }
+    p.el.style.transform=t;
+  });
+}
+
+/* ---------- precio ---------- */
+function calcPrecio(){
+  var m2=(state.w/1000)*(state.h/1000);
+  var p=m2*(TAR.m2+TAR[state.vidrio])+TAR[state.apertura];
+  if(state.apertura!=='fija'&&state.hojas>1)p+=(state.hojas-1)*TAR.hoja;
+  return Math.max(p,TAR.minimo);
+}
+function fmt(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+function refreshPrice(){
+  $('precio').textContent=fmt(calcPrecio())+' €';
+  $('specLine').textContent=state.w+' × '+state.h+' mm · '+NOMA[state.apertura]+' · '+
+    state.hojas+(state.hojas>1?' hojas':' hoja')+' · vidrio '+NOMV[state.vidrio];
+}
+
+/* ---------- rotacion con inercia ---------- */
+var rx=9, ry=-26, vx=0, dragging=false, interacted=false, px=0, py=0;
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduced)interacted=true;
+scene.addEventListener('pointerdown',function(e){
+  if(e.target.closest('button'))return;
+  dragging=true;interacted=true;px=e.clientX;py=e.clientY;vx=0;
+  scene.classList.add('grabbing');
+  try{scene.setPointerCapture(e.pointerId)}catch(_){}
+});
+scene.addEventListener('pointermove',function(e){
+  if(!dragging)return;
+  var dx=e.clientX-px, dy=e.clientY-py;px=e.clientX;py=e.clientY;
+  ry+=dx*0.42; rx=Math.max(-24,Math.min(44,rx-dy*0.28));
+  vx=vx*0.5+dx*0.42*0.5;
+});
+function endDrag(){dragging=false;scene.classList.remove('grabbing');}
+scene.addEventListener('pointerup',endDrag);
+scene.addEventListener('pointercancel',endDrag);
+var t0=performance.now();
+(function loop(now){
+  if(!dragging){
+    if(Math.abs(vx)>0.02){ry+=vx;vx*=0.93;}
+    else if(!interacted){ry=-26+Math.sin((now-t0)/1900)*8;rx=9+Math.sin((now-t0)/2600)*2.5;}
+  }
+  ry=Math.max(-85,Math.min(85,ry));
+  rig.style.transform='rotateX('+rx+'deg) rotateY('+ry+'deg)';
+  stage.style.setProperty('--gx',(ry*-0.5)+'%');
+  requestAnimationFrame(loop);
+})(t0);
+
+/* ---------- controles ---------- */
+function markOn(group,key){
+  Array.prototype.forEach.call(group.children,function(b){
+    b.classList.toggle('on',b.getAttribute('data-k')===key||b.getAttribute('data-n')===String(key));
+  });
+}
+function refreshHojasUI(){
+  var g=$('hojasG');
+  Array.prototype.forEach.call(g.children,function(b){
+    var n=+b.getAttribute('data-n');
+    b.disabled=(state.apertura==='corre'&&n<2);
+  });
+  markOn(g,state.hojas);
+  $('hojasHint').textContent=(state.apertura==='fija')
+    ?'En ventana fija, las hojas son paños de vidrio separados por perfil (sin coste por hoja).'
+    :(state.apertura==='corre')
+      ?'La corredera necesita 2 hojas como mínimo. Cada hoja extra suma +46 €.'
+      :'Cada hoja extra suma +46 €.';
+}
+function refreshOpenBtn(){
+  var b=$('btnOpen');
+  if(state.apertura==='fija'){b.disabled=true;b.textContent='Fija — no se abre';}
+  else{b.disabled=false;b.textContent=state.abierta?'Cerrar hojas':'Abrir hojas';}
+}
+
+function slider(id,out,key){
+  var r=$(id),o=$(out);
+  function paint(){
+    o.textContent=r.value+' mm';
+    var f=((r.value-r.min)/(r.max-r.min))*100;
+    r.style.setProperty('--fill',f+'%');
+  }
+  r.addEventListener('input',function(){
+    state[key]=+r.value;paint();refreshPrice();
+    if(!slider._raf){slider._raf=requestAnimationFrame(function(){slider._raf=null;buildWindow();});}
+  });
+  paint();
+}
+slider('anchoR','anchoO','w');
+slider('altoR','altoO','h');
+
+$('aperturaG').addEventListener('click',function(e){
+  var b=e.target.closest('.opt');if(!b)return;
+  state.apertura=b.getAttribute('data-k');
+  if(state.apertura==='corre'&&state.hojas<2)state.hojas=2;
+  state.abierta=(state.apertura!=='fija');
+  markOn($('aperturaG'),state.apertura);
+  refreshHojasUI();refreshOpenBtn();refreshPrice();buildWindow();
+});
+$('hojasG').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b||b.disabled)return;
+  state.hojas=+b.getAttribute('data-n');
+  refreshHojasUI();refreshPrice();buildWindow();
+});
+$('vidrioG').addEventListener('click',function(e){
+  var b=e.target.closest('.opt');if(!b)return;
+  state.vidrio=b.getAttribute('data-k');
+  markOn($('vidrioG'),state.vidrio);
+  refreshPrice();buildWindow();
+});
+$('btnOpen').addEventListener('click',function(){
+  if(state.apertura==='fija')return;
+  state.abierta=!state.abierta;refreshOpenBtn();applyOpen();
+});
+
+var rsz=null;
+window.addEventListener('resize',function(){
+  clearTimeout(rsz);rsz=setTimeout(buildWindow,180);
+});
+
+/* ---------- arranque ---------- */
+markOn($('aperturaG'),state.apertura);
+markOn($('vidrioG'),state.vidrio);
+refreshHojasUI();refreshOpenBtn();refreshPrice();
+buildWindow();
+setTimeout(function(){if(state.apertura!=='fija'){state.abierta=true;refreshOpenBtn();applyOpen();}},900);
+</script>
+</body>
+</html>
